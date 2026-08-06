@@ -1,1 +1,510 @@
+{
+  "versionDate": "2026-08-11",
+  "errors":
+[
+  { "id": "ERR-ABEND-0001", "code": "S0C7", "description": "Data exception: intento de convertir datos no numéricos", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0002", "code": "S0C4", "description": "Violación de memoria: dirección inválida", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0003", "code": "S0C1", "description": "Instrucción inválida o no permitida", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0004", "code": "S0CB", "description": "División por cero", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0005", "code": "S0C5", "description": "Error de protección de almacenamiento", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0006", "code": "S0E0", "description": "Error de decimal packed", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0007", "code": "S0E2", "description": "Error de conversión ASCII/EBCDIC", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0008", "code": "S001", "description": "Error de I/O en dataset secuencial", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0009", "code": "S002", "description": "Registro demasiado largo para el LRECL", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0010", "code": "S013", "description": "Error al abrir dataset (DSORG o DCB incorrecto)", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0011", "code": "S014", "description": "Dataset no encontrado o sin permisos", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0012", "code": "S0F8", "description": "Error de conversión numérica", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0013", "code": "S322", "description": "Tiempo de CPU excedido", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0014", "code": "S522", "description": "Job detenido por falta de actividad", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0015", "code": "S806", "description": "Programa no encontrado en STEPLIB/JOBLIB", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0016", "code": "S80A", "description": "Falta de almacenamiento (REGION insuficiente)", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0017", "code": "S878", "description": "No hay suficiente memoria para asignación", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0018", "code": "S913", "description": "Violación de seguridad RACF", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0019", "code": "S106", "description": "Error al asignar dataset", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-ABEND-0020", "code": "S237", "description": "Error de espacio en disco", "system": "ABEND", "operation": "", "notes": "", "deleted": false },
 
+
+  { "id": "ERR-DB2-0001", "code": "-911", "description": "Deadlock o timeout. Transacción revertida", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0002", "code": "-913", "description": "Deadlock detectado. Transacción fallida", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0003", "code": "-805", "description": "Package no encontrado (DBRM no enlazado)", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0004", "code": "-818", "description": "Timestamp mismatch entre DBRM y load module", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0005", "code": "-204", "description": "Tabla o vista no existe", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0006", "code": "-206", "description": "Columna no existe en la tabla", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0007", "code": "-551", "description": "Usuario sin permisos para la operación", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0008", "code": "-530", "description": "Violación de clave foránea", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0009", "code": "-803", "description": "Violación de clave primaria (duplicado)", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0010", "code": "-904", "description": "Recurso no disponible", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0011", "code": "-922", "description": "Autorización fallida", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0012", "code": "-501", "description": "Cursor no abierto", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0013", "code": "-502", "description": "Cursor ya abierto", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0014", "code": "-532", "description": "Restricción referencial violada", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0015", "code": "-713", "description": "Valor nulo no permitido", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0016", "code": "-723", "description": "Error en trigger", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0017", "code": "-805", "description": "Package no encontrado en plan", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0018", "code": "-904", "description": "Recurso temporalmente no disponible", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0019", "code": "-911", "description": "Timeout de bloqueo", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-DB2-0020", "code": "+100", "description": "Fin de datos (no more rows)", "system": "DB2", "operation": "", "notes": "", "deleted": false },
+
+  { "id": "ERR-CICS-0001", "code": "AEI0", "description": "Programa no encontrado", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0002", "code": "AEI1", "description": "Transacción no autorizada", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0003", "code": "AEY9", "description": "Timeout de transacción", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0004", "code": "AEZ0", "description": "Error de protección de memoria", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0005", "code": "AEI2", "description": "Programa no definido en PPT", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0006", "code": "AEI3", "description": "MAPSET no encontrado", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0007", "code": "AEI4", "description": "MAP no encontrado", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0008", "code": "AEI5", "description": "Error en RECEIVE MAP", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0009", "code": "AEI6", "description": "Error en SEND MAP", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0010", "code": "AKC0", "description": "Error de almacenamiento insuficiente", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0011", "code": "AKC1", "description": "Error de almacenamiento liberado incorrectamente", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0012", "code": "AKC2", "description": "Error de almacenamiento corrupto", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0013", "code": "AEXZ", "description": "Error general de ejecución", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0014", "code": "AEY7", "description": "Error de seguridad (RACF)", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0015", "code": "AEY8", "description": "Transacción no permitida", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0016", "code": "AEZ1", "description": "Error de archivo VSAM", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0017", "code": "AEZ2", "description": "Registro no encontrado en VSAM", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0018", "code": "AEZ3", "description": "Error de actualización VSAM", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0019", "code": "AEZ4", "description": "Error de borrado VSAM", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+  { "id": "ERR-CICS-0020", "code": "AEZ5", "description": "Archivo VSAM bloqueado", "system": "CICS", "operation": "", "notes": "", "deleted": false },
+
+  {
+    "id": "ERR-VSAM-0001",
+    "code": "4",
+    "description": "ERROR DE FICHERO",
+    "system": "VSAM",
+    "operation": "CLOSE: El fichero ya está cerrado.\n\nOPEN: El fichero ya está abierto.\n\nREADWRITE: Fin de fichero en recuperación secuencial o clave mayor que la última.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0002",
+    "code": "136",
+    "description": "ERROR DE ESPACIO.",
+    "system": "VSAM",
+    "operation": "CLOSE: No hay espacio para cerrar el fichero.\n\nOPEN: No hay espacio para áreas de trabajo, áreas de control o buffers.\n\nREADWRITE: no hay espacio para áreas de trabajo, áreas de control o buffers.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0003",
+    "code": "144",
+    "description": "ERROR EN EL CATALOGO.",
+    "system": "VSAM",
+    "operation": "CLOSE: Error I/O al grabar un registro en el catalogo.\n\nOPEN: Error I/O al grabar o leer un registro en el catalogo.\n\nREADWRITE: Error I/O al grabar o leer un registro en el catalogo.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0004",
+    "code": "148",
+    "description": "ERROR EN BUSQUEDA.",
+    "system": "VSAM",
+    "operation": "CLOSE: Error al buscar fichero en el catalogo.\n\nOPEN: Error al buscar fichero en el catalogo o No hay registros en el fichero.\n\nREADWRITE: Error al buscar fichero en el catalogo o No hay registros en el fichero.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0005",
+    "code": "180",
+    "description": "ERROR EN CATALOGO.",
+    "system": "VSAM",
+    "operation": "CLOSE: El catalogo especificado en el JCL no existe o no esta abierto.\n\nOPEN: El catalogo especificado en el JCL no existe o no esta abierto.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0006",
+    "code": "184",
+    "description": "ERROR DE INTERVALO DE CONTROL.",
+    "system": "VSAM",
+    "operation": "CLOSE: Error de intervalo de control.\n\nOPEN: Error de intervalo de control.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0007",
+    "code": "236",
+    "description": "ERROR PERMANENTE EN EL DISCO.",
+    "system": "VSAM",
+    "operation": "CLOSE: Error permanente en el disco que esta cerrado.\n\nOPEN: Error permanente en el disco que esta cerrado.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0008",
+    "code": "0",
+    "description": "EL FICHERO YA ESTA ABIERTO O LA DDNAME NO ES CORRECTA.",
+    "system": "VSAM",
+    "operation": "OPEN",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0010",
+    "code": "96",
+    "description": "ERROR EN CLAVE.",
+    "system": "VSAM",
+    "operation": "OPEN: El fichero se abre como input y se usa como I/O.\n\nREADWRITE: Se modificó la clave entre read y rewrite.\n\nFILESTATUS: En JCL falta alguna DD.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0011",
+    "code": "100",
+    "description": "ERROR DE INDICE O LONGITUD.",
+    "system": "VSAM",
+    "operation": "OPEN: Se encuentra vacío un índice alternativo.\n\nREADWRITE: Se intenta cambiar la longitud de un registro.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0012",
+    "code": "104",
+    "description": "EL REGISTRO DEL CATALOGO NO COINCIDE CON LA VTOC.",
+    "system": "VSAM",
+    "operation": "OPEN",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0013",
+    "code": "108",
+    "description": "ERROR EN ÍNDICES.",
+    "system": "VSAM",
+    "operation": "OPEN: Indices y datos no coinciden por haberse modificado alguno por separado.\n\nREADWRITE: Indices y datos no coinciden por haberse modificado alguno por separado.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0014",
+    "code": "116",
+    "description": "ERROR EN EL FICHERO.",
+    "system": "VSAM",
+    "operation": "OPEN: El fichero no fue cerrado.(pasar un verify) o El fichero se usa como salida para otro proceso.\n\nREADWRITE: El fichero no fue cerrado.(pasar un verify) o El fichero se usa como salida para otro proceso.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0021",
+    "code": "152",
+    "description": "ERROR EN LA PASSWORD",
+    "system": "VSAM",
+    "operation": "OPEN: La password no coincide con la del catalogo o usuario no autorizado\n\nREADWRITE: La password no coincide con la del catalogo o usuario no autorizado.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0023",
+    "code": "160",
+    "description": "LOS OPERANDOS DE LA ACB O GENCB NO COINCIDEN CON EL CATALOGO.",
+    "system": "VSAM",
+    "operation": "OPEN",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0024",
+    "code": "164",
+    "description": "ERROR AL LEER ETIQUETA DE FICHERO. USUARIO NO AUTORIZADO.",
+    "system": "VSAM",
+    "operation": "OPEN",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0026",
+    "code": "168",
+    "description": "EL FICHERO NO ESTA DISPONIBLE PARA EL PROCESO ESPECIFICADO.",
+    "system": "VSAM",
+    "operation": "OPEN",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0029",
+    "code": "188",
+    "description": "MÉTODO DE ACCESO ESPECIFICADO NO VALIDO.",
+    "system": "VSAM",
+    "operation": "OPEN",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0030",
+    "code": "192",
+    "description": "EL FICHERO NO PUEDE SER ABIERTO PARA SALIDA.",
+    "system": "VSAM",
+    "operation": "OPEN",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0032",
+    "code": "244",
+    "description": "EL VOLUMEN QUE CONTIENE EL ÁREA DE RECUPERACIÓN DEL CATALOGO NO ESTA DISPONIBLE.",
+    "system": "VSAM",
+    "operation": "OPEN",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0034",
+    "code": "8",
+    "description": "SE INTENTA GRABAR UN REGISTRO DUPLICADO o SE INTENTA LEER UN REGISTRO DUPLICADO PARA UN ÍNDICE ALTERNATIVO.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0036",
+    "code": "12",
+    "description": "SE INTENTA GRABAR UN REGISTRO FUERA DE ORDEN EN PROCESO SECUENCIAL o SE INTENTA GRABAR UNA CLAVE DUPLICADA EN ACCESO SECUENCIAL o SE INTENTA LEER UNA CLAVE ANTERIOR A LA ÚLTIMA LEÍDA EN PROCESO SECUENCIAL.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0039",
+    "code": "16",
+    "description": "SE INTENTA LEER UN REGISTRO Y NO SE ENCUENTRA.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0040",
+    "code": "20",
+    "description": "SE INTENTA LEER UN REGISTRO BLOQUEADO POR OTRO PROGRAMA.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0041",
+    "code": "24",
+    "description": "ERROR EN EL REGISTRO.",
+    "system": "VSAM",
+    "operation": "READWRITE: El registro está en un volumen que no está montado.\n\nFILESTATUS: Invalid-key en write de KSDS por falta de espacio o en RRDS por clave fuera de margen.",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0042",
+    "code": "28",
+    "description": "ERROR DE ESPACIO.",
+    "system": "VSAM",
+    "operation": "READWRITE: El VSAM no puede ampliarse por falta de espacio en el volumen.\n\nFILESTATUS: Error permanente (data check, parity check, transmisión o fichero vacío).",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0043",
+    "code": "32",
+    "description": "UN RBA NO APUNTA A NINGÚN REGISTRO DE DATOS.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0044",
+    "code": "36",
+    "description": "LA CLAVE DEL REGISTRO NO COINCIDE CON EL RANGO DEFINIDO AL CREAR EL FICHERO.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0045",
+    "code": "40",
+    "description": "NO CABEN MÁS REGISTROS EN EL ESPACIO DIRECCIONADO POR EL USUARIO.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0046",
+    "code": "44",
+    "description": "REGISTRO MAYOR QUE EL ÁREA DE TRABAJO DEL FICHERO.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0047",
+    "code": "68",
+    "description": "SE INTENTA REALIZAR UN PROCESO NO ESPECIFICADO AL ABRIR EL FICHERO.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0048",
+    "code": "72",
+    "description": "SE INTENTA LEER RANDOM UN FICHERO ABIERTO EN LECTURA SECUENCIAL.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0049",
+    "code": "92",
+    "description": "ERROR AL ACTUALIZAR.",
+    "system": "VSAM",
+    "operation": "READWRITE: Se intenta actualizar un registro no recuperado.\n\nFILESTATUS: Lectura después de fin de fichero o Actualizar sin lectura previa o Diferencia entre longitud máxima y mínima en registro de longitud fija o Se intenta abrir un fichero que ya está abierto",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0055",
+    "code": "132",
+    "description": "ERROR I/O AL LEER EL BLOQUE DE CONTROL DEL FICHERO.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0062",
+    "code": "1104",
+    "description": "EL REGISTRO DEL CATALOGO NO COINCIDE CON LA VTOC.",
+    "system": "VSAM",
+    "operation": "READWRITE",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0067",
+    "code": "00",
+    "description": "PROCESO CORRECTO.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0068",
+    "code": "02",
+    "description": "REGISTRO CON CLAVE ALTERNATIVA DUPLICADA o LECTURA DE UNA CLAVE MAYOR QUE LA ÚLTIMA.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0070",
+    "code": "10",
+    "description": "FIN DE FICHERO O FICHERO NO DISPONIBLE AL HACER OPEN o SE INTENTA LEER UN FICHERO VACÍO ABIERTO COMO INPUT.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0072",
+    "code": "21",
+    "description": "INVALID-KEY POR ERROR SECUENCIAL.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0073",
+    "code": "22",
+    "description": "INVALID-KEY POR CLAVE PRIMARIA DUPLICADA O NO PERMITIDA.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0074",
+    "code": "23",
+    "description": "INVALID-KEY POR REGISTRO NO ENCONTRADO O FICHERO LLENO.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0077",
+    "code": "34",
+    "description": "EN WRITE DE ESDS NO HAY ESPACIO PARA AÑADIR UN REGISTRO.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0078",
+    "code": "90",
+    "description": "FICHERO OUTPUT DEFINIDO COMO RANDOM O DYNAMIC o BLOKAGE MAL DEFINIDO.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0079",
+    "code": "91",
+    "description": "PASSWORD ERRÓNEA.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0084",
+    "code": "93",
+    "description": "RECURSO NO DISPONIBLE.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0085",
+    "code": "94",
+    "description": "NO SE HA DEFINIDO APUNTADOR PARA EL SIGUIENTE REGISTRO EN RECUPERACIÓN SECUENCIAL.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0086",
+    "code": "95",
+    "description": "LONGITUD O POSICIÓN DE CLAVE ALTERNATIVA MAL DEFINIDA o REGISTRO CON INFORMACIÓN INVÁLIDA O INCOMPLETA.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0088",
+    "code": "97",
+    "description": "EL FICHERO NO FUE BIEN CERRADO; VERIFY AUTOMÁTICO Y REINTENTO DE OPEN.",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  },
+  {
+    "id": "ERR-VSAM-0104",
+    "code": "30",
+    "description": "ERROR PERMANENTE (DATA CHECK, PARITY CHECK, TRANSMISIÓN, EMPTY FILE).",
+    "system": "VSAM",
+    "operation": "FILESTATUS",
+    "notes": "",
+    "deleted": false
+  }
+]
