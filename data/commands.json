@@ -15,7 +15,7 @@
       "deleted": false },
     { "id": "CMD-TSO-0003", "name": "LISTALC", 
       "shortDescription": "Lista datasets asignados", 
-      "longDescription": "Lista todos los datasets asignados, 
+      "longDescription": "Lista todos los datasets asignados", 
       "examples": "", 
       "category": "TSO", 
       "deleted": false },
