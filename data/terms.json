@@ -101,7 +101,7 @@
   { "id": "JCL-0047", "name": "ALLOCATE", "shortDescription": "Asigna un dataset", "longDescription": "", "examples": "", "notes": "", "category": "JCL", "deleted": false },
   { "id": "JCL-0048", "name": "FREE", "shortDescription": "Libera un dataset", "longDescription": "", "examples": "", "notes": "", "category": "JCL", "deleted": false },
   { "id": "JCL-0049", "name": "PRINT", "shortDescription": "Imprime contenido de datasets", "longDescription": "", "examples": "", "notes": "", "category": "JCL", "deleted": false },
-  { "id": "JCL-0050", "name": "COPY", "shortDescription": "Copia datasets o miembros", "longDescription": "", "examples": "", "notes": "", "category": "JCL", "deleted": false }
+  { "id": "JCL-0050", "name": "COPY", "shortDescription": "Copia datasets o miembros", "longDescription": "", "examples": "", "notes": "", "category": "JCL", "deleted": false },
 
   { "id": "CICS-0001", "name": "TRANID", "shortDescription": "Identificador de transacción CICS", "longDescription": "", "examples": "", "notes": "", "category": "CICS", "deleted": false },
   { "id": "CICS-0002", "name": "COMMAREA", "shortDescription": "Área de comunicación entre programas", "longDescription": "", "examples": "", "notes": "", "category": "CICS", "deleted": false },
@@ -152,7 +152,7 @@
   { "id": "CICS-0047", "name": "WRITE FILE", "shortDescription": "Escritura de archivo VSAM", "longDescription": "", "examples": "", "notes": "", "category": "CICS", "deleted": false },
   { "id": "CICS-0048", "name": "REWRITE FILE", "shortDescription": "Actualización de registro VSAM", "longDescription": "", "examples": "", "notes": "", "category": "CICS", "deleted": false },
   { "id": "CICS-0049", "name": "DELETE FILE", "shortDescription": "Elimina registro VSAM", "longDescription": "", "examples": "", "notes": "", "category": "CICS", "deleted": false },
-  { "id": "CICS-0050", "name": "START", "shortDescription": "Inicia una transacción diferida", "longDescription": "", "examples": "", "notes": "", "category": "CICS", "deleted": false }
+  { "id": "CICS-0050", "name": "START", "shortDescription": "Inicia una transacción diferida", "longDescription": "", "examples": "", "notes": "", "category": "CICS", "deleted": false },
 
 
   { "id": "DB2-0001", "name": "SELECT", "shortDescription": "Consulta datos de una tabla", "longDescription": "", "examples": "", "notes": "", "category": "DB2", "deleted": false },
