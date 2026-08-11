@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-11-16",
+  "versionDate": "2026-11-18",
   "terms": [
     { "id": "COBOL-0001", "name": "PIC", "shortDescription": "Define el formato de un campo", "longDescription": "", "examples": "", "notes": "", "category": "COBOL", "deleted": false },
     { "id": "COBOL-0002", "name": "COMP", "shortDescription": "Representación binaria de un campo", "longDescription": "", "examples": "", "notes": "", "category": "COBOL", "deleted": false },
