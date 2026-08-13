@@ -1,1 +1,48 @@
+[
+  {
+    "id": 1,
+    "title": "¿Qué es un ABEND?",
+    "text": "Un ABEND (Abnormal End) ws el término utilizado en entornos IBM Mainframe para referirse a la finalización anormal de un programa, proceso o trabajo. Se produce cuando una aplicación no puede continuar su ejecución debido a un error y el sistema interrumpe su funcionamiento antes de que finalice correctamente.\n\nUn ABEND puede estar provocado por diversas causas, como errores de programación, accesos incorrectos a memoria, problemas con archivos o bases de datos, falta de recursos del sistema o incidencias en la ejecución de instrucciones. Cuando ocurre, el sistema genera un código de error que ayuda a identificar el origen del problema y facilita su análisis y resolución."
+  },
+  {
+    "id": 2,
+    "title": "¿Cómo analizar un DUMP de sistema?",
+    "text": "Un system dump (SYSMDUMP, SYSUDUMP o CEEDUMP) es una fotografía completa del estado del programa en el momento del ABEND. Analizarlo permite identificar la instrucción exacta que falló, el registro corrupto, el offset, y el módulo responsable.\n\nCada dump aporta distinta profundidad:\n\nSYSMDUMP — el más completo (memoria, registros, control blocks).\n\nSYSUDUMP — más ligero, orientado a debugging básico.\n\nCEEDUMP — generado por LE (Language Environment), útil para COBOL/PLI/C.\n\nPara analizarlo, identifica el ABEND, revisa el PSW, localiza el offset de la instrucción fallida, examina los registros (R0–R15) y mapea el offset al listing del programa. Finalmente, revisa el almacenamiento para detectar datos corruptos o direcciones inválidas. Esto permite determinar la causa raíz del error."
+  },
+  {
+    "id": 3,
+    "title": "¿Cómo interpretar un SQLCODE?",
+    "text": "SQLCODE es un código de retorno generado por el gestor de bases de datos (habitualmente DB2 en entornos Mainframe) tras la ejecución de una sentencia SQL. Su función es indicar si la operación se ha realizado correctamente, si ha finalizado con alguna advertencia o si se ha producido un error.\nLa interpretación de un SQLCODE se basa principalmente en el signo y valor del código:\n\nSQLCODE = 0: La sentencia SQL se ha ejecutado correctamente y sin incidencias.\n\nSQLCODE positivo (> 0): La operación se ha completado, pero se ha producido una advertencia o condición especial que conviene revisar. Aunque la ejecución continúa, puede existir alguna situación que requiera atención.\n\nSQLCODE negativo (< 0): La sentencia ha fallado y la operación no se ha completado correctamente. En este caso es necesario analizar el código específico para identificar la causa del error y aplicar las acciones correctivas correspondientes."
+  },
+  {
+    "id": 4,
+    "title": "¿Que diferencia hay entre SQLSTATE y SQLCODE?",
+    "text": "En DB2 (y en general en SQL estándar), SQLSTATE y SQLCODE son dos formas distintas de reportar el resultado de una operación SQL. Ambos aparecen en errores, pero no significan lo mismo ni se usan igual.\n\nSQLCODE es un código numérico propio de DB2 que indica el resultado de una sentencia SQL (0 = OK, >0 = warning, <0 = error).\n\nSQLSTATE es un código estándar ANSI de 5 caracteres que clasifica errores de forma portable entre bases de datos. SQLCODE sirve para diagnóstico técnico detallado; SQLSTATE para compatibilidad y manejo genérico de errores."
+  },
+  {
+    "id": 5,
+    "title": "¿Cómo funciona el COND en JCL?",
+    "text": "COND es una condición que permite saltar (no ejecutar) un step de JCL dependiendo del return code (RC) de steps anteriores.\nSu función es evitar ejecutar pasos innecesarios o peligrosos cuando un paso previo falla o devuelve un RC no deseado.\n\nRegla fundamental del COND:\n\nSi la condición se cumple → el step NO se ejecuta.\n\nSi la condición NO se cumple → el step SÍ se ejecuta.\n\nCOND controla si un step debe ejecutarse según el return code de steps anteriores. Si la condición se cumple, el step se omite. Por ejemplo, COND=(4,LT) significa “si algún step previo devolvió RC menor que 4, no ejecutes este step”. Es útil para evitar ejecutar pasos cuando un proceso previo falló o devolvió un RC no esperado."
+  },
+  {
+      "id": 6,
+      "title": "¿Que diferencia hay entre JOBLIB y STEPLIB en JCL?",
+      "text": "En JCL, tanto JOBLIB como STEPLIB sirven para indicar en qué librerías (PDS/PDSE) están los programas ejecutables (load modules) que se van a usar.La diferencia está en el alcance.\n\nJOBLIB define la librería de carga para todos los steps del job, mientras que STEPLIB define la librería solo para un step específico.\n\nSTEPLIB tiene prioridad sobre JOBLIB y es el único permitido dentro de PROCs. Se usa JOBLIB para librerías comunes y STEPLIB para librerías particulares de un step."
+  },
+  {
+    "id": 7,
+    "title": "¿Qué es un proceso paralelo en batch?",
+    "text": "Un proceso paralelo batch es una estrategia donde un mismo trabajo se divide en múltiples subprocesos independientes que se ejecutan al mismo tiempo, aprovechando la capacidad del sistema para reducir tiempos de ejecución y aumentar el rendimiento.\n\nEn lugar de procesar un fichero o tabla de forma secuencial, el trabajo se fragmenta y cada fragmento se procesa en paralelo.\n\nCada proceso maneja una parte del input (por rango, partición o fuente), reduciendo drásticamente los tiempos de ejecución y permitiendo cargas masivas más eficientes.\nAl final, los resultados se consolidan en un único output."
+  },
+  {
+    "id": 8,
+    "title": "¿Qué es el spool en z/OS?",
+    "text": "El spool (Simultaneous Peripheral Operations On‑Line) es un área de almacenamiento temporal donde z/OS guarda:\n\nLa salida de los jobs (SYSOUT, mensajes, listados).\n\nLa entrada pendiente de procesar (jobs enviados a la cola).\n\nEs decir, el spool actúa como un intermediario entre los programas y los dispositivos de salida (impresoras, pantallas, logs).\n\n Permite ejecutar trabajos sin depender de dispositivos físicos, centraliza la salida (SYSOUT, listados, mensajes) y facilita la revisión desde SDSF. Es esencial para el funcionamiento del batch y la gestión de colas en JES2/JES3."
+  },
+  {
+    "id": 9,
+    "title": "¿Qué es JES2 en z/OS?",
+    "text": "JES2 (Job Entry Subsystem 2) es el componente de z/OS encargado de gestionar la entrada, ejecución y salida de los jobs batch.\n\nLa salida de los jobs (SYSOUT, mensajes, listados).\nEs, literalmente, el “orquestador” del trabajo batch: controla colas, spool, logs, prioridades y distribución de recursos.\n\nSin JES2, un sistema z/OS no podría ejecutar JCL, ni gestionar el spool, ni coordinar la ejecución de jobs.\n\n Controla colas, spool, iniciadores, logs y prioridades. Es el componente que organiza todo el ciclo de vida del job y permite que el batch funcione de forma eficiente y controlada."
+  }
+]
 
