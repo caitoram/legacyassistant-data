@@ -549,7 +549,7 @@
 {
     "id": "ERR-ABEND-0077",
     "code": "S072",
-    "description": "No tienes dd iefrder, o está mal.",
+    "description": "No tienes DD IEFRDER, o está mal.",
     "notes": "Falta o error en DD IEFRDER.",
     "system": "ABEND",
     "deleted": false
@@ -557,7 +557,7 @@
   {
     "id": "ERR-ABEND-0078",
     "code": "S073",
-    "description": "Siendo programa online, el dsn de la cinta log no puede ser dummy. La psb está como que actualiza, pero no pide cinta log porque en realidad consulta. Relanzar sin dbrc.",
+    "description": "Siendo programa online, el dsn de la cinta log no puede ser DUMMY. La psb está como que actualiza, pero no pide cinta log porque en realidad consulta. Relanzar sin DBRC.",
     "notes": "DSN de cinta LOG no puede ser DUMMY; PSB marcada como actualización; relanzar sin DBRC.",
     "system": "ABEND",
     "deleted": false
@@ -637,7 +637,7 @@
   {
     "id": "ERR-ABEND-0088",
     "code": "S0B0",
-    "description": "I/o error en sys1.sysjobqe. Hacer ipl preformateando colas.",
+    "description": "I/O error en sys1.sysjobqe. Hacer ipl preformateando colas.",
     "notes": "I/O error en SYS1.SYSJOBQE; requiere IPL preformateando colas.",
     "system": "ABEND",
     "deleted": false
@@ -765,7 +765,7 @@
   {
     "id": "ERR-ABEND-0116",
     "code": "S0E1",
-    "description": "Error de paginación en ibm 3081.",
+    "description": "Error de paginación en IBM 3081.",
     "notes": "Error de paginación específico del IBM 3081.",
     "system": "ABEND",
     "deleted": false
@@ -813,7 +813,7 @@
   {
     "id": "ERR-ABEND-0143",
     "code": "S101",
-    "description": "La cuenta de esperas contenida en el registro 0 cuando se emitió una macroinstrución wait es mayor que el número de eventos cuya terminación se está esperando.",
+    "description": "La cuenta de esperas contenida en el registro 0 cuando se emitió una macroinstrución WAIT es mayor que el número de eventos cuya terminación se está esperando.",
     "notes": "Número de ECB mayor que eventos esperados en WAIT.",
     "system": "ABEND",
     "deleted": false
@@ -821,7 +821,7 @@
   {
     "id": "ERR-ABEND-0144",
     "code": "S102",
-    "description": "Se ha dado una dirección no válida de ecb en una macro post. El punto de relanzamiento que das no es el correcto. Te falta dd systsprt sysout=* en procedimiento db2bdesa.",
+    "description": "Se ha dado una dirección no válida de ecb en una macro post. El punto de relanzamiento que das no es el correcto. Te falta dd systsprt sysout=* en procedimiento DB2BDESA.",
     "notes": "ECB inválido en POST; punto de relanzamiento incorrecto; falta DD SYSTSPRT SYSOUT=* en DB2BDESA.",
     "system": "ABEND",
     "deleted": false
@@ -829,7 +829,7 @@
   {
     "id": "ERR-ABEND-0145",
     "code": "S103",
-    "description": "Se ha dado una dirección no válida de ecb en una macro return.",
+    "description": "Se ha dado una dirección no válida de RCB en una macro RETURN.",
     "notes": "ECB inválido en RETURN.",
     "system": "ABEND",
     "deleted": false
@@ -853,7 +853,7 @@
   {
     "id": "ERR-ABEND-0148",
     "code": "S10A",
-    "description": "Falta de región en sqa local. Falta ficha de clasificación fusión.",
+    "description": "Falta de región en SQA local. Falta ficha de clasificación fusión.",
     "notes": "Región insuficiente en SQA; falta ficha de clasificación FUSION.",
     "system": "ABEND",
     "deleted": false
@@ -909,7 +909,7 @@
   {
     "id": "ERR-ABEND-0155",
     "code": "S12A",
-    "description": "Error en macro attach. Corregirla especificando el subpool en operando shspv o shspl. En sentencia sort-merge falta definir campo de control.",
+    "description": "Error en macro ATTACH. Corregirla especificando el subpool en operando SHSPV o SHSPL. En sentencia SORT-MERGE falta definir campo de control.",
     "notes": "Error en ATTACH; falta SUBPOOL; falta campo de control en SORT-MERGE.",
     "system": "ABEND",
     "deleted": false
@@ -917,7 +917,7 @@
   {
     "id": "ERR-ABEND-0156",
     "code": "S12C",
-    "description": "Error en macro chap. Dirección del segundo operando inválida.",
+    "description": "Error en macro CHAP. Dirección del segundo operando inválida.",
     "notes": "Operando inválido en CHAP.",
     "system": "ABEND",
     "deleted": false
@@ -933,7 +933,7 @@
   {
     "id": "ERR-ABEND-0158",
     "code": "S130",
-    "description": "Error en macro deq. Especifica un recurso no pedido antes con macro enq.",
+    "description": "Error en macro DEQ. Especifica un recurso no pedido antes con macro ENQ.",
     "notes": "DEQ de recurso no solicitado previamente con ENQ.",
     "system": "ABEND",
     "deleted": false
@@ -949,7 +949,7 @@
   {
     "id": "ERR-ABEND-0172",
     "code": "S138",
-    "description": "Error en macro enq. Se han usado dos enq para un mismo recurso sin deq en medio.",
+    "description": "Error en macro ENQ. Se han usado dos ENQ para un mismo recurso sin DEQ en medio.",
     "notes": "Doble ENQ sin DEQ intermedio.",
     "system": "ABEND",
     "deleted": false
@@ -957,7 +957,7 @@
   {
     "id": "ERR-ABEND-0173",
     "code": "S13A",
-    "description": "Igual s138 o en sentencia sort-merge hay una palabra clave no válida.",
+    "description": "Igual S138 o en sentencia SORT-MERGE hay una palabra clave no válida.",
     "notes": "Doble ENQ sin DEQ o palabra clave inválida en SORT-MERGE.",
     "system": "ABEND",
     "deleted": false
@@ -973,7 +973,7 @@
   {
     "id": "ERR-ABEND-0175",
     "code": "S13F",
-    "description": "Ocurre en rearranque mediante checkpoint.",
+    "description": "Ocurre en rearranque mediante CHECKPOINT.",
     "notes": "Error durante rearranque con CHECKPOINT.",
     "system": "ABEND",
     "deleted": false
@@ -981,8 +981,8 @@
 {
     "id": "ERR-ABEND-0201",
     "code": "S140",
-    "description": "Error en macro rdjfcb.",
-    "notes": "Error en RDJFCB.",
+    "description": "Error en RDJFCB.",
+    "notes": "Error en macro RDJFCB",
     "system": "ABEND",
     "deleted": false
   },
@@ -1005,7 +1005,7 @@
   {
     "id": "ERR-ABEND-0204",
     "code": "S155",
-    "description": "Un usuario no autorizado ha emitido la svc 85.",
+    "description": "Un usuario no autorizado ha emitido la SVC 85.",
     "notes": "SVC 85 emitida por usuario no autorizado.",
     "system": "ABEND",
     "deleted": false
@@ -1013,7 +1013,7 @@
   {
     "id": "ERR-ABEND-0205",
     "code": "S158",
-    "description": "Ejecutas un sort sin poner ficha sysout.",
+    "description": "Ejecutas un SORT sin poner ficha SYSOUT.",
     "notes": "Falta DD SYSOUT en SORT.",
     "system": "ABEND",
     "deleted": false
@@ -1029,7 +1029,7 @@
   {
     "id": "ERR-ABEND-0207",
     "code": "S160",
-    "description": "En sort, fichero vsam de entrada sin datos.",
+    "description": "En SORT, fichero VSAM de entrada sin datos.",
     "notes": "VSAM de entrada vacío en SORT.",
     "system": "ABEND",
     "deleted": false
@@ -1037,7 +1037,7 @@
 {
     "id": "ERR-ABEND-0208",
     "code": "S16A",
-    "description": "En operando field hay valores no válidos.",
+    "description": "En operando FIELD hay valores no válidos.",
     "notes": "Valores inválidos en operando FIELD.",
     "system": "ABEND",
     "deleted": false
@@ -1045,7 +1045,7 @@
   {
     "id": "ERR-ABEND-0209",
     "code": "S16D",
-    "description": "Esr inválido.",
+    "description": "ESR inválido.",
     "notes": "ESR inválido.",
     "system": "ABEND",
     "deleted": false
@@ -1053,7 +1053,7 @@
   {
     "id": "ERR-ABEND-0210",
     "code": "S1B0",
-    "description": "Ttr inválido para una dirección de sys1.sysjobqe. Hacer otra vez ipl preformateando colas.",
+    "description": "TTR inválido para una dirección de SYS1.SYSJOBQE. Hacer otra vez ipl preformateando colas.",
     "notes": "TTR inválido; requiere IPL preformateando colas.",
     "system": "ABEND",
     "deleted": false
@@ -1069,7 +1069,7 @@
   {
     "id": "ERR-ABEND-0212",
     "code": "S187",
-    "description": "En vsam tabla incorrecta de verbos generada por el compilador.",
+    "description": "En VSAM tabla incorrecta de verbos generada por el compilador.",
     "notes": "Tabla de verbos VSAM incorrecta generada por el compilador.",
     "system": "ABEND",
     "deleted": false
@@ -1085,7 +1085,7 @@
   {
     "id": "ERR-ABEND-0214",
     "code": "S19A",
-    "description": "Error de tamaño (size).",
+    "description": "Error de tamaño (SIZE).",
     "notes": "Tamaño SIZE incorrecto.",
     "system": "ABEND",
     "deleted": false
@@ -1093,7 +1093,7 @@
   {
     "id": "ERR-ABEND-0215",
     "code": "S200",
-    "description": "Data check keytape o i/o error por claves de protección de scb, iob, dcb inválidas.",
+    "description": "DATA CHECK KEYTAPE o i/o error por claves de protección de scb, iob, dcb inválidas.",
     "notes": "DATA CHECK en cinta de claves; SCB/IOB/DCB con claves de protección inválidas.",
     "system": "ABEND",
     "deleted": false
@@ -1101,7 +1101,7 @@
   {
     "id": "ERR-ABEND-0216",
     "code": "S201",
-    "description": "Se ha dado una dirección no válida de ecb en una macro wait.",
+    "description": "Se ha dado una dirección no válida de ecb en una macro WAIT.",
     "notes": "ECB inválido en WAIT.",
     "system": "ABEND",
     "deleted": false
@@ -1109,7 +1109,7 @@
   {
     "id": "ERR-ABEND-0217",
     "code": "S202",
-    "description": "Se halló una dirección no válida de rb en una ecb. Dirección del rb se coloca en el ecb después de emitir una macro wait y antes de una macro post.",
+    "description": "Se halló una dirección no válida de RB en una ECB. Dirección del RB se coloca en el ECB después de emitir una macro WAIT y antes de una macro POST.",
     "notes": "Dirección de RB inválida en ECB tras WAIT y antes de POST.",
     "system": "ABEND",
     "deleted": false
@@ -1117,7 +1117,7 @@
   {
     "id": "ERR-ABEND-0218",
     "code": "S203",
-    "description": "Falta sysin. En vsam se ha detectado un intento de dividir entre cero y no se ha especificado la condición on size error. El registro 14 indica la operación que lo provoca.",
+    "description": "Falta SYSIN. En vsam se ha detectado un intento de dividir entre cero y no se ha especificado la condición on size error. El registro 14 indica la operación que lo provoca.",
     "notes": "Falta SYSIN; división entre cero en VSAM sin ON SIZE ERROR; revisar registro 14.",
     "system": "ABEND",
     "deleted": false
@@ -1125,7 +1125,7 @@
   {
     "id": "ERR-ABEND-0219",
     "code": "S204",
-    "description": "Está lleno el sysback.",
+    "description": "Está lleno el SYSBACK.",
     "notes": "SYSBACK lleno.",
     "system": "ABEND",
     "deleted": false
@@ -1133,7 +1133,7 @@
   {
     "id": "ERR-ABEND-0220",
     "code": "S206",
-    "description": "No pueden ser abiertas la psblib o la dbdlib. Mira si tienes puesta la \"//IMS   DD DSN=\".",
+    "description": "No pueden ser abiertas la psblib o la DBDLIB. Mira si tienes puesta la \"//IMS   DD DSN=\".",
     "notes": "PSBLIB/DBDLIB no abiertas; revisar DD IMS DD DSN=.",
     "system": "ABEND",
     "deleted": false
@@ -1141,7 +1141,7 @@
   {
     "id": "ERR-ABEND-0221",
     "code": "S207",
-    "description": "Error en macro xctl de una rutina de exit asíncrona.",
+    "description": "Error en macro XCTL de una rutina de exit asíncrona.",
     "notes": "Error en XCTL de rutina EXIT asíncrona.",
     "system": "ABEND",
     "deleted": false
@@ -1149,7 +1149,7 @@
   {
     "id": "ERR-ABEND-0222",
     "code": "S20A",
-    "description": "Conflicto en el main-storage supervisor. Volver a meter el trabajo. Sentencia record con palabra clave no válida.",
+    "description": "Conflicto en el main-storage supervisor. Volver a meter el trabajo. Sentencia RECORD con palabra clave no válida.",
     "notes": "Conflicto en supervisor de memoria principal; palabra clave inválida en RECORD.",
     "system": "ABEND",
     "deleted": false
@@ -1157,7 +1157,7 @@
   {
     "id": "ERR-ABEND-0223",
     "code": "S213",
-    "description": "Open en dispositivo de acceso directo. Posibles causas: el formato 1 (dscb) no se puede localizar en la tabla del volumen. Fichero cerrado o inexistente. El archivo está en catálogo pero no existe en el volumen al que le remite el catálogo. Al dirigirse a un archivo especificando unit y vol el fichero no se encuentra en dicho volumen. Intentar corregir la longitud de un fichero mediante una dcb. 04 open de vsam pero que estaba definido en programa como secuencial.",
+    "description": "OPEN en dispositivo de acceso directo. Posibles causas: el formato 1 (DSCB) no se puede localizar en la tabla del volumen. Fichero cerrado o inexistente. El archivo está en catálogo pero no existe en el volumen al que le remite el catálogo. Al dirigirse a un archivo especificando unit y vol el fichero no se encuentra en dicho volumen. Intentar corregir la longitud de un fichero mediante una dcb. 04 open de vsam pero que estaba definido en programa como secuencial.",
     "notes": "Problemas de OPEN en acceso directo: DSCB no localizado; fichero inexistente o solo en catálogo; UNIT/VOL incorrectos; DCB usada para corregir longitud; código 04: VSAM definido como secuencial.",
     "system": "ABEND",
     "deleted": false
@@ -1165,7 +1165,7 @@
   {
     "id": "ERR-ABEND-0224",
     "code": "S214",
-    "description": "Error en close de cinta magnética. Data check. Parámetro parm en ficha exec.",
+    "description": "Error en close de cinta magnética. Data check. Parámetro parm en ficha EXEC.",
     "notes": "Error en CLOSE de cinta; DATA CHECK; PARM incorrecto en EXEC.",
     "system": "ABEND",
     "deleted": false
@@ -1173,7 +1173,7 @@
   {
     "id": "ERR-ABEND-0225",
     "code": "S217",
-    "description": "Error en macro close con operando tipo t. Mensaje iec219i.",
+    "description": "Error en macro close con operando tipo t. Mensaje IEC219I.",
     "notes": "Error en CLOSE con operando T; ver mensaje IEC219I.",
     "system": "ABEND",
     "deleted": false
@@ -1181,7 +1181,7 @@
   {
     "id": "ERR-ABEND-0226",
     "code": "S21A",
-    "description": "En sentencia record falta operando type.",
+    "description": "En sentencia record falta operando TYPE.",
     "notes": "Falta operando TYPE en RECORD.",
     "system": "ABEND",
     "deleted": false
@@ -1189,7 +1189,7 @@
   {
     "id": "ERR-ABEND-0227",
     "code": "S222",
-    "description": "Operador cancela el trabajo, el sistema no genera dump.",
+    "description": "Operador cancela el trabajo, el sistema no genera DUMP.",
     "notes": "Cancelación por operador sin DUMP.",
     "system": "ABEND",
     "deleted": false
@@ -1197,7 +1197,7 @@
   {
     "id": "ERR-ABEND-0228",
     "code": "S228",
-    "description": "Error en macro extract. Dirección de la lista de parámetros de entrada inválida.",
+    "description": "Error en macro EXTRACT. Dirección de la lista de parámetros de entrada inválida.",
     "notes": "Lista de parámetros de entrada inválida en EXTRACT.",
     "system": "ABEND",
     "deleted": false
@@ -1205,7 +1205,7 @@
   {
     "id": "ERR-ABEND-0229",
     "code": "S22A",
-    "description": "Error en macro attach. Formato de registro type no es fijo o variable.",
+    "description": "Error en macro ATTACH. Formato de registro type no es fijo o variable.",
     "notes": "Formato de registro TYPE incorrecto en ATTACH.",
     "system": "ABEND",
     "deleted": false
@@ -1213,7 +1213,7 @@
   {
     "id": "ERR-ABEND-0230",
     "code": "S22C",
-    "description": "Error en macro chap. Dirección de tcb (segundo operando de macro) inválida.",
+    "description": "Error en macro CHAP. Dirección de tcb (segundo operando de macro) inválida.",
     "notes": "TCB inválido como segundo operando en CHAP.",
     "system": "ABEND",
     "deleted": false
@@ -1221,7 +1221,7 @@
   {
     "id": "ERR-ABEND-0231",
     "code": "S22D",
-    "description": "Error en ejecución de un programa overlay.",
+    "description": "Error en ejecución de un programa OVERLAY.",
     "notes": "Error de ejecución en programa OVERLAY.",
     "system": "ABEND",
     "deleted": false
@@ -1229,7 +1229,7 @@
   {
     "id": "ERR-ABEND-0232",
     "code": "S230",
-    "description": "Error en macro deq. Longitud del nombre del recurso inválida.",
+    "description": "Error en macro DEQ. Longitud del nombre del recurso inválida.",
     "notes": "Nombre de recurso con longitud inválida en DEQ.",
     "system": "ABEND",
     "deleted": false
@@ -1237,7 +1237,7 @@
   {
     "id": "ERR-ABEND-0233",
     "code": "S237",
-    "description": "El error se produce al finalizar el volumen. Puede ser cinta deteriorada. 04 error en contador de bloques de etiqueta de cola. Puede haberse perdido un bloque de datos debido a un error de hardware. 08 en una operación de ficheros concatenados la etiqueta de uno cualquiera de ellos (salvo el primero) no coincide con el dsn reflejado en la dd.",
+    "description": "El error se produce al finalizar el volumen. Puede ser cinta deteriorada. 04 error en contador de bloques de etiqueta de cola. Puede haberse perdido un bloque de datos debido a un error de hardware. 08 en una operación de ficheros concatenados la etiqueta de uno cualquiera de ellos (salvo el primero) no coincide con el dsn reflejado en la DD.",
     "notes": "Fin de volumen; posible cinta deteriorada; código 04: error en contador de bloques de etiqueta de cola; posible pérdida de datos por hardware; código 08: etiqueta de fichero concatenado no coincide con DSN de DD.",
     "system": "ABEND",
     "deleted": false
@@ -1245,7 +1245,7 @@
   {
     "id": "ERR-ABEND-0234",
     "code": "S238",
-    "description": "Error en macro enq. Longitud del nombre del recurso inválida.",
+    "description": "Error en macro ENQ. Longitud del nombre del recurso inválida.",
     "notes": "Nombre de recurso con longitud inválida en ENQ.",
     "system": "ABEND",
     "deleted": false
@@ -1253,7 +1253,7 @@
   {
     "id": "ERR-ABEND-0235",
     "code": "S23A",
-    "description": "En sentencia record falta definidor length.",
+    "description": "En sentencia record falta definidor LENGTH.",
     "notes": "Falta definidor LENGTH en RECORD.",
     "system": "ABEND",
     "deleted": false
@@ -1261,7 +1261,7 @@
   {
     "id": "ERR-ABEND-0236",
     "code": "S23E",
-    "description": "Error en macro detach. Dirección tcb de subtarea inválida.",
+    "description": "Error en macro DETACH. Dirección tcb de subtarea inválida.",
     "notes": "TCB de subtarea inválido en DETACH.",
     "system": "ABEND",
     "deleted": false
@@ -1277,7 +1277,7 @@
     {
     "id": "ERR-ABEND-0238",
     "code": "S24A",
-    "description": "Valor incorrecto de parámetro length en sentencia record.",
+    "description": "Valor incorrecto de parámetro length en sentencia RECORD.",
     "notes": "Parámetro LENGTH incorrecto en RECORD.",
     "system": "ABEND",
     "deleted": false
@@ -1285,7 +1285,7 @@
   {
     "id": "ERR-ABEND-0239",
     "code": "S254",
-    "description": "No puede abrir base de datos. Se intenta call con psb de carga habiéndose ya efectuado un open y un close.",
+    "description": "No puede abrir base de datos. Se intenta call con psb de carga habiéndose ya efectuado un OPEN y un CLOSE.",
     "notes": "No puede abrir BD; CALL con PSB de carga tras OPEN y CLOSE previos.",
     "system": "ABEND",
     "deleted": false
@@ -1301,7 +1301,7 @@
   {
     "id": "ERR-ABEND-0241",
     "code": "S260",
-    "description": "El programa de operación machaca la linkage. Call excede de 18 parámetros.",
+    "description": "El programa de operación machaca la LINKAGE. Call excede de 18 parámetros.",
     "notes": "CALL con más de 18 parámetros; corrupción de LINKAGE.",
     "system": "ABEND",
     "deleted": false
@@ -1309,7 +1309,7 @@
   {
     "id": "ERR-ABEND-0242",
     "code": "S261",
-    "description": "Compilar por tsop. Pcb no definida en la entry o error en call.",
+    "description": "Compilar por TSOP. PCB no definida en la ENTRY o error en CALL.",
     "notes": "Compilar por TSOP; PCB no definida; error en CALL.",
     "system": "ABEND",
     "deleted": false
@@ -1317,7 +1317,7 @@
   {
     "id": "ERR-ABEND-0243",
     "code": "S26A",
-    "description": "Falta valor l1 en operando length.",
+    "description": "Falta valor L1 en operando LENGTH.",
     "notes": "Falta valor L1 en LENGTH.",
     "system": "ABEND",
     "deleted": false
@@ -1325,7 +1325,7 @@
   {
     "id": "ERR-ABEND-0244",
     "code": "S27A",
-    "description": "Campo de control sobrepasa longitud mínima de record.",
+    "description": "Campo de control sobrepasa longitud mínima de RECORD.",
     "notes": "Campo de control excede longitud mínima de RECORD.",
     "system": "ABEND",
     "deleted": false
@@ -1341,7 +1341,7 @@
   {
     "id": "ERR-ABEND-0246",
     "code": "S295",
-    "description": "Se intenta leer fichero después de final o close en vsam. No coinciden áreas tampones de read y write. Falta dd o no coincide con select. Se pide ready trace y no tiene sysout. El código de retorno ha sido cambiado de positivo a negativo. Fichero abierto como input y utilizado como output.",
+    "description": "Se intenta leer fichero después de final o CLOSE en VSAM. No coinciden áreas tampones de READ y WRITE. Falta DD o no coincide con SELECT. Se pide ready trace y no tiene SYSOUT. El código de retorno ha sido cambiado de positivo a negativo. Fichero abierto como INPUT y utilizado como OUTPUT.",
     "notes": "Lectura tras FIN/CLOSE en VSAM; áreas READ/WRITE no coinciden; falta DD o SELECT incorrecto; READY TRACE sin SYSOUT; retorno cambiado; fichero INPUT usado como OUTPUT.",
     "system": "ABEND",
     "deleted": false
@@ -1357,7 +1357,7 @@
   {
     "id": "ERR-ABEND-0248",
     "code": "S2F3",
-    "description": "En mitad de la ejecución hicieron ipl.",
+    "description": "En mitad de la ejecución hicieron IPL.",
     "notes": "IPL durante ejecución.",
     "system": "ABEND",
     "deleted": false
@@ -1365,7 +1365,7 @@
   {
     "id": "ERR-ABEND-0249",
     "code": "S2F8",
-    "description": "Igual s2f3.",
+    "description": "Igual S2f3.",
     "notes": "IPL durante ejecución (igual que S2F3).",
     "system": "ABEND",
     "deleted": false
@@ -1373,7 +1373,7 @@
   {
     "id": "ERR-ABEND-0250",
     "code": "S2FF",
-    "description": "Tarea terminó anormalmente al pedir user appendage iii.",
+    "description": "Tarea terminó anormalmente al pedir user appendage III.",
     "notes": "Fallo al solicitar USER APPENDAGE III.",
     "system": "ABEND",
     "deleted": false
@@ -1381,7 +1381,7 @@
   {
     "id": "ERR-ABEND-0251",
     "code": "S300",
-    "description": "I/o error. Clave de protección de deb inválida.",
+    "description": "I/O error. Clave de protección de DCB inválida.",
     "notes": "I/O error; clave de protección DEB inválida.",
     "system": "ABEND",
     "deleted": false
@@ -1389,7 +1389,7 @@
   {
     "id": "ERR-ABEND-0252",
     "code": "S301",
-    "description": "Se emitió una macro wait especificando un ecb que no ha sido notificado como completo de un evento anterior.",
+    "description": "Se emitió una macro wait especificando un EDB que no ha sido notificado como completo de un evento anterior.",
     "notes": "ECB no completado antes de WAIT.",
     "system": "ABEND",
     "deleted": false
@@ -1397,7 +1397,7 @@
   {
     "id": "ERR-ABEND-0253",
     "code": "S303",
-    "description": "La hora del volumen donde está el vsam no concuerda con la que grabó el sistema en el registro del catálogo de ficheros.",
+    "description": "La hora del volumen donde está el VSAM no concuerda con la que grabó el sistema en el registro del catálogo de ficheros.",
     "notes": "Hora del volumen VSAM no coincide con catálogo.",
     "system": "ABEND",
     "deleted": false
@@ -1405,7 +1405,7 @@
   {
     "id": "ERR-ABEND-0254",
     "code": "S304",
-    "description": "La hora del componente de datos de un vsam y la hora del componente de índices no concuerdan por haberse actualizado alguno por separado.",
+    "description": "La hora del componente de datos de un VSAM y la hora del componente de índices no concuerdan por haberse actualizado alguno por separado.",
     "notes": "Desfase horario entre componente de datos e índices VSAM.",
     "system": "ABEND",
     "deleted": false
@@ -1413,7 +1413,7 @@
   {
     "id": "ERR-ABEND-0255",
     "code": "S305",
-    "description": "Error en macro freemain.",
+    "description": "Error en macro FREEMAIN.",
     "notes": "Error en FREEMAIN.",
     "system": "ABEND",
     "deleted": false
@@ -1421,7 +1421,7 @@
   {
     "id": "ERR-ABEND-0256",
     "code": "S306",
-    "description": "Falta ficha DFSRESLB y en la steplib hay una operación no autorizada concatenada, con lo cual considera a las demás como no autorizadas.",
+    "description": "Falta ficha DFSRESLB y en la STEPLIB hay una operación no autorizada concatenada, con lo cual considera a las demás como no autorizadas.",
     "notes": "Falta DFSRESLB; STEPLIB con operación no autorizada; resto consideradas no autorizadas.",
     "system": "ABEND",
     "deleted": false
@@ -1429,7 +1429,7 @@
 {
     "id": "ERR-ABEND-0257",
     "code": "S308",
-    "description": "El programa problema solicitó la carga de un módulo utilizando un punto de entrada dado al programa de control mediante una macro identify.",
+    "description": "El programa problema solicitó la carga de un módulo utilizando un punto de entrada dado al programa de control mediante una macro IDENTIFY.",
     "notes": "Carga de módulo mediante IDENTIFY con punto de entrada incorrecto.",
     "system": "ABEND",
     "deleted": false
@@ -1437,7 +1437,7 @@
   {
     "id": "ERR-ABEND-0258",
     "code": "S30A",
-    "description": "Igual s305 o salida definida dos veces en sentencia mods.",
+    "description": "Igual S305 o salida definida dos veces en sentencia MODS.",
     "notes": "Salida definida dos veces en MODS; también puede ser error tipo S305 (FREEMAIN).",
     "system": "ABEND",
     "deleted": false
@@ -1445,7 +1445,7 @@
   {
     "id": "ERR-ABEND-0259",
     "code": "S313",
-    "description": "Error en open.",
+    "description": "Error en OPEN.",
     "notes": "Error en OPEN (macro).",
     "system": "ABEND",
     "deleted": false
@@ -1453,7 +1453,7 @@
   {
     "id": "ERR-ABEND-0260",
     "code": "S314",
-    "description": "Rebasa el límite de tiempo o error en close.",
+    "description": "Rebasa el límite de tiempo o error en CLOSE.",
     "notes": "Tiempo excedido o error en CLOSE.",
     "system": "ABEND",
     "deleted": false
@@ -1469,7 +1469,7 @@
   {
     "id": "ERR-ABEND-0262",
     "code": "S31A",
-    "description": "Carácter no válido en sentencia mods.",
+    "description": "Carácter no válido en sentencia MODS.",
     "notes": "Carácter inválido en MODS.",
     "system": "ABEND",
     "deleted": false
@@ -1477,7 +1477,7 @@
   {
     "id": "ERR-ABEND-0263",
     "code": "S322",
-    "description": "Tiempo insuficiente. La ejecución requiere más tiempo que el especificado con parámetro time en ficha job.",
+    "description": "Tiempo insuficiente. La ejecución requiere más tiempo que el especificado con parámetro time en ficha JOB.",
     "notes": "Tiempo excedido; parámetro TIME insuficiente en JOB.",
     "system": "ABEND",
     "deleted": false
@@ -1485,7 +1485,7 @@
   {
     "id": "ERR-ABEND-0264",
     "code": "S328",
-    "description": "Error en macro extract.",
+    "description": "Error en macro EXTRACT.",
     "notes": "Error en EXTRACT (macro).",
     "system": "ABEND",
     "deleted": false
@@ -1493,7 +1493,7 @@
   {
     "id": "ERR-ABEND-0265",
     "code": "S32A",
-    "description": "Error en macro attach. Llamada a la rutina de usuario sin activar salida e61.",
+    "description": "Error en macro ATTACH. Llamada a la rutina de usuario sin activar salida E61.",
     "notes": "ATTACH sin activar salida E61 antes de llamar a rutina de usuario.",
     "system": "ABEND",
     "deleted": false
@@ -1501,7 +1501,7 @@
   {
     "id": "ERR-ABEND-0266",
     "code": "S32D",
-    "description": "Error en ejecución de programa overlay por registro de longitud errónea o i/o error. Linkeditar y ejecutar de nuevo.",
+    "description": "Error en ejecución de programa OVERLAY por registro de longitud errónea o I/O error. Linkeditar y ejecutar de nuevo.",
     "notes": "OVERLAY fallido por longitud incorrecta o I/O; requiere LINKEDIT y reejecución.",
     "system": "ABEND",
     "deleted": false
@@ -1509,7 +1509,7 @@
   {
     "id": "ERR-ABEND-0267",
     "code": "S330",
-    "description": "Error en macro deq. Especifica opción rmc reservada al supervisor.",
+    "description": "Error en macro DEQ. Especifica opción rmc reservada al supervisor.",
     "notes": "Uso de opción RMC en DEQ, reservada al supervisor.",
     "system": "ABEND",
     "deleted": false
@@ -1517,7 +1517,7 @@
   {
     "id": "ERR-ABEND-0268",
     "code": "S331",
-    "description": "Error en test open; el segundo operando no especifica una dirección en el programa a la cual se devuelva el control.",
+    "description": "Error en TEST OPEN; el segundo operando no especifica una dirección en el programa a la cual se devuelva el control.",
     "notes": "Segundo operando de TEST OPEN sin dirección válida para retorno de control.",
     "system": "ABEND",
     "deleted": false
@@ -1525,7 +1525,7 @@
   {
     "id": "ERR-ABEND-0269",
     "code": "S337",
-    "description": "Se quiere grabar sobre fichero abierto como input. Accept repetido. La dcb del archivo carece de rutina fin de fichero.",
+    "description": "Se quiere grabar sobre fichero abierto como INPUT. ACCEPT repetido. La DCB del archivo carece de rutina fin de fichero.",
     "notes": "Intento de escritura sobre fichero INPUT; ACCEPT repetido; DCB sin rutina de fin de fichero (código 04).",
     "system": "ABEND",
     "deleted": false
@@ -1533,7 +1533,7 @@
   {
     "id": "ERR-ABEND-0270",
     "code": "S338",
-    "description": "Error en macro enq. Usa opción smc, reservada al supervisor.",
+    "description": "Error en macro ENQ. Usa opción SMC, reservada al supervisor.",
     "notes": "Uso de opción SMC en ENQ, reservada al supervisor.",
     "system": "ABEND",
     "deleted": false
@@ -1541,7 +1541,7 @@
   {
     "id": "ERR-ABEND-0271",
     "code": "S33A",
-    "description": "Se activa salida E61 y falta campo de control e.",
+    "description": "Se activa salida E61 y falta campo de control E.",
     "notes": "Salida E61 activada sin campo de control E.",
     "system": "ABEND",
     "deleted": false
@@ -1549,7 +1549,7 @@
   {
     "id": "ERR-ABEND-0272",
     "code": "S33E",
-    "description": "Error macro DETACH  con operando stats=yes. Se ha usado la macro sin haber terminado aún la subtarea.",
+    "description": "Error macro DETACH  con operando STATS=YES. Se ha usado la macro sin haber terminado aún la subtarea.",
     "notes": "DETACH con STATS=YES antes de finalizar subtarea.",
     "system": "ABEND",
     "deleted": false
@@ -1557,7 +1557,7 @@
 {
     "id": "ERR-ABEND-0273",
     "code": "S34A",
-    "description": "Error especificacion parametro en sentencia mods.",
+    "description": "Error especificacion parametro en sentencia MODS.",
     "notes": "Error en la especificación de parámetros en la sentencia MODS.",
     "system": "ABEND",
     "deleted": false
@@ -1805,7 +1805,7 @@
   {
     "id": "ERR-ABEND-0303",
     "code": "S474",
-    "description": "El operador ha cancelado el programa con el comando /stop region xx abdump.",
+    "description": "El operador ha cancelado el programa con el comando /STOP REGION XX ABDUMP.",
     "notes": "Cancelación manual del operador mediante /STOP REGION.",
     "system": "ABEND",
     "deleted": false
@@ -1813,7 +1813,7 @@
   {
     "id": "ERR-ABEND-0304",
     "code": "S476",
-    "description": "Call dl/i invalida.",
+    "description": "Call DL/I invalida.",
     "notes": "Lenguaje de la PSB incorrecto; dirección de la PCB inválida; revisar compilación IMS y coincidencia PSB/PCB.",
     "system": "ABEND",
     "deleted": false
@@ -1837,7 +1837,7 @@
   {
     "id": "ERR-ABEND-0307",
     "code": "S480",
-    "description": "Falta alguna dd de salida.",
+    "description": "Falta alguna DD de salida.",
     "notes": "Falta una DD de salida requerida, por ejemplo SYSOUT.",
     "system": "ABEND",
     "deleted": false
@@ -1846,7 +1846,7 @@
   {
     "id": "ERR-ABEND-0308",
     "code": "S48I",
-    "description": "Se sobrepasa capacidad de clasificacion con salida e16.",
+    "description": "Se sobrepasa capacidad de clasificacion con salida E16.",
     "notes": "La salida E16 excede la capacidad de clasificación definida.",
     "system": "ABEND",
     "deleted": false
@@ -1854,7 +1854,7 @@
   {
     "id": "ERR-ABEND-0309",
     "code": "S499",
-    "description": "Bucle en programa dli/dc.",
+    "description": "Bucle en programa DLI/DC.",
     "notes": "El programa entra en un ciclo infinito durante la ejecución DLI/DC.",
     "system": "ABEND",
     "deleted": false
@@ -1870,7 +1870,7 @@
   {
     "id": "ERR-ABEND-0311",
     "code": "S500",
-    "description": "I/o error.",
+    "description": "I/O error.",
     "notes": "Dirección UCB inválida durante la operación de entrada/salida.",
     "system": "ABEND",
     "deleted": false
@@ -1878,7 +1878,7 @@
   {
     "id": "ERR-ABEND-0312",
     "code": "S504",
-    "description": "Error en macro getmain.",
+    "description": "Error en macro GETMAIN.",
     "notes": "Las posiciones de las listas de direcciones y longitudes se superponen.",
     "system": "ABEND",
     "deleted": false
@@ -1886,7 +1886,7 @@
   {
     "id": "ERR-ABEND-0313",
     "code": "S505",
-    "description": "Lo mismo que s504 pero para la macro freemain.",
+    "description": "Lo mismo que S504 pero para la macro FREEMAIN.",
     "notes": "Superposición de áreas en FREEMAIN igual que en GETMAIN.",
     "system": "ABEND",
     "deleted": false
@@ -1894,7 +1894,7 @@
   {
     "id": "ERR-ABEND-0314",
     "code": "S506",
-    "description": "Error durante la ejecucion de macro link, xctl, attach o load.",
+    "description": "Error durante la ejecucion de macro LINK, XCTL, ATTACH o LOAD.",
     "notes": "Ocurre en programas de recubrimiento o pruebas con TESTRAN.",
     "system": "ABEND",
     "deleted": false
@@ -1927,7 +1927,7 @@
   {
     "id": "ERR-ABEND-0318",
     "code": "S519",
-    "description": "En vsam, acaba procedure sin stop run, goback o exit program.",
+    "description": "En VSAM, acaba procedure sin STOP RUN, goback o EXIT PROGRAM.",
     "notes": "El programa sale de una dirección sin finalizar correctamente; posible aviso en compilación.",
     "system": "ABEND",
     "deleted": false
@@ -1953,7 +1953,7 @@
   {
     "id": "ERR-ABEND-0321",
     "code": "S52A",
-    "description": "Error en macro attach.",
+    "description": "Error en macro ATTACH.",
     "notes": "No hay espacio disponible en SQA para completar ATTACH.",
     "system": "ABEND",
     "deleted": false
@@ -1971,7 +1971,7 @@
   {
     "id": "ERR-ABEND-0323",
     "code": "S530",
-    "description": "Error en macro deq.",
+    "description": "Error en macro DEQ.",
     "notes": "La tarea no tenía control del recurso al ejecutar DEQ.",
     "system": "ABEND",
     "deleted": false
@@ -2007,7 +2007,7 @@
   {
     "id": "ERR-ABEND-0327",
     "code": "S56A",
-    "description": "Falta sortin o sortout.",
+    "description": "Falta SORTIN o SORTOUT.",
     "notes": "Falta una de las DD SORTIN o SORTOUT requeridas.",
     "system": "ABEND",
     "deleted": false
@@ -2024,7 +2024,7 @@
 {
     "id": "ERR-ABEND-0329",
     "code": "S57A",
-    "description": "Asigna cinta a sortin y sortwk.",
+    "description": "Asigna cinta a SORTIN y SORTWK.",
     "notes": "Solo puede ser SORTWKT1 según las reglas del sistema.",
     "system": "ABEND",
     "deleted": false
@@ -2032,7 +2032,7 @@
   {
     "id": "ERR-ABEND-0330",
     "code": "S58A",
-    "description": "Asignado sortout a la misma cinta que un sortwt.",
+    "description": "Asignado SORTOUT a la misma cinta que un SORTWT.",
     "notes": "SORTOUT no puede compartir cinta con SORTWT.",
     "system": "ABEND",
     "deleted": false
@@ -2048,7 +2048,7 @@
   {
     "id": "ERR-ABEND-0332",
     "code": "S604",
-    "description": "Se excede la frontera de la memoria principal asignada a la tarea en la ejecucion de una macro getmain.",
+    "description": "Se excede la frontera de la memoria principal asignada a la tarea en la ejecucion de una macro GETMAIN.",
     "notes": "La solicitud GETMAIN supera el área asignada a la tarea.",
     "system": "ABEND",
     "deleted": false
@@ -2056,7 +2056,7 @@
   {
     "id": "ERR-ABEND-0333",
     "code": "S605",
-    "description": "Se excede la frontera de la memoria principal asignada a la tarea en la ejecucion de una macro freemain.",
+    "description": "Se excede la frontera de la memoria principal asignada a la tarea en la ejecucion de una macro FREEMAIN.",
     "notes": "La operación FREEMAIN intenta liberar fuera del área asignada.",
     "system": "ABEND",
     "deleted": false
@@ -2064,7 +2064,7 @@
   {
     "id": "ERR-ABEND-0334",
     "code": "S606",
-    "description": "Durante la ejecucion de una macro link, load, xctl o attach no se satisface una peticion getmain condicional.",
+    "description": "Durante la ejecucion de una macro LINK, LOAD, XCTL o ATTACH no se satisface una peticion getmain condicional.",
     "notes": "Falta memoria para el área de trabajo de carga de programas.",
     "system": "ABEND",
     "deleted": false
@@ -2072,7 +2072,7 @@
   {
     "id": "ERR-ABEND-0335",
     "code": "S60A",
-    "description": "Error en macro getmain o freemain.",
+    "description": "Error en macro GETMAIN o FREEMAIN.",
     "notes": "Lista de parámetros inválida o dirección/longitud de FQE incorrecta; falta bloque de control del dataset.",
     "system": "ABEND",
     "deleted": false
@@ -2096,7 +2096,7 @@
   {
     "id": "ERR-ABEND-0338",
     "code": "S615",
-    "description": "Permanente error de entrada/salida detectado en la log del ims/vs.",
+    "description": "Permanente error de entrada/salida detectado en la log del IMS/VS.",
     "notes": "Consultar mensaje DFS616A para diagnóstico del error.",
     "system": "ABEND",
     "deleted": false
@@ -2104,7 +2104,7 @@
   {
     "id": "ERR-ABEND-0339",
     "code": "S61A",
-    "description": "I/o error.",
+    "description": "I/O error.",
     "notes": "Error de entrada/salida sin detalle adicional en el documento.",
     "system": "ABEND",
     "deleted": false
@@ -2145,7 +2145,7 @@
   {
     "id": "ERR-ABEND-0344",
     "code": "S637",
-    "description": "No pueden concatenarse cintas y discos en sort.",
+    "description": "No pueden concatenarse cintas y discos en SORT.",
     "notes": "0C atributos incompatibles; 2C error en lectura durante la concatenación.",
     "system": "ABEND",
     "deleted": false
@@ -2153,7 +2153,7 @@
   {
     "id": "ERR-ABEND-0345",
     "code": "S63A",
-    "description": "Error en apertura open.",
+    "description": "Error en apertura OPEN.",
     "notes": "Fallo en la operación OPEN sin detalle adicional en el documento.",
     "system": "ABEND",
     "deleted": false
@@ -2161,7 +2161,7 @@
   {
     "id": "ERR-ABEND-0346",
     "code": "S642",
-    "description": "Parm invalida.",
+    "description": "PARM invalida.",
     "notes": "Nombre de PSB demasiado largo para el sistema.",
     "system": "ABEND",
     "deleted": false
@@ -2193,7 +2193,7 @@
   {
     "id": "ERR-ABEND-0350",
     "code": "S67I",
-    "description": "Parametro erroneo en campo parm de sentencia exec.",
+    "description": "Parametro erroneo en campo parm de sentencia EXEC.",
     "notes": "El parámetro especificado en EXEC no cumple el formato requerido.",
     "system": "ABEND",
     "deleted": false
@@ -2201,7 +2201,7 @@
   {
     "id": "ERR-ABEND-0351",
     "code": "S684",
-    "description": "Aumentar tamaño del size.",
+    "description": "Aumentar tamaño del SIZE.",
     "notes": "El valor SIZE es insuficiente para la operación solicitada.",
     "system": "ABEND",
     "deleted": false
@@ -2209,7 +2209,7 @@
   {
     "id": "ERR-ABEND-0352",
     "code": "S68A",
-    "description": "Error de secuencia en sortin.",
+    "description": "Error de secuencia en SORTIN.",
     "notes": "La secuencia de SORTIN no cumple los requisitos del sistema.",
     "system": "ABEND",
     "deleted": false
@@ -2217,7 +2217,7 @@
   {
     "id": "ERR-ABEND-0353",
     "code": "S700",
-    "description": "Error de unidad tras sio emitida para iniciar mandato de deteccion.",
+    "description": "Error de unidad tras SIO emitida para iniciar mandato de deteccion.",
     "notes": "La unidad reporta fallo al ejecutar la operación SIO.",
     "system": "ABEND",
     "deleted": false
@@ -2233,7 +2233,7 @@
   {
     "id": "ERR-ABEND-0355",
     "code": "S705",
-    "description": "Igual que s704 para freemain.",
+    "description": "Igual que S704 para FREEMAIN.",
     "notes": "FREEMAIN con solicitud de áreas múltiples en sistemas MVT.",
     "system": "ABEND",
     "deleted": false
@@ -2249,15 +2249,15 @@
   {
     "id": "ERR-ABEND-0357",
     "code": "S713",
-    "description": "Error en open.",
-    "notes": "Ver mensaje IEC148I para detalles del fallo en OPEN.",
+    "description": "Error en OPEN.",
+    "notes": "Ver mensaje IEC148I para detalles del fallo en .",
     "system": "ABEND",
     "deleted": false
   },
   {
     "id": "ERR-ABEND-0358",
     "code": "S714",
-    "description": "I/o error al escribir en cinta durante macro close.",
+    "description": "I/O error al escribir en cinta durante macro CLOSE.",
     "notes": "Ver mensaje IEC215I para diagnóstico del error en cierre de cinta.",
     "system": "ABEND",
     "deleted": false
@@ -2265,7 +2265,7 @@
 {
     "id": "ERR-ABEND-0359",
     "code": "S717",
-    "description": "Error en close de fichero en cinta.",
+    "description": "Error en CLOSE de fichero en cinta.",
     "notes": "Ver IEC222I; insuficiente memoria para el pool de buffers principal; error en módulo DFSMODU0 con códigos 4, 8, 20 o 24.",
     "system": "ABEND",
     "deleted": false
@@ -2273,7 +2273,7 @@
   {
     "id": "ERR-ABEND-0360",
     "code": "S718",
-    "description": "Error en la inicializacion del ims/vs.",
+    "description": "Error en la inicializacion del IMS/VS.",
     "notes": "Módulo requerido no encontrado; error de E/S al buscar en el directorio; no encuentra módulo de la PCB; falta parámetro REGION en programas con BD.",
     "system": "ABEND",
     "deleted": false
@@ -2281,7 +2281,7 @@
   {
     "id": "ERR-ABEND-0361",
     "code": "S722",
-    "description": "Excedido el numero de lineas de sysout.",
+    "description": "Excedido el numero de lineas de SYSOUT.",
     "notes": "Incrementar OUTLIM en el JCL para permitir más líneas de salida.",
     "system": "ABEND",
     "deleted": false
@@ -2289,7 +2289,7 @@
   {
     "id": "ERR-ABEND-0362",
     "code": "S723",
-    "description": "Region insuficiente para dfspirp0.",
+    "description": "Region insuficiente para DFSPIRP0'.",
     "notes": "Incrementar REGION para el PROGRAM ISOLATION TRACE GENERATOR.",
     "system": "ABEND",
     "deleted": false
@@ -2305,7 +2305,7 @@
   {
     "id": "ERR-ABEND-0364",
     "code": "S749",
-    "description": "Registro de mayor longitud de la permitida para un sort.",
+    "description": "Registro de mayor longitud de la permitida para un SORT.",
     "notes": "El registro excede la longitud máxima aceptada por SORT.",
     "system": "ABEND",
     "deleted": false
@@ -2329,7 +2329,7 @@
   {
     "id": "ERR-ABEND-0367",
     "code": "S773",
-    "description": "Se produce en el momento de ejecutar una macro open.",
+    "description": "Se produce en el momento de ejecutar una macro OPEN.",
     "notes": "Códigos 013‑1, 013‑18, 013‑1C, 013‑2 y 013‑34 según el tipo de error en OPEN.",
     "system": "ABEND",
     "deleted": false
@@ -2345,7 +2345,7 @@
   {
     "id": "ERR-ABEND-0369",
     "code": "S778",
-    "description": "Se ha utilizado una call roll.",
+    "description": "Se ha utilizado una CALL ROLL.",
     "notes": "El programa termina anómalamente sin detener la transacción ni generar dump.",
     "system": "ABEND",
     "deleted": false
@@ -2361,7 +2361,7 @@
   {
     "id": "ERR-ABEND-0371",
     "code": "S804",
-    "description": "Error en macro getmain.",
+    "description": "Error en macro GETMAIN.",
     "notes": "Región insuficiente para completar GETMAIN.",
     "system": "ABEND",
     "deleted": false
@@ -2377,7 +2377,7 @@
   {
     "id": "ERR-ABEND-0373",
     "code": "S807",
-    "description": "Error de direccionamiento ims.",
+    "description": "Error de direccionamiento IMS.",
     "notes": "Fallo de apuntadores o rutina de randomización.",
     "system": "ABEND",
     "deleted": false
@@ -2385,7 +2385,7 @@
   {
     "id": "ERR-ABEND-0374",
     "code": "S808",
-    "description": "No estan cambiadas las parm.",
+    "description": "No estan cambiadas las PARM.",
     "notes": "Las PARM no fueron actualizadas correctamente antes de ejecutar.",
     "system": "ABEND",
     "deleted": false
@@ -2393,7 +2393,7 @@
   {
     "id": "ERR-ABEND-0375",
     "code": "S80A",
-    "description": "Error en la ejecucion de una macro getmain.",
+    "description": "Error en la ejecucion de una macro GETMAIN.",
     "notes": "Se requirió más almacenamiento del disponible; ONCODE 9050; aumentar REGION.",
     "system": "ABEND",
     "deleted": false
@@ -2401,7 +2401,7 @@
   {
     "id": "ERR-ABEND-0376",
     "code": "S813",
-    "description": "Error en open de cinta.",
+    "description": "Error en OPEN de cinta.",
     "notes": "Densidad errónea o cinta no cerrada; 04 label no corresponde al DSN.",
     "system": "ABEND",
     "deleted": false
@@ -2409,7 +2409,7 @@
   {
     "id": "ERR-ABEND-0377",
     "code": "S821",
-    "description": "Psb no existe o entra en contradiccion con dbd.",
+    "description": "PSB no existe o entra en contradiccion con DBD.",
     "notes": "La PSB no coincide con la definición de la DBD.",
     "system": "ABEND",
     "deleted": false
@@ -2513,7 +2513,7 @@
   {
     "id": "ERR-ABEND-0390",
     "code": "S906",
-    "description": "Error en macro link.",
+    "description": "Error en macro LINK.",
     "notes": "Más de 255 peticiones de utilización del mismo módulo; posible loop.",
     "system": "ABEND",
     "deleted": false
@@ -2521,15 +2521,15 @@
   {
     "id": "ERR-ABEND-0391",
     "code": "S908",
-    "description": "Psb invalida.",
-    "notes": "La PSB no es válida para la ejecución IMS.",
+    "description": "PSB invalida.",
+    "notes": "La  no es válida para la ejecución IMS.",
     "system": "ABEND",
     "deleted": false
   },
   {
     "id": "ERR-ABEND-0392",
     "code": "S909",
-    "description": "Dbd invalida.",
+    "description": "DBD invalida.",
     "notes": "La DBD no coincide con la definición requerida.",
     "system": "ABEND",
     "deleted": false
@@ -2537,7 +2537,7 @@
   {
     "id": "ERR-ABEND-0393",
     "code": "S90A",
-    "description": "Igual a s905.",
+    "description": "Igual a S905.",
     "notes": "Área FREEMAIN con dirección o tamaño incorrecto.",
     "system": "ABEND",
     "deleted": false
@@ -2545,7 +2545,7 @@
   {
     "id": "ERR-ABEND-0394",
     "code": "S912",
-    "description": "El segmento referenciado en pcb no esta definido en la dbd.",
+    "description": "El segmento referenciado en PCB no esta definido en la DBD.",
     "notes": "Segmento inexistente o mal definido en la DBD.",
     "system": "ABEND",
     "deleted": false
@@ -2561,7 +2561,7 @@
   {
     "id": "ERR-ABEND-0396",
     "code": "S914",
-    "description": "Problemas ims con psb o dbd.",
+    "description": "Problemas ims con PSB o DBD.",
     "notes": "Inconsistencias entre definiciones de PSB y DBD.",
     "system": "ABEND",
     "deleted": false
@@ -2617,7 +2617,7 @@
   {
     "id": "ERR-ABEND-0403",
     "code": "SA0A",
-    "description": "Igual sa05.",
+    "description": "Igual SA05.",
     "notes": "Área FREEMAIN con dirección o tamaño incorrecto.",
     "system": "ABEND",
     "deleted": false
@@ -2658,7 +2658,7 @@
   {
     "id": "ERR-ABEND-0408",
     "code": "SB06",
-    "description": "Tarea de recuperacion de errores del sistema dio i/o error.",
+    "description": "Tarea de recuperacion de errores del sistema dio I/O error.",
     "notes": "La rutina de recuperación falla y provoca el abend del programa.",
     "system": "ABEND",
     "deleted": false
@@ -2666,7 +2666,7 @@
   {
     "id": "ERR-ABEND-0409",
     "code": "SB0A",
-    "description": "Igual a sb04 y sb05.",
+    "description": "Igual a SB04 y SB05.",
     "notes": "Subregión fuera del rango permitido en GETMAIN/FREEMAIN.",
     "system": "ABEND",
     "deleted": false
@@ -2674,7 +2674,7 @@
   {
     "id": "ERR-ABEND-0410",
     "code": "SB13",
-    "description": "Error en open de fichero.",
+    "description": "Error en OPEN de fichero.",
     "notes": "Ver IEC152I; comprobar imagen UCS en SYS1.IMAGELIB.",
     "system": "ABEND",
     "deleted": false
@@ -2682,7 +2682,7 @@
   {
     "id": "ERR-ABEND-0411",
     "code": "SB14",
-    "description": "Error en close de un data set particionado abierto en salida.",
+    "description": "Error en CLOSE de un data set particionado abierto en salida.",
     "notes": "Ver IEC217I; fallo al crear miembro en PDS.",
     "system": "ABEND",
     "deleted": false
@@ -2706,7 +2706,7 @@
   {
     "id": "ERR-ABEND-0414",
     "code": "SC0D",
-    "description": "Como s0c1.",
+    "description": "Como S0C1.",
     "notes": "Error similar a S0C1 según el documento.",
     "system": "ABEND",
     "deleted": false
@@ -2730,7 +2730,7 @@
   {
     "id": "ERR-ABEND-0417",
     "code": "SE0D",
-    "description": "Falta region para una rutina abend que entra por error en subtarea.",
+    "description": "Falta region para una rutina ABEND que entra por error en subtarea.",
     "notes": "La rutina ABEND no puede ejecutarse por falta de región disponible.",
     "system": "ABEND",
     "deleted": false
@@ -2738,7 +2738,7 @@
   {
     "id": "ERR-ABEND-0418",
     "code": "SE23",
-    "description": "Error en macro wtor.",
+    "description": "Error en macro WTOR.",
     "notes": "Fallo al emitir WTOR según el documento.",
     "system": "ABEND",
     "deleted": false
@@ -2746,7 +2746,7 @@
 {
     "id": "ERR-ABEND-0419",
     "code": "SE2D",
-    "description": "Error en programa overlay.",
+    "description": "Error en programa OVERLAY.",
     "notes": "Dirección inválida al intentar cargar un segmento.",
     "system": "ABEND",
     "deleted": false
@@ -2762,7 +2762,7 @@
   {
     "id": "ERR-ABEND-0421",
     "code": "SFXX",
-    "description": "Supervisor coll xx invalida.",
+    "description": "Supervisor COLL xx invalida.",
     "notes": "Una instrucción SVC contenía un operando inválido; XX es el valor hexadecimal de la SVC.",
     "system": "ABEND",
     "deleted": false
@@ -2787,7 +2787,7 @@
   {
     "id": "ERR-ABEND-0424",
     "code": "1113",
-    "description": "Codigo generico de los abends de hssr.",
+    "description": "Codigo generico de los abends de HSSR.",
     "notes": "Error genérico del subsistema HSSR sin detalle adicional.",
     "system": "ABEND",
     "deleted": false
@@ -2796,7 +2796,7 @@
   {
     "id": "ERR-ABEND-0425",
     "code": "1301",
-    "description": "Error de vsam o qsam no previsto en las declaratives.",
+    "description": "Error de VSAM o QSAM no previsto en las declaratives.",
     "notes": "Fallo no contemplado en las rutinas declarativas del programa.",
     "system": "ABEND",
     "deleted": false
@@ -2828,7 +2828,7 @@
   {
     "id": "ERR-ABEND-0429",
     "code": "2612",
-    "description": "Error en vsam que no controla el fast reload.",
+    "description": "Error en VSAM que no controla el FAST RELOAD.",
     "notes": "Se soluciona reorganizando pendientes.",
     "system": "ABEND",
     "deleted": false
@@ -2836,7 +2836,7 @@
   {
     "id": "ERR-ABEND-0430",
     "code": "2620",
-    "description": "Problema del fast reload.",
+    "description": "Problema del FAST RELOAD.",
     "notes": "Fallo interno del proceso FAST RELOAD según el documento.",
     "system": "ABEND",
     "deleted": false
@@ -2844,7 +2844,7 @@
   {
     "id": "ERR-ABEND-0431",
     "code": "3001",
-    "description": "Multiples causas comparaciones etc.",
+    "description": "Multiples causas comparaciones ETC.",
     "notes": "Error genérico con múltiples posibles orígenes según el documento.",
     "system": "ABEND",
     "deleted": false
@@ -2853,7 +2853,7 @@
   {
     "id": "ERR-ABEND-0432",
     "code": "84",
-    "description": "Se intenta abrir un fichero cuya dd no esta en jcl.",
+    "description": "Se intenta abrir un fichero cuya DD no esta en JCL.",
     "notes": "La DD requerida no fue declarada en el JCL.",
     "system": "ABEND",
     "deleted": false
@@ -2897,7 +2897,7 @@
   {
     "id": "ERR-ABEND-0437",
     "code": "3440",
-    "description": "Se necesita mayor particion o requerimiento getmain/freemain invalido.",
+    "description": "Se necesita mayor particion o requerimiento GETMAIN/FREEMAIN invalido.",
     "notes": "La partición es insuficiente o la solicitud GETMAIN/FREEMAIN es incorrecta.",
     "system": "ABEND",
     "deleted": false
@@ -2915,7 +2915,7 @@
   {
     "id": "ERR-ABEND-0439",
     "code": "3555",
-    "description": "Detectado un error de pl/i.",
+    "description": "Detectado un error de PL/I.",
     "notes": "El programa carece de 'ON ERROR'; revisar ONCODE en el manual PL/I.",
     "system": "ABEND",
     "deleted": false
@@ -2924,7 +2924,7 @@
   {
     "id": "ERR-ABEND-0440",
     "code": "3666",
-    "description": "Error de pl/i.",
+    "description": "Error de PL/I.",
     "notes": "El control pasa a la rutina ON ERROR del programa PL/I; revisar ONCODE.",
     "system": "ABEND",
     "deleted": false
@@ -2933,7 +2933,7 @@
   {
     "id": "ERR-ABEND-0441",
     "code": "3777",
-    "description": "Se ha utilizado el modulo imscod al devolver ims un codigo de retorno invalido.",
+    "description": "Se ha utilizado el modulo IMSCOD al devolver IMS un codigo de retorno invalido.",
     "notes": "El nombre del programa y el código de retorno aparecen en SYSPRINT junto con R13 y R3.",
     "system": "ABEND",
     "deleted": false
@@ -2951,7 +2951,7 @@
   {
     "id": "ERR-ABEND-0443",
     "code": "4021",
-    "description": "Cancelacion ims por rutina poaerror.",
+    "description": "Cancelacion IMS por rutina POAERROR.",
     "notes": "La rutina POAERROR provoca la cancelación IMS.",
     "system": "ABEND",
     "deleted": false
@@ -2960,7 +2960,7 @@
   {
     "id": "ERR-ABEND-0444",
     "code": "4032",
-    "description": "Recubrimiento de spa longitud erronea.",
+    "description": "Recubrimiento de SPA longitud erronea.",
     "notes": "Machaque de áreas; faltan fichas STADLIST según el documento.",
     "system": "ABEND",
     "deleted": false
@@ -2969,7 +2969,7 @@
   {
     "id": "ERR-ABEND-0445",
     "code": "4036",
-    "description": "Revisa si la compilacion se hizo bajo ims.",
+    "description": "Revisa si la compilacion se hizo bajo IMS.",
     "notes": "El programa debe compilarse con soporte IMS para evitar este error.",
     "system": "ABEND",
     "deleted": false
@@ -2996,7 +2996,7 @@
   {
     "id": "ERR-ABEND-0448",
     "code": "5072",
-    "description": "Mss en mal estado.",
+    "description": "MSS en mal estado.",
     "notes": "El subsistema MSS presenta inconsistencias o corrupción interna.",
     "system": "ABEND",
     "deleted": false
