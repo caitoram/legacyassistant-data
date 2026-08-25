@@ -3008,7 +3008,1426 @@
     "notes": "En COPIARFF el programa debe hacer OPEN y CLOSE aunque el fichero esté vacío.",
     "system": "ABEND",
     "deleted": false
-  },    
+  },  
+
+
+{
+    "id": "ERR-PLI-0001",
+    "code": "3",
+    "description": "En un SELECT/WHEN/OTHERWISE, ningún WHEN satisface la condición y no hay cláusula OTHERWISE.",
+    "system": "PLI",
+    "notes": "Ocurre cuando la selección no encuentra coincidencias y no existe alternativa definida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0002",
+    "code": "4",
+    "description": "Instrucción SIGNAL FINISH, STOP o EXIT ejecutados.",
+    "system": "PLI",
+    "notes": "Indica finalización explícita del flujo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0003",
+    "code": "9",
+    "description": "SIGNAL ERROR declaración ejecutada.",
+    "system": "PLI",
+    "notes": "Se ha disparado una condición ERROR.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0004",
+    "code": "10",
+    "description": "SIGNAL NAME ejecutado o se produjo condición NAME.",
+    "system": "PLI",
+    "notes": "Condición NAME activada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0005",
+    "code": "20",
+    "description": "SIGNAL RECORD instrucción ejecutada.",
+    "system": "PLI",
+    "notes": "Se ha señalado una condición RECORD.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0006",
+    "code": "21",
+    "description": "Variable más pequeña que el tamaño del registro.",
+    "system": "PLI",
+    "notes": "La variable no puede contener el registro completo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0007",
+    "code": "22",
+    "description": "Variable más grande que el tamaño del registro.",
+    "system": "PLI",
+    "notes": "La variable excede el tamaño del registro definido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0008",
+    "code": "23",
+    "description": "Longitud de la variable de registro es cero o demasiado corta para contener la clave.",
+    "system": "PLI",
+    "notes": "La clave no cabe en la variable.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0009",
+    "code": "24",
+    "description": "Un registro con longitud cero se leyó de un conjunto de datos REGIONAL.",
+    "system": "PLI",
+    "notes": "El registro leído no contiene datos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0010",
+    "code": "40",
+    "description": "SIGNAL TRANSMIT declaración ejecutada.",
+    "system": "PLI",
+    "notes": "Se ha activado condición TRANSMIT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0011",
+    "code": "41",
+    "description": "Error de transmisión en los datos de salida.",
+    "system": "PLI",
+    "notes": "Fallo al transmitir datos hacia afuera.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0012",
+    "code": "42",
+    "description": "Error en la transmisión de datos de entrada.",
+    "system": "PLI",
+    "notes": "Fallo al recibir datos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0013",
+    "code": "43",
+    "description": "Errores de transmisión en la salida al índice VSAM.",
+    "system": "PLI",
+    "notes": "Fallo al transmitir datos hacia índice VSAM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0014",
+    "code": "44",
+    "description": "Errores de transmisión en la entrada del índice VSAM.",
+    "system": "PLI",
+    "notes": "Fallo al recibir datos desde índice VSAM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0015",
+    "code": "45",
+    "description": "Errores de transmisión en la salida de secuencia VSAM.",
+    "system": "PLI",
+    "notes": "Fallo al transmitir datos secuenciales VSAM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0016",
+    "code": "46",
+    "description": "Errores de transmisión en la entrada de la secuencia VSAM.",
+    "system": "PLI",
+    "notes": "Fallo al recibir datos secuenciales VSAM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0017",
+    "code": "50",
+    "description": "SIGNAL KEY instrucción ejecutada.",
+    "system": "PLI",
+    "notes": "Condición KEY activada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0018",
+    "code": "51",
+    "description": "Clave especificada no se encuentra.",
+    "system": "PLI",
+    "notes": "La clave buscada no existe.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0019",
+    "code": "52",
+    "description": "Clave especificada ya existe.",
+    "system": "PLI",
+    "notes": "La clave está duplicada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0020",
+    "code": "53",
+    "description": "Claves fuera de secuencia durante la creación de base de datos INDEXED o REGIONAL.",
+    "system": "PLI",
+    "notes": "Las claves no respetan el orden requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0021",
+    "code": "54",
+    "description": "Error de conversión de clave.",
+    "system": "PLI",
+    "notes": "Conversión de clave inválida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0022",
+    "code": "55",
+    "description": "Clave nula o comienza con X'FF' o la clave incrustada cambió durante un REWRITE.",
+    "system": "PLI",
+    "notes": "La clave es inválida o inconsistente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0023",
+    "code": "56",
+    "description": "Claves fuera de los límites del conjunto de datos.",
+    "system": "PLI",
+    "notes": "La clave excede el rango permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0024",
+    "code": "57",
+    "description": "No hay espacio disponible para insertar un registro.",
+    "system": "PLI",
+    "notes": "El dataset no puede crecer más.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0025",
+    "code": "58",
+    "description": "Claves fuera del rango.",
+    "system": "PLI",
+    "notes": "La clave no pertenece al rango definido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0026",
+    "code": "70",
+    "description": "SIGNAL ENDFILE ejecutado o se produjo condición ENDFILE.",
+    "system": "PLI",
+    "notes": "Fin de archivo alcanzado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0027",
+    "code": "80",
+    "description": "SIGNAL UNDEFINEDFILE instrucción ejecutada.",
+    "system": "PLI",
+    "notes": "El archivo no está definido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0028",
+    "code": "81",
+    "description": "Atributos en conflicto entre DECLARE y OPEN.",
+    "system": "PLI",
+    "notes": "Los atributos del archivo no coinciden.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0029",
+    "code": "82",
+    "description": "Conflicto entre atributos del fichero y la organización física del dataset.",
+    "system": "PLI",
+    "notes": "La definición lógica no coincide con la física.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0030",
+    "code": "83",
+    "description": "Especificación de datos incompleta.",
+    "system": "PLI",
+    "notes": "Faltan atributos o parámetros requeridos.",
+    "deleted": false
+  },
+{
+    "id": "ERR-PLI-0031",
+    "code": "84",
+    "description": "DD declaración no se encuentra en JCL.",
+    "system": "PLI",
+    "notes": "El archivo referenciado no está definido en el JCL.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0032",
+    "code": "85",
+    "description": "Un error de I/O se produjo durante la inicialización del fichero DIRECT OUTPUT.",
+    "system": "PLI",
+    "notes": "Fallo al preparar el archivo para salida directa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0033",
+    "code": "86",
+    "description": "LINESIZE mayor que el máximo.",
+    "system": "PLI",
+    "notes": "El tamaño de línea excede el límite permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0034",
+    "code": "87",
+    "description": "Atributos en conflicto entre la instrucción DECLARE y la declaración de JCL DD.",
+    "system": "PLI",
+    "notes": "Los atributos lógicos no coinciden con los físicos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0035",
+    "code": "88",
+    "description": "Atributos en conflicto entre la instrucción DECLARE y la declaración JCL DD.",
+    "system": "PLI",
+    "notes": "Conflicto de definición entre DECLARE y JCL.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0036",
+    "code": "89",
+    "description": "Contraseña no está especificada o no es válida.",
+    "system": "PLI",
+    "notes": "La autenticación del archivo falló.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0037",
+    "code": "90",
+    "description": "Declaración SIGNAL ENDPAGE ejecutado o se produjo condición ENDPAGE.",
+    "system": "PLI",
+    "notes": "Fin de página alcanzado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0038",
+    "code": "91",
+    "description": "ENV() la opción no es válida para acceder a archivos de datos VSAM.",
+    "system": "PLI",
+    "notes": "La opción ENV no aplica a VSAM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0039",
+    "code": "92",
+    "description": "Error al abrir un conjunto de datos VSAM.",
+    "system": "PLI",
+    "notes": "La apertura del dataset VSAM falló.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0040",
+    "code": "93",
+    "description": "Error al abrir un conjunto de datos (subcódigos).",
+    "system": "PLI",
+    "notes": "El sistema devolvió un error específico de apertura.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0041",
+    "code": "94",
+    "description": "REUSE especificado, pero conjunto de datos no es reutilizable.",
+    "system": "PLI",
+    "notes": "El atributo REUSE no coincide con el dataset.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0042",
+    "code": "95",
+    "description": "Índice alternativo especificado para un conjunto de datos VSAM vacío.",
+    "system": "PLI",
+    "notes": "No se puede usar índice alternativo sin registros.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0043",
+    "code": "96",
+    "description": "Intento de abrir MSGFILE(SYSPRINT) después de crear una subtarea.",
+    "system": "PLI",
+    "notes": "SYSPRINT no puede abrirse tras iniciar subtareas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0044",
+    "code": "99",
+    "description": "El OPEN falló por datos (subcódigos).",
+    "system": "PLI",
+    "notes": "El sistema devolvió error de datos al abrir.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0045",
+    "code": "100",
+    "description": "Declaración SIGNAL PENDING ejecutado o se produjo condición PENDING.",
+    "system": "PLI",
+    "notes": "Indica operación pendiente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0046",
+    "code": "150",
+    "description": "Declaración SIGNAL STRINGSIZE ejecutado o se produjo condición STRINGSIZE.",
+    "system": "PLI",
+    "notes": "La cadena excede el tamaño permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0047",
+    "code": "151",
+    "description": "Truncamiento se produjo mientras la asignación de una cadena mixta de caracteres.",
+    "system": "PLI",
+    "notes": "La cadena fue recortada por falta de espacio.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0048",
+    "code": "290",
+    "description": "Declaración SIGNAL INVALIDOP ejecutado o se produjo condición INVALIDOP.",
+    "system": "PLI",
+    "notes": "Operación inválida detectada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0049",
+    "code": "300",
+    "description": "Declaración SIGNAL OVERFLOW ejecutado o se produjo condición OVERFLOW.",
+    "system": "PLI",
+    "notes": "Se produjo desbordamiento numérico.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0050",
+    "code": "310",
+    "description": "Declaración SIGNAL FIXEDOVERFLOW ejecutado o se produjo condición FIXEDOVERFLOW.",
+    "system": "PLI",
+    "notes": "Desbordamiento en operación de punto fijo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0051",
+    "code": "320",
+    "description": "Declaración SIGNAL ZERODIVIDE ejecutado o se produjo condición ZERODIVIDE.",
+    "system": "PLI",
+    "notes": "Intento de división por cero.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0052",
+    "code": "330",
+    "description": "Declaración SIGNAL UNDERFLOW ejecutado o se produjo condición UNDERFLOW.",
+    "system": "PLI",
+    "notes": "Resultado demasiado pequeño para representarse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0053",
+    "code": "340",
+    "description": "Declaración SIGNAL SIZE ejecutado o se produjo condición SIZE.",
+    "system": "PLI",
+    "notes": "Tamaño inválido detectado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0054",
+    "code": "341",
+    "description": "Condición SIZE ocurrió durante operación de I/O.",
+    "system": "PLI",
+    "notes": "El tamaño de datos no coincide con el requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0055",
+    "code": "350",
+    "description": "Declaración SIGNAL STRINGRANGE ejecutado o se produjo condición STRINGRANGE.",
+    "system": "PLI",
+    "notes": "La cadena excede el rango permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0056",
+    "code": "360",
+    "description": "Almacenamiento libre insuficiente para la asignación de una variable de base.",
+    "system": "PLI",
+    "notes": "No hay memoria disponible para la variable.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0057",
+    "code": "361",
+    "description": "Falta de espacio en el área objetivo para la distribución de área de origen.",
+    "system": "PLI",
+    "notes": "El área destino no puede contener los datos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0058",
+    "code": "362",
+    "description": "Declaración SIGNAL AREA ejecutados.",
+    "system": "PLI",
+    "notes": "Condición AREA activada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0059",
+    "code": "400",
+    "description": "Declaración SIGNAL ATTENTION ejecutado o se produjo condición ATTENTION.",
+    "system": "PLI",
+    "notes": "Se detectó evento de atención.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0060",
+    "code": "450",
+    "description": "Declaración SIGNAL STORAGE ejecutados.",
+    "system": "PLI",
+    "notes": "Condición STORAGE activada.",
+    "deleted": false
+  },
+{
+    "id": "ERR-PLI-0061",
+    "code": "451",
+    "description": "ASIGNAR (alocar) falló, no hay suficiente almacenamiento disponible.",
+    "system": "PLI",
+    "notes": "La operación de asignación de memoria no pudo completarse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0062",
+    "code": "500",
+    "description": "ESTADO DE SEÑAL/SIGNAL CONDITION (nombre) instrucción ejecutada.",
+    "system": "PLI",
+    "notes": "Se activó una condición SIGNAL específica.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0063",
+    "code": "510",
+    "description": "Comando SIGNAL CHECK ejecutado.",
+    "system": "PLI",
+    "notes": "Se solicitó verificación de condición CHECK.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0064",
+    "code": "520",
+    "description": "Declaración SIGNAL SUBSCRIPTRANGE ejecutada, o se produjo condición SUBSCRIPTRANGE.",
+    "system": "PLI",
+    "notes": "El subíndice está fuera de rango.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0065",
+    "code": "521",
+    "description": "Subíndice de la variable definido se encuentra fuera de los límites de la dimensión correspondiente.",
+    "system": "PLI",
+    "notes": "El índice excede la dimensión declarada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0066",
+    "code": "600",
+    "description": "Declaración SIGNAL CONVERSION ejecutada.",
+    "system": "PLI",
+    "notes": "Conversión de datos inválida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0067",
+    "code": "601-684",
+    "description": "Intento de conversión no válida durante la entrada/salida de una cadena de caracteres.",
+    "system": "PLI",
+    "notes": "Error en conversión de cadenas durante I/O.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0068",
+    "code": "1002",
+    "description": "GET o PUT STRING especifica datos que exceden el tamaño de la cadena.",
+    "system": "PLI",
+    "notes": "Los datos superan la longitud declarada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0069",
+    "code": "1003",
+    "description": "Salida no permitida debido a TRANSMIT o condición KEY previamente planteada.",
+    "system": "PLI",
+    "notes": "La operación está bloqueada por una condición previa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0070",
+    "code": "1004",
+    "description": "PAGE, LINE o SKIP se intentó para un archivo no imprimible.",
+    "system": "PLI",
+    "notes": "La operación de formato no aplica al archivo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0071",
+    "code": "1005",
+    "description": "DISPLAY() o REPLY() utiliza una expresión de longitud cero.",
+    "system": "PLI",
+    "notes": "La expresión no contiene datos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0072",
+    "code": "1007",
+    "description": "REWRITE o DELETE no ha sido precedido por una sentencia READ.",
+    "system": "PLI",
+    "notes": "La operación requiere un READ previo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0073",
+    "code": "1008",
+    "description": "Datos no válidos para GET STRING DATA.",
+    "system": "PLI",
+    "notes": "Los datos no cumplen el formato requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0074",
+    "code": "1009",
+    "description": "Declaración I/O en conflicto con los atributos del fichero.",
+    "system": "PLI",
+    "notes": "La operación no coincide con la definición del archivo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0075",
+    "code": "1010",
+    "description": "Función BUILTIN o pseudovariable se refiere a un archivo que no está abierto.",
+    "system": "PLI",
+    "notes": "El archivo debe abrirse antes de usarlo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0076",
+    "code": "1011",
+    "description": "I/O error, sin más información proporcionada por el sistema operativo.",
+    "system": "PLI",
+    "notes": "Error genérico de entrada/salida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0077",
+    "code": "1012",
+    "description": "READ SET o READ INTO no ha sido precedido por REWRITE.",
+    "system": "PLI",
+    "notes": "Secuencia de I/O incorrecta.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0078",
+    "code": "1013",
+    "description": "REWRITE o DELETE no se puede ejecutar mientras la sentencia READ aún no ha terminado.",
+    "system": "PLI",
+    "notes": "La operación READ sigue activa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0079",
+    "code": "1014",
+    "description": "El número de operaciones incompletas alcanza el máximo.",
+    "system": "PLI",
+    "notes": "Demasiadas operaciones pendientes.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0080",
+    "code": "1015",
+    "description": "Variable de evento para una operación de entrada/salida ya está en uso.",
+    "system": "PLI",
+    "notes": "La variable está ocupada por otra operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0081",
+    "code": "1016",
+    "description": "Archivo no está abierto debido a condición UNDEFINEDFILE.",
+    "system": "PLI",
+    "notes": "El archivo no pudo abrirse previamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0082",
+    "code": "1018",
+    "description": "EOF encontrado antes del final de datos de lista o formato.",
+    "system": "PLI",
+    "notes": "Los datos terminaron inesperadamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0083",
+    "code": "1019",
+    "description": "Intento de cerrar archivo no abierto en la tarea actual.",
+    "system": "PLI",
+    "notes": "El archivo no está asociado a la tarea.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0084",
+    "code": "1020",
+    "description": "I/O intentado antes de ejecutar WAIT para garantizar conclusión de READ previos.",
+    "system": "PLI",
+    "notes": "La sincronización de I/O es incorrecta.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0085",
+    "code": "1021",
+    "description": "Registro no se puede acceder ya que está bloqueado por otro archivo de esta tarea.",
+    "system": "PLI",
+    "notes": "El registro está en uso exclusivo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0086",
+    "code": "1022",
+    "description": "No puede ampliarse los datos VSAM.",
+    "system": "PLI",
+    "notes": "El dataset VSAM no admite expansión.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0087",
+    "code": "1023",
+    "description": "Archivo cerrado, pero los registros aún bloqueados por una subtarea.",
+    "system": "PLI",
+    "notes": "La subtarea mantiene bloqueo activo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0088",
+    "code": "1024",
+    "description": "Secuencia de operaciones de I/O en archivo de dispositivo asociado es incorrecta.",
+    "system": "PLI",
+    "notes": "Orden de operaciones no válida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0089",
+    "code": "1025",
+    "description": "Insuficiente almacenamiento virtual disponible para VSAM para completar la solicitud.",
+    "system": "PLI",
+    "notes": "VSAM no dispone de memoria suficiente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0090",
+    "code": "1026",
+    "description": "Ninguna posición establecida en el conjunto de datos VSAM.",
+    "system": "PLI",
+    "notes": "Debe establecerse una posición antes de operar.",
+    "deleted": false
+  },
+    {
+    "id": "ERR-PLI-0091",
+    "code": "1027",
+    "description": "Record o intervalo de VSAM de control ya declarado en el control exclusivo.",
+    "system": "PLI",
+    "notes": "El registro o intervalo ya está bloqueado en modo exclusivo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0092",
+    "code": "1028",
+    "description": "El volumen no está montado.",
+    "system": "PLI",
+    "notes": "El dispositivo requerido no está disponible.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0093",
+    "code": "1029",
+    "description": "Reposicionamiento fallido en conjunto de datos VSAM.",
+    "system": "PLI",
+    "notes": "La operación de posicionamiento no pudo completarse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0094",
+    "code": "1030",
+    "description": "Error durante la actualización del índice en un conjunto de datos VSAM.",
+    "system": "PLI",
+    "notes": "El índice VSAM no pudo actualizarse correctamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0095",
+    "code": "1031",
+    "description": "Intento de escribir un secuencial inválido en conjunto de datos VSAM.",
+    "system": "PLI",
+    "notes": "La operación secuencial no es válida para el dataset.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0096",
+    "code": "1040",
+    "description": "No más espacio disponible para datos de salida del sistema.",
+    "system": "PLI",
+    "notes": "El sistema no puede almacenar más datos de salida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0097",
+    "code": "1041",
+    "description": "Registro contiene un registro delimitador.",
+    "system": "PLI",
+    "notes": "El registro incluye un delimitador inesperado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0098",
+    "code": "1042",
+    "description": "Registro contiene un registro-delimitador no válido.",
+    "system": "PLI",
+    "notes": "El delimitador del registro no cumple el formato esperado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0099",
+    "code": "1102",
+    "description": "Gestión de almacenamiento falló al liberar almacenamiento pues la dirección del almacenamiento para ser liberado no era válida.",
+    "system": "PLI",
+    "notes": "La dirección de memoria no corresponde a un bloque asignado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0100",
+    "code": "1104",
+    "description": "Error interno en una librería.",
+    "system": "PLI",
+    "notes": "La librería reportó un fallo interno.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0101",
+    "code": "1105",
+    "description": "\"Ventana de objeto\" no se pudo crear.",
+    "system": "PLI",
+    "notes": "La estructura requerida no pudo inicializarse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0102",
+    "code": "1500-2531",
+    "description": "Error de cálculo durante la ejecución de una orden interna-función.",
+    "system": "PLI",
+    "notes": "Se produjo un fallo en una operación aritmética interna.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0103",
+    "code": "2002",
+    "description": "Declaración WAIT no se puede ejecutar debido a la facilidad del sistema restringido.",
+    "system": "PLI",
+    "notes": "El sistema no permite WAIT en este contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0104",
+    "code": "2050",
+    "description": "Declaración WAIT causaría una espera permanente.",
+    "system": "PLI",
+    "notes": "La operación WAIT no puede garantizar retorno.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0105",
+    "code": "3000",
+    "description": "Edición dirigida I/O llevaría a una pérdida de dígitos significativos o signos.",
+    "system": "PLI",
+    "notes": "El formato solicitado no preserva la precisión.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0106",
+    "code": "3001",
+    "description": "El valor del campo W en la especificación de formato F es demasiado pequeño.",
+    "system": "PLI",
+    "notes": "El ancho especificado no permite representar el valor.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0107",
+    "code": "3006",
+    "description": "Descripción del PIC de destino no coincide con la fuente.",
+    "system": "PLI",
+    "notes": "Las definiciones de formato no son compatibles.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0108",
+    "code": "3009",
+    "description": "Cadena mixta de caracteres contiene un cambio gradual, pero ningún cambio.",
+    "system": "PLI",
+    "notes": "La cadena presenta inconsistencias en su codificación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0109",
+    "code": "3010",
+    "description": "Mezcla de caracteres contiene datos no válidos.",
+    "system": "PLI",
+    "notes": "La cadena incluye caracteres inválidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0110",
+    "code": "3011",
+    "description": "MPSTR función incorporada contiene caracteres no válidos.",
+    "system": "PLI",
+    "notes": "La función MPSTR detectó caracteres ilegales.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0111",
+    "code": "3012",
+    "description": "Reintento de error de conversión de gráficos no permitido.",
+    "system": "PLI",
+    "notes": "La conversión gráfica falló y no puede repetirse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0112",
+    "code": "3013",
+    "description": "Serie gráfica es demasiado larga.",
+    "system": "PLI",
+    "notes": "La secuencia excede el tamaño permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0113",
+    "code": "3014",
+    "description": "Serie gráfica o mixta no se ajusta a las normas de mantenimiento.",
+    "system": "PLI",
+    "notes": "La cadena no cumple las reglas de formato gráfico.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0114",
+    "code": "3015",
+    "description": "X o GX constante tiene un número inválido de dígitos.",
+    "system": "PLI",
+    "notes": "La constante no respeta el formato hexadecimal.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0115",
+    "code": "3016",
+    "description": "Uso indebido de los datos gráficos en el flujo de I/O.",
+    "system": "PLI",
+    "notes": "Los datos gráficos no son válidos para esta operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0116",
+    "code": "3017",
+    "description": "Inválido gráfica, mixta, o continuación DBCS al escribir flujo de I/O a un archivo de registros de longitud fija.",
+    "system": "PLI",
+    "notes": "Los datos no cumplen el formato DBCS requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0117",
+    "code": "3500",
+    "description": "Error durante la ejecución de una instrucción WAIT.",
+    "system": "PLI",
+    "notes": "La operación WAIT falló en tiempo de ejecución.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0118",
+    "code": "3501",
+    "description": "Error durante la ejecución de una declaración DETACH.",
+    "system": "PLI",
+    "notes": "La operación DETACH no pudo completarse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0119",
+    "code": "3502",
+    "description": "Error durante la ejecución de una sentencia ATTACH.",
+    "system": "PLI",
+    "notes": "La operación ATTACH falló.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0120",
+    "code": "3503",
+    "description": "Error durante la ejecución de una instrucción STOP.",
+    "system": "PLI",
+    "notes": "La instrucción STOP no pudo finalizar correctamente.",
+    "deleted": false
+  },
+    {
+    "id": "ERR-PLI-0121",
+    "code": "3797",
+    "description": "Intento de convertir a o desde datos gráficos.",
+    "system": "PLI",
+    "notes": "Los datos gráficos no son compatibles con la operación solicitada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0122",
+    "code": "3798",
+    "description": "ONCHAR o pseudovariable ONSOURCE utilizado fuera de contexto.",
+    "system": "PLI",
+    "notes": "Las pseudovariables solo pueden usarse dentro de una unidad ON.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0123",
+    "code": "3799",
+    "description": "Unidad ON fue ingresada debido a una condición CONVERSION y el carácter que causó la condición se utiliza, pero no ha sido corregido por ONSOURCE o ONCHAR.",
+    "system": "PLI",
+    "notes": "El carácter problemático no fue corregido dentro de la unidad ON.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0124",
+    "code": "3800",
+    "description": "La longitud de la totalidad de los datos supera el límite del sistema.",
+    "system": "PLI",
+    "notes": "Los datos exceden la capacidad máxima permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0125",
+    "code": "3801",
+    "description": "Elemento de la estructura Array no asignada.",
+    "system": "PLI",
+    "notes": "Se intentó acceder a un elemento no inicializado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0126",
+    "code": "3808",
+    "description": "No se puede asignar en COBOL o FORTRAN.",
+    "system": "PLI",
+    "notes": "La operación de asignación no es compatible con estos lenguajes.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0127",
+    "code": "3809",
+    "description": "Totalidad de los datos supera la longitud máxima.",
+    "system": "PLI",
+    "notes": "El tamaño total excede el límite definido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0128",
+    "code": "3810",
+    "description": "El alcance de una matriz excede el máximo.",
+    "system": "PLI",
+    "notes": "La matriz supera su rango permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0129",
+    "code": "3901",
+    "description": "Tarea variable ya está en uso.",
+    "system": "PLI",
+    "notes": "La variable está ocupada por otra operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0130",
+    "code": "3904",
+    "description": "Pseudovariable COMPLETION especifica una variable caso que ya está en uso.",
+    "system": "PLI",
+    "notes": "La variable de evento ya está activa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0131",
+    "code": "3906",
+    "description": "Asignación a una variable de evento que ya está activa.",
+    "system": "PLI",
+    "notes": "La variable de evento no puede reutilizarse mientras está activa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0132",
+    "code": "3907",
+    "description": "DISPLAY especifica una variable de evento que ya está activa.",
+    "system": "PLI",
+    "notes": "La variable de evento está en uso y no puede emplearse en DISPLAY.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0133",
+    "code": "3909",
+    "description": "Almacenamiento principal insuficiente para crear subtarea (CALL).",
+    "system": "PLI",
+    "notes": "No hay memoria suficiente para iniciar la subtarea.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0134",
+    "code": "3910",
+    "description": "Número máximo de subtareas alcanzado.",
+    "system": "PLI",
+    "notes": "No pueden crearse más subtareas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0135",
+    "code": "3911",
+    "description": "WAIT en unidad ON referencia una variable de evento que ya se esperaba.",
+    "system": "PLI",
+    "notes": "La variable ya está en estado de espera.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0136",
+    "code": "3912",
+    "description": "CALL con opción TASK en bloque invocado durante ejecución de PUT FILE(SYSPRINT).",
+    "system": "PLI",
+    "notes": "La operación CALL no es válida durante PUT SYSPRINT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0137",
+    "code": "3913",
+    "description": "CALL con opción TASK especifica un punto de entrada desconocido.",
+    "system": "PLI",
+    "notes": "El punto de entrada no existe.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0138",
+    "code": "3914",
+    "description": "FORTRAN o COBOL ya invocado por otra tarea.",
+    "system": "PLI",
+    "notes": "El entorno del lenguaje está ocupado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0139",
+    "code": "3915",
+    "description": "Librería de multitarea no seleccionada en el paso de link-edit.",
+    "system": "PLI",
+    "notes": "La librería requerida no fue incluida en el enlace.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0140",
+    "code": "3920",
+    "description": "Un Abend fuera de almacenamiento se produjo.",
+    "system": "PLI",
+    "notes": "El programa falló por falta de memoria.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0141",
+    "code": "3951",
+    "description": "OpenEdition llamada a servicio BPX1MPI falló.",
+    "system": "PLI",
+    "notes": "El servicio BPX1MPI devolvió error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0142",
+    "code": "3952",
+    "description": "OpenEdition llamada a servicio BPX1MP falló.",
+    "system": "PLI",
+    "notes": "El servicio BPX1MP devolvió error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0143",
+    "code": "3953",
+    "description": "OpenEdition llamada a servicio BPX1PTB falló.",
+    "system": "PLI",
+    "notes": "El servicio BPX1PTB devolvió error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0144",
+    "code": "4001",
+    "description": "Variable CONTROLLED no asignada durante GET DATA.",
+    "system": "PLI",
+    "notes": "La variable CONTROLLED debe asignarse antes de GET DATA.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0145",
+    "code": "4002",
+    "description": "Variable CONTROLLED no asignada en PUT DATA.",
+    "system": "PLI",
+    "notes": "La variable CONTROLLED no tiene almacenamiento asignado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0146",
+    "code": "4003",
+    "description": "Variable CONTROLLED no asignada durante PUT DATA con opción STRING.",
+    "system": "PLI",
+    "notes": "La variable CONTROLLED debe estar asignada para PUT STRING.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0147",
+    "code": "8091",
+    "description": "Excepción operación: código de instrucción de máquina no válido.",
+    "system": "PLI",
+    "notes": "Se intentó ejecutar una instrucción inválida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0148",
+    "code": "8092",
+    "description": "Excepción operación privilegiada: instrucción privilegiada no puede ejecutarse en estado problemático.",
+    "system": "PLI",
+    "notes": "La instrucción requiere modo privilegiado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0149",
+    "code": "8093",
+    "description": "Excepción EXECUTE: una instrucción EXECUTE no debe apuntar a sí misma.",
+    "system": "PLI",
+    "notes": "La instrucción EXECUTE referencia su propia dirección.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0150",
+    "code": "8094",
+    "description": "Excepción de protección: error de traducción de direcciones o almacenamiento protegido.",
+    "system": "PLI",
+    "notes": "La dirección está protegida o fuera de rango.",
+    "deleted": false
+  },
+    {
+    "id": "ERR-PLI-0151",
+    "code": "8095",
+    "description": "Excepción de direccionamiento (dirección se encuentra fuera del almacenamiento virtual disponible).",
+    "system": "PLI",
+    "notes": "La dirección referenciada no pertenece al espacio de memoria válido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0152",
+    "code": "8096",
+    "description": "Especificación de excepción.",
+    "system": "PLI",
+    "notes": "La instrucción contiene una especificación inválida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0153",
+    "code": "8097",
+    "description": "Excepción de datos (valor decimal empaquetado no es válido).",
+    "system": "PLI",
+    "notes": "El dato decimal empaquetado no cumple el formato requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0154",
+    "code": "8098",
+    "description": "No es suficiente pila de almacenamiento (resultado de una operación de punto fijo es demasiado grande).",
+    "system": "PLI",
+    "notes": "La operación excede la capacidad de la pila.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0155",
+    "code": "8099",
+    "description": "Excepción de división de punto fijo (resultado demasiado grande o división por cero).",
+    "system": "PLI",
+    "notes": "La operación de división produjo un valor inválido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0156",
+    "code": "9002",
+    "description": "Sentencia GOTO referencia etiqueta en un bloque inactivo.",
+    "system": "PLI",
+    "notes": "La etiqueta no es accesible desde el contexto actual.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0157",
+    "code": "9003",
+    "description": "Etiqueta de la instrucción GOTO no existe.",
+    "system": "PLI",
+    "notes": "La etiqueta referenciada no está definida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0158",
+    "code": "9050",
+    "description": "Programa terminado por un Abend.",
+    "system": "PLI",
+    "notes": "El programa finalizó debido a un error grave.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0159",
+    "code": "9051",
+    "description": "Error en CICS (dirección de un parámetro podría ser inválido).",
+    "system": "PLI",
+    "notes": "La dirección del parámetro no es válida para CICS.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0160",
+    "code": "9200",
+    "description": "Programa de verificación en programa SORT/MERGE.",
+    "system": "PLI",
+    "notes": "Se detectó un error durante SORT/MERGE.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0161",
+    "code": "9201",
+    "description": "VM no admite SORT (CMS no es compatible con SORT).",
+    "system": "PLI",
+    "notes": "La función SORT no está disponible en el entorno VM/CMS.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0162",
+    "code": "9202",
+    "description": "RECORD TYPE falta en PLISRTx llamada.",
+    "system": "PLI",
+    "notes": "La llamada PLISRTx requiere especificar RECORD TYPE.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0163",
+    "code": "9203",
+    "description": "RECORD TYPE no es válido en PLISRTx llamada.",
+    "system": "PLI",
+    "notes": "El tipo de registro especificado no es aceptado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0164",
+    "code": "9204",
+    "description": "\"LENGTH=\" no se encuentra en PLISRTB o PLISRTD llamada.",
+    "system": "PLI",
+    "notes": "La llamada requiere especificar LENGTH.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0165",
+    "code": "9205",
+    "description": "\"LENGTH=\" no es numérico en PLISRTB o PLISRTD llamada.",
+    "system": "PLI",
+    "notes": "El valor LENGTH debe ser numérico.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0166",
+    "code": "9206",
+    "description": "E15 o E35 rutina devuelve un código inválido.",
+    "system": "PLI",
+    "notes": "La rutina de usuario devolvió un código no permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0167",
+    "code": "9207",
+    "description": "DFSORT falló (revisar los mensajes por separado).",
+    "system": "PLI",
+    "notes": "DFSORT devolvió error; revisar diagnóstico.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0168",
+    "code": "9208",
+    "description": "PLISRTx invocado, pero el entorno no admite ADMVS.",
+    "system": "PLI",
+    "notes": "La función no está disponible en este entorno.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0169",
+    "code": "9249",
+    "description": "Rutina no se puede liberar (RELEASED).",
+    "system": "PLI",
+    "notes": "La rutina no pudo ser liberada del almacenamiento.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0170",
+    "code": "9250",
+    "description": "Procedimiento que se ha traído (fetched) no se puede encontrar.",
+    "system": "PLI",
+    "notes": "El procedimiento no está disponible en el entorno de ejecución.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0171",
+    "code": "9251",
+    "description": "Error de transmisión durante la obtención (fetch) de un procedimiento.",
+    "system": "PLI",
+    "notes": "La operación FETCH falló por error de transmisión.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0172",
+    "code": "9252",
+    "description": "FETCH/RELEASE no es compatible con VM (CMS no admite FETCH/RELEASE).",
+    "system": "PLI",
+    "notes": "La función no está disponible en CMS.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0173",
+    "code": "9253",
+    "description": "Herramienta de depuración no está disponible (PLITEST no disponible).",
+    "system": "PLI",
+    "notes": "PLITEST no está instalado o soportado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0174",
+    "code": "9254",
+    "description": "Un procedimiento principal (MAIN) de una rutina PL/I no se puede llamar bajo CICS.",
+    "system": "PLI",
+    "notes": "CICS no permite invocar MAIN directamente.",
+    "deleted": false
+  },
+{
+    "id": "ERR-PLI-0175",
+    "code": "9255",
+    "description": "Intento de lanzar un módulo de carga que contiene un programa de lenguaje de alto nivel, que no es PL/I.",
+    "system": "PLI",
+    "notes": "El módulo no es compatible con PL/I bajo este entorno.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0176",
+    "code": "9257",
+    "description": "Intento de buscar una subrutina con el punto de entrada PLICALLA.",
+    "system": "PLI",
+    "notes": "El punto de entrada PLICALLA no está disponible.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-PLI-0177",
+    "code": "9999",
+    "description": "Invocación de un entorno en el lenguaje para un servicio MVS/VM falló.",
+    "system": "PLI",
+    "notes": "El servicio del entorno MVS/VM devolvió error.",
+    "deleted": false
+  },
+    
 
 {
     "id": "ERR-MSG-0001",
