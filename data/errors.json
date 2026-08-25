@@ -3009,6 +3009,329 @@
     "system": "ABEND",
     "deleted": false
   },    
+
+{
+    "id": "ERR-MSG-0001",
+    "code": "U0020",
+    "description": "Se ha cerrado el ims/vs por medio de un comando modify. la cinta log queda cerrada y el ims/vs termina anormalmente.",
+    "notes": "El cierre manual del IMS/VS mediante MODIFY provoca terminación anómala y cierre de la cinta LOG.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0002",
+    "code": "U0030",
+    "description": "Un fichero de entrada lo tiene cogido alguien como old.",
+    "notes": "El dataset está bloqueado en modo OLD por otro proceso.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0003",
+    "code": "U0046",
+    "description": "Sort capacidad excedida.",
+    "notes": "El proceso SORT supera la capacidad asignada.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0004",
+    "code": "U0061",
+    "description": "Fichero de entrada vacio.",
+    "notes": "El fichero no contiene registros para procesar.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0005",
+    "code": "U0063",
+    "description": "Blksize incorrecto. el primer fichero debe ser el de mayor blksize.",
+    "notes": "El BLKSIZE no coincide con las características del dispositivo.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0006",
+    "code": "U0068",
+    "description": "Diferente criterio de clasificacion de los dos ficheros. sustituir sort por merge.",
+    "notes": "Los criterios de ordenación no son compatibles entre ambos ficheros.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0007",
+    "code": "U0073",
+    "description": "La psb esta como que actualiza, pero no pide cinta log por que consulta. relanzar sin dbrc.",
+    "notes": "La PSB está marcada como actualización pero se ejecuta en modo consulta.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0008",
+    "code": "U0261",
+    "description": "Alguno de los parametros pasados en la call es incorrecto. pgm mal compilado o mal copiado.",
+    "notes": "La CALL recibe parámetros inválidos o el programa está defectuoso.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0009",
+    "code": "U0428",
+    "description": "Puede que no se haya especificado la psb.",
+    "notes": "La ejecución requiere una PSB válida y no fue indicada.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0010",
+    "code": "U0462",
+    "description": "El programa ha sido cargado en la region y ha terminado sin utilizar la call gu a la cola de mensajes.",
+    "notes": "El programa no realizó ninguna operación GU sobre la cola de mensajes IMS.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0011",
+    "code": "U0474",
+    "description": "El operador ha cancelado el programa con el comando /stop region abdump.",
+    "notes": "Cancelación manual mediante /STOP REGION ABDUMP.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0012",
+    "code": "U0476",
+    "description": "Call dl/i invalida. incorrecta direccion de pcb.",
+    "notes": "La PCB utilizada en la llamada DL/I no es válida.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0013",
+    "code": "U0477",
+    "description": "Insuficiente memoria para los buffers.",
+    "notes": "La memoria asignada a buffers es insuficiente para continuar.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0014",
+    "code": "U0616",
+    "description": "Permanente error de entrada/salida se ha detectado en la log del ims/vs. leer el mensaje dfs616a.",
+    "notes": "Consultar DFS616A para detalles del error permanente de E/S.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0015",
+    "code": "U0717",
+    "description": "Insuficiente memoria para el pool de buffers principal error encontrado en la ejecucion del modulo dfsmodu0.",
+    "notes": "Códigos posibles: 4 función no soportada; 8 versión incompatible; 20 área común pequeña; 24 fallo de programa.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0016",
+    "code": "U0718",
+    "description": "Error en la inicializacion del ims/vs. un modulo requerido no ha sido encontrado o ha dado un permanente error de entrada/salida.",
+    "notes": "Fallo al cargar módulos IMS/VS desde la librería.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0017",
+    "code": "U0723",
+    "description": "Region insuficiente.",
+    "notes": "La región asignada no permite ejecutar el programa.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0018",
+    "code": "U0756",
+    "description": "No se puede abrir la log de entrada durante la restauracion. ver si la dd imslogr es correcta.",
+    "notes": "La DD IMSLOGR debe verificarse para restauración.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0019",
+    "code": "U0778",
+    "description": "Se ha utilizado una call roll. el programa termina anormalmente pero no para ni la transaccion ni el programa y obtiene dump.",
+    "notes": "CALL ROLL provoca terminación anómala sin detener la transacción.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0020",
+    "code": "U0803",
+    "description": "El contador de numero de hijos logicos quedo en negativo al restar 1 por haber borrado un hijo logico.",
+    "notes": "Puede no existir el padre lógico o haber inconsistencias en la estructura.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0021",
+    "code": "U0808",
+    "description": "No esta cambiada la parm.",
+    "notes": "La PARM no fue actualizada antes de ejecutar.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0022",
+    "code": "U0845",
+    "description": "Alguna base de datos tratada tiene algun registro mal definido cuando se cargo o inicializo.",
+    "notes": "Buscar 'VSAM RDF/CIDF' en S.DA; este error puede causar caída del IMS desde terminal.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0023",
+    "code": "U0850",
+    "description": "Se ha detectado un error en el manejador de buffers.",
+    "notes": "Posible acceso simultáneo a la misma base; repetir el proceso.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0024",
+    "code": "U0852",
+    "description": "Se ha detectado un error de pointers al acceder a un segmento de la base de datos.",
+    "notes": "Los apuntadores del segmento son inconsistentes.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0025",
+    "code": "U0878",
+    "description": "Falta region.",
+    "notes": "La región asignada es insuficiente para continuar.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0026",
+    "code": "U3030",
+    "description": "Puede que alguna base este descolgada del ims.",
+    "notes": "La base no está conectada correctamente al IMS.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0027",
+    "code": "U3057",
+    "description": "Se intenta acceder a bases dli y db2 sin procedimiento adecuado.",
+    "notes": "Debe usarse el método correcto para acceso mixto DLI/DB2.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0028",
+    "code": "U0929",
+    "description": "Psb no definida por ese ordenador.",
+    "notes": "Ejecutar en el otro sistema donde la PSB está definida.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0029",
+    "code": "U3555",
+    "description": "Error de pl/i. el programa carece de on error.",
+    "notes": "Consultar ONCODE en el manual PL/I.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0030",
+    "code": "U3666",
+    "description": "Error de pl/i. el control pasa a la rutina on error.",
+    "notes": "La rutina ON ERROR maneja la excepción; revisar ONCODE.",
+    "system": "MSG",
+    "deleted": false
+  },
+{
+  "id": "ERR-MSG-0031",
+  "code": "U3777",
+  "description": "Se ha utilizado el modulo 'imscod' al devolver el ims un codigo de retorno invalido. el nombre de programa y el rc saldran por la consola del ordenador y por 'sysprint' junto con el registro 13 y el registro 3 del programa. en valores: base activa. se pasa el vatpfinb.",
+  "notes": "El módulo IMSCOD informa un código de retorno inválido y muestra información diagnóstica en SYSPRINT y consola, incluyendo R13 y R3.",
+  "system": "MSG",
+  "deleted": false
+},
+{
+    "id": "ERR-MSG-0032",
+    "code": "DFS041I",
+    "description": "Rc=8 cuando se pretende ejecutar en batch con control del dbrc un job que ya se habia ejecutado con el mismo nombre y termino anormalmente haya tocado o no las bases de datos.",
+    "notes": "El DBRC detecta que el JOB ya fue ejecutado previamente y terminó de forma anómala.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0033",
+    "code": "DFS0730I",
+    "description": "Base de datos creada sin dbr en el ims.",
+    "notes": "La base fue creada sin el registro DBR correspondiente en IMS.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0034",
+    "code": "0-DC",
+    "description": "Cuando los buffers del dfsvsamp son insuficientes o incorrectos. acompañado de ai en isrt.",
+    "notes": "Los buffers definidos en DFSVSAMP no cumplen los requisitos para la operación ISRT.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0035",
+    "code": "DFS2802A",
+    "description": "Error en read o input.",
+    "notes": "Fallo de lectura o entrada detectado por IMS.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0036",
+    "code": "001C",
+    "description": "En recovery cuando intenta direccionar un registro fuera del espacio real que tiene. se produjo al tener en delete define un tamaño superior al asignado fisicamente en el disco.",
+    "notes": "El registro excede el espacio físico asignado al dataset durante recuperación.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0037",
+    "code": "IEC130I",
+    "description": "No se ha puesto la dd de la ficha sysdbout. de todas formas el error se produce por otras causas.",
+    "notes": "La DD SYSDBOUT falta o es incorrecta; pueden existir causas adicionales.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0038",
+    "code": "IEC161I",
+    "description": "Error en una dba. la macro open de un vsam no puede paginar el espacio de un dataset. da si el tipo de dispositivo es un disco y no se ha puesto el parametro image='image'.",
+    "notes": "El OPEN VSAM falla por falta del parámetro IMAGE en dispositivos de disco.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0039",
+    "code": "IEF450I",
+    "description": "Error de usuario en un sort. dd duplicada o mal puesta o tipo de dispositivo erroneo.",
+    "notes": "SORT detecta conflicto en DDs o dispositivo incompatible.",
+    "system": "MSG",
+    "deleted": false
+  },
+  {
+    "id": "ERR-MSG-0040",
+    "code": "IKF115I",
+    "description": "File status is 9. qsam error. en el jcl puede que haya ficheros que no se correspondan con los nombres dados en el programa o sobren o falten.",
+    "notes": "QSAM detecta discrepancia entre nombres de ficheros del programa y los declarados en JCL.",
+    "system": "MSG",
+    "deleted": false
+  },
+    
+    
     
   { "id": "ERR-DB2-0001", "code": "-911",
   "description": "Deadlock o timeout. Transacción revertida",
@@ -3129,6 +3452,2601 @@
   "system": "DB2", "operation": "",
   "notes": "Indica que el cursor no encontró más registros. No es error, es condición normal.",
   "deleted": false },
+{
+    "id": "ERR-DB2-0021",
+    "code": "100",
+    "description": "Fila no encontrada al hacer una SELECT, FETCH o UPDATE",
+    "system": "DB2",
+    "notes": "Indica ausencia de registros coincidentes.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0022",
+    "code": "000",
+    "description": "Ejecución correcta de la instrucción SQL.",
+    "system": "DB2",
+    "notes": "Condición normal sin errores.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0023",
+    "code": "-001",
+    "description": "Hacer un UPDATE cuando la fila no existe.",
+    "system": "DB2",
+    "notes": "El UPDATE no encuentra la fila objetivo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0024",
+    "code": "-004",
+    "description": "Campo demasiado largo en un CURSOR.",
+    "system": "DB2",
+    "notes": "La longitud del campo excede la permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0025",
+    "code": "-004",
+    "description": "Mover un alfanumérico a un COMP en la WHERE.",
+    "system": "DB2",
+    "notes": "Conversión inválida entre tipos alfanumérico y COMP.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0026",
+    "code": "-004",
+    "description": "Al abrir un CURSOR, metiendo valores alfanuméricos en numéricos.",
+    "system": "DB2",
+    "notes": "El valor no coincide con el tipo numérico esperado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0027",
+    "code": "-004",
+    "description": "No se corresponde COPY con CREATE.",
+    "system": "DB2",
+    "notes": "La definición COPY no coincide con la estructura real de la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0028",
+    "code": "-007",
+    "description": "Ilegal carácter en una instrucción SQL.",
+    "system": "DB2",
+    "notes": "La sentencia contiene caracteres no permitidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0029",
+    "code": "-009",
+    "description": "Nombre de campo erróneo en el SET de un UPDATE.",
+    "system": "DB2",
+    "notes": "El campo especificado no existe en la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0030",
+    "code": "-009",
+    "description": "Nombre de campo erróneo en la SELECT de un CURSOR.",
+    "system": "DB2",
+    "notes": "El campo referenciado no existe en la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0031",
+    "code": "-009",
+    "description": "Nombre de tabla errónea en el FROM del DECLARE de un CURSOR.",
+    "system": "DB2",
+    "notes": "La tabla indicada no existe o está mal escrita.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0032",
+    "code": "-010",
+    "description": "Ilegal carácter en una instrucción SQL. Falta memoria en el PC.",
+    "system": "DB2",
+    "notes": "La sentencia SQL contiene caracteres inválidos o el entorno carece de memoria.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0033",
+    "code": "-011",
+    "description": "Usando el tipo VARCHAR, en la declaración del CURSOR se hace referencia al nivel 49 en lugar del nombre del grupo.",
+    "system": "DB2",
+    "notes": "Referencia incorrecta al nivel de la variable VARCHAR.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0034",
+    "code": "-012",
+    "description": "El número de campos de un FETCH es distinto al número de campos de la SELECT del CURSOR.",
+    "system": "DB2",
+    "notes": "Desajuste entre SELECT y FETCH.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0035",
+    "code": "-016",
+    "description": "Se abre un CURSOR que ya estaba abierto.",
+    "system": "DB2",
+    "notes": "El cursor ya se encontraba activo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0036",
+    "code": "-016",
+    "description": "Se intenta hacer un UPDATE con el CURSOR cerrado.",
+    "system": "DB2",
+    "notes": "El cursor no está disponible para actualización.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0037",
+    "code": "-016",
+    "description": "CURSOR no especificado en FETCH o CLOSE no está abierto.",
+    "system": "DB2",
+    "notes": "El cursor no fue abierto antes de la operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0038",
+    "code": "-018",
+    "description": "Insertar con claves duplicadas, siempre y cuando se hayan creado índices.",
+    "system": "DB2",
+    "notes": "La clave ya existe en la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0039",
+    "code": "-019",
+    "description": "Instrucción SQL demasiado larga o compleja.",
+    "system": "DB2",
+    "notes": "La sentencia excede la complejidad permitida por DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0040",
+    "code": "-019",
+    "description": "Mala instrucción del DB2.",
+    "system": "DB2",
+    "notes": "La sentencia SQL contiene errores de sintaxis.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0041",
+    "code": "-019",
+    "description": "Sintaxis en el DECLARE del CURSOR mala.",
+    "system": "DB2",
+    "notes": "La declaración del cursor contiene errores sintácticos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0042",
+    "code": "-020",
+    "description": "Cambiar parámetro en COBOL DIR que se encuentra en el directorio COBOLMF.",
+    "system": "DB2",
+    "notes": "Reajuste de parámetros COBOL para compatibilidad PC/HOST.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0043",
+    "code": "-020",
+    "description": "Programa mal compilado. Instrucción SQL incorrecta.",
+    "system": "DB2",
+    "notes": "La compilación generó SQL inválido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0044",
+    "code": "-020",
+    "description": "En una OPEN revisar la DECLARE del CURSOR.",
+    "system": "DB2",
+    "notes": "La DECLARE del cursor contiene errores.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0045",
+    "code": "-020",
+    "description": "Faltan las comas en el SET de un UPDATE o en el último campo del DECLARE.",
+    "system": "DB2",
+    "notes": "Error de sintaxis por separadores faltantes.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0046",
+    "code": "-020",
+    "description": "Campos mal puestos en la SELECT del CURSOR. Falta el OF en el UPDATE del CURSOR.",
+    "system": "DB2",
+    "notes": "La sentencia SQL no respeta la estructura requerida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0047",
+    "code": "-020",
+    "description": "Hay campos particionados en la WORKING.",
+    "system": "DB2",
+    "notes": "La estructura WORKING contiene particiones incompatibles con SQL.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0048",
+    "code": "-024",
+    "description": "Se intenta generar un CURSOR de una TABLA que no se ha creado.",
+    "system": "DB2",
+    "notes": "La tabla referenciada no existe.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0049",
+    "code": "-026",
+    "description": "Demasiados nombres en la misma instrucción.",
+    "system": "DB2",
+    "notes": "La sentencia contiene más identificadores de los permitidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0050",
+    "code": "-028",
+    "description": "Hacer un UPDATE sobre una TABLA que no existe o no ha sido creada.",
+    "system": "DB2",
+    "notes": "La tabla objetivo no está definida en el catálogo.",
+    "deleted": false
+  },
+
+  {
+    "id": "ERR-DB2-0051",
+    "code": "-034",
+    "description": "Variable para acumular en la SELECT.COUNT debe ser PIC S9(15) COMP-3.",
+    "system": "DB2",
+    "notes": "El tipo de variable no coincide con el requerido para COUNT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0052",
+    "code": "-034",
+    "description": "Faltan: en COMPO de WHERE.",
+    "system": "DB2",
+    "notes": "La cláusula WHERE está incompleta.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0053",
+    "code": "-040",
+    "description": "Insertar con claves duplicadas siempre y cuando se hayan creado índices.",
+    "system": "DB2",
+    "notes": "La clave ya existe en la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0054",
+    "code": "-046",
+    "description": "Demasiados campos especificados en la creación de un INDICE.",
+    "system": "DB2",
+    "notes": "El índice excede el número permitido de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0055",
+    "code": "-047",
+    "description": "Nombre de tablas vistas índices o sinónimos más largos del tamaño permitido máximo 18 caracteres.",
+    "system": "DB2",
+    "notes": "El nombre excede la longitud máxima permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0056",
+    "code": "-050",
+    "description": "Índice no puede ser creado porque la suma de las longitudes de los campos identificados es mayor de la permitida.",
+    "system": "DB2",
+    "notes": "La definición del índice supera el límite de tamaño.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0057",
+    "code": "-051",
+    "description": "No se puede crear un índice único en las tablas con valores duplicados.",
+    "system": "DB2",
+    "notes": "La tabla contiene valores repetidos en la clave.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0058",
+    "code": "-053",
+    "description": "Error en los datos. No concuerda la tabla generada con la COPY.",
+    "system": "DB2",
+    "notes": "La estructura COPY no coincide con la tabla real.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0059",
+    "code": "-057",
+    "description": "Al hacer un INSERT, la COPY y el SQL no tienen el mismo número de campos.",
+    "system": "DB2",
+    "notes": "Desajuste entre COPY y sentencia SQL.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0060",
+    "code": "-059",
+    "description": "CREATE y COPY no están a nivel.",
+    "system": "DB2",
+    "notes": "Las definiciones no coinciden en estructura.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0061",
+    "code": "-060",
+    "description": "Tipo de especificación inválida.",
+    "system": "DB2",
+    "notes": "La sentencia contiene un tipo no permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0062",
+    "code": "-061",
+    "description": "Demasiados campos para una tabla.",
+    "system": "DB2",
+    "notes": "La tabla excede el número máximo de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0063",
+    "code": "-072",
+    "description": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión.",
+    "system": "DB2",
+    "notes": "Uso no permitido de funciones anidadas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0064",
+    "code": "-072",
+    "description": "Nombre de las tablas vistas índices o sinónimos más largo del tamaño permitido máximo 18 caracteres.",
+    "system": "DB2",
+    "notes": "El nombre excede la longitud permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0065",
+    "code": "-073",
+    "description": "Campo definido en la SELECT y no en la GROUP BY.",
+    "system": "DB2",
+    "notes": "La columna debe incluirse en GROUP BY.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0066",
+    "code": "-075",
+    "description": "Campo definido en la SELECT y no en la GROUP BY.",
+    "system": "DB2",
+    "notes": "La sentencia requiere coherencia entre SELECT y GROUP BY.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0067",
+    "code": "-079",
+    "description": "El objeto del INSERT, DELETE o UPDATE es una vista para lo cual la operación requerida no está permitida.",
+    "system": "DB2",
+    "notes": "La vista no admite la operación solicitada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0068",
+    "code": "-079",
+    "description": "Hacer un DELETE sin 'FOR UPDATE' en el CURSOR.",
+    "system": "DB2",
+    "notes": "El cursor no está preparado para borrado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0069",
+    "code": "-080",
+    "description": "Más de un distintivo especificado en una SUBSELECT.",
+    "system": "DB2",
+    "notes": "La subconsulta contiene múltiples DISTINCT no permitidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0070",
+    "code": "-082",
+    "description": "Los operandos de una UNION no tienen el mismo número de campos.",
+    "system": "DB2",
+    "notes": "Las SELECT deben tener igual número de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0071",
+    "code": "-084",
+    "description": "Instrucción SQL incorrecta.",
+    "system": "DB2",
+    "notes": "La sentencia contiene errores de sintaxis.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0072",
+    "code": "-084",
+    "description": "Programa mal compilado.",
+    "system": "DB2",
+    "notes": "La compilación generó SQL inválido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0073",
+    "code": "-084",
+    "description": "Poner una coma en el último campo del DECLARE.",
+    "system": "DB2",
+    "notes": "Error de sintaxis por separador faltante.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0074",
+    "code": "-084",
+    "description": "Campos mal puestos en la SELECT del CURSOR.",
+    "system": "DB2",
+    "notes": "La SELECT no coincide con la estructura del cursor.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0075",
+    "code": "-086",
+    "description": "Actualizar una tabla sin haber leído previamente del CURSOR.",
+    "system": "DB2",
+    "notes": "El cursor debe estar posicionado antes del UPDATE.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0076",
+    "code": "-086",
+    "description": "Actualizar un campo con el valor de LOW-VALUES.",
+    "system": "DB2",
+    "notes": "LOW-VALUES no es válido para actualización.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0077",
+    "code": "-086",
+    "description": "Insertar una fila con clave LOW-VALUES.",
+    "system": "DB2",
+    "notes": "LOW-VALUES no es válido como clave.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0078",
+    "code": "-086",
+    "description": "Campo en la WHERE con valor LOW-VALUES.",
+    "system": "DB2",
+    "notes": "LOW-VALUES no es válido para comparación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0079",
+    "code": "-087",
+    "description": "Nombres de tablas vistas índices o sinónimos más largos del tamaño permitido máximo 18 caracteres.",
+    "system": "DB2",
+    "notes": "El nombre excede la longitud permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0080",
+    "code": "-088",
+    "description": "Nombre de tablas vistas índices o sinónimos más largos del tamaño permitido máximo 18 caracteres.",
+    "system": "DB2",
+    "notes": "El nombre excede la longitud permitida.",
+    "deleted": false
+  },
+{
+    "id": "ERR-DB2-0081",
+    "code": "-101",
+    "description": "Instrucción SQL demasiado larga o compleja.",
+    "system": "DB2",
+    "notes": "La sentencia excede la complejidad permitida por DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0082",
+    "code": "-101",
+    "description": "Mala instalación del DB2.",
+    "system": "DB2",
+    "notes": "La instalación del subsistema DB2 presenta inconsistencias.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0083",
+    "code": "-102",
+    "description": "Longitud de la constante mayor de 254 caracteres o 124 gráficos.",
+    "system": "DB2",
+    "notes": "El literal excede la longitud permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0084",
+    "code": "-103",
+    "description": "Una columna identificada en una cláusula HAVING no está incluida en la cláusula GROUP BY.",
+    "system": "DB2",
+    "notes": "La columna debe aparecer también en GROUP BY.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0085",
+    "code": "-103",
+    "description": "Literal XXX es un literal numérico inválido.",
+    "system": "DB2",
+    "notes": "El literal no cumple el formato numérico requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0086",
+    "code": "-104",
+    "description": "Falta una coma entre dos campos seleccionados.",
+    "system": "DB2",
+    "notes": "Error de sintaxis por separador faltante.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0087",
+    "code": "-104",
+    "description": "La sentencia contiene el carácter o testigo inválido token_1. El testigo token_2 está en espera.",
+    "system": "DB2",
+    "notes": "La sentencia contiene un token inesperado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0088",
+    "code": "-104",
+    "description": "Si se utiliza un fichero para ejecutar la sentencia DB2 puede tener caracteres erróneos.",
+    "system": "DB2",
+    "notes": "El fichero de entrada contiene caracteres inválidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0089",
+    "code": "-105",
+    "description": "Constantes de cadena inválida.",
+    "system": "DB2",
+    "notes": "El literal de cadena no cumple el formato requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0090",
+    "code": "-106",
+    "description": "Cláusula FROM inválida porque una de las tablas es una vista que incluye una cláusula GROUP BY.",
+    "system": "DB2",
+    "notes": "La vista utilizada no permite la operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0091",
+    "code": "-106",
+    "description": "El nombre de una columna está identificado más de una vez en la instrucción INSERT o UPDATE.",
+    "system": "DB2",
+    "notes": "La columna aparece duplicada en la sentencia.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0092",
+    "code": "-107",
+    "description": "Nombre de tablas vistas índices o sinónimos más largos del tamaño permitido máximo 18 caracteres.",
+    "system": "DB2",
+    "notes": "El nombre excede la longitud permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0093",
+    "code": "-109",
+    "description": "Cláusula no permitida en instrucción SQL.",
+    "system": "DB2",
+    "notes": "La sentencia contiene una cláusula inválida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0094",
+    "code": "-110",
+    "description": "Literal hexadecimal inválido al comenzar la variable.",
+    "system": "DB2",
+    "notes": "El literal no cumple el formato hexadecimal requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0095",
+    "code": "-111",
+    "description": "Función SQL no incluida en el nombre de la columna.",
+    "system": "DB2",
+    "notes": "La función no puede aplicarse en ese contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0096",
+    "code": "-112",
+    "description": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión.",
+    "system": "DB2",
+    "notes": "Uso no permitido de funciones anidadas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0097",
+    "code": "-112",
+    "description": "Borrar tabla y volverla a crear.",
+    "system": "DB2",
+    "notes": "La tabla presenta inconsistencias y debe recrearse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0098",
+    "code": "-113",
+    "description": "Carácter inválido en nombre.",
+    "system": "DB2",
+    "notes": "El identificador contiene caracteres no permitidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0099",
+    "code": "-113",
+    "description": "Operación no permitida en un sistema de bases de datos.",
+    "system": "DB2",
+    "notes": "La operación no está soportada por DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0100",
+    "code": "-115",
+    "description": "El predicado es inválido porque la comparación del operador está seguida de una lista de paréntesis o nada o todos sin SUBQUERY.",
+    "system": "DB2",
+    "notes": "La sintaxis del predicado no es válida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0101",
+    "code": "-117",
+    "description": "Cuando la DCL de la tabla es superior en longitud a la DCL de la COPY.",
+    "system": "DB2",
+    "notes": "Las definiciones no coinciden en tamaño.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0102",
+    "code": "-117",
+    "description": "El nombre de valores insertados no es el mismo que el número de columnas objeto.",
+    "system": "DB2",
+    "notes": "Desajuste entre columnas y valores.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0103",
+    "code": "-118",
+    "description": "Se intenta declarar un CURSOR con una JOIN o con una SUBSELECT para inserción, modificación o borrado.",
+    "system": "DB2",
+    "notes": "El cursor no admite operaciones de actualización en ese contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0104",
+    "code": "-119",
+    "description": "Una columna identificada en una cláusula HAVING no está incluida en la cláusula GROUP BY.",
+    "system": "DB2",
+    "notes": "La columna debe aparecer también en GROUP BY.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0105",
+    "code": "-119",
+    "description": "Nombre de tablas vistas índices o sinónimos más largo del tamaño permitido máximo 18 caracteres.",
+    "system": "DB2",
+    "notes": "El nombre excede la longitud permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0106",
+    "code": "-120",
+    "description": "Una cláusula WHERE o SET incluye una función SQL o referencia a una columna XXXX en un grupo por cláusula de una definición vista.",
+    "system": "DB2",
+    "notes": "La vista no permite esa referencia.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0107",
+    "code": "-121",
+    "description": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión.",
+    "system": "DB2",
+    "notes": "Uso no permitido de funciones anidadas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0108",
+    "code": "-121",
+    "description": "La columna está identificada más de una vez en la sentencia INSERT o UPDATE,  o Borrar tabla y volverla a crear.",
+    "system": "DB2",
+    "notes": "La columna aparece duplicada en la sentencia, o La tabla presenta inconsistencias y debe recrearse",
+    "deleted": false
+  },
+  
+  {
+    "id": "ERR-DB2-0110",
+    "code": "-122",
+    "description": "Campo definido en la SELECT y no en la GROUP BY.",
+    "system": "DB2",
+    "notes": "La columna debe incluirse en GROUP BY.",
+    "deleted": false
+  },
+{
+    "id": "ERR-DB2-0111",
+    "code": "-122",
+    "description": "Campo definido en la SELECT y no en la GROUP BY o una sentencia SELECT sin GROUP BY contiene un nombre de columna y una función SQL en la cláusula SELECT.",
+    "system": "DB2",
+    "notes": "La sentencia requiere coherencia entre SELECT y GROUP BY.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0112",
+    "code": "-125",
+    "description": "Un valor en el ORDER BY CLAUSE no se identifica con la columna del resultado.",
+    "system": "DB2",
+    "notes": "El ORDER BY debe referenciar columnas válidas del resultado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0113",
+    "code": "-126",
+    "description": "UPDATE y ORDER BY en instrucción SELECT.",
+    "system": "DB2",
+    "notes": "La sentencia SELECT no admite cláusulas UPDATE u ORDER BY simultáneamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0114",
+    "code": "-127",
+    "description": "Más de un distintivo especificado en una SUBSELECT o campo numérico no especificado al utilizar LIKE o al intentar hacer dos SELECT COUNT(DISTINCT ...) en la misma sentencia SQL.",
+    "system": "DB2",
+    "notes": "La sentencia contiene elementos no permitidos en subconsultas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0115",
+    "code": "-128",
+    "description": "Uso inválido del NULL en un predicado.",
+    "system": "DB2",
+    "notes": "NULL no puede utilizarse en ese contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0116",
+    "code": "-129",
+    "description": "Demasiados nombres de tablas en una misma instrucción.",
+    "system": "DB2",
+    "notes": "La sentencia excede el número permitido de tablas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0117",
+    "code": "-131",
+    "description": "Orden LIKE tiene valores incompatibles.",
+    "system": "DB2",
+    "notes": "Los operandos del LIKE no son válidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0118",
+    "code": "-132",
+    "description": "Un predicado LIKE es inválido porque el primer operando no es una columna o el segundo operando no es una cadena.",
+    "system": "DB2",
+    "notes": "LIKE requiere columna y cadena válidas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0119",
+    "code": "-133",
+    "description": "Una función SQL en una cláusula HAVING es inválida porque aplica un operador aritmético a una referencia correlativa.",
+    "system": "DB2",
+    "notes": "La referencia correlativa no admite operadores aritméticos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0120",
+    "code": "-134",
+    "description": "Uso impropio de la longitud de la variable COLUMN o variable HOST de máxima longitud 254.",
+    "system": "DB2",
+    "notes": "La longitud excede el límite permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0121",
+    "code": "-136",
+    "description": "Longitud de la clave SORT superior a 4000 bytes.",
+    "system": "DB2",
+    "notes": "La clave excede el tamaño máximo permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0122",
+    "code": "-137",
+    "description": "El resultado de la concatenación es demasiado largo.",
+    "system": "DB2",
+    "notes": "La concatenación supera el límite de longitud.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0123",
+    "code": "-138",
+    "description": "Instrucción ALTER TABLE DROP TABLA LOCK TABLE o CREATE INDEX identifica una vista.",
+    "system": "DB2",
+    "notes": "La operación no puede aplicarse sobre vistas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0124",
+    "code": "-140",
+    "description": "La instrucción WITH CHECK OPTION no puede ser usada para la vista especificada.",
+    "system": "DB2",
+    "notes": "La vista no admite WITH CHECK OPTION.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0125",
+    "code": "-143",
+    "description": "Cláusula FOR UPDATE no puede ser especificada porque existe inconsistencia con tabla precedente o el mismo error pero para PC.",
+    "system": "DB2",
+    "notes": "La sentencia no admite FOR UPDATE en ese contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0126",
+    "code": "-150",
+    "description": "El objeto del INSERT, DELETE o UPDATE es una vista para la cual la operación requerida no está permitida o hacer un DELETE sin 'FOR UPDATE OF' en el CURSOR.",
+    "system": "DB2",
+    "notes": "La vista no admite la operación solicitada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0127",
+    "code": "-151",
+    "description": "El UPDATE no es válido porque la descripción de la columna indica que no puede ser actualizada.",
+    "system": "DB2",
+    "notes": "La columna es de solo lectura.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0128",
+    "code": "-153",
+    "description": "CREATE VIEW no incluye una lista de columnas requerida.",
+    "system": "DB2",
+    "notes": "La vista debe especificar columnas explícitamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0129",
+    "code": "-154",
+    "description": "CREATE VIEW falló porque la definición de la vista contiene un UNION o un UNION ALL.",
+    "system": "DB2",
+    "notes": "Las vistas no admiten UNION en su definición.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0130",
+    "code": "-155",
+    "description": "Cláusula FROM inválida porque una de las tablas es una vista que incluye una cláusula GROUP BY o el nombre de una columna está identificado más de una vez en la instrucción INSERT o UPDATE o no corresponde formato de COPY con CREATE.",
+    "system": "DB2",
+    "notes": "La vista o la definición de columnas no permite la operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0131",
+    "code": "-156",
+    "description": "Instrucción ALTER TABLE DROP TABLA LOCK TABLE o CREATE INDEX identifica una vista.",
+    "system": "DB2",
+    "notes": "La operación no puede aplicarse sobre vistas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0132",
+    "code": "-158",
+    "description": "Número de campos especificados en una vista distinto de los especificados en la SELECT.",
+    "system": "DB2",
+    "notes": "La vista debe coincidir con la SELECT en número de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0133",
+    "code": "-159",
+    "description": "Nombre especificado en DROP VIEW es un nombre de tabla o tabla mal creada.",
+    "system": "DB2",
+    "notes": "DROP VIEW no puede aplicarse sobre tablas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0134",
+    "code": "-160",
+    "description": "La instrucción WITH CHECK OPTION no puede ser usada para la vista especificada.",
+    "system": "DB2",
+    "notes": "La vista no admite WITH CHECK OPTION.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0135",
+    "code": "-161",
+    "description": "El INSERT o UPDATE no está permitido porque una línea resultante no satisface la definición de la vista.",
+    "system": "DB2",
+    "notes": "La vista impone restricciones que la fila no cumple.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0136",
+    "code": "-164",
+    "description": "auth-id1 no tiene los privilegios para crear una vista con cualificación de user_id_2.",
+    "system": "DB2",
+    "notes": "El usuario carece de permisos para crear la vista.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0137",
+    "code": "-170",
+    "description": "El número de argumentos especificado para FUNCTION-NAME es inválido.",
+    "system": "DB2",
+    "notes": "La función requiere un número distinto de argumentos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0138",
+    "code": "-171",
+    "description": "El tipo de dato, longitud o valor de los argumentos NN de la FUNCTION-NAME es inválido.",
+    "system": "DB2",
+    "notes": "Los argumentos no cumplen los requisitos de la función.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0139",
+    "code": "-172",
+    "description": "Función (FUNCTION NAME) no es un nombre de función válida.",
+    "system": "DB2",
+    "notes": "La función no existe en DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0140",
+    "code": "-180",
+    "description": "La cadena de representación de un valor de fecha/hora tiene una sintaxis inválida.",
+    "system": "DB2",
+    "notes": "El literal de fecha/hora no cumple el formato requerido.",
+    "deleted": false
+  } ,
+{
+    "id": "ERR-DB2-0141",
+    "code": "-181",
+    "description": "La cadena de representación de un valor de fecha/hora no es un valor válido.",
+    "system": "DB2",
+    "notes": "El literal de fecha/hora no cumple el formato requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0142",
+    "code": "-182",
+    "description": "Una expresión aritmética con un valor fecha/hora es inválida.",
+    "system": "DB2",
+    "notes": "Las operaciones aritméticas no son válidas sobre ese tipo de dato.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0143",
+    "code": "-183",
+    "description": "Una operación aritmética con una fecha o TIMESTAMP obtiene un resultado fuera del rango válido.",
+    "system": "DB2",
+    "notes": "El resultado excede el rango permitido por DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0144",
+    "code": "-184",
+    "description": "La expresión aritmética con un valor fecha/hora contiene un parámetro marcado.",
+    "system": "DB2",
+    "notes": "El parámetro no puede utilizarse en esa operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0145",
+    "code": "-185",
+    "description": "UPDATE y ORDER BY en instrucciones SELECT.",
+    "system": "DB2",
+    "notes": "La sentencia SELECT no admite UPDATE u ORDER BY simultáneamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0146",
+    "code": "-186",
+    "description": "La longitud de la fecha o del tiempo local ha sido incrementada y la ejecución del programa continúa con la longitud antigua.",
+    "system": "DB2",
+    "notes": "La definición del campo no coincide con la longitud actual.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0147",
+    "code": "-187",
+    "description": "Una referencia a un registro especial de fecha/hora actual no es válida porque el reloj de MVS está mal o el PARMTZ está fuera de funcionamiento.",
+    "system": "DB2",
+    "notes": "El sistema no puede obtener la fecha/hora actual.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0148",
+    "code": "-198",
+    "description": "El operando de la declaración PREPARE o EXECUTE está vacío o es blanco.",
+    "system": "DB2",
+    "notes": "La sentencia no contiene texto SQL válido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0149",
+    "code": "-199",
+    "description": "Uso ilegal de KEYWORD. TOKEN (TOKEN-LIST) se esperaba.",
+    "system": "DB2",
+    "notes": "La sentencia contiene palabras clave en posiciones no válidas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0150",
+    "code": "-203",
+    "description": "Referencia a la columna es ambigua.",
+    "system": "DB2",
+    "notes": "La columna debe ser calificada con el nombre de la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0151",
+    "code": "-204",
+    "description": "Nombre no definido en DB2 o tabla no creada o mal creada o faltan ':' en campos de WORKING en la WHERE o no coincide COPY con CREATE.",
+    "system": "DB2",
+    "notes": "El objeto referenciado no existe o está mal definido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0152",
+    "code": "-205",
+    "description": "Nombre de la columna no existe en la tabla.",
+    "system": "DB2",
+    "notes": "La columna referenciada no está definida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0153",
+    "code": "-206",
+    "description": "Nombre de columna no existente en la tabla o tabla creada con índices antiguos o si es al abrir mirar el DECLARE.",
+    "system": "DB2",
+    "notes": "La columna no coincide con la definición actual de la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0154",
+    "code": "-207",
+    "description": "La cláusula ORDER BY es inválida porque incluye un nombre de columna utilizado como resultado de una unión.",
+    "system": "DB2",
+    "notes": "ORDER BY debe referenciar columnas válidas del resultado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0155",
+    "code": "-208",
+    "description": "Declarar un CURSOR con ORDER BY en el que los campos del ORDER BY no se estaban seleccionando.",
+    "system": "DB2",
+    "notes": "ORDER BY debe referenciar columnas presentes en la SELECT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0156",
+    "code": "-215",
+    "description": "Se intenta leer un CURSOR cerrado o se intenta cerrar un CURSOR cerrado.",
+    "system": "DB2",
+    "notes": "El cursor no está disponible para la operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0157",
+    "code": "-219",
+    "description": "El nombre de una tabla en un DECLARE no existe.",
+    "system": "DB2",
+    "notes": "La tabla referenciada no está definida en el catálogo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0158",
+    "code": "-220",
+    "description": "Tabla mal creada posiblemente tenga un PRIMARY KEY.",
+    "system": "DB2",
+    "notes": "La estructura de la tabla presenta inconsistencias.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0159",
+    "code": "-221",
+    "description": "SET OF OPTIONAL COLUMNS de la tabla está incompleta o falta una columna.",
+    "system": "DB2",
+    "notes": "La definición de columnas opcionales no está completa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0160",
+    "code": "-229",
+    "description": "Para dar de alta en la tabla debe estar dado de alta en la tabla precedente referenciada.",
+    "system": "DB2",
+    "notes": "Violación de integridad referencial.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0161",
+    "code": "-232",
+    "description": "Falta crear índices en tablas con integridad referencial.",
+    "system": "DB2",
+    "notes": "Los índices necesarios no existen.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0162",
+    "code": "-247",
+    "description": "Acceso a una tabla con un campo clave en formato DATE sin valor '0001-01-01'.",
+    "system": "DB2",
+    "notes": "El campo clave DATE requiere un valor mínimo válido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0163",
+    "code": "-250",
+    "description": "El nombre de localización local no está definido cuando se procesa la tercera parte del nombre del objeto.",
+    "system": "DB2",
+    "notes": "La localización no existe en el catálogo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0164",
+    "code": "-251",
+    "description": "TOKEN NAME inválido.",
+    "system": "DB2",
+    "notes": "El token no cumple el formato requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0165",
+    "code": "-270",
+    "description": "Se actualiza el campo de una tabla cuando la lectura anterior ha dado un valor +100.",
+    "system": "DB2",
+    "notes": "No se puede actualizar sin haber encontrado fila previa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0166",
+    "code": "-301",
+    "description": "El valor de una columna de la tabla no se puede utilizar porque es de tipo DATA.",
+    "system": "DB2",
+    "notes": "El tipo DATA no admite esa operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0167",
+    "code": "-302",
+    "description": "INSERT con DUMMY de distinta longitud que la tabla o nuevas columnas no inicializadas o COPY y SQL no coinciden en BETWEEN IN.",
+    "system": "DB2",
+    "notes": "La estructura de datos no coincide con la definición de la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0168",
+    "code": "-303",
+    "description": "Columnas de la SELECT del DECLARE no están referenciadas en el FETCH o campos mal definidos no coinciden con la COPY.",
+    "system": "DB2",
+    "notes": "La SELECT y el FETCH deben coincidir en estructura.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0169",
+    "code": "-304",
+    "description": "Un valor no puede ser asignado a una variable HOST porque no es el mismo tipo de dato o SELECT SUM sin filas o fecha en blancos con formato DATE.",
+    "system": "DB2",
+    "notes": "El valor recuperado no coincide con el tipo de la variable HOST.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0170",
+    "code": "-305",
+    "description": "No recupera ninguna fila en SELECT-SUM, SELECT-MAX, etc. o valor nulo sin indicador o fecha en blancos con formato DATE.",
+    "system": "DB2",
+    "notes": "La operación requiere indicador de nulos o datos válidos.",
+    "deleted": false
+  },
+{
+    "id": "ERR-DB2-0171",
+    "code": "-309",
+    "description": "El atributo es inválido porque el campo de la tabla tiene valor nulo.",
+    "system": "DB2",
+    "notes": "El campo contiene NULL y no admite la operación solicitada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0172",
+    "code": "-310",
+    "description": "Cuando se realiza un INSERT y la DUMMY de la tabla es de distinta longitud que la tabla DB2 o cuando se han incluido nuevas columnas en la tabla y no se inicializan en el programa.",
+    "system": "DB2",
+    "notes": "La estructura de datos no coincide con la definición de la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0173",
+    "code": "-311",
+    "description": "El indicador de longitud de un campo de la tabla es negativo.",
+    "system": "DB2",
+    "notes": "La longitud del campo no puede ser negativa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0174",
+    "code": "-312",
+    "description": "Nombre de campo de la tabla no definido o no se puede usar.",
+    "system": "DB2",
+    "notes": "La columna no existe o no es válida en ese contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0175",
+    "code": "-313",
+    "description": "El número de campos de la tabla especificados no es el mismo que el de parámetros marcados.",
+    "system": "DB2",
+    "notes": "La sentencia debe coincidir en número de columnas y parámetros.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0176",
+    "code": "-314",
+    "description": "La sentencia contiene una referencia ambigua a una variable de HOST.",
+    "system": "DB2",
+    "notes": "La variable debe ser calificada correctamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0177",
+    "code": "-401",
+    "description": "Operandos aritméticos o de comparación no son comparables o ver orden de los campos en el DECLARE y el FETCH o cuando se selecciona un campo que no existe en la tabla.",
+    "system": "DB2",
+    "notes": "Los operandos deben ser compatibles en tipo y orden.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0178",
+    "code": "-402",
+    "description": "Poner en el GENBAT del programa de tipo I1 en vez de IA o una función aritmética u operador ARITH_FOP es aplicado a datos de carácter.",
+    "system": "DB2",
+    "notes": "La operación aritmética no es válida para datos alfanuméricos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0179",
+    "code": "-404",
+    "description": "Cadena de caracteres demasiado larga en INSERT o UPDATE.",
+    "system": "DB2",
+    "notes": "El literal excede la longitud permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0180",
+    "code": "-405",
+    "description": "El literal numérico no puede ser usado porque está fuera de rango o al abrir un CURSOR metiendo valores alfanuméricos en campos numéricos COMP-3.",
+    "system": "DB2",
+    "notes": "El valor no coincide con el tipo numérico requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0181",
+    "code": "-406",
+    "description": "Valor calculado o derivado de una instrucción SQL está fuera de rango o de la descripción de ese campo.",
+    "system": "DB2",
+    "notes": "El resultado excede el rango permitido por la columna.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0182",
+    "code": "-407",
+    "description": "Al insertar un nulo en un campo con atributo NOT NULL.",
+    "system": "DB2",
+    "notes": "La columna no admite valores nulos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0183",
+    "code": "-408",
+    "description": "El valor de un INSERT o UPDATE no es del mismo tipo que la columna que se quiere actualizar o se intenta insertar/modificar una fila con un valor numérico en una columna alfanumérica.",
+    "system": "DB2",
+    "notes": "El tipo de dato no coincide con la definición de la columna.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0184",
+    "code": "-409",
+    "description": "Operador inválido en la función COUNT.",
+    "system": "DB2",
+    "notes": "COUNT solo admite expresiones válidas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0185",
+    "code": "-410",
+    "description": "Literal de coma flotante contiene más de 30 caracteres.",
+    "system": "DB2",
+    "notes": "El literal excede la longitud permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0186",
+    "code": "-411",
+    "description": "Palabra clave no puede ser especificada en instrucción SQL.",
+    "system": "DB2",
+    "notes": "La palabra clave no es válida en ese contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0187",
+    "code": "-412",
+    "description": "La cláusula SELECT de una SUBSELECT especifica múltiples columnas.",
+    "system": "DB2",
+    "notes": "Las subconsultas deben devolver una sola columna.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0188",
+    "code": "-413",
+    "description": "OVERFLOW durante la conversión de tipos de datos.",
+    "system": "DB2",
+    "notes": "El valor excede el rango del tipo destino.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0189",
+    "code": "-414",
+    "description": "Campo numérico no especificado al utilizar LIKE.",
+    "system": "DB2",
+    "notes": "LIKE requiere operandos alfanuméricos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0190",
+    "code": "-415",
+    "description": "Las columnas correspondientes en los operandos de una cláusula UNION no tienen las mismas descripciones de campo.",
+    "system": "DB2",
+    "notes": "Las columnas deben coincidir en tipo y longitud.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0191",
+    "code": "-416",
+    "description": "Un operando de una UNION contiene una columna con atributo LONG STRING.",
+    "system": "DB2",
+    "notes": "Las columnas LONG STRING no son válidas en UNION.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0192",
+    "code": "-417",
+    "description": "La sentencia de cadena a preparar incluye parámetros utilizados como operandos del mismo operador.",
+    "system": "DB2",
+    "notes": "La sentencia contiene parámetros en posiciones no válidas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0193",
+    "code": "-418",
+    "description": "La sentencia de cadena a preparar incluye parámetros utilizados en una cláusula SELECT.",
+    "system": "DB2",
+    "notes": "Los parámetros no pueden usarse en esa cláusula.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0194",
+    "code": "-419",
+    "description": "Resultado de una división decimal es negativo.",
+    "system": "DB2",
+    "notes": "El resultado no cumple las restricciones del tipo decimal.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0195",
+    "code": "-421",
+    "description": "Operandos de una UNION no tienen el mismo número de campos.",
+    "system": "DB2",
+    "notes": "Las SELECT deben tener igual número de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0196",
+    "code": "-501",
+    "description": "Cursor no especificado en FETCH o CLOSE no está abierto.",
+    "system": "DB2",
+    "notes": "El cursor debe abrirse antes de usarlo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0197",
+    "code": "-502",
+    "description": "OPEN CURSOR de un cursor ya abierto.",
+    "system": "DB2",
+    "notes": "El cursor ya se encuentra activo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0198",
+    "code": "-503",
+    "description": "Campo no puede ser actualizado por no estar identificado en la UPDATE de la SELECT o hacer el GENBAT sin DB2 cuando sí es DB2.",
+    "system": "DB2",
+    "notes": "La columna no está autorizada para actualización.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0199",
+    "code": "-504",
+    "description": "Nombre de cursor no definido.",
+    "system": "DB2",
+    "notes": "El cursor no existe en la sentencia.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0200",
+    "code": "-507",
+    "description": "Intento de UPDATE o DELETE sin abrir el cursor.",
+    "system": "DB2",
+    "notes": "El cursor debe estar abierto y posicionado antes de actualizar.",
+    "deleted": false
+  },
+{
+    "id": "ERR-DB2-0201",
+    "code": "-508",
+    "description": "Intento de UPDATE o DELETE sin estar posicionado el cursor.",
+    "system": "DB2",
+    "notes": "El cursor debe estar posicionado mediante FETCH antes de actualizar o borrar.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0202",
+    "code": "-509",
+    "description": "Tabla especificada en UPDATE o DELETE no es la misma que la designada en el cursor.",
+    "system": "DB2",
+    "notes": "La tabla objetivo debe coincidir con la definida en el cursor.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0203",
+    "code": "-510",
+    "description": "Tabla especificada en UPDATE o DELETE no puede ser modificada o modificar un cursor sin poner FOR UPDATE OF.",
+    "system": "DB2",
+    "notes": "La tabla no admite modificaciones en ese contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0204",
+    "code": "-511",
+    "description": "Cláusula UPDATE no puede ser especificada porque la tabla designada para el cursor no puede ser modificada.",
+    "system": "DB2",
+    "notes": "La tabla es de solo lectura para ese cursor.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0205",
+    "code": "-512",
+    "description": "La referencia a un objeto remoto en la sentencia no es válida.",
+    "system": "DB2",
+    "notes": "El objeto remoto no existe o no está accesible.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0206",
+    "code": "-513",
+    "description": "El alias no se debe definir en otro alias local o remoto.",
+    "system": "DB2",
+    "notes": "Los alias no pueden encadenarse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0207",
+    "code": "-514",
+    "description": "El cursor utilizado no está preparado.",
+    "system": "DB2",
+    "notes": "Debe ejecutarse PREPARE antes de usar el cursor.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0208",
+    "code": "-516",
+    "description": "El DESCRIBE STATEMENT no identifica el PREPARED STATEMENT.",
+    "system": "DB2",
+    "notes": "El statement preparado no coincide con el DESCRIBE.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0209",
+    "code": "-517",
+    "description": "El cursor utilizado no se puede utilizar porque no está definido en la sentencia SELECT correspondiente.",
+    "system": "DB2",
+    "notes": "El cursor no coincide con la SELECT declarada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0210",
+    "code": "-518",
+    "description": "La sentencia ejecutada no es una sentencia SELECT válida.",
+    "system": "DB2",
+    "notes": "La sentencia no devuelve un conjunto de resultados.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0211",
+    "code": "-519",
+    "description": "El prepared statement identifica la SELECT del cursor abierto.",
+    "system": "DB2",
+    "notes": "El statement preparado no coincide con el cursor activo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0212",
+    "code": "-530",
+    "description": "Cláusula FOR UPDATE no puede ser especificada porque existe inconsistencia con tabla precedente o se intenta dar de alta o modificar en una tabla con integridad referencial y no existe el padre.",
+    "system": "DB2",
+    "notes": "Violación de integridad referencial o uso incorrecto de FOR UPDATE.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0213",
+    "code": "-531",
+    "description": "La clave primaria no puede ser actualizada porque tiene filas dependientes.",
+    "system": "DB2",
+    "notes": "La actualización violaría dependencias en tablas hijas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0214",
+    "code": "-532",
+    "description": "Restricción de borrado: la fila tiene dependencias en otra tabla.",
+    "system": "DB2",
+    "notes": "La relación referencial impide el borrado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0215",
+    "code": "-533",
+    "description": "Inserción de múltiples filas inválidas.",
+    "system": "DB2",
+    "notes": "La operación no admite inserciones múltiples en ese contexto.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0216",
+    "code": "-534",
+    "description": "La clave primaria no puede ser actualizada a causa de una actualización de múltiples filas.",
+    "system": "DB2",
+    "notes": "La actualización afecta varias filas y viola restricciones.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0217",
+    "code": "-535",
+    "description": "En un UPDATE con cursor no se pueden poner los campos que son clave e índice único.",
+    "system": "DB2",
+    "notes": "Las columnas clave no pueden actualizarse mediante cursor.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0218",
+    "code": "-536",
+    "description": "El DELETE no es válido porque la tabla puede verse afectada por la operación.",
+    "system": "DB2",
+    "notes": "La operación viola reglas de integridad.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0219",
+    "code": "-537",
+    "description": "La clave primaria o foránea identifica la columna más de una vez.",
+    "system": "DB2",
+    "notes": "La definición de clave contiene duplicados.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0220",
+    "code": "-538",
+    "description": "La clave foránea no se corresponde con la descripción de la clave primaria.",
+    "system": "DB2",
+    "notes": "Las columnas de la relación no coinciden.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0221",
+    "code": "-539",
+    "description": "La cláusula PRIMARY KEY debe estar en la tabla madre.",
+    "system": "DB2",
+    "notes": "La clave primaria está definida en la tabla incorrecta.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0222",
+    "code": "-540",
+    "description": "La clave migrada desde la tabla madre debe ser íntegra y estar cada columna en la tabla hija o tabla referencial creada el hijo antes que la madre.",
+    "system": "DB2",
+    "notes": "La relación padre-hijo está mal definida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0223",
+    "code": "-541",
+    "description": "La clave foránea es inválida porque es una referencia duplicada.",
+    "system": "DB2",
+    "notes": "La clave foránea contiene duplicados no permitidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0224",
+    "code": "-542",
+    "description": "Una columna de clave primaria no puede contener valores nulos.",
+    "system": "DB2",
+    "notes": "La clave primaria debe ser NOT NULL.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0225",
+    "code": "-551",
+    "description": "El usuario no tiene privilegios para la operación o el objeto no existe o está en estado READ ONLY o el authorization-id no tiene permisos o falta autorización para integridad referencial.",
+    "system": "DB2",
+    "notes": "El usuario carece de permisos suficientes.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0226",
+    "code": "-552",
+    "description": "El usuario no tiene privilegios para hacer la operación.",
+    "system": "DB2",
+    "notes": "La operación requiere permisos adicionales.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0227",
+    "code": "-553",
+    "description": "auth-id especificado no está autorizado.",
+    "system": "DB2",
+    "notes": "El usuario no tiene permisos para la operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0228",
+    "code": "-554",
+    "description": "Un usuario autorizado no puede concederse privilegios a sí mismo.",
+    "system": "DB2",
+    "notes": "Los privilegios deben ser otorgados por otro usuario.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0229",
+    "code": "-555",
+    "description": "Un usuario autorizado no puede revocarse privilegios a sí mismo.",
+    "system": "DB2",
+    "notes": "Los privilegios deben ser revocados por otro usuario.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0230",
+    "code": "-556",
+    "description": "Un privilegio no se puede revocar porque no lo puede modificar el usuario.",
+    "system": "DB2",
+    "notes": "El usuario carece de autoridad para revocar ese privilegio.",
+    "deleted": false
+  },
+    {
+    "id": "ERR-DB2-0231",
+    "code": "-557",
+    "description": "Comando GRANT/REVOKE erróneo; los mandatos permitidos son los indicados en el parámetro.",
+    "system": "DB2",
+    "notes": "La sentencia contiene un comando GRANT/REVOKE no válido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0232",
+    "code": "-558",
+    "description": "La opción WITH de un GRANT es ignorada porque el GRANT es público.",
+    "system": "DB2",
+    "notes": "El GRANT público no admite la opción WITH.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0233",
+    "code": "-559",
+    "description": "Todas las funciones autorizadas han sido desactivadas.",
+    "system": "DB2",
+    "notes": "El sistema ha desactivado funciones previamente autorizadas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0234",
+    "code": "-560",
+    "description": "La opción WITH de un GRANT es ignorada para actualizar COLUMN-LIST.",
+    "system": "DB2",
+    "notes": "La opción WITH no aplica en este tipo de GRANT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0235",
+    "code": "-562",
+    "description": "No tiene privilegios para hacer el PLAN.",
+    "system": "DB2",
+    "notes": "El usuario carece de permisos para ejecutar el PLAN.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0236",
+    "code": "-571",
+    "description": "La sentencia podría finalizar en una múltiple actualización.",
+    "system": "DB2",
+    "notes": "La operación puede afectar múltiples filas de forma no permitida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0237",
+    "code": "-601",
+    "description": "Se intenta crear algo que ya está creado: por ejemplo, un espacio para tablas o un índice.",
+    "system": "DB2",
+    "notes": "El objeto ya existe en el catálogo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0238",
+    "code": "-602",
+    "description": "Demasiados campos especificados en la creación de un índice.",
+    "system": "DB2",
+    "notes": "El índice excede el número permitido de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0239",
+    "code": "-603",
+    "description": "No se puede crear un índice único en tablas con valores duplicados.",
+    "system": "DB2",
+    "notes": "La tabla contiene valores repetidos en la clave.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0240",
+    "code": "-604",
+    "description": "La definición de una columna tiene errores en su longitud, precisión o atributos.",
+    "system": "DB2",
+    "notes": "La columna está mal definida en CREATE/ALTER.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0241",
+    "code": "-607",
+    "description": "La operación indicada no está definida para las tablas.",
+    "system": "DB2",
+    "notes": "La sentencia contiene una operación no válida para tablas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0242",
+    "code": "-612",
+    "description": "Nombre de columna duplicado.",
+    "system": "DB2",
+    "notes": "La columna aparece más de una vez en la definición.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0243",
+    "code": "-613",
+    "description": "La clave primaria es demasiado larga o tiene demasiadas columnas.",
+    "system": "DB2",
+    "notes": "La definición de la clave primaria excede los límites permitidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0244",
+    "code": "-614",
+    "description": "Índice no puede ser creado porque la suma de las longitudes de los campos identificados es mayor de la permitida.",
+    "system": "DB2",
+    "notes": "El índice supera el tamaño máximo permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0245",
+    "code": "-616",
+    "description": "Cláusula FOR UPDATE no puede ser especificada porque existe inconsistencia con tabla precedente o el objeto no puede ser borrado porque es referenciado por otro o se intenta dar de alta o modificar sin existir el padre.",
+    "system": "DB2",
+    "notes": "Violación de integridad referencial o uso incorrecto de FOR UPDATE.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0246",
+    "code": "-618",
+    "description": "Operación no permitida en un sistema de bases de datos.",
+    "system": "DB2",
+    "notes": "La operación no está soportada por DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0247",
+    "code": "-619",
+    "description": "Operación no permitida porque la base de datos de trabajo no está inactiva.",
+    "system": "DB2",
+    "notes": "La base debe estar inactiva para ejecutar la operación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0248",
+    "code": "-620",
+    "description": "El comando indicado en la sentencia no está permitido para el espacio de tablas en la base de datos de trabajo.",
+    "system": "DB2",
+    "notes": "La operación no es válida para ese tablespace.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0249",
+    "code": "-621",
+    "description": "La base de datos no puede ser creada porque el identificador DBID ya está asignado.",
+    "system": "DB2",
+    "notes": "El DBID debe ser único.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0250",
+    "code": "-623",
+    "description": "Ya existe este índice para la tabla.",
+    "system": "DB2",
+    "notes": "El índice ya está definido en el catálogo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0251",
+    "code": "-624",
+    "description": "La tabla ya tiene una clave primaria.",
+    "system": "DB2",
+    "notes": "No se puede definir otra clave primaria.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0252",
+    "code": "-625",
+    "description": "La tabla no tiene un índice para hacer cumplir la unicidad de la clave primaria.",
+    "system": "DB2",
+    "notes": "Debe existir un índice único para la clave primaria.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0253",
+    "code": "-626",
+    "description": "La declaración ALTER no es ejecutable porque la paginación no está definida.",
+    "system": "DB2",
+    "notes": "El tablespace requiere definición de paginación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0254",
+    "code": "-627",
+    "description": "La declaración ALTER no es ejecutable porque la paginación tiene datasets manejados por usuarios.",
+    "system": "DB2",
+    "notes": "Los datasets deben ser gestionados por DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0255",
+    "code": "-628",
+    "description": "Una tablespace segmentada no puede ser particionada.",
+    "system": "DB2",
+    "notes": "El tipo de tablespace no admite particiones.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0256",
+    "code": "-629",
+    "description": "Un conjunto vacío no puede ser especificado porque la clave foránea no puede contener valores nulos.",
+    "system": "DB2",
+    "notes": "La clave foránea debe tener valores válidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0257",
+    "code": "-631",
+    "description": "La clave foránea es demasiado larga o tiene demasiadas columnas.",
+    "system": "DB2",
+    "notes": "La definición excede los límites permitidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0258",
+    "code": "-632",
+    "description": "La tabla no puede ser definida como dependencia de otra debido a restricciones en las reglas de borrado.",
+    "system": "DB2",
+    "notes": "Las reglas DELETE no permiten la relación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0259",
+    "code": "-633",
+    "description": "Las reglas de borrado deben ser DELETE-RULE.",
+    "system": "DB2",
+    "notes": "La definición de borrado no es válida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0260",
+    "code": "-634",
+    "description": "La regla de borrado no debe ser una cascada.",
+    "system": "DB2",
+    "notes": "La regla DELETE CASCADE no es válida en este contexto.",
+    "deleted": false
+  },
+{
+    "id": "ERR-DB2-0261",
+    "code": "-635",
+    "description": "La regla de borrado no puede ser diferente o no puede ser un conjunto vacío.",
+    "system": "DB2",
+    "notes": "Las reglas DELETE deben ser coherentes y válidas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0262",
+    "code": "-636",
+    "description": "La clave particionada no tiene especificado si es en orden ascendente o descendente.",
+    "system": "DB2",
+    "notes": "Debe indicarse el orden de la clave particionada.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0263",
+    "code": "-637",
+    "description": "Clave duplicada.",
+    "system": "DB2",
+    "notes": "La clave especificada ya existe.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0264",
+    "code": "-638",
+    "description": "La tabla no puede ser creada porque ha desaparecido la definición de columnas.",
+    "system": "DB2",
+    "notes": "La definición de columnas es incompleta o inexistente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0265",
+    "code": "-639",
+    "description": "Una columna nula de una clave foránea con reglas de borrado de conjunto vacío no puede ser una columna de la clave de una partición indexada.",
+    "system": "DB2",
+    "notes": "La columna no cumple las reglas de integridad para particiones.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0266",
+    "code": "-644",
+    "description": "El valor especificado para la clave en la sentencia es erróneo.",
+    "system": "DB2",
+    "notes": "El valor no coincide con el tipo o rango permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0267",
+    "code": "-646",
+    "description": "La tabla no se puede crear en el espacio para tablas porque ya está ocupado por otras tablas.",
+    "system": "DB2",
+    "notes": "El tablespace ya contiene otra tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0268",
+    "code": "-647",
+    "description": "El buffer común no se puede utilizar porque no ha sido activado.",
+    "system": "DB2",
+    "notes": "El buffer pool común debe estar activo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0269",
+    "code": "-652",
+    "description": "Violación del procedimiento de edición o de validación de la instalación.",
+    "system": "DB2",
+    "notes": "La operación no cumple las reglas de validación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0270",
+    "code": "-653",
+    "description": "La tabla en el espacio particionado para tablas no está disponible porque el índice correspondiente no ha sido creado.",
+    "system": "DB2",
+    "notes": "El índice requerido no existe.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0271",
+    "code": "-660",
+    "description": "El índice no se puede crear porque no se han especificado los límites para la clave.",
+    "system": "DB2",
+    "notes": "Los límites de la clave deben definirse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0272",
+    "code": "-661",
+    "description": "El índice no se puede crear porque el número de partes especificado no es igual al número de particiones del espacio para tablas.",
+    "system": "DB2",
+    "notes": "Las particiones deben coincidir con las partes del índice.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0273",
+    "code": "-662",
+    "description": "El índice particionado no se puede crear en el espacio no particionado para tablas.",
+    "system": "DB2",
+    "notes": "El tipo de espacio no admite índices particionados.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0274",
+    "code": "-663",
+    "description": "El número de valores posibles para la clave es cero o mayor que el número de columnas en la clave del índice.",
+    "system": "DB2",
+    "notes": "La definición de la clave es inválida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0275",
+    "code": "-664",
+    "description": "La longitud interna de los campos clave-límite del índice particionado excede la longitud impuesta por el gestor de índices.",
+    "system": "DB2",
+    "notes": "La definición excede el tamaño permitido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0276",
+    "code": "-665",
+    "description": "Cláusula PART en una instrucción ALTER omitida o inválida.",
+    "system": "DB2",
+    "notes": "La cláusula PART debe estar correctamente definida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0277",
+    "code": "-666",
+    "description": "Pendiente de una utilidad. Ejecutar START DATABASE con ACCESS(FORCE).",
+    "system": "DB2",
+    "notes": "La base está en estado pendiente de utilidad.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0278",
+    "code": "-667",
+    "description": "Un grupo de índices de un espacio particionado para tablas no puede ser explícitamente borrado.",
+    "system": "DB2",
+    "notes": "Los índices del grupo no pueden eliminarse manualmente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0279",
+    "code": "-668",
+    "description": "No se puede crear una nueva columna porque la tabla se está editando.",
+    "system": "DB2",
+    "notes": "Debe finalizar la edición antes de modificar la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0280",
+    "code": "-669",
+    "description": "Una tabla de un espacio particionado para tablas no puede ser explícitamente borrada.",
+    "system": "DB2",
+    "notes": "El tipo de espacio no admite DROP TABLE directo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0281",
+    "code": "-670",
+    "description": "La longitud del registro de la tabla excede el marco de página.",
+    "system": "DB2",
+    "notes": "El tamaño del registro supera el límite del pagesize.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0282",
+    "code": "-671",
+    "description": "El atributo de buffer común del espacio para tablas no se puede cambiar porque esto cambiaría el tamaño de la página.",
+    "system": "DB2",
+    "notes": "El pagesize no puede modificarse indirectamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0283",
+    "code": "-676",
+    "description": "No se puede utilizar para un índice una página de 32K del espacio para tablas.",
+    "system": "DB2",
+    "notes": "El tamaño de página no es válido para índices.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0284",
+    "code": "-677",
+    "description": "No hay suficiente espacio virtual para la expansión del buffer común.",
+    "system": "DB2",
+    "notes": "El buffer pool no puede ampliarse por falta de espacio.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0285",
+    "code": "-678",
+    "description": "El literal especificado como valor límite del índice debe estar de acuerdo con el tipo de dato de la columna correspondiente.",
+    "system": "DB2",
+    "notes": "El literal no coincide con el tipo de la columna.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0286",
+    "code": "-679",
+    "description": "Nombre del elemento no puede ser creado por estar pendiente de DROP.",
+    "system": "DB2",
+    "notes": "El objeto está marcado para eliminación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0287",
+    "code": "-680",
+    "description": "Demasiados campos para una tabla.",
+    "system": "DB2",
+    "notes": "La tabla excede el número máximo de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0288",
+    "code": "-681",
+    "description": "La columna ha violado los procedimientos de definición de campos de la instalación.",
+    "system": "DB2",
+    "notes": "La definición de la columna no cumple las reglas de instalación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0289",
+    "code": "-682",
+    "description": "Procedimiento no puede ser cargado.",
+    "system": "DB2",
+    "notes": "El procedimiento no está disponible o contiene errores.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0290",
+    "code": "-683",
+    "description": "Tipo de columna inválido para este procedimiento.",
+    "system": "DB2",
+    "notes": "El procedimiento no admite ese tipo de columna.",
+    "deleted": false
+  },
+{
+    "id": "ERR-DB2-0291",
+    "code": "-684",
+    "description": "La longitud del literal especificado es demasiado larga.",
+    "system": "DB2",
+    "notes": "El literal excede la longitud permitida por DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0292",
+    "code": "-685",
+    "description": "El tipo de campo no es válido. Demasiado largo.",
+    "system": "DB2",
+    "notes": "La definición del campo excede los límites permitidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0293",
+    "code": "-686",
+    "description": "La columna definida con un procedimiento de campo o no se pueden comparar dos columnas de distinto tipo.",
+    "system": "DB2",
+    "notes": "La columna no cumple las reglas del procedimiento o los tipos no son comparables.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0294",
+    "code": "-687",
+    "description": "Dos tipos de datos que no se pueden comparar.",
+    "system": "DB2",
+    "notes": "Los operandos deben ser compatibles en tipo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0295",
+    "code": "-688",
+    "description": "Datos incorrectos devueltos por el procedimiento.",
+    "system": "DB2",
+    "notes": "El procedimiento devolvió datos inválidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0296",
+    "code": "-802",
+    "description": "Overflow aritmético o división por cero.",
+    "system": "DB2",
+    "notes": "La operación aritmética produjo un error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0297",
+    "code": "-803",
+    "description": "Insertar con claves duplicadas siempre y cuando se hayan creado índices o modificar el índice único de una fila.",
+    "system": "DB2",
+    "notes": "La clave ya existe en la tabla o el índice único no admite la modificación.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0298",
+    "code": "-804",
+    "description": "Error en los parámetros de entrada del programa de aplicación para la instrucción SQL o falta espacio en compilación o lectura IMS con longitud mayor que la enviada.",
+    "system": "DB2",
+    "notes": "Los parámetros o el entorno de ejecución no son válidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0299",
+    "code": "-805",
+    "description": "Nombre de programa o módulo no encontrado en el plan o el módulo no está en el paso BIND o ausencia del módulo en DBRM.",
+    "system": "DB2",
+    "notes": "El plan no contiene el package requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0300",
+    "code": "-811",
+    "description": "Filas duplicadas en SELECT, JOIN.",
+    "system": "DB2",
+    "notes": "La operación devuelve múltiples filas donde se esperaba una.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0301",
+    "code": "-815",
+    "description": "Se ha incluido una cláusula ORDER BY/HAVING en una SUBSELECT o subconsulta de un predicado.",
+    "system": "DB2",
+    "notes": "Las subconsultas no admiten ORDER BY ni HAVING.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0302",
+    "code": "-817",
+    "description": "La sentencia INSERT, UPDATE, DELETE, DDL o GRANT no puede ser ejecutada porque la transacción IMS ha sido definida como de lectura.",
+    "system": "DB2",
+    "notes": "La transacción debe ser de actualización.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0303",
+    "code": "-818",
+    "description": "No coinciden los TIMESTAMP o el nombre del plan está mal en compilación.",
+    "system": "DB2",
+    "notes": "El módulo debe recompilarse y enlazarse nuevamente.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0304",
+    "code": "-819",
+    "description": "La vista no se puede utilizar porque es una referencia a otra vista que no se puede utilizar.",
+    "system": "DB2",
+    "notes": "La vista depende de otra vista inválida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0305",
+    "code": "-820",
+    "description": "Instrucción SQL no puede ser procesada porque el catálogo de la tabla contiene un valor no válido en esta versión.",
+    "system": "DB2",
+    "notes": "La tabla contiene metadatos incompatibles.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0306",
+    "code": "-821",
+    "description": "La vista ha sufrido un DROP durante la migración. El creador del sinónimo no lo puede resolver.",
+    "system": "DB2",
+    "notes": "La vista referenciada ya no existe.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0307",
+    "code": "-822",
+    "description": "La SQLDA contiene una dirección de datos o indicador de variable que no es válida.",
+    "system": "DB2",
+    "notes": "La estructura SQLDA contiene punteros inválidos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0308",
+    "code": "-840",
+    "description": "Demasiados items en INSERT o SELECT.",
+    "system": "DB2",
+    "notes": "La sentencia excede el número permitido de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0309",
+    "code": "-901",
+    "description": "Error de ejecución por error del sistema.",
+    "system": "DB2",
+    "notes": "El sistema produjo un error interno.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0310",
+    "code": "-902",
+    "description": "Error de ejecución por error del sistema.",
+    "system": "DB2",
+    "notes": "El subsistema DB2 produjo un error interno.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0311",
+    "code": "-904",
+    "description": "Recurso no disponible o error I/O o contención o tabla en estado COPY o falta espacio o disco dañado o timeout de contención.",
+    "system": "DB2",
+    "notes": "El recurso requerido no está disponible.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0312",
+    "code": "-905",
+    "description": "La sentencia SQL ha excedido el tiempo límite de CPU y ha sido cancelada.",
+    "system": "DB2",
+    "notes": "Debe optimizarse la sentencia o revisar índices.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0313",
+    "code": "-906",
+    "description": "La sentencia SQL no se puede ejecutar porque esta función ha sido desactivada debido a un error previo.",
+    "system": "DB2",
+    "notes": "Debe revisarse el error anterior.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0314",
+    "code": "-907",
+    "description": "No es posible determinar si el intento para deshacer los UPDATES hechos desde un sitio remoto tuvo éxito.",
+    "system": "DB2",
+    "notes": "La operación remota no pudo confirmarse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0315",
+    "code": "-909",
+    "description": "Objeto deleteado.",
+    "system": "DB2",
+    "notes": "El objeto referenciado ya no existe.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0316",
+    "code": "-910",
+    "description": "Instrucción SQL no puede ejecutar porque esta función ha sido desactivada debido a un error previo.",
+    "system": "DB2",
+    "notes": "Debe revisarse el error anterior.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0317",
+    "code": "-911",
+    "description": "Recurso disponible. La tabla está bloqueada por otro usuario o realizar un ROLLBACK y volver a ejecutar.",
+    "system": "DB2",
+    "notes": "La operación no pudo obtener el lock requerido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0318",
+    "code": "-913",
+    "description": "Ejecución cancelada debido a un deadlock o a un timeout.",
+    "system": "DB2",
+    "notes": "La transacción debe reintentarse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0319",
+    "code": "-922",
+    "description": "Falta de autorización. Hacer público el plan.",
+    "system": "DB2",
+    "notes": "El usuario no tiene permisos para ejecutar el plan.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0320",
+    "code": "-923",
+    "description": "Conexión no establecida con el DB2 o falta la ficha DB2 o hacer GRANT PUBLIC.",
+    "system": "DB2",
+    "notes": "La conexión o permisos DB2 no son válidos.",
+    "deleted": false
+  },   
+    {
+    "id": "ERR-DB2-0321",
+    "code": "-924",
+    "description": "Problemas de conexión con el DB2 (se ha caído el DB2).",
+    "system": "DB2",
+    "notes": "El subsistema DB2 no está disponible o se ha detenido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0322",
+    "code": "-925",
+    "description": "COMMIT no válido en entorno IMS o CICS.",
+    "system": "DB2",
+    "notes": "El entorno transaccional no permite ejecutar COMMIT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0323",
+    "code": "-926",
+    "description": "ROLLBACK no válido en entorno IMS o CICS.",
+    "system": "DB2",
+    "notes": "El entorno transaccional no permite ejecutar ROLLBACK.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0324",
+    "code": "-927",
+    "description": "En una ejecución BATCH con DB2 faltan las fichas del DB2.",
+    "system": "DB2",
+    "notes": "El JCL no incluye las definiciones necesarias para DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0325",
+    "code": "-1001",
+    "description": "Cuando hacemos el DELETE de una tabla y la fila no existe.",
+    "system": "DB2",
+    "notes": "El DELETE no encuentra la fila objetivo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0326",
+    "code": "-1010",
+    "description": "Cuando queremos hacer una actualización y no tenemos el cursor abierto o cuando leemos un cursor que está cerrado o por hacer anteriormente un acceso DLI y tiene la longitud del segmento.",
+    "system": "DB2",
+    "notes": "El cursor no está disponible para la operación o el acceso previo DLI alteró la longitud esperada.",
+    "deleted": false
+  },
+{
+    "id": "ERR-DB2-0327",
+    "code": "-1024",
+    "description": "Se han copiado sobre el fichero TAB otro anterior sin haber copiado el fichero IDX o se ha hecho después de crear una tabla nueva o un índice nuevo. Solución: borrar la tabla y volverla a crear y cargar o se intentó hacer un DELETE sin haber leído.",
+    "system": "DB2",
+    "notes": "El fichero TAB e IDX deben estar sincronizados; DELETE requiere lectura previa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0328",
+    "code": "-1033",
+    "description": "Recuperas dos veces el mismo campo.",
+    "system": "DB2",
+    "notes": "La SELECT contiene duplicación de columnas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0329",
+    "code": "-1034",
+    "description": "Se han copiado sobre el fichero TAB otro anterior sin haber copiado el fichero IDX o se ha hecho después de crear una tabla nueva o un índice nuevo. Solución: borrar la tabla y volverla a crear y cargar o faltan los ':' que preceden a los campos de la WORKING en la WHERE de la SELECT.",
+    "system": "DB2",
+    "notes": "El fichero TAB/IDX debe coincidir; los campos WORKING deben llevar ':'.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0330",
+    "code": "-1045",
+    "description": "En MICROFOCUS un campo del registro tratado no está en el formato que le corresponde. El error se produce cuando se compara con su igual en la tabla DB2 de trabajo.",
+    "system": "DB2",
+    "notes": "El formato del campo real no coincide con el definido en DB2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0331",
+    "code": "-1070",
+    "description": "Campos en ORDER BY que no existen en la SELECT.",
+    "system": "DB2",
+    "notes": "ORDER BY debe referenciar columnas presentes en la SELECT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0332",
+    "code": "-1084",
+    "description": "Falta la tabla o la coma de separación entre los campos al hacer el UPDATE o error de escritura en la sentencia DB2, algo mal escrito, campos de trabajo sin los ':' delante, etc.",
+    "system": "DB2",
+    "notes": "La sentencia UPDATE contiene errores de sintaxis o referencias incorrectas.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0333",
+    "code": "-1100",
+    "description": "Error al cerrar un cursor después de haber llamado a un módulo que también es DB2. Al llamar al módulo se cierran los cursores abiertos hasta el momento.",
+    "system": "DB2",
+    "notes": "El módulo DB2 llamado cerró cursores activos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0334",
+    "code": "-1112",
+    "description": "Error al borrar en una tabla con 9 índices únicos; no lo debe soportar.",
+    "system": "DB2",
+    "notes": "La tabla excede el número de índices únicos permitidos para DELETE.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0335",
+    "code": "-1117",
+    "description": "No corresponde COPY con CREATE.",
+    "system": "DB2",
+    "notes": "La estructura COPY no coincide con la definición real de la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0336",
+    "code": "-1185",
+    "description": "Se intenta actualizar un cursor que ya tiene ORDER BY.",
+    "system": "DB2",
+    "notes": "Los cursores con ORDER BY no admiten actualización.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0337",
+    "code": "-1204",
+    "description": "Al insertar valores extraños (HIGH-VALUES, LOW-VALUES) o intentar insertar en una tabla que no existe.",
+    "system": "DB2",
+    "notes": "Los valores especiales no son válidos; la tabla debe existir.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0338",
+    "code": "-1206",
+    "description": "En MICROFOCUS en un UPDATE había un campo que no era de esa tabla.",
+    "system": "DB2",
+    "notes": "La sentencia UPDATE referencia una columna inexistente en la tabla.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0339",
+    "code": "-1207",
+    "description": "Actualización (UPDATE) sin haber leído antes (FETCH).",
+    "system": "DB2",
+    "notes": "El cursor debe estar posicionado antes del UPDATE.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0340",
+    "code": "-1405",
+    "description": "Al hacer un INSERT con un valor nulo.",
+    "system": "DB2",
+    "notes": "La columna no admite valores nulos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0341",
+    "code": "-1407",
+    "description": "Al hacer un UPDATE con un valor nulo.",
+    "system": "DB2",
+    "notes": "La columna no admite valores nulos.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0342",
+    "code": "-1408",
+    "description": "En MICROFOCUS la tabla DB2 poseía un campo definido como TIMESTAMP y daba problemas al intentar realizar una consulta al moverse LOW-VALUES a ese campo o al intentar insertar en una tabla ya que la INSERT no tiene que llevar VALUE de ese campo y en el INTO han de nombrarse todos los campos excepto el campo TIMESTAMP.",
+    "system": "DB2",
+    "notes": "El campo TIMESTAMP no admite LOW-VALUES y no debe incluirse en INSERT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0343",
+    "code": "-1451",
+    "description": "En MICROFOCUS la tabla DB2 poseía un campo definido como TIMESTAMP y daba problemas al intentar realizar una consulta al moverse LOW-VALUES a ese campo o al intentar insertar en una tabla ya que la INSERT no tiene que llevar VALUE de ese campo y en el INTO han de nombrarse todos los campos excepto el campo TIMESTAMP.",
+    "system": "DB2",
+    "notes": "El campo TIMESTAMP no admite LOW-VALUES y no debe incluirse en INSERT.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0344",
+    "code": "-14,, y otros",
+    "description": "En MICROFOCUS la tabla DB2 poseía un campo definido como TIMESTAMP y daba problemas al intentar realizar una consulta al moverse LOW-VALUES a ese campo o al intentar insertar en una tabla ya que la INSERT no tiene que llevar VALUE de ese campo y en el INTO han de nombrarse todos los campos excepto el campo TIMESTAMP.",
+    "system": "DB2",
+    "notes": "Código genérico para errores TIMESTAMP en MICROFOCUS.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-DB2-0345",
+    "code": "-1616",
+    "description": "Al intentar hacer un DELETE de una tabla que tiene tablas colgando y de estas no se ha borrado antes o en COBOL en el END-EXEC del OPEN del cursor da USERNAME NOT UNIQUE porque en la DECLARE existen nombres de campos pertenecientes a más de un campo y sin referenciar.",
+    "system": "DB2",
+    "notes": "Violación de integridad referencial o DECLARE ambiguo.",
+    "deleted": false
+  },
+    
   
   { "id": "ERR-CICS-0001", "code": "AEI0",
   "description": "Programa no encontrado",
@@ -3249,7 +6167,1264 @@
   "system": "CICS", "operation": "",
   "notes": "El dataset está en uso exclusivo o bloqueado por otra transacción. Revisar locking y tiempo de espera.",
   "deleted": false },
-  
+
+{
+    "id": "ERR-CICS-0021",
+    "code": "AACA",
+    "description": "Un código de error no válido se ha transmitido a los programas DFHTFP o DFHACP.",
+    "system": "CICS",
+    "notes": "CICS finaliza la tarea con abend; revisar lógica del programa que generó el código.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0022",
+    "code": "AALM",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al administrador de registro (LM) de dominio.",
+    "system": "CICS",
+    "notes": "El dominio genera traza y posible volcado; revisar mensaje asociado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0023",
+    "code": "AALN",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al administrador de IT.",
+    "system": "CICS",
+    "notes": "Revisar traza y volcado para identificar el punto de error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0024",
+    "code": "AALO",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al gestor CICS/DB2 DFHD2TM.",
+    "system": "CICS",
+    "notes": "Revisar traza y volcado del dominio que detectó el error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0025",
+    "code": "AALP",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al administrador de programas.",
+    "system": "CICS",
+    "notes": "Revisar traza y volcado para determinar la causa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0026",
+    "code": "AALQ",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al Administrador de Aplicaciones de Negocio.",
+    "system": "CICS",
+    "notes": "El dominio genera traza y posible volcado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0027",
+    "code": "AALR",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al administrador de almacenamiento temporal.",
+    "system": "CICS",
+    "notes": "Revisar traza y volcado del dominio afectado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0028",
+    "code": "AALS",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al Director Mundial Poner en cola.",
+    "system": "CICS",
+    "notes": "El dominio genera traza y posible volcado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0029",
+    "code": "AALT",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al Internet Inter-ORB Protocol Manager.",
+    "system": "CICS",
+    "notes": "Revisar traza y volcado para identificar el punto de error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0030",
+    "code": "AALU",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al gestor de sockets.",
+    "system": "CICS",
+    "notes": "El dominio genera traza y posible volcado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0031",
+    "code": "AALV",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al dominio Java Enterprise.",
+    "system": "CICS",
+    "notes": "Revisar traza y volcado del dominio afectado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0032",
+    "code": "AAL1",
+    "description": "DFHALP procesaba una solicitud COLA ALLOCATE y no hay enlaces ganadores de contención disponibles o la tarea fue cancelada.",
+    "system": "CICS",
+    "notes": "Revisar disponibilidad de sesiones y parámetros de contención.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0033",
+    "code": "AAL2",
+    "description": "Respuesta incorrecta devuelta por suspensión de tarea asignada o por hoja de vida.",
+    "system": "CICS",
+    "notes": "Revisar código de retorno de la suspensión o hoja de vida.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0034",
+    "code": "AAL3",
+    "description": "La tarea fue purgada antes de completar GETMAIN del gestor de almacenamiento.",
+    "system": "CICS",
+    "notes": "Revisar causa del purge: operador o timeout de bloqueo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0035",
+    "code": "AAL4",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al gestor de almacenamiento (SM).",
+    "system": "CICS",
+    "notes": "Revisar mensaje del dominio que detectó el error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0036",
+    "code": "AAL6",
+    "description": "Error en SIGNOFF_TERMINAL_USER durante cierre de sesión CRTE sustituto.",
+    "system": "CICS",
+    "notes": "Revisar traza y volcado del dominio afectado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0037",
+    "code": "AAL7",
+    "description": "Error al programar eliminación de terminal remota durante cierre de sesión CRTE sustituto.",
+    "system": "CICS",
+    "notes": "Revisar traza y volcado del dominio afectado.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0038",
+    "code": "AAL8",
+    "description": "DFHALP procesaba COLA ALLOCATE sin enlaces disponibles o purgas por estancamiento en el tiempo.",
+    "system": "CICS",
+    "notes": "Revisar sesiones de contención y parámetros de timeout.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0039",
+    "code": "AAMA",
+    "description": "Error en la lógica interna DFHAMP.",
+    "system": "CICS",
+    "notes": "Requiere soporte IBM para diagnóstico.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0040",
+    "code": "AAMC",
+    "description": "La tarea fue purgada antes de completar GETMAIN del gestor de almacenamiento.",
+    "system": "CICS",
+    "notes": "Revisar causa del purge: operador o timeout de bloqueo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0041",
+    "code": "AAMD",
+    "description": "Código de retorno inesperado recibido de DFHDMP.",
+    "system": "CICS",
+    "notes": "Error de lógica interna; requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0042",
+    "code": "AAMF",
+    "description": "Código de retorno inesperado recibido del kernel (KE) de dominio.",
+    "system": "CICS",
+    "notes": "Error interno; requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0043",
+    "code": "AAMH",
+    "description": "Código de retorno inesperado recibido de DFHFCMT.",
+    "system": "CICS",
+    "notes": "Error interno; requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0044",
+    "code": "AAMI",
+    "description": "Código de retorno inesperado recibido de DFHFCRL.",
+    "system": "CICS",
+    "notes": "Error interno; requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0045",
+    "code": "AAMJ",
+    "description": "Error irrecuperable devuelto por DFHFCFS durante instalación de archivo vía RDO.",
+    "system": "CICS",
+    "notes": "Revisar traza, volcado y mensaje de consola.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0046",
+    "code": "AAMK",
+    "description": "Error irrecuperable devuelto por DFHFCDN durante instalación de archivo vía RDO.",
+    "system": "CICS",
+    "notes": "Revisar traza, volcado y mensaje de consola.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0047",
+    "code": "AAMN",
+    "description": "Código de retorno inesperado recibido de DFHPRPT.",
+    "system": "CICS",
+    "notes": "Error interno; requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0048",
+    "code": "AAMO",
+    "description": "Código de retorno válido devuelto por DFHTOR durante resolución de terminal.",
+    "system": "CICS",
+    "notes": "Error interno; requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0049",
+    "code": "AAMP",
+    "description": "Código de retorno inesperado recibido de DFHPUP.",
+    "system": "CICS",
+    "notes": "Error interno; requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0050",
+    "code": "AAMQ",
+    "description": "Intento de instalar socio vía RDO pero PRM no está disponible.",
+    "system": "CICS",
+    "notes": "Corregir inicialización del PRM y reiniciar CICS.",
+    "deleted": false
+  },
+{
+    "id": "ERR-CICS-0051",
+    "code": "AAMS",
+    "description": "Se ha producido un código de retorno inesperado a raíz de una solicitud GETMAIN para el gestor de almacenamiento. Esto se debe a un error de lógica interna.",
+    "system": "CICS",
+    "notes": "La tarea termina anormalmente con descarga CICS. Se requiere asistencia de IBM para resolver el problema.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0052",
+    "code": "AAMT",
+    "description": "Hay un error en la lógica interna DFHAMP debido a un código de retorno inesperado de DFHTMP.",
+    "system": "CICS",
+    "notes": "La tarea termina con descarga CICS. Se requiere asistencia de IBM para diagnóstico.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0053",
+    "code": "AAMZ",
+    "description": "Un código de retorno inesperado se ha recibido DFHZCP. Esto se debe a un error de lógica interna.",
+    "system": "CICS",
+    "notes": "La tarea termina con descarga CICS. Se requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0054",
+    "code": "AAM1",
+    "description": "DFHXMCL ha devuelto una respuesta inesperada durante la instalación de una clase de transacciones. Esto puede ser causado por la tarea de ser purgada durante la instalación. CICS emite un mensaje DFHXMnnnn, registra una entrada de traza y toma un volcado del sistema.",
+    "system": "CICS",
+    "notes": "Determinar por qué la tarea falló; revisar volcado, traza y mensaje de consola.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0055",
+    "code": "AAM2",
+    "description": "DFHXMXD ha devuelto una respuesta inesperada durante la instalación de una definición de transacción. Puede ser causado por la tarea de ser purgada durante la instalación. CICS emite mensaje DFHXMnnnn, registra traza y toma volcado del sistema.",
+    "system": "CICS",
+    "notes": "Revisar volcado, traza y mensaje de consola para identificar el punto de error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0056",
+    "code": "AAOA",
+    "description": "Una aplicación ha emitido un verbo IPC CICS no compatible. El punto de entrada se resolvió en el linkedit, pero la función solicitada no puede ser resuelta por CICS. Puede deberse a un trozo IPC incompatible o dañado.",
+    "system": "CICS",
+    "notes": "Revisar cadena de 8 bytes en R0; verificar que corresponde a un verbo IPC válido.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0057",
+    "code": "AAOB",
+    "description": "Una aplicación ha emitido un verbo del IPC que especifica más de ocho parámetros.",
+    "system": "CICS",
+    "notes": "Modificar el programa para usar el número correcto de parámetros.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0058",
+    "code": "AAOC",
+    "description": "Comunicaciones del IPC se invoca con un número válido de parámetros para la llamada. La traza contiene el nombre del verbo IPC emitido incorrectamente.",
+    "system": "CICS",
+    "notes": "Usar traza para identificar el punto del error y corregir el programa.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0059",
+    "code": "AAOD",
+    "description": "La tarea fue purgada antes de la solicitud GETMAIN para el gestor de almacenamiento (SM) de dominio haya sido capaz de completar con éxito. El dominio que detectó la condición prevé una excepción rastro.",
+    "system": "CICS",
+    "notes": "Investigar por qué se purgó la tarea: operador o timeout de bloqueo.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0060",
+    "code": "AAOE",
+    "description": "La tarea fue purgada antes de la solicitud GETMAIN para el gestor de almacenamiento (SM) de dominio haya sido capaz de completar con éxito. El dominio prevé una excepción rastro.",
+    "system": "CICS",
+    "notes": "Revisar causa del purge: operador o timeout.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0061",
+    "code": "AAOF",
+    "description": "La tarea fue purgada antes de la solicitud GETMAIN para el gestor de almacenamiento (SM) de dominio haya sido capaz de completar con éxito.",
+    "system": "CICS",
+    "notes": "Revisar motivo del purge.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0062",
+    "code": "AAOG",
+    "description": "Durante la tramitación de CMACCP (aceptar conversación), IPC detectó que la solicitud se adjunta con un nivel de sincronización no compatible.",
+    "system": "CICS",
+    "notes": "El nivel debe ser CM_NONE (0) o CM_CONFIRM (1).",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0063",
+    "code": "AAOH",
+    "description": "El diario de los datos enviados en una comunicación IPC ha fallado. El gestor de registro devolvió un código distinto de cero. Posibles códigos: IDERROR, INVREQ, STATERR, NOTOPEN, LERROR, IOError.",
+    "system": "CICS",
+    "notes": "Usar volcado para determinar por qué el registro no pudo escribirse.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0064",
+    "code": "AAOI",
+    "description": "El diario de los datos recibidos en una comunicación IPC ha fallado. El administrador de registro devolvió una respuesta no válida.",
+    "system": "CICS",
+    "notes": "Usar volcado para determinar causa; revisar TIOATDL si hay error de longitud.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0065",
+    "code": "AAOJ",
+    "description": "Comunicaciones IPC ha detectado una respuesta inesperada de una de sus rutinas internas. Nivel de seguimiento 2 muestra módulos llamados y parámetros.",
+    "system": "CICS",
+    "notes": "Error interno CICS; requiere soporte IBM.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0066",
+    "code": "AAOK",
+    "description": "Comunicaciones IPC ha detectado una llamada inesperada de una de sus rutinas internas.",
+    "system": "CICS",
+    "notes": "Revisar traza nivel 2; error interno CICS.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0067",
+    "code": "AAOL",
+    "description": "Comunicaciones del IPC ha hecho una llamada no válida a DFHLUC.",
+    "system": "CICS",
+    "notes": "Error interno; revisar traza nivel 2.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0068",
+    "code": "AAOM",
+    "description": "La Comunicación del IPC y las máquinas de estado DFHZUSR están fuera de sincronización.",
+    "system": "CICS",
+    "notes": "Revisar traza nivel 2; error interno CICS.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0069",
+    "code": "AAON",
+    "description": "Comunicaciones IPC ha detectado una respuesta inesperada de DFHLUC.",
+    "system": "CICS",
+    "notes": "Revisar traza nivel 2; error interno CICS.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0070",
+    "code": "AAOO",
+    "description": "Comunicaciones del IPC se ha invocado con un primer parámetro válido. El primer parámetro debe ser el código de la función a realizar. Error CICS lógica interna.",
+    "system": "CICS",
+    "notes": "Revisar traza nivel 2 para identificar el punto del error.",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0071",
+    "code": "AAOP",
+    "description": "La máquina del IPC de Comunicaciones del Estado ha sido solicitada para realizar una transición considerada imposible. Puede deberse a CPC sobrescrito o error en la máquina de estado.",
+    "system": "CICS",
+    "notes": "El volcado muestra la CPC; puede requerir soporte IBM.",
+    "deleted": false
+  },
+{
+    "id": "ERR-CICS-0072",
+    "code": "AAOQ",
+    "description": "El código de retorno generado por las comunicaciones del IPC no tiene una entrada en la tabla de estado contra el corriente verbo IPC Comunicaciones. Este error es detectado por la máquina de estados IPC Comunicaciones.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La operación es anormalmente terminada con una descarga de transacciones CICS. Respuesta del Usuario: Este es un error CICS de lógica interna. Un nivel de seguimiento de dos 'del PP' de la operación muestra el curso de los acontecimientos antes de este error, por ejemplo, los módulos de llamada y sus parámetros. El nivel 2 también proporciona información de seguimiento del propio error. Se necesita más ayuda de IBM para resolver este problema. Módulo: DFHCPCFS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0073",
+    "code": "AAOR",
+    "description": "Comunicaciones IPC ha detectado un valor no válido en el CPC (bloque de control de la conversación). Puede deberse a que el CPC se ha sobrescrito o a un error en IPC que hace que se rechacen valores válidos.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar traza nivel 2 para ver módulos y parámetros. Módulo: DFHCPIC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0074",
+    "code": "AAOS",
+    "description": "Comunicaciones IPC ha detectado que el estado de la conversación es RESET en una situación en la que no debería ocurrir. El CCP está a punto de ser eliminado. Puede deberse a CPC sobrescrito o error en IPC.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar traza nivel 2; puede requerir ayuda IBM. Módulo: DFHCPIC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0075",
+    "code": "AAOT",
+    "description": "Mientras se encadenaba a través de la CPC para una conversación, IPC detectó que la cadena se rompió. Puede deberse a CPC sobrescrito o error en el mecanismo de encadenamiento.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar traza nivel 2; puede requerir ayuda IBM. Módulo: DFHCPCBI",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0076",
+    "code": "AAOU",
+    "description": "IPC detectó un error en tp_name o partner_LU_name al iniciar una conversación. Puede deberse a datos no válidos en PRT o error en el mecanismo que devuelve los datos.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar traza nivel 2; puede requerir ayuda IBM. Módulo: DFHCPCBI",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0077",
+    "code": "AAOV",
+    "description": "IPC ha detectado que su tabla de estado interno está dañada. Error detectado por la máquina de estados IPC.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar traza nivel 2; puede requerir ayuda IBM. Módulo: DFHCPCFS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0078",
+    "code": "AAOW",
+    "description": "IPC ha detectado un error de lógica interna en DFHCPCLC.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar traza nivel 2; puede requerir ayuda IBM. Módulo: DFHCPCLC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0079",
+    "code": "AAOX",
+    "description": "IPC ha detectado un código de punto de sincronismo mal retornado en una conversación synclevel 0 o 1. El código incorrecto solo se espera en synclevel 2.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar traza nivel 2; puede requerir ayuda IBM. Módulo: DFHCPIC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0080",
+    "code": "AAOY",
+    "description": "IPC detectó un campo LL no válido en registros GDS recibidos en una conversación asignada. Puede deberse a error remoto o error en recepción.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar huellas CICS y traza VTAM. Módulo: DFHCPCRB",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0081",
+    "code": "AAOZ",
+    "description": "IPC detectó un campo de identificación no válido en un registro GDS recibido. Identificadores válidos: 'X', '12F1', '12FF'.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar huellas CICS y VTAM. Módulo: DFHCPCRB",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0082",
+    "code": "AAO2",
+    "description": "IPC ha detectado una respuesta inesperada de DFHLUC.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar traza nivel 2; puede requerir ayuda IBM. Módulo: DFHCPCBA",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0083",
+    "code": "AAO3",
+    "description": "Se hizo una llamada a una función IPC sin que IPC estuviera inicializado. Implica fallo en inicialización IPC.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Revisar consola, huellas y volcado. Módulo: DFHCPI",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0084",
+    "code": "AAO4",
+    "description": "DFHZARL detectó un error de lógica, probablemente causado por datos o indicadores VTAM no válidos.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: DFHZARL limpia sesión y CICS termina con descarga. Revisar registro CSNE. Módulo: DFHCPCLR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0085",
+    "code": "AAO5",
+    "description": "La tarea fue purgada antes de completar GETMAIN del gestor de almacenamiento.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Revisar causa del purge. Módulos: DFHCPCBA, DFHCPCBI, DFHCPCBS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0086",
+    "code": "AAO7",
+    "description": "El controlador de solicitudes de punto de sincronismo IPC recibió una lista de parámetros DFHLUC inválida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Revisar traza nivel 2. Módulo: DFHCPSRH",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0087",
+    "code": "AAO8",
+    "description": "El controlador de solicitudes de punto de sincronismo IPC recibió un bloque CPC no válido.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Revisar traza nivel 2. Módulo: DFHCPSRH",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0088",
+    "code": "AAO9",
+    "description": "Una tarea fue purgada por operador (CEMT) o por superar DTIMOUT. Puede deberse a insuficiencia de almacenamiento o demasiadas tareas.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Revisar causa del purge y ajustar DTIMOUT o número de tareas. Módulo: DFHCPCLR",
+    "deleted": false
+  },
+{
+    "id": "ERR-CICS-0089",
+    "code": "ABAC",
+    "description": "Una actividad, expedido EXEC CICS RETORNO (sin la opción ENDACTIVITY), pero hay eventos fueron procesados durante la activación. La actividad se ejecutó una orden de marcha.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. El comando EXEC CICS HANDLE ABEND no puede manejar este Abend. Respuesta del usuario: Investigar por qué la actividad no procesó ningún evento. Módulo(s): DFHBASP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0090",
+    "code": "ABAD",
+    "description": "Una actividad, expedido EXEC CICS RETORNO ENDACTIVITY si bien hubo eventos de la actividad a la espera. La actividad se ejecutó con un comando RUN.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. EXEC CICS HANDLE ABEND no puede manejar este Abend. Respuesta del usuario: Investigar por qué la actividad se espera de eventos de finalización de actividad. Módulo(s): DFHBASP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0091",
+    "code": "ABAE",
+    "description": "Una actividad, expedido EXEC CICS RETORNO (sin la opción ENDACTIVITY), pero hay eventos fueron procesados durante la activación. La actividad fue ejecutada con un comando LINK.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea que haya expedido el LINK es anormalmente terminó con una descarga de transacciones CICS. EXEC CICS HANDLE ABEND no puede manejar este Abend. Respuesta del usuario: Investigar por qué la actividad no procesó ningún evento. Módulo(s): DFHEIBAM",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0092",
+    "code": "ABAF",
+    "description": "Una actividad, expedido EXEC CICS RETORNO ENDACTIVITY si bien hubo eventos de la actividad a la espera. La actividad se ejecutó con un comando LINK.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea que haya expedido el LINK es anormalmente terminó con una descarga de transacciones CICS. EXEC CICS HANDLE ABEND no puede manejar este Abend. Respuesta del usuario: Investigar por qué la actividad se espera de eventos de finalización de actividad. Módulo(s): DFHEIBAM",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0093",
+    "code": "ABLA",
+    "description": "La tarea fue purgado antes de la solicitud GETMAIN para el gestor de almacenamiento (SM) de dominio haya sido capaz de completar con éxito. El dominio que detectó por primera vez la condición de purgar prevé una excepción rastro.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. Respuesta del usuario: Investigar por qué la tarea fue purgada. Fue purgado ya sea por el operador de la terminal principal, o como resultado de tiempo de espera de bloqueo. Si la tarea fue purgada por el operador, puede haber sido para limpiar un punto muerto. Si fue por DTIMOUT, puede deberse a insuficiencia de almacenamiento. Módulos: DFHRLR, DFHMCP, DFHMCPE, DFHM32, DFHPBP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0094",
+    "code": "ABLB",
+    "description": "Un error (no válido, desastre, o respuesta de excepción inesperada) se ha producido en una llamada al gestor de almacenamiento (SM) de dominio.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Consulte el mensaje relacionado con el dominio que detectó el error. Módulos: DFHRLR, DFHMCP, DFHMCPE, DFHM32, DFHPBP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0095",
+    "code": "ABMA",
+    "description": "El usuario ha facilitado una terminal área de I/O (TIOA) con una longitud de datos no válidos (cero o mayor que el almacenamiento contabilidad longitud menos 12). También puede ser que la longitud de un área de encabezado o remolque no sea positiva.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Corregir el programa que haya proporcionado la longitud errónea. Verificar TIOA, cabecera y remolque. Módulos: DFHPBP, DFHMCP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0096",
+    "code": "ABMC",
+    "description": "La operación CMSG está intentando enviar un mensaje a un mayor número de terminales que es posible. No hay máximo fijo porque depende de los operandos del comando de enrutamiento.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Redefinir la lista de rutas. Módulo: DFHMCP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0097",
+    "code": "ABMD",
+    "description": "DFHTPR o DFHTPP ha emitido una DFHDI TYPE=SEND y ha recibido un código de retorno que no sea FUNCERR o NORESP.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Informar al programador del sistema. Módulos: DFHTPP, DFHTPR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0098",
+    "code": "ABME",
+    "description": "DFHTPR o DFHTPP ha detectado un flujo de datos no válidos o DFHWBBMS detectó formularios de datos no válidos durante el procesamiento BMS.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar volcado de transacción y datos en TIOA. Módulos: DFHTPP, DFHTPR, DFHWBBMS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0099",
+    "code": "ABMF",
+    "description": "El valor especificado para la opción de longitud del BMS SEND MAP es mayor que la longitud de la zona 'from'.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Redefinir el valor de la longitud. Módulo: DFHPBP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0100",
+    "code": "ABMG",
+    "description": "El usuario ha solicitado un servicio BMS que no se ha especificado en la generación del sistema o en la inicialización.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Correlacionar servicios solicitados con opciones BMS. Módulos: DFHMCP, DFHTPQ",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0101",
+    "code": "ABMI",
+    "description": "El mapa especificado para una solicitud BMS de entrada no era un mapa de entrada.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Definir otro mapa de entrada o redefinir el existente. Módulos: DFHMCP, DFHMCX, DFHMCY",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0102",
+    "code": "ABML",
+    "description": "La rutina de control de terminal recibió datos no válidos de DFHRLR. El TCT puede haber sido dañado.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar TCT en volcado; puede requerir ayuda IBM. Módulos: DFHRLR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0103",
+    "code": "ABMM",
+    "description": "Un mapa no válido fue especificado.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar volcado; registro 6 contiene dirección de instrucción BMS. Módulo: DFHPBP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0104",
+    "code": "ABMO",
+    "description": " El mapa especificado para una solicitud BMS de salida no era un mapa de salida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Definir otro mapa de salida o redefinir el existente. Módulos: DFHMCP, DFHMCX, DFHMCY",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0105",
+    "code": "ABMQ",
+    "description": "La operación CQRY se ha iniciado y la tarea no es terminal orientada, o el terminal no es 3270 o SCSPRINT. CQRY no debe ser invocado manualmente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Volcado CICS. Respuesta del usuario: Asegurar que el terminal asociado es 3270 o SCSPRINT. Módulo: DFHQRY",
+    "deleted": false
+  },    
+    {
+    "id": "ERR-CICS-0106",
+    "code": "ABMR",
+    "description": "La página de transacción de recuperación (CSPG) se ha iniciado, pero la tarea no es terminal orientado.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con un volcado de CICS. Respuesta del usuario: Asegúrese de que el terminal está asociado a la transacción CSPG. Módulo: DFHTPR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0107",
+    "code": "ABMU",
+    "description": "El programa de aplicación suministró una dirección que no está dentro de los límites de la región. La baja para tres bytes de un registro general en el volcado contiene la dirección errónea.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Corrija el programa que suministra la dirección errónea. Módulos: DFHMCP, DFHEMS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0108",
+    "code": "ABMV",
+    "description": "DFHRLR ha detectado una entrada de ruta lista no válida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Verifique que la lista de ruta está bien construida con el campo reservado y X'FFFF' para terminar la lista. Módulo: DFHRLR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0109",
+    "code": "ABMX",
+    "description": "EUna cadena de texto pasada a BMS contiene una orden de atributos inválida: secuencia menor de tres caracteres o tipo de atributo no válido.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Corregir el programa de aplicación. Módulo: DFHPBP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0110",
+    "code": "ABMY",
+    "description": "BMS está construyendo un TTP (Terminal tipo de parámetro), pero el tamaño de página seleccionado es cero.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Verificar definiciones TERMINAL y TERMTYPE. Módulo: DFHRLR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0111",
+    "code": "ABMZ",
+    "description": "La dirección de la TIOA en TCTTEDA resultó ser cero. Implica sobrescritura.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Investigar por qué TCTTEDA es cero. Módulos: DFHMCP, DFHMCX, DFHMCY",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0112",
+    "code": "ABM0",
+    "description": "El mapa especificado para una solicitud BMS no pudo ser localizado.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Verificar definición del mapa. Módulos: DFHMCP, DFHMCX, DFHMCY",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0113",
+    "code": "ABM1",
+    "description": "Un servicio BMS fue solicitado por una tarea asociada a un terminal no compatible con SBA.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: No usar terminales no compatibles con SBA. Módulo: DFHRLR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0114",
+    "code": "ABM2",
+    "description": "Los datos de usuario no fueron proporcionados para esta petición BMS. No se encontró dirección en TCTTEDA o TCAMSIOA.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Colocar dirección de datos en TCTTEDA o TCAMSIOA. Módulo: DFHMCP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0115",
+    "code": "ABM3",
+    "description": "Una entrada o salida BMS fue emitida por una tarea no terminal orientada.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Volcado CICS. Respuesta del usuario: La tarea debe estar conectada a un terminal. Módulo: DFHMCP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0116",
+    "code": "ABM4",
+    "description": "Una respuesta no válida se recibió a un almacenamiento temporal PUT o PUTQ emitido por BMS. Longitud de datos no válida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar longitud de MCR o buffer de página. Módulos: DFHMCP, DFHTPP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0117",
+    "code": "ABM5",
+    "description": " Un DFHTS TYPE=PURGA fue expedido con un REQID válido. DFHTPR no pudo encontrar el identificador de terminal en el MCR.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Revisar tabla de traza y PUT/PUTQ previos. Módulos: DFHMCP, DFHTPR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0118",
+    "code": "ABM6",
+    "description": "La transacción CSPS, programada internamente por BMS, no se ha instalado.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Instalar la transacción CSPS (Grupo DFHBMS). Módulo: DFHMCP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0119",
+    "code": "ABM7",
+    "description": "El trailer usado durante la creación de páginas de texto es más largo que la página.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Corregir el programa que emitió el trailer demasiado largo. Módulo: DFHPBP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0120",
+    "code": "ABM8",
+    "description": "Una petición de texto BMS especificó un valor para la opción de justificar que es cero o demasiado grande para la página.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Corregir el valor de Justificar. Módulo: DFHPBP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0121",
+    "code": "ABM9",
+    "description": "Las rutinas de datos de texto de desbordamiento han reingresado al mismo tiempo. Ocurre cuando cabecera/remolque exceden la capacidad de línea.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Reducir líneas de cabecera/remolque o aumentar tamaño de página. Módulo: DFHPBP",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0122",
+    "code": "ABNA",
+    "description": " No hay lista de rutas suministrada con una petición de ruta recibida desde el sistema remoto.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Requiere ayuda IBM. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0123",
+    "code": "ABNB",
+    "description": "Las instalaciones principales de la tarea no son un TCTTE del tipo correcto, o la tarea no tiene instalaciones principales.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Verificar que DFHTPS no se especificó como programa inicial incorrecto. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0124",
+    "code": "ABNC",
+    "description": "Un intento de acceder a una cola de almacenamiento temporal no válida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Verificar generación del almacenamiento temporal. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0125",
+    "code": "ABNE",
+    "description": "Una respuesta de error se recibió en una invocación de un BMS TYPE=ruta o TYPE=TIENDA.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Verificar que el SBA se generó correctamente. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0126",
+    "code": "ABNF",
+    "description": "La operación no estaba en modo de envío al enviar datos al sistema remoto.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Requiere ayuda IBM. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0127",
+    "code": "ABNG",
+    "description": "Se recibió una solicitud de adjuntar desde el sistema remoto sin datos que indiquen el motivo.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Requiere ayuda IBM. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0128",
+    "code": "ABNH",
+    "description": "Un intento de enviar datos al sistema remoto.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Requiere ayuda IBM. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0129",
+    "code": "ABNI",
+    "description": "CICS no pudo encontrar un perfil para una transacción LU6.2 enrutamiento petición.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: CICS termina la tarea anormal. Respuesta del usuario: Corregir nombre de perfil o instalarlo. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0130",
+    "code": "ABNJ",
+    "description": "La tarea fue purgada antes de completar GETMAIN del gestor de almacenamiento.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Investigar causa del purge. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0131",
+    "code": "ABNK",
+    "description": "Error no válido, desastre o respuesta inesperada en llamada al gestor de almacenamiento (SM).",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar mensaje del dominio. Módulo: DFHTPS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0132",
+    "code": "ABRC",
+    "description": " La salida del puente no está definida y no pudo ser auto instalada.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. La transacción no se iniciará. Respuesta del usuario: Definir programa vía RDO o ajustar instalación automática. Módulos: DFHBRMS, DFHBRTC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0133",
+    "code": "ABRD",
+    "description": "La salida del puente está deshabilitada.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Identificar causa y habilitar salida del puente. Módulos: DFHBRMS, DFHBRTC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0134",
+    "code": "ABRE",
+    "description": " La salida del puente no se pudo cargar.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Verificar definición en DFHRPL. Módulos: DFHBRMS, DFHBRTC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0135",
+    "code": "ABRF",
+    "description": " La salida del puente se define como a distancia.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Definir salida del puente como programa local. Módulos: DFHBRMS, DFHBRTC",
+    "deleted": false
+  },
+{
+    "id": "ERR-CICS-0136",
+    "code": "ABRG",
+    "description": "Un crédito puente token válido se especificó.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. La transacción de usuario no se iniciará. Respuesta del Usuario: Este error fue causado probablemente por los datos incorrectos de ser enviados a la salida del puente de la aplicación cliente. Verifica en el conjunto de datos mediante el trazado de los datos enviados desde la aplicación cliente. Asegúrese de que el crédito puente simbólico en los datos transmitidos por la aplicación es correcta. Módulo: DFHBRXM",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0137",
+    "code": "ABRH",
+    "description": "La instalación del puente simbólico no se ha hecho en CICS.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. La transacción de usuario no se iniciará. Respuesta del usuario: El error más probable es que la aplicación cliente especificó demasiado pequeño el tiempo de instalación del puente. CICS ya lo había descartado. Verifique el tiempo de mantener en los mensajes salientes. También revisar que la solicitud no se envió a un sistema CICS distinto del original. Módulo: DFHBRXM",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0138",
+    "code": "ABRI",
+    "description": " No hay crédito puente libre de fichas disponibles. Esto se debe probablemente a valores excesivos de mantener el tiempo especificados en la salida del puente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. Respuesta del Usuario: Revisar los valores de tiempo utilizados por las aplicaciones cliente. Si regresan valores excesivos, modificar el puente salida para limitar los valores. Módulo: DFHBRXM",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0139",
+    "code": "ABRJ",
+    "description": "Un valor no válido FACILITYLIKE se ha especificado. El valor FACILITYLIKE se puede especificar en el llamado puente de la inicialización de salida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. La transacción de usuario no se iniciará. Respuesta del Usuario: Defina el terminal especificado por FACILITYLIKE, cambie el valor en la definición del perfil, cambie el valor proporcionado por la aplicación cliente, o instale una definición de terminal para CBRF. Módulo: DFHBRXM",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0140",
+    "code": "ABRK",
+    "description": " El cheque USERID no después de la llamada a la salida del puente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. La transacción de usuario no se iniciará. Respuesta del usuario: Introduzca la contraseña correcta. Si la contraseña es correcta o no fue suministrada, revisar las definiciones de RACF. Módulo: DFHBRXM",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0141",
+    "code": "ABRN",
+    "description": "La salida del puente ha devuelto un valor en BRXA_RESP que no es válido para el comando para el que fue invocado.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La operación se retiró. Respuesta del usuario: Cambiar la salida del puente para devolver sólo valores válidos de respuesta. Módulos: DFHBRIC, DFHBRMS, DFHBRSP, DFHBRTC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0142",
+    "code": "ABRQ",
+    "description": "La salida del puente emitió una terminación anormal.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La operación se retiró. Respuesta del usuario: Identificar por qué la salida del puente abended. Módulos: DFHBRMS, DFHBRTC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0143",
+    "code": "ABRR",
+    "description": " El perfil de la transacción de usuario no se pudo encontrar.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. Respuesta del usuario: Verificar definiciones de perfil de usuario. Módulo: DFHBRMS",
+    "deleted": false
+  },
+{
+    "id": "ERR-CICS-0144",
+    "code": "ABRY",
+    "description": "CICS ha devuelto un error inesperado ejecuta la salida del puente. Esto es un error interno de CICS.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: La tarea es anormalmente terminó con una descarga de transacciones CICS. Respuesta del Usuario: Se necesita más ayuda de IBM para resolver este problema. Módulos: DFHBRMS, DFHBRTC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0145",
+    "code": "ABRZ",
+    "description": "La salida del puente devolvió datos no válidos en la BRXA.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Si el usuario suministra la salida del puente, revisar el formato de los datos devueltos. Si la salida es suministrada por CICS, esto es un error interno. Módulos: DFHBRIC, DFHBRMS, DFHBRSP, DFHXMBR, DFHBRTC",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0146",
+    "code": "ABR3",
+    "description": "Una petición sin apoyo BMS fue recibida por la salida del puente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: El puente sólo es compatible con la función mínima BMS y del texto ENVIAR. Esta operación no puede usarse en un entorno de puente. Módulo: DFHEMS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0147",
+    "code": "ABR4",
+    "description": "El comando DFHL3270 enlace no ha especificado un COMMAREA.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: DFHL3270 debe especificar un COMMAREA para contener los vectores BRIH y cualquier mensaje. Módulo: DFHBRMR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0148",
+    "code": "ABR5",
+    "description": "El COMMAREA especificado en DFHL3270 enlace es más corto que el BRIH.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: DFHL3270 debe especificar un COMMAREA suficientemente grande para BRIH y mensajes. Módulo: DFHBRMR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0149",
+    "code": "ABR6",
+    "description": "El COMMAREA especificado en DFHL3270 enlace no contiene una BRIH válida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: DFHL3270 debe especificar un COMMAREA con una BRIH válida. Módulo: DFHBRMR",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0150",
+    "code": "ABSA",
+    "description": "Un mensaje pasado a DFHBSMSG es demasiado largo. Esto es un error interno de CICS.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: CICS termina la tarea con descarga anormal. Respuesta del Usuario: Se necesita ayuda de IBM. Módulo: DFHTBS",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0151",
+    "code": "ABXA",
+    "description": "Un vector BRMQ siguiente en el mensaje de entrada pasado al formateador es del tipo incorrecto de vector RECIBIR.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Puede indicar un camino de error. Si no, los mensajes deben incluir un vector BRMQ adecuado. Módulo: DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0152",
+    "code": "ABXB",
+    "description": "El BRIH pidió que el vector de salida BMS incluya descriptor ADS. El mapa no contiene descriptor ADS.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Volver a montar directorio de mapas o ajustar BRIH-ADSDESCRIPTOR. Módulo: DFHBRMF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0153",
+    "code": "ABXC",
+    "description": "Se produjo un error cuando una solicitud SYNCPOINT fue emitida por la salida del puente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar mensajes CICS y traza. Módulo: DFH0CBRE",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0154",
+    "code": "ABXD",
+    "description": "Se produjo un error cuando una solicitud ROLLBACK SYNCPOINT fue emitida por la salida del puente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Revisar mensajes CICS y traza. Módulo: DFH0CBRE",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0155",
+    "code": "ABXE",
+    "description": "La salida del puente esperaba datos en BRDATA del comando START. No se encontraron datos.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del Usuario: Corregir operación START, recompilar y reintentar. Módulos: DFH0CBAE, DFH0CBRE",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0156",
+    "code": "ABXF",
+    "description": "Se detectó un error en la salida del puente al introducir el siguiente mensaje.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción de seguimiento. Descarga anormal CICS. Respuesta del Usuario: Revisar mensajes CICS y traza. Módulos: DFH0CBAE, DFH0CBRE, DFH0CBAI",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0157",
+    "code": "ABXG",
+    "description": "Se detectó un error en la salida del puente al procesar el siguiente mensaje de salida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción de seguimiento. Descarga anormal CICS. Respuesta del Usuario: Revisar mensajes CICS y traza. Módulos: DFH0CBAE, DFH0CBRE",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0158",
+    "code": "ABXH",
+    "description": "La transacción de usuario realizó una solicitud que requiere más datos (ej. RECIBIR) pero no había datos disponibles.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Puede ser comportamiento correcto. Si no, rediseñar aplicación cliente. Módulo: DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0159",
+    "code": "ABXI",
+    "description": "Un mensaje recibido por la salida del puente ha superado el tamaño máximo de mensaje.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción de seguimiento de primeros 4K. Descarga anormal CICS. Respuesta del usuario: Revisar datos del cliente o aumentar tamaño de buffer. Módulos: DFH0CBAE, DFH0CBRE",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0160",
+    "code": "ABXJ",
+    "description": "La salida del puente detectó un error en el encabezado MQCIH aprobado por la aplicación cliente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción traza con MQCIH. Descarga anormal CICS. Respuesta del usuario: Corregir aplicación cliente. Módulos: DFH0CBAE, DFH0CBRE",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0161",
+    "code": "ABXK",
+    "description": "Error en datos pasados en BRDATA del comando START.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción de seguimiento. Descarga anormal CICS. Respuesta del Usuario: Corregir operación START. Módulos: DFH0CBAE, DFH0CBRE",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0162",
+    "code": "ABXM",
+    "description": "La salida del puente o formateador fue llamado con una función o comando no compatible.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción de seguimiento. Descarga anormal CICS. Respuesta del Usuario: Revisar BRXA en traza. Módulos: DFH0CBAE, DFH0CBRE, DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0163",
+    "code": "ABXN",
+    "description": "El formateador detectó que el mensaje de entrada se ha truncado.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción de seguimiento de primeros 4K. Descarga anormal CICS. Respuesta del Usuario: Verificar mecanismo de transporte y aplicación cliente. Módulo: DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0164",
+    "code": "ABXO",
+    "description": "El formateador detectó un error en un vector BRMQ aprobado por la aplicación cliente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: MQCIH-ERROROFFSET indica posición del error. Descarga anormal CICS. Respuesta del Usuario: Corregir aplicación cliente. Módulo: DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0165",
+    "code": "ABXP",
+    "description": "El formateador detectó un error en un encabezado de vectores BRMQ aprobado por la aplicación cliente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: MQCIH-ERROROFFSET indica posición del error. Descarga anormal CICS. Respuesta del Usuario: Corregir aplicación cliente. Módulo: DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0166",
+    "code": "ABXQ",
+    "description": "El formateador no pudo encontrar un vector ADSD como parte del vector BRMQ-RM cuando MQCIH-ADSDESCRIPTOR especificó MQCADSD-MSGFORMAT.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción de seguimiento. Descarga anormal CICS. Respuesta del Usuario: Corregir aplicación cliente. Módulo: DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0167",
+    "code": "ABXS",
+    "description": "Se detectó un error en la salida del puente al abrir la cola de entrada o mensaje de salida.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Excepción de seguimiento. Descarga anormal CICS. Respuesta del Usuario: Revisar mensajes CICS y traza. Módulo: DFH0CBRE",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0168",
+    "code": "ABXU",
+    "description": "La conversión entre la página de código del cliente y la del servidor no es compatible con CICS/390.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Volcado de transacción. Respuesta del usuario: Asegurar que las páginas de código cliente y servidor pertenecen al mismo grupo. Módulo: DFHBRMF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0169",
+    "code": "ABXV",
+    "description": "La página de código de cliente solicitada no es soportada por CICS.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Volcado de transacción. Respuesta del usuario: Asegurar que la página de códigos de cliente es válida. Módulo: DFHBRMF",
+    "deleted": false
+  },
+    {
+    "id": "ERR-CICS-0170",
+    "code": "ABX1",
+    "description": "Explicación: La salida de puente o formateador fue llamado con un inválido BRXA-PCB. Esto indica un almacenamiento de sobrescribir.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Una excepción de seguimiento se hace de los datos por error. La tarea es anormalmente terminó con una descarga de transacciones CICS. Como CICS también hace una comprobación de la BRXA al volver de la llamada a la salida, es probable que haya una posterior Abend ABRZ. Respuesta del usuario: Investigar la causa del error de almacenamiento, y vuelva a intentarlo. Módulo: DFH0CBAE, DFH0CBRE, DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0171",
+    "code": "ABX2",
+    "description": "Explicación: La salida de puente o formateador fue llamado con un inválido BRXA-OPERACIÓN-AREA. Esto indica un almacenamiento de sobrescribir.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Una excepción de seguimiento se hace de los datos por error. La tarea es anormalmente terminó con una descarga de transacciones CICS. Como CICS también hace una comprobación de la BRXA al volver de la llamada a la salida, es probable que haya una posterior Abend ABRZ. Respuesta del usuario: Investigar la causa del error de almacenamiento, y vuelva a intentarlo. Módulo: DFH0CBAE, DFH0CBRE, DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0172",
+    "code": "ABX3",
+    "description": "Explicación: La salida de puente o formateador fue llamado con un inválido BRXA Y MANDO-AREA. Esto indica un almacenamiento de sobrescribir.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Una excepción de seguimiento se hace de los datos por error. La tarea es anormalmente terminó con una descarga de transacciones CICS. Como CICS también hace una comprobación de la BRXA al volver de la llamada a la salida, es probable que haya una posterior Abend ABRZ. Respuesta del usuario: Investigar la causa del error de almacenamiento, y vuelva a intentarlo. Módulo: DFH0CBAE, DFH0CBRE, DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0173",
+    "code": "ABX5",
+    "description": "Explicación: La salida de puente o formateador se llamaba sin un usuario de la zona. Esto probablemente indica un error en la salida del puente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Una excepción de seguimiento se hace de los datos por error. La tarea es anormalmente terminó con una descarga de transacciones CICS. Respuesta del usuario: Investigar la causa del error de almacenamiento, y vuelva a intentarlo. Módulo: DFH0CBAE, DFH0CBRE, DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0174",
+    "code": "ABX6",
+    "description": "Explicación: La salida de puente o formateador fue llamada con un usuario válido de la zona. Esto indica un almacenamiento de sobrescribir o un error en la salida del puente.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Una excepción de seguimiento se hace de los datos por error. La tarea es anormalmente terminó con una descarga de transacciones CICS. Respuesta del usuario: Investigar la causa del error de almacenamiento, y vuelva a intentarlo. Módulo: DFH0CBAE, DFH0CBRE, DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0175",
+    "code": "ABX7",
+    "description": "Un comando TC pasado al formateador superó el tamaño máximo de mensaje.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Una excepción de seguimiento se hace de los primeros 4K de datos por error. La tarea es anormalmente terminó con una descarga de transacciones CICS. Respuesta del usuario: Verificar datos de la transacción. Si son correctos, aumentar tamaño del buffer. Módulo: DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0176",
+    "code": "ABX8",
+    "description": "Explicación: Un próximo vector BRMQ en el mensaje de entrada no contiene el directorio de mapas solicitado para responder a una solicitud RECIBIR MAP.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Puede indicar camino de error. Si no, los mensajes deben incluir vector BRMQ adecuado. Módulo: DFH0CBRF",
+    "deleted": false
+  },
+  {
+    "id": "ERR-CICS-0177",
+    "code": "ABX9",
+    "description": "Explicación: Un próximo vector BRMQ en el mensaje de entrada no contiene el mapname solicitado para responder a una solicitud RECIBIR MAP.",
+    "system": "CICS",
+    "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Puede indicar camino de error. Si no, los mensajes deben incluir vector BRMQ con el mapname. Módulo: DFH0CBRF",
+    "deleted": false
+  },    
+    
   {
   "id": "ERR-VSAM-0001",
   "code": "4",
