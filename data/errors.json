@@ -120,9 +120,9 @@
   "description": "Error de espacio en disco",
   "system": "ABEND", "operation": "",
   "notes": "El dataset no pudo extenderse por falta de espacio. Revisar volúmenes, extents y asignación secundaria.",
-  "deleted": false },
-  [
-  {
+  "deleted": false 
+},
+{
     "id": "ERR-ABEND-0021",
     "code": "SA13",
     "description": "No se encuentra el fichero en cinta.",
@@ -282,7 +282,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0041",
     "code": "S020",
     "description": "Acceso directo: campo DCBMACRF inválido.",
@@ -442,7 +442,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0061",
     "code": "S042",
     "description": "Error en SORT: tipo de dispositivo erróneo.",
@@ -466,7 +466,7 @@
     "system": "ABEND",
     "deleted": false
   },
- {
+  {
     "id": "ERR-ABEND-0047",
     "code": "S047",
     "description": "Da en sort cuando el número de registros del parámetro size no coincide con el número de registros del fichero. Da en ims cuando una base de datos está compartida con dbrc. Se produce al intentar acceder a la base de datos mientras se está usando, al estar la pcb sin la opción de compartir go. También se produce al intentar acceder y hay un programa de actualización que terminó mal.",
@@ -546,7 +546,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0077",
     "code": "S072",
     "description": "No tienes DD IEFRDER, o está mal.",
@@ -690,7 +690,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0107",
     "code": "S0C7",
     "description": "Excepción de datos. Se intenta hacer una operación decimal en la que uno de los operandos no es numérico. Hacer una comparación de un campo definido como numérico y que no contiene dígitos. Move de un numérico a campo de edición si el primero no contiene dígitos.",
@@ -722,7 +722,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0111",
     "code": "S0CB",
     "description": "Divisor es cero.",
@@ -794,7 +794,7 @@
     "system": "ABEND",
     "deleted": false
   },
-    {
+  {
     "id": "ERR-ABEND-0141",
     "code": "S0F5",
     "description": "Parámetro incorrecto en la workarea usada para cargar svc de tipos 3 y 4.",
@@ -938,7 +938,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0171",
     "code": "S137",
     "description": "Ocurre al final de cinta magnética.",
@@ -978,7 +978,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0201",
     "code": "S140",
     "description": "Error en RDJFCB.",
@@ -1034,7 +1034,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0208",
     "code": "S16A",
     "description": "En operando FIELD hay valores no válidos.",
@@ -1274,7 +1274,7 @@
     "system": "ABEND",
     "deleted": false
   },    
-    {
+  {
     "id": "ERR-ABEND-0238",
     "code": "S24A",
     "description": "Valor incorrecto de parámetro length en sentencia RECORD.",
@@ -1426,7 +1426,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0257",
     "code": "S308",
     "description": "El programa problema solicitó la carga de un módulo utilizando un punto de entrada dado al programa de control mediante una macro IDENTIFY.",
@@ -1554,7 +1554,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0273",
     "code": "S34A",
     "description": "Error especificacion parametro en sentencia MODS.",
@@ -1770,7 +1770,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0299",
     "code": "S458",
     "description": "Se intenta pasar un bmp con la region parada.",
@@ -1842,7 +1842,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0308",
     "code": "S48I",
@@ -1907,7 +1906,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0316",
     "code": "S513",
@@ -1932,7 +1930,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0319",
     "code": "S51A",
@@ -1949,7 +1946,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0321",
     "code": "S52A",
@@ -1958,7 +1954,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0322",
     "code": "S52I",
@@ -1967,7 +1962,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0323",
     "code": "S530",
@@ -1976,7 +1970,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0324",
     "code": "S53A",
@@ -1985,7 +1978,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0325",
     "code": "S54I",
@@ -1994,7 +1986,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0326",
     "code": "S557",
@@ -2003,7 +1994,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0327",
     "code": "S56A",
@@ -2012,7 +2002,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0328",
     "code": "S570",
@@ -2021,7 +2010,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0329",
     "code": "S57A",
     "description": "Asigna cinta a SORTIN y SORTWK.",
@@ -2125,7 +2114,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0342",
     "code": "S630",
@@ -2262,7 +2250,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0359",
     "code": "S717",
     "description": "Error en CLOSE de fichero en cinta.",
@@ -2502,7 +2490,7 @@
     "system": "ABEND",
     "deleted": false
   },
-    {
+  {
     "id": "ERR-ABEND-0389",
     "code": "S905",
     "description": "Area a liberar con macro freemain no es multiplo de 8.",
@@ -2638,7 +2626,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0406",
     "code": "SB04",
@@ -2743,7 +2730,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0419",
     "code": "SE2D",
     "description": "Error en programa OVERLAY.",
@@ -2767,7 +2754,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0422",
     "code": "1002",
@@ -2792,7 +2778,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0425",
     "code": "1301",
@@ -2809,7 +2794,7 @@
     "system": "ABEND",
     "deleted": false
   },  
-{
+  {
     "id": "ERR-ABEND-0427",
     "code": "2000",
     "description": "Dos ficheros concatenados en entrada con distinta longitud de bloque.",
@@ -2849,7 +2834,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0432",
     "code": "84",
@@ -2866,7 +2850,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0434",
     "code": "3303",
@@ -2875,7 +2858,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0435",
     "code": "3333",
@@ -2884,7 +2866,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0436",
     "code": "3361",
@@ -2893,7 +2874,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0437",
     "code": "3440",
@@ -2902,7 +2882,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0438",
     "code": "3505",
@@ -2911,7 +2890,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0439",
     "code": "3555",
@@ -2920,7 +2898,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0440",
     "code": "3666",
@@ -2929,7 +2906,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0441",
     "code": "3777",
@@ -2938,7 +2914,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0442",
     "code": "4000",
@@ -2947,7 +2922,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0443",
     "code": "4021",
@@ -2956,7 +2930,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0444",
     "code": "4032",
@@ -2965,7 +2938,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0445",
     "code": "4036",
@@ -2974,7 +2946,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0446",
     "code": "4089",
@@ -2983,7 +2954,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0447",
     "code": "5071",
@@ -2992,7 +2962,6 @@
     "system": "ABEND",
     "deleted": false
   },
-
   {
     "id": "ERR-ABEND-0448",
     "code": "5072",
@@ -3001,7 +2970,7 @@
     "system": "ABEND",
     "deleted": false
   },
-{
+  {
     "id": "ERR-ABEND-0449",
     "code": "61",
     "description": "Fichero de entrada vacio.",
@@ -3011,7 +2980,7 @@
   },  
 
 
-{
+  {
     "id": "ERR-PLI-0001",
     "code": "3",
     "description": "En un SELECT/WHEN/OTHERWISE, ningún WHEN satisface la condición y no hay cláusula OTHERWISE.",
@@ -3251,7 +3220,7 @@
     "notes": "Faltan atributos o parámetros requeridos.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-PLI-0031",
     "code": "84",
     "description": "DD declaración no se encuentra en JCL.",
@@ -3491,7 +3460,7 @@
     "notes": "Condición STORAGE activada.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-PLI-0061",
     "code": "451",
     "description": "ASIGNAR (alocar) falló, no hay suficiente almacenamiento disponible.",
@@ -3731,7 +3700,7 @@
     "notes": "Debe establecerse una posición antes de operar.",
     "deleted": false
   },
-    {
+  {
     "id": "ERR-PLI-0091",
     "code": "1027",
     "description": "Record o intervalo de VSAM de control ya declarado en el control exclusivo.",
@@ -3971,7 +3940,7 @@
     "notes": "La instrucción STOP no pudo finalizar correctamente.",
     "deleted": false
   },
-    {
+  {
     "id": "ERR-PLI-0121",
     "code": "3797",
     "description": "Intento de convertir a o desde datos gráficos.",
@@ -4211,7 +4180,7 @@
     "notes": "La dirección está protegida o fuera de rango.",
     "deleted": false
   },
-    {
+  {
     "id": "ERR-PLI-0151",
     "code": "8095",
     "description": "Excepción de direccionamiento (dirección se encuentra fuera del almacenamiento virtual disponible).",
@@ -4403,7 +4372,7 @@
     "notes": "CICS no permite invocar MAIN directamente.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-PLI-0175",
     "code": "9255",
     "description": "Intento de lanzar un módulo de carga que contiene un programa de lenguaje de alto nivel, que no es PL/I.",
@@ -4429,7 +4398,7 @@
   },
     
 
-{
+  {
     "id": "ERR-MSG-0001",
     "code": "U0020",
     "description": "Se ha cerrado el ims/vs por medio de un comando modify. la cinta log queda cerrada y el ims/vs termina anormalmente.",
@@ -4669,7 +4638,7 @@
     "system": "MSG",
     "deleted": false
   },
-{
+  {
   "id": "ERR-MSG-0031",
   "code": "U3777",
   "description": "Se ha utilizado el modulo 'imscod' al devolver el ims un codigo de retorno invalido. el nombre de programa y el rc saldran por la consola del ordenador y por 'sysprint' junto con el registro 13 y el registro 3 del programa. en valores: base activa. se pasa el vatpfinb.",
@@ -4752,125 +4721,146 @@
     
     
     
-  { "id": "ERR-DB2-0001", "code": "-911",
+  {
+    "id": "ERR-DB2-0001", "code": "-911",
   "description": "Deadlock o timeout. Transacción revertida",
   "system": "DB2", "operation": "",
   "notes": "Ocurre cuando dos transacciones compiten por los mismos recursos. Revisar orden de acceso a tablas y tiempos de bloqueo.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0002", "code": "-913",
+  "deleted": false 
+ },
+ {
+  "id": "ERR-DB2-0002", "code": "-913",
   "description": "Deadlock detectado. Transacción fallida",
   "system": "DB2", "operation": "",
   "notes": "Similar al -911 pero sin rollback automático. Requiere revisar locking y secuencia de operaciones.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0003", "code": "-805",
+  "deleted": false 
+},
+{
+  "id": "ERR-DB2-0003", "code": "-805",
   "description": "Package no encontrado (DBRM no enlazado)",
   "system": "DB2", "operation": "",
   "notes": "El plan no contiene el package requerido. Revisar BIND, colección y versión del módulo.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0004", "code": "-818",
+  "deleted": false 
+},
+{
+  "id": "ERR-DB2-0004", "code": "-818",
   "description": "Timestamp mismatch entre DBRM y load module",
   "system": "DB2", "operation": "",
   "notes": "El programa fue compilado pero no enlazado correctamente. Requiere recompilación y rebind.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0005", "code": "-204",
+  "deleted": false 
+},
+{
+  "id": "ERR-DB2-0005", "code": "-204",
   "description": "Tabla o vista no existe",
   "system": "DB2", "operation": "",
   "notes": "Puede deberse a esquema incorrecto, falta de permisos o error tipográfico en el nombre.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0006", "code": "-206",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0006", "code": "-206",
   "description": "Columna no existe en la tabla",
   "system": "DB2", "operation": "",
   "notes": "Frecuente tras cambios en el modelo de datos. Revisar nombres, alias y SELECT.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0007", "code": "-551",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0007", "code": "-551",
   "description": "Usuario sin permisos para la operación",
   "system": "DB2", "operation": "",
   "notes": "El usuario no tiene privilegios para SELECT, INSERT, UPDATE o DELETE. Revisar GRANT.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0008", "code": "-530",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0008", "code": "-530",
   "description": "Violación de clave foránea",
   "system": "DB2", "operation": "",
   "notes": "Se intenta insertar o actualizar un valor que no existe en la tabla padre. Revisar integridad referencial.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0009", "code": "-803",
+  "deleted": false 
+},
+{
+  "id": "ERR-DB2-0009", "code": "-803",
   "description": "Violación de clave primaria (duplicado)",
   "system": "DB2", "operation": "",
   "notes": "El valor ya existe. Revisar índices únicos y lógica de generación de claves.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0010", "code": "-904",
+  "deleted": false 
+},
+{
+  "id": "ERR-DB2-0010", "code": "-904",
   "description": "Recurso no disponible",
   "system": "DB2", "operation": "",
   "notes": "Puede deberse a tablas bloqueadas, falta de espacio o problemas en el buffer pool.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0011", "code": "-922",
+  "deleted": false 
+},
+{
+  "id": "ERR-DB2-0011", "code": "-922",
   "description": "Autorización fallida",
   "system": "DB2", "operation": "",
   "notes": "El usuario no está conectado o no tiene permisos para acceder a DB2. Revisar RACF/ACF2.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0012", "code": "-501",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0012", "code": "-501",
   "description": "Cursor no abierto",
   "system": "DB2", "operation": "",
   "notes": "Se ejecutó FETCH sin OPEN previo. Revisar flujo del programa.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0013", "code": "-502",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0013", "code": "-502",
   "description": "Cursor ya abierto",
   "system": "DB2", "operation": "",
   "notes": "Se intenta abrir un cursor que ya está activo. Revisar lógica de loops y condiciones.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0014", "code": "-532",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0014", "code": "-532",
   "description": "Restricción referencial violada",
   "system": "DB2", "operation": "",
   "notes": "Se intenta borrar un registro que tiene dependencias en tablas hijas. Revisar ON DELETE rules.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0015", "code": "-713",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0015", "code": "-713",
   "description": "Valor nulo no permitido",
   "system": "DB2", "operation": "",
   "notes": "Se intenta insertar NULL en una columna definida como NOT NULL. Revisar datos de entrada.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0016", "code": "-723",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0016", "code": "-723",
   "description": "Error en trigger",
   "system": "DB2", "operation": "",
   "notes": "Un trigger falló durante la operación. Revisar lógica interna y condiciones del trigger.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0017", "code": "-805",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0017", "code": "-805",
   "description": "Package no encontrado en plan",
   "system": "DB2", "operation": "",
   "notes": "El plan no incluye el package requerido. Requiere BIND con la colección correcta.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0018", "code": "-904",
+  "deleted": false 
+},
+{
+  "id": "ERR-DB2-0018", "code": "-904",
   "description": "Recurso temporalmente no disponible",
   "system": "DB2", "operation": "",
   "notes": "Puede ser un lock prolongado, falta de buffer pool o problemas de I/O en la tabla.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0019", "code": "-911",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0019", "code": "-911",
   "description": "Timeout de bloqueo",
   "system": "DB2", "operation": "",
   "notes": "La transacción esperó demasiado por un lock. Revisar concurrencia y tiempos de espera.",
-  "deleted": false },
-
-{ "id": "ERR-DB2-0020", "code": "+100",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-DB2-0020", "code": "+100",
   "description": "Fin de datos (no more rows)",
   "system": "DB2", "operation": "",
   "notes": "Indica que el cursor no encontró más registros. No es error, es condición normal.",
-  "deleted": false },
+  "deleted": false 
+},
 {
     "id": "ERR-DB2-0021",
     "code": "100",
@@ -5111,7 +5101,6 @@
     "notes": "La tabla objetivo no está definida en el catálogo.",
     "deleted": false
   },
-
   {
     "id": "ERR-DB2-0051",
     "code": "-034",
@@ -5352,7 +5341,7 @@
     "notes": "El nombre excede la longitud permitida.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-DB2-0081",
     "code": "-101",
     "description": "Instrucción SQL demasiado larga o compleja.",
@@ -5576,7 +5565,6 @@
     "notes": "La columna aparece duplicada en la sentencia, o La tabla presenta inconsistencias y debe recrearse",
     "deleted": false
   },
-  
   {
     "id": "ERR-DB2-0110",
     "code": "-122",
@@ -5585,7 +5573,7 @@
     "notes": "La columna debe incluirse en GROUP BY.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-DB2-0111",
     "code": "-122",
     "description": "Campo definido en la SELECT y no en la GROUP BY o una sentencia SELECT sin GROUP BY contiene un nombre de columna y una función SQL en la cláusula SELECT.",
@@ -5824,8 +5812,8 @@
     "system": "DB2",
     "notes": "El literal de fecha/hora no cumple el formato requerido.",
     "deleted": false
-  } ,
-{
+  },
+  {
     "id": "ERR-DB2-0141",
     "code": "-181",
     "description": "La cadena de representación de un valor de fecha/hora no es un valor válido.",
@@ -6065,7 +6053,7 @@
     "notes": "La operación requiere indicador de nulos o datos válidos.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-DB2-0171",
     "code": "-309",
     "description": "El atributo es inválido porque el campo de la tabla tiene valor nulo.",
@@ -6305,7 +6293,7 @@
     "notes": "El cursor debe estar abierto y posicionado antes de actualizar.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-DB2-0201",
     "code": "-508",
     "description": "Intento de UPDATE o DELETE sin estar posicionado el cursor.",
@@ -6545,7 +6533,7 @@
     "notes": "El usuario carece de autoridad para revocar ese privilegio.",
     "deleted": false
   },
-    {
+  {
     "id": "ERR-DB2-0231",
     "code": "-557",
     "description": "Comando GRANT/REVOKE erróneo; los mandatos permitidos son los indicados en el parámetro.",
@@ -6785,7 +6773,7 @@
     "notes": "La regla DELETE CASCADE no es válida en este contexto.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-DB2-0261",
     "code": "-635",
     "description": "La regla de borrado no puede ser diferente o no puede ser un conjunto vacío.",
@@ -7025,7 +7013,7 @@
     "notes": "El procedimiento no admite ese tipo de columna.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-DB2-0291",
     "code": "-684",
     "description": "La longitud del literal especificado es demasiado larga.",
@@ -7265,7 +7253,7 @@
     "notes": "La conexión o permisos DB2 no son válidos.",
     "deleted": false
   },   
-    {
+  {
     "id": "ERR-DB2-0321",
     "code": "-924",
     "description": "Problemas de conexión con el DB2 (se ha caído el DB2).",
@@ -7313,7 +7301,7 @@
     "notes": "El cursor no está disponible para la operación o el acceso previo DLI alteró la longitud esperada.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-DB2-0327",
     "code": "-1024",
     "description": "Se han copiado sobre el fichero TAB otro anterior sin haber copiado el fichero IDX o se ha hecho después de crear una tabla nueva o un índice nuevo. Solución: borrar la tabla y volverla a crear y cargar o se intentó hacer un DELETE sin haber leído.",
@@ -7467,126 +7455,146 @@
   },
     
   
-  { "id": "ERR-CICS-0001", "code": "AEI0",
+  {
+    "id": "ERR-CICS-0001", "code": "AEI0",
   "description": "Programa no encontrado",
   "system": "CICS", "operation": "",
   "notes": "El programa no está definido en el PPT o el nombre está mal especificado. Revisar definiciones en CSD y concatenación de librerías.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0002", "code": "AEI1",
+  "deleted": false 
+  },
+  {
+  "id": "ERR-CICS-0002", "code": "AEI1",
   "description": "Transacción no autorizada",
   "system": "CICS", "operation": "",
   "notes": "El usuario no tiene permisos para ejecutar la transacción. Revisar reglas RACF y definiciones de transacción en CICS.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0003", "code": "AEY9",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0003", "code": "AEY9",
   "description": "Timeout de transacción",
   "system": "CICS", "operation": "",
   "notes": "La transacción excedió el tiempo máximo permitido. Frecuente en procesos que esperan recursos o VSAM bloqueado.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0004", "code": "AEZ0",
+  "deleted": false 
+},
+{
+  "id": "ERR-CICS-0004", "code": "AEZ0",
   "description": "Error de protección de memoria",
   "system": "CICS", "operation": "",
   "notes": "Acceso a memoria protegida o fuera de límites. Revisar punteros, áreas de trabajo y GETMAIN/FREEMAIN.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0005", "code": "AEI2",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0005", "code": "AEI2",
   "description": "Programa no definido en PPT",
   "system": "CICS", "operation": "",
   "notes": "El programa no está instalado en CICS. Requiere definirlo en el CSD y realizar un NEWCOPY.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0006", "code": "AEI3",
+  "deleted": false 
+},
+{
+  "id": "ERR-CICS-0006", "code": "AEI3",
   "description": "MAPSET no encontrado",
   "system": "CICS", "operation": "",
   "notes": "El MAPSET no está cargado o no existe en la librería de mapas. Revisar DFHMSD y definiciones BMS.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0007", "code": "AEI4",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0007", "code": "AEI4",
   "description": "MAP no encontrado",
   "system": "CICS", "operation": "",
   "notes": "El MAP especificado no existe dentro del MAPSET. Revisar nombres y definiciones BMS.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0008", "code": "AEI5",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0008", "code": "AEI5",
   "description": "Error en RECEIVE MAP",
   "system": "CICS", "operation": "",
   "notes": "Datos recibidos no coinciden con el formato del MAP. Frecuente por campos mal definidos o longitudes incorrectas.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0009", "code": "AEI6",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0009", "code": "AEI6",
   "description": "Error en SEND MAP",
   "system": "CICS", "operation": "",
   "notes": "El MAPSET o MAP no está disponible o contiene errores. Revisar compilación BMS y atributos de pantalla.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0010", "code": "AKC0",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0010", "code": "AKC0",
   "description": "Error de almacenamiento insuficiente",
   "system": "CICS", "operation": "",
   "notes": "GETMAIN no pudo asignar memoria. Revisar tamaño de áreas de trabajo y límites de región.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0011", "code": "AKC1",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0011", "code": "AKC1",
   "description": "Error de almacenamiento liberado incorrectamente",
   "system": "CICS", "operation": "",
   "notes": "FREEMAIN sobre memoria no asignada o ya liberada. Revisar lógica de asignación dinámica.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0012", "code": "AKC2",
+  "deleted": false 
+},
+{
+  "id": "ERR-CICS-0012", "code": "AKC2",
   "description": "Error de almacenamiento corrupto",
   "system": "CICS", "operation": "",
   "notes": "La memoria fue sobrescrita accidentalmente. Frecuente en programas con punteros incorrectos.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0013", "code": "AEXZ",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0013", "code": "AEXZ",
   "description": "Error general de ejecución",
   "system": "CICS", "operation": "",
   "notes": "Error genérico. Revisar el dump DFHPEP y el trace para identificar la causa exacta.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0014", "code": "AEY7",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0014", "code": "AEY7",
   "description": "Error de seguridad (RACF)",
   "system": "CICS", "operation": "",
   "notes": "El usuario no tiene permisos para acceder al recurso. Revisar perfiles RACF y reglas de acceso.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0015", "code": "AEY8",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0015", "code": "AEY8",
   "description": "Transacción no permitida",
   "system": "CICS", "operation": "",
   "notes": "La transacción está deshabilitada o restringida. Revisar definiciones en CICS y permisos RACF.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0016", "code": "AEZ1",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0016", "code": "AEZ1",
   "description": "Error de archivo VSAM",
   "system": "CICS", "operation": "",
   "notes": "VSAM devolvió un código de error. Revisar RPL, opciones de acceso y estado del dataset.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0017", "code": "AEZ2",
+  "deleted": false
+},
+{ 
+  "id": "ERR-CICS-0017", "code": "AEZ2",
   "description": "Registro no encontrado en VSAM",
   "system": "CICS", "operation": "",
   "notes": "El registro buscado no existe. Revisar claves, índices y lógica de búsqueda.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0018", "code": "AEZ3",
+  "deleted": false
+},
+{ 
+  "id": "ERR-CICS-0018", "code": "AEZ3",
   "description": "Error de actualización VSAM",
   "system": "CICS", "operation": "",
   "notes": "VSAM rechazó la actualización. Puede deberse a bloqueo, clave duplicada o error de acceso.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0019", "code": "AEZ4",
+  "deleted": false 
+},
+{
+  "id": "ERR-CICS-0019", "code": "AEZ4",
   "description": "Error de borrado VSAM",
   "system": "CICS", "operation": "",
   "notes": "El registro no pudo ser eliminado. Revisar integridad, claves y estado del dataset.",
-  "deleted": false },
-
-{ "id": "ERR-CICS-0020", "code": "AEZ5",
+  "deleted": false 
+},
+{ 
+  "id": "ERR-CICS-0020", "code": "AEZ5",
   "description": "Archivo VSAM bloqueado",
   "system": "CICS", "operation": "",
   "notes": "El dataset está en uso exclusivo o bloqueado por otra transacción. Revisar locking y tiempo de espera.",
-  "deleted": false },
-
+  "deleted": false 
+},
 {
     "id": "ERR-CICS-0021",
     "code": "AACA",
@@ -7827,7 +7835,7 @@
     "notes": "Corregir inicialización del PRM y reiniciar CICS.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-CICS-0051",
     "code": "AAMS",
     "description": "Se ha producido un código de retorno inesperado a raíz de una solicitud GETMAIN para el gestor de almacenamiento. Esto se debe a un error de lógica interna.",
@@ -7995,7 +8003,7 @@
     "notes": "El volcado muestra la CPC; puede requerir soporte IBM.",
     "deleted": false
   },
-{
+  {
     "id": "ERR-CICS-0072",
     "code": "AAOQ",
     "description": "El código de retorno generado por las comunicaciones del IPC no tiene una entrada en la tabla de estado contra el corriente verbo IPC Comunicaciones. Este error es detectado por la máquina de estados IPC Comunicaciones.",
@@ -8131,7 +8139,7 @@
     "notes": "Acción del Sistema: Descarga anormal CICS. Revisar causa del purge y ajustar DTIMOUT o número de tareas. Módulo: DFHCPCLR",
     "deleted": false
   },
-{
+  {
     "id": "ERR-CICS-0089",
     "code": "ABAC",
     "description": "Una actividad, expedido EXEC CICS RETORNO (sin la opción ENDACTIVITY), pero hay eventos fueron procesados durante la activación. La actividad se ejecutó una orden de marcha.",
@@ -8267,7 +8275,7 @@
     "notes": "Acción del Sistema: Volcado CICS. Respuesta del usuario: Asegurar que el terminal asociado es 3270 o SCSPRINT. Módulo: DFHQRY",
     "deleted": false
   },    
-    {
+  {
     "id": "ERR-CICS-0106",
     "code": "ABMR",
     "description": "La página de transacción de recuperación (CSPG) se ha iniciado, pero la tarea no es terminal orientado.",
@@ -8507,7 +8515,7 @@
     "notes": "Acción del Sistema: Descarga anormal CICS. Respuesta del usuario: Definir salida del puente como programa local. Módulos: DFHBRMS, DFHBRTC",
     "deleted": false
   },
-{
+  {
     "id": "ERR-CICS-0136",
     "code": "ABRG",
     "description": "Un crédito puente token válido se especificó.",
