@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-11-31",
+  "versionDate": "2026-11-33",
   "terms": [
    {
     "id": "COBOL-0001",
@@ -2052,6 +2052,3008 @@
     "notes": "Puede usarse con NEXT VALUE FOR en INSERT.",
     "category": "DB2",
     "deleted": false
-  }
+  },
+
+
+{
+    "id": "PL/I-0001",
+    "name": "ABORT",
+    "shortDescription": "Termina la ejecución del programa inmediatamente.",
+    "longDescription": "ABORT finaliza la ejecución del programa sin realizar limpieza adicional ni ejecutar bloques de finalización. Se utiliza para detener la ejecución cuando se detecta una condición crítica que impide continuar.",
+    "examples": "CALL ABORT;",
+    "notes": "Interrumpe el flujo normal y no garantiza la liberación de recursos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0002",
+    "name": "ABSENT",
+    "shortDescription": "Indica ausencia de un valor en listas o parámetros opcionales.",
+    "longDescription": "ABSENT se emplea para señalar que un parámetro opcional o elemento de una lista no está presente. Permite distinguir entre valores nulos y ausencia explícita.",
+    "examples": "IF ARGUMENT(3) = ABSENT THEN CALL HANDLE_MISSING();",
+    "notes": "Útil en rutinas con parámetros opcionales para validar presencia.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0003",
+    "name": "ACCESS",
+    "shortDescription": "Especifica modo de acceso a un archivo o recurso.",
+    "longDescription": "ACCESS define cómo se abrirá o utilizará un archivo, indicando si el acceso será secuencial, directo, de lectura o escritura. Controla el comportamiento de las operaciones de E/S.",
+    "examples": "DECLARE F FILE ACCESS(SEQUENTIAL);",
+    "notes": "Debe ser coherente con el tipo de archivo y las operaciones previstas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0004",
+    "name": "ACCEPT",
+    "shortDescription": "Acepta entrada o confirma un valor.",
+    "longDescription": "ACCEPT se utiliza para recibir datos desde un dispositivo de entrada o para confirmar valores en ciertos contextos. Su comportamiento exacto depende del entorno de ejecución.",
+    "examples": "ACCEPT INPUT_LINE;",
+    "notes": "Puede variar según la implementación del sistema.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0005",
+    "name": "ACOS",
+    "shortDescription": "Función trigonométrica arcocoseno.",
+    "longDescription": "ACOS devuelve el ángulo cuyo coseno es el valor proporcionado. Se utiliza en cálculos matemáticos que requieren convertir valores trigonométricos a ángulos.",
+    "examples": "ANGLE = ACOS(X);",
+    "notes": "El argumento debe estar dentro del rango válido para el coseno.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0006",
+    "name": "ADDRESS",
+    "shortDescription": "Devuelve o declara la dirección de memoria de una variable.",
+    "longDescription": "ADDRESS permite obtener la ubicación física de un objeto en memoria o declarar variables basadas en direcciones específicas. Es fundamental para manipulación de punteros.",
+    "examples": "PTR = ADDRESS(VAR);",
+    "notes": "Debe usarse con cuidado para evitar accesos inválidos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0007",
+    "name": "ALIGN",
+    "shortDescription": "Alinea datos en memoria según requisitos de implementación.",
+    "longDescription": "ALIGN especifica que una variable debe ubicarse en memoria respetando límites de alineación. Esto mejora el rendimiento y evita fallos en arquitecturas que lo requieren.",
+    "examples": "DECLARE X FIXED BIN(31) ALIGN;",
+    "notes": "La alineación depende del hardware y del compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0008",
+    "name": "ALLOCATE",
+    "shortDescription": "Reserva almacenamiento dinámico en tiempo de ejecución.",
+    "longDescription": "ALLOCATE crea espacio dinámico para variables o estructuras durante la ejecución. Es esencial para gestionar memoria flexible y estructuras de tamaño variable.",
+    "examples": "ALLOCATE BUFFER;",
+    "notes": "Debe complementarse con DEALLOCATE para evitar fugas de memoria.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0009",
+    "name": "AND",
+    "shortDescription": "Operador lógico de conjunción.",
+    "longDescription": "AND evalúa dos condiciones y devuelve verdadero solo si ambas son verdaderas. Se utiliza en expresiones lógicas dentro de estructuras de control.",
+    "examples": "IF (A > 0) AND (B > 0) THEN CALL PROCESS();",
+    "notes": "Evalúa ambos operandos salvo optimizaciones del compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0010",
+    "name": "ANY",
+    "shortDescription": "Tipo o cláusula que acepta cualquier tipo.",
+    "longDescription": "ANY permite declarar parámetros o elementos que pueden recibir valores de cualquier tipo compatible. Facilita la creación de rutinas genéricas.",
+    "examples": "DECLARE P ANY;",
+    "notes": "Debe usarse con validaciones para evitar errores de tipo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0011",
+    "name": "APPEND",
+    "shortDescription": "Añade datos al final de un archivo o lista.",
+    "longDescription": "APPEND se utiliza para agregar nuevos elementos al final de una estructura secuencial, ya sea un archivo o una lista. Permite extender el contenido sin modificar los elementos existentes.",
+    "examples": "PUT FILE(F) APPEND;",
+    "notes": "El modo de acceso del archivo debe permitir escritura secuencial.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-00112",
+    "name": "ARGUMENT",
+    "shortDescription": "Hace referencia a un parámetro pasado a una rutina.",
+    "longDescription": "ARGUMENT permite acceder a los parámetros recibidos por una rutina, especialmente cuando se trabaja con listas de argumentos o parámetros opcionales. Facilita la inspección dinámica de valores.",
+    "examples": "IF ARGUMENT(2) = ABSENT THEN CALL HANDLE();",
+    "notes": "Útil en procedimientos genéricos con número variable de parámetros.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0013",
+    "name": "ARRAY",
+    "shortDescription": "Declara una colección indexada de elementos.",
+    "longDescription": "ARRAY define un conjunto ordenado de elementos accesibles mediante índices. Es fundamental para manejar datos estructurados y colecciones de tamaño fijo o variable.",
+    "examples": "DECLARE A(10) FIXED BIN;",
+    "notes": "Los límites del array pueden ser estáticos o dinámicos según la declaración.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0014",
+    "name": "AS",
+    "shortDescription": "Usado en aliasing o definiciones.",
+    "longDescription": "AS se emplea para establecer equivalencias o alias entre nombres, permitiendo que una variable o estructura adopte el tipo o formato de otra declaración.",
+    "examples": "DECLARE B AS A;",
+    "notes": "Facilita reutilizar definiciones sin duplicar estructuras.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0015",
+    "name": "ASSERT",
+    "shortDescription": "Comprueba una condición en tiempo de ejecución.",
+    "longDescription": "ASSERT verifica que una condición sea verdadera durante la ejecución. Si falla, puede activar mecanismos de diagnóstico o detener el programa según la configuración.",
+    "examples": "ASSERT(X > 0);",
+    "notes": "Útil para depuración y validación de invariantes.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0016",
+    "name": "ASSIGN",
+    "shortDescription": "Asigna valores o reasigna nombres externos; también para archivos.",
+    "longDescription": "ASSIGN permite asociar archivos externos a nombres lógicos o establecer valores en variables. Es clave para configurar recursos antes de operaciones de E/S.",
+    "examples": "ASSIGN FILE(F) TO 'DATA.DAT';",
+    "notes": "Debe ejecutarse antes de abrir el archivo para que surta efecto.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0017",
+    "name": "ATAN",
+    "shortDescription": "Función trigonométrica arcotangente.",
+    "longDescription": "ATAN devuelve el ángulo cuya tangente corresponde al valor proporcionado. Se utiliza en cálculos matemáticos que requieren convertir razones trigonométricas en ángulos.",
+    "examples": "ANGLE = ATAN(X);",
+    "notes": "El resultado está en radianes.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0018",
+    "name": "ATAN2",
+    "shortDescription": "Arcotangente con dos argumentos.",
+    "longDescription": "ATAN2 calcula el ángulo considerando dos valores, permitiendo determinar el cuadrante correcto. Es útil en operaciones vectoriales y coordenadas.",
+    "examples": "ANGLE = ATAN2(Y, X);",
+    "notes": "Evita ambigüedades de signo presentes en ATAN.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0019",
+    "name": "AUTO",
+    "shortDescription": "Almacenamiento automático.",
+    "longDescription": "AUTO indica que una variable se crea al entrar en un bloque y se destruye al salir. Es el modo de almacenamiento típico para variables locales.",
+    "examples": "DECLARE X AUTO;",
+    "notes": "Su vida depende estrictamente del bloque donde se declara.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0020",
+    "name": "AUTO_DEALLOCATE",
+    "shortDescription": "Libera automáticamente almacenamiento al salir del bloque.",
+    "longDescription": "AUTO_DEALLOCATE asegura que el almacenamiento asignado dinámicamente se libere al finalizar el bloque. Simplifica la gestión de memoria en estructuras temporales.",
+    "examples": "DECLARE BUF CONTROLLED AUTO_DEALLOCATE;",
+    "notes": "Evita fugas de memoria en rutinas con asignaciones repetidas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0021",
+    "name": "BASED",
+    "shortDescription": "Define datos cuyo contenido se encuentra en una dirección.",
+    "longDescription": "BASED permite declarar variables que dependen de un puntero para determinar su ubicación en memoria. Es esencial para manipulación de estructuras dinámicas.",
+    "examples": "DECLARE P POINTER, S BASED(P);",
+    "notes": "Debe asignarse una dirección válida antes de usar la variable basada.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0022",
+    "name": "BINARY",
+    "shortDescription": "Tipo o modo que indica representación binaria.",
+    "longDescription": "BINARY especifica que un valor numérico se almacena en formato binario. Es común en operaciones aritméticas y cálculos de precisión fija.",
+    "examples": "DECLARE N FIXED BINARY(31);",
+    "notes": "La precisión depende del número de bits declarados.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0023",
+    "name": "BIT",
+    "shortDescription": "Tipo de dato de bits o manipulaciones bit a bit.",
+    "longDescription": "BIT permite declarar variables que representan secuencias de bits. Es útil para operaciones de máscara, flags y manipulación de campos compactos.",
+    "examples": "DECLARE FLAGS BIT(8);",
+    "notes": "Las operaciones bit a bit dependen del tamaño declarado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0024",
+    "name": "BLOCK",
+    "shortDescription": "Agrupa instrucciones en un bloque estructurado.",
+    "longDescription": "BLOCK define una sección de código con alcance propio para variables y control de flujo. Facilita la organización lógica del programa.",
+    "examples": "BLOCK: DO; ... END BLOCK;",
+    "notes": "Permite declarar variables locales al bloque.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0025",
+    "name": "BOOLEAN",
+    "shortDescription": "Tipo lógico que toma valores verdadero/falso.",
+    "longDescription": "BOOLEAN representa valores lógicos utilizados en condiciones y expresiones de control. Es fundamental para estructuras IF, WHILE y CASE.",
+    "examples": "DECLARE FLAG BOOLEAN;",
+    "notes": "Su representación interna depende del compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0026",
+    "name": "BUILTIN",
+    "shortDescription": "Identifica una función o rutina incorporada por el compilador.",
+    "longDescription": "BUILTIN marca funciones proporcionadas directamente por el compilador, optimizadas para rendimiento y disponibles sin necesidad de definición explícita.",
+    "examples": "DECLARE SQRT BUILTIN;",
+    "notes": "Las funciones builtin pueden variar entre implementaciones.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0027",
+    "name": "BY",
+    "shortDescription": "Indicador de paso o separación.",
+    "longDescription": "BY se utiliza para especificar incrementos en bucles o para definir separación en operaciones de E/S. Controla la progresión de iteraciones.",
+    "examples": "DO I = 1 TO 10 BY 2;",
+    "notes": "El valor BY puede ser positivo o negativo según la dirección del bucle.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0028",
+    "name": "CALL",
+    "shortDescription": "Invoca un procedimiento o función.",
+    "longDescription": "CALL ejecuta una rutina definida previamente, pasando los argumentos necesarios. Es el mecanismo principal para modularizar programas.",
+    "examples": "CALL PROCESS(DATA);",
+    "notes": "Los parámetros deben coincidir con la definición del procedimiento.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0029",
+    "name": "CASE",
+    "shortDescription": "Selección múltiple por valor.",
+    "longDescription": "CASE permite elegir entre varias ramas según el valor de una expresión. Simplifica decisiones complejas con múltiples alternativas.",
+    "examples": "SELECT (X); WHEN(1) CALL A; WHEN(2) CALL B; END;",
+    "notes": "Debe incluir una rama para valores no previstos si se requiere robustez.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0030",
+    "name": "CEILING",
+    "shortDescription": "Función matemática que redondea hacia arriba.",
+    "longDescription": "CEILING devuelve el entero más pequeño mayor o igual que el valor proporcionado. Se utiliza en cálculos que requieren ajustar valores hacia arriba.",
+    "examples": "N = CEILING(X);",
+    "notes": "El resultado siempre es un entero.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0031",
+    "name": "CHAR",
+    "shortDescription": "Tipo de dato de caracteres (cadena fija).",
+    "longDescription": "CHAR declara cadenas de longitud fija que se almacenan exactamente con el tamaño especificado. Se utiliza para representar texto estructurado, campos de entrada y datos alfanuméricos.",
+    "examples": "DECLARE NAME CHAR(20);",
+    "notes": "Las cadenas CHAR se rellenan con espacios si el contenido es menor que la longitud declarada.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0032",
+    "name": "CHECK",
+    "shortDescription": "Realiza comprobaciones.",
+    "longDescription": "CHECK activa verificaciones de tiempo de ejecución o compilación según el contexto. Permite detectar condiciones anómalas y validar comportamientos durante la ejecución.",
+    "examples": "CHECK DATA_VALID;",
+    "notes": "Su efecto depende de las opciones de compilación y del entorno.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0033",
+    "name": "CLASS",
+    "shortDescription": "Identificador para agrupación tipo-objeto.",
+    "longDescription": "CLASS se utiliza en extensiones orientadas a objetos para definir agrupaciones de datos y métodos asociados. Permite estructurar código en entidades reutilizables.",
+    "examples": "DECLARE OBJ CLASS;",
+    "notes": "Su disponibilidad depende de la implementación del compilador PL/I.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0034",
+    "name": "CLEAR",
+    "shortDescription": "Inicializa a cero o valor neutral una variable o estructura.",
+    "longDescription": "CLEAR establece todos los campos de una variable o estructura a valores neutros, como ceros o espacios. Es útil para preparar áreas de trabajo antes de operaciones.",
+    "examples": "CLEAR BUFFER;",
+    "notes": "Evita residuos de datos en estructuras reutilizadas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0035",
+    "name": "CLOSE",
+    "shortDescription": "Cierra un archivo o canal de E/S.",
+    "longDescription": "CLOSE finaliza el uso de un archivo, liberando recursos asociados y asegurando que los datos pendientes se escriban correctamente.",
+    "examples": "CLOSE FILE(F);",
+    "notes": "Debe ejecutarse después de terminar todas las operaciones de E/S.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0036",
+    "name": "COBOL",
+    "shortDescription": "Identificador/contexto de interoperabilidad con COBOL.",
+    "longDescription": "COBOL se utiliza para declarar compatibilidad o interacción con módulos escritos en COBOL. Facilita el intercambio de datos y llamadas entre lenguajes.",
+    "examples": "DECLARE FIELD CHAR(10) COBOL;",
+    "notes": "Requiere respetar formatos y convenciones del entorno COBOL.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0037",
+    "name": "COLLECT",
+    "shortDescription": "Recolecta o acumula elementos.",
+    "longDescription": "COLLECT agrupa elementos en estructuras de acumulación, permitiendo procesar conjuntos de datos de manera secuencial o agregada.",
+    "examples": "COLLECT ITEM INTO LIST;",
+    "notes": "Su comportamiento depende del tipo de colección utilizada.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0038",
+    "name": "COMPILE",
+    "shortDescription": "Indica acciones o directivas de compilación.",
+    "longDescription": "COMPILE especifica instrucciones para el compilador, permitiendo ajustar opciones, generar diagnósticos o controlar fases del proceso de compilación.",
+    "examples": "COMPILE OPTIONS(DEBUG);",
+    "notes": "Las opciones disponibles dependen del compilador PL/I utilizado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0039",
+    "name": "COMPUTE",
+    "shortDescription": "Ejecuta una expresión aritmética o asignación calculada.",
+    "longDescription": "COMPUTE evalúa expresiones numéricas y asigna el resultado a una variable. Es útil para cálculos directos dentro de rutinas.",
+    "examples": "COMPUTE TOTAL = A + B;",
+    "notes": "Puede combinar operaciones aritméticas y funciones matemáticas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0040",
+    "name": "CONCURRENT",
+    "shortDescription": "Indica ejecución concurrente o paralela.",
+    "longDescription": "CONCURRENT habilita la ejecución simultánea de tareas o bloques, permitiendo aprovechar capacidades de paralelismo del entorno de ejecución.",
+    "examples": "CONCURRENT TASK RUN;",
+    "notes": "Su soporte depende del sistema operativo y del compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0041",
+    "name": "CONDITION",
+    "shortDescription": "Declara o maneja condiciones del programa.",
+    "longDescription": "CONDITION define estados o eventos que pueden ocurrir durante la ejecución, como errores o situaciones excepcionales. Permite asociar manejadores para controlar el flujo ante dichas condiciones.",
+    "examples": "DECLARE OVERFLOW CONDITION;",
+    "notes": "Las condiciones pueden activarse automáticamente o mediante SIGNAL.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0042",
+    "name": "CONFIRM",
+    "shortDescription": "Solicita o indica confirmación.",
+    "longDescription": "CONFIRM se utiliza para validar acciones que requieren aprobación explícita. Su comportamiento depende del entorno de ejecución y del dispositivo de entrada.",
+    "examples": "IF CONFIRM('¿Continuar?') THEN CALL NEXT_STEP;",
+    "notes": "Puede integrarse con interfaces interactivas o diálogos de usuario.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0043",
+    "name": "CONFORM",
+    "shortDescription": "Asegura compatibilidad de tipos o estructuras.",
+    "longDescription": "CONFORM verifica que dos estructuras o tipos sean compatibles para operaciones como asignaciones o pasaje de parámetros. Evita errores por discrepancias de formato.",
+    "examples": "DECLARE B CONFORM(A);",
+    "notes": "Útil en módulos que comparten estructuras complejas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0044",
+    "name": "CONSTRUCTOR",
+    "shortDescription": "Rutina que inicializa objetos o instancias.",
+    "longDescription": "CONSTRUCTOR define una rutina especial que prepara una instancia de un objeto, asignando valores iniciales y configurando su estado interno.",
+    "examples": "CALL OBJ.CONSTRUCTOR();",
+    "notes": "Disponible en implementaciones PL/I con soporte orientado a objetos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0045",
+    "name": "CONTINUE",
+    "shortDescription": "Continúa la ejecución del siguiente paso.",
+    "longDescription": "CONTINUE permite saltar al final de una iteración dentro de un bucle, omitiendo el resto del bloque actual y avanzando a la siguiente repetición.",
+    "examples": "IF X < 0 THEN CONTINUE;",
+    "notes": "Debe utilizarse dentro de estructuras DO o LOOP.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0046",
+    "name": "CONTROLLED",
+    "shortDescription": "Atributo para control explícito del almacenamiento.",
+    "longDescription": "CONTROLLED indica que la variable requiere asignación y liberación explícita mediante ALLOCATE y DEALLOCATE. Permite gestionar memoria dinámica con precisión.",
+    "examples": "DECLARE BUF CONTROLLED;",
+    "notes": "Ideal para estructuras cuyo tamaño varía en tiempo de ejecución.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0047",
+    "name": "CONVERSION",
+    "shortDescription": "Indica conversión de tipos o formatos.",
+    "longDescription": "CONVERSION especifica reglas para transformar datos entre tipos distintos, como numéricos, caracteres o estructuras. Garantiza coherencia en operaciones mixtas.",
+    "examples": "X = CONVERSION(Y);",
+    "notes": "Debe respetar las reglas del compilador para evitar pérdidas de precisión.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0048",
+    "name": "COPY",
+    "shortDescription": "Inserta el contenido de otro archivo fuente.",
+    "longDescription": "COPY permite incluir código desde archivos externos, facilitando la reutilización de definiciones, constantes y estructuras comunes entre módulos.",
+    "examples": "COPY 'COMMON.DECL';",
+    "notes": "Se procesa en tiempo de compilación como inclusión textual.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0049",
+    "name": "COUNT",
+    "shortDescription": "Cuenta elementos o registros.",
+    "longDescription": "COUNT devuelve el número de elementos procesados o presentes en una colección. Se utiliza en operaciones de iteración y análisis de datos.",
+    "examples": "N = COUNT(LIST);",
+    "notes": "El resultado depende del tipo de estructura utilizada.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0050",
+    "name": "CREATE",
+    "shortDescription": "Crea estructuras, objetos o recursos.",
+    "longDescription": "CREATE inicializa nuevas estructuras o recursos en tiempo de ejecución, permitiendo construir objetos o áreas de trabajo dinámicas.",
+    "examples": "CALL CREATE(OBJ);",
+    "notes": "Puede requerir asignación de memoria adicional según el tipo creado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0051",
+    "name": "CROSSREF",
+    "shortDescription": "Referencia cruzada para documentación o compilador.",
+    "longDescription": "CROSSREF genera información de referencias cruzadas entre símbolos, útil para análisis de dependencias y documentación del código.",
+    "examples": "COMPILE OPTIONS(CROSSREF);",
+    "notes": "Produce listados adicionales durante la compilación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0052",
+    "name": "CURRENT",
+    "shortDescription": "Hace referencia al elemento o contexto actual.",
+    "longDescription": "CURRENT identifica el elemento activo dentro de una colección o proceso iterativo. Permite acceder al valor en curso sin necesidad de índices explícitos.",
+    "examples": "IF CURRENT = TARGET THEN CALL MATCH();",
+    "notes": "Su significado depende del tipo de iterador utilizado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0053",
+    "name": "DATA",
+    "shortDescription": "Sección o declaración de datos.",
+    "longDescription": "DATA marca áreas de almacenamiento que contienen valores, estructuras o constantes utilizadas por el programa. Organiza la información en secciones claras.",
+    "examples": "DATA: DECLARE X FIXED BIN;",
+    "notes": "Puede combinarse con otras secciones como STATIC o LOCAL.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0054",
+    "name": "DATE",
+    "shortDescription": "Tipo o función relacionada con fecha.",
+    "longDescription": "DATE permite declarar valores de fecha o invocar funciones que devuelven información temporal, como día, mes o año.",
+    "examples": "TODAY = DATE();",
+    "notes": "El formato de salida depende del entorno de ejecución.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0055",
+    "name": "DAY",
+    "shortDescription": "Componente o función que devuelve el día.",
+    "longDescription": "DAY obtiene el día del mes o extrae el componente correspondiente de una fecha. Es útil para cálculos de calendario.",
+    "examples": "D = DAY(DATE());",
+    "notes": "Puede combinarse con MONTH y YEAR para análisis completos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0056",
+    "name": "DEALLOCATE",
+    "shortDescription": "Libera almacenamiento previamente asignado.",
+    "longDescription": "DEALLOCATE libera memoria asignada dinámicamente mediante ALLOCATE. Es esencial para evitar fugas de memoria en programas con estructuras dinámicas.",
+    "examples": "DEALLOCATE BUFFER;",
+    "notes": "Debe corresponderse con asignaciones previas CONTROLLED o BASED.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0057",
+    "name": "DECLARE",
+    "shortDescription": "Declara variables, constantes, procedimientos y atributos.",
+    "longDescription": "DECLARE introduce definiciones de datos y rutinas, especificando tipos, tamaños, atributos y modos de almacenamiento. Es la base de la estructura del programa.",
+    "examples": "DECLARE A FIXED BIN(31);",
+    "notes": "Puede incluir múltiples atributos en una sola declaración.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0058",
+    "name": "DEFAULT",
+    "shortDescription": "Valor por defecto cuando no se proporciona otro.",
+    "longDescription": "DEFAULT establece valores iniciales para parámetros o variables cuando no se especifica uno explícito. Facilita la creación de rutinas flexibles.",
+    "examples": "DECLARE MODE DEFAULT('AUTO');",
+    "notes": "Debe ser coherente con el tipo declarado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0059",
+    "name": "DEFER",
+    "shortDescription": "Indica acción diferida hasta cierto punto.",
+    "longDescription": "DEFER aplaza la ejecución de una acción o la evaluación de una expresión hasta que se cumpla una condición o se alcance una fase posterior.",
+    "examples": "DEFER PROCESS UNTIL READY;",
+    "notes": "Útil en flujos que requieren sincronización o espera.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0060",
+    "name": "DELAY",
+    "shortDescription": "Introduce espera o aplazamiento en ejecución.",
+    "longDescription": "DELAY suspende temporalmente la ejecución del programa durante un intervalo especificado. Se utiliza para sincronización o control de tiempos.",
+    "examples": "CALL DELAY(5);",
+    "notes": "El tiempo de espera depende del sistema operativo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0061",
+    "name": "DELETE",
+    "shortDescription": "Elimina un registro, archivo o elemento.",
+    "longDescription": "DELETE suprime elementos de estructuras o archivos, removiendo su contenido de manera permanente. Es fundamental en operaciones de mantenimiento de datos.",
+    "examples": "DELETE FILE(F);",
+    "notes": "Debe verificarse que el recurso no esté en uso antes de eliminarlo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0062",
+    "name": "DEMAND",
+    "shortDescription": "Carga o acción bajo demanda.",
+    "longDescription": "DEMAND indica que una operación o recurso debe activarse solo cuando sea necesario, optimizando el uso de memoria y tiempo de ejecución.",
+    "examples": "CALL LOAD_MODULE DEMAND;",
+    "notes": "Reduce carga inicial en programas grandes.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0063",
+    "name": "DEFINE",
+    "shortDescription": "Define símbolos o macros.",
+    "longDescription": "DEFINE crea macros o símbolos que se expanden durante la compilación. Facilita la parametrización y reutilización de fragmentos de código.",
+    "examples": "DEFINE MAX_SIZE = 100;",
+    "notes": "Las macros se expanden de forma textual antes de compilar.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0064",
+    "name": "DELAYED",
+    "shortDescription": "Indica acción diferida.",
+    "longDescription": "DELAYED especifica que una operación debe ejecutarse más adelante, permitiendo coordinar tareas que dependen de eventos previos.",
+    "examples": "CALL INIT DELAYED;",
+    "notes": "Su uso depende del flujo de control del programa.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0065",
+    "name": "DEBUG",
+    "shortDescription": "Directiva o modo para depuración.",
+    "longDescription": "DEBUG activa diagnósticos adicionales y controles de ejecución que ayudan a identificar errores y comportamientos inesperados durante el desarrollo.",
+    "examples": "COMPILE OPTIONS(DEBUG);",
+    "notes": "Puede afectar el rendimiento debido a verificaciones adicionales.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0066",
+    "name": "DECIMAL",
+    "shortDescription": "Tipo numérico en representación decimal.",
+    "longDescription": "DECIMAL declara valores numéricos almacenados en formato decimal, adecuados para cálculos financieros y operaciones que requieren precisión exacta.",
+    "examples": "DECLARE PRICE DECIMAL(10,2);",
+    "notes": "Evita errores de redondeo típicos de representaciones binarias.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0067",
+    "name": "DECLAREDYNAMIC",
+    "shortDescription": "Declaración para almacenamiento dinámico.",
+    "longDescription": "DECLAREDYNAMIC indica que una variable se crea dinámicamente en tiempo de ejecución, permitiendo estructuras cuyo tamaño o existencia depende del flujo del programa.",
+    "examples": "DECLARE BUF DECLAREDYNAMIC;",
+    "notes": "Debe gestionarse cuidadosamente para evitar fugas de memoria.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0071",
+    "name": "DO",
+    "shortDescription": "Inicia un bloque de código o bucle.",
+    "longDescription": "DO establece el comienzo de un bloque estructurado o de un ciclo iterativo. Permite ejecutar un conjunto de instrucciones repetidamente o agruparlas bajo un control de flujo definido.",
+    "examples": "DO I = 1 TO 10; PUT I; END;",
+    "notes": "Debe finalizarse con END para delimitar correctamente el bloque.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0072",
+    "name": "END",
+    "shortDescription": "Termina un bloque de código o bucle.",
+    "longDescription": "END marca el cierre de un bloque iniciado con DO, PROCEDURE u otras estructuras. Garantiza que el compilador identifique correctamente los límites del bloque.",
+    "examples": "DO; ... END;",
+    "notes": "Cada DO debe tener un END correspondiente.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0073",
+    "name": "DOUBLE",
+    "shortDescription": "Tipo de dato de doble precisión en coma flotante.",
+    "longDescription": "DOUBLE declara valores numéricos de precisión extendida, adecuados para cálculos científicos o matemáticos que requieren mayor exactitud.",
+    "examples": "DECLARE X DOUBLE;",
+    "notes": "Su precisión depende de la implementación del compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0074",
+    "name": "DROP",
+    "shortDescription": "Elimina o desapila un objeto o recurso.",
+    "longDescription": "DROP invalida una variable o estructura, indicando que su contenido ya no debe utilizarse. Es útil para liberar recursos lógicos dentro del programa.",
+    "examples": "DROP TEMP_BUFFER;",
+    "notes": "No libera memoria dinámica; debe combinarse con DEALLOCATE si aplica.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0075",
+    "name": "ELSE",
+    "shortDescription": "Rama alternativa dentro de IF.",
+    "longDescription": "ELSE define la acción a ejecutar cuando la condición del IF no se cumple. Permite manejar decisiones binarias de forma clara.",
+    "examples": "IF X > 0 THEN PUT('OK'); ELSE PUT('NEG');",
+    "notes": "Debe acompañar a una estructura IF correctamente formada.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0076",
+    "name": "ELSEIF",
+    "shortDescription": "Rama condicional adicional dentro de IF.",
+    "longDescription": "ELSEIF permite evaluar condiciones adicionales cuando la condición principal del IF no se cumple. Facilita decisiones múltiples sin necesidad de CASE.",
+    "examples": "IF X=1 THEN A; ELSEIF X=2 THEN B;",
+    "notes": "Debe colocarse entre IF y ELSE.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0077",
+    "name": "THEN",
+    "shortDescription": "Parte verdadera de una condición IF.",
+    "longDescription": "THEN indica el bloque que se ejecutará cuando la condición del IF sea verdadera. Es parte esencial de la estructura condicional.",
+    "examples": "IF READY THEN CALL START;",
+    "notes": "Debe seguir inmediatamente a la condición del IF.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0078",
+    "name": "EMBED",
+    "shortDescription": "Inserta código o datos de otro contexto fuente.",
+    "longDescription": "EMBED permite incluir fragmentos de código o datos provenientes de otros lenguajes o fuentes externas, facilitando la interoperabilidad.",
+    "examples": "EMBED SQL BEGIN DECLARE ... END;",
+    "notes": "Su uso depende del soporte del compilador para lenguajes embebidos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0079",
+    "name": "ENTRY",
+    "shortDescription": "Punto de entrada alternativo en un procedimiento.",
+    "longDescription": "ENTRY define rutas adicionales de entrada a un procedimiento, permitiendo invocarlo con diferentes conjuntos de parámetros o comportamientos.",
+    "examples": "ENTRY ALT_START;",
+    "notes": "Cada ENTRY debe estar asociado al mismo procedimiento base.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0080",
+    "name": "ENVIRONMENT",
+    "shortDescription": "Especifica entorno de ejecución o variables de entorno.",
+    "longDescription": "ENVIRONMENT permite declarar o consultar características del entorno donde se ejecuta el programa, como configuraciones del sistema o parámetros externos.",
+    "examples": "DECLARE SYS ENVIRONMENT;",
+    "notes": "Su disponibilidad depende del sistema operativo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0081",
+    "name": "EQUIV",
+    "shortDescription": "Indica equivalencia de almacenamiento entre variables.",
+    "longDescription": "EQUIV permite que dos o más variables compartan la misma ubicación de memoria. Es útil para interpretar datos en diferentes formatos.",
+    "examples": "DECLARE A FIXED BIN(31), B EQUIV(A);",
+    "notes": "Debe usarse con cuidado para evitar efectos colaterales.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0082",
+    "name": "ERROR",
+    "shortDescription": "Representa condiciones de error o rutinas relacionadas.",
+    "longDescription": "ERROR identifica condiciones excepcionales que pueden ocurrir durante la ejecución, permitiendo activar manejadores específicos para controlar fallos.",
+    "examples": "ON ERROR BEGIN; ... END;",
+    "notes": "Puede combinarse con SIGNAL para activar condiciones manualmente.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0083",
+    "name": "ESCAPE",
+    "shortDescription": "Sale o ignora una secuencia; carácter de escape.",
+    "longDescription": "ESCAPE se utiliza para representar caracteres especiales o para interrumpir secuencias de procesamiento en ciertos contextos.",
+    "examples": "PUT('LINE\\n');",
+    "notes": "Su interpretación depende del dispositivo de salida.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0084",
+    "name": "ESTABLISH",
+    "shortDescription": "Configura o establece un contexto o recursos.",
+    "longDescription": "ESTABLISH define un contexto operativo, como manejadores de condiciones o configuraciones previas necesarias para ejecutar una rutina.",
+    "examples": "ESTABLISH HANDLER;",
+    "notes": "Debe preceder a las operaciones que dependen del contexto establecido.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0085",
+    "name": "EVAL",
+    "shortDescription": "Evalúa una expresión.",
+    "longDescription": "EVAL fuerza la evaluación de una expresión en tiempo de ejecución, permitiendo obtener su resultado de manera explícita.",
+    "examples": "X = EVAL(A+B);",
+    "notes": "Puede ser útil en macros o expresiones diferidas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0086",
+    "name": "EXCHANGE",
+    "shortDescription": "Intercambia valores o controla sincronización.",
+    "longDescription": "EXCHANGE permite intercambiar valores entre variables o coordinar operaciones en entornos concurrentes mediante mecanismos de sincronización.",
+    "examples": "EXCHANGE A, B;",
+    "notes": "En contextos concurrentes puede actuar como operación atómica.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0087",
+    "name": "EXCEPTION",
+    "shortDescription": "Mecanismo de manejo de condiciones excepcionales.",
+    "longDescription": "EXCEPTION define eventos anómalos que pueden ocurrir durante la ejecución y permite asociar manejadores para controlar el flujo ante dichos eventos.",
+    "examples": "DECLARE IO_ERROR EXCEPTION;",
+    "notes": "Complementa el uso de ON y SIGNAL.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0088",
+    "name": "EXCLUSIVE",
+    "shortDescription": "Acceso exclusivo a un recurso.",
+    "longDescription": "EXCLUSIVE garantiza que un recurso solo pueda ser utilizado por una tarea a la vez, evitando conflictos en entornos concurrentes.",
+    "examples": "DECLARE LOCK EXCLUSIVE;",
+    "notes": "Debe liberarse explícitamente para evitar bloqueos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0089",
+    "name": "EXTERN",
+    "shortDescription": "Indica nombres visibles fuera del módulo.",
+    "longDescription": "EXTERN declara variables o procedimientos que pueden ser accedidos desde otros módulos, facilitando la modularidad del programa.",
+    "examples": "DECLARE SHARED_DATA EXTERN;",
+    "notes": "Debe coincidir con una definición en otro módulo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0090",
+    "name": "EXTERNAL",
+    "shortDescription": "Indica objetos visibles fuera del módulo.",
+    "longDescription": "EXTERNAL permite que variables o rutinas sean accesibles desde otros módulos del programa, facilitando la integración entre componentes.",
+    "examples": "DECLARE CONFIG EXTERNAL;",
+    "notes": "Similar a EXTERN; su uso depende del estilo del código.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0091",
+    "name": "FETCH",
+    "shortDescription": "Recupera un registro o dato de una estructura o archivo.",
+    "longDescription": "FETCH lee un registro desde un archivo o estructura de datos, posicionando el cursor según el modo de acceso definido.",
+    "examples": "FETCH FILE(F) INTO RECORD;",
+    "notes": "Debe combinarse con OPEN y ACCESS adecuados.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0092",
+    "name": "FILE",
+    "shortDescription": "Declara un archivo o dispositivo de E/S.",
+    "longDescription": "FILE define un canal de entrada o salida asociado a un archivo físico o lógico. Permite realizar operaciones de lectura, escritura y control.",
+    "examples": "DECLARE F FILE;",
+    "notes": "Debe abrirse antes de realizar operaciones de E/S.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0093",
+    "name": "FINAL",
+    "shortDescription": "Marca bloque o acción que se ejecuta al terminar.",
+    "longDescription": "FINAL define código que debe ejecutarse al finalizar un bloque o rutina, permitiendo realizar limpieza o cierre de recursos.",
+    "examples": "FINAL: PUT('Done');",
+    "notes": "Se ejecuta incluso si el bloque termina por condición.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0094",
+    "name": "FIRST",
+    "shortDescription": "Primer elemento en una secuencia o conjunto.",
+    "longDescription": "FIRST devuelve el primer elemento de una colección o indica la posición inicial en operaciones de iteración.",
+    "examples": "X = FIRST(LIST);",
+    "notes": "Su significado depende del tipo de colección.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0095",
+    "name": "FIXED",
+    "shortDescription": "Tipo numérico de punto fijo.",
+    "longDescription": "FIXED declara valores numéricos con precisión fija, adecuados para cálculos exactos y operaciones que requieren control sobre el número de dígitos.",
+    "examples": "DECLARE N FIXED BIN(15);",
+    "notes": "Puede ser BINario o DECimal según la declaración.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0096",
+    "name": "FOR",
+    "shortDescription": "Bucle con contador o iterador definido.",
+    "longDescription": "FOR permite ejecutar un bloque de instrucciones un número determinado de veces, controlado por un contador explícito.",
+    "examples": "FOR I = 1 TO 5; PUT I; END;",
+    "notes": "Similar a DO con parámetros de iteración.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0097",
+    "name": "FOREACH",
+    "shortDescription": "Iteración sobre todos los elementos de una colección.",
+    "longDescription": "FOREACH recorre cada elemento de una colección sin necesidad de índices explícitos, facilitando el procesamiento de listas y estructuras.",
+    "examples": "FOREACH ITEM IN LIST; PUT ITEM; END;",
+    "notes": "Su disponibilidad depende del compilador PL/I.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0098",
+    "name": "FORMAT",
+    "shortDescription": "Control de formato para entrada/salida.",
+    "longDescription": "FORMAT especifica cómo deben interpretarse o presentarse los datos en operaciones de E/S, permitiendo definir estructuras de salida detalladas.",
+    "examples": "PUT DATA FORMAT(FMT);",
+    "notes": "Puede combinarse con FORMATTED para mayor control.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0099",
+    "name": "FORMATTED",
+    "shortDescription": "Control de formato para entrada/salida.",
+    "longDescription": "FORMATTED indica que una operación de E/S debe seguir un formato específico definido por el programador, permitiendo estructurar la salida de manera precisa.",
+    "examples": "PUT DATA FORMATTED;",
+    "notes": "Complementa el uso de FORMAT en operaciones complejas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0100",
+    "name": "FOUND",
+    "shortDescription": "Indicador que una búsqueda devolvió resultados.",
+    "longDescription": "FOUND señala que una operación de búsqueda ha localizado un elemento coincidente dentro de una colección o archivo.",
+    "examples": "IF FOUND THEN CALL PROCESS();",
+    "notes": "Debe evaluarse después de operaciones de búsqueda como SEARCH o FETCH.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0101",
+    "name": "FRAGMENT",
+    "shortDescription": "Parte de código o datos tratado independientemente.",
+    "longDescription": "FRAGMENT identifica secciones de código o datos que se procesan de manera aislada, permitiendo modularizar componentes y facilitar su reutilización.",
+    "examples": "FRAGMENT SECTION_A;",
+    "notes": "Útil para dividir programas grandes en unidades manejables.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0102",
+    "name": "FROM",
+    "shortDescription": "Indica origen en asignaciones o E/S.",
+    "longDescription": "FROM especifica la fuente de datos en operaciones de entrada o asignación, permitiendo controlar el flujo de información entre estructuras.",
+    "examples": "READ FILE(F) FROM BUFFER;",
+    "notes": "Debe ser coherente con el modo de acceso del archivo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0103",
+    "name": "FUNCTION",
+    "shortDescription": "Define una función que devuelve valor.",
+    "longDescription": "FUNCTION declara una rutina que retorna un valor, permitiendo encapsular cálculos y operaciones reutilizables dentro del programa.",
+    "examples": "DECLARE SUM FUNCTION RETURNS(FIXED BIN);",
+    "notes": "Debe especificar el tipo de retorno para evitar ambigüedades.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0104",
+    "name": "GARBAGE",
+    "shortDescription": "Datos no inicializados o residuos en memoria.",
+    "longDescription": "GARBAGE se refiere a valores indeterminados presentes en variables no inicializadas, que pueden causar comportamientos inesperados si se utilizan.",
+    "examples": "DECLARE X FIXED BIN; /* X contiene GARBAGE */",
+    "notes": "Siempre inicializar variables antes de usarlas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0105",
+    "name": "GET",
+    "shortDescription": "Lee datos desde entrada o dispositivo.",
+    "longDescription": "GET realiza operaciones de lectura desde archivos o dispositivos de entrada, posicionando el cursor según el modo de acceso definido.",
+    "examples": "GET FILE(F) INTO RECORD;",
+    "notes": "Debe combinarse con OPEN y ACCESS adecuados.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0106",
+    "name": "GOTO",
+    "shortDescription": "Salto incondicional a una etiqueta.",
+    "longDescription": "GOTO transfiere el control de ejecución a una etiqueta específica, permitiendo saltos directos dentro del flujo del programa.",
+    "examples": "GOTO END_PROCESS;",
+    "notes": "Debe usarse con moderación para evitar código difícil de mantener.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0107",
+    "name": "IF",
+    "shortDescription": "Condición para control de flujo.",
+    "longDescription": "IF evalúa una expresión lógica y ejecuta un bloque cuando la condición es verdadera. Es fundamental para decisiones en el programa.",
+    "examples": "IF X > 0 THEN PUT('OK');",
+    "notes": "Puede combinarse con ELSE y ELSEIF para múltiples ramas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0108",
+    "name": "IN",
+    "shortDescription": "Indica pertenencia.",
+    "longDescription": "IN se utiliza para verificar si un valor pertenece a un conjunto o rango, facilitando comparaciones compactas.",
+    "examples": "IF X IN (1,2,3) THEN CALL PROCESS;",
+    "notes": "Útil para validar valores discretos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0109",
+    "name": "INDEX",
+    "shortDescription": "Declara índices.",
+    "longDescription": "INDEX define variables utilizadas para recorrer arrays o estructuras indexadas, permitiendo controlar posiciones dentro de colecciones.",
+    "examples": "DECLARE I INDEX;",
+    "notes": "Puede combinarse con DO para iteraciones estructuradas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0110",
+    "name": "INHERIT",
+    "shortDescription": "Herencia de propiedades.",
+    "longDescription": "INHERIT permite que una estructura u objeto adopte atributos o comportamientos de otro, facilitando reutilización en entornos orientados a objetos.",
+    "examples": "DECLARE CHILD INHERIT PARENT;",
+    "notes": "Disponible solo en compiladores con soporte OO.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0111",
+    "name": "INITIAL",
+    "shortDescription": "Valor inicial.",
+    "longDescription": "INITIAL asigna un valor predeterminado a una variable al momento de su declaración, garantizando que comience con un estado conocido.",
+    "examples": "DECLARE COUNT FIXED BIN INITIAL(0);",
+    "notes": "Evita presencia de GARBAGE en variables recién declaradas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0112",
+    "name": "INITIALIZE",
+    "shortDescription": "Acción de inicialización.",
+    "longDescription": "INITIALIZE establece valores iniciales en estructuras completas, asegurando que todos sus campos comiencen con valores coherentes.",
+    "examples": "INITIALIZE RECORD;",
+    "notes": "Útil para preparar áreas de trabajo antes de operaciones.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0113",
+    "name": "INLINE",
+    "shortDescription": "Inserta código de rutinas en el punto de llamada.",
+    "longDescription": "INLINE sugiere al compilador que expanda el contenido de una rutina directamente en el lugar donde se invoca, reduciendo llamadas y mejorando rendimiento.",
+    "examples": "INLINE PROCEDURE FAST_OP;",
+    "notes": "Puede aumentar el tamaño del código generado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0114",
+    "name": "INPUT",
+    "shortDescription": "Entrada de datos.",
+    "longDescription": "INPUT indica que una operación o parámetro corresponde a datos de entrada, utilizados para alimentar rutinas o procesos.",
+    "examples": "CALL PROCESS(INPUT_DATA);",
+    "notes": "Debe validarse para evitar errores por datos incorrectos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0115",
+    "name": "INSERT",
+    "shortDescription": "Insertar registros o elementos.",
+    "longDescription": "INSERT agrega un nuevo elemento dentro de una estructura, archivo o colección, posicionándolo según las reglas del recurso.",
+    "examples": "INSERT RECORD INTO TABLE;",
+    "notes": "Puede requerir posicionamiento previo mediante POSITION.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0116",
+    "name": "INSTANCE",
+    "shortDescription": "Instancia de un tipo o estructura.",
+    "longDescription": "INSTANCE representa una ocurrencia concreta de un tipo definido, permitiendo trabajar con objetos o estructuras independientes.",
+    "examples": "DECLARE OBJ INSTANCE;",
+    "notes": "Disponible en entornos PL/I con soporte OO.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0117",
+    "name": "INT",
+    "shortDescription": "Tipo entero.",
+    "longDescription": "INT declara valores enteros utilizados en cálculos discretos y operaciones aritméticas básicas.",
+    "examples": "DECLARE N INT;",
+    "notes": "Equivalente a INTEGER en muchos contextos PL/I.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0118",
+    "name": "INTEGER",
+    "shortDescription": "Tipo entero.",
+    "longDescription": "INTEGER define valores numéricos enteros, adecuados para operaciones aritméticas y cálculos sin decimales.",
+    "examples": "DECLARE COUNT INTEGER;",
+    "notes": "Puede especificarse precisión mediante BIN o DEC.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0119",
+    "name": "INTERFACE",
+    "shortDescription": "Define la interfaz pública de módulos o procedimientos.",
+    "longDescription": "INTERFACE declara los elementos accesibles desde otros módulos, especificando procedimientos, variables y estructuras que forman parte del contrato público.",
+    "examples": "INTERFACE MODULE_A;",
+    "notes": "Facilita la modularidad y separación de responsabilidades.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0120",
+    "name": "INTERLOCK",
+    "shortDescription": "Mecanismos de sincronización entre tareas.",
+    "longDescription": "INTERLOCK define operaciones que aseguran que varias tareas no accedan simultáneamente a recursos compartidos. Permite coordinar procesos concurrentes evitando condiciones de carrera.",
+    "examples": "INTERLOCK LOCK_VAR;",
+    "notes": "Debe liberarse correctamente para evitar bloqueos en el sistema.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0121",
+    "name": "INTRINSIC",
+    "shortDescription": "Función proporcionada por el compilador.",
+    "longDescription": "INTRINSIC identifica funciones internas optimizadas por el compilador, disponibles sin necesidad de definición explícita. Facilitan operaciones matemáticas y utilitarias.",
+    "examples": "DECLARE SQRT INTRINSIC;",
+    "notes": "Las funciones disponibles dependen del compilador PL/I.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0122",
+    "name": "INVOKE",
+    "shortDescription": "Llamada a método o rutina.",
+    "longDescription": "INVOKE ejecuta un método asociado a un objeto o estructura en entornos con soporte orientado a objetos. Permite modularizar comportamientos.",
+    "examples": "INVOKE OBJ.METHOD();",
+    "notes": "Disponible solo en implementaciones PL/I con capacidades OO.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0123",
+    "name": "IS",
+    "shortDescription": "Utilizado en definiciones y comparaciones.",
+    "longDescription": "IS se emplea para establecer equivalencias o realizar comparaciones directas dentro de declaraciones y expresiones lógicas.",
+    "examples": "IF STATUS IS 'OK' THEN CONTINUE;",
+    "notes": "Su interpretación depende del contexto sintáctico.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0124",
+    "name": "JUSTIFY",
+    "shortDescription": "Alinea texto en salida.",
+    "longDescription": "JUSTIFY controla la alineación de cadenas en operaciones de salida, permitiendo ajustar texto a la izquierda, derecha o centro según el formato requerido.",
+    "examples": "PUT NAME JUSTIFY(RIGHT);",
+    "notes": "Útil para generar reportes con formato fijo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0125",
+    "name": "KILL",
+    "shortDescription": "Termina tareas o procesos.",
+    "longDescription": "KILL finaliza la ejecución de una tarea o proceso en entornos concurrentes, liberando recursos asociados y deteniendo su actividad.",
+    "examples": "CALL KILL(TASK_ID);",
+    "notes": "Debe usarse con precaución para evitar estados inconsistentes.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0126",
+    "name": "LABEL",
+    "shortDescription": "Identificador para GOTO o marcas en código.",
+    "longDescription": "LABEL define puntos específicos dentro del código que pueden ser referenciados por instrucciones de salto o control de flujo.",
+    "examples": "END_PROCESS: PUT('Done');",
+    "notes": "Debe ser único dentro del ámbito del programa.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0127",
+    "name": "LCASE",
+    "shortDescription": "Convierte texto a minúsculas.",
+    "longDescription": "LCASE transforma una cadena de caracteres a minúsculas, útil para comparaciones insensibles a mayúsculas o normalización de datos.",
+    "examples": "NAME = LCASE(NAME);",
+    "notes": "Opera solo sobre caracteres alfabéticos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0128",
+    "name": "LEAVE",
+    "shortDescription": "Sale inmediatamente de un DO o bloque.",
+    "longDescription": "LEAVE interrumpe la ejecución de un bloque DO, transfiriendo el control al final del mismo. Permite finalizar iteraciones anticipadamente.",
+    "examples": "IF X < 0 THEN LEAVE;",
+    "notes": "Debe utilizarse dentro de estructuras DO.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0129",
+    "name": "LENGTH",
+    "shortDescription": "Longitud de cadena o tamaño de datos.",
+    "longDescription": "LENGTH devuelve el tamaño de una variable o cadena, permitiendo determinar dinámicamente la cantidad de caracteres o bytes.",
+    "examples": "N = LENGTH(NAME);",
+    "notes": "El resultado depende del tipo declarado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0130",
+    "name": "LIKE",
+    "shortDescription": "Comparación patrón o equivalencia de tipo.",
+    "longDescription": "LIKE permite declarar variables con el mismo tipo que otra o realizar comparaciones basadas en patrones definidos.",
+    "examples": "DECLARE B LIKE A;",
+    "notes": "Facilita la coherencia entre estructuras relacionadas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0131",
+    "name": "LINKAGE",
+    "shortDescription": "Parámetros y variables compartidas entre módulos.",
+    "longDescription": "LINKAGE define áreas de memoria utilizadas para pasar parámetros entre procedimientos o módulos, permitiendo compartir datos de forma estructurada.",
+    "examples": "DECLARE PARAM LINKAGE;",
+    "notes": "Debe coincidir con la definición del procedimiento llamado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0132",
+    "name": "LIST",
+    "shortDescription": "Estructura o modo de salida en forma de lista.",
+    "longDescription": "LIST organiza datos en formato de lista para operaciones de salida, permitiendo presentar información de manera estructurada.",
+    "examples": "PUT LIST(A, B, C);",
+    "notes": "Útil para generar reportes con múltiples campos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0133",
+    "name": "LOAD",
+    "shortDescription": "Carga código o datos en memoria.",
+    "longDescription": "LOAD incorpora módulos o datos en memoria durante la ejecución, permitiendo ampliar funcionalidades o acceder a recursos externos.",
+    "examples": "CALL LOAD(MODULE_A);",
+    "notes": "Puede requerir permisos del entorno de ejecución.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0134",
+    "name": "LOCAL",
+    "shortDescription": "Declara variables con alcance local.",
+    "longDescription": "LOCAL define variables cuyo ámbito se limita al bloque o procedimiento donde se declaran, evitando interferencias con otros contextos.",
+    "examples": "DECLARE TEMP LOCAL;",
+    "notes": "Su vida termina al finalizar el bloque.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0135",
+    "name": "LOGICAL",
+    "shortDescription": "Tipo lógico/booleano.",
+    "longDescription": "LOGICAL declara valores booleanos utilizados en expresiones condicionales y estructuras de control.",
+    "examples": "DECLARE FLAG LOGICAL;",
+    "notes": "Representa verdadero o falso según la implementación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0136",
+    "name": "LOOP",
+    "shortDescription": "Estructura de repetición.",
+    "longDescription": "LOOP define un ciclo que se ejecuta repetidamente hasta que se cumpla una condición de salida, permitiendo controlar flujos iterativos.",
+    "examples": "LOOP UNTIL DONE; ... END;",
+    "notes": "Debe incluir una condición clara para evitar bucles infinitos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0137",
+    "name": "MAP",
+    "shortDescription": "Mapea memoria o datos.",
+    "longDescription": "MAP permite asociar estructuras de datos a áreas específicas de memoria o definir tablas de mapeo para transformar valores.",
+    "examples": "MAP TABLE TO BUFFER;",
+    "notes": "Útil para interpretar datos provenientes de archivos o dispositivos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0138",
+    "name": "MASK",
+    "shortDescription": "Operación bit a bit para enmascarar campos.",
+    "longDescription": "MASK aplica operaciones bit a bit para seleccionar, ocultar o modificar partes específicas de un valor binario. Es fundamental en manipulación de flags.",
+    "examples": "FLAGS = FLAGS MASK BIT(3);",
+    "notes": "Debe declararse el tamaño del campo para evitar truncamientos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+   {
+    "id": "PL/I-0139",
+    "name": "MATCH",
+    "shortDescription": "Coincidencia de patrones o condiciones.",
+    "longDescription": "MATCH evalúa si un valor cumple un patrón o condición específica, permitiendo realizar búsquedas, validaciones y comparaciones dentro de estructuras o cadenas. Se utiliza para determinar coincidencias exactas o parciales según el criterio definido.",
+    "examples": "IF MATCH(TEXT, PATTERN) THEN CALL PROCESS;",
+    "notes": "El comportamiento depende del tipo de patrón y del mecanismo de comparación utilizado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0140",
+    "name": "MAX",
+    "shortDescription": "Función de agregación que devuelve el valor máximo.",
+    "longDescription": "MAX calcula el mayor valor dentro de un conjunto de datos o entre varios argumentos. Se utiliza en operaciones estadísticas, validaciones y análisis de rangos para identificar el límite superior de un conjunto.",
+    "examples": "RESULT = MAX(A, B, C);",
+    "notes": "Los argumentos deben ser de tipos compatibles para evitar conversiones implícitas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0141",
+    "name": "MIN",
+    "shortDescription": "Función de agregación que devuelve el valor mínimo.",
+    "longDescription": "MIN determina el menor valor dentro de un conjunto de datos o entre varios argumentos. Es útil para cálculos estadísticos, validaciones y análisis de límites inferiores.",
+    "examples": "LOWEST = MIN(A, B, C);",
+    "notes": "Debe utilizarse con tipos numéricos compatibles.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0142",
+    "name": "SUM",
+    "shortDescription": "Función de agregación que suma valores.",
+    "longDescription": "SUM calcula la suma total de un conjunto de valores numéricos. Se emplea en operaciones estadísticas, acumulaciones y cálculos financieros.",
+    "examples": "TOTAL = SUM(A, B, C);",
+    "notes": "Puede combinarse con funciones como MEANING o MAX para análisis más completos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0143",
+    "name": "MEANING",
+    "shortDescription": "Función de agregación o interpretación contextual.",
+    "longDescription": "MEANING se utiliza para obtener un valor representativo o interpretar datos dentro de un contexto específico. Su uso depende del tipo de estructura o función asociada.",
+    "examples": "AVG = MEANING(DATASET);",
+    "notes": "El comportamiento exacto depende de la implementación del compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0144",
+    "name": "MERGE",
+    "shortDescription": "Combina conjuntos o datos ordenados.",
+    "longDescription": "MERGE integra dos o más conjuntos de datos ordenados en una única secuencia, preservando el orden. Es fundamental en operaciones de clasificación y consolidación.",
+    "examples": "CALL MERGE(LIST_A, LIST_B, RESULT);",
+    "notes": "Los conjuntos deben estar previamente ordenados para garantizar coherencia.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0145",
+    "name": "MESSAGE",
+    "shortDescription": "Construye o maneja mensajes o errores.",
+    "longDescription": "MESSAGE permite crear, formatear o procesar mensajes informativos o de error. Facilita la comunicación entre módulos y la generación de diagnósticos.",
+    "examples": "CALL MESSAGE('Proceso completado');",
+    "notes": "Puede integrarse con mecanismos de ERROR y EXCEPTION.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0146",
+    "name": "METHOD",
+    "shortDescription": "Rutina asociada a un objeto.",
+    "longDescription": "METHOD define una operación vinculada a un objeto en entornos con soporte orientado a objetos. Permite encapsular comportamientos dentro de estructuras.",
+    "examples": "CALL OBJ.METHOD();",
+    "notes": "Disponible solo en compiladores PL/I con capacidades OO.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0147",
+    "name": "MOD",
+    "shortDescription": "Operador resto (módulo).",
+    "longDescription": "MOD devuelve el resto de una división entera entre dos valores. Es útil para cálculos discretos, validaciones y operaciones de partición.",
+    "examples": "R = MOD(A, 5);",
+    "notes": "El resultado siempre es menor que el divisor.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0148",
+    "name": "MODULE",
+    "shortDescription": "Unidad de compilación o agrupación de código.",
+    "longDescription": "MODULE define un bloque independiente de código que puede contener procedimientos, datos y estructuras. Facilita la modularidad y la organización del programa.",
+    "examples": "MODULE UTILITIES; ... END;",
+    "notes": "Puede exportar elementos mediante INTERFACE.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0149",
+    "name": "MONITOR",
+    "shortDescription": "Mecanismo de sincronización y exclusión mutua.",
+    "longDescription": "MONITOR controla el acceso a recursos compartidos en entornos concurrentes, asegurando que solo una tarea pueda utilizarlos a la vez.",
+    "examples": "DECLARE LOCK MONITOR;",
+    "notes": "Debe liberarse correctamente para evitar bloqueos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0150",
+    "name": "MONTH",
+    "shortDescription": "Componente o función que devuelve el mes.",
+    "longDescription": "MONTH obtiene el mes de una fecha o devuelve el componente correspondiente en operaciones de calendario.",
+    "examples": "M = MONTH(DATE());",
+    "notes": "Puede combinarse con DAY y YEAR para análisis completos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0151",
+    "name": "YEAR",
+    "shortDescription": "Componente o función que devuelve el año.",
+    "longDescription": "YEAR extrae el año de una fecha o devuelve el componente correspondiente en cálculos temporales.",
+    "examples": "Y = YEAR(DATE());",
+    "notes": "Útil para cálculos de antigüedad y validaciones temporales.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0152",
+    "name": "TIME",
+    "shortDescription": "Representación u operaciones de tiempo.",
+    "longDescription": "TIME devuelve la hora actual o permite manipular valores temporales en operaciones de sincronización o registro.",
+    "examples": "T = TIME();",
+    "notes": "El formato depende del entorno de ejecución.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0153",
+    "name": "TIMESTAMP",
+    "shortDescription": "Marca de tiempo con fecha y hora.",
+    "longDescription": "TIMESTAMP representa un valor temporal completo que incluye fecha y hora, útil para auditorías, registros y control de eventos.",
+    "examples": "TS = TIMESTAMP();",
+    "notes": "Puede incluir precisión adicional según el sistema.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0154",
+    "name": "MOVE",
+    "shortDescription": "Asigna o copia valores entre variables.",
+    "longDescription": "MOVE transfiere el contenido de una variable a otra, respetando reglas de conversión y formato. Es fundamental en manipulación de datos estructurados.",
+    "examples": "MOVE A TO B;",
+    "notes": "El formato del destino puede afectar el resultado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0155",
+    "name": "NAME",
+    "shortDescription": "Especifica nombre identificador en contextos especiales.",
+    "longDescription": "NAME asigna un identificador simbólico a elementos del programa, permitiendo referenciarlos en operaciones de E/S, módulos o estructuras.",
+    "examples": "DECLARE FILE_A NAME('DATAFILE');",
+    "notes": "Debe ser único dentro del ámbito correspondiente.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0156",
+    "name": "NATIVE",
+    "shortDescription": "Indica código o llamadas a funciones del sistema nativo.",
+    "longDescription": "NATIVE permite integrar rutinas o funciones específicas del sistema operativo o entorno de ejecución, ampliando las capacidades del programa.",
+    "examples": "CALL NATIVE('SYS_CALL');",
+    "notes": "Su disponibilidad depende del entorno donde se ejecute PL/I.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0157",
+    "name": "NEAR",
+    "shortDescription": "Indicador de dirección cercana.",
+    "longDescription": "NEAR especifica que una dirección de memoria se encuentra dentro del mismo segmento o área cercana, utilizado históricamente en arquitecturas segmentadas.",
+    "examples": "DECLARE PTR POINTER NEAR;",
+    "notes": "Su uso es específico de entornos con segmentación de memoria.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0158",
+    "name": "NEQ",
+    "shortDescription": "Operador de desigualdad.",
+    "longDescription": "NEQ compara dos valores y devuelve verdadero si son distintos. Es equivalente al operador de desigualdad en expresiones lógicas.",
+    "examples": "IF A NEQ B THEN CALL UPDATE;",
+    "notes": "Debe utilizarse con tipos compatibles para evitar conversiones implícitas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0159",
+    "name": "NOT",
+    "shortDescription": "Negación lógica.",
+    "longDescription": "NOT invierte el valor lógico de una expresión, convirtiendo verdadero en falso y viceversa. Es fundamental en expresiones condicionales.",
+    "examples": "IF NOT READY THEN CALL INIT;",
+    "notes": "Puede combinarse con AND y OR para expresiones complejas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0160",
+    "name": "NO",
+    "shortDescription": "Especificador de negación.",
+    "longDescription": "NO se utiliza para desactivar opciones o atributos dentro de declaraciones, permitiendo controlar comportamientos específicos del compilador o del programa.",
+    "examples": "DECLARE FLAG NO UPDATE;",
+    "notes": "Su interpretación depende del atributo que acompaña.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0161",
+    "name": "NEW",
+    "shortDescription": "Crea una nueva instancia o estructura.",
+    "longDescription": "NEW reserva y construye una nueva instancia de un tipo o estructura, permitiendo trabajar con objetos dinámicos en tiempo de ejecución.",
+    "examples": "OBJ = NEW INSTANCE;",
+    "notes": "Disponible en entornos PL/I con soporte orientado a objetos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0162",
+    "name": "NEXT",
+    "shortDescription": "Paso a la siguiente iteración o elemento.",
+    "longDescription": "NEXT avanza al siguiente elemento dentro de una colección o iteración, facilitando el recorrido secuencial de estructuras.",
+    "examples": "CALL NEXT(ITERATOR);",
+    "notes": "Debe utilizarse con iteradores válidos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0163",
+    "name": "NULL",
+    "shortDescription": "Valor nulo o ausencia de dato.",
+    "longDescription": "NULL representa la ausencia de valor o un puntero sin dirección válida. Es fundamental para validar estados y evitar accesos inválidos.",
+    "examples": "IF PTR = NULL THEN CALL INIT_PTR;",
+    "notes": "Debe verificarse antes de desreferenciar punteros.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0164",
+    "name": "NUMBER",
+    "shortDescription": "Tipo numérico genérico.",
+    "longDescription": "NUMBER declara valores numéricos sin especificar detalles de precisión o formato, permitiendo flexibilidad en operaciones aritméticas.",
+    "examples": "DECLARE X NUMBER;",
+    "notes": "Puede requerir conversión explícita en operaciones complejas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0165",
+    "name": "NUMERIC",
+    "shortDescription": "Tipo numérico genérico.",
+    "longDescription": "NUMERIC define valores numéricos utilizados en cálculos aritméticos y operaciones de precisión variable. Es adecuado para datos que requieren flexibilidad.",
+    "examples": "DECLARE VALUE NUMERIC;",
+    "notes": "Puede combinarse con atributos DECIMAL o BINARY.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0166",
+    "name": "OBJECT",
+    "shortDescription": "Entidad con datos y métodos.",
+    "longDescription": "OBJECT representa una estructura que combina datos y métodos asociados, permitiendo programación orientada a objetos en entornos PL/I que lo soportan.",
+    "examples": "DECLARE ITEM OBJECT;",
+    "notes": "Su uso depende del compilador y del soporte OO disponible.",
+    "category": "PL/I",
+    "deleted": false    
+  },
+{
+    "id": "PL/I-0167",
+    "name": "OCCURS",
+    "shortDescription": "Declara repetición en estructuras.",
+    "longDescription": "OCCURS define que un campo o estructura se repite un número determinado de veces dentro de una declaración, permitiendo crear arreglos o grupos repetitivos dentro de registros complejos.",
+    "examples": "DECLARE ITEM CHAR(10) OCCURS(5);",
+    "notes": "Útil para modelar estructuras con elementos repetidos sin declarar múltiples variables.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0168",
+    "name": "OF",
+    "shortDescription": "Sintaxis relacional.",
+    "longDescription": "OF se utiliza para expresar relaciones entre elementos dentro de estructuras, facilitando la referencia a campos específicos en declaraciones compuestas.",
+    "examples": "DECLARE FIELD OF RECORD;",
+    "notes": "Su interpretación depende del contexto de la estructura declarada.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0169",
+    "name": "OFF",
+    "shortDescription": "Desactiva opciones o manejadores.",
+    "longDescription": "OFF indica que una opción, atributo o manejador debe desactivarse, permitiendo controlar el comportamiento del programa o del compilador.",
+    "examples": "DECLARE FLAG OFF;",
+    "notes": "Complementa el uso de ON para activar opciones.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0170",
+    "name": "ON",
+    "shortDescription": "Activa opciones o manejadores.",
+    "longDescription": "ON habilita un atributo, opción o manejador de condición, permitiendo controlar eventos como errores, interrupciones o estados especiales.",
+    "examples": "ON ERROR BEGIN; ... END;",
+    "notes": "Debe acompañarse de un bloque que gestione la condición activada.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0171",
+    "name": "OPEN",
+    "shortDescription": "Abre un archivo o canal para E/S.",
+    "longDescription": "OPEN inicializa un archivo o dispositivo para operaciones de entrada o salida, estableciendo el modo de acceso y preparando el recurso para su uso.",
+    "examples": "OPEN FILE(F) INPUT;",
+    "notes": "Debe ejecutarse antes de cualquier operación GET, PUT o FETCH.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0172",
+    "name": "OPTION",
+    "shortDescription": "Especifica opciones de compilación o ejecución.",
+    "longDescription": "OPTION permite definir parámetros que afectan el comportamiento del compilador o del programa, como depuración, optimización o manejo de condiciones.",
+    "examples": "COMPILE OPTION(DEBUG);",
+    "notes": "Las opciones disponibles dependen del compilador PL/I utilizado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0173",
+    "name": "OPTIONS",
+    "shortDescription": "Especifica múltiples opciones de compilación o ejecución.",
+    "longDescription": "OPTIONS permite declarar varias configuraciones simultáneamente, ajustando el comportamiento del compilador o del programa en una sola instrucción.",
+    "examples": "COMPILE OPTIONS(DEBUG, OPTIMIZE);",
+    "notes": "Debe utilizarse con opciones válidas para el compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0174",
+    "name": "OR",
+    "shortDescription": "Operador lógico de disyunción.",
+    "longDescription": "OR evalúa dos condiciones y devuelve verdadero si al menos una de ellas es verdadera. Se utiliza en expresiones lógicas dentro de estructuras de control.",
+    "examples": "IF (A > 0) OR (B > 0) THEN CALL PROCESS;",
+    "notes": "Puede combinarse con AND y NOT para expresiones complejas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0175",
+    "name": "ORDER",
+    "shortDescription": "Ordenación o secuencia en operaciones.",
+    "longDescription": "ORDER especifica el criterio de ordenación en operaciones que requieren secuencias definidas, como clasificación o recorrido de estructuras.",
+    "examples": "ORDER LIST BY KEY;",
+    "notes": "Debe utilizarse con estructuras que soporten ordenación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0176",
+    "name": "OUT",
+    "shortDescription": "Salida de datos.",
+    "longDescription": "OUT indica que un parámetro o canal corresponde a datos de salida, utilizados para transmitir información desde una rutina hacia el exterior.",
+    "examples": "CALL PROCESS(DATA OUT);",
+    "notes": "Debe combinarse con mecanismos de E/S adecuados.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0177",
+    "name": "OUTPUT",
+    "shortDescription": "Salida de datos o parámetros de salida.",
+    "longDescription": "OUTPUT especifica que una operación o parámetro produce datos hacia un archivo, dispositivo o rutina, permitiendo controlar el flujo de salida.",
+    "examples": "OPEN FILE(F) OUTPUT;",
+    "notes": "Debe declararse coherentemente con el modo de acceso del archivo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0178",
+    "name": "PACKED",
+    "shortDescription": "Representación empaquetada.",
+    "longDescription": "PACKED indica que un valor numérico o estructura se almacena en formato compacto, reduciendo el espacio utilizado y optimizando almacenamiento.",
+    "examples": "DECLARE N PACKED DECIMAL(5);",
+    "notes": "Puede requerir conversión al operar con formatos no empaquetados.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0179",
+    "name": "PAUSE",
+    "shortDescription": "Suspende ejecución temporalmente.",
+    "longDescription": "PAUSE detiene la ejecución del programa durante un intervalo o hasta que se cumpla una condición, útil para sincronización o control de tiempos.",
+    "examples": "CALL PAUSE(5);",
+    "notes": "La duración depende del sistema operativo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0180",
+    "name": "PERFORM",
+    "shortDescription": "Ejecuta una acción o rutina.",
+    "longDescription": "PERFORM invoca una rutina o bloque de instrucciones sin devolver valor, permitiendo modularizar operaciones repetitivas o estructuradas.",
+    "examples": "PERFORM PROCESS_DATA;",
+    "notes": "Similar a CALL, pero orientado a bloques sin retorno.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0181",
+    "name": "PI",
+    "shortDescription": "Constante matemática π.",
+    "longDescription": "PI representa la constante matemática π, utilizada en cálculos trigonométricos, geométricos y científicos.",
+    "examples": "CIRC = 2 * PI * RADIUS;",
+    "notes": "Su precisión depende de la implementación del compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0182",
+    "name": "PINNED",
+    "shortDescription": "Almacenamiento fijo que no debe moverse.",
+    "longDescription": "PINNED indica que una variable o estructura debe permanecer en una ubicación fija de memoria, evitando movimientos por parte del sistema o del recolector.",
+    "examples": "DECLARE BUF PINNED;",
+    "notes": "Útil en operaciones con dispositivos o memoria compartida.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0183",
+    "name": "PLACE",
+    "shortDescription": "Ubica datos en una dirección o sección determinada.",
+    "longDescription": "PLACE permite especificar la ubicación exacta donde deben almacenarse datos o estructuras, útil para integraciones con hardware o formatos estrictos.",
+    "examples": "PLACE RECORD AT ADDRESS(PTR);",
+    "notes": "Debe usarse con cuidado para evitar accesos inválidos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0184",
+    "name": "PLUS",
+    "shortDescription": "Operador aritmético de suma.",
+    "longDescription": "PLUS realiza la operación de suma entre dos valores numéricos, siendo uno de los operadores básicos en cálculos aritméticos.",
+    "examples": "TOTAL = A PLUS B;",
+    "notes": "Puede combinarse con otros operadores para expresiones complejas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0185",
+    "name": "MINUS",
+    "shortDescription": "Operador aritmético de resta.",
+    "longDescription": "MINUS realiza la operación de resta entre dos valores numéricos, permitiendo cálculos discretos y operaciones aritméticas básicas.",
+    "examples": "DIFF = A MINUS B;",
+    "notes": "Debe utilizarse con tipos numéricos compatibles.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0186",
+    "name": "POSITION",
+    "shortDescription": "Posiciona cursor o índice.",
+    "longDescription": "POSITION establece la ubicación del cursor dentro de un archivo o estructura, permitiendo controlar operaciones de lectura y escritura.",
+    "examples": "POSITION FILE(F) AT 10;",
+    "notes": "Debe ser coherente con el modo de acceso del archivo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0187",
+    "name": "POSTPONE",
+    "shortDescription": "Aplaza ejecución o inclusión.",
+    "longDescription": "POSTPONE retrasa la ejecución de una acción o la inclusión de un elemento hasta una fase posterior del programa o compilación.",
+    "examples": "POSTPONE INIT UNTIL READY;",
+    "notes": "Útil en flujos que requieren sincronización.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0188",
+    "name": "PRECISION",
+    "shortDescription": "Precisión numérica.",
+    "longDescription": "PRECISION especifica la cantidad de dígitos o exactitud de un valor numérico, fundamental en cálculos científicos y financieros.",
+    "examples": "DECLARE X DECIMAL(10,2) PRECISION(12);",
+    "notes": "Debe ser coherente con el tipo numérico declarado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0189",
+    "name": "PRESENT",
+    "shortDescription": "Indica presencia de un parámetro o campo.",
+    "longDescription": "PRESENT permite verificar si un parámetro opcional o campo está disponible, diferenciando entre ausencia y valores nulos.",
+    "examples": "IF PRESENT(ARG(3)) THEN CALL PROCESS;",
+    "notes": "Útil en rutinas con parámetros opcionales.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0190",
+    "name": "PRIORITY",
+    "shortDescription": "Nivel de prioridad para tareas o recursos.",
+    "longDescription": "PRIORITY establece el nivel de importancia o precedencia de una tarea o recurso, afectando su orden de ejecución en entornos concurrentes.",
+    "examples": "DECLARE TASK PRIORITY(5);",
+    "notes": "Debe ajustarse según las necesidades del sistema.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0191",
+    "name": "PROCEDURE",
+    "shortDescription": "Declara un procedimiento.",
+    "longDescription": "PROCEDURE define una rutina que ejecuta un conjunto de instrucciones sin devolver un valor, permitiendo modularizar el programa en unidades funcionales.",
+    "examples": "PROCEDURE PROCESS_DATA; ... END;",
+    "notes": "Puede recibir parámetros mediante LINKAGE o argumentos directos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0192",
+    "name": "PROTECTED",
+    "shortDescription": "Nivel de visibilidad restringido.",
+    "longDescription": "PROTECTED limita el acceso a elementos dentro de estructuras u objetos, permitiendo encapsular datos y controlar su uso.",
+    "examples": "DECLARE FIELD PROTECTED;",
+    "notes": "Disponible en entornos PL/I con soporte OO.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0193",
+    "name": "PUBLIC",
+    "shortDescription": "Nivel de visibilidad pública.",
+    "longDescription": "PUBLIC permite que un elemento sea accesible desde otros módulos u objetos, facilitando la interacción entre componentes del programa.",
+    "examples": "DECLARE METHOD PUBLIC;",
+    "notes": "Debe utilizarse para elementos que forman parte de la interfaz pública.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0194",
+    "name": "PUT",
+    "shortDescription": "Sentencias de salida con formatos.",
+    "longDescription": "PUT escribe datos en un archivo, dispositivo o salida estándar. Permite controlar el formato, la estructura y la presentación de la información emitida por el programa.",
+    "examples": "PUT DATA;",
+    "notes": "Puede combinarse con SKIP, LIST o FORMAT para salidas más complejas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0195",
+    "name": "PUT SKIP",
+    "shortDescription": "Salida con salto de línea.",
+    "longDescription": "PUT SKIP genera una salida seguida de un salto de línea, permitiendo separar registros o mejorar la legibilidad de reportes.",
+    "examples": "PUT SKIP DATA;",
+    "notes": "El número de líneas saltadas puede ajustarse según el formato requerido.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0196",
+    "name": "PUT LIST",
+    "shortDescription": "Salida en formato de lista.",
+    "longDescription": "PUT LIST presenta múltiples valores en una sola operación, organizándolos como una lista estructurada. Es útil para reportes con varios campos.",
+    "examples": "PUT LIST(A, B, C);",
+    "notes": "Los elementos se muestran en el orden declarado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0197",
+    "name": "QUEUES",
+    "shortDescription": "Estructuras encoladas para mensajes o tareas.",
+    "longDescription": "QUEUES define estructuras FIFO utilizadas para gestionar mensajes, tareas o eventos en sistemas concurrentes. Permiten organizar flujos de trabajo secuenciales.",
+    "examples": "DECLARE MSG_QUEUE QUEUES;",
+    "notes": "Su comportamiento depende del sistema de ejecución.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0198",
+    "name": "RANGE",
+    "shortDescription": "Rango de valores válido para una variable o índice.",
+    "longDescription": "RANGE especifica los límites mínimo y máximo permitidos para una variable o índice, facilitando validaciones y evitando accesos fuera de rango.",
+    "examples": "DECLARE I FIXED BIN RANGE(1:100);",
+    "notes": "Debe ser coherente con el tipo y uso de la variable.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0199",
+    "name": "READ",
+    "shortDescription": "Lee datos desde un archivo o dispositivo.",
+    "longDescription": "READ recupera información desde un archivo o dispositivo de entrada, posicionando el cursor según el modo de acceso definido. Es fundamental para operaciones de entrada estructurada.",
+    "examples": "READ FILE(F) INTO RECORD;",
+    "notes": "Debe combinarse con OPEN y ACCESS adecuados.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0200",
+    "name": "READ FILE",
+    "shortDescription": "Lectura explícita desde un archivo.",
+    "longDescription": "READ FILE especifica que la operación de lectura se realiza sobre un archivo declarado, permitiendo controlar el flujo de entrada de manera precisa.",
+    "examples": "READ FILE(INPUT) INTO BUFFER;",
+    "notes": "El archivo debe estar abierto en modo INPUT.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0201",
+    "name": "READ DIRECT",
+    "shortDescription": "Lectura directa por posición.",
+    "longDescription": "READ DIRECT permite leer un registro específico mediante su posición física o lógica dentro del archivo, útil para acceso aleatorio.",
+    "examples": "READ DIRECT FILE(F) KEY(10) INTO REC;",
+    "notes": "Requiere archivos con soporte de acceso directo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0202",
+    "name": "READ UPDATE",
+    "shortDescription": "Lectura para actualización posterior.",
+    "longDescription": "READ UPDATE obtiene un registro con la intención de modificarlo posteriormente, bloqueándolo si el sistema lo requiere para evitar conflictos.",
+    "examples": "READ UPDATE FILE(F) INTO REC;",
+    "notes": "Debe combinarse con REWRITE para completar la operación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0203",
+    "name": "READ ONLY",
+    "shortDescription": "Lectura sin permitir modificaciones.",
+    "longDescription": "READ ONLY garantiza que el registro leído no será modificado, permitiendo operaciones de consulta sin afectar la integridad del archivo.",
+    "examples": "READ ONLY FILE(F) INTO REC;",
+    "notes": "Ideal para operaciones de auditoría o análisis.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0204",
+    "name": "READ SKIP",
+    "shortDescription": "Lectura con salto de registros.",
+    "longDescription": "READ SKIP permite omitir uno o varios registros antes de realizar la lectura, útil para navegación secuencial controlada.",
+    "examples": "READ SKIP(2) FILE(F) INTO REC;",
+    "notes": "El número de saltos debe ser válido para el archivo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0205",
+    "name": "RECORD",
+    "shortDescription": "Unidad de datos en archivos.",
+    "longDescription": "RECORD representa una estructura de datos almacenada en un archivo, compuesta por campos definidos por el programador.",
+    "examples": "DECLARE REC RECORD;",
+    "notes": "Puede incluir múltiples campos de distintos tipos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0206",
+    "name": "RECORD INPUT",
+    "shortDescription": "Entrada de registros estructurados.",
+    "longDescription": "RECORD INPUT indica que la operación de entrada se realiza sobre registros completos, respetando su estructura declarada.",
+    "examples": "RECORD INPUT FILE(F) INTO REC;",
+    "notes": "Debe coincidir con la estructura del archivo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0207",
+    "name": "RECORD OUTPUT",
+    "shortDescription": "Salida de registros estructurados.",
+    "longDescription": "RECORD OUTPUT permite escribir registros completos en un archivo, respetando su estructura y formato.",
+    "examples": "RECORD OUTPUT FILE(F) FROM REC;",
+    "notes": "El archivo debe estar abierto en modo OUTPUT.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0208",
+    "name": "RECORD KEY",
+    "shortDescription": "Clave de registro para acceso directo.",
+    "longDescription": "RECORD KEY define el campo utilizado como clave para localizar registros en archivos indexados o de acceso directo.",
+    "examples": "RECORD KEY IS ID;",
+    "notes": "Debe ser único para garantizar búsquedas correctas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0209",
+    "name": "RECORD AREA",
+    "shortDescription": "Área de almacenamiento para registros.",
+    "longDescription": "RECORD AREA define la zona de memoria donde se almacenan temporalmente los registros leídos o escritos.",
+    "examples": "DECLARE WORK RECORD AREA;",
+    "notes": "Debe ser compatible con la estructura del archivo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0210",
+    "name": "RECORD LENGTH",
+    "shortDescription": "Longitud del registro.",
+    "longDescription": "RECORD LENGTH especifica el tamaño total de un registro, útil para archivos de longitud fija o validaciones de formato.",
+    "examples": "RECORD LENGTH IS 80;",
+    "notes": "Debe coincidir con la estructura declarada.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0211",
+    "name": "RECORD NAME",
+    "shortDescription": "Nombre simbólico del registro.",
+    "longDescription": "RECORD NAME asigna un identificador simbólico a un registro, facilitando su referencia en operaciones de E/S.",
+    "examples": "RECORD NAME IS HEADER;",
+    "notes": "Debe ser único dentro del archivo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0212",
+    "name": "RECORD TYPE",
+    "shortDescription": "Tipo de registro.",
+    "longDescription": "RECORD TYPE indica la categoría o formato del registro dentro de un archivo, útil para archivos mixtos con múltiples estructuras.",
+    "examples": "RECORD TYPE IS DETAIL;",
+    "notes": "Debe coincidir con el formato del archivo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0213",
+    "name": "RECORDS",
+    "shortDescription": "Conjunto de registros.",
+    "longDescription": "RECORDS representa una colección de registros dentro de un archivo, permitiendo operaciones sobre múltiples unidades de datos.",
+    "examples": "DECLARE RECORDS ARRAY;",
+    "notes": "Puede combinarse con OCCURS para estructuras repetitivas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0214",
+    "name": "RECURSIVE",
+    "shortDescription": "Permite llamadas recursivas.",
+    "longDescription": "RECURSIVE habilita que un procedimiento pueda llamarse a sí mismo, útil para algoritmos como búsqueda, ordenación o procesamiento jerárquico.",
+    "examples": "RECURSIVE PROCEDURE FACT(N);",
+    "notes": "Debe declararse explícitamente para evitar errores de compilación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0215",
+    "name": "REF",
+    "shortDescription": "Referencia a variable o estructura.",
+    "longDescription": "REF permite declarar referencias a variables o estructuras, similar a punteros pero con semántica controlada por el compilador.",
+    "examples": "DECLARE R REF(A);",
+    "notes": "Debe apuntar a una variable válida antes de usarse.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0216",
+    "name": "REFER",
+    "shortDescription": "Referencia explícita a otro elemento.",
+    "longDescription": "REFER indica que una variable o estructura depende de otra para su definición o contenido, útil para aliasing controlado.",
+    "examples": "DECLARE B REFER(A);",
+    "notes": "Debe usarse con cuidado para evitar inconsistencias.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0217",
+    "name": "RELEASE",
+    "shortDescription": "Libera recursos o bloqueos.",
+    "longDescription": "RELEASE elimina bloqueos sobre registros o recursos, permitiendo que otras tareas accedan a ellos.",
+    "examples": "RELEASE FILE(F);",
+    "notes": "Debe usarse después de operaciones READ UPDATE o REWRITE.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0218",
+    "name": "REMAINDER",
+    "shortDescription": "Devuelve el resto de una división.",
+    "longDescription": "REMAINDER calcula el residuo de una división entera, similar a MOD pero con semántica específica del compilador PL/I.",
+    "examples": "R = REMAINDER(A, B);",
+    "notes": "Debe utilizarse con tipos numéricos compatibles.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0219",
+    "name": "REMOVE",
+    "shortDescription": "Elimina un elemento de una estructura.",
+    "longDescription": "REMOVE suprime un elemento de una colección o estructura, ajustando los índices o posiciones según corresponda.",
+    "examples": "CALL REMOVE(LIST, 3);",
+    "notes": "Debe verificarse que el índice sea válido.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0220",
+    "name": "REPEAT",
+    "shortDescription": "Repite una operación o bloque.",
+    "longDescription": "REPEAT ejecuta un bloque de instrucciones múltiples veces hasta que se cumpla una condición de salida.",
+    "examples": "REPEAT UNTIL DONE; ... END;",
+    "notes": "Debe incluir una condición clara para evitar bucles infinitos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0221",
+    "name": "REPLACE",
+    "shortDescription": "Sustituye contenido.",
+    "longDescription": "REPLACE permite sustituir el contenido de una variable, campo o registro por un nuevo valor o estructura.",
+    "examples": "REPLACE FIELD WITH NEW_VALUE;",
+    "notes": "Debe respetar el tipo del destino.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0222",
+    "name": "REPORT",
+    "shortDescription": "Genera reportes estructurados.",
+    "longDescription": "REPORT permite crear salidas formateadas para informes, combinando datos y texto en estructuras predefinidas.",
+    "examples": "CALL REPORT(SUMMARY);",
+    "notes": "Puede combinarse con PUT LIST y FORMAT.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0223",
+    "name": "REQUEST",
+    "shortDescription": "Solicita acción o recurso.",
+    "longDescription": "REQUEST envía una petición a un módulo, tarea o recurso externo, permitiendo coordinar operaciones distribuidas.",
+    "examples": "CALL REQUEST(SERVICE);",
+    "notes": "Su comportamiento depende del sistema de ejecución.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0224",
+    "name": "RESIGNAL",
+    "shortDescription": "Reenvía una condición.",
+    "longDescription": "RESIGNAL permite reenviar una condición previamente capturada, útil para manejo jerárquico de errores.",
+    "examples": "RESIGNAL ERROR;",
+    "notes": "Debe usarse dentro de manejadores de condiciones.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0225",
+    "name": "RETURN",
+    "shortDescription": "Finaliza un procedimiento o función.",
+    "longDescription": "RETURN termina la ejecución de una rutina y devuelve el control al llamador. En funciones, puede devolver un valor.",
+    "examples": "RETURN;",
+    "notes": "En funciones debe incluir el valor de retorno.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0226",
+    "name": "REWRITE",
+    "shortDescription": "Reescribe un registro previamente leído.",
+    "longDescription": "REWRITE actualiza un registro que fue leído mediante READ UPDATE, reemplazando su contenido en el archivo.",
+    "examples": "REWRITE FILE(F) FROM REC;",
+    "notes": "Debe usarse después de READ UPDATE para garantizar coherencia.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0227",
+    "name": "REAL",
+    "shortDescription": "Tipo de punto flotante de simple precisión.",
+    "longDescription": "REAL declara valores en coma flotante de precisión simple, utilizados para cálculos numéricos que no requieren doble precisión.",
+    "examples": "DECLARE X REAL;",
+    "notes": "Equivalente a SINGLE en algunos compiladores.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0228",
+    "name": "RECEIVE",
+    "shortDescription": "Recibe mensajes o datos en comunicación o colas.",
+    "longDescription": "RECEIVE obtiene datos enviados a través de colas, canales o mecanismos de comunicación entre tareas o procesos.",
+    "examples": "RECEIVE QUEUE INTO BUFFER;",
+    "notes": "Debe existir un mensaje pendiente para completar la operación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0229",
+    "name": "RECURSE",
+    "shortDescription": "Permite recursividad en llamadas.",
+    "longDescription": "RECURSE habilita que un procedimiento pueda llamarse a sí mismo, permitiendo implementar algoritmos recursivos.",
+    "examples": "RECURSE PROCEDURE FACT(N);",
+    "notes": "Debe declararse explícitamente para evitar errores de compilación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0230",
+    "name": "RELEASE",
+    "shortDescription": "Libera un lock o recurso.",
+    "longDescription": "RELEASE elimina bloqueos sobre recursos o registros, permitiendo que otras tareas accedan a ellos.",
+    "examples": "RELEASE FILE(F);",
+    "notes": "Debe usarse tras operaciones READ UPDATE o REWRITE.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0231",
+    "name": "REMAINDER",
+    "shortDescription": "Resultado del resto en división.",
+    "longDescription": "REMAINDER devuelve el residuo de una división entera, similar a MOD pero con semántica específica del compilador PL/I.",
+    "examples": "R = REMAINDER(A, B);",
+    "notes": "Debe usarse con tipos numéricos compatibles.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0232",
+    "name": "RENAME",
+    "shortDescription": "Cambia el nombre visible de un identificador.",
+    "longDescription": "RENAME asigna un nuevo nombre simbólico a un elemento del programa, permitiendo reorganizar o adaptar interfaces.",
+    "examples": "RENAME OLDNAME TO NEWNAME;",
+    "notes": "No altera el contenido, solo la referencia.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0233",
+    "name": "REPEAT",
+    "shortDescription": "Bucle que se repite hasta que se cumple condición.",
+    "longDescription": "REPEAT ejecuta un bloque de instrucciones repetidamente hasta que la condición especificada se cumpla.",
+    "examples": "REPEAT UNTIL DONE; ... END;",
+    "notes": "Debe incluir una condición clara para evitar bucles infinitos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0234",
+    "name": "REPLACE",
+    "shortDescription": "Sustituye datos o definiciones existentes.",
+    "longDescription": "REPLACE permite reemplazar el contenido de una variable, campo o estructura por un nuevo valor.",
+    "examples": "REPLACE FIELD WITH NEW_VALUE;",
+    "notes": "Debe respetar el tipo del destino.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0235",
+    "name": "RESERVE",
+    "shortDescription": "Reserva espacio o recursos.",
+    "longDescription": "RESERVE asigna espacio o recursos para uso posterior, evitando conflictos con otras tareas.",
+    "examples": "RESERVE AREA(100);",
+    "notes": "Debe liberarse cuando ya no sea necesario.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0236",
+    "name": "RESTART",
+    "shortDescription": "Reinicia un proceso o punto de ejecución.",
+    "longDescription": "RESTART permite reiniciar la ejecución desde un punto definido, útil para recuperación tras errores.",
+    "examples": "RESTART PROCESS;",
+    "notes": "Debe definirse un punto de reinicio válido.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0237",
+    "name": "RETURN",
+    "shortDescription": "Devuelve control y opcionalmente un valor.",
+    "longDescription": "RETURN finaliza la ejecución de una rutina y devuelve el control al llamador. En funciones, puede devolver un valor.",
+    "examples": "RETURN;",
+    "notes": "En funciones debe incluir el valor de retorno.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0238",
+    "name": "RFUNC",
+    "shortDescription": "Función reutilizable o registro funcional.",
+    "longDescription": "RFUNC indica una función reutilizable o un descriptor funcional según el contexto del compilador.",
+    "examples": "DECLARE F RFUNC;",
+    "notes": "Su significado exacto depende de la implementación PL/I.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0239",
+    "name": "RIGHT",
+    "shortDescription": "Justificación o desplazamiento a la derecha.",
+    "longDescription": "RIGHT permite justificar texto o desplazar valores hacia la derecha en operaciones de formato.",
+    "examples": "PUT NAME RIGHT;",
+    "notes": "Complementa LEFT para alineación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0240",
+    "name": "LEFT",
+    "shortDescription": "Justificación o desplazamiento a la izquierda.",
+    "longDescription": "LEFT permite alinear texto o valores hacia la izquierda en operaciones de salida.",
+    "examples": "PUT NAME LEFT;",
+    "notes": "Complementa RIGHT para alineación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0241",
+    "name": "RUNTIME",
+    "shortDescription": "Acciones específicas del tiempo de ejecución.",
+    "longDescription": "RUNTIME se refiere a operaciones, diagnósticos o información disponible durante la ejecución del programa.",
+    "examples": "CALL RUNTIME(INFO);",
+    "notes": "Depende del entorno de ejecución PL/I.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0242",
+    "name": "SAY",
+    "shortDescription": "Salida simple de texto.",
+    "longDescription": "SAY imprime texto de manera sencilla, útil para mensajes informales o depuración.",
+    "examples": "SAY 'Hola mundo';",
+    "notes": "No requiere formato complejo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0243",
+    "name": "SAVE",
+    "shortDescription": "Conserva estado o valor.",
+    "longDescription": "SAVE almacena temporalmente un valor o estado para uso posterior dentro del programa.",
+    "examples": "SAVE CURRENT_STATE;",
+    "notes": "Debe restaurarse cuando sea necesario.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0244",
+    "name": "SCALAR",
+    "shortDescription": "Dato escalar.",
+    "longDescription": "SCALAR indica que un dato es simple y no estructurado, como un número o carácter.",
+    "examples": "DECLARE X SCALAR;",
+    "notes": "Contrasta con STRUCTURE o ARRAY.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0245",
+    "name": "SCOPE",
+    "shortDescription": "Alcance de visibilidad.",
+    "longDescription": "SCOPE define el ámbito donde un nombre o variable es visible, controlando su accesibilidad.",
+    "examples": "SCOPE PUBLIC;",
+    "notes": "Puede ser LOCAL, PUBLIC o PROTECTED.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0246",
+    "name": "SEARCH",
+    "shortDescription": "Busca un valor en colección o archivo.",
+    "longDescription": "SEARCH localiza un elemento dentro de una estructura o archivo según un criterio.",
+    "examples": "SEARCH LIST FOR VALUE;",
+    "notes": "Debe definirse un criterio válido.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0247",
+    "name": "SELECT",
+    "shortDescription": "Elige rama o registro.",
+    "longDescription": "SELECT permite elegir entre múltiples alternativas, similar a CASE o estructuras SQL.",
+    "examples": "SELECT (X); WHEN(1) ...;",
+    "notes": "Debe incluir WHEN y OTHERWISE.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0248",
+    "name": "SEMAPHORE",
+    "shortDescription": "Objeto de sincronización.",
+    "longDescription": "SEMAPHORE controla acceso concurrente a recursos mediante contadores y señales.",
+    "examples": "DECLARE S SEMAPHORE;",
+    "notes": "Debe inicializarse antes de usarse.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0249",
+    "name": "SEQUENCE",
+    "shortDescription": "Orden secuencial.",
+    "longDescription": "SEQUENCE define un orden o numeración secuencial para elementos o registros.",
+    "examples": "DECLARE ID SEQUENCE;",
+    "notes": "Puede ser SERIAL según implementación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0250",
+    "name": "SET",
+    "shortDescription": "Asigna valores o configura opciones.",
+    "longDescription": "SET permite asignar valores a variables o configurar atributos del programa.",
+    "examples": "SET FLAG = TRUE;",
+    "notes": "Debe respetar el tipo del destino.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0251",
+    "name": "SHARED",
+    "shortDescription": "Datos compartidos entre tareas.",
+    "longDescription": "SHARED indica que una variable o estructura es accesible por múltiples tareas o módulos.",
+    "examples": "DECLARE BUFFER SHARED;",
+    "notes": "Debe protegerse con mecanismos de sincronización.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0252",
+    "name": "SHORT",
+    "shortDescription": "Tipo de menor tamaño.",
+    "longDescription": "SHORT declara un entero de tamaño reducido, útil para optimizar memoria.",
+    "examples": "DECLARE N SHORT;",
+    "notes": "Su tamaño depende del compilador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0253",
+    "name": "SIGNAL",
+    "shortDescription": "Lanza una condición.",
+    "longDescription": "SIGNAL activa una condición o error, permitiendo manejar eventos excepcionales.",
+    "examples": "SIGNAL ERROR;",
+    "notes": "Debe existir un manejador ON para capturarla.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0254",
+    "name": "SIMILAR",
+    "shortDescription": "Indica compatibilidad estructural.",
+    "longDescription": "SIMILAR declara que una estructura es compatible con otra, permitiendo operaciones equivalentes.",
+    "examples": "DECLARE B SIMILAR A;",
+    "notes": "No implica identidad, solo compatibilidad.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0255",
+    "name": "SINGLE",
+    "shortDescription": "Tipo de precisión simple.",
+    "longDescription": "SINGLE declara valores en coma flotante de precisión simple.",
+    "examples": "DECLARE X SINGLE;",
+    "notes": "Equivalente a REAL en muchos compiladores.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0256",
+    "name": "SIZE",
+    "shortDescription": "Tamaño en bytes o longitud.",
+    "longDescription": "SIZE devuelve o especifica el tamaño de un objeto, útil para validaciones y operaciones de memoria.",
+    "examples": "N = SIZE(OBJ);",
+    "notes": "Depende del tipo declarado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0257",
+    "name": "SKIP",
+    "shortDescription": "Salta registros o posiciones en E/S.",
+    "longDescription": "SKIP permite omitir uno o varios registros o líneas durante operaciones de entrada o salida, útil para navegación secuencial controlada.",
+    "examples": "SKIP(2);",
+    "notes": "Debe usarse con archivos o canales que soporten salto.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0258",
+    "name": "SLIST",
+    "shortDescription": "Lista especializada según implementación.",
+    "longDescription": "SLIST representa una estructura de lista especializada cuyo comportamiento depende del compilador o entorno PL/I.",
+    "examples": "DECLARE ITEMS SLIST;",
+    "notes": "Su semántica exacta varía entre implementaciones.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0259",
+    "name": "SOURCE",
+    "shortDescription": "Archivo fuente o especificador de origen.",
+    "longDescription": "SOURCE indica el archivo o módulo de origen para compilación, depuración o trazabilidad.",
+    "examples": "SOURCE 'MODULEA';",
+    "notes": "Útil para diagnósticos y documentación.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0260",
+    "name": "SPACE",
+    "shortDescription": "Espacio en blanco o reserva de memoria.",
+    "longDescription": "SPACE puede representar un carácter de espacio o una reserva explícita de memoria o almacenamiento.",
+    "examples": "SPACE(10);",
+    "notes": "Su significado depende del contexto de uso.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0261",
+    "name": "SPECIFIC",
+    "shortDescription": "Elemento específico dentro de un contexto.",
+    "longDescription": "SPECIFIC indica que un elemento pertenece a un contexto particular, útil para distinguir variantes o versiones.",
+    "examples": "DECLARE FIELD SPECIFIC;",
+    "notes": "Contrasta con GENERAL o DEFAULT.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0262",
+    "name": "STATIC",
+    "shortDescription": "Vida estática para variables.",
+    "longDescription": "STATIC declara variables que persisten entre llamadas, manteniendo su valor durante toda la ejecución del programa.",
+    "examples": "DECLARE COUNT STATIC;",
+    "notes": "Útil para acumuladores o estados persistentes.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0263",
+    "name": "START",
+    "shortDescription": "Inicia procesos o rutinas.",
+    "longDescription": "START activa la ejecución de un proceso, tarea o rutina, permitiendo iniciar flujos de trabajo.",
+    "examples": "START TASK_A;",
+    "notes": "Debe existir un contexto válido para iniciar.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0264",
+    "name": "STATUS",
+    "shortDescription": "Estado de ejecución.",
+    "longDescription": "STATUS devuelve o representa el estado actual de un proceso, archivo o recurso.",
+    "examples": "IF STATUS = 'READY' THEN ...;",
+    "notes": "Su valor depende del recurso consultado.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0265",
+    "name": "STORE",
+    "shortDescription": "Almacena datos en memoria o archivo.",
+    "longDescription": "STORE guarda valores o estructuras en memoria o en archivos, permitiendo persistencia o transferencia de información.",
+    "examples": "STORE DATA INTO FILE(F);",
+    "notes": "Debe respetar el formato del destino.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0266",
+    "name": "STREAM",
+    "shortDescription": "Canal de datos continuo.",
+    "longDescription": "STREAM representa un flujo continuo de datos para operaciones de entrada o salida secuencial.",
+    "examples": "DECLARE S STREAM;",
+    "notes": "Útil para dispositivos o canales sin estructura fija.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0267",
+    "name": "STRING",
+    "shortDescription": "Cadena de caracteres.",
+    "longDescription": "STRING declara una secuencia de caracteres, utilizada para texto y datos alfanuméricos.",
+    "examples": "DECLARE NAME STRING;",
+    "notes": "Puede combinarse con VARYING para longitud variable.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0268",
+    "name": "VARYING",
+    "shortDescription": "Longitud variable para cadenas o arrays.",
+    "longDescription": "VARYING permite que una cadena o arreglo cambie su longitud dinámicamente durante la ejecución.",
+    "examples": "DECLARE TEXT VARYING;",
+    "notes": "Debe especificarse longitud máxima.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0269",
+    "name": "STRUCTURE",
+    "shortDescription": "Define registro o estructura compuesta.",
+    "longDescription": "STRUCTURE declara un conjunto de campos agrupados, permitiendo modelar datos complejos.",
+    "examples": "DECLARE PERSON STRUCTURE;",
+    "notes": "Puede contener campos de distintos tipos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0270",
+    "name": "SUBROUTINE",
+    "shortDescription": "Unidad de código ejecutable sin retorno.",
+    "longDescription": "SUBROUTINE define una rutina que ejecuta instrucciones pero no devuelve valor.",
+    "examples": "SUBROUTINE CLEANUP; ... END;",
+    "notes": "Similar a PROCEDURE pero sin retorno de valor.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0271",
+    "name": "PROCEDURE",
+    "shortDescription": "Unidad de código ejecutable.",
+    "longDescription": "PROCEDURE declara una rutina que ejecuta instrucciones y puede recibir parámetros.",
+    "examples": "PROCEDURE PROCESS; ... END;",
+    "notes": "Ya generado antes, pero aquí se incluye porque aparece en tu texto.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0272",
+    "name": "SUBTYPE",
+    "shortDescription": "Tipo derivado de otro tipo.",
+    "longDescription": "SUBTYPE permite crear un tipo basado en otro, restringiendo o especializando su uso.",
+    "examples": "DECLARE SMALLINT SUBTYPE INTEGER;",
+    "notes": "Útil para alias y restricciones.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0273",
+    "name": "SYNC",
+    "shortDescription": "Sincronización de acceso.",
+    "longDescription": "SYNC indica que una operación debe realizarse de manera sincronizada para evitar conflictos en entornos concurrentes.",
+    "examples": "SYNC TASKS;",
+    "notes": "Complementa SEMAPHORE y MONITOR.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0274",
+    "name": "SYNCHRONIZED",
+    "shortDescription": "Acceso sincronizado a recursos.",
+    "longDescription": "SYNCHRONIZED garantiza que una sección de código se ejecute de forma exclusiva, evitando condiciones de carrera.",
+    "examples": "SYNCHRONIZED SECTION;",
+    "notes": "Debe usarse en entornos concurrentes.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0275",
+    "name": "SYSTEM",
+    "shortDescription": "Operaciones o llamadas al sistema.",
+    "longDescription": "SYSTEM permite realizar acciones específicas del sistema operativo o entorno de ejecución.",
+    "examples": "CALL SYSTEM('DIR');",
+    "notes": "Dependiente del entorno PL/I.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0276",
+    "name": "TAB",
+    "shortDescription": "Carácter de tabulación.",
+    "longDescription": "TAB representa un carácter de tabulación o una posición de campo en operaciones de salida.",
+    "examples": "PUT TAB;",
+    "notes": "Útil para formateo de reportes.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0277",
+    "name": "TAGGED",
+    "shortDescription": "Datos con etiqueta.",
+    "longDescription": "TAGGED indica que un dato incluye una etiqueta que identifica su tipo o versión.",
+    "examples": "DECLARE ITEM TAGGED;",
+    "notes": "Útil para estructuras heterogéneas.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0278",
+    "name": "TASK",
+    "shortDescription": "Unidad de trabajo concurrente.",
+    "longDescription": "TASK representa un hilo o proceso ligero que ejecuta operaciones concurrentes.",
+    "examples": "DECLARE T TASK;",
+    "notes": "Debe sincronizarse si accede a recursos compartidos.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0279",
+    "name": "TEMPORARY",
+    "shortDescription": "Datos o almacenamiento temporal.",
+    "longDescription": "TEMPORARY declara datos con vida corta, utilizados para cálculos o almacenamiento intermedio.",
+    "examples": "DECLARE BUF TEMPORARY;",
+    "notes": "Se destruye al finalizar el bloque.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0280",
+    "name": "THEN",
+    "shortDescription": "Parte verdadera de una condición IF.",
+    "longDescription": "THEN indica el bloque que se ejecutará cuando la condición del IF sea verdadera.",
+    "examples": "IF READY THEN CALL START;",
+    "notes": "Ya generado antes, pero aparece en tu texto.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0281",
+    "name": "THREAD",
+    "shortDescription": "Hebra ligera de ejecución.",
+    "longDescription": "THREAD representa una unidad de ejecución concurrente, similar a TASK.",
+    "examples": "DECLARE WORKER THREAD;",
+    "notes": "Disponible solo en compiladores con soporte de concurrencia.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0282",
+    "name": "TIME",
+    "shortDescription": "Representación u operaciones de tiempo.",
+    "longDescription": "TIME devuelve la hora actual o permite manipular valores temporales.",
+    "examples": "T = TIME();",
+    "notes": "Ya generado antes, pero aparece en tu texto.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0283",
+    "name": "TRACE",
+    "shortDescription": "Depuración paso a paso.",
+    "longDescription": "TRACE permite registrar o seguir la ejecución del programa para depuración.",
+    "examples": "TRACE ON;",
+    "notes": "Puede afectar rendimiento si se usa extensivamente.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0284",
+    "name": "TRANSACTION",
+    "shortDescription": "Agrupación de operaciones atómicas.",
+    "longDescription": "TRANSACTION agrupa operaciones que deben ejecutarse de manera consistente y atómica.",
+    "examples": "BEGIN TRANSACTION; ... END;",
+    "notes": "Debe finalizarse con COMMIT o ROLLBACK.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0285",
+    "name": "TRANSFER",
+    "shortDescription": "Mueve control o datos entre contextos.",
+    "longDescription": "TRANSFER permite mover control de ejecución o datos entre módulos, tareas o contextos.",
+    "examples": "TRANSFER TO MODULE_B;",
+    "notes": "Debe existir un destino válido.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0286",
+    "name": "TRANSIENT",
+    "shortDescription": "Almacenamiento no persistente.",
+    "longDescription": "TRANSIENT indica que los datos no persisten entre ejecuciones o llamadas, útil para buffers temporales.",
+    "examples": "DECLARE TMP TRANSIENT;",
+    "notes": "Se destruye automáticamente al finalizar el contexto.",
+    "category": "PL/I",
+    "deleted": false
+  },
+{
+    "id": "PL/I-0287",
+    "name": "TRUNCATE",
+    "shortDescription": "Recorta datos a un tamaño especificado.",
+    "longDescription": "TRUNCATE reduce el tamaño de una cadena o dato numérico al límite especificado, eliminando contenido sobrante.",
+    "examples": "TRUNCATE TEXT TO 10;",
+    "notes": "Debe usarse con cuidado para evitar pérdida de información.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0288",
+    "name": "TYPE",
+    "shortDescription": "Declara o referencia un tipo de dato.",
+    "longDescription": "TYPE permite definir o referenciar tipos de datos, facilitando la creación de estructuras y alias.",
+    "examples": "DECLARE T TYPE INTEGER;",
+    "notes": "Puede combinarse con SUBTYPE para especialización.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0289",
+    "name": "UNION",
+    "shortDescription": "Tipo que comparte almacenamiento entre alternativas.",
+    "longDescription": "UNION declara un tipo cuyos campos comparten la misma área de memoria, permitiendo representar variantes de datos.",
+    "examples": "DECLARE U UNION;",
+    "notes": "Solo un campo es válido en cada momento.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0290",
+    "name": "UNIQUE",
+    "shortDescription": "Indica unicidad en claves o valores.",
+    "longDescription": "UNIQUE garantiza que un valor o clave no se repita dentro de una colección o estructura.",
+    "examples": "DECLARE ID UNIQUE;",
+    "notes": "Útil para índices y validaciones de integridad.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0291",
+    "name": "UNLOCK",
+    "shortDescription": "Libera un lock previamente adquirido.",
+    "longDescription": "UNLOCK libera un recurso bloqueado, permitiendo que otras tareas accedan a él.",
+    "examples": "UNLOCK RESOURCE;",
+    "notes": "Debe corresponder a un LOCK previo.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0292",
+    "name": "UNSIGNED",
+    "shortDescription": "Tipo numérico sin signo.",
+    "longDescription": "UNSIGNED declara valores numéricos que no pueden ser negativos, ampliando el rango positivo disponible.",
+    "examples": "DECLARE N UNSIGNED;",
+    "notes": "Útil para contadores y tamaños.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0293",
+    "name": "UPDATE",
+    "shortDescription": "Actualiza registros o estructuras.",
+    "longDescription": "UPDATE modifica el contenido de un registro o estructura previamente leído.",
+    "examples": "UPDATE FILE(F) FROM REC;",
+    "notes": "Debe combinarse con READ UPDATE para coherencia.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0294",
+    "name": "USE",
+    "shortDescription": "Especifica uso de nombres o módulos.",
+    "longDescription": "USE permite importar nombres, módulos o parámetros para facilitar su referencia.",
+    "examples": "USE MODULE_A;",
+    "notes": "Similar a USING pero más general.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0295",
+    "name": "USING",
+    "shortDescription": "Especifica parámetros o contexto utilizado.",
+    "longDescription": "USING declara los parámetros o contexto que una rutina utilizará, facilitando la modularidad.",
+    "examples": "PROCEDURE P USING(A, B);",
+    "notes": "Debe coincidir con la definición del llamador.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0296",
+    "name": "VALIDATE",
+    "shortDescription": "Comprueba validez de datos o condiciones.",
+    "longDescription": "VALIDATE verifica que los datos cumplan reglas o condiciones antes de ser utilizados.",
+    "examples": "CALL VALIDATE(INPUT);",
+    "notes": "Útil para evitar errores en tiempo de ejecución.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0297",
+    "name": "VALUE",
+    "shortDescription": "Especifica valor constante.",
+    "longDescription": "VALUE asigna un valor constante a una variable o parámetro en su declaración.",
+    "examples": "DECLARE PI VALUE(3.14);",
+    "notes": "No puede modificarse en tiempo de ejecución.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0298",
+    "name": "VARIABLE",
+    "shortDescription": "Identificador que contiene datos cambiantes.",
+    "longDescription": "VARIABLE declara un elemento cuyo valor puede cambiar durante la ejecución del programa.",
+    "examples": "DECLARE X VARIABLE;",
+    "notes": "Contrasta con VALUE o CONSTANT.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0299",
+    "name": "VARYING",
+    "shortDescription": "Longitud variable para cadenas o arrays.",
+    "longDescription": "VARYING permite que una cadena o arreglo cambie su longitud dinámicamente.",
+    "examples": "DECLARE TEXT VARYING;",
+    "notes": "Debe especificarse longitud máxima.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0300",
+    "name": "WHEN",
+    "shortDescription": "Rama dentro de CASE o condiciones.",
+    "longDescription": "WHEN define una rama dentro de SELECT o CASE, ejecutándose cuando la condición coincide.",
+    "examples": "WHEN(1) PUT('UNO');",
+    "notes": "Debe acompañarse de OTHERWISE.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0301",
+    "name": "WHILE",
+    "shortDescription": "Bucle que se repite mientras la condición sea verdadera.",
+    "longDescription": "WHILE ejecuta un bloque repetidamente mientras la condición especificada sea verdadera.",
+    "examples": "WHILE X < 10 DO X = X + 1;",
+    "notes": "Debe evitar condiciones que nunca cambian.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0302",
+    "name": "WRITE",
+    "shortDescription": "Escribe datos en archivo o dispositivo.",
+    "longDescription": "WRITE envía datos a un archivo, dispositivo o salida estándar, respetando el formato declarado.",
+    "examples": "WRITE FILE(F) FROM REC;",
+    "notes": "Debe abrirse el archivo en modo OUTPUT.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0303",
+    "name": "YEAR",
+    "shortDescription": "Componente o función que devuelve el año.",
+    "longDescription": "YEAR obtiene el año de una fecha o devuelve el componente correspondiente en operaciones de calendario.",
+    "examples": "Y = YEAR(DATE());",
+    "notes": "Ya generado antes, pero aparece en tu texto.",
+    "category": "PL/I",
+    "deleted": false
+  }      
 ]
 }
