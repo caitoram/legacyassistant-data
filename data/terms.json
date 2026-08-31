@@ -3955,7 +3955,7 @@
     "category": "PL/I",
     "deleted": false
   },
-{
+  {
     "id": "PL/I-0194",
     "name": "PUT",
     "shortDescription": "Sentencias de salida con formatos.",
@@ -4005,7 +4005,7 @@
     "category": "PL/I",
     "deleted": false
   },
-{
+  {
     "id": "PL/I-0199",
     "name": "READ",
     "shortDescription": "Lee datos desde un archivo o dispositivo.",
@@ -4285,7 +4285,7 @@
     "category": "PL/I",
     "deleted": false
   },
-{
+  {
     "id": "PL/I-0227",
     "name": "REAL",
     "shortDescription": "Tipo de punto flotante de simple precisión.",
@@ -4585,7 +4585,7 @@
     "category": "PL/I",
     "deleted": false
   },
-{
+  {
     "id": "PL/I-0257",
     "name": "SKIP",
     "shortDescription": "Salta registros o posiciones en E/S.",
@@ -4885,7 +4885,7 @@
     "category": "PL/I",
     "deleted": false
   },
-{
+  {
     "id": "PL/I-0287",
     "name": "TRUNCATE",
     "shortDescription": "Recorta datos a un tamaño especificado.",
