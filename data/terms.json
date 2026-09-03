@@ -618,7 +618,7 @@
     "category": "COBOL",
     "deleted": false
   },
-{
+  {
     "id": "COBOL-0060",
     "name": "Anidamiento de sentencias IF",
     "shortDescription": "Estructura de múltiples IF encadenados.",
@@ -728,7 +728,7 @@
     "category": "COBOL",
     "deleted": false
   },
-{
+  {
     "id": "COBOL-0071",
     "name": "ORGANIZATION",
     "shortDescription": "Define la organización física del archivo.",
@@ -828,7 +828,7 @@
     "category": "COBOL",
     "deleted": false
   },
-{
+  {
     "id": "COBOL-0081",
     "name": "BLOCK CONTAINS",
     "shortDescription": "Define el tamaño del bloque físico del archivo.",
@@ -928,7 +928,7 @@
     "category": "COBOL",
     "deleted": false
   },
-{
+  {
     "id": "COBOL-0091",
     "name": "WRITE",
     "shortDescription": "Escribe un registro en un archivo.",
@@ -1028,7 +1028,7 @@
     "category": "COBOL",
     "deleted": false
   },
-{
+  {
     "id": "COBOL-0102",
     "name": "Rutina",
     "shortDescription": "Bloque de código reutilizable dentro del programa.",
@@ -1087,7 +1087,7 @@
     "notes": "Debe gestionarse cuidadosamente en procesos batch.",
     "category": "COBOL",
     "deleted": false
-  }    
+  },    
     
     
   {
