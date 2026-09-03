@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-12-02",
+  "versionDate": "2026-12-03",
   "terms": [
    {
     "id": "COBOL-0001",
@@ -96,16 +96,7 @@
     "deleted": false
   },
 
-  {
-    "id": "COBOL-0010",
-    "name": "PERFORM",
-    "shortDescription": "Ejecuta un bloque de código",
-    "longDescription": "PERFORM ejecuta un párrafo, sección o bucle. Es el mecanismo principal para estructurar lógica repetitiva y modular. Permite crear rutinas reutilizables y controlar iteraciones.",
-    "examples": "PERFORM PROCESAR-DATO.\nPERFORM VARYING I FROM 1 BY 1 UNTIL I > 10.",
-    "notes": "Reduce duplicación y mejora el mantenimiento.",
-    "category": "COBOL",
-    "deleted": false
-  },
+ 
 
   {
     "id": "COBOL-0011",
@@ -140,16 +131,7 @@
     "deleted": false
   },
 
-  {
-    "id": "COBOL-0014",
-    "name": "RETURN-CODE",
-    "shortDescription": "Código de retorno del programa",
-    "longDescription": "RETURN-CODE es una variable especial que indica el resultado de la ejecución del programa. Se utiliza para comunicar estados a programas superiores o scripts de control.",
-    "examples": "MOVE 0 TO RETURN-CODE.",
-    "notes": "Debe ser gestionado cuidadosamente en procesos batch.",
-    "category": "COBOL",
-    "deleted": false
-  },
+  
 
   {
     "id": "COBOL-0015",
@@ -162,16 +144,7 @@
     "deleted": false
   },
 
-  {
-    "id": "COBOL-0016",
-    "name": "FD",
-    "shortDescription": "Descriptor de archivo",
-    "longDescription": "FD define las características de un archivo: organización, longitud de registros y modo de acceso. Es esencial para la correcta lectura y escritura.",
-    "examples": "FD ARCHIVO-OUT.\n01 REG-OUT PIC X(100).",
-    "notes": "Debe estar asociado a un SELECT en ENVIRONMENT DIVISION.",
-    "category": "COBOL",
-    "deleted": false
-  },
+  
 
   {
     "id": "COBOL-0017",
@@ -306,39 +279,6 @@
   },
 
   {
-    "id": "COBOL-0029",
-    "name": "READ",
-    "shortDescription": "Lee un registro",
-    "longDescription": "READ permite leer registros de un archivo secuencial o indexado. Puede incluir control de fin de archivo.",
-    "examples": "READ ARCHIVO-IN AT END MOVE 'S' TO FIN.",
-    "notes": "Debe manejarse AT END para evitar errores.",
-    "category": "COBOL",
-    "deleted": false
-  },
-
-  {
-    "id": "COBOL-0030",
-    "name": "WRITE",
-    "shortDescription": "Escribe un registro",
-    "longDescription": "WRITE escribe un registro en un archivo. Puede incluir control de avance de página en archivos impresos.",
-    "examples": "WRITE REG-OUT.",
-    "notes": "Debe abrirse previamente con OPEN OUTPUT o OPEN EXTEND.",
-    "category": "COBOL",
-    "deleted": false
-  },
-
-  {
-    "id": "COBOL-0031",
-    "name": "CLOSE",
-    "shortDescription": "Cierra un archivo",
-    "longDescription": "CLOSE libera los recursos asociados a un archivo. Es obligatorio para evitar bloqueos o inconsistencias.",
-    "examples": "CLOSE ARCHIVO-IN ARCHIVO-OUT.",
-    "notes": "Debe ejecutarse antes de finalizar el programa.",
-    "category": "COBOL",
-    "deleted": false
-  },
-
-  {
     "id": "COBOL-0032",
     "name": "END-IF",
     "shortDescription": "Fin de condición",
@@ -468,16 +408,7 @@
     "category": "COBOL",
     "deleted": false
   },
-  {
-    "id": "COBOL-0045",
-    "name": "EXIT PROGRAM",
-    "shortDescription": "Finaliza el programa",
-    "longDescription": "EXIT PROGRAM finaliza la ejecución del programa actual y retorna el control al programa llamador. Es equivalente a un retorno limpio.",
-    "examples": "EXIT PROGRAM.",
-    "notes": "No finaliza el entorno; solo el módulo actual.",
-    "category": "COBOL",
-    "deleted": false
-  },
+  
   {
     "id": "COBOL-0046",
     "name": "GOBACK",
@@ -631,10 +562,10 @@
   {
     "id": "COBOL-0061",
     "name": "PERFORM",
-    "shortDescription": "Ejecuta párrafos o secciones como rutinas.",
-    "longDescription": "PERFORM permite invocar párrafos o secciones definidos en la PROCEDURE DIVISION. Facilita la modularidad del código y la reutilización de lógica. Puede ejecutarse de forma simple, en bucle o con parámetros de control.",
-    "examples": "PERFORM INICIALIZAR.\nPERFORM PROCESAR-DATOS UNTIL FIN = 'S'.",
-    "notes": "Debe existir el párrafo o sección invocado; mejora la estructura del programa.",
+    "shortDescription": "Ejecuta un bloque de código, párrafos o secciones como rutinas.",
+    "longDescription": "PERFORM permite invocar párrafos o secciones definidos en la PROCEDURE DIVISION. Es el mecanismo principal para estructurar lógica repetitiva y modular. Facilita la modularidad del código y la reutilización de lógica. Permite crear rutinas reutilizables y controlar iteraciones. Puede ejecutarse de forma simple, en bucle o con parámetros de control.",
+    "examples": "PERFORM INICIALIZAR.\nPERFORM PROCESAR-DATOS UNTIL FIN = 'S'.\nPERFORM VARYING I FROM 1 BY 1 UNTIL I > 10.,
+    "notes": "Debe existir el párrafo o sección invocado; mejora la estructura del programa. Reduce duplicación y mejora el mantenimiento",
     "category": "COBOL",
     "deleted": false
   },
@@ -792,9 +723,9 @@
     "id": "COBOL-0077",
     "name": "FD",
     "shortDescription": "Descriptor de archivo en DATA DIVISION.",
-    "longDescription": "FD define la estructura física del archivo, incluyendo longitud de registros, formato y campos. Es esencial para operaciones READ, WRITE, REWRITE y DELETE.",
+    "longDescription": "FD define las características de la estructura física del archivo, incluyendo longitud de registros, formato, modo de acceso y campos. Es esencial para operaciones READ, WRITE, REWRITE y DELETE.",
     "examples": "FD ARCHIVO-IN.\n01 REG-IN PIC X(80).",
-    "notes": "Debe corresponder con la definición en FILE-CONTROL.",
+    "notes": "Debe corresponder con la definición en FILE-CONTROL, y estar asociado a un SELECT en ENVIRONMENT DIVISION.",
     "category": "COBOL",
     "deleted": false
   },
@@ -880,10 +811,10 @@
   },
   {
     "id": "COBOL-0086",
-    "name": "VALU",
+    "name": "VALUE",
     "shortDescription": "Define valores iniciales en definiciones de archivo.",
-    "longDescription": "VALU permite especificar valores predeterminados para ciertos atributos de archivo. Se utiliza en entornos donde los archivos requieren metadatos iniciales.",
-    "examples": "VALU OF FILE-ID IS 'SALIDAS.DAT'.",
+    "longDescription": "VALUE permite especificar valores predeterminados para ciertos atributos de archivo. Se utiliza en entornos donde los archivos requieren metadatos iniciales.",
+    "examples": "VALUE OF FILE-ID IS 'SALIDAS.DAT'.",
     "notes": "No todos los compiladores implementan esta cláusula.",
     "category": "COBOL",
     "deleted": false
@@ -908,16 +839,7 @@
     "category": "COBOL",
     "deleted": false
   },
-  {
-    "id": "COBOL-0089",
-    "name": "FD para ficheros secuenciales",
-    "shortDescription": "Descriptor de archivo secuencial.",
-    "longDescription": "El FD para archivos secuenciales define la estructura del registro y su longitud. Permite leer y escribir registros de forma secuencial.",
-    "examples": "FD ARCHIVO-IN.\n01 REG-IN PIC X(100).",
-    "notes": "Debe coincidir con la definición SELECT.",
-    "category": "COBOL",
-    "deleted": false
-  },
+  
   {
     "id": "COBOL-0090",
     "name": "OPEN",
@@ -932,7 +854,7 @@
     "id": "COBOL-0091",
     "name": "WRITE",
     "shortDescription": "Escribe un registro en un archivo.",
-    "longDescription": "WRITE almacena un registro en un archivo secuencial, relativo o indexado. Puede incluir control de avance de página en archivos impresos y opciones adicionales según el tipo de organización del archivo.",
+    "longDescription": "WRITE escribe un registro en un archivo secuencial, relativo o indexado. Puede incluir control de avance de página en archivos impresos y opciones adicionales según el tipo de organización del archivo.",
     "examples": "WRITE REG-OUT.",
     "notes": "El archivo debe estar abierto en modo OUTPUT, I-O o EXTEND.",
     "category": "COBOL",
@@ -952,7 +874,7 @@
     "id": "COBOL-0093",
     "name": "READ",
     "shortDescription": "Lee un registro desde un archivo.",
-    "longDescription": "READ permite obtener un registro de un archivo secuencial, relativo o indexado. Puede incluir cláusulas AT END o INVALID KEY para controlar condiciones especiales.",
+    "longDescription": "READ permite leer un registro de un archivo secuencial, relativo o indexado. Puede incluir cláusulas AT END o INVALID KEY para controlar condiciones especiales.",
     "examples": "READ ARCHIVO-IN AT END MOVE 'S' TO FIN.",
     "notes": "Debe manejarse AT END o INVALID KEY para evitar errores de lectura.",
     "category": "COBOL",
