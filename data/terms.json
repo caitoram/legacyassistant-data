@@ -564,7 +564,7 @@
     "name": "PERFORM",
     "shortDescription": "Ejecuta un bloque de código, párrafos o secciones como rutinas.",
     "longDescription": "PERFORM permite invocar párrafos o secciones definidos en la PROCEDURE DIVISION. Es el mecanismo principal para estructurar lógica repetitiva y modular. Facilita la modularidad del código y la reutilización de lógica. Permite crear rutinas reutilizables y controlar iteraciones. Puede ejecutarse de forma simple, en bucle o con parámetros de control.",
-    "examples": "PERFORM INICIALIZAR.\nPERFORM PROCESAR-DATOS UNTIL FIN = 'S'.\nPERFORM VARYING I FROM 1 BY 1 UNTIL I > 10.,
+    "examples": "PERFORM INICIALIZAR.\nPERFORM PROCESAR-DATOS UNTIL FIN = 'S'.\nPERFORM VARYING I FROM 1 BY 1 UNTIL I > 10.",
     "notes": "Debe existir el párrafo o sección invocado; mejora la estructura del programa. Reduce duplicación y mejora el mantenimiento",
     "category": "COBOL",
     "deleted": false
