@@ -3,7 +3,7 @@
   "terms": [
     {
         "id": "COBOL-0001",
-        "name": "Program",
+        "name": "PIC",
         "shortDescription": "A compiled COBOL unit.",
         "longDescription": "A COBOL program is a compiled unit that executes business logic and interacts with data files or databases.",
         "examples": "Example of a COBOL program with divisions and paragraphs.",
