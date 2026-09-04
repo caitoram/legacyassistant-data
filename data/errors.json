@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-12-04",
+  "versionDate": "2026-12-05",
   "errors":
 [
   { "id": "ERR-ABEND-0001", "code": "S0C7",
@@ -9292,6 +9292,1136 @@
   "operation": "FILESTATUS",
   "notes": "Indica un error físico o lógico permanente en el fichero. Requiere análisis del volumen, REPRO o reconstrucción del dataset.",
   "deleted": false
-}
+},
+
+
+{
+"id": "ERR-JAVA-0001",
+"code": "NullPointerException",
+"description": "Se intenta utilizar una referencia que tiene valor null.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar qué objeto puede ser null antes de acceder a sus métodos o atributos. Usar validaciones o inicialización correcta de la referencia.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0002",
+"code": "ClassNotFoundException",
+"description": "La JVM no puede encontrar una clase solicitada durante la ejecución.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar el CLASSPATH, las dependencias y que el JAR que contiene la clase esté disponible para la aplicación.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0003",
+"code": "NoClassDefFoundError",
+"description": "La JVM no puede cargar una clase que estaba disponible durante la compilación o que se esperaba encontrar en ejecución.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar JARs, CLASSPATH y dependencias transitivas. A diferencia de ClassNotFoundException, normalmente indica un problema de carga o disponibilidad de una clase durante la ejecución.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0004",
+"code": "ClassCastException",
+"description": "Se intenta convertir un objeto a un tipo incompatible.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar el tipo real del objeto antes de realizar el cast. Comprobar jerarquías de clases e interfaces.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0005",
+"code": "ArrayIndexOutOfBoundsException",
+"description": "Se accede a una posición de un array fuera de sus límites.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar que el índice sea mayor o igual que cero y menor que la longitud del array.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0006",
+"code": "StringIndexOutOfBoundsException",
+"description": "Se intenta acceder a una posición inexistente de una cadena String.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar los índices utilizados en charAt, substring u operaciones similares y comprobar la longitud de la cadena.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0007",
+"code": "IndexOutOfBoundsException",
+"description": "Se utiliza un índice fuera de los límites permitidos por una colección o estructura indexada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar los índices utilizados y el tamaño actual de la colección o estructura.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0008",
+"code": "IllegalArgumentException",
+"description": "Un método recibe un argumento cuyo valor no es válido.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar los valores enviados al método y las restricciones definidas por su API.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0009",
+"code": "IllegalStateException",
+"description": "Una operación no puede ejecutarse porque el objeto no se encuentra en un estado válido.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar el ciclo de vida del objeto y el orden en que se están invocando sus métodos.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0010",
+"code": "NumberFormatException",
+"description": "No se puede convertir una cadena al formato numérico solicitado.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar el contenido de la cadena antes de utilizar Integer.parseInt, Long.parseLong, Double.parseDouble u operaciones similares.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0011",
+"code": "ArithmeticException",
+"description": "Se produce una operación aritmética inválida.",
+"system": "JAVA",
+"operation": "",
+"notes": "Un caso habitual es una división entera entre cero. Revisar los operandos y las operaciones matemáticas realizadas.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0012",
+"code": "UnsupportedOperationException",
+"description": "La operación solicitada no está soportada por el objeto o implementación utilizada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar la implementación concreta utilizada. Es frecuente con determinadas colecciones inmutables o de solo lectura.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0013",
+"code": "ConcurrentModificationException",
+"description": "Una colección ha sido modificada de forma no permitida mientras se está recorriendo.",
+"system": "JAVA",
+"operation": "",
+"notes": "Evitar modificar directamente una colección durante un for-each. Utilizar Iterator.remove, estructuras concurrentes o una estrategia de sincronización adecuada.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0014",
+"code": "ExceptionInInitializerError",
+"description": "Se produce un error durante la inicialización estática de una clase.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar bloques static y la inicialización de variables estáticas. Consultar la causa original asociada al error.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0015",
+"code": "ExceptionInInitializerError",
+"description": "Se produce un error durante la inicialización estática de una clase.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar bloques static y la inicialización de variables estáticas. Consultar la excepción original que provocó el fallo.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0016",
+"code": "StackOverflowError",
+"description": "La pila de ejecución de un thread se ha agotado.",
+"system": "JAVA",
+"operation": "",
+"notes": "Suele estar causado por recursión excesiva o infinita. Revisar la traza de llamadas y especialmente los métodos recursivos.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0017",
+"code": "OutOfMemoryError",
+"description": "La JVM no puede asignar memoria suficiente para continuar la ejecución.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar consumo de heap, fugas de memoria, estructuras demasiado grandes y parámetros de memoria de la JVM. Analizar el heap dump si está disponible.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0018",
+"code": "OutOfMemoryError: Java heap space",
+"description": "La JVM no dispone de suficiente memoria en el Java heap para crear nuevos objetos.",
+"system": "JAVA",
+"operation": "",
+"notes": "Analizar el consumo del heap y posibles fugas de memoria. Revisar el tamaño máximo de heap y los objetos retenidos.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0019",
+"code": "OutOfMemoryError: Metaspace",
+"description": "La JVM no dispone de suficiente memoria para almacenar metadatos de clases.",
+"system": "JAVA",
+"operation": "",
+"notes": "Puede estar relacionado con la carga excesiva de clases o classloaders que no se liberan. Revisar generación dinámica de clases y classloaders.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0020",
+"code": "NoSuchMethodError",
+"description": "La JVM intenta invocar un método que no existe en la versión de la clase cargada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Suele indicar incompatibilidad entre versiones de JARs o dependencias. Revisar duplicados y versiones de las librerías.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0021",
+"code": "NoSuchFieldError",
+"description": "La JVM intenta acceder a un campo que no existe en la versión de la clase cargada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar incompatibilidades entre versiones de librerías y JARs presentes en el entorno de ejecución.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0022",
+"code": "AbstractMethodError",
+"description": "La JVM intenta invocar un método abstracto que no tiene una implementación compatible.",
+"system": "JAVA",
+"operation": "",
+"notes": "Suele aparecer por incompatibilidad de versiones entre interfaces, clases y librerías.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0023",
+"code": "IncompatibleClassChangeError",
+"description": "Se detecta una incompatibilidad entre la estructura esperada de una clase y la clase cargada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar cambios incompatibles entre versiones de clases y dependencias. Comprobar que no existan JARs duplicados.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0024",
+"code": "VerifyError",
+"description": "La JVM no puede verificar correctamente el bytecode de una clase.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar incompatibilidades de bytecode, versiones de Java y librerías. Puede aparecer cuando una clase fue compilada para un entorno incompatible.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0025",
+"code": "UnsupportedClassVersionError",
+"description": "La JVM intenta cargar una clase compilada con una versión de Java superior a la soportada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar la versión utilizada para compilar y la versión de la JVM utilizada para ejecutar la aplicación.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0026",
+"code": "SecurityException",
+"description": "Se deniega una operación por restricciones de seguridad.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar permisos, políticas de seguridad y configuración del entorno Java. Identificar la operación que ha sido denegada.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0027",
+"code": "IllegalAccessException",
+"description": "La aplicación intenta acceder mediante reflexión a un constructor, método o campo sin los permisos necesarios.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar modificadores de acceso y configuración de reflexión. Comprobar que la clase o miembro sea accesible.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0028",
+"code": "NoSuchFieldException",
+"description": "La reflexión intenta localizar un campo que no existe.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar el nombre exacto del campo, la clase utilizada y la jerarquía de clases.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0029",
+"code": "NoSuchMethodException",
+"description": "La reflexión intenta localizar un método que no existe.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar nombre, tipos de parámetros y clase en la que se busca el método.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0030",
+"code": "InstantiationException",
+"description": "No se puede crear una instancia de una clase mediante reflexión.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar que la clase no sea abstracta, que disponga de un constructor apropiado y que sea instanciable.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0031",
+"code": "InvocationTargetException",
+"description": "Una excepción lanzada por el método invocado mediante reflexión queda encapsulada en esta excepción.",
+"system": "JAVA",
+"operation": "",
+"notes": "Consultar getCause o la excepción subyacente para identificar el error real producido por el método invocado.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0032",
+"code": "IOException",
+"description": "Se produce un error durante una operación de entrada o salida.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar archivos, streams, sockets, permisos, rutas y recursos externos involucrados en la operación.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0033",
+"code": "FileNotFoundException",
+"description": "No se puede abrir el archivo especificado.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar que la ruta sea correcta, que el archivo exista y que el proceso tenga permisos suficientes.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0034",
+"code": "EOFException",
+"description": "Se alcanza inesperadamente el final de un flujo de entrada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar que la cantidad de datos leídos coincida con la estructura esperada y que el stream no esté truncado.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0035",
+"code": "FileSystemException",
+"description": "Se produce un error durante una operación sobre el sistema de archivos.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar ruta, permisos, estado del sistema de archivos y detalles adicionales proporcionados por la excepción.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0036",
+"code": "SocketException",
+"description": "Se produce un error durante una operación de socket o comunicación de red.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar conectividad, puerto, socket, timeouts y disponibilidad del sistema remoto.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0037",
+"code": "SocketTimeoutException",
+"description": "Una operación de socket supera el tiempo máximo permitido.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar conectividad, disponibilidad del sistema remoto y valores de timeout configurados.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0038",
+"code": "ConnectException",
+"description": "No se puede establecer una conexión con el sistema remoto.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar hostname, puerto, conectividad de red y disponibilidad del servicio remoto.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0039",
+"code": "InterruptedException",
+"description": "Un thread es interrumpido mientras espera, duerme o realiza una operación bloqueante.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar la lógica de interrupción de threads. No ignorar la interrupción sin una razón justificada.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0040",
+"code": "TimeoutException",
+"description": "Una operación que tenía un límite de tiempo no finaliza dentro del plazo establecido.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar la duración de la operación, bloqueos, dependencias externas y valor del timeout.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0041",
+"code": "RejectedExecutionException",
+"description": "Un Executor no puede aceptar una tarea para su ejecución.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar si el executor está cerrado o si su capacidad de ejecución está saturada.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0042",
+"code": "BrokenBarrierException",
+"description": "Un thread no puede continuar porque una barrera de sincronización se ha roto.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar el estado de los threads que participan en la barrera y posibles interrupciones o timeouts.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0043",
+"code": "CancellationException",
+"description": "Se intenta obtener el resultado de una tarea que fue cancelada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar el estado de Future y la lógica que realiza la cancelación de tareas.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0044",
+"code": "CompletionException",
+"description": "Una operación asíncrona completada excepcionalmente contiene una excepción subyacente.",
+"system": "JAVA",
+"operation": "",
+"notes": "Consultar la causa mediante getCause para identificar la excepción original.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0045",
+"code": "ExecutionException",
+"description": "Una tarea ejecutada de forma asíncrona ha terminado con una excepción.",
+"system": "JAVA",
+"operation": "",
+"notes": "Consultar getCause para obtener la excepción real producida por la tarea.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0046",
+"code": "SQLException",
+"description": "Se produce un error durante una operación de acceso a una base de datos mediante JDBC.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar SQL, conexión, credenciales, driver JDBC, permisos y estado de la base de datos. Consultar SQLState y errorCode cuando estén disponibles.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0047",
+"code": "SQLTimeoutException",
+"description": "Una operación JDBC supera el tiempo máximo configurado.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar rendimiento de la consulta, bloqueos, conectividad y timeout configurado.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0048",
+"code": "SQLIntegrityConstraintViolationException",
+"description": "Una operación JDBC viola una restricción de integridad de la base de datos.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar claves primarias, claves foráneas, restricciones UNIQUE, NOT NULL y reglas de integridad.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0049",
+"code": "ClassFormatError",
+"description": "La JVM detecta un formato incorrecto en el archivo de una clase.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar que el archivo .class o JAR no esté corrupto y que haya sido generado correctamente para la JVM utilizada.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0050",
+"code": "LinkageError",
+"description": "Se produce un problema al enlazar una clase con otras clases o dependencias durante la ejecución.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar conflictos de versiones, JARs duplicados, classloaders y dependencias incompatibles.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0051",
+"code": "ServiceConfigurationError",
+"description": "Se produce un error al cargar un proveedor de servicios mediante el mecanismo Service Provider de Java.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar los archivos META-INF/services, las clases proveedoras y las dependencias disponibles.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0052",
+"code": "MalformedURLException",
+"description": "La URL proporcionada no tiene un formato válido.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar sintaxis, protocolo, host, puerto y formato de la URL.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0053",
+"code": "UnknownHostException",
+"description": "No se puede resolver el nombre del host especificado.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar DNS, hostname, configuración de red y resolución del nombre desde el entorno donde se ejecuta Java.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0054",
+"code": "ProtocolException",
+"description": "Se produce un error relacionado con un protocolo de comunicación.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar el protocolo utilizado, el formato de la petición y la compatibilidad entre cliente y servidor.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0055",
+"code": "UnsupportedEncodingException",
+"description": "Se solicita una codificación de caracteres que no está soportada.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar el nombre del charset utilizado. Preferir nombres estándar como UTF-8 cuando corresponda.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0056",
+"code": "CharacterCodingException",
+"description": "Se produce un error durante la conversión entre caracteres y bytes.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar charset, codificación de entrada y salida y posibles datos no representables.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0057",
+"code": "DateTimeException",
+"description": "Se produce un error al trabajar con fechas, horas o zonas horarias de java.time.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar los valores de fecha y hora, formatos utilizados y operaciones realizadas sobre objetos de java.time.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0058",
+"code": "DateTimeParseException",
+"description": "No se puede convertir un texto al formato de fecha u hora esperado.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar el formato de entrada y el DateTimeFormatter utilizado.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0059",
+"code": "MissingResourceException",
+"description": "No se encuentra un recurso requerido por ResourceBundle.",
+"system": "JAVA",
+"operation": "",
+"notes": "Comprobar que el fichero de recursos exista, esté disponible en el classpath y tenga el nombre esperado.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-0060",
+"code": "MissingFormatArgumentException",
+"description": "Una cadena de formato requiere un argumento que no ha sido proporcionado.",
+"system": "JAVA",
+"operation": "",
+"notes": "Revisar el número y tipo de argumentos utilizados con Formatter, String.format o APIs similares.",
+"deleted": false
+},
+
+
+
+  {
+"id": "ERR-JAVA-ZOS-0001",
+"code": "JVMJ9VM009E",
+"description": "Fallo en J9VMDllMain, punto de entrada principal de las librerías del sistema de la JVM.",
+"system": "JAVA",
+"operation": "JVM_START",
+"notes": "La JVM finaliza. Revisar los mensajes anteriores del job log y la instalación/configuración de Java. Puede requerir análisis con IBM.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0002",
+"code": "JVMJ9VM011W",
+"description": "La JVM no puede cargar una librería determinada.",
+"system": "JAVA",
+"operation": "LOAD_LIBRARY",
+"notes": "Revisar que la librería exista, sea accesible y que las rutas de carga sean correctas. El segundo parámetro del mensaje proporciona información adicional.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0003",
+"code": "JVMJ9VM012W",
+"description": "La JVM no puede descargar correctamente una librería.",
+"system": "JAVA",
+"operation": "UNLOAD_LIBRARY",
+"notes": "Revisar la librería indicada y la configuración de la JVM. La JVM puede continuar ejecutándose.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0004",
+"code": "JVMJ9VM013W",
+"description": "Se produce un error durante la inicialización de una función interna de la JVM.",
+"system": "JAVA",
+"operation": "JVM_INITIALIZATION",
+"notes": "Puede tratarse de un problema interno de la JVM. Revisar los mensajes anteriores y las opciones utilizadas para iniciar Java.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0005",
+"code": "JVMJ9VM014W",
+"description": "Se produce un error durante el proceso de apagado de la JVM.",
+"system": "JAVA",
+"operation": "JVM_SHUTDOWN",
+"notes": "Revisar la función indicada en el mensaje y los mensajes anteriores de la JVM. Puede requerir análisis del entorno Java.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0006",
+"code": "JVMJ9VM015W",
+"description": "Se produce un error al inicializar una librería de la JVM.",
+"system": "JAVA",
+"operation": "LIBRARY_INITIALIZATION",
+"notes": "Revisar especialmente los mensajes que aparecen inmediatamente antes, ya que suelen indicar la causa original. Comprobar también las opciones de JVM.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0007",
+"code": "JVMJ9VM016W",
+"description": "Se produce un error interno al cerrar una librería de la JVM.",
+"system": "JAVA",
+"operation": "LIBRARY_SHUTDOWN",
+"notes": "Revisar los mensajes anteriores y la librería afectada. Si persiste, puede requerir análisis del runtime.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0008",
+"code": "JVMJ9VM022E",
+"description": "La JVM no puede construir correctamente el stack map y aborta la máquina virtual.",
+"system": "JAVA",
+"operation": "BYTECODE_VERIFICATION",
+"notes": "Es un error interno de la JVM. Puede finalizar con exit code 600 o 601. Revisar bytecode y versión del runtime.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0009",
+"code": "JVMJ9VM023I",
+"description": "No se encuentra o no se puede inicializar una clase requerida por la JVM.",
+"system": "JAVA",
+"operation": "CLASS_LOADING",
+"notes": "El mensaje puede indicar que JAVA_HOME es incorrecto o que las class libraries no están instaladas correctamente. Revisar JAVA_HOME y la instalación del SDK.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0010",
+"code": "JVMJ9VM031E",
+"description": "Una clase requerida por la JVM se encuentra en el classpath de aplicación cuando debería estar en el boot classpath.",
+"system": "JAVA",
+"operation": "CLASS_LOADING",
+"notes": "Revisar las opciones de arranque y los classpaths utilizados. No colocar clases internas requeridas por la JVM en el application classpath.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0011",
+"code": "JVMJ9VM034E",
+"description": "El entorno JVMRI requiere que el motor de tracing esté habilitado.",
+"system": "JAVA",
+"operation": "JVMRI",
+"notes": "Añadir la opción -Xtrace apropiada cuando se requiera utilizar el entorno JVMRI.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0012",
+"code": "JVMJ9VM035E",
+"description": "La JVM no puede ni siquiera generar el OutOfMemoryError solicitado.",
+"system": "JAVA",
+"operation": "MEMORY",
+"notes": "Revisar consumo de memoria y opciones -Xmca, -Xmco y -Xmx. Es un problema de falta extrema de memoria.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0013",
+"code": "JVMJ9VM038E",
+"description": "La opción -Xthr especificada no es reconocida por la JVM.",
+"system": "JAVA",
+"operation": "JVM_OPTIONS",
+"notes": "Revisar la opción -Xthr y eliminarla o corregir su sintaxis según la versión de Java utilizada.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0014",
+"code": "JVMJ9VM086W",
+"description": "Una opción de la JVM supera el tamaño máximo permitido.",
+"system": "JAVA",
+"operation": "JVM_OPTIONS",
+"notes": "Revisar la opción indicada y reducir su tamaño al límite soportado.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0015",
+"code": "JVMJ9VM090I",
+"description": "Una consulta de red utilizada por la JVM tarda más de lo esperado.",
+"system": "JAVA",
+"operation": "NETWORK_DNS",
+"notes": "Revisar la configuración de red y DNS. La JVM continúa, aunque determinados datos de diagnóstico pueden no estar disponibles.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0016",
+"code": "JVMJZBL1003E",
+"description": "JZOS no puede abrir el DD STDENV o no se ha proporcionado correctamente.",
+"system": "JAVA",
+"operation": "JZOS_STDENV",
+"notes": "Revisar la definición //STDENV del JCL y el contenido del entorno Unix utilizado para iniciar Java.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0017",
+"code": "JVMJZBL1004E",
+"description": "JZOS no puede configurar correctamente SIGPIPE para los procesos hijo.",
+"system": "JAVA",
+"operation": "JZOS_PROCESS",
+"notes": "Revisar el entorno de procesos hijo y los mensajes adicionales del launcher.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0018",
+"code": "JVMJZBL1007E",
+"description": "JZOS no puede establecer una variable de entorno.",
+"system": "JAVA",
+"operation": "JZOS_ENVIRONMENT",
+"notes": "Revisar la variable indicada, su valor y el entorno definido en STDENV.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0019",
+"code": "JVMJZBL1009E",
+"description": "El proceso hijo que procesa STDENV termina porque el script contiene una instrucción exit.",
+"system": "JAVA",
+"operation": "JZOS_STDENV",
+"notes": "Eliminar la instrucción exit del DD STDENV. JZOS espera que el script configure el entorno y devuelva el control al launcher.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0020",
+"code": "JVMJZBL1011E",
+"description": "JZOS no puede crear la máquina virtual Java mediante JNI_CreateJavaVM.",
+"system": "JAVA",
+"operation": "JVM_START",
+"notes": "Revisar el return code JNI indicado por el mensaje, las opciones de JVM, JAVA_HOME y la configuración del runtime.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0021",
+"code": "JVMJZBL1017E",
+"description": "JZOS no puede obtener los argumentos por defecto de la JVM mediante JNI.",
+"system": "JAVA",
+"operation": "JVM_START",
+"notes": "Revisar la instalación de Java y la configuración del launcher. Comprobar JAVA_HOME y las librerías de la JVM.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0022",
+"code": "JVMJZBL1018E",
+"description": "La variable de entorno CLASSPATH no está definida.",
+"system": "JAVA",
+"operation": "JZOS_CLASSPATH",
+"notes": "Definir CLASSPATH en STDENV o en el entorno utilizado por JZOS. Verificar que incluya las clases y JAR necesarios.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0023",
+"code": "JVMJZBL1019E",
+"description": "JZOS no puede reservar memoria para almacenar el classpath.",
+"system": "JAVA",
+"operation": "JZOS_MEMORY",
+"notes": "Revisar la memoria disponible para el proceso y el tamaño del classpath. Comprobar parámetros de región y MEMLIMIT.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0024",
+"code": "JVMJZBL1020E",
+"description": "JZOS no encuentra la clase Java especificada.",
+"system": "JAVA",
+"operation": "JZOS_CLASS_LOADING",
+"notes": "Comprobar CLASSPATH, nombre completo de la clase y disponibilidad del JAR o directorio que contiene la clase.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0025",
+"code": "JVMJZBL1022E",
+"description": "La función JNI NewStringPlatform falla al convertir una cadena.",
+"system": "JAVA",
+"operation": "JZOS_JNI",
+"notes": "Revisar el return code JNI y los datos utilizados para crear la cadena. Comprobar codificación y entorno.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0026",
+"code": "JVMJZBL1026W",
+"description": "La codificación de salida solicitada no es válida.",
+"system": "JAVA",
+"operation": "JZOS_ENCODING",
+"notes": "Revisar JZOS_OUTPUT_ENCODING y seleccionar una codificación soportada por el entorno.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0027",
+"code": "JVMJZBL1030E",
+"description": "Los argumentos proporcionados al método main superan la longitud máxima permitida.",
+"system": "JAVA",
+"operation": "JZOS_MAIN_ARGS",
+"notes": "Reducir la longitud de los argumentos. Para grandes cantidades de datos puede utilizarse MAINARGS mediante DD.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0028",
+"code": "JVMJZBL1031E",
+"description": "El DD especificado mediante JZOS_MAIN_ARGS_DD no corresponde a un DDNAME válido.",
+"system": "JAVA",
+"operation": "JZOS_MAIN_ARGS",
+"notes": "Revisar el JCL y comprobar que el DDNAME especificado exista y pueda abrirse.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0029",
+"code": "JVMJZBL1032E",
+"description": "La variable JZOS_MAIN_ARGS contiene una cadena sin cerrar correctamente.",
+"system": "JAVA",
+"operation": "JZOS_MAIN_ARGS",
+"notes": "Revisar comillas simples, dobles o caracteres de escape utilizados en los argumentos.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0030",
+"code": "JVMJZBL1033E",
+"description": "No se ha especificado ninguna clase Java para ejecutar.",
+"system": "JAVA",
+"operation": "JZOS_START",
+"notes": "Especificar la clase Java principal en la configuración del JZOS Batch Launcher.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0031",
+"code": "JVMJZBL1034E",
+"description": "JZOS no puede crear un pipe para el proceso hijo utilizado durante la configuración del entorno.",
+"system": "JAVA",
+"operation": "JZOS_PROCESS",
+"notes": "Revisar el mensaje de error asociado y el entorno USS. Comprobar recursos disponibles.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0032",
+"code": "JVMJZBL1035E",
+"description": "JZOS no puede crear o iniciar el proceso hijo utilizado para configurar el entorno.",
+"system": "JAVA",
+"operation": "JZOS_PROCESS",
+"notes": "Revisar el comando indicado, STDENV, permisos y el entorno USS.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0033",
+"code": "JVMJZBL1037E",
+"description": "Se produce un error mientras JZOS espera la finalización del proceso hijo de STDENV.",
+"system": "JAVA",
+"operation": "JZOS_PROCESS",
+"notes": "Revisar el estado del proceso hijo y los mensajes anteriores del launcher.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0034",
+"code": "JVMJZBL1038E",
+"description": "El proceso hijo que ejecuta STDENV termina con un código de retorno distinto de cero.",
+"system": "JAVA",
+"operation": "JZOS_STDENV",
+"notes": "Revisar y corregir el script STDENV. Buscar también mensajes del shell que indiquen la causa original.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0035",
+"code": "JVMJZBL1039E",
+"description": "El proceso hijo utilizado para configurar STDENV recibe una señal inesperada.",
+"system": "JAVA",
+"operation": "JZOS_PROCESS",
+"notes": "Revisar el script STDENV y el estado del proceso USS. Analizar el número de señal indicado.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0036",
+"code": "JVMJZBL1040E",
+"description": "El proceso hijo utilizado para configurar STDENV se detiene debido a una señal inesperada.",
+"system": "JAVA",
+"operation": "JZOS_PROCESS",
+"notes": "Revisar el número de señal y el comportamiento del proceso hijo.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0037",
+"code": "JVMJZBL1041E",
+"description": "El proceso hijo de STDENV finaliza con un estado de espera inesperado.",
+"system": "JAVA",
+"operation": "JZOS_PROCESS",
+"notes": "Revisar el estado del proceso hijo y los mensajes del sistema asociados.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0038",
+"code": "JVMJZBL1042E",
+"description": "El JZOS Batch Launcher termina con un código de retorno de error.",
+"system": "JAVA",
+"operation": "JZOS_BATCH",
+"notes": "El código de retorno por sí solo no identifica la causa. Revisar siempre los mensajes JVMJZBL anteriores del SYSOUT.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0039",
+"code": "JVMJZBL1044E",
+"description": "La máquina virtual Java ha sido abortada por el launcher.",
+"system": "JAVA",
+"operation": "JVM_ABORT",
+"notes": "El launcher puede provocar un ABEND del job step. Revisar los mensajes anteriores y los dumps generados por la JVM.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0040",
+"code": "JVMJZBL1045E",
+"description": "JZOS no puede obtener información sobre la versión de Java desde la JVM.",
+"system": "JAVA",
+"operation": "JVM_VERSION",
+"notes": "Comprobar que el SDK de Java esté correctamente instalado y que JAVA_HOME y las librerías de la JVM sean coherentes.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0041",
+"code": "JVMJZBL1046E",
+"description": "JZOS no puede establecer el listener de consola MVS.",
+"system": "JAVA",
+"operation": "MVS_CONSOLE",
+"notes": "Revisar la configuración del JZOS Batch Launcher y los recursos necesarios para acceder a la consola MVS.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0042",
+"code": "JVMJZBL1047W",
+"description": "El JZOS Batch Launcher termina porque el método main de Java ha producido una excepción.",
+"system": "JAVA",
+"operation": "JAVA_MAIN",
+"notes": "El launcher utiliza el return code 100 para esta situación. Revisar la stack trace de la excepción Java en SYSOUT/STDERR para encontrar la causa real.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0043",
+"code": "JVMJZBL1049W",
+"description": "La versión del JZOS Batch Launcher no coincide con la versión de jzos.jar.",
+"system": "JAVA",
+"operation": "JZOS_VERSION",
+"notes": "Mantener sincronizadas las versiones del launcher y jzos.jar. Revisar instalaciones y PTF aplicados.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0044",
+"code": "JVMJZBL1050E",
+"description": "JZOS no puede leer el JAR especificado mediante la opción -jar.",
+"system": "JAVA",
+"operation": "JAR_LOADING",
+"notes": "Comprobar que el JAR exista, sea accesible y no esté corrupto. Revisar permisos y ruta USS.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0045",
+"code": "JVMJZBL1051E",
+"description": "JZOS no puede leer el manifest del JAR ejecutable.",
+"system": "JAVA",
+"operation": "JAR_LOADING",
+"notes": "Comprobar que el JAR tenga un manifest válido y que pueda leerse correctamente.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0046",
+"code": "JVMJZBL1052E",
+"description": "El manifest del JAR ejecutable no contiene la entrada Main-Class requerida.",
+"system": "JAVA",
+"operation": "JAR_LOADING",
+"notes": "Añadir correctamente Main-Class al manifest o ejecutar especificando la clase principal mediante la configuración de JZOS.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0047",
+"code": "JVMJZBL1054W",
+"description": "Una variable de entorno supera la longitud máxima permitida.",
+"system": "JAVA",
+"operation": "JZOS_ENVIRONMENT",
+"notes": "Identificar la variable indicada y reducir su longitud. Revisar especialmente CLASSPATH y variables construidas dinámicamente.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0048",
+"code": "JVMJZBL1055E",
+"description": "Las opciones de JVM especificadas mediante JZOS superan la longitud máxima permitida.",
+"system": "JAVA",
+"operation": "JVM_OPTIONS",
+"notes": "Reducir JZOS_JVM_OPTIONS. IBM recomienda utilizar OPENJ9_JAVA_OPTIONS cuando se necesiten opciones adicionales.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0049",
+"code": "JVMJZBL1058E",
+"description": "JZOS no puede leer correctamente el fichero asociado al DD MAINARGS.",
+"system": "JAVA",
+"operation": "JZOS_MAIN_ARGS",
+"notes": "Revisar la definición DD, permisos, contenido y errores de I/O.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0050",
+"code": "JVMJZBL1060E",
+"description": "JZOS no puede registrar el escritor de registros SMF 121.1 con los hooks de la JVM.",
+"system": "JAVA",
+"operation": "JZOS_SMF",
+"notes": "Revisar la configuración de SMF/JZOS y la compatibilidad de la versión de Java utilizada.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0051",
+"code": "JVMJZBL1061E",
+"description": "Se han configurado simultáneamente las variables JZOS_JVM_SMF_LOGGING y HJV_JZOS_JVM_SMF_LOGGING.",
+"system": "JAVA",
+"operation": "JZOS_SMF",
+"notes": "Eliminar JZOS_JVM_SMF_LOGGING y utilizar únicamente HJV_JZOS_JVM_SMF_LOGGING para evitar la configuración duplicada.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0052",
+"code": "JVMJZBL1064E",
+"description": "Una o más instrucciones del DD STDENV contienen comillas sin cerrar correctamente.",
+"system": "JAVA",
+"operation": "JZOS_STDENV",
+"notes": "Revisar comillas simples, dobles y back quotes del contenido inline de STDENV.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0053",
+"code": "JVMJZBL1065E",
+"description": "Una instrucción de DD STDENV tiene comillas incompletas o incorrectas.",
+"system": "JAVA",
+"operation": "JZOS_STDENV",
+"notes": "El mensaje puede indicar las líneas afectadas. Revisar las comillas en esas líneas del STDENV.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0054",
+"code": "JVMJZBL2001E",
+"description": "Una llamada malloc no puede reservar memoria en JZOS.",
+"system": "JAVA",
+"operation": "JZOS_MEMORY",
+"notes": "Revisar la memoria disponible y el almacenamiento utilizado por el proceso. Analizar también REGION y MEMLIMIT.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0055",
+"code": "JVMJZBL2005I",
+"description": "Se ha configurado un nivel de logging de JZOS no válido.",
+"system": "JAVA",
+"operation": "JZOS_LOGGING",
+"notes": "Utilizar un nivel de logging soportado. Los niveles de diagnóstico pueden ser especialmente útiles durante problemas de configuración.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0056",
+"code": "JVMJZBL2006E",
+"description": "Se produce una excepción dentro de un método nativo utilizado por JZOS.",
+"system": "JAVA",
+"operation": "JZOS_NATIVE",
+"notes": "Revisar la excepción indicada y la stack trace posterior. La causa puede estar en una llamada JNI o en la configuración del entorno.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0057",
+"code": "JVMJZBL2008E",
+"description": "Una llamada JNI FindClass no puede encontrar o inicializar una clase.",
+"system": "JAVA",
+"operation": "JZOS_JNI",
+"notes": "Comprobar CLASSPATH, classloaders y que la clase esté disponible. La opción verbose puede ayudar al diagnóstico.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0058",
+"code": "JVMJZBL2009E",
+"description": "Una llamada JNI no puede encontrar un método dentro de una clase.",
+"system": "JAVA",
+"operation": "JZOS_JNI",
+"notes": "Comprobar nombre de la clase, nombre del método, firma y disponibilidad del método. Para una clase principal, verificar que exista un main válido.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0059",
+"code": "JVMJZBL2010E",
+"description": "Se produce una excepción al invocar un método Java mediante JNI.",
+"system": "JAVA",
+"operation": "JZOS_JNI",
+"notes": "Revisar la excepción Java subyacente y su stack trace para identificar la causa real.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0060",
+"code": "JVMJZBL2999T",
+"description": "Mensaje diagnóstico o de trace generado por JZOS.",
+"system": "JAVA",
+"operation": "JZOS_DIAGNOSTICS",
+"notes": "El texto real del mensaje aparece en el parámetro del código 2999. Es especialmente útil con niveles de logging T/D durante troubleshooting.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0061",
+"code": "JVMJZTK2001E",
+"description": "El JZOS Toolkit no puede reservar memoria mediante malloc.",
+"system": "JAVA",
+"operation": "JZOS_TOOLKIT_MEMORY",
+"notes": "Revisar la memoria disponible y el estado del proceso. Analizar recursos USS y configuración de memoria.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0062",
+"code": "JVMJZTK2006E",
+"description": "Se produce una excepción en un método nativo del JZOS Toolkit.",
+"system": "JAVA",
+"operation": "JZOS_TOOLKIT_NATIVE",
+"notes": "Revisar el texto de la excepción y la stack trace. Comprobar la llamada Java que ha provocado la operación nativa.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0063",
+"code": "JVMJZTK2008E",
+"description": "El JZOS Toolkit no puede encontrar o inicializar una clase mediante JNI.",
+"system": "JAVA",
+"operation": "JZOS_TOOLKIT_JNI",
+"notes": "Comprobar CLASSPATH, classloader y disponibilidad de la clase. Activar verbose si es necesario.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0064",
+"code": "JVMJZTK2009E",
+"description": "El JZOS Toolkit no puede encontrar un método Java mediante JNI.",
+"system": "JAVA",
+"operation": "JZOS_TOOLKIT_JNI",
+"notes": "Comprobar nombre, firma y disponibilidad del método dentro de la clase.",
+"deleted": false
+},
+{
+"id": "ERR-JAVA-ZOS-0065",
+"code": "JVMJZTK2010E",
+"description": "Un método Java invocado mediante JNI desde JZOS Toolkit produce una excepción.",
+"system": "JAVA",
+"operation": "JZOS_TOOLKIT_JNI",
+"notes": "Buscar la excepción Java subyacente y analizar su stack trace.",
+"deleted": false
+}  
 ]
 }
