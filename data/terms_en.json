@@ -2,7 +2,7 @@
   "versionDate": "2026-12-03",
   "terms": [
     {
-        "id": "TERM001",
+        "id": "COBOL-0001",
         "name": "Program",
         "shortDescription": "A compiled COBOL unit.",
         "longDescription": "A COBOL program is a compiled unit that executes business logic and interacts with data files or databases.",
