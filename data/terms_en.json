@@ -8,7 +8,8 @@
         "longDescription": "A COBOL program is a compiled unit that executes business logic and interacts with data files or databases.",
         "examples": "Example of a COBOL program with divisions and paragraphs.",
         "notes": "Programs are the highest-level execution units in COBOL.",
-        "category": "COBOL"
+        "category": "COBOL",
+        "deleted": false    
     },
     {
         "id": "TERM002",
