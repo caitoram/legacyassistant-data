@@ -1,0 +1,22 @@
+[
+    {
+        "id": "TERM001",
+        "name": "Program",
+        "shortDescription": "A compiled COBOL unit.",
+        "longDescription": "A COBOL program is a compiled unit that executes business logic and interacts with data files or databases.",
+        "examples": "Example of a COBOL program with divisions and paragraphs.",
+        "notes": "Programs are the highest-level execution units in COBOL.",
+        "category": "COBOL"
+    },
+    {
+        "id": "TERM002",
+        "shortDescription": "Defines a unit of work.",
+        "longDescription": "A JCL step defines a unit of work executed by the system, usually referencing a program and its parameters."
+    },
+    {
+        "id": "TERM003",
+        "name": "Dataset",
+        "longDescription": "A dataset is a named collection of data stored on disk or tape, managed by the operating system.",
+        "category": "JCL"
+    }
+]
