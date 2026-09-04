@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-11-31",
+  "versionDate": "2026-12-05",
   "commands": [
    { "id": "CMD-TSO-0001", "name": "ALLOC",
   "shortDescription": "Asigna un dataset o recurso",
