@@ -1,484 +1,1868 @@
 {
   "versionDate": "2026-12-06",
   "commands": [
-   { "id": "CMD-TSO-0001", "name": "ALLOC",
-  "shortDescription": "Asigna un dataset o recurso",
-  "longDescription": "El comando ALLOC permite asignar datasets, archivos o dispositivos para su uso dentro de la sesión TSO. Se utiliza para crear datasets nuevos, asignar datasets existentes, definir atributos como espacio, organización, unidad de almacenamiento y parámetros de acceso.",
-  "examples": "ALLOC DSN(MI.DATASET.TEST) NEW SPACE(5,5) TRACKS RECFM(FB) LRECL(80) BLKSIZE(8000)",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0002", "name": "FREE",
-  "shortDescription": "Libera un dataset asignado",
-  "longDescription": "El comando FREE elimina la asignación previa de un dataset o recurso realizada con ALLOC. Es útil para liberar recursos que ya no se necesitan durante la sesión TSO.",
-  "examples": "FREE DSN(MI.DATASET.TEST)",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0003", "name": "LISTALC",
-  "shortDescription": "Lista datasets asignados",
-  "longDescription": "Muestra todos los datasets y recursos actualmente asignados en la sesión TSO, incluyendo información sobre su estado, tipo de asignación y atributos.",
-  "examples": "LISTALC STATUS",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0004", "name": "LISTCAT",
-  "shortDescription": "Muestra información del catálogo",
-  "longDescription": "LISTCAT consulta el catálogo del sistema y muestra información detallada sobre datasets, incluyendo ubicación, atributos, volúmenes asociados y estadísticas de uso.",
-  "examples": "LISTCAT ENT(MI.DATASET.TEST) ALL",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0005", "name": "DELETE",
-  "shortDescription": "Elimina un dataset",
-  "longDescription": "DELETE elimina un dataset del sistema. Puede borrar datasets secuenciales, particionados o miembros específicos dentro de un PDS.",
-  "examples": "DELETE MI.DATASET.TEST",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0006", "name": "RENAME",
-  "shortDescription": "Renombra un dataset",
-  "longDescription": "RENAME cambia el nombre de un dataset existente en el catálogo. Es útil para reorganizar datasets o aplicar convenciones de nombres.",
-  "examples": "RENAME MI.DATASET.TEST MI.DATASET.NUEVO",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0007", "name": "COPY",
-  "shortDescription": "Copia datasets o miembros",
-  "longDescription": "COPY permite copiar datasets completos o miembros individuales dentro de un PDS. Es común para duplicar configuraciones, scripts o datos.",
-  "examples": "COPY FROM(MI.PDS(MIEMBRO1)) TO(MI.PDS(MIEMBRO2))",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0008", "name": "EDIT",
-  "shortDescription": "Edita un dataset en línea",
-  "longDescription": "EDIT abre un dataset en el editor de línea de TSO, permitiendo modificar su contenido directamente sin necesidad de ISPF.",
-  "examples": "EDIT MI.DATASET.TEST",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0009", "name": "BROWSE",
-  "shortDescription": "Visualiza un dataset sin modificarlo",
-  "longDescription": "BROWSE muestra el contenido de un dataset en modo solo lectura. Es útil para revisar datos sin riesgo de alterarlos.",
-  "examples": "BROWSE MI.DATASET.TEST",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0010", "name": "PROFILE",
-  "shortDescription": "Muestra o cambia parámetros de usuario",
-  "longDescription": "PROFILE muestra y permite modificar parámetros de la sesión TSO del usuario, como prefijos, opciones de edición, notificaciones y configuraciones de trabajo.",
-  "examples": "PROFILE PREFIX(MI.USUARIO)",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0011", "name": "SEND",
-  "shortDescription": "Envía mensajes a otros usuarios",
-  "longDescription": "SEND permite enviar mensajes interactivos a otros usuarios conectados al sistema. Es útil para comunicación rápida entre operadores o desarrolladores.",
-  "examples": "SEND 'Revisa el job 1234' USER(JSMITH)",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0012", "name": "RECEIVE",
-  "shortDescription": "Recibe datos enviados por otro usuario",
-  "longDescription": "RECEIVE permite aceptar datasets o datos enviados por otro usuario mediante TSO. Se utiliza para transferencias simples entre usuarios.",
-  "examples": "RECEIVE INDATASET(MI.DATASET.RECIBIDO)",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0013", "name": "SUBMIT",
-  "shortDescription": "Envía un JCL a ejecución",
-  "longDescription": "SUBMIT envía un dataset que contiene JCL al sistema JES para su ejecución. Es uno de los comandos más utilizados para lanzar jobs batch.",
-  "examples": "SUBMIT 'MI.JCL(JOBTEST)'",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0014", "name": "STATUS",
-  "shortDescription": "Muestra el estado de un job",
-  "longDescription": "STATUS consulta el estado de jobs enviados por el usuario, mostrando si están en cola, ejecutándose, finalizados o con errores.",
-  "examples": "STATUS JOB1234",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0015", "name": "TSO LOGON",
-  "shortDescription": "Inicia sesión en TSO",
-  "longDescription": "TSO LOGON inicia una sesión interactiva en el entorno TSO/E, permitiendo al usuario acceder a recursos del sistema, ejecutar comandos y trabajar con datasets.",
-  "examples": "TSO LOGON USERID(MIUSUARIO)",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0016", "name": "TSO LOGOFF",
-  "shortDescription": "Finaliza sesión en TSO",
-  "longDescription": "TSO LOGOFF cierra la sesión TSO del usuario, liberando recursos y finalizando procesos asociados.",
-  "examples": "TSO LOGOFF",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0017", "name": "ISPF",
-  "shortDescription": "Inicia el entorno ISPF",
-  "longDescription": "ISPF abre el entorno interactivo de paneles, menús y utilidades del sistema. Es la interfaz principal para edición, navegación y herramientas avanzadas.",
-  "examples": "ISPF",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0018", "name": "HELP",
-  "shortDescription": "Muestra ayuda del sistema",
-  "longDescription": "HELP muestra información detallada sobre comandos TSO, sintaxis, parámetros y utilidades disponibles en el sistema.",
-  "examples": "HELP ALLOC",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0019", "name": "EXEC",
-  "shortDescription": "Ejecuta un REXX o CLIST",
-  "longDescription": "EXEC ejecuta scripts escritos en REXX o CLIST directamente desde TSO. Es fundamental para automatizar tareas y crear utilidades personalizadas.",
-  "examples": "EXEC 'MI.REXX(SCRIPT1)'",
-  "category": "TSO", "deleted": false },
-
-{ "id": "CMD-TSO-0020", "name": "TIME",
-  "shortDescription": "Muestra la hora del sistema",
-  "longDescription": "TIME muestra la hora y fecha actual del sistema, junto con información opcional sobre tiempo de CPU utilizado en la sesión.",
-  "examples": "TIME",
-  "category": "TSO", "deleted": false },
-
-  { "id": "CMD-ISPF-0001", "name": "3.4",
-  "shortDescription": "Gestión de datasets",
-  "longDescription": "La opción 3.4 del menú ISPF permite buscar, listar y gestionar datasets del sistema. Desde esta pantalla se pueden visualizar atributos, abrir datasets en modo EDIT o BROWSE, renombrarlos, eliminarlos, copiar miembros y realizar acciones administrativas sobre ellos.",
-  "examples": "En ISPF: Opción 3 → Opción 4 → Introducir patrón: MI.USERID.*",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0002", "name": "3.3",
-  "shortDescription": "Copiar datasets",
-  "longDescription": "La opción 3.3 permite copiar datasets completos o miembros individuales entre PDS. Es útil para duplicar configuraciones, scripts o datos sin necesidad de comandos TSO.",
-  "examples": "En ISPF: Opción 3 → Opción 3 → FROM: MI.PDS1 → TO: MI.PDS2",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0003", "name": "3.2",
-  "shortDescription": "Crear o borrar datasets",
-  "longDescription": "La opción 3.2 permite crear nuevos datasets especificando atributos como organización, tamaño, unidad y formato. También permite borrar datasets existentes de forma segura.",
-  "examples": "En ISPF: Opción 3 → Opción 2 → Crear dataset: MI.DATASET.NEW",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0004", "name": "2",
-  "shortDescription": "Editor ISPF",
-  "longDescription": "La opción 2 abre el editor ISPF, uno de los editores más utilizados en mainframe. Permite editar datasets secuenciales, miembros de PDS, aplicar comandos de línea, macros y herramientas de edición avanzadas.",
-  "examples": "En ISPF: Opción 2 → Dataset: MI.PDS(MIEMBRO1)",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0005", "name": "1",
-  "shortDescription": "Visualización de datasets",
-  "longDescription": "La opción 1 permite visualizar datasets en modo BROWSE sin modificar su contenido. Es ideal para revisar JCL, logs, configuraciones o datos sin riesgo de alteración.",
-  "examples": "En ISPF: Opción 1 → Dataset: MI.DATASET.LOG",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0006", "name": "TSO ISRDDN",
-  "shortDescription": "Muestra DDs activos",
-  "longDescription": "ISRDDN muestra todos los DDNAME asignados en la sesión actual, incluyendo datasets asociados, volúmenes y atributos. Es útil para depuración y análisis de asignaciones.",
-  "examples": "TSO ISRDDN",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0007", "name": "TSO ISPF",
-  "shortDescription": "Inicia ISPF desde TSO",
-  "longDescription": "El comando ISPF inicia el entorno interactivo ISPF desde la línea de comandos TSO, permitiendo acceder a menús, paneles y utilidades.",
-  "examples": "TSO ISPF",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0008", "name": "TSO ISPSTART",
-  "shortDescription": "Inicia un panel ISPF específico",
-  "longDescription": "ISPSTART permite iniciar ISPF directamente en un panel, aplicación o utilidad específica. Es útil para automatizar accesos rápidos.",
-  "examples": "TSO ISPSTART PGM(ISRSUPC)",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0009", "name": "TSO DSLIST",
-  "shortDescription": "Lista datasets del usuario",
-  "longDescription": "DSLIST muestra una lista de datasets basados en un patrón. Es equivalente a la opción 3.4 pero desde línea de comandos.",
-  "examples": "TSO DSLIST MI.USERID.*",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0010", "name": "TSO EDIT",
-  "shortDescription": "Edita un dataset desde línea de comandos",
-  "longDescription": "EDIT abre un dataset directamente en el editor ISPF sin pasar por menús. Permite edición rápida de miembros o datasets secuenciales.",
-  "examples": "TSO EDIT MI.PDS(MIEMBRO1)",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0011", "name": "TSO BROWSE",
-  "shortDescription": "Visualiza un dataset desde línea de comandos",
-  "longDescription": "BROWSE permite visualizar datasets en modo solo lectura desde la línea de comandos TSO.",
-  "examples": "TSO BROWSE MI.DATASET.LOG",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0012", "name": "TSO VIEW",
-  "shortDescription": "Visualiza un dataset con formateo",
-  "longDescription": "VIEW muestra datasets con formateo especial, útil para JCL, reportes y datos estructurados. Permite comandos de visualización avanzados.",
-  "examples": "TSO VIEW MI.JCL(JOB1)",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0013", "name": "TSO LISTBC",
-  "shortDescription": "Muestra el broadcast del sistema",
-  "longDescription": "LISTBC muestra los mensajes broadcast enviados por el sistema, normalmente utilizados para avisos importantes, mantenimiento o alertas.",
-  "examples": "TSO LISTBC",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0014", "name": "TSO LISTA",
-  "shortDescription": "Lista atributos del usuario",
-  "longDescription": "LISTA muestra atributos del usuario, incluyendo prefijos, configuraciones de sesión y parámetros de trabajo.",
-  "examples": "TSO LISTA",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0015", "name": "TSO LISTC",
-  "shortDescription": "Lista catálogos",
-  "longDescription": "LISTC consulta el catálogo del sistema y muestra información sobre datasets, volúmenes y atributos.",
-  "examples": "TSO LISTC ENT(MI.DATASET.TEST) ALL",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0016", "name": "TSO LISTDS",
-  "shortDescription": "Lista datasets específicos",
-  "longDescription": "LISTDS muestra información detallada de un dataset, incluyendo atributos, organización, tamaño y volúmenes asociados.",
-  "examples": "TSO LISTDS MI.DATASET.TEST",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0017", "name": "TSO LISTGRP",
-  "shortDescription": "Lista grupos RACF",
-  "longDescription": "LISTGRP muestra los grupos RACF asociados al usuario, incluyendo roles, permisos y pertenencias.",
-  "examples": "TSO LISTGRP MIUSUARIO",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0018", "name": "TSO LISTUSER",
-  "shortDescription": "Lista información del usuario",
-  "longDescription": "LISTUSER muestra información detallada del usuario RACF, incluyendo atributos, permisos, grupos y configuraciones de seguridad.",
-  "examples": "TSO LISTUSER MIUSUARIO",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0019", "name": "TSO LU",
-  "shortDescription": "Alias de LISTUSER",
-  "longDescription": "LU es un alias abreviado del comando LISTUSER, utilizado para consultar información del usuario de forma rápida.",
-  "examples": "TSO LU MIUSUARIO",
-  "category": "ISPF", "deleted": false },
-
-{ "id": "CMD-ISPF-0020", "name": "TSO OGET",
-  "shortDescription": "Descarga archivos vía OMVS",
-  "longDescription": "OGET permite descargar archivos desde el entorno UNIX System Services (OMVS) hacia datasets tradicionales. Es útil para mover archivos entre z/OS UNIX y MVS.",
-  "examples": "TSO OGET '/u/miusuario/archivo.txt' 'MI.DATASET.TXT'",
-  "category": "ISPF", "deleted": false },
-    
-   { "id": "CMD-SDSF-0001", "name": "DA",
-  "shortDescription": "Lista datasets activos",
-  "longDescription": "El panel DA muestra todos los datasets activos asociados a la sesión, incluyendo asignaciones dinámicas, DDNAMEs y datasets utilizados por jobs en ejecución. Es útil para diagnosticar problemas de asignación o dependencias.",
-  "examples": "En SDSF: Comando DA",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0002", "name": "ST",
-  "shortDescription": "Lista jobs activos",
-  "longDescription": "El panel ST muestra los jobs activos en el sistema JES2/JES3, incluyendo jobs en ejecución, en cola, retenidos o esperando recursos. Permite ver estado, propietario, clase, prioridad y comandos de control.",
-  "examples": "En SDSF: Comando ST",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0003", "name": "H",
-  "shortDescription": "Historial de jobs",
-  "longDescription": "El panel H muestra el historial de jobs completados recientemente, incluyendo código de retorno, tiempo de ejecución, clase y propietario. Es útil para revisar ejecuciones previas.",
-  "examples": "En SDSF: Comando H",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0004", "name": "I",
-  "shortDescription": "Información del sistema",
-  "longDescription": "El panel I muestra información general del sistema JES, incluyendo estado de colas, número de jobs activos, recursos disponibles y estadísticas de rendimiento.",
-  "examples": "En SDSF: Comando I",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0005", "name": "LOG",
-  "shortDescription": "Muestra el log del sistema",
-  "longDescription": "El panel LOG muestra el log del sistema JES, incluyendo mensajes de operador, eventos del sistema, avisos y errores. Es fundamental para diagnóstico.",
-  "examples": "En SDSF: Comando LOG",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0006", "name": "OWNER",
-  "shortDescription": "Filtra jobs por usuario",
-  "longDescription": "OWNER permite filtrar la vista de jobs por propietario, mostrando únicamente los jobs pertenecientes al usuario especificado.",
-  "examples": "OWNER MIUSUARIO",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0007", "name": "PREFIX",
-  "shortDescription": "Filtra jobs por prefijo",
-  "longDescription": "PREFIX filtra los jobs cuyo nombre comienza con un prefijo específico. Es útil para localizar jobs de un proyecto o aplicación.",
-  "examples": "PREFIX MIJOB",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0008", "name": "FIND",
-  "shortDescription": "Busca texto en el spool",
-  "longDescription": "FIND permite buscar texto dentro del spool del job seleccionado. Es útil para localizar errores, mensajes específicos o resultados.",
-  "examples": "FIND 'ERROR'",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0009", "name": "SORT",
-  "shortDescription": "Ordena columnas del spool",
-  "longDescription": "SORT ordena la lista de jobs o datasets según una columna específica, como JOBNAME, OWNER, CLASS o RC. Facilita la organización de la vista.",
-  "examples": "SORT JOBNAME",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0010", "name": "PRINT",
-  "shortDescription": "Imprime el contenido del spool",
-  "longDescription": "PRINT envía el contenido del spool del job seleccionado a una impresora o dataset de salida. Es útil para archivado o análisis externo.",
-  "examples": "PRINT",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0011", "name": "PURGE",
-  "shortDescription": "Elimina un job del spool",
-  "longDescription": "PURGE elimina completamente un job del spool, incluyendo su salida, logs y datos asociados. Solo disponible para usuarios autorizados.",
-  "examples": "PURGE JOB12345",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0012", "name": "CANCEL",
-  "shortDescription": "Cancela un job activo",
-  "longDescription": "CANCEL detiene la ejecución de un job activo en el sistema. Es útil cuando un job está colgado, consume demasiados recursos o necesita detenerse por mantenimiento.",
-  "examples": "CANCEL JOB12345",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0013", "name": "RELEASE",
-  "shortDescription": "Libera un job retenido",
-  "longDescription": "RELEASE libera un job que está retenido (HELD), permitiendo que continúe su procesamiento normal en JES.",
-  "examples": "RELEASE JOB12345",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0014", "name": "HELD",
-  "shortDescription": "Lista jobs retenidos",
-  "longDescription": "HELD muestra todos los jobs que están retenidos en el sistema, ya sea por el usuario, por políticas o por condiciones de ejecución.",
-  "examples": "En SDSF: Comando HELD",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0015", "name": "OUTPUT",
-  "shortDescription": "Muestra el output del job",
-  "longDescription": "OUTPUT muestra el spool completo del job seleccionado, incluyendo SYSOUT, mensajes de compilación, ejecución y logs.",
-  "examples": "OUTPUT JOB12345",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0016", "name": "XDC",
-  "shortDescription": "Copia spool a dataset",
-  "longDescription": "XDC copia el contenido del spool del job a un dataset MVS. Es útil para análisis, archivado o envío a otros usuarios.",
-  "examples": "XDC → Seleccionar dataset destino",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0017", "name": "TRACE",
-  "shortDescription": "Activa trazas del sistema",
-  "longDescription": "TRACE activa o muestra trazas del sistema JES, útiles para diagnóstico avanzado, análisis de rendimiento y depuración.",
-  "examples": "TRACE ON",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0018", "name": "WHO",
-  "shortDescription": "Muestra usuarios conectados",
-  "longDescription": "WHO muestra todos los usuarios actualmente conectados al sistema, junto con información de sesión, terminal y actividad.",
-  "examples": "WHO",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0019", "name": "DA-D",
-  "shortDescription": "Detalle de datasets activos",
-  "longDescription": "DA-D muestra información detallada de cada dataset activo, incluyendo atributos, volúmenes, DDNAMEs y estado de asignación.",
-  "examples": "En SDSF DA → Comando D",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-SDSF-0020", "name": "ST-D",
-  "shortDescription": "Detalle de jobs activos",
-  "longDescription": "ST-D muestra detalles completos del job activo seleccionado, incluyendo pasos ejecutados, recursos utilizados, mensajes y estadísticas.",
-  "examples": "En SDSF ST → Comando D",
-  "category": "SDSF", "deleted": false },
-
-{ "id": "CMD-RACF-0001", "name": "ADDUSER",
-  "shortDescription": "Crea un nuevo usuario RACF",
-  "longDescription": "ADDUSER permite crear un nuevo perfil de usuario en RACF, definiendo atributos básicos como nombre, grupo principal, contraseña inicial y permisos de acceso. Es uno de los comandos fundamentales para la administración de seguridad.",
-  "examples": "ADDUSER MIUSUARIO DFLTGRP(MIGRUPO) PASSWORD(INICIAL1)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0002", "name": "DELUSER",
-  "shortDescription": "Elimina un usuario RACF",
-  "longDescription": "DELUSER elimina un perfil de usuario del sistema RACF, incluyendo sus asociaciones con grupos y permisos. Solo puede ser ejecutado por administradores con autoridad suficiente.",
-  "examples": "DELUSER MIUSUARIO",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0003", "name": "ALTUSER",
-  "shortDescription": "Modifica atributos de usuario",
-  "longDescription": "ALTUSER permite modificar atributos de un usuario RACF, como contraseña, grupos, permisos especiales, expiración y configuraciones de seguridad.",
-  "examples": "ALTUSER MIUSUARIO PASSWORD(NUEVA123) REVOKE",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0004", "name": "LISTUSER",
-  "shortDescription": "Muestra información del usuario",
-  "longDescription": "LISTUSER muestra información detallada del perfil RACF de un usuario, incluyendo grupos, permisos, atributos de seguridad, recursos asociados y configuraciones especiales.",
-  "examples": "LISTUSER MIUSUARIO",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0005", "name": "LU",
-  "shortDescription": "Alias de LISTUSER",
-  "longDescription": "LU es un alias abreviado del comando LISTUSER, utilizado para consultar información del usuario de forma rápida.",
-  "examples": "LU MIUSUARIO",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0006", "name": "ADDGROUP",
-  "shortDescription": "Crea un grupo RACF",
-  "longDescription": "ADDGROUP permite crear un nuevo grupo RACF, definiendo su propietario, usuarios asociados y atributos de seguridad.",
-  "examples": "ADDGROUP MIGRUPO OWNER(ADMIN)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0007", "name": "DELGROUP",
-  "shortDescription": "Elimina un grupo RACF",
-  "longDescription": "DELGROUP elimina un grupo RACF del sistema, siempre que no tenga usuarios asociados o dependencias activas.",
-  "examples": "DELGROUP MIGRUPO",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0008", "name": "ALTGROUP",
-  "shortDescription": "Modifica atributos de grupo",
-  "longDescription": "ALTGROUP permite modificar atributos de un grupo RACF, como propietario, usuarios asociados, permisos y configuraciones de seguridad.",
-  "examples": "ALTGROUP MIGRUPO OWNER(SECADMIN)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0009", "name": "LISTGRP",
-  "shortDescription": "Lista información del grupo",
-  "longDescription": "LISTGRP muestra información detallada de un grupo RACF, incluyendo usuarios asociados, permisos, atributos y dependencias.",
-  "examples": "LISTGRP MIGRUPO",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0010", "name": "CONNECT",
-  "shortDescription": "Conecta usuario a grupo",
-  "longDescription": "CONNECT permite asociar un usuario a un grupo RACF, otorgándole permisos y atributos definidos por dicho grupo.",
-  "examples": "CONNECT MIUSUARIO GROUP(MIGRUPO)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0011", "name": "REMOVE",
-  "shortDescription": "Elimina usuario de grupo",
-  "longDescription": "REMOVE elimina la asociación entre un usuario y un grupo RACF, retirando los permisos heredados del grupo.",
-  "examples": "REMOVE MIUSUARIO GROUP(MIGRUPO)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0012", "name": "RDEFINE",
-  "shortDescription": "Define un recurso RACF",
-  "longDescription": "RDEFINE permite crear un nuevo recurso protegido por RACF, especificando clase, permisos, propietario y atributos de seguridad.",
-  "examples": "RDEFINE DATASET MI.DATASET.SECURO UACC(NONE)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0013", "name": "RALTER",
-  "shortDescription": "Modifica un recurso RACF",
-  "longDescription": "RALTER permite modificar atributos de un recurso RACF existente, como permisos, propietario, auditoría o accesos.",
-  "examples": "RALTER DATASET MI.DATASET.SECURO UACC(READ)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0014", "name": "RDELETE",
-  "shortDescription": "Elimina un recurso RACF",
-  "longDescription": "RDELETE elimina un recurso protegido por RACF, retirándolo del catálogo de seguridad.",
-  "examples": "RDELETE DATASET MI.DATASET.SECURO",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0015", "name": "PERMIT",
-  "shortDescription": "Otorga permisos a un recurso",
-  "longDescription": "PERMIT permite otorgar permisos de acceso a un recurso RACF para usuarios o grupos específicos. Es uno de los comandos más utilizados en administración de seguridad.",
-  "examples": "PERMIT MI.DATASET.SECURO CLASS(DATASET) ID(MIUSUARIO) ACCESS(READ)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0016", "name": "REVOKE",
-  "shortDescription": "Revoca permisos de un recurso",
-  "longDescription": "REVOKE elimina permisos previamente otorgados a un usuario o grupo sobre un recurso RACF.",
-  "examples": "REVOKE MI.DATASET.SECURO CLASS(DATASET) ID(MIUSUARIO)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0017", "name": "SEARCH",
-  "shortDescription": "Busca recursos RACF",
-  "longDescription": "SEARCH permite buscar recursos definidos en RACF según patrones, clases o atributos. Es útil para auditorías y revisiones de seguridad.",
-  "examples": "SEARCH CLASS(DATASET) MASK(MI.*)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0018", "name": "SETROPTS",
-  "shortDescription": "Configura opciones globales de RACF",
-  "longDescription": "SETROPTS permite configurar opciones globales del sistema RACF, como auditoría, clases activas, protección de recursos y políticas de seguridad.",
-  "examples": "SETROPTS CLASSACT(DATASET)",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0019", "name": "RVARY",
-  "shortDescription": "Activa o desactiva clases RACF",
-  "longDescription": "RVARY permite activar o desactivar clases de recursos RACF dinámicamente, sin reiniciar el sistema.",
-  "examples": "RVARY ACTIVE DATASET",
-  "category": "RACF", "deleted": false },
-
-{ "id": "CMD-RACF-0020", "name": "PWDCHANGE",
-  "shortDescription": "Cambia contraseña de usuario",
-  "longDescription": "PWDCHANGE permite cambiar la contraseña de un usuario RACF, ya sea por el propio usuario o por un administrador autorizado.",
-  "examples": "ALTUSER MIUSUARIO PASSWORD(NUEVA123)",
-  "category": "RACF", "deleted": false }
+    {
+      "id": "CMD-TSO-0001",
+      "name": "ALLOC",
+      "shortDescription": "Asigna un dataset o recurso",
+      "longDescription": "El comando ALLOC permite asignar datasets, archivos o dispositivos para su uso dentro de la sesión TSO. Se utiliza para crear datasets nuevos, asignar datasets existentes, definir atributos como espacio, organización, unidad de almacenamiento y parámetros de acceso.",
+      "examples": "ALLOC DSN(MI.DATASET.TEST) NEW SPACE(5,5) TRACKS RECFM(FB) LRECL(80) BLKSIZE(8000)",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0002",
+      "name": "FREE",
+      "shortDescription": "Libera un dataset asignado",
+      "longDescription": "El comando FREE elimina la asignación previa de un dataset o recurso realizada con ALLOC. Es útil para liberar recursos que ya no se necesitan durante la sesión TSO.",
+      "examples": "FREE DSN(MI.DATASET.TEST)",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0003",
+      "name": "LISTALC",
+      "shortDescription": "Lista datasets asignados",
+      "longDescription": "Muestra todos los datasets y recursos actualmente asignados en la sesión TSO, incluyendo información sobre su estado, tipo de asignación y atributos.",
+      "examples": "LISTALC STATUS",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0004",
+      "name": "LISTCAT",
+      "shortDescription": "Muestra información del catálogo",
+      "longDescription": "LISTCAT consulta el catálogo del sistema y muestra información detallada sobre datasets, incluyendo ubicación, atributos, volúmenes asociados y estadísticas de uso.",
+      "examples": "LISTCAT ENT(MI.DATASET.TEST) ALL",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0005",
+      "name": "DELETE",
+      "shortDescription": "Elimina un dataset",
+      "longDescription": "DELETE elimina un dataset del sistema. Puede borrar datasets secuenciales, particionados o miembros específicos dentro de un PDS.",
+      "examples": "DELETE MI.DATASET.TEST",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0006",
+      "name": "RENAME",
+      "shortDescription": "Renombra un dataset",
+      "longDescription": "RENAME cambia el nombre de un dataset existente en el catálogo. Es útil para reorganizar datasets o aplicar convenciones de nombres.",
+      "examples": "RENAME MI.DATASET.TEST MI.DATASET.NUEVO",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0007",
+      "name": "COPY",
+      "shortDescription": "Copia datasets o miembros",
+      "longDescription": "COPY permite copiar datasets completos o miembros individuales dentro de un PDS. Es común para duplicar configuraciones, scripts o datos.",
+      "examples": "COPY FROM(MI.PDS(MIEMBRO1)) TO(MI.PDS(MIEMBRO2))",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0008",
+      "name": "EDIT",
+      "shortDescription": "Edita un dataset en línea",
+      "longDescription": "EDIT abre un dataset en el editor de línea de TSO, permitiendo modificar su contenido directamente sin necesidad de ISPF.",
+      "examples": "EDIT MI.DATASET.TEST",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0009",
+      "name": "BROWSE",
+      "shortDescription": "Visualiza un dataset sin modificarlo",
+      "longDescription": "BROWSE muestra el contenido de un dataset en modo solo lectura. Es útil para revisar datos sin riesgo de alterarlos.",
+      "examples": "BROWSE MI.DATASET.TEST",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0010",
+      "name": "PROFILE",
+      "shortDescription": "Muestra o cambia parámetros de usuario",
+      "longDescription": "PROFILE muestra y permite modificar parámetros de la sesión TSO del usuario, como prefijos, opciones de edición, notificaciones y configuraciones de trabajo.",
+      "examples": "PROFILE PREFIX(MI.USUARIO)",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0011",
+      "name": "SEND",
+      "shortDescription": "Envía mensajes a otros usuarios",
+      "longDescription": "SEND permite enviar mensajes interactivos a otros usuarios conectados al sistema. Es útil para comunicación rápida entre operadores o desarrolladores.",
+      "examples": "SEND 'Revisa el job 1234' USER(JSMITH)",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0012",
+      "name": "RECEIVE",
+      "shortDescription": "Recibe datos enviados por otro usuario",
+      "longDescription": "RECEIVE permite aceptar datasets o datos enviados por otro usuario mediante TSO. Se utiliza para transferencias simples entre usuarios.",
+      "examples": "RECEIVE INDATASET(MI.DATASET.RECIBIDO)",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0013",
+      "name": "SUBMIT",
+      "shortDescription": "Envía un JCL a ejecución",
+      "longDescription": "SUBMIT envía un dataset que contiene JCL al sistema JES para su ejecución. Es uno de los comandos más utilizados para lanzar jobs batch.",
+      "examples": "SUBMIT 'MI.JCL(JOBTEST)'",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0014",
+      "name": "STATUS",
+      "shortDescription": "Muestra el estado de un job",
+      "longDescription": "STATUS consulta el estado de jobs enviados por el usuario, mostrando si están en cola, ejecutándose, finalizados o con errores.",
+      "examples": "STATUS JOB1234",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0015",
+      "name": "TSO LOGON",
+      "shortDescription": "Inicia sesión en TSO",
+      "longDescription": "TSO LOGON inicia una sesión interactiva en el entorno TSO/E, permitiendo al usuario acceder a recursos del sistema, ejecutar comandos y trabajar con datasets.",
+      "examples": "TSO LOGON USERID(MIUSUARIO)",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0016",
+      "name": "TSO LOGOFF",
+      "shortDescription": "Finaliza sesión en TSO",
+      "longDescription": "TSO LOGOFF cierra la sesión TSO del usuario, liberando recursos y finalizando procesos asociados.",
+      "examples": "TSO LOGOFF",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0017",
+      "name": "ISPF",
+      "shortDescription": "Inicia el entorno ISPF",
+      "longDescription": "ISPF abre el entorno interactivo de paneles, menús y utilidades del sistema. Es la interfaz principal para edición, navegación y herramientas avanzadas.",
+      "examples": "ISPF",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0018",
+      "name": "HELP",
+      "shortDescription": "Muestra ayuda del sistema",
+      "longDescription": "HELP muestra información detallada sobre comandos TSO, sintaxis, parámetros y utilidades disponibles en el sistema.",
+      "examples": "HELP ALLOC",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0019",
+      "name": "EXEC",
+      "shortDescription": "Ejecuta un REXX o CLIST",
+      "longDescription": "EXEC ejecuta scripts escritos en REXX o CLIST directamente desde TSO. Es fundamental para automatizar tareas y crear utilidades personalizadas.",
+      "examples": "EXEC 'MI.REXX(SCRIPT1)'",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0020",
+      "name": "TIME",
+      "shortDescription": "Muestra la hora del sistema",
+      "longDescription": "TIME muestra la hora y fecha actual del sistema, junto con información opcional sobre tiempo de CPU utilizado en la sesión.",
+      "examples": "TIME",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0001",
+      "name": "3.4",
+      "shortDescription": "Gestión de datasets",
+      "longDescription": "La opción 3.4 del menú ISPF permite buscar, listar y gestionar datasets del sistema. Desde esta pantalla se pueden visualizar atributos, abrir datasets en modo EDIT o BROWSE, renombrarlos, eliminarlos, copiar miembros y realizar acciones administrativas sobre ellos.",
+      "examples": "En ISPF: Opción 3 → Opción 4 → Introducir patrón: MI.USERID.*",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0002",
+      "name": "3.3",
+      "shortDescription": "Copiar datasets",
+      "longDescription": "La opción 3.3 permite copiar datasets completos o miembros individuales entre PDS. Es útil para duplicar configuraciones, scripts o datos sin necesidad de comandos TSO.",
+      "examples": "En ISPF: Opción 3 → Opción 3 → FROM: MI.PDS1 → TO: MI.PDS2",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0003",
+      "name": "3.2",
+      "shortDescription": "Crear o borrar datasets",
+      "longDescription": "La opción 3.2 permite crear nuevos datasets especificando atributos como organización, tamaño, unidad y formato. También permite borrar datasets existentes de forma segura.",
+      "examples": "En ISPF: Opción 3 → Opción 2 → Crear dataset: MI.DATASET.NEW",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0004",
+      "name": "2",
+      "shortDescription": "Editor ISPF",
+      "longDescription": "La opción 2 abre el editor ISPF, uno de los editores más utilizados en mainframe. Permite editar datasets secuenciales, miembros de PDS, aplicar comandos de línea, macros y herramientas de edición avanzadas.",
+      "examples": "En ISPF: Opción 2 → Dataset: MI.PDS(MIEMBRO1)",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0005",
+      "name": "1",
+      "shortDescription": "Visualización de datasets",
+      "longDescription": "La opción 1 permite visualizar datasets en modo BROWSE sin modificar su contenido. Es ideal para revisar JCL, logs, configuraciones o datos sin riesgo de alteración.",
+      "examples": "En ISPF: Opción 1 → Dataset: MI.DATASET.LOG",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0006",
+      "name": "TSO ISRDDN",
+      "shortDescription": "Muestra DDs activos",
+      "longDescription": "ISRDDN muestra todos los DDNAME asignados en la sesión actual, incluyendo datasets asociados, volúmenes y atributos. Es útil para depuración y análisis de asignaciones.",
+      "examples": "TSO ISRDDN",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0007",
+      "name": "TSO ISPF",
+      "shortDescription": "Inicia ISPF desde TSO",
+      "longDescription": "El comando ISPF inicia el entorno interactivo ISPF desde la línea de comandos TSO, permitiendo acceder a menús, paneles y utilidades.",
+      "examples": "TSO ISPF",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0008",
+      "name": "TSO ISPSTART",
+      "shortDescription": "Inicia un panel ISPF específico",
+      "longDescription": "ISPSTART permite iniciar ISPF directamente en un panel, aplicación o utilidad específica. Es útil para automatizar accesos rápidos.",
+      "examples": "TSO ISPSTART PGM(ISRSUPC)",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0009",
+      "name": "TSO DSLIST",
+      "shortDescription": "Lista datasets del usuario",
+      "longDescription": "DSLIST muestra una lista de datasets basados en un patrón. Es equivalente a la opción 3.4 pero desde línea de comandos.",
+      "examples": "TSO DSLIST MI.USERID.*",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0010",
+      "name": "TSO EDIT",
+      "shortDescription": "Edita un dataset desde línea de comandos",
+      "longDescription": "EDIT abre un dataset directamente en el editor ISPF sin pasar por menús. Permite edición rápida de miembros o datasets secuenciales.",
+      "examples": "TSO EDIT MI.PDS(MIEMBRO1)",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0011",
+      "name": "TSO BROWSE",
+      "shortDescription": "Visualiza un dataset desde línea de comandos",
+      "longDescription": "BROWSE permite visualizar datasets en modo solo lectura desde la línea de comandos TSO.",
+      "examples": "TSO BROWSE MI.DATASET.LOG",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0012",
+      "name": "TSO VIEW",
+      "shortDescription": "Visualiza un dataset con formateo",
+      "longDescription": "VIEW muestra datasets con formateo especial, útil para JCL, reportes y datos estructurados. Permite comandos de visualización avanzados.",
+      "examples": "TSO VIEW MI.JCL(JOB1)",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0013",
+      "name": "TSO LISTBC",
+      "shortDescription": "Muestra el broadcast del sistema",
+      "longDescription": "LISTBC muestra los mensajes broadcast enviados por el sistema, normalmente utilizados para avisos importantes, mantenimiento o alertas.",
+      "examples": "TSO LISTBC",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0014",
+      "name": "TSO LISTA",
+      "shortDescription": "Lista atributos del usuario",
+      "longDescription": "LISTA muestra atributos del usuario, incluyendo prefijos, configuraciones de sesión y parámetros de trabajo.",
+      "examples": "TSO LISTA",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0015",
+      "name": "TSO LISTC",
+      "shortDescription": "Lista catálogos",
+      "longDescription": "LISTC consulta el catálogo del sistema y muestra información sobre datasets, volúmenes y atributos.",
+      "examples": "TSO LISTC ENT(MI.DATASET.TEST) ALL",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0016",
+      "name": "TSO LISTDS",
+      "shortDescription": "Lista datasets específicos",
+      "longDescription": "LISTDS muestra información detallada de un dataset, incluyendo atributos, organización, tamaño y volúmenes asociados.",
+      "examples": "TSO LISTDS MI.DATASET.TEST",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0017",
+      "name": "TSO LISTGRP",
+      "shortDescription": "Lista grupos RACF",
+      "longDescription": "LISTGRP muestra los grupos RACF asociados al usuario, incluyendo roles, permisos y pertenencias.",
+      "examples": "TSO LISTGRP MIUSUARIO",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0018",
+      "name": "TSO LISTUSER",
+      "shortDescription": "Lista información del usuario",
+      "longDescription": "LISTUSER muestra información detallada del usuario RACF, incluyendo atributos, permisos, grupos y configuraciones de seguridad.",
+      "examples": "TSO LISTUSER MIUSUARIO",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0019",
+      "name": "TSO LU",
+      "shortDescription": "Alias de LISTUSER",
+      "longDescription": "LU es un alias abreviado del comando LISTUSER, utilizado para consultar información del usuario de forma rápida.",
+      "examples": "TSO LU MIUSUARIO",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0020",
+      "name": "TSO OGET",
+      "shortDescription": "Descarga archivos vía OMVS",
+      "longDescription": "OGET permite descargar archivos desde el entorno UNIX System Services (OMVS) hacia datasets tradicionales. Es útil para mover archivos entre z/OS UNIX y MVS.",
+      "examples": "TSO OGET '/u/miusuario/archivo.txt' 'MI.DATASET.TXT'",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0001",
+      "name": "DA",
+      "shortDescription": "Lista datasets activos",
+      "longDescription": "El panel DA muestra todos los datasets activos asociados a la sesión, incluyendo asignaciones dinámicas, DDNAMEs y datasets utilizados por jobs en ejecución. Es útil para diagnosticar problemas de asignación o dependencias.",
+      "examples": "En SDSF: Comando DA",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0002",
+      "name": "ST",
+      "shortDescription": "Lista jobs activos",
+      "longDescription": "El panel ST muestra los jobs activos en el sistema JES2/JES3, incluyendo jobs en ejecución, en cola, retenidos o esperando recursos. Permite ver estado, propietario, clase, prioridad y comandos de control.",
+      "examples": "En SDSF: Comando ST",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0003",
+      "name": "H",
+      "shortDescription": "Historial de jobs",
+      "longDescription": "El panel H muestra el historial de jobs completados recientemente, incluyendo código de retorno, tiempo de ejecución, clase y propietario. Es útil para revisar ejecuciones previas.",
+      "examples": "En SDSF: Comando H",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0004",
+      "name": "I",
+      "shortDescription": "Información del sistema",
+      "longDescription": "El panel I muestra información general del sistema JES, incluyendo estado de colas, número de jobs activos, recursos disponibles y estadísticas de rendimiento.",
+      "examples": "En SDSF: Comando I",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0005",
+      "name": "LOG",
+      "shortDescription": "Muestra el log del sistema",
+      "longDescription": "El panel LOG muestra el log del sistema JES, incluyendo mensajes de operador, eventos del sistema, avisos y errores. Es fundamental para diagnóstico.",
+      "examples": "En SDSF: Comando LOG",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0006",
+      "name": "OWNER",
+      "shortDescription": "Filtra jobs por usuario",
+      "longDescription": "OWNER permite filtrar la vista de jobs por propietario, mostrando únicamente los jobs pertenecientes al usuario especificado.",
+      "examples": "OWNER MIUSUARIO",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0007",
+      "name": "PREFIX",
+      "shortDescription": "Filtra jobs por prefijo",
+      "longDescription": "PREFIX filtra los jobs cuyo nombre comienza con un prefijo específico. Es útil para localizar jobs de un proyecto o aplicación.",
+      "examples": "PREFIX MIJOB",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0008",
+      "name": "FIND",
+      "shortDescription": "Busca texto en el spool",
+      "longDescription": "FIND permite buscar texto dentro del spool del job seleccionado. Es útil para localizar errores, mensajes específicos o resultados.",
+      "examples": "FIND 'ERROR'",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0009",
+      "name": "SORT",
+      "shortDescription": "Ordena columnas del spool",
+      "longDescription": "SORT ordena la lista de jobs o datasets según una columna específica, como JOBNAME, OWNER, CLASS o RC. Facilita la organización de la vista.",
+      "examples": "SORT JOBNAME",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0010",
+      "name": "PRINT",
+      "shortDescription": "Imprime el contenido del spool",
+      "longDescription": "PRINT envía el contenido del spool del job seleccionado a una impresora o dataset de salida. Es útil para archivado o análisis externo.",
+      "examples": "PRINT",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0011",
+      "name": "PURGE",
+      "shortDescription": "Elimina un job del spool",
+      "longDescription": "PURGE elimina completamente un job del spool, incluyendo su salida, logs y datos asociados. Solo disponible para usuarios autorizados.",
+      "examples": "PURGE JOB12345",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0012",
+      "name": "CANCEL",
+      "shortDescription": "Cancela un job activo",
+      "longDescription": "CANCEL detiene la ejecución de un job activo en el sistema. Es útil cuando un job está colgado, consume demasiados recursos o necesita detenerse por mantenimiento.",
+      "examples": "CANCEL JOB12345",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0013",
+      "name": "RELEASE",
+      "shortDescription": "Libera un job retenido",
+      "longDescription": "RELEASE libera un job que está retenido (HELD), permitiendo que continúe su procesamiento normal en JES.",
+      "examples": "RELEASE JOB12345",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0014",
+      "name": "HELD",
+      "shortDescription": "Lista jobs retenidos",
+      "longDescription": "HELD muestra todos los jobs que están retenidos en el sistema, ya sea por el usuario, por políticas o por condiciones de ejecución.",
+      "examples": "En SDSF: Comando HELD",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0015",
+      "name": "OUTPUT",
+      "shortDescription": "Muestra el output del job",
+      "longDescription": "OUTPUT muestra el spool completo del job seleccionado, incluyendo SYSOUT, mensajes de compilación, ejecución y logs.",
+      "examples": "OUTPUT JOB12345",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0016",
+      "name": "XDC",
+      "shortDescription": "Copia spool a dataset",
+      "longDescription": "XDC copia el contenido del spool del job a un dataset MVS. Es útil para análisis, archivado o envío a otros usuarios.",
+      "examples": "XDC → Seleccionar dataset destino",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0017",
+      "name": "TRACE",
+      "shortDescription": "Activa trazas del sistema",
+      "longDescription": "TRACE activa o muestra trazas del sistema JES, útiles para diagnóstico avanzado, análisis de rendimiento y depuración.",
+      "examples": "TRACE ON",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0018",
+      "name": "WHO",
+      "shortDescription": "Muestra usuarios conectados",
+      "longDescription": "WHO muestra todos los usuarios actualmente conectados al sistema, junto con información de sesión, terminal y actividad.",
+      "examples": "WHO",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0019",
+      "name": "DA-D",
+      "shortDescription": "Detalle de datasets activos",
+      "longDescription": "DA-D muestra información detallada de cada dataset activo, incluyendo atributos, volúmenes, DDNAMEs y estado de asignación.",
+      "examples": "En SDSF DA → Comando D",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0020",
+      "name": "ST-D",
+      "shortDescription": "Detalle de jobs activos",
+      "longDescription": "ST-D muestra detalles completos del job activo seleccionado, incluyendo pasos ejecutados, recursos utilizados, mensajes y estadísticas.",
+      "examples": "En SDSF ST → Comando D",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0001",
+      "name": "ADDUSER",
+      "shortDescription": "Crea un nuevo usuario RACF",
+      "longDescription": "ADDUSER permite crear un nuevo perfil de usuario en RACF, definiendo atributos básicos como nombre, grupo principal, contraseña inicial y permisos de acceso. Es uno de los comandos fundamentales para la administración de seguridad.",
+      "examples": "ADDUSER MIUSUARIO DFLTGRP(MIGRUPO) PASSWORD(INICIAL1)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0002",
+      "name": "DELUSER",
+      "shortDescription": "Elimina un usuario RACF",
+      "longDescription": "DELUSER elimina un perfil de usuario del sistema RACF, incluyendo sus asociaciones con grupos y permisos. Solo puede ser ejecutado por administradores con autoridad suficiente.",
+      "examples": "DELUSER MIUSUARIO",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0003",
+      "name": "ALTUSER",
+      "shortDescription": "Modifica atributos de usuario",
+      "longDescription": "ALTUSER permite modificar atributos de un usuario RACF, como contraseña, grupos, permisos especiales, expiración y configuraciones de seguridad.",
+      "examples": "ALTUSER MIUSUARIO PASSWORD(NUEVA123) REVOKE",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0004",
+      "name": "LISTUSER",
+      "shortDescription": "Muestra información del usuario",
+      "longDescription": "LISTUSER muestra información detallada del perfil RACF de un usuario, incluyendo grupos, permisos, atributos de seguridad, recursos asociados y configuraciones especiales.",
+      "examples": "LISTUSER MIUSUARIO",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0005",
+      "name": "LU",
+      "shortDescription": "Alias de LISTUSER",
+      "longDescription": "LU es un alias abreviado del comando LISTUSER, utilizado para consultar información del usuario de forma rápida.",
+      "examples": "LU MIUSUARIO",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0006",
+      "name": "ADDGROUP",
+      "shortDescription": "Crea un grupo RACF",
+      "longDescription": "ADDGROUP permite crear un nuevo grupo RACF, definiendo su propietario, usuarios asociados y atributos de seguridad.",
+      "examples": "ADDGROUP MIGRUPO OWNER(ADMIN)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0007",
+      "name": "DELGROUP",
+      "shortDescription": "Elimina un grupo RACF",
+      "longDescription": "DELGROUP elimina un grupo RACF del sistema, siempre que no tenga usuarios asociados o dependencias activas.",
+      "examples": "DELGROUP MIGRUPO",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0008",
+      "name": "ALTGROUP",
+      "shortDescription": "Modifica atributos de grupo",
+      "longDescription": "ALTGROUP permite modificar atributos de un grupo RACF, como propietario, usuarios asociados, permisos y configuraciones de seguridad.",
+      "examples": "ALTGROUP MIGRUPO OWNER(SECADMIN)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0009",
+      "name": "LISTGRP",
+      "shortDescription": "Lista información del grupo",
+      "longDescription": "LISTGRP muestra información detallada de un grupo RACF, incluyendo usuarios asociados, permisos, atributos y dependencias.",
+      "examples": "LISTGRP MIGRUPO",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0010",
+      "name": "CONNECT",
+      "shortDescription": "Conecta usuario a grupo",
+      "longDescription": "CONNECT permite asociar un usuario a un grupo RACF, otorgándole permisos y atributos definidos por dicho grupo.",
+      "examples": "CONNECT MIUSUARIO GROUP(MIGRUPO)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0011",
+      "name": "REMOVE",
+      "shortDescription": "Elimina usuario de grupo",
+      "longDescription": "REMOVE elimina la asociación entre un usuario y un grupo RACF, retirando los permisos heredados del grupo.",
+      "examples": "REMOVE MIUSUARIO GROUP(MIGRUPO)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0012",
+      "name": "RDEFINE",
+      "shortDescription": "Define un recurso RACF",
+      "longDescription": "RDEFINE permite crear un nuevo recurso protegido por RACF, especificando clase, permisos, propietario y atributos de seguridad.",
+      "examples": "RDEFINE DATASET MI.DATASET.SECURO UACC(NONE)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0013",
+      "name": "RALTER",
+      "shortDescription": "Modifica un recurso RACF",
+      "longDescription": "RALTER permite modificar atributos de un recurso RACF existente, como permisos, propietario, auditoría o accesos.",
+      "examples": "RALTER DATASET MI.DATASET.SECURO UACC(READ)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0014",
+      "name": "RDELETE",
+      "shortDescription": "Elimina un recurso RACF",
+      "longDescription": "RDELETE elimina un recurso protegido por RACF, retirándolo del catálogo de seguridad.",
+      "examples": "RDELETE DATASET MI.DATASET.SECURO",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0015",
+      "name": "PERMIT",
+      "shortDescription": "Otorga permisos a un recurso",
+      "longDescription": "PERMIT permite otorgar permisos de acceso a un recurso RACF para usuarios o grupos específicos. Es uno de los comandos más utilizados en administración de seguridad.",
+      "examples": "PERMIT MI.DATASET.SECURO CLASS(DATASET) ID(MIUSUARIO) ACCESS(READ)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0016",
+      "name": "REVOKE",
+      "shortDescription": "Revoca permisos de un recurso",
+      "longDescription": "REVOKE elimina permisos previamente otorgados a un usuario o grupo sobre un recurso RACF.",
+      "examples": "REVOKE MI.DATASET.SECURO CLASS(DATASET) ID(MIUSUARIO)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0017",
+      "name": "SEARCH",
+      "shortDescription": "Busca recursos RACF",
+      "longDescription": "SEARCH permite buscar recursos definidos en RACF según patrones, clases o atributos. Es útil para auditorías y revisiones de seguridad.",
+      "examples": "SEARCH CLASS(DATASET) MASK(MI.*)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0018",
+      "name": "SETROPTS",
+      "shortDescription": "Configura opciones globales de RACF",
+      "longDescription": "SETROPTS permite configurar opciones globales del sistema RACF, como auditoría, clases activas, protección de recursos y políticas de seguridad.",
+      "examples": "SETROPTS CLASSACT(DATASET)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0019",
+      "name": "RVARY",
+      "shortDescription": "Activa o desactiva clases RACF",
+      "longDescription": "RVARY permite activar o desactivar clases de recursos RACF dinámicamente, sin reiniciar el sistema.",
+      "examples": "RVARY ACTIVE DATASET",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0020",
+      "name": "PWDCHANGE",
+      "shortDescription": "Cambia contraseña de usuario",
+      "longDescription": "PWDCHANGE permite cambiar la contraseña de un usuario RACF, ya sea por el propio usuario o por un administrador autorizado.",
+      "examples": "ALTUSER MIUSUARIO PASSWORD(NUEVA123)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0021",
+      "name": "ATTRIB",
+      "shortDescription": "Define atributos de un dataset",
+      "longDescription": "ATTRIB define o modifica atributos temporales asociados a un dataset durante la sesión TSO.",
+      "examples": "ATTRIB DATASET(MI.DATASET.TEST)",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0022",
+      "name": "CALL",
+      "shortDescription": "Ejecuta un programa",
+      "longDescription": "CALL ejecuta un programa o procedimiento desde TSO y permite pasar parámetros al programa.",
+      "examples": "CALL 'MI.LOADLIB(PROG1)'",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0023",
+      "name": "CANCEL",
+      "shortDescription": "Cancela un job o sesión",
+      "longDescription": "CANCEL permite solicitar la cancelación de un job o proceso asociado a la sesión TSO cuando el usuario tiene autorización.",
+      "examples": "CANCEL JOB12345",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0024",
+      "name": "CONSOLE",
+      "shortDescription": "Accede a funciones de consola",
+      "longDescription": "CONSOLE permite ejecutar funciones de consola desde TSO cuando el usuario dispone de las autorizaciones necesarias.",
+      "examples": "CONSOLE",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0025",
+      "name": "LISTDSD",
+      "shortDescription": "Consulta información RACF de un dataset",
+      "longDescription": "LISTDSD muestra información de seguridad RACF asociada a uno o varios datasets.",
+      "examples": "LISTDSD DATASET('MI.DATASET.TEST') ALL",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0026",
+      "name": "LISTBC",
+      "shortDescription": "Muestra mensajes broadcast",
+      "longDescription": "LISTBC consulta los mensajes broadcast disponibles para el usuario.",
+      "examples": "LISTBC",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0027",
+      "name": "OPUT",
+      "shortDescription": "Sube un archivo UNIX a un dataset",
+      "longDescription": "OPUT copia un archivo del sistema de archivos z/OS UNIX a un dataset MVS.",
+      "examples": "OPUT '/u/miusuario/archivo.txt' 'MI.DATASET.TXT'",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0028",
+      "name": "OTSO",
+      "shortDescription": "Ejecuta TSO desde UNIX",
+      "longDescription": "OTSO permite invocar comandos TSO/E desde el entorno z/OS UNIX.",
+      "examples": "OTSO LISTDS MI.DATASET.TEST",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0030",
+      "name": "TRANSMIT",
+      "shortDescription": "Transmite datasets a otro usuario",
+      "longDescription": "TRANSMIT empaqueta información o datasets para enviarlos a otro usuario TSO.",
+      "examples": "TRANSMIT USER(JSMITH) DA('MI.DATASET.TEST')",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0031",
+      "name": "TEST",
+      "shortDescription": "Ejecuta funciones de prueba",
+      "longDescription": "TEST proporciona funciones de prueba y diagnóstico disponibles en el entorno TSO/E.",
+      "examples": "TEST",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0032",
+      "name": "RUN",
+      "shortDescription": "Ejecuta un programa o comando",
+      "longDescription": "RUN permite ejecutar determinadas funciones o programas desde TSO/E según la instalación.",
+      "examples": "RUN 'MI.LOADLIB(PROG1)'",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-TSO-0033",
+      "name": "OUTPUT",
+      "shortDescription": "Consulta output de un job",
+      "longDescription": "OUTPUT permite trabajar con la salida de jobs desde funciones TSO disponibles en el sistema.",
+      "examples": "OUTPUT JOB12345",
+      "category": "TSO",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0021",
+      "name": "0",
+      "shortDescription": "Ajustes de ISPF",
+      "longDescription": "La opción 0 abre Settings y permite configurar parámetros generales, teclas de función, colores, log y list.",
+      "examples": "ISPF → 0",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0022",
+      "name": "3.1",
+      "shortDescription": "Utilidad Library",
+      "longDescription": "La opción 3.1 permite trabajar con bibliotecas y miembros, incluyendo operaciones de copia, movimiento, borrado y selección.",
+      "examples": "ISPF → 3 → 1",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0023",
+      "name": "3.5",
+      "shortDescription": "Hardcopy Utility",
+      "longDescription": "La opción 3.5 proporciona funciones de impresión y generación de copias de datasets o listados.",
+      "examples": "ISPF → 3 → 5",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0024",
+      "name": "3.6",
+      "shortDescription": "Data Set Information",
+      "longDescription": "La opción 3.6 permite consultar información y atributos de datasets mediante utilidades ISPF.",
+      "examples": "ISPF → 3 → 6",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0025",
+      "name": "3.7",
+      "shortDescription": "Search-For Utility",
+      "longDescription": "La opción 3.7 permite buscar cadenas de texto en datasets y bibliotecas.",
+      "examples": "ISPF → 3 → 7",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0026",
+      "name": "3.8",
+      "shortDescription": "Outlist Utility",
+      "longDescription": "La opción 3.8 permite gestionar listas de salida y resultados generados por ISPF y TSO.",
+      "examples": "ISPF → 3 → 8",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0027",
+      "name": "3.9",
+      "shortDescription": "Command Table Utility",
+      "longDescription": "La opción 3.9 permite trabajar con tablas de comandos ISPF.",
+      "examples": "ISPF → 3 → 9",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0028",
+      "name": "3.11",
+      "shortDescription": "Format Utility",
+      "longDescription": "La opción 3.11 proporciona funciones de formato de datasets.",
+      "examples": "ISPF → 3 → 11",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0029",
+      "name": "3.17",
+      "shortDescription": "UDL Utility",
+      "longDescription": "La opción 3.17 proporciona utilidades de listado y gestión relacionadas con datasets según la configuración de ISPF.",
+      "examples": "ISPF → 3 → 17",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0030",
+      "name": "4",
+      "shortDescription": "Foreground",
+      "longDescription": "La opción 4 permite ejecutar determinados procesadores de lenguaje en foreground.",
+      "examples": "ISPF → 4",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0031",
+      "name": "5",
+      "shortDescription": "Batch",
+      "longDescription": "La opción 5 genera y envía JCL para ejecutar procesos batch.",
+      "examples": "ISPF → 5",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0032",
+      "name": "6",
+      "shortDescription": "Command",
+      "longDescription": "La opción 6 permite ejecutar comandos TSO, CLIST o REXX desde ISPF.",
+      "examples": "ISPF → 6",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0033",
+      "name": "7",
+      "shortDescription": "Dialog Test",
+      "longDescription": "La opción 7 permite probar componentes de diálogos ISPF como paneles, mensajes y funciones.",
+      "examples": "ISPF → 7",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0034",
+      "name": "10",
+      "shortDescription": "SCLM",
+      "longDescription": "La opción 10 proporciona acceso a Software Configuration and Library Manager cuando está instalado.",
+      "examples": "ISPF → 10",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0035",
+      "name": "11",
+      "shortDescription": "Workplace",
+      "longDescription": "La opción 11 proporciona el entorno ISPF Workplace para acceder a funciones mediante acciones sobre objetos.",
+      "examples": "ISPF → 11",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0036",
+      "name": "12",
+      "shortDescription": "z/OS System",
+      "longDescription": "La opción 12 proporciona acceso a herramientas orientadas a administración y programación de sistemas z/OS.",
+      "examples": "ISPF → 12",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0037",
+      "name": "13",
+      "shortDescription": "z/OS User",
+      "longDescription": "La opción 13 proporciona acceso a aplicaciones y utilidades de z/OS para usuarios.",
+      "examples": "ISPF → 13",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0038",
+      "name": "FIND",
+      "shortDescription": "Busca texto en el editor",
+      "longDescription": "FIND localiza una cadena dentro del dataset abierto en el editor ISPF.",
+      "examples": "FIND 'ERROR'",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0039",
+      "name": "CHANGE",
+      "shortDescription": "Sustituye texto",
+      "longDescription": "CHANGE busca y sustituye una cadena en el dataset editado.",
+      "examples": "CHANGE 'ERROR' 'WARNING' ALL",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0040",
+      "name": "RFIND",
+      "shortDescription": "Repite una búsqueda",
+      "longDescription": "RFIND repite la última búsqueda realizada en el editor ISPF.",
+      "examples": "RFIND",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0041",
+      "name": "RCHANGE",
+      "shortDescription": "Repite un cambio",
+      "longDescription": "RCHANGE repite la última operación CHANGE del editor.",
+      "examples": "RCHANGE",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0042",
+      "name": "EXCLUDE",
+      "shortDescription": "Oculta líneas",
+      "longDescription": "EXCLUDE excluye temporalmente líneas que coinciden con un patrón en el editor.",
+      "examples": "EXCLUDE ALL 'DEBUG'",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0043",
+      "name": "RESET",
+      "shortDescription": "Restablece exclusiones y mensajes",
+      "longDescription": "RESET restaura la visualización de líneas y estados del editor.",
+      "examples": "RESET",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0044",
+      "name": "SORT",
+      "shortDescription": "Ordena registros",
+      "longDescription": "SORT ordena registros del dataset según una o varias columnas.",
+      "examples": "SORT 1 20",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0045",
+      "name": "COPY",
+      "shortDescription": "Copia líneas o miembros",
+      "longDescription": "COPY permite copiar líneas del editor o miembros desde las utilidades de ISPF.",
+      "examples": "COPY",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0046",
+      "name": "MOVE",
+      "shortDescription": "Mueve líneas o miembros",
+      "longDescription": "MOVE permite mover líneas o miembros dentro de las funciones de edición o gestión de bibliotecas.",
+      "examples": "MOVE",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-ISPF-0047",
+      "name": "SUBMIT",
+      "shortDescription": "Envía JCL",
+      "longDescription": "SUBMIT envía el miembro o dataset JCL seleccionado para ejecución batch.",
+      "examples": "SUBMIT",
+      "category": "ISPF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0022",
+      "name": "O",
+      "shortDescription": "Output Queue",
+      "longDescription": "El panel O muestra la salida no retenida de jobs en la cola de output de JES2.",
+      "examples": "En SDSF: O",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0023",
+      "name": "JDS",
+      "shortDescription": "Job Data Sets",
+      "longDescription": "JDS muestra los datasets de salida asociados a un job.",
+      "examples": "En SDSF: JDS",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0024",
+      "name": "JG",
+      "shortDescription": "Job Groups",
+      "longDescription": "JG muestra información de grupos de jobs cuando la función está disponible.",
+      "examples": "En SDSF: JG",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0025",
+      "name": "JS",
+      "shortDescription": "Job Step",
+      "longDescription": "JS muestra información detallada de los pasos de un job.",
+      "examples": "En SDSF: JS",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0026",
+      "name": "AS",
+      "shortDescription": "Address Spaces",
+      "longDescription": "AS muestra información de address spaces y actividad del sistema.",
+      "examples": "En SDSF: AS",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0027",
+      "name": "INIT",
+      "shortDescription": "Initiators",
+      "longDescription": "INIT muestra información de iniciadores JES y su estado.",
+      "examples": "En SDSF: INIT",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0028",
+      "name": "NS",
+      "shortDescription": "Nodes",
+      "longDescription": "NS muestra información relacionada con nodos JES.",
+      "examples": "En SDSF: NS",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0029",
+      "name": "APF",
+      "shortDescription": "APF Authorized Libraries",
+      "longDescription": "APF muestra información de bibliotecas autorizadas APF cuando la función está disponible.",
+      "examples": "En SDSF: APF",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0030",
+      "name": "CK",
+      "shortDescription": "Health Checker",
+      "longDescription": "CK muestra resultados de comprobaciones Health Checker disponibles para SDSF.",
+      "examples": "En SDSF: CK",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0031",
+      "name": "CKH",
+      "shortDescription": "Health Checker History",
+      "longDescription": "CKH permite consultar historial de resultados de Health Checker.",
+      "examples": "En SDSF: CKH",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0032",
+      "name": "LNK",
+      "shortDescription": "Link List",
+      "longDescription": "LNK muestra información de bibliotecas del Link List.",
+      "examples": "En SDSF: LNK",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0033",
+      "name": "LPA",
+      "shortDescription": "Link Pack Area",
+      "longDescription": "LPA muestra información de bibliotecas del Link Pack Area.",
+      "examples": "En SDSF: LPA",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0034",
+      "name": "PARM",
+      "shortDescription": "System Parameters",
+      "longDescription": "PARM muestra información relacionada con parámetros del sistema disponibles para SDSF.",
+      "examples": "En SDSF: PARM",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0035",
+      "name": "SE",
+      "shortDescription": "Scheduling Environments",
+      "longDescription": "SE muestra información de scheduling environments de WLM.",
+      "examples": "En SDSF: SE",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0036",
+      "name": "RM",
+      "shortDescription": "Resource Monitor",
+      "longDescription": "RM proporciona información de recursos y rendimiento cuando RMF está disponible.",
+      "examples": "En SDSF: RM",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0037",
+      "name": "SP",
+      "shortDescription": "Spool Volumes",
+      "longDescription": "SP muestra información de volúmenes de spool.",
+      "examples": "En SDSF: SP",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0038",
+      "name": "SO",
+      "shortDescription": "Spool Offload",
+      "longDescription": "SO muestra información sobre spool offload cuando está configurado.",
+      "examples": "En SDSF: SO",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0039",
+      "name": "SYS",
+      "shortDescription": "System",
+      "longDescription": "SYS muestra información del sistema y opciones disponibles en SDSF.",
+      "examples": "En SDSF: SYS",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0040",
+      "name": "SYM",
+      "shortDescription": "System Symbols",
+      "longDescription": "SYM muestra símbolos del sistema y sus valores.",
+      "examples": "En SDSF: SYM",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0041",
+      "name": "SRCH",
+      "shortDescription": "Search",
+      "longDescription": "SRCH permite buscar información en determinadas vistas de SDSF.",
+      "examples": "En SDSF: SRCH",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0042",
+      "name": "JD",
+      "shortDescription": "Job Devices",
+      "longDescription": "JD muestra dispositivos asociados con un job.",
+      "examples": "En SDSF: ST → JD",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0043",
+      "name": "JM",
+      "shortDescription": "Job Memory",
+      "longDescription": "JM muestra información de memoria asociada con un job.",
+      "examples": "En SDSF: ST → JM",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-SDSF-0044",
+      "name": "JP",
+      "shortDescription": "Job Dependencies",
+      "longDescription": "JP muestra dependencias de jobs cuando están disponibles.",
+      "examples": "En SDSF: ST → JP",
+      "category": "SDSF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0021",
+      "name": "ADDSD",
+      "shortDescription": "Define un perfil DATASET",
+      "longDescription": "ADDSD crea un perfil RACF para proteger un dataset o conjunto de datasets.",
+      "examples": "ADDSD 'MI.DATASET.*' UACC(NONE)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0022",
+      "name": "ALTDSD",
+      "shortDescription": "Modifica un perfil DATASET",
+      "longDescription": "ALTDSD modifica atributos de un perfil RACF de clase DATASET.",
+      "examples": "ALTDSD 'MI.DATASET.*' UACC(READ)",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0023",
+      "name": "DELDSD",
+      "shortDescription": "Elimina un perfil DATASET",
+      "longDescription": "DELDSD elimina un perfil RACF de clase DATASET.",
+      "examples": "DELDSD 'MI.DATASET.*'",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0024",
+      "name": "LISTDSD",
+      "shortDescription": "Lista un perfil DATASET",
+      "longDescription": "LISTDSD muestra información del perfil RACF y su access list para datasets.",
+      "examples": "LISTDSD DATASET('MI.DATASET.TEST') ALL",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0025",
+      "name": "RLIST",
+      "shortDescription": "Lista perfiles de recursos",
+      "longDescription": "RLIST muestra información de perfiles de recursos de una clase RACF.",
+      "examples": "RLIST FACILITY IRR.DIGTCERT.LIST ALL",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0026",
+      "name": "PASSWORD",
+      "shortDescription": "Gestiona contraseña",
+      "longDescription": "PASSWORD permite cambiar una contraseña RACF de acuerdo con las reglas y autorizaciones configuradas.",
+      "examples": "PASSWORD",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0027",
+      "name": "RACDCERT",
+      "shortDescription": "Gestiona certificados digitales",
+      "longDescription": "RACDCERT administra perfiles y certificados digitales utilizados por RACF y servicios que se integran con él.",
+      "examples": "RACDCERT ID(MIUSUARIO) LIST",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0028",
+      "name": "RACMAP",
+      "shortDescription": "Gestiona mappings de identidad",
+      "longDescription": "RACMAP administra mappings entre identidades y certificados digitales en RACF.",
+      "examples": "RACMAP ID(MIUSUARIO) LIST",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0029",
+      "name": "RACLINK",
+      "shortDescription": "Gestiona conexiones RRSF",
+      "longDescription": "RACLINK gestiona relaciones y conexiones de Remote Sharing Facility de RACF.",
+      "examples": "RACLINK LIST",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0030",
+      "name": "RACPRIV",
+      "shortDescription": "Gestiona privilegios de UNIX System Services",
+      "longDescription": "RACPRIV administra determinados privilegios y atributos relacionados con z/OS UNIX cuando la función está disponible.",
+      "examples": "RACPRIV",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0031",
+      "name": "BLKUPD",
+      "shortDescription": "Actualiza bloques de perfiles",
+      "longDescription": "BLKUPD proporciona funciones de actualización de bloques de perfiles RACF en escenarios administrativos específicos.",
+      "examples": "BLKUPD",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0032",
+      "name": "VERIFY",
+      "shortDescription": "Verifica credenciales",
+      "longDescription": "VERIFY permite verificar información de autenticación de un usuario según las funciones RACF disponibles.",
+      "examples": "VERIFY",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0033",
+      "name": "SET",
+      "shortDescription": "Configura funciones RACF",
+      "longDescription": "SET se utiliza para determinadas funciones administrativas de RACF y sus operandos asociados.",
+      "examples": "SET",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0034",
+      "name": "STOP",
+      "shortDescription": "Detiene funciones RACF",
+      "longDescription": "STOP permite detener funciones específicas de RACF o RRSF según el contexto y la autorización.",
+      "examples": "STOP",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0035",
+      "name": "RESTART",
+      "shortDescription": "Reinicia funciones RACF",
+      "longDescription": "RESTART permite reiniciar determinadas funciones de RACF o RRSF sin reiniciar todo el sistema.",
+      "examples": "RESTART",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0036",
+      "name": "TARGET",
+      "shortDescription": "Gestiona destino RRSF",
+      "longDescription": "TARGET administra información de destino para Remote Sharing Facility.",
+      "examples": "TARGET",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0037",
+      "name": "SIGNOFF",
+      "shortDescription": "Finaliza sesión RRSF",
+      "longDescription": "SIGNOFF finaliza o gestiona una sesión RRSF según el contexto.",
+      "examples": "SIGNOFF",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0038",
+      "name": "DISPLAY",
+      "shortDescription": "Muestra información RACF",
+      "longDescription": "DISPLAY muestra información administrativa de RACF y sus componentes.",
+      "examples": "DISPLAY",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0039",
+      "name": "HELP",
+      "shortDescription": "Muestra ayuda RACF",
+      "longDescription": "HELP muestra sintaxis y ayuda de comandos RACF disponibles.",
+      "examples": "HELP RDEFINE",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-RACF-0040",
+      "name": "SETROPTS RACLIST",
+      "shortDescription": "Gestiona perfiles RACLIST",
+      "longDescription": "SETROPTS RACLIST controla el procesamiento RACLIST de clases RACF y permite realizar acciones como REFRESH según autorización.",
+      "examples": "SETROPTS RACLIST(FACILITY) REFRESH",
+      "category": "RACF",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0001",
+      "name": "cd",
+      "shortDescription": "Cambia de directorio",
+      "longDescription": "cd cambia el directorio de trabajo actual en z/OS UNIX.",
+      "examples": "cd /u/miusuario",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0002",
+      "name": "pwd",
+      "shortDescription": "Muestra el directorio actual",
+      "longDescription": "pwd muestra el directorio de trabajo actual.",
+      "examples": "pwd",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0003",
+      "name": "ls",
+      "shortDescription": "Lista archivos",
+      "longDescription": "ls muestra archivos y directorios del sistema de archivos z/OS UNIX.",
+      "examples": "ls -la /u/miusuario",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0004",
+      "name": "cp",
+      "shortDescription": "Copia archivos",
+      "longDescription": "cp copia archivos o directorios dentro del sistema de archivos z/OS UNIX.",
+      "examples": "cp archivo1.txt archivo2.txt",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0005",
+      "name": "mv",
+      "shortDescription": "Mueve o renombra archivos",
+      "longDescription": "mv mueve o renombra archivos y directorios.",
+      "examples": "mv archivo1.txt archivo2.txt",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0006",
+      "name": "rm",
+      "shortDescription": "Elimina archivos",
+      "longDescription": "rm elimina archivos y, con las opciones correspondientes, directorios.",
+      "examples": "rm archivo.txt",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0007",
+      "name": "mkdir",
+      "shortDescription": "Crea directorios",
+      "longDescription": "mkdir crea uno o varios directorios.",
+      "examples": "mkdir /u/miusuario/logs",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0008",
+      "name": "rmdir",
+      "shortDescription": "Elimina directorios vacíos",
+      "longDescription": "rmdir elimina directorios vacíos.",
+      "examples": "rmdir /u/miusuario/temp",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0009",
+      "name": "cat",
+      "shortDescription": "Muestra contenido",
+      "longDescription": "cat muestra el contenido de uno o varios archivos.",
+      "examples": "cat archivo.txt",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0010",
+      "name": "head",
+      "shortDescription": "Muestra el inicio de un archivo",
+      "longDescription": "head muestra las primeras líneas de un archivo.",
+      "examples": "head -20 archivo.txt",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0011",
+      "name": "tail",
+      "shortDescription": "Muestra el final de un archivo",
+      "longDescription": "tail muestra las últimas líneas de un archivo y puede utilizarse para revisar logs.",
+      "examples": "tail -50 app.log",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0012",
+      "name": "grep",
+      "shortDescription": "Busca texto",
+      "longDescription": "grep busca patrones de texto dentro de archivos.",
+      "examples": "grep -i 'error' app.log",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0013",
+      "name": "chmod",
+      "shortDescription": "Cambia permisos",
+      "longDescription": "chmod modifica los permisos de acceso de archivos y directorios UNIX.",
+      "examples": "chmod 755 script.sh",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0014",
+      "name": "ps",
+      "shortDescription": "Muestra procesos",
+      "longDescription": "ps muestra procesos asociados al entorno z/OS UNIX.",
+      "examples": "ps -ef",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0015",
+      "name": "kill",
+      "shortDescription": "Envía una señal a un proceso",
+      "longDescription": "kill envía una señal a un proceso identificado por su PID.",
+      "examples": "kill -TERM 12345678",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0016",
+      "name": "df",
+      "shortDescription": "Muestra espacio de filesystem",
+      "longDescription": "df muestra información de espacio utilizado y disponible en filesystems.",
+      "examples": "df -k",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0017",
+      "name": "du",
+      "shortDescription": "Muestra uso de espacio",
+      "longDescription": "du muestra el espacio utilizado por archivos y directorios.",
+      "examples": "du -k /u/miusuario",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0018",
+      "name": "find",
+      "shortDescription": "Busca archivos",
+      "longDescription": "find localiza archivos y directorios según nombre, atributos u otros criterios.",
+      "examples": "find /u/miusuario -name '*.log'",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0019",
+      "name": "env",
+      "shortDescription": "Muestra variables de entorno",
+      "longDescription": "env muestra las variables de entorno del proceso actual.",
+      "examples": "env",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-UNIX-0020",
+      "name": "echo",
+      "shortDescription": "Muestra texto o variables",
+      "longDescription": "echo imprime texto o el valor de variables de entorno.",
+      "examples": "echo $HOME",
+      "category": "UNIX",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0001",
+      "name": "IDCAMS",
+      "shortDescription": "Ejecuta utilidades de VSAM y catálogo",
+      "longDescription": "IDCAMS es la utilidad DFSMSdfp utilizada para administrar VSAM, catálogos y otras funciones de gestión de datos.",
+      "examples": "IDCAMS",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0002",
+      "name": "DEFINE CLUSTER",
+      "shortDescription": "Define un cluster VSAM",
+      "longDescription": "DEFINE CLUSTER crea un cluster VSAM y sus componentes de datos e índice.",
+      "examples": "DEFINE CLUSTER(NAME(MI.VSAM.CLUSTER) ... )",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0003",
+      "name": "DEFINE ALIAS",
+      "shortDescription": "Define un alias de catálogo",
+      "longDescription": "DEFINE ALIAS crea un alias de catálogo para un nivel de nombres.",
+      "examples": "DEFINE ALIAS(NAME(MI.ALIAS) RELATE(MI.USERCAT))",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0004",
+      "name": "DELETE",
+      "shortDescription": "Elimina objetos de catálogo",
+      "longDescription": "DELETE de IDCAMS elimina clusters, datasets catalogados, aliases u otros objetos soportados.",
+      "examples": "DELETE MI.VSAM.CLUSTER",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0005",
+      "name": "LISTCAT",
+      "shortDescription": "Lista entradas de catálogo",
+      "longDescription": "LISTCAT muestra información de entradas de catálogo y objetos VSAM.",
+      "examples": "LISTCAT ENT(MI.VSAM.CLUSTER) ALL",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0006",
+      "name": "REPRO",
+      "shortDescription": "Copia datos",
+      "longDescription": "REPRO copia o carga registros entre datasets compatibles, especialmente VSAM.",
+      "examples": "REPRO INFILE(IN1) OUTFILE(OUT1)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0007",
+      "name": "PRINT",
+      "shortDescription": "Imprime contenido de dataset",
+      "longDescription": "PRINT muestra o imprime registros de datasets mediante IDCAMS.",
+      "examples": "PRINT INFILE(IN1)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0008",
+      "name": "VERIFY",
+      "shortDescription": "Verifica un cluster VSAM",
+      "longDescription": "VERIFY comprueba y actualiza información de control de un cluster VSAM cuando procede.",
+      "examples": "VERIFY DATASET(MI.VSAM.CLUSTER)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0009",
+      "name": "ALTER",
+      "shortDescription": "Modifica atributos de catálogo",
+      "longDescription": "ALTER modifica determinados atributos de una entrada de catálogo.",
+      "examples": "ALTER MI.DATASET NEWNAME(MI.DATASET.NEW)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0010",
+      "name": "EXAMINE",
+      "shortDescription": "Comprueba la estructura VSAM",
+      "longDescription": "EXAMINE analiza la estructura de un cluster VSAM para detectar problemas de integridad.",
+      "examples": "EXAMINE DATASET(MI.VSAM.CLUSTER)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0011",
+      "name": "DIAGNOSE",
+      "shortDescription": "Diagnostica un cluster VSAM",
+      "longDescription": "DIAGNOSE realiza comprobaciones diagnósticas adicionales sobre estructuras VSAM.",
+      "examples": "DIAGNOSE DATASET(MI.VSAM.CLUSTER)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0012",
+      "name": "BLDINDEX",
+      "shortDescription": "Construye un índice alternativo",
+      "longDescription": "BLDINDEX construye un índice alternativo para un cluster VSAM cuando corresponde.",
+      "examples": "BLDINDEX INDATASET(MI.VSAM.AIX) OUTDATASET(MI.VSAM.PATH)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0013",
+      "name": "EXPORT",
+      "shortDescription": "Exporta un dataset",
+      "longDescription": "EXPORT prepara datos VSAM o de catálogo para ser transportados o importados.",
+      "examples": "EXPORT INFILE(MI.VSAM.CLUSTER) OUTFILE(MI.BACKUP)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0014",
+      "name": "IMPORT",
+      "shortDescription": "Importa un dataset",
+      "longDescription": "IMPORT restaura datos exportados mediante funciones de IDCAMS.",
+      "examples": "IMPORT INFILE(MI.BACKUP) OUTDATASET(MI.VSAM.CLUSTER)",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-DFSMS-0015",
+      "name": "ALTER USER CATALOG",
+      "shortDescription": "Modifica catálogo",
+      "longDescription": "ALTER permite modificar atributos soportados de entradas de catálogo y objetos asociados.",
+      "examples": "ALTER MI.USERCAT ...",
+      "category": "DFSMS",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0001",
+      "name": "D J,job",
+      "shortDescription": "Muestra información de un job",
+      "longDescription": "El comando JES2 DISPLAY JOB muestra información sobre el estado y atributos de un job.",
+      "examples": "$DJ,JOB12345",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0002",
+      "name": "C job",
+      "shortDescription": "Cancela un job",
+      "longDescription": "El comando JES2 CANCEL solicita la cancelación de un job.",
+      "examples": "$C JOB12345",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0003",
+      "name": "H job",
+      "shortDescription": "Retiene un job",
+      "longDescription": "El comando JES2 HOLD retiene un job para impedir que continúe hasta que sea liberado.",
+      "examples": "$H JOB12345",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0004",
+      "name": "A job",
+      "shortDescription": "Libera un job",
+      "longDescription": "El comando JES2 RELEASE libera un job retenido.",
+      "examples": "$A JOB12345",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0005",
+      "name": "D A",
+      "shortDescription": "Muestra actividad del sistema",
+      "longDescription": "DISPLAY A muestra información de actividad de JES2.",
+      "examples": "$DA",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0006",
+      "name": "D R",
+      "shortDescription": "Muestra recursos JES2",
+      "longDescription": "DISPLAY R muestra información de recursos JES2.",
+      "examples": "$DR",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0007",
+      "name": "D Q",
+      "shortDescription": "Muestra colas JES2",
+      "longDescription": "DISPLAY Q muestra información de las colas y trabajos gestionados por JES2.",
+      "examples": "$DQ",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0008",
+      "name": "D S",
+      "shortDescription": "Muestra estado JES2",
+      "longDescription": "DISPLAY S muestra información del estado de JES2.",
+      "examples": "$DS",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0009",
+      "name": "F job",
+      "shortDescription": "Modifica un job",
+      "longDescription": "El comando FORCE de JES2 permite forzar determinadas acciones sobre un job según su estado y autorización.",
+      "examples": "$F JOB12345",
+      "category": "JES2",
+      "deleted": false
+    },
+    {
+      "id": "CMD-JES2-0010",
+      "name": "P JES2",
+      "shortDescription": "Detiene JES2",
+      "longDescription": "El comando JES2 P permite iniciar procedimientos de parada de JES2 según la política del sistema.",
+      "examples": "$PJES2",
+      "category": "JES2",
+      "deleted": false
+    }
   ]
 }
