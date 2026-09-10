@@ -22,7 +22,7 @@
   {
     "id": 5,
     "title": "¿Cómo funciona el COND en JCL?",
-    "text": "\n COND es una condición que permite saltar (no ejecutar) un step de JCL dependiendo del return code (RC) de steps anteriores.\nSu función es evitar ejecutar pasos innecesarios o peligrosos cuando un paso previo falla o devuelve un RC no deseado.\n\nRegla fundamental del COND:\n\nSi la condición se cumple → el step NO se ejecuta.\n\nSi la condición NO se cumple → el step SÍ se ejecuta.\n\nCOND controla si un step debe ejecutarse según el return code de steps anteriores. Si la condición se cumple, el step se omite. Por ejemplo, COND=(4,LT) significa “si algún step previo devolvió RC menor que 4, no ejecutes este step”. Es útil para evitar ejecutar pasos cuando un proceso previo falló o devolvió un RC no esperado."
+    "text": "\n COND es una condición que permite saltar (no ejecutar) un step de JCL dependiendo del return code (RC) de steps anteriores.\nSu función es evitar ejecutar pasos innecesarios o peligrosos cuando un paso previo falla o devuelve un RC no deseado.\n\nRegla fundamental del COND:\n\nSi la condición se cumple → el step NO se ejecuta.\n\nSi la condición NO se cumple → el step SÍ se ejecuta.\n\nCOND controla si un step debe ejecutarse según el return code de steps anteriores. Si la condición se cumple, el step se omite. Por ejemplo, COND=(4,LT) significa 'si algún step previo devolvió RC menor que 4, no ejecutes este step'. Es útil para evitar ejecutar pasos cuando un proceso previo falló o devolvió un RC no esperado."
   },
   {
       "id": 6,
