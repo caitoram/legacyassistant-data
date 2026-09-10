@@ -2,655 +2,987 @@
   "versionDate": "2026-12-11",
   "terms": [
     {
-      "id": "COBOL-0001",
-      "name": "PIC",
-      "shortDescription": "Defines the format of a field",
-      "longDescription": "The PIC especifica la structure, type y format de un field within la Data Division. Allows you to definir if un dato es numeric, alphanumeric, decimal, with sign, with relleno o with length fija. It is essential to ensure la correcta interpretación de data provenientes de archivos, pantallas o processes batch.",
-      "examples": "01 CAMPO-NUM PIC 9(5).\n01 CAMPO-ALFA PIC X(10).",
-      "notes": "The destination format controls how the value is adjusted or converted during a MOVE.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0002",
-      "name": "COMP",
-      "shortDescription": "Binary representation of a field",
-      "longDescription": "COMP indica that un field numeric se storeá en format binario nativo del hardware. Esto reduce el espacio y improves el performance en operaciones aritméticas, especially in systems de alto volumen. Su representación depende del hardware, por lo that requires atención in processes de migración.",
-      "examples": "01 CONTADOR PIC S9(4) COMP.",
-      "notes": "Ideal for intensive calculations; not suitable for data that must be exported without conversion.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0003",
-      "name": "COMP-3",
-      "shortDescription": "Packed decimal format",
-      "longDescription": "COMP-3 almacena números en format decimal empaquetado, where each dígito ocupa cuatro bits y el último nibble contains el sign. It is ampliamente used en aplicaciones financieras porque mantiene precision decimal without depender del hardware.",
-      "examples": "01 IMPORTE PIC S9(7)V99 COMP-3.",
-      "notes": "Avoids rounding errors typical of binary representations.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0004",
-      "name": "WORKING-STORAGE",
-      "shortDescription": "Persistent memory during program execution",
-      "longDescription": "The WORKING-STORAGE contains variables persistentes durante toda la execution of the programa. Aquí se declaran contadores, buffers, indicadores y structures temporales. It is equivalente a la memory estática en languages modernos.",
-      "examples": "01 WS-CONTADOR PIC 9(4) VALUE 0.",
-      "notes": "Initial values are assigned when the program starts, not on each PERFORM.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0005",
-      "name": "LINKAGE SECTION",
-      "shortDescription": "Area for receiving external parameters",
-      "longDescription": "La LINKAGE SECTION define los parámetros that el program receives desde el exterior, ya sea using CALL, CICS o un program superior. Allows you to share structures de data between modules.",
-      "examples": "01 LK-PARAM PIC X(20).",
-      "notes": "The data must be associated using USING in the PROCEDURE DIVISION.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0006",
-      "name": "PROCEDURE DIVISION",
-      "shortDescription": "Program logic",
-      "longDescription": "La PROCEDURE DIVISION contains la logic executable del programa: cálculos, validaciones, read/write de files y calls a subprogramas. Se organiza en párrafos y secciones for improve la claridad.",
-      "examples": "PROCEDURE DIVISION.\n    PERFORM INICIALIZAR.\n    PERFORM PROCESAR-DATOS.",
-      "notes": "It is the core of the COBOL program.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0007",
-      "name": "DATA DIVISION",
-      "shortDescription": "Data definition",
-      "longDescription": "La DATA DIVISION define todos los data that el program utilizará: archivos, variables, structures y tables. It is esencial to ensure la integrity y compatibility de los datos.",
-      "examples": "DATA DIVISION.\nWORKING-STORAGE SECTION.",
-      "notes": "A poor definition can cause truncation or formatting errors.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0008",
-      "name": "ENVIRONMENT DIVISION",
-      "shortDescription": "Environment configuration",
-      "longDescription": "La ENVIRONMENT DIVISION describe el environment where se ejecuta el programa: assignment de archivos, devices y configuraciones del system. Allows you to adaptar el program without modificar la logic.",
-      "examples": "ENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.",
-      "notes": "Crucial in batch programs that interact with physical files.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0009",
-      "name": "MOVE",
-      "shortDescription": "Value assignment",
-      "longDescription": "MOVE assigns values between campos, realizando conversiones implícitas according to los atributos PIC del destination. It can ajustar lengthes, convertir types y transformar formatos.",
-      "examples": "MOVE 'ABC' TO CAMPO-ALFA.\nMOVE 123 TO CAMPO-NUM.",
-      "notes": "The destination controls the conversion, not the source.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0011",
-      "name": "EVALUATE",
-      "shortDescription": "Multiple conditional structure",
-      "longDescription": "EVALUATE allows you to evaluar multiple conditions de forma clear y structureda, similar a un switch-case. It facilitates la read y evita multiple IF anidados.",
-      "examples": "EVALUATE OPCION\n   WHEN 'A' PERFORM ACCION-A\n   WHEN 'B' PERFORM ACCION-B\n   WHEN OTHER PERFORM ERROR.",
-      "notes": "Allows multiple expressions to be evaluated simultaneously.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0012",
-      "name": "IF",
-      "shortDescription": "Logical condition",
-      "longDescription": "IF allows you to execute código basado en una condition logic. It is the structure condicional básica del language y it is used for validar datos, control flujos y avoid errors.",
-      "examples": "IF WS-VALOR > 0\n   PERFORM PROCESAR.",
-      "notes": "It should be closed with END-IF to avoid ambiguity.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0013",
-      "name": "CALL",
-      "shortDescription": "Invokes a subprogram",
-      "longDescription": "CALL allows you to execute another program y passle parámetros. It is essential for la modularidad y reuse de código in systems grandes.",
-      "examples": "CALL 'PROG001' USING WS-DATOS.",
-      "notes": "The called program must define the parameters in the LINKAGE SECTION.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0015",
-      "name": "FILE SECTION",
-      "shortDescription": "File definition",
-      "longDescription": "FILE SECTION define la structure de los files that el program leerá o escribirá. It includes descriptores FD y las structures de registros.",
-      "examples": "FD ARCHIVO-IN.\n01 REG-IN PIC X(80).",
-      "notes": "It must corresponder with la definición del operating system o JCL.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0017",
-      "name": "01 LEVEL",
-      "shortDescription": "Top-level data level",
-      "longDescription": "Level 01 define structures completas de datos, such as records o bloques. It is the nivel más alto within la jerarquía de data COBOL.",
-      "examples": "01 CLIENTE.\n   05 NOMBRE PIC X(30).",
-      "notes": "It can contener multiple subniveles.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0018",
-      "name": "88 LEVEL",
-      "shortDescription": "Conditional values",
-      "longDescription": "Los niveles 88 allow definir conditions simbólicas on campos, facilitating la read y evitando comparaciones explícitas.",
-      "examples": "01 ESTADO PIC X.\n   88 ACTIVO VALUE 'A'.",
-      "notes": "No ocupan espacio additional en memory.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0019",
-      "name": "REDEFINES",
-      "shortDescription": "Reuses memory for another format",
-      "longDescription": "REDEFINES allows you to interpretar un same block de memory de different formas. It is useful for structures complex o formats variables.",
-      "examples": "01 CAMPO-A PIC X(10).\n01 CAMPO-B REDEFINES CAMPO-A PIC 9(10).",
-      "notes": "It should be used carefully to avoid inconsistencies.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0020",
-      "name": "OCCURS",
-      "shortDescription": "Array of elements",
-      "longDescription": "OCCURS define tables o arreglos within la Data Division. Allows you to handle listas de elementos de forma structureda.",
-      "examples": "01 TABLA.\n   05 ITEM OCCURS 10 TIMES PIC X(5).",
-      "notes": "It can be combined with INDEXED BY for efficient searches.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0021",
-      "name": "INITIALIZE",
-      "shortDescription": "Initializes variables",
-      "longDescription": "INITIALIZE assigns values por defecto a fields according to su tipo: spaces for alphanumeric y zeros for numeric.",
-      "examples": "INITIALIZE WS-REGISTRO.",
-      "notes": "It does not affect fields defined with REDEFINES.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0022",
-      "name": "STRING",
-      "shortDescription": "Concatenates strings",
-      "longDescription": "STRING allows you to unir multiple strings en un destination, controlling positions y delimiters.",
-      "examples": "STRING NOMBRE DELIMITED BY SPACE\n       APELLIDO INTO WS-NOMBRE-COMPLETO.",
-      "notes": "It must usarse with cuidado to avoid overflows.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0023",
-      "name": "UNSTRING",
-      "shortDescription": "Splits strings",
-      "longDescription": "UNSTRING separa una string en multiple partes according to delimiters. It is useful for procesar data with format variable.",
-      "examples": "UNSTRING WS-FECHA DELIMITED BY '/' INTO DIA MES ANIO.",
-      "notes": "It can handle multiple delimiters.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0024",
-      "name": "INSPECT",
-      "shortDescription": "Analyzes and transforms strings",
-      "longDescription": "INSPECT allows you to contar, reemplazar o analizar characters within una string. It is una herramienta poderosa for validación y limpieza de datos.",
-      "examples": "INSPECT WS-TEXTO TALLYING CONTADOR FOR ALL 'A'.",
-      "notes": "It can combinarse with REPLACING for transformations complex.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0025",
-      "name": "ACCEPT",
-      "shortDescription": "Reads data from the system",
-      "longDescription": "ACCEPT allows you to leer data desde el system, such as fecha, hora o input del user.",
-      "examples": "ACCEPT WS-FECHA FROM DATE.",
-      "notes": "En CICS no se utiliza; se reemplaza por comandos specific.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0026",
-      "name": "DISPLAY",
-      "shortDescription": "Displays data on the console",
-      "longDescription": "DISPLAY imprime información en la consola o terminal. It is useful for debugging o mensajes informativos.",
-      "examples": "DISPLAY 'PROCESO COMPLETADO'.",
-      "notes": "En CICS se reemplaza por SEND.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0027",
-      "name": "OPEN INPUT",
-      "shortDescription": "Opens a file for reading",
-      "longDescription": "OPEN INPUT abre un file for read sequential o aleatoria. It is the primer paso before de perform operaciones READ.",
-      "examples": "OPEN INPUT ARCHIVO-IN.",
-      "notes": "It must be closed with CLOSE to release resources.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0028",
-      "name": "OPEN OUTPUT",
-      "shortDescription": "Opens a file for writing",
-      "longDescription": "OPEN OUTPUT crea o reemplaza un file for write. It is used before de WRITE.",
-      "examples": "OPEN OUTPUT ARCHIVO-OUT.",
-      "notes": "If the file exists, it may be truncated.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0032",
-      "name": "END-IF",
-      "shortDescription": "End of condition",
-      "longDescription": "END-IF marca el final de una structure IF. It improves la claridad y evita ambigüedades en blocks complex.",
-      "examples": "IF WS-VALOR > 0\n   PERFORM PROCESAR\nEND-IF.",
-      "notes": "Required in code moderno.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0033",
-      "name": "END-PERFORM",
-      "shortDescription": "End of loop",
-      "longDescription": "END-PERFORM marca el final de una structure PERFORM. It is used for delimitar clearly el block de código that pertenece al bucle o a la rutina ejecutada. It improves la readability y evita errors en structures complex.",
-      "examples": "PERFORM VARYING I FROM 1 BY 1 UNTIL I > 10\n    DISPLAY I\nEND-PERFORM.",
-      "notes": "Required in code moderno to avoid ambigüedades.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0034",
-      "name": "END-EVALUATE",
-      "shortDescription": "End of multiple structure",
-      "longDescription": "END-EVALUATE marca el final de una structure EVALUATE. Allows you to cerrar correctly blocks condicionales multiple y maintain claridad en la logic del programa.",
-      "examples": "EVALUATE OPCION\n   WHEN 1 DISPLAY 'UNO'\n   WHEN 2 DISPLAY 'DOS'\nEND-EVALUATE.",
-      "notes": "Evita errors when se anidan multiple EVALUATE.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0035",
-      "name": "END-READ",
-      "shortDescription": "End of read",
-      "longDescription": "END-READ marca el final de una operación READ with block associated. It is used when READ includes logic additional within del same bloque.",
-      "examples": "READ ARCHIVO-IN\n    AT END MOVE 'S' TO FIN\nEND-READ.",
-      "notes": "No es required if READ no tiene block associated.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0036",
-      "name": "END-WRITE",
-      "shortDescription": "End of write",
-      "longDescription": "END-WRITE marca el final de una operación WRITE with block associated. It is used when la write includes logic adicional, such as control de avance de page.",
-      "examples": "WRITE REG-OUT\n    AFTER ADVANCING 1 LINE\nEND-WRITE.",
-      "notes": "Usado mainly in files impresos o reports.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0037",
-      "name": "END-CALL",
-      "shortDescription": "End of call",
-      "longDescription": "END-CALL marca el final de una call CALL with block associated. Allows you to execute logic additional inmediatamente after de la call within del same bloque.",
-      "examples": "CALL 'PROG001' USING WS-DATOS\n    ON EXCEPTION DISPLAY 'ERROR'\nEND-CALL.",
-      "notes": "Useful for handle excepciones o estados de return.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0038",
-      "name": "END-STRING",
-      "shortDescription": "End of concatenation",
-      "longDescription": "END-STRING marca el final de una operación STRING with block associated. Allows you to incluir logic additional durante la concatenation.",
-      "examples": "STRING NOMBRE DELIMITED BY SPACE\n       APELLIDO INTO WS-NOMBRE\nEND-STRING.",
-      "notes": "Evita errors when se concatenan multiple campos.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0039",
-      "name": "END-UNSTRING",
-      "shortDescription": "End of split operation",
-      "longDescription": "END-UNSTRING marca el final de una operación UNSTRING with block associated. It is used when la splitting de strings includes logic adicional.",
-      "examples": "UNSTRING WS-FECHA DELIMITED BY '/' INTO DIA MES ANIO\nEND-UNSTRING.",
-      "notes": "Useful for procesar strings with multiple delimiters.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0040",
-      "name": "END-INSPECT",
-      "shortDescription": "End of inspection",
-      "longDescription": "END-INSPECT marca el final de una operación INSPECT with block associated. Allows you to perform transformations o conteos within un block structuredo.",
-      "examples": "INSPECT WS-TEXTO TALLYING CONTADOR FOR ALL 'A'\nEND-INSPECT.",
-      "notes": "Usado en transformations complex de strings.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0041",
-      "name": "SEARCH",
-      "shortDescription": "Table search",
-      "longDescription": "SEARCH allows you to perform searchs sequentiales within tables defineds with OCCURS. It is useful for localizar elementos when la table no está sorted.",
-      "examples": "SEARCH TABLA\n   AT END DISPLAY 'NO ENCONTRADO'\n   WHEN ITEM(I) = 'X' DISPLAY 'OK'.",
-      "notes": "Requires table with OCCURS y INDEXED BY.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0042",
-      "name": "SEARCH ALL",
-      "shortDescription": "Binary search",
-      "longDescription": "SEARCH ALL realiza una search binaria on una table sorted. It is mucho más eficiente that SEARCH en tables grandes.",
-      "examples": "SEARCH ALL TABLA\n   WHEN ITEM(I) = 'X' DISPLAY 'ENCONTRADO'.",
-      "notes": "The table must be sorted beforehand.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0043",
-      "name": "SORT",
-      "shortDescription": "Sorts records",
-      "longDescription": "SORT allows you to ordenar records de un file o table according to keys defineds. It is useful in processes batch that requiresn clasificación previa.",
-      "examples": "SORT ARCHIVO-SORT\n   ON ASCENDING KEY CLAVE.",
-      "notes": "It can be combined with MERGE for complex processes.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0044",
-      "name": "MERGE",
-      "shortDescription": "Merges sorted files",
-      "longDescription": "MERGE combina multiple files previously sorted en uno solo. It is used in processes batch where se consolidan data de different sources.",
-      "examples": "MERGE ARCHIVO-A ARCHIVO-B\n   ON ASCENDING KEY CLAVE\n   OUTPUT PROCEDURE PROCESAR.",
-      "notes": "The files must be sorted before MERGE.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0046",
-      "name": "GOBACK",
-      "shortDescription": "Returns control to the caller",
-      "longDescription": "GOBACK retorna el control al program caller. En programs principales actúa such as STOP RUN, pero en subprograms funciona such as EXIT PROGRAM.",
-      "examples": "GOBACK.",
-      "notes": "Recommended in modern code because of its consistent behavior.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0047",
-      "name": "STOP RUN",
-      "shortDescription": "Terminates execution",
-      "longDescription": "STOP RUN finaliza completamente la execution of the program y del environment associated. It is used en programs principales.",
-      "examples": "STOP RUN.",
-      "notes": "It should not be used in subprograms called via CALL.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0048",
-      "name": "USING",
-      "shortDescription": "Defines input parameters",
-      "longDescription": "USING especifica los parámetros that un program receives desde otro using CALL. Allows you to vincular variables de LINKAGE SECTION with el program caller.",
-      "examples": "PROCEDURE DIVISION USING LK-DATOS.",
-      "notes": "The parameter order must match the CALL.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0049",
-      "name": "SET",
-      "shortDescription": "Assigns logical values",
-      "longDescription": "SET allows you to assign values a indexes o activar conditions defineds with niveles 88. It is useful for handle estados simbólicos.",
-      "examples": "SET ACTIVO TO TRUE.\nSET I TO 1.",
-      "notes": "It does not modify the field content, only its condition.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0050",
-      "name": "SUBTRACT",
-      "shortDescription": "Subtracts values",
-      "longDescription": "SUBTRACT realiza operaciones de resta between fields numeric. It can store el result en un destination o modificar directamente el value original.",
-      "examples": "SUBTRACT 1 FROM CONTADOR.\nSUBTRACT A B FROM C.",
-      "notes": "It should be used carefully to avoid overflows in small fields.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0051",
-      "name": "IDENTIFICATION DIVISION",
-      "shortDescription": "Defines the identity of the COBOL program.",
-      "longDescription": "La IDENTIFICATION DIVISION especifica el nombre y metadata del programa. It includes sentencias such as PROGRAM-ID, AUTHOR, DATE-WRITTEN y REMARKS. It is the entry point declarativo that identifica el module source.",
-      "examples": "IDENTIFICATION DIVISION.\nPROGRAM-ID. CALCULO-VENTAS.",
-      "notes": "It must be the first division of the COBOL program.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0052",
-      "name": "PROGRAM-ID",
-      "shortDescription": "Main program name.",
-      "longDescription": "PROGRAM-ID define el identificador único del program COBOL. Este nombre it is used for invokesciones using CALL y for referencia en compilation. It must ser alphanumeric y without spaces.",
-      "examples": "PROGRAM-ID. FACTURACION.",
-      "notes": "The name must match the source module or the generated executable.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0053",
-      "name": "CONFIGURATION SECTION",
-      "shortDescription": "Configures runtime environment parameters.",
-      "longDescription": "La CONFIGURATION SECTION within la ENVIRONMENT DIVISION define options de compilation y ejecución, such as el modo de characters, la colación y el use de devices. Allows you to adaptar el program al environment physical.",
-      "examples": "CONFIGURATION SECTION.\nSOURCE-COMPUTER. IBM-3270.\nOBJECT-COMPUTER. IBM-3270.",
-      "notes": "Optional in modern compilers, but useful for portability.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0054",
-      "name": "INPUT-OUTPUT SECTION",
-      "shortDescription": "Defines file and device management.",
-      "longDescription": "La INPUT-OUTPUT SECTION especifica los files y devices that el program utilizará. It contains la cláusula FILE-CONTROL y I-O CONTROL, that describen la assignment de files physicals y su organización.",
-      "examples": "INPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT ARCHIVO-IN ASSIGN TO 'ENTRADA.DAT'.",
-      "notes": "It must precede the FILE SECTION in the DATA DIVISION.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0055",
-      "name": "COMPUTE",
-      "shortDescription": "Performs complex arithmetic calculations.",
-      "longDescription": "COMPUTE allows you to efectuar operaciones aritméticas en una sola sentencia, incluyendo suma, resta, multiplicación, splitting y expresiones with paréntesis. Simplifica el código frente a multiple sentencias ADD o SUBTRACT.",
-      "examples": "COMPUTE RESULTADO = (A + B) / C.",
-      "notes": "The destination must be numeric and compatible with the expression result.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0056",
-      "name": "ADD",
-      "shortDescription": "Adds numeric values.",
-      "longDescription": "ADD realiza operaciones de suma between fields numeric. It can store el result en un destination o modificar directamente el value original. Admite multiple operandos en una sola sentencia.",
-      "examples": "ADD 5 TO CONTADOR.\nADD A B TO TOTAL.",
-      "notes": "It should be used carefully to avoid overflows in small fields.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0057",
-      "name": "MULTIPLY",
-      "shortDescription": "Multiplies numeric values.",
-      "longDescription": "MULTIPLY ejecuta operaciones de multiplicación between fields numeric. It can store el result en un destination o modificar el value original. It is useful for cálculos de totales o proporciones.",
-      "examples": "MULTIPLY PRECIO BY CANTIDAD GIVING IMPORTE.",
-      "notes": "The result must fit in the destination field to avoid truncation.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0058",
-      "name": "DIVIDE",
-      "shortDescription": "Divides numeric values.",
-      "longDescription": "DIVIDE realiza operaciones de splitting between fields numeric. It can devolver el cociente y el residuo using las cláusulas GIVING y REMAINDER.",
-      "examples": "DIVIDE TOTAL BY 10 GIVING PROMEDIO REMAINDER RESTO.",
-      "notes": "It must be handled carefully to avoid division by zero.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0059",
-      "name": "CURRENT-DATE",
-      "shortDescription": "Gets the system date and time.",
-      "longDescription": "CURRENT-DATE devuelve la fecha y hora actual del system en format AAAAMMDDHHMMSSCC. It is used for audits, records y cálculos temporales.",
-      "examples": "MOVE FUNCTION CURRENT-DATE TO WS-FECHA-HORA.",
-      "notes": "It requires an alphanumeric field of sufficient length to store the result.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0060",
-      "name": "Anidamiento de sentencias IF",
-      "shortDescription": "Structure of multiple chained IF statements.",
-      "longDescription": "El anidamiento de sentencias IF allows you to evaluar conditions complex using multiple niveles de decisión. It is used when el flujo logical requires validar varias conditions dependientes between sí. It must structurerse cuidadosamente to avoid ambigüedades y improve la readability.",
-      "examples": "IF A > 0\n    IF B = 'S'\n        PERFORM PROCESAR\n    END-IF\nEND-IF.",
-      "notes": "It is recommended to replace deep nesting with EVALUATE for greater clarity.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0061",
-      "name": "PERFORM",
-      "shortDescription": "Executes a block of code, paragraphs, or sections as routines.",
-      "longDescription": "PERFORM allows you to invoke párrafos o secciones defined en la PROCEDURE DIVISION. It is the mecanismo principal for structurer logic repetitiva y modular. It facilitates la modularidad del código y la reuse de logic. Allows you to crear rutinas reusables y control iteraciones. It can executese de forma simple, en bucle o with parámetros de control.",
-      "examples": "PERFORM INICIALIZAR.\nPERFORM PROCESAR-DATOS UNTIL FIN = 'S'.\nPERFORM VARYING I FROM 1 BY 1 UNTIL I > 10.",
-      "notes": "The invoked paragraph or section must exist; it improves program structure. It reduces duplication and improves maintainability.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0062",
-      "name": "EXIT",
-      "shortDescription": "Ends a paragraph or section.",
-      "longDescription": "EXIT it is used for abandonar un párrafo o sección without finalizar el programa. It is useful for control flujos internos within la PROCEDURE DIVISION.",
-      "examples": "IF ERROR = 'S'\n    EXIT.\nEND-IF.",
-      "notes": "It should not be confused with EXIT PROGRAM, which terminates the module.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0063",
-      "name": "STOP",
-      "shortDescription": "Temporarily stops execution.",
-      "longDescription": "STOP allows you to detener la execution of the program en puntos specific, generally for debugging o control manual. No finaliza el environment such as STOP RUN.",
-      "examples": "STOP 'PAUSA DE CONTROL'.",
-      "notes": "Its use is uncommon in production; useful for testing.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0064",
-      "name": "EXAMINE",
-      "shortDescription": "Analyzes and replaces characters.",
-      "longDescription": "EXAMINE es una sentencia legacy that allows you to buscar y reemplazar characters within una string. Ha sido reemplazada por INSPECT en COBOL moderno, pero aún aparece in systems heredados.",
-      "examples": "EXAMINE WS-TEXTO FOR 'A' REPLACING 'B'.",
-      "notes": "Obsolete; INSPECT is the recommended alternative.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0065",
-      "name": "TRANSFORM",
-      "shortDescription": "Transforms characters according to a table.",
-      "longDescription": "TRANSFORM allows you to convertir characters de una string utilizando una table de mapeo defined por el programador. It is useful for normalización de data o conversiones specifics.",
-      "examples": "TRANSFORM WS-CADENA FROM TABLA-ORIGEN TO TABLA-DESTINO.",
-      "notes": "The transformation table must be defined correctly.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0066",
-      "name": "COMPILAR",
-      "shortDescription": "COBOL program compilation process.",
-      "longDescription": "COMPILAR se refiere al process using el cual el código source COBOL se traduce a un executable o module objeto. It includes análisis sintáctico, verificación de divisiones y generation de código.",
-      "examples": "cobc -x programa.cbl",
-      "notes": "It depends on the compiler used (IBM, Micro Focus, GnuCOBOL).",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0067",
-      "name": "DEPENDING ON",
-      "shortDescription": "Controls variable length in OCCURS.",
-      "longDescription": "DEPENDING ON allows you to definir tables de length variable within OCCURS. El number of elementos se determina at runtime according to el value de un campo.",
-      "examples": "05 ITEMS OCCURS 1 TO 50 DEPENDING ON WS-CANTIDAD PIC X(10).",
-      "notes": "The DEPENDING ON field must be numeric and valid.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0068",
-      "name": "USAGE INDEX",
-      "shortDescription": "Defines indexes for tables.",
-      "longDescription": "USAGE INDEX especifica that un field se utilizará such as index for tables defineds with OCCURS. Allows you to searchs eficientes using SEARCH y SEARCH ALL.",
-      "examples": "01 I INDEXED BY IDX.",
-      "notes": "Indexes do not store physical positions, but rather internal offsets.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0069",
-      "name": "FILE-CONTROL",
-      "shortDescription": "File assignment control.",
-      "longDescription": "FILE-CONTROL define la assignment logic de files a devices physicals. It includes SELECT, ASSIGN, ORGANIZATION, ACCESS MODE y FILE STATUS.",
-      "examples": "FILE-CONTROL.\nSELECT ARCHIVO ASSIGN TO 'DATOS.DAT'.",
-      "notes": "It must be located in the INPUT-OUTPUT SECTION.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0070",
-      "name": "ASSIGN",
-      "shortDescription": "Associates a logical file with a physical file.",
-      "longDescription": "ASSIGN vincula un nombre de file COBOL with un file physical del operating system. It can referenciar rutas, DDNAME o devices.",
-      "examples": "SELECT ARCHIVO ASSIGN TO 'ENTRADA.TXT'.",
-      "notes": "The syntax depends on the environment (z/OS, UNIX, Windows).",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0071",
-      "name": "ORGANIZATION",
-      "shortDescription": "Defines the physical organization of the file.",
-      "longDescription": "The ORGANIZATION especifica cómo se structuren los records within del archivo: sequential, relativo o indexado. Determina el modo de access permitido y la forma en that el system gestiona la ubicación de los registros.",
-      "examples": "SELECT ARCHIVO ASSIGN TO 'DATOS.DAT'\n    ORGANIZATION IS SEQUENTIAL.",
-      "notes": "It must be consistent with the FD definition and access type.",
-      "category": "COBOL",
-      "deleted": false
-    },
-    {
-      "id": "COBOL-0072",
-      "name": "ACCESS",
-      "shortDescription": "Defines the file access mode.",
-      "longDescription": "ACCESS MODE especifica cómo se leerán o escribirán los registros: SEQUENTIAL, RANDOM o DYNAMIC. Controla la forma en that el program interactúa with files relativos o indexados.",
-      "examples": "ACCESS MODE IS RANDOM.",
-      "notes": "The mode must be compatible with the file ORGANIZATION.",
-      "category": "COBOL",
-      "deleted": false
-    },
+    "id": "COBOL-0001",
+    "name": "PIC",
+    "shortDescription": "Defines the format of a field",
+    "longDescription": "The PIC clause specifies the structure, type, and format of a field within the Data Division. It allows defining whether data is numeric, alphanumeric, decimal, signed, padded, or fixed-length. It is essential for ensuring the correct interpretation of data coming from files, screens, or batch processes.",
+    "examples": "01 CAMPO-NUM PIC 9(5).\n01 CAMPO-ALFA PIC X(10).",
+    "notes": "The destination format controls how the value is adjusted or converted during a MOVE.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0002",
+    "name": "COMP",
+    "shortDescription": "Binary representation of a field",
+    "longDescription": "COMP indicates that a numeric field will be stored in the hardware's native binary format. This reduces storage space and improves performance in arithmetic operations, especially in high-volume systems. Its representation depends on the hardware, requiring special attention during migration processes.",
+    "examples": "01 CONTADOR PIC S9(4) COMP.",
+    "notes": "Ideal for intensive calculations; not suitable for data that must be exported without conversion.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0003",
+    "name": "COMP-3",
+    "shortDescription": "Packed decimal format",
+    "longDescription": "COMP-3 stores numbers in packed decimal format, where each digit occupies four bits and the last nibble contains the sign. It is widely used in financial applications because it maintains decimal precision without hardware dependency.",
+    "examples": "01 IMPORTE PIC S9(7)V99 COMP-3.",
+    "notes": "Prevents rounding errors typical of binary representations.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0004",
+    "name": "WORKING-STORAGE",
+    "shortDescription": "Persistent memory during program execution",
+    "longDescription": "The WORKING-STORAGE section contains persistent variables throughout program execution. Counters, buffers, flags, and temporary structures are declared here. It is equivalent to static memory in modern programming languages.",
+    "examples": "01 WS-CONTADOR PIC 9(4) VALUE 0.",
+    "notes": "Initial values are assigned when the program starts, not on each PERFORM.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0005",
+    "name": "LINKAGE SECTION",
+    "shortDescription": "Area to receive external parameters",
+    "longDescription": "The LINKAGE SECTION defines parameters received by the program from external sources, whether via CALL, CICS, or a calling program. It allows sharing data structures across modules.",
+    "examples": "01 LK-PARAM PIC X(20).",
+    "notes": "Data must be mapped using USING in the PROCEDURE DIVISION.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0006",
+    "name": "PROCEDURE DIVISION",
+    "shortDescription": "Program logic",
+    "longDescription": "The PROCEDURE DIVISION contains the executable logic of the program: calculations, validations, file reading/writing, and subprogram calls. It is organized into paragraphs and sections to improve clarity.",
+    "examples": "PROCEDURE DIVISION.\n    PERFORM INICIALIZAR.\n    PERFORM PROCESAR-DATOS.",
+    "notes": "It is the core of the COBOL program.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0007",
+    "name": "DATA DIVISION",
+    "shortDescription": "Data definition",
+    "longDescription": "The DATA DIVISION defines all the data that the program will use: files, variables, structures, and tables. It is essential for ensuring data integrity and compatibility.",
+    "examples": "DATA DIVISION.\nWORKING-STORAGE SECTION.",
+    "notes": "A poor definition can cause truncation or formatting errors.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0008",
+    "name": "ENVIRONMENT DIVISION",
+    "shortDescription": "Environment configuration",
+    "longDescription": "The ENVIRONMENT DIVISION describes the environment in which the program runs: file assignments, devices, and system settings. It allows adapting the program without altering its logic.",
+    "examples": "ENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.",
+    "notes": "Crucial in batch programs that interact with physical files.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0009",
+    "name": "MOVE",
+    "shortDescription": "Value assignment",
+    "longDescription": "MOVE assigns values between fields, performing implicit conversions according to the PIC attributes of the destination. It can adjust lengths, convert types, and transform formats.",
+    "examples": "MOVE 'ABC' TO CAMPO-ALFA.\nMOVE 123 TO CAMPO-NUM.",
+    "notes": "The destination controls the conversion, not the source.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0011",
+    "name": "EVALUATE",
+    "shortDescription": "Multiple conditional structure",
+    "longDescription": "EVALUATE allows testing multiple conditions in a clear and structured manner, similar to a switch-case statement. It enhances readability and avoids nested IF statements.",
+    "examples": "EVALUATE OPCION\n   WHEN 'A' PERFORM ACCION-A\n   WHEN 'B' PERFORM ACCION-B\n   WHEN OTHER PERFORM ERROR.",
+    "notes": "Allows evaluating multiple expressions simultaneously.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0012",
+    "name": "IF",
+    "shortDescription": "Logical condition",
+    "longDescription": "IF enables conditional execution of code based on a logical condition. It is the core conditional structure of the language, used to validate data, control flow, and prevent errors.",
+    "examples": "IF WS-VALOR > 0\n   PERFORM PROCESAR.",
+    "notes": "Must be closed with END-IF to avoid ambiguities.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0013",
+    "name": "CALL",
+    "shortDescription": "Invokes a subprogram",
+    "longDescription": "CALL allows executing another program and passing parameters to it. It is fundamental for modularity and code reusability in large systems.",
+    "examples": "CALL 'PROG001' USING WS-DATOS.",
+    "notes": "The called program must define parameters in its LINKAGE SECTION.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0015",
+    "name": "FILE SECTION",
+    "shortDescription": "File definitions",
+    "longDescription": "The FILE SECTION defines the structure of files that the program will read or write. It includes FD descriptors and record layout structures.",
+    "examples": "FD ARCHIVO-IN.\n01 REG-IN PIC X(80).",
+    "notes": "Must correspond to the operating system or JCL definitions.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0017",
+    "name": "01 LEVEL",
+    "shortDescription": "Top-level data item",
+    "longDescription": "Level 01 defines complete data structures, such as records or group items. It represents the highest level in the COBOL data hierarchy.",
+    "examples": "01 CLIENTE.\n   05 NOMBRE PIC X(30).",
+    "notes": "Can contain multiple elementary sub-levels.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0018",
+    "name": "88 LEVEL",
+    "shortDescription": "Condition-name values",
+    "longDescription": "Level 88 items define symbolic conditions associated with field values, enhancing readability and avoiding explicit comparisons.",
+    "examples": "01 ESTADO PIC X.\n   88 ACTIVO VALUE 'A'.",
+    "notes": "Does not occupy additional memory space.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0019",
+    "name": "REDEFINES",
+    "shortDescription": "Reuses storage with another format",
+    "longDescription": "REDEFINES allows interpreting the same memory block in different layout formats. It is useful for complex structures or variable data formats.",
+    "examples": "01 CAMPO-A PIC X(10).\n01 CAMPO-B REDEFINES CAMPO-A PIC 9(10).",
+    "notes": "Must be used carefully to prevent data inconsistencies.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0020",
+    "name": "OCCURS",
+    "shortDescription": "Array of elements",
+    "longDescription": "OCCURS defines tables or arrays within the Data Division, enabling structured handling of lists of items.",
+    "examples": "01 TABLA.\n   05 ITEM OCCURS 10 TIMES PIC X(5).",
+    "notes": "Can be combined with INDEXED BY for efficient table searching.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0021",
+    "name": "INITIALIZE",
+    "shortDescription": "Initializes variables",
+    "longDescription": "INITIALIZE assigns default values to fields according to their data type: spaces for alphanumeric fields and zeros for numeric fields.",
+    "examples": "INITIALIZE WS-REGISTRO.",
+    "notes": "Does not affect fields defined with REDEFINES.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0022",
+    "name": "STRING",
+    "shortDescription": "Concatenates strings",
+    "longDescription": "STRING joins multiple strings into a destination field, offering control over positioning and delimiters.",
+    "examples": "STRING NOMBRE DELIMITED BY SPACE\n       APELLIDO INTO WS-NOMBRE-COMPLETO.",
+    "notes": "Must be used carefully to prevent buffer overflow.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0023",
+    "name": "UNSTRING",
+    "shortDescription": "Splits strings",
+    "longDescription": "UNSTRING separates a string into multiple target fields based on specified delimiters. Useful for processing variable-format data.",
+    "examples": "UNSTRING WS-FECHA DELIMITED BY '/' INTO DIA MES ANIO.",
+    "notes": "Can handle multiple delimiters simultaneously.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0024",
+    "name": "INSPECT",
+    "shortDescription": "Analyzes and transforms strings",
+    "longDescription": "INSPECT allows counting, replacing, or analyzing characters within a string. It is a powerful tool for data validation and sanitization.",
+    "examples": "INSPECT WS-TEXTO TALLYING CONTADOR FOR ALL 'A'.",
+    "notes": "Can be combined with REPLACING for complex string transformations.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0025",
+    "name": "ACCEPT",
+    "shortDescription": "Reads data from the system",
+    "longDescription": "ACCEPT retrieves data from system sources, such as current date, time, or user input.",
+    "examples": "ACCEPT WS-FECHA FROM DATE.",
+    "notes": "Not used in CICS; replaced by environment-specific commands.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0026",
+    "name": "DISPLAY",
+    "shortDescription": "Outputs data to console",
+    "longDescription": "DISPLAY outputs information to the console or terminal. Useful for debugging or informational messages.",
+    "examples": "DISPLAY 'PROCESO COMPLETADO'.",
+    "notes": "In CICS, it is replaced by SEND commands.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0027",
+    "name": "OPEN INPUT",
+    "shortDescription": "Opens file for reading",
+    "longDescription": "OPEN INPUT opens a file for sequential or random reading. It is the initial step prior to performing READ operations.",
+    "examples": "OPEN INPUT ARCHIVO-IN.",
+    "notes": "Must be closed with CLOSE to release system resources.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0028",
+    "name": "OPEN OUTPUT",
+    "shortDescription": "Opens file for writing",
+    "longDescription": "OPEN OUTPUT creates or overwrites a file for writing operations. Used before executing WRITE.",
+    "examples": "OPEN OUTPUT ARCHIVO-OUT.",
+    "notes": "If the file already exists, its existing contents may be truncated.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0032",
+    "name": "END-IF",
+    "shortDescription": "End of IF condition",
+    "longDescription": "END-IF explicitly terminates an IF block statement. It improves readability and eliminates ambiguity in nested conditions.",
+    "examples": "IF WS-VALOR > 0\n   PERFORM PROCESAR\nEND-IF.",
+    "notes": "Required standard practice in modern COBOL code.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0033",
+    "name": "END-PERFORM",
+    "shortDescription": "End of PERFORM loop",
+    "longDescription": "END-PERFORM marks the end of an inline PERFORM block structure. It clearly delimits the code block executed within the loop, enhancing legibility and preventing scope errors.",
+    "examples": "PERFORM VARYING I FROM 1 BY 1 UNTIL I > 10\n    DISPLAY I\nEND-PERFORM.",
+    "notes": "Required in modern COBOL code to avoid statement ambiguity.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0034",
+    "name": "END-EVALUATE",
+    "shortDescription": "End of EVALUATE structure",
+    "longDescription": "END-EVALUATE marks the end of an EVALUATE statement block. It ensures conditional branching blocks close properly while maintaining program clarity.",
+    "examples": "EVALUATE OPCION\n   WHEN 1 DISPLAY 'UNO'\n   WHEN 2 DISPLAY 'DOS'\nEND-EVALUATE.",
+    "notes": "Prevents scoping errors when nesting multiple EVALUATE structures.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0035",
+    "name": "END-READ",
+    "shortDescription": "End of READ operation",
+    "longDescription": "END-READ terminates a READ operation block. Used when the READ statement contains inline logic like AT END or NOT AT END clauses.",
+    "examples": "READ ARCHIVO-IN\n    AT END MOVE 'S' TO FIN\nEND-READ.",
+    "notes": "Not mandatory if the READ statement lacks conditional clause blocks.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0036",
+    "name": "END-WRITE",
+    "shortDescription": "End of WRITE operation",
+    "longDescription": "END-WRITE marks the termination of a WRITE operation block. Used when WRITE includes additional processing logic like page advance controls.",
+    "examples": "WRITE REG-OUT\n    AFTER ADVANCING 1 LINE\nEND-WRITE.",
+    "notes": "Primarily used when generating printed files or report outputs.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0037",
+    "name": "END-CALL",
+    "shortDescription": "End of subprogram CALL",
+    "longDescription": "END-CALL terminates an inline CALL statement. Allows executing exception logic directly after the subprogram call within the same block.",
+    "examples": "CALL 'PROG001' USING WS-DATOS\n    ON EXCEPTION DISPLAY 'ERROR'\nEND-CALL.",
+    "notes": "Useful for inline error handling and checking return codes.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0038",
+    "name": "END-STRING",
+    "shortDescription": "End of STRING concatenation",
+    "longDescription": "END-STRING marks the end of an inline STRING operation. Enables incorporating conditional exception logic directly into concatenation blocks.",
+    "examples": "STRING NOMBRE DELIMITED BY SPACE\n       APELLIDO INTO WS-NOMBRE\nEND-STRING.",
+    "notes": "Helps avoid syntax errors when combining multiple fields.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0039",
+    "name": "END-UNSTRING",
+    "shortDescription": "End of UNSTRING operation",
+    "longDescription": "END-UNSTRING marks the end of an inline UNSTRING operation block. Used when string parsing logic includes explicit conditional handling.",
+    "examples": "UNSTRING WS-FECHA DELIMITED BY '/' INTO DIA MES ANIO\nEND-UNSTRING.",
+    "notes": "Useful when parsing strings containing complex delimiters.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0040",
+    "name": "END-INSPECT",
+    "shortDescription": "End of INSPECT operation",
+    "longDescription": "END-INSPECT marks the end of an inline INSPECT statement block, enabling structured transformations and character counts within a scoped block.",
+    "examples": "INSPECT WS-TEXTO TALLYING CONTADOR FOR ALL 'A'\nEND-INSPECT.",
+    "notes": "Used during complex string manipulation tasks.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0041",
+    "name": "SEARCH",
+    "shortDescription": "Sequential table search",
+    "longDescription": "SEARCH executes a sequential search on tables defined with OCCURS. Useful for finding elements in unsorted array structures.",
+    "examples": "SEARCH TABLA\n   AT END DISPLAY 'NO ENCONTRADO'\n   WHEN ITEM(I) = 'X' DISPLAY 'OK'.",
+    "notes": "Requires the table to be defined with OCCURS and INDEXED BY.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0042",
+    "name": "SEARCH ALL",
+    "shortDescription": "Binary table search",
+    "longDescription": "SEARCH ALL executes a binary search on a sorted table, proving far more efficient than SEARCH on large datasets.",
+    "examples": "SEARCH ALL TABLA\n   WHEN ITEM(I) = 'X' DISPLAY 'ENCONTRADO'.",
+    "notes": "The underlying table must be sorted prior to executing SEARCH ALL.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0043",
+    "name": "SORT",
+    "shortDescription": "Sorts dataset records",
+    "longDescription": "SORT reorders records from a file or table based on specified key fields. Extremely useful in batch routines requiring pre-sorted input.",
+    "examples": "SORT ARCHIVO-SORT\n   ON ASCENDING KEY CLAVE.",
+    "notes": "Can be combined with MERGE operations for complex processing pipeline needs.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0044",
+    "name": "MERGE",
+    "shortDescription": "Merges sorted files",
+    "longDescription": "MERGE combines multiple pre-sorted files into a single sorted file sequence. Frequently utilized in batch jobs consolidating multi-source data.",
+    "examples": "MERGE ARCHIVO-A ARCHIVO-B\n   ON ASCENDING KEY CLAVE\n   OUTPUT PROCEDURE PROCESAR.",
+    "notes": "Input files must already be ordered before executing the MERGE.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0046",
+    "name": "GOBACK",
+    "shortDescription": "Returns control to caller",
+    "longDescription": "GOBACK passes execution control back to the invoking caller program. It acts like STOP RUN in main programs and like EXIT PROGRAM in subroutines.",
+    "examples": "GOBACK.",
+    "notes": "Recommended standard in modern COBOL development due to consistent behavior across entry points.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0047",
+    "name": "STOP RUN",
+    "shortDescription": "Terminates execution",
+    "longDescription": "STOP RUN completely halts program execution and closes associated environment resources. Designed for use in top-level main programs.",
+    "examples": "STOP RUN.",
+    "notes": "Must not be used inside called subprograms.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0048",
+    "name": "USING",
+    "shortDescription": "Defines input parameters",
+    "longDescription": "USING specifies parameters passed to a program from a calling module via CALL. Maps variables defined in LINKAGE SECTION with external arguments.",
+    "examples": "PROCEDURE DIVISION USING LK-DATOS.",
+    "notes": "Parameter sequence must exactly match the arguments passed in the CALL statement.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0049",
+    "name": "SET",
+    "shortDescription": "Assigns logical values or indexes",
+    "longDescription": "SET updates index values or sets level-88 condition flags to TRUE. Useful for managing symbolic conditions and index offsets.",
+    "examples": "SET ACTIVO TO TRUE.\nSET I TO 1.",
+    "notes": "Alters logical flags or internal index values rather than performing string conversion.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0050",
+    "name": "SUBTRACT",
+    "shortDescription": "Subtracts numeric values",
+    "longDescription": "SUBTRACT performs subtraction between numeric fields. It can either modify the target value in place or store the result into a specified destination.",
+    "examples": "SUBTRACT 1 FROM CONTADOR.\nSUBTRACT A B FROM C.",
+    "notes": "Care must be taken to prevent arithmetic underflow or size errors in small fields.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0051",
+    "name": "IDENTIFICATION DIVISION",
+    "shortDescription": "Defines COBOL program identity",
+    "longDescription": "The IDENTIFICATION DIVISION specifies program metadata and header information. It contains statements such as PROGRAM-ID, AUTHOR, DATE-WRITTEN, and REMARKS, acting as the declarative entry point for the source module.",
+    "examples": "IDENTIFICATION DIVISION.\nPROGRAM-ID. CALCULO-VENTAS.",
+    "notes": "Must be the very first division in every COBOL source file.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0052",
+    "name": "PROGRAM-ID",
+    "shortDescription": "Main program name",
+    "longDescription": "PROGRAM-ID declares the unique identifier for the COBOL program. This name is referenced during CALL statements and compiler linkage. Must be alphanumeric with no spaces.",
+    "examples": "PROGRAM-ID. FACTURACION.",
+    "notes": "The name should match the source module or generated executable name.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0053",
+    "name": "CONFIGURATION SECTION",
+    "shortDescription": "Configures runtime environment parameters",
+    "longDescription": "The CONFIGURATION SECTION within the ENVIRONMENT DIVISION specifies compile-time and runtime settings, such as character sets, collating sequences, and physical devices. Helps adapt programs across platforms.",
+    "examples": "CONFIGURATION SECTION.\nSOURCE-COMPUTER. IBM-3270.\nOBJECT-COMPUTER. IBM-3270.",
+    "notes": "Optional in modern compilers, but useful for cross-system portability.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0054",
+    "name": "INPUT-OUTPUT SECTION",
+    "shortDescription": "Defines file and device handling",
+    "longDescription": "The INPUT-OUTPUT SECTION specifies physical files and external devices used by the program. Contains FILE-CONTROL and I-O-CONTROL clauses describing physical file assignments and organizations.",
+    "examples": "INPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT ARCHIVO-IN ASSIGN TO 'ENTRADA.DAT'.",
+    "notes": "Must precede the FILE SECTION located in the DATA DIVISION.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0055",
+    "name": "COMPUTE",
+    "shortDescription": "Performs complex arithmetic calculations",
+    "longDescription": "COMPUTE allows evaluating multi-operator mathematical expressions in a single statement, including addition, subtraction, multiplication, division, and parenthesized operations.",
+    "examples": "COMPUTE RESULTADO = (A + B) / C.",
+    "notes": "Target variable must be numeric and sized to hold the calculated expression result.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0056",
+    "name": "ADD",
+    "shortDescription": "Adds numeric values",
+    "longDescription": "ADD executes addition across numeric fields. It can update target fields directly or output results into a destination field using GIVING, accepting multiple operands.",
+    "examples": "ADD 5 TO CONTADOR.\nADD A B TO TOTAL.",
+    "notes": "Ensure destination field size avoids numeric overflow errors.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0057",
+    "name": "MULTIPLY",
+    "shortDescription": "Multiplies numeric values",
+    "longDescription": "MULTIPLY performs multiplication on numeric data fields. Results can update the original field or be stored into a target field. Useful for computing totals and ratios.",
+    "examples": "MULTIPLY PRECIO BY CANTIDAD GIVING IMPORTE.",
+    "notes": "Destination size must accommodate maximum potential product value to prevent truncation.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0058",
+    "name": "DIVIDE",
+    "shortDescription": "Divides numeric values",
+    "longDescription": "DIVIDE executes division between numeric fields. It supports returning quotients and remainders via the GIVING and REMAINDER clauses.",
+    "examples": "DIVIDE TOTAL BY 10 GIVING PROMEDIO REMAINDER RESTO.",
+    "notes": "Logic must guard against divide-by-zero runtime exceptions.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0059",
+    "name": "CURRENT-DATE",
+    "shortDescription": "Gets current system date and time",
+    "longDescription": "CURRENT-DATE returns system timestamp details in YYYYMMDDHHMMSSCC format. Frequently used for auditing, logging, and time-stamped calculations.",
+    "examples": "MOVE FUNCTION CURRENT-DATE TO WS-FECHA-HORA.",
+    "notes": "Requires an alphanumeric receiver field long enough to contain the complete timestamp string.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0060",
+    "name": "IF Statement Nesting",
+    "shortDescription": "Chained multiple IF structures",
+    "longDescription": "Nesting IF statements permits evaluating complex multi-level decision logic. Used when logic requires evaluating dependent conditional trees. Requires careful formatting to maintain readability.",
+    "examples": "IF A > 0\n    IF B = 'S'\n        PERFORM PROCESAR\n    END-IF\nEND-IF.",
+    "notes": "Replacing deep nesting with EVALUATE statements is recommended for clarity.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0061",
+    "name": "PERFORM",
+    "shortDescription": "Executes code blocks, paragraphs, or sections as routines",
+    "longDescription": "PERFORM invokes paragraphs or sections within the PROCEDURE DIVISION. It serves as the primary mechanism for modular logic and loop control, reducing code duplication and easing maintenance. Can be run simply, as a loop, or with inline parameters.",
+    "examples": "PERFORM INICIALIZAR.\nPERFORM PROCESAR-DATOS UNTIL FIN = 'S'.\nPERFORM VARYING I FROM 1 BY 1 UNTIL I > 10.",
+    "notes": "The target paragraph or section must exist in the program structure.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0062",
+    "name": "EXIT",
+    "shortDescription": "Terminates a paragraph or section",
+    "longDescription": "EXIT provides an exit point from a paragraph or section without stopping program execution. Helps manage execution path flow inside the PROCEDURE DIVISION.",
+    "examples": "IF ERROR = 'S'\n    EXIT.\nEND-IF.",
+    "notes": "Do not confuse with EXIT PROGRAM, which exits the subprogram module entirely.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0063",
+    "name": "STOP",
+    "shortDescription": "Temporarily pauses execution",
+    "longDescription": "STOP pauses program execution at designated points, typically for manual operator control or debugging. Unlike STOP RUN, it does not close the runtime execution state.",
+    "examples": "STOP 'PAUSA DE CONTROL'.",
+    "notes": "Rarely used in production systems; primarily used during development testing.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0064",
+    "name": "EXAMINE",
+    "shortDescription": "Scans and replaces characters",
+    "longDescription": "EXAMINE is a legacy statement used to search and replace character strings. Replaced by INSPECT in modern COBOL, though still encountered in legacy applications.",
+    "examples": "EXAMINE WS-TEXTO FOR 'A' REPLACING 'B'.",
+    "notes": "Obsolete; INSPECT is the modern standard replacement.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0065",
+    "name": "TRANSFORM",
+    "shortDescription": "Transforms characters based on a mapping table",
+    "longDescription": "TRANSFORM converts character strings according to a user-defined mapping table. Useful for character translation or data normalization tasks.",
+    "examples": "TRANSFORM WS-CADENA FROM TABLA-ORIGEN TO TABLA-DESTINO.",
+    "notes": "Transformation source and target lookup tables must be properly defined.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0066",
+    "name": "COMPILE",
+    "shortDescription": "COBOL program compilation process",
+    "longDescription": "COMPILE refers to the build process translating COBOL source code into object code or executable modules. Involves syntax parsing, division validation, and target code generation.",
+    "examples": "cobc -x programa.cbl",
+    "notes": "Specific command syntax depends on compiler environment (e.g., IBM, Micro Focus, GnuCOBOL).",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0067",
+    "name": "DEPENDING ON",
+    "shortDescription": "Controls variable length in OCCURS clauses",
+    "longDescription": "DEPENDING ON defines variable-length arrays within OCCURS clauses. The active element count is dynamically determined at runtime based on a field value.",
+    "examples": "05 ITEMS OCCURS 1 TO 50 DEPENDING ON WS-CANTIDAD PIC X(10).",
+    "notes": "The control field specified in DEPENDING ON must contain a valid numeric value.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0068",
+    "name": "USAGE INDEX",
+    "shortDescription": "Defines index data items for tables",
+    "longDescription": "USAGE INDEX specifies that a field acts as a table index for OCCURS arrays, enabling optimized binary and sequential lookup handling via SEARCH statements.",
+    "examples": "01 I INDEXED BY IDX.",
+    "notes": "Index items hold internal byte displacements rather than ordinal position numbers.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0069",
+    "name": "FILE-CONTROL",
+    "shortDescription": "Controls file assignment mappings",
+    "longDescription": "FILE-CONTROL maps logical program file names to external physical devices or files. Includes SELECT, ASSIGN, ORGANIZATION, ACCESS MODE, and FILE STATUS clauses.",
+    "examples": "FILE-CONTROL.\nSELECT ARCHIVO ASSIGN TO 'DATOS.DAT'.",
+    "notes": "Must be located in the INPUT-OUTPUT SECTION.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0070",
+    "name": "ASSIGN",
+    "shortDescription": "Binds a logical file to a physical destination",
+    "longDescription": "ASSIGN maps a COBOL logical file identifier to an operating system file path, DDNAME, or device.",
+    "examples": "SELECT ARCHIVO ASSIGN TO 'ENTRADA.TXT'.",
+    "notes": "Exact syntax varies across platforms (z/OS, UNIX, Windows).",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0071",
+    "name": "ORGANIZATION",
+    "shortDescription": "Defines physical file organization structure",
+    "longDescription": "The ORGANIZATION clause specifies record arrangement inside physical files: SEQUENTIAL, RELATIVE, or INDEXED. It dictates permitted file access methods and storage management.",
+    "examples": "SELECT ARCHIVO ASSIGN TO 'DATOS.DAT'\n    ORGANIZATION IS SEQUENTIAL.",
+    "notes": "Must remain consistent with FD definition and access specifications.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0072",
+    "name": "ACCESS",
+    "shortDescription": "Defines file access mode",
+    "longDescription": "ACCESS MODE specifies record read/write operations mode: SEQUENTIAL, RANDOM, or DYNAMIC. It controls how the program interacts with file record pointers.",
+    "examples": "SELECT ARCHIVO ASSIGN TO 'DATOS.DAT'\n    ACCESS MODE IS DYNAMIC.",
+    "notes": "Must align with the specified file ORGANIZATION mode.",
+    "category": "COBOL",
+    "deleted": false
+  }
+  {
+    "id": "COBOL-0073",
+    "name": "LOCK",
+    "shortDescription": "Controla el bloqueo de registros.",
+    "longDescription": "LOCK especifica el comportamiento de bloqueo de registros en archivos indexados o relativos. Permite evitar accesos simultáneos que puedan causar inconsistencias.",
+    "examples": "LOCK MODE IS MANUAL.",
+    "notes": "Su uso depende del entorno (CICS, batch, VSAM).",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0074",
+    "name": "RECORD KEY",
+    "shortDescription": "Clave principal de archivos indexados.",
+    "longDescription": "RECORD KEY define el campo que actúa como clave primaria en archivos indexados. Permite localizar registros mediante búsquedas eficientes.",
+    "examples": "RECORD KEY IS CLAVE-CLIENTE.",
+    "notes": "Debe estar definido en la FILE SECTION con un PIC compatible.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0075",
+    "name": "FILE STATUS",
+    "shortDescription": "Código de estado de operaciones de archivo.",
+    "longDescription": "FILE STATUS especifica un campo donde el sistema almacenará el resultado de cada operación de archivo. Permite detectar errores como fin de archivo, registros inexistentes o problemas de acceso.",
+    "examples": "FILE STATUS IS WS-FS.",
+    "notes": "Debe ser verificado después de cada operación READ, WRITE o REWRITE.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0076",
+    "name": "I-O CONTROL",
+    "shortDescription": "Control avanzado de entrada/salida.",
+    "longDescription": "I-O CONTROL permite definir opciones avanzadas de gestión de archivos, como buffering, sincronización y control de dispositivos. Se utiliza en sistemas batch de alto rendimiento.",
+    "examples": "I-O CONTROL.\n    APPLY WRITE-ONLY.",
+    "notes": "Poco usado en compiladores modernos.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0077",
+    "name": "FD",
+    "shortDescription": "Descriptor de archivo en DATA DIVISION.",
+    "longDescription": "FD define las características de la estructura física del archivo, incluyendo longitud de registros, formato, modo de acceso y campos. Es esencial para operaciones READ, WRITE, REWRITE y DELETE.",
+    "examples": "FD ARCHIVO-IN.\n01 REG-IN PIC X(80).",
+    "notes": "Debe corresponder con la definición en FILE-CONTROL, y estar asociado a un SELECT en ENVIRONMENT DIVISION.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0078",
+    "name": "LABEL RECORD",
+    "shortDescription": "Control de etiquetas de archivo.",
+    "longDescription": "LABEL RECORD especifica si el archivo contiene etiquetas estándar o omitidas. Se utiliza en sistemas donde los archivos físicos incluyen metadatos de encabezado.",
+    "examples": "LABEL RECORDS ARE STANDARD.",
+    "notes": "Relevante en entornos mainframe tradicionales.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0079",
+    "name": "VALUE OF FILE-ID",
+    "shortDescription": "Define el identificador físico del archivo.",
+    "longDescription": "VALUE OF FILE-ID permite especificar el nombre físico del archivo en el sistema operativo. Es una alternativa a ASSIGN.",
+    "examples": "VALUE OF FILE-ID IS 'CLIENTES.DAT'.",
+    "notes": "No todos los compiladores soportan esta cláusula.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0080",
+    "name": "RECORDING MODE",
+    "shortDescription": "Modo de grabación del archivo.",
+    "longDescription": "RECORDING MODE define cómo se almacenan los registros en el archivo: F (fixed), V (variable) o U (undefined). Controla la estructura física del archivo.",
+    "examples": "RECORDING MODE IS F.",
+    "notes": "Debe ser coherente con la longitud de los registros.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0081",
+    "name": "BLOCK CONTAINS",
+    "shortDescription": "Define el tamaño del bloque físico del archivo.",
+    "longDescription": "BLOCK CONTAINS especifica el número de registros que componen un bloque físico dentro del archivo. Se utiliza para optimizar operaciones de lectura y escritura en sistemas donde el almacenamiento está organizado en bloques.",
+    "examples": "BLOCK CONTAINS 10 RECORDS.",
+    "notes": "Debe ser coherente con RECORDING MODE y la longitud de los registros.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0082",
+    "name": "RECORD CONTAINS",
+    "shortDescription": "Define la longitud del registro.",
+    "longDescription": "RECORD CONTAINS especifica la longitud mínima y máxima de los registros del archivo. Es fundamental para archivos de longitud variable y para garantizar la integridad de los datos.",
+    "examples": "RECORD CONTAINS 80 CHARACTERS.",
+    "notes": "Debe coincidir con la estructura definida en el FD.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0083",
+    "name": "DATA RECORD",
+    "shortDescription": "Asocia registros lógicos al archivo.",
+    "longDescription": "DATA RECORD especifica los nombres de los registros definidos en la FILE SECTION que pertenecen al archivo. Permite vincular múltiples estructuras de registro a un mismo FD.",
+    "examples": "DATA RECORD IS REG-IN.",
+    "notes": "Debe referenciar nombres definidos en la FILE SECTION.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0084",
+    "name": "LINAGE",
+    "shortDescription": "Control de líneas para archivos impresos.",
+    "longDescription": "LINAGE define el número de líneas por página en archivos destinados a impresión. Permite controlar encabezados, pies de página y saltos automáticos.",
+    "examples": "LINAGE IS 60.",
+    "notes": "Usado principalmente en reportes y listados impresos.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0085",
+    "name": "CODE-SET",
+    "shortDescription": "Define el conjunto de caracteres del archivo.",
+    "longDescription": "CODE-SET especifica la codificación utilizada para almacenar los caracteres del archivo, como ASCII o EBCDIC. Es esencial para garantizar compatibilidad entre sistemas.",
+    "examples": "CODE-SET IS ASCII.",
+    "notes": "Debe ser compatible con el entorno de ejecución.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0086",
+    "name": "VALUE",
+    "shortDescription": "Define valores iniciales en definiciones de archivo.",
+    "longDescription": "VALUE permite especificar valores predeterminados para ciertos atributos de archivo. Se utiliza en entornos donde los archivos requieren metadatos iniciales.",
+    "examples": "VALUE OF FILE-ID IS 'SALIDAS.DAT'.",
+    "notes": "No todos los compiladores implementan esta cláusula.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0087",
+    "name": "Fichero secuencial",
+    "shortDescription": "Archivo con registros en orden físico secuencial.",
+    "longDescription": "Un fichero secuencial almacena registros en orden físico consecutivo. Solo permite acceso secuencial, lo que lo hace adecuado para procesos batch y recorridos completos.",
+    "examples": "ORGANIZATION IS SEQUENTIAL.",
+    "notes": "El acceso aleatorio no está permitido.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0088",
+    "name": "SELECT para ficheros secuenciales",
+    "shortDescription": "Asociación de archivos secuenciales.",
+    "longDescription": "SELECT define la asignación lógica de un archivo secuencial, indicando su ruta física y organización. Es el primer paso para trabajar con archivos en COBOL.",
+    "examples": "SELECT ARCHIVO-IN ASSIGN TO 'ENTRADA.DAT'\n    ORGANIZATION IS SEQUENTIAL.",
+    "notes": "Debe complementarse con FD en la DATA DIVISION.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  
+  {
+    "id": "COBOL-0090",
+    "name": "OPEN",
+    "shortDescription": "Abre un archivo para lectura o escritura.",
+    "longDescription": "OPEN prepara un archivo para operaciones de entrada o salida. Puede abrirse en modo INPUT, OUTPUT, I-O o EXTEND según la operación requerida.",
+    "examples": "OPEN INPUT ARCHIVO-IN.",
+    "notes": "Debe cerrarse con CLOSE para liberar recursos.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0091",
+    "name": "WRITE",
+    "shortDescription": "Escribe un registro en un archivo.",
+    "longDescription": "WRITE escribe un registro en un archivo secuencial, relativo o indexado. Puede incluir control de avance de página en archivos impresos y opciones adicionales según el tipo de organización del archivo.",
+    "examples": "WRITE REG-OUT.",
+    "notes": "El archivo debe estar abierto en modo OUTPUT, I-O o EXTEND.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0092",
+    "name": "CLOSE",
+    "shortDescription": "Cierra un archivo y libera recursos.",
+    "longDescription": "CLOSE finaliza el acceso a un archivo y libera los recursos asociados. Es obligatorio para evitar bloqueos, inconsistencias y asegurar la integridad de los datos.",
+    "examples": "CLOSE ARCHIVO-IN ARCHIVO-OUT.",
+    "notes": "Debe ejecutarse antes de finalizar el programa o cambiar de modo de acceso.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0093",
+    "name": "READ",
+    "shortDescription": "Lee un registro desde un archivo.",
+    "longDescription": "READ permite leer un registro de un archivo secuencial, relativo o indexado. Puede incluir cláusulas AT END o INVALID KEY para controlar condiciones especiales.",
+    "examples": "READ ARCHIVO-IN AT END MOVE 'S' TO FIN.",
+    "notes": "Debe manejarse AT END o INVALID KEY para evitar errores de lectura.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0094",
+    "name": "REWRITE",
+    "shortDescription": "Reemplaza un registro existente.",
+    "longDescription": "REWRITE actualiza un registro previamente leído en archivos relativos o indexados. Requiere que el registro haya sido leído antes mediante READ.",
+    "examples": "REWRITE REG-ACTUAL.",
+    "notes": "No disponible para archivos secuenciales.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0095",
+    "name": "START",
+    "shortDescription": "Posiciona el archivo indexado o relativo.",
+    "longDescription": "START posiciona el puntero de archivo en un registro específico según la clave. Permite iniciar operaciones READ secuenciales desde una posición determinada.",
+    "examples": "START ARCHIVO-IX KEY >= CLAVE-BUSCADA.",
+    "notes": "Solo válido para archivos indexados o relativos.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0096",
+    "name": "DELETE",
+    "shortDescription": "Elimina un registro de un archivo.",
+    "longDescription": "DELETE elimina un registro de archivos relativos o indexados. Requiere que el registro haya sido localizado previamente mediante READ.",
+    "examples": "DELETE REG-ACTUAL.",
+    "notes": "No disponible para archivos secuenciales.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0097",
+    "name": "Ficheros relativos",
+    "shortDescription": "Archivos con acceso por número de registro.",
+    "longDescription": "Los ficheros relativos permiten acceder a registros mediante su número relativo. Admiten acceso secuencial, aleatorio y dinámico, lo que los hace adecuados para estructuras con posiciones fijas.",
+    "examples": "ORGANIZATION IS RELATIVE.",
+    "notes": "Requieren un campo RELATIVE KEY para operaciones READ y REWRITE.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0098",
+    "name": "Matching de ficheros",
+    "shortDescription": "Proceso de comparación entre archivos.",
+    "longDescription": "El matching de ficheros consiste en comparar registros de dos o más archivos ordenados para detectar coincidencias, diferencias o generar consolidaciones. Es común en procesos batch de integración.",
+    "examples": "PERFORM MATCHING-CLIENTES.",
+    "notes": "Los archivos deben estar ordenados por la misma clave.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0099",
+    "name": "Matching",
+    "shortDescription": "Comparación secuencial de registros.",
+    "longDescription": "Matching es la técnica de recorrer archivos secuenciales en paralelo para comparar claves y procesar coincidencias o discrepancias. Se utiliza en conciliaciones y procesos de integración.",
+    "examples": "IF CLAVE-A = CLAVE-B PERFORM PROCESAR-MATCH.",
+    "notes": "Requiere control de fin de archivo en cada fichero.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0100",
+    "name": "COMUNICACIÓN ENTRE PROGRAMAS",
+    "shortDescription": "Intercambio de datos entre módulos COBOL.",
+    "longDescription": "La comunicación entre programas permite que un módulo COBOL invoque a otro y comparta estructuras de datos mediante CALL, LINKAGE SECTION y USING. Es esencial en sistemas modulares y arquitecturas por capas.",
+    "examples": "CALL 'MODULO-A' USING WS-DATOS.",
+    "notes": "Los parámetros deben coincidir en orden y formato.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0102",
+    "name": "Rutina",
+    "shortDescription": "Bloque de código reutilizable dentro del programa.",
+    "longDescription": "Una rutina es un párrafo o sección dentro de la PROCEDURE DIVISION que encapsula lógica específica. Se invoca mediante PERFORM y permite estructurar el programa en unidades funcionales claras.",
+    "examples": "PERFORM CALCULAR-TOTAL.",
+    "notes": "Debe estar claramente identificada para facilitar el mantenimiento.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0103",
+    "name": "ENTRY",
+    "shortDescription": "Punto de entrada alternativo del programa.",
+    "longDescription": "ENTRY define puntos de entrada adicionales dentro de un programa COBOL, permitiendo que sea invocado desde diferentes contextos o con distintos parámetros. Se utiliza en módulos complejos que requieren múltiples interfaces.",
+    "examples": "ENTRY 'MODULO-B' USING WS-PARAM.",
+    "notes": "Debe ubicarse después de la PROCEDURE DIVISION.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0104",
+    "name": "EXIT PROGRAM",
+    "shortDescription": "Finaliza el programa y retorna al llamador.",
+    "longDescription": "EXIT PROGRAM finaliza la ejecución del programa actual y devuelve el control al programa llamador. Es equivalente a un retorno limpio en subprogramas.",
+    "examples": "EXIT PROGRAM.",
+    "notes": "No finaliza el entorno completo; solo el módulo actual.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0105",
+    "name": "CANCEL",
+    "shortDescription": "Descarga un programa de memoria.",
+    "longDescription": "CANCEL elimina un programa previamente cargado mediante CALL, obligando a que la siguiente invocación vuelva a cargarlo desde el sistema. Se utiliza cuando se requiere reinicializar el estado del módulo.",
+    "examples": "CANCEL 'MODULO-A'.",
+    "notes": "Útil cuando el programa mantiene estado interno que debe reiniciarse.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0106",
+    "name": "CHAIN",
+    "shortDescription": "Transfiere control a otro programa sin retorno.",
+    "longDescription": "CHAIN transfiere la ejecución a otro programa, pasando parámetros, pero sin posibilidad de retorno al programa original. Es útil en flujos donde el módulo inicial no debe continuar.",
+    "examples": "CHAIN 'MODULO-FINAL' USING WS-DATOS.",
+    "notes": "No todos los compiladores implementan esta sentencia.",
+    "category": "COBOL",
+    "deleted": false
+  },
+  {
+    "id": "COBOL-0107",
+    "name": "RETURN-CODE",
+    "shortDescription": "Código de retorno del programa.",
+    "longDescription": "RETURN-CODE es una variable especial que indica el resultado de la ejecución del programa. Se utiliza para comunicar estados a programas superiores, scripts de control o sistemas operativos.",
+    "examples": "MOVE 0 TO RETURN-CODE.",
+    "notes": "Debe gestionarse cuidadosamente en procesos batch.",
+    "category": "COBOL",
+    "deleted": false
+  },    
+    
     {
       "id": "COBOL-0073",
       "name": "LOCK",
