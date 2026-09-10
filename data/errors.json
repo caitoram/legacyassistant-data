@@ -13391,7 +13391,7 @@
     "severity": "MEDIUM",
     "reason": "Frecuente cuando el programa no controla correctamente el estado del fichero o intenta leer más allá del último registro",
     "examples": "VSAM return code 4",
-    "operation": "CLOSE: El fichero ya está cerrado. OPEN: El fichero ya está abierto. READWRITE: Fin de fichero en recuperación secuencial o clave mayor que la última.",
+    "operation": "CLOSE: El fichero ya está cerrado.\nOPEN: El fichero ya está abierto.\nREADWRITE: Fin de fichero en recuperación secuencial o clave mayor que la última.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13403,7 +13403,7 @@
     "severity": "MEDIUM",
     "reason": "Indica falta de espacio en el volumen o en el catálogo. Revisar extents y asignación secundaria",
     "examples": "VSAM return code 136",
-    "operation": "CLOSE: No hay espacio para cerrar el fichero. OPEN: No hay espacio para áreas de trabajo, áreas de control o buffers. READWRITE: no hay espacio para áreas de trabajo, áreas de control o buffers.",
+    "operation": "CLOSE: No hay espacio para cerrar el fichero.\nOPEN: No hay espacio para áreas de trabajo, áreas de control o buffers.\nREADWRITE: no hay espacio para áreas de trabajo, áreas de control o buffers.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13415,7 +13415,7 @@
     "severity": "HIGH",
     "reason": "Puede deberse a corrupción del catálogo o problemas físicos en el volumen. Requiere verificar con IDCAMS",
     "examples": "VSAM return code 144",
-    "operation": "CLOSE: Error I/O al grabar un registro en el catalogo. OPEN: Error I/O al grabar o leer un registro en el catalogo. READWRITE: Error I/O al grabar o leer un registro en el catalogo.",
+    "operation": "CLOSE: Error I/O al grabar un registro en el catalogo.\nOPEN: Error I/O al grabar o leer un registro en el catalogo.\nREADWRITE: Error I/O al grabar o leer un registro en el catalogo.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13427,7 +13427,7 @@
     "severity": "MEDIUM",
     "reason": "Frecuente cuando el catálogo está desincronizado o el fichero fue movido sin actualizar referencias",
     "examples": "VSAM return code 148",
-    "operation": "CLOSE: Error al buscar fichero en el catalogo. OPEN: Error al buscar fichero en el catalogo o No hay registros en el fichero. READWRITE: Error al buscar fichero en el catalogo o No hay registros en el fichero.",
+    "operation": "CLOSE: Error al buscar fichero en el catalogo.\nOPEN: Error al buscar fichero en el catalogo o No hay registros en el fichero.\nREADWRITE: Error al buscar fichero en el catalogo o No hay registros en el fichero.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13439,7 +13439,7 @@
     "severity": "MEDIUM",
     "reason": "Revisar el catálogo indicado en el JCL. Puede deberse a un catálogo no montado o incorrecto",
     "examples": "VSAM return code 180",
-    "operation": "CLOSE: El catalogo especificado en el JCL no existe o no esta abierto. OPEN: El catalogo especificado en el JCL no existe o no esta abierto.",
+    "operation": "CLOSE: El catalogo especificado en el JCL no existe o no esta abierto.\nOPEN: El catalogo especificado en el JCL no existe o no esta abierto.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13451,7 +13451,7 @@
     "severity": "HIGH",
     "reason": "Indica corrupción en el CI (Control Interval). Requiere REPRO o reconstrucción del fichero",
     "examples": "VSAM return code 184",
-    "operation": "CLOSE: Error de intervalo de control. OPEN: Error de intervalo de control.",
+    "operation": "CLOSE: Error de intervalo de control.\nOPEN: Error de intervalo de control.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13463,7 +13463,7 @@
     "severity": "HIGH",
     "reason": "Problema físico en el volumen. Requiere intervención de almacenamiento o migración del dataset",
     "examples": "VSAM return code 236",
-    "operation": "CLOSE: Error permanente en el disco que esta cerrado. OPEN: Error permanente en el disco que esta cerrado.",
+    "operation": "CLOSE: Error permanente en el disco que esta cerrado.\nOPEN: Error permanente en el disco que esta cerrado.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13487,7 +13487,7 @@
     "severity": "MEDIUM",
     "reason": "Frecuente en KSDS cuando se altera la clave del registro. Revisar lógica de actualización",
     "examples": "VSAM return code 96",
-    "operation": "OPEN: El fichero se abre como input y se usa como I/O. READWRITE: Se modificó la clave entre read y rewrite. FILESTATUS: En JCL falta alguna DD.",
+    "operation": "OPEN: El fichero se abre como input y se usa como I/O.\nREADWRITE: Se modificó la clave entre read y rewrite.\nFILESTATUS: En JCL falta alguna DD.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13499,7 +13499,7 @@
     "severity": "MEDIUM",
     "reason": "Puede indicar inconsistencia entre datos e índices. Revisar definiciones AIX",
     "examples": "VSAM return code 100",
-    "operation": "OPEN: Se encuentra vacío un índice alternativo. READWRITE: Se intenta cambiar la longitud de un registro.",
+    "operation": "OPEN: Se encuentra vacío un índice alternativo.\nREADWRITE: Se intenta cambiar la longitud de un registro.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13523,7 +13523,7 @@
     "severity": "LOW",
     "reason": "Frecuente tras actualizaciones manuales o REPRO incompletos. Requiere reconstrucción del AIX",
     "examples": "VSAM return code 108",
-    "operation": "OPEN: Indices y datos no coinciden por haberse modificado alguno por separado. READWRITE: Indices y datos no coinciden por haberse modificado alguno por separado.",
+    "operation": "OPEN: Indices y datos no coinciden por haberse modificado alguno por separado.\nREADWRITE: Indices y datos no coinciden por haberse modificado alguno por separado.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13535,7 +13535,7 @@
     "severity": "MEDIUM",
     "reason": "Indica cierre incorrecto previo. VERIFY suele resolverlo",
     "examples": "VSAM return code 116",
-    "operation": "OPEN: El fichero no fue cerrado.(pasar un verify) o El fichero se usa como salida para otro proceso. READWRITE: El fichero no fue cerrado.(pasar un verify) o El fichero se usa como salida para otro proceso.",
+    "operation": "OPEN: El fichero no fue cerrado.(pasar un verify) o El fichero se usa como salida para otro proceso.\nREADWRITE: El fichero no fue cerrado.(pasar un verify) o El fichero se usa como salida para otro proceso.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13547,7 +13547,7 @@
     "severity": "MEDIUM",
     "reason": "Revisar permisos RACF y password del catálogo. Frecuente en ficheros protegidos",
     "examples": "VSAM return code 152",
-    "operation": "OPEN: La password no coincide con la del catalogo o usuario no autorizado READWRITE: La password no coincide con la del catalogo o usuario no autorizado.",
+    "operation": "OPEN: La password no coincide con la del catalogo o usuario no autorizado.\nREADWRITE: La password no coincide con la del catalogo o usuario no autorizado.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13679,7 +13679,7 @@
     "severity": "MEDIUM",
     "reason": "Puede deberse a volumen no montado o falta de espacio. Revisar FILESTATUS",
     "examples": "VSAM return code 24",
-    "operation": "READWRITE...",
+    "operation": "READWRITE.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
@@ -13691,7 +13691,7 @@
     "severity": "MEDIUM",
     "reason": "El fichero no puede extenderse. Revisar extents y volumen",
     "examples": "VSAM return code 28",
-    "operation": "READWRITE...",
+    "operation": "READWRITE.",
     "recomendation": "Comprobar la definición del cluster, la DD, el catálogo y la disponibilidad del volumen; corregir la configuración y repetir el acceso."
   },
   {
