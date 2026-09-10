@@ -1602,7 +1602,7 @@
     "category": "UNIX",
     "deleted": false
   },
-  {
+ {
     "id": "CMD-UNIX-0017",
     "name": "du",
     "shortDescription": "Displays disk space usage",
@@ -1610,267 +1610,258 @@
     "examples": "du -sk /u/miusuario",
     "category": "UNIX",
     "deleted": false
+  },
+  {
+    "id": "CMD-UNIX-0018",
+    "name": "find",
+    "shortDescription": "Searches for files",
+    "longDescription": "find locates files and directories based on name, attributes, or other criteria.",
+    "examples": "find /u/miusuario -name '*.log'",
+    "category": "UNIX",
+    "deleted": false
+  },
+  {
+    "id": "CMD-UNIX-0019",
+    "name": "env",
+    "shortDescription": "Displays environment variables",
+    "longDescription": "env displays the environment variables for the current process.",
+    "examples": "env",
+    "category": "UNIX",
+    "deleted": false
+  },
+  {
+    "id": "CMD-UNIX-0020",
+    "name": "echo",
+    "shortDescription": "Displays text or variables",
+    "longDescription": "echo prints text or the value of environment variables.",
+    "examples": "echo $HOME",
+    "category": "UNIX",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0001",
+    "name": "IDCAMS",
+    "shortDescription": "Executes VSAM and catalog utilities",
+    "longDescription": "IDCAMS is the DFSMSdfp utility used to manage VSAM, catalogs, and other data management functions.",
+    "examples": "IDCAMS",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0002",
+    "name": "DEFINE CLUSTER",
+    "shortDescription": "Defines a VSAM cluster",
+    "longDescription": "DEFINE CLUSTER creates a VSAM cluster along with its data and index components.",
+    "examples": "DEFINE CLUSTER(NAME(MI.VSAM.CLUSTER) ... )",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0003",
+    "name": "DEFINE ALIAS",
+    "shortDescription": "Defines a catalog alias",
+    "longDescription": "DEFINE ALIAS creates a catalog alias for a specific naming level.",
+    "examples": "DEFINE ALIAS(NAME(MI.ALIAS) RELATE(MI.USERCAT))",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0004",
+    "name": "DELETE",
+    "shortDescription": "Deletes catalog objects",
+    "longDescription": "IDCAMS DELETE removes clusters, cataloged datasets, aliases, or other supported objects.",
+    "examples": "DELETE MI.VSAM.CLUSTER",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0005",
+    "name": "LISTCAT",
+    "shortDescription": "Lists catalog entries",
+    "longDescription": "LISTCAT displays information about catalog entries and VSAM objects.",
+    "examples": "LISTCAT ENT(MI.VSAM.CLUSTER) ALL",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0006",
+    "name": "REPRO",
+    "shortDescription": "Copies data",
+    "longDescription": "REPRO copies or loads records between compatible datasets, especially VSAM.",
+    "examples": "REPRO INFILE(IN1) OUTFILE(OUT1)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0007",
+    "name": "PRINT",
+    "shortDescription": "Prints dataset content",
+    "longDescription": "PRINT displays or prints dataset records using IDCAMS.",
+    "examples": "PRINT INFILE(IN1)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0008",
+    "name": "VERIFY",
+    "shortDescription": "Verifies a VSAM cluster",
+    "longDescription": "VERIFY checks and updates control information for a VSAM cluster when applicable.",
+    "examples": "VERIFY DATASET(MI.VSAM.CLUSTER)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0009",
+    "name": "ALTER",
+    "shortDescription": "Modifies catalog attributes",
+    "longDescription": "ALTER modifies specific attributes of a catalog entry.",
+    "examples": "ALTER MI.DATASET NEWNAME(MI.DATASET.NEW)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0010",
+    "name": "EXAMINE",
+    "shortDescription": "Checks VSAM structure",
+    "longDescription": "EXAMINE analyzes the structure of a VSAM cluster to detect integrity issues.",
+    "examples": "EXAMINE DATASET(MI.VSAM.CLUSTER)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0011",
+    "name": "DIAGNOSE",
+    "shortDescription": "Diagnoses a VSAM cluster",
+    "longDescription": "DIAGNOSE performs additional diagnostic checks on VSAM structures.",
+    "examples": "DIAGNOSE DATASET(MI.VSAM.CLUSTER)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0012",
+    "name": "BLDINDEX",
+    "shortDescription": "Builds an alternate index",
+    "longDescription": "BLDINDEX builds an alternate index for a VSAM cluster when applicable.",
+    "examples": "BLDINDEX INDATASET(MI.VSAM.AIX) OUTDATASET(MI.VSAM.PATH)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0013",
+    "name": "EXPORT",
+    "shortDescription": "Exports a dataset",
+    "longDescription": "EXPORT prepares VSAM or catalog data to be transported or imported.",
+    "examples": "EXPORT INFILE(MI.VSAM.CLUSTER) OUTFILE(MI.BACKUP)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0014",
+    "name": "IMPORT",
+    "shortDescription": "Imports a dataset",
+    "longDescription": "IMPORT restores exported data using IDCAMS functions.",
+    "examples": "IMPORT INFILE(MI.BACKUP) OUTDATASET(MI.VSAM.CLUSTER)",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-DFSMS-0015",
+    "name": "ALTER USER CATALOG",
+    "shortDescription": "Modifies catalog",
+    "longDescription": "ALTER allows modifying supported attributes of catalog entries and associated objects.",
+    "examples": "ALTER MI.USERCAT ...",
+    "category": "DFSMS",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0001",
+    "name": "D J,job",
+    "shortDescription": "Displays job information",
+    "longDescription": "The JES2 DISPLAY JOB command displays information about the status and attributes of a job.",
+    "examples": "$DJ,JOB12345",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0002",
+    "name": "C job",
+    "shortDescription": "Cancels a job",
+    "longDescription": "The JES2 CANCEL command requests the cancellation of a job.",
+    "examples": "$C JOB12345",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0003",
+    "name": "H job",
+    "shortDescription": "Holds a job",
+    "longDescription": "The JES2 HOLD command holds a job to prevent it from executing until released.",
+    "examples": "$H JOB12345",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0004",
+    "name": "A job",
+    "shortDescription": "Releases a job",
+    "longDescription": "The JES2 RELEASE command releases a held job.",
+    "examples": "$A JOB12345",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0005",
+    "name": "D A",
+    "shortDescription": "Displays system activity",
+    "longDescription": "DISPLAY A shows JES2 activity information.",
+    "examples": "$DA",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0006",
+    "name": "D R",
+    "shortDescription": "Displays JES2 resources",
+    "longDescription": "DISPLAY R shows JES2 resource information.",
+    "examples": "$DR",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0007",
+    "name": "D Q",
+    "shortDescription": "Displays JES2 queues",
+    "longDescription": "DISPLAY Q shows information about queues and jobs managed by JES2.",
+    "examples": "$DQ",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0008",
+    "name": "D S",
+    "shortDescription": "Displays JES2 status",
+    "longDescription": "DISPLAY S shows JES2 status information.",
+    "examples": "$DS",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0009",
+    "name": "F job",
+    "shortDescription": "Modifies a job",
+    "longDescription": "The JES2 FORCE command allows forcing specific actions on a job depending on its status and authorization.",
+    "examples": "$F JOB12345",
+    "category": "JES2",
+    "deleted": false
+  },
+  {
+    "id": "CMD-JES2-0010",
+    "name": "P JES2",
+    "shortDescription": "Stops JES2",
+    "longDescription": "The JES2 P command initiates JES2 shutdown procedures according to system policy.",
+    "examples": "$PJES2",
+    "category": "JES2",
+    "deleted": false
   }
-    {
-      "id": "CMD-UNIX-0017",
-      "name": "du",
-      "shortDescription": "Displays uso de espacio",
-      "longDescription": "du displays el espacio utilizado por archivos and directorios.",
-      "examples": "du -k /u/miusuario",
-      "category": "UNIX",
-      "deleted": false
-    },
-    {
-      "id": "CMD-UNIX-0018",
-      "name": "find",
-      "shortDescription": "Searches archivos",
-      "longDescription": "find localiza archivos and directorios según nombre, atributos u otros criterios.",
-      "examples": "find /u/miusuario -name '*.log'",
-      "category": "UNIX",
-      "deleted": false
-    },
-    {
-      "id": "CMD-UNIX-0019",
-      "name": "env",
-      "shortDescription": "Displays variables de entorno",
-      "longDescription": "env displays las variables de entorno del proceso actual.",
-      "examples": "env",
-      "category": "UNIX",
-      "deleted": false
-    },
-    {
-      "id": "CMD-UNIX-0020",
-      "name": "echo",
-      "shortDescription": "Displays texto or variables",
-      "longDescription": "echo imprime texto or el valor de variables de entorno.",
-      "examples": "echo $HOME",
-      "category": "UNIX",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0001",
-      "name": "IDCAMS",
-      "shortDescription": "Ejecuta utilidades de VSAM and catálogo",
-      "longDescription": "IDCAMS es la utilidad DFSMSdfp utilizada for administrar VSAM, catálogos and otras funciones de gestión de datos.",
-      "examples": "IDCAMS",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0002",
-      "name": "DEFINE CLUSTER",
-      "shortDescription": "Define un cluster VSAM",
-      "longDescription": "DEFINE CLUSTER creates un cluster VSAM and sus componentes de datos e índice.",
-      "examples": "DEFINE CLUSTER(NAME(MI.VSAM.CLUSTER) ... )",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0003",
-      "name": "DEFINE ALIAS",
-      "shortDescription": "Define un alias de catálogo",
-      "longDescription": "DEFINE ALIAS creates un alias de catálogo for un nivel de nombres.",
-      "examples": "DEFINE ALIAS(NAME(MI.ALIAS) RELATE(MI.USERCAT))",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0004",
-      "name": "DELETE",
-      "shortDescription": "Deletes objetos de catálogo",
-      "longDescription": "DELETE de IDCAMS deletes clusters, datasets catalogados, aliases u otros objetos soportados.",
-      "examples": "DELETE MI.VSAM.CLUSTER",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0005",
-      "name": "LISTCAT",
-      "shortDescription": "Lists entradas de catálogo",
-      "longDescription": "LISTCAT displays información de entradas de catálogo and objetos VSAM.",
-      "examples": "LISTCAT ENT(MI.VSAM.CLUSTER) ALL",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0006",
-      "name": "REPRO",
-      "shortDescription": "Copies datos",
-      "longDescription": "REPRO copies or carga registros between datasets compatibles, especialmente VSAM.",
-      "examples": "REPRO INFILE(IN1) OUTFILE(OUT1)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0007",
-      "name": "PRINT",
-      "shortDescription": "Imprime contenido de dataset",
-      "longDescription": "PRINT displays or imprime registros de datasets mediante IDCAMS.",
-      "examples": "PRINT INFILE(IN1)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0008",
-      "name": "VERIFY",
-      "shortDescription": "Verifica un cluster VSAM",
-      "longDescription": "VERIFY comprueba and actualiza información de control de un cluster VSAM cuando procede.",
-      "examples": "VERIFY DATASET(MI.VSAM.CLUSTER)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0009",
-      "name": "ALTER",
-      "shortDescription": "Modifies atributos de catálogo",
-      "longDescription": "ALTER modifies determinados atributos de una entrada de catálogo.",
-      "examples": "ALTER MI.DATASET NEWNAME(MI.DATASET.NEW)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0010",
-      "name": "EXAMINE",
-      "shortDescription": "Comprueba la estructura VSAM",
-      "longDescription": "EXAMINE analiza la estructura de un cluster VSAM for detectar problemas de integridad.",
-      "examples": "EXAMINE DATASET(MI.VSAM.CLUSTER)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0011",
-      "name": "DIAGNOSE",
-      "shortDescription": "Diagnostica un cluster VSAM",
-      "longDescription": "DIAGNOSE realiza comprobaciones diagnósticas adicionales on estructuras VSAM.",
-      "examples": "DIAGNOSE DATASET(MI.VSAM.CLUSTER)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0012",
-      "name": "BLDINDEX",
-      "shortDescription": "Construye un índice alternativo",
-      "longDescription": "BLDINDEX construye un índice alternativo for un cluster VSAM cuando corresponde.",
-      "examples": "BLDINDEX INDATASET(MI.VSAM.AIX) OUTDATASET(MI.VSAM.PATH)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0013",
-      "name": "EXPORT",
-      "shortDescription": "Exporta un dataset",
-      "longDescription": "EXPORT prepara datos VSAM or de catálogo for ser transportados or importados.",
-      "examples": "EXPORT INFILE(MI.VSAM.CLUSTER) OUTFILE(MI.BACKUP)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0014",
-      "name": "IMPORT",
-      "shortDescription": "Importa un dataset",
-      "longDescription": "IMPORT restaura datos exportados mediante funciones de IDCAMS.",
-      "examples": "IMPORT INFILE(MI.BACKUP) OUTDATASET(MI.VSAM.CLUSTER)",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-DFSMS-0015",
-      "name": "ALTER USER CATALOG",
-      "shortDescription": "Modifies catálogo",
-      "longDescription": "ALTER allows modifiesr atributos soportados de entradas de catálogo and objetos associateds.",
-      "examples": "ALTER MI.USERCAT ...",
-      "category": "DFSMS",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0001",
-      "name": "D J,job",
-      "shortDescription": "Displays información de un job",
-      "longDescription": "The JES2 DISPLAY JOB displays información on el estado and atributos de un job.",
-      "examples": "$DJ,JOB12345",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0002",
-      "name": "C job",
-      "shortDescription": "Cancels un job",
-      "longDescription": "The JES2 CANCEL solicita la cancelsción de un job.",
-      "examples": "$C JOB12345",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0003",
-      "name": "H job",
-      "shortDescription": "Retiene un job",
-      "longDescription": "The JES2 HOLD retiene un job for impedir que continúe hasta que sea releasesdo.",
-      "examples": "$H JOB12345",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0004",
-      "name": "A job",
-      "shortDescription": "Releases un job",
-      "longDescription": "The JES2 RELEASE releases un job retenido.",
-      "examples": "$A JOB12345",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0005",
-      "name": "D A",
-      "shortDescription": "Displays actividad of the system",
-      "longDescription": "DISPLAY A displays información de actividad de JES2.",
-      "examples": "$DA",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0006",
-      "name": "D R",
-      "shortDescription": "Displays recursos JES2",
-      "longDescription": "DISPLAY R displays información de recursos JES2.",
-      "examples": "$DR",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0007",
-      "name": "D Q",
-      "shortDescription": "Displays colas JES2",
-      "longDescription": "DISPLAY Q displays información de las colas and trabajos gestionados por JES2.",
-      "examples": "$DQ",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0008",
-      "name": "D S",
-      "shortDescription": "Displays estado JES2",
-      "longDescription": "DISPLAY S displays información del estado de JES2.",
-      "examples": "$DS",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0009",
-      "name": "F job",
-      "shortDescription": "Modifies un job",
-      "longDescription": "The FORCE de JES2 allows forzar determinadas acciones on un job según su estado and autorización.",
-      "examples": "$F JOB12345",
-      "category": "JES2",
-      "deleted": false
-    },
-    {
-      "id": "CMD-JES2-0010",
-      "name": "P JES2",
-      "shortDescription": "Detiene JES2",
-      "longDescription": "The JES2 P allows startsr procedimientos de parada de JES2 según la política of the system.",
-      "examples": "$PJES2",
-      "category": "JES2",
-      "deleted": false
-    }
   ]
 }
