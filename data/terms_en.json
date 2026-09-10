@@ -4253,655 +4253,655 @@
     "deleted": false
   }
     {
-      "id": "PL/I-0181",
-      "name": "PI",
-      "shortDescription": "Constante matemática π.",
-      "longDescription": "PI representa la constante matemática π, utilizada en cálculos trigonométricos, geométricos y científicos.",
-      "examples": "CIRC = 2 * PI * RADIUS;",
-      "notes": "Su precision depende de la implementación del compiler.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0182",
-      "name": "PINNED",
-      "shortDescription": "Almacenamiento fijo that no must moverse.",
-      "longDescription": "PINNED indica that una variable o structure must permanecer en una ubicación fija de memory, evitando movimientos por parte del system o del recolector.",
-      "examples": "DECLARE BUF PINNED;",
-      "notes": "Useful en operaciones with devices o memory compartida.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0183",
-      "name": "PLACE",
-      "shortDescription": "Ubica data en una dirección o sección determinada.",
-      "longDescription": "PLACE allows you to especificar la ubicación exacta where deben storese data o structures, useful for integraciones with hardware o formats estrictos.",
-      "examples": "PLACE RECORD AT ADDRESS(PTR);",
-      "notes": "It must usarse with cuidado to avoid accesss inválidos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0184",
-      "name": "PLUS",
-      "shortDescription": "Operador aritmético de suma.",
-      "longDescription": "PLUS realiza la operación de suma between dos values numeric, siendo uno de los operadores básicos en cálculos aritméticos.",
-      "examples": "TOTAL = A PLUS B;",
-      "notes": "It can combinarse with otros operadores for expresiones complex.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0185",
-      "name": "MINUS",
-      "shortDescription": "Operador aritmético de resta.",
-      "longDescription": "MINUS realiza la operación de resta between dos values numeric, allowing cálculos discretos y operaciones aritméticas básicas.",
-      "examples": "DIFF = A MINUS B;",
-      "notes": "It must utilizarse with types numeric compatibles.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0186",
-      "name": "POSITION",
-      "shortDescription": "Posiciona cursor o index.",
-      "longDescription": "POSITION establece la ubicación del cursor within un file o structure, allowing control operaciones de read y write.",
-      "examples": "POSITION FILE(F) AT 10;",
-      "notes": "It must ser coherente with el modo de access del archivo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0187",
-      "name": "POSTPONE",
-      "shortDescription": "Aplaza execution o inclusión.",
-      "longDescription": "POSTPONE retrasa la execution de una acción o la inclusión de un elemento hasta una fase posterior del program o compilation.",
-      "examples": "POSTPONE INIT UNTIL READY;",
-      "notes": "Useful en flujos that requiresn sincronización.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0188",
-      "name": "PRECISION",
-      "shortDescription": "Precisión numérica.",
-      "longDescription": "PRECISION especifica la cantidad de dígitos o exactitud de un value numeric, essential en cálculos científicos y financieros.",
-      "examples": "DECLARE X DECIMAL(10,2) PRECISION(12);",
-      "notes": "It must ser coherente with el type numeric declarado.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0189",
-      "name": "PRESENT",
-      "shortDescription": "Indica presencia de un parámetro o campo.",
-      "longDescription": "PRESENT allows you to verificar if un parámetro opcional o field está disponible, diferenciando between ausencia y values nulos.",
-      "examples": "IF PRESENT(ARG(3)) THEN CALL PROCESS;",
-      "notes": "Useful en rutinas with parámetros opcionales.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0190",
-      "name": "PRIORITY",
-      "shortDescription": "Nivel de prioridad for tareas o resources.",
-      "longDescription": "PRIORITY establece el nivel de importancia o precedencia de una tarea o recurso, afectando su orden de execution en environments concurrentes.",
-      "examples": "DECLARE TASK PRIORITY(5);",
-      "notes": "It must ajustarse according to las necesidades del system.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0191",
-      "name": "PROCEDURE",
-      "shortDescription": "Declara un procedimiento.",
-      "longDescription": "PROCEDURE define una rutina that ejecuta un conjunto de instrucciones without devolver un valor, allowing modularizar el program en unidades funcionales.",
-      "examples": "PROCEDURE PROCESS_DATA; ... END;",
-      "notes": "It can receive parámetros using LINKAGE o argumentos directos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0192",
-      "name": "PROTECTED",
-      "shortDescription": "Nivel de visibilidad restringido.",
-      "longDescription": "PROTECTED limita el access a elementos within structures u objetos, allowing encapsular data y control su uso.",
-      "examples": "DECLARE FIELD PROTECTED;",
-      "notes": "Disponible en environments PL/I with soporte OO.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0193",
-      "name": "PUBLIC",
-      "shortDescription": "Nivel de visibilidad pública.",
-      "longDescription": "PUBLIC allows you to that un elemento sea accesible desde otros modules u objetos, facilitating la interacción between componentes del programa.",
-      "examples": "DECLARE METHOD PUBLIC;",
-      "notes": "It must utilizarse for elementos that forman parte de la interfaz pública.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0194",
-      "name": "PUT",
-      "shortDescription": "Sentencias de output with formatos.",
-      "longDescription": "PUT escribe data en un archivo, device o output estándar. Allows you to control el formato, la structure y la presentación de la información emitida por el programa.",
-      "examples": "PUT DATA;",
-      "notes": "It can combinarse with SKIP, LIST o FORMAT for outputs más complex.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0195",
-      "name": "PUT SKIP",
-      "shortDescription": "Salida with salto de línea.",
-      "longDescription": "PUT SKIP genera una output seguida de un salto de línea, allowing separar records o improve la readability de reports.",
-      "examples": "PUT SKIP DATA;",
-      "notes": "El number of líneas saltadas can ajustarse according to el format requerido.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0196",
-      "name": "PUT LIST",
-      "shortDescription": "Salida en format de lista.",
-      "longDescription": "PUT LIST presenta multiple values en una sola operación, organizándolos such as una lista structureda. It is useful for reports with varios campos.",
-      "examples": "PUT LIST(A, B, C);",
-      "notes": "Los elementos se muestran en el orden declarado.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0197",
-      "name": "QUEUES",
-      "shortDescription": "Estructuras encoladas for mensajes o tareas.",
-      "longDescription": "QUEUES define structures FIFO utilizadas for gestionar mensajes, tareas o eventos in systems concurrentes. Permiten organizar flujos de trabajo sequentiales.",
-      "examples": "DECLARE MSG_QUEUE QUEUES;",
-      "notes": "Su comportamiento depende del system de ejecución.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0198",
-      "name": "RANGE",
-      "shortDescription": "Rango de values válido for una variable o index.",
-      "longDescription": "RANGE especifica los límites mínimo y máximo permitidos for una variable o index, facilitating validaciones y evitando accesss fuera de rango.",
-      "examples": "DECLARE I FIXED BIN RANGE(1:100);",
-      "notes": "It must ser coherente with el type y use de la variable.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0199",
-      "name": "READ",
-      "shortDescription": "Lee data desde un file o device.",
-      "longDescription": "READ recupera información desde un file o device de input, posicionando el cursor according to el modo de access defined. It is essential for operaciones de input structureda.",
-      "examples": "READ FILE(F) INTO RECORD;",
-      "notes": "It must combinarse with OPEN y ACCESS adecuados.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0200",
-      "name": "READ FILE",
-      "shortDescription": "Lectura explícita desde un archivo.",
-      "longDescription": "READ FILE especifica that la operación de read se realiza on un file declarado, allowing control el flujo de input de manera precisa.",
-      "examples": "READ FILE(INPUT) INTO BUFFER;",
-      "notes": "The file must estar abierto en modo INPUT.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0201",
-      "name": "READ DIRECT",
-      "shortDescription": "Lectura directa por position.",
-      "longDescription": "READ DIRECT allows you to leer un record específico using su position physical o logic within del archivo, useful for access random.",
-      "examples": "READ DIRECT FILE(F) KEY(10) INTO REC;",
-      "notes": "Requires files with soporte de access directo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0202",
-      "name": "READ UPDATE",
-      "shortDescription": "Lectura for actualización posterior.",
-      "longDescription": "READ UPDATE obtiene un record with la intención de modificarlo posteriormente, bloqueándolo if el system lo requires to avoid conflictos.",
-      "examples": "READ UPDATE FILE(F) INTO REC;",
-      "notes": "It must combinarse with REWRITE for completar la operación.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0203",
-      "name": "READ ONLY",
-      "shortDescription": "Lectura without permitir modificaciones.",
-      "longDescription": "READ ONLY garantiza that el record leído no será modificado, allowing operaciones de consulta without afectar la integrity del archivo.",
-      "examples": "READ ONLY FILE(F) INTO REC;",
-      "notes": "Ideal for operaciones de auditoría o análisis.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0204",
-      "name": "READ SKIP",
-      "shortDescription": "Lectura with salto de registros.",
-      "longDescription": "READ SKIP allows you to omitir uno o varios records before de perform la read, useful for navegación sequential controlada.",
-      "examples": "READ SKIP(2) FILE(F) INTO REC;",
-      "notes": "El number of saltos must ser válido for el archivo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0205",
-      "name": "RECORD",
-      "shortDescription": "Unidad de data en archivos.",
-      "longDescription": "RECORD representa una structure de data almacenada en un archivo, compuesta por fields defined por el programador.",
-      "examples": "DECLARE REC RECORD;",
-      "notes": "It can incluir multiple fields de distintos tipos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0206",
-      "name": "RECORD INPUT",
-      "shortDescription": "Entrada de records structuredos.",
-      "longDescription": "RECORD INPUT indica that la operación de input se realiza on records completos, respetando su structure declarada.",
-      "examples": "RECORD INPUT FILE(F) INTO REC;",
-      "notes": "It must coincidir with la structure del archivo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0207",
-      "name": "RECORD OUTPUT",
-      "shortDescription": "Salida de records structuredos.",
-      "longDescription": "RECORD OUTPUT allows you to escribir records completos en un archivo, respetando su structure y formato.",
-      "examples": "RECORD OUTPUT FILE(F) FROM REC;",
-      "notes": "The file must estar abierto en modo OUTPUT.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0208",
-      "name": "RECORD KEY",
-      "shortDescription": "Clave de record for access directo.",
-      "longDescription": "RECORD KEY define el field utilizado such as key for localizar records in files indexados o de access directo.",
-      "examples": "RECORD KEY IS ID;",
-      "notes": "It must ser único to ensure searchs correctas.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0209",
-      "name": "RECORD AREA",
-      "shortDescription": "Área de storage for registros.",
-      "longDescription": "RECORD AREA define la zona de memory where se store temporalmente los records leídos o escritos.",
-      "examples": "DECLARE WORK RECORD AREA;",
-      "notes": "It must ser compatible with la structure del archivo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0210",
-      "name": "RECORD LENGTH",
-      "shortDescription": "Longitud del registro.",
-      "longDescription": "RECORD LENGTH especifica el tamaño total de un registro, useful for files de length fija o validaciones de formato.",
-      "examples": "RECORD LENGTH IS 80;",
-      "notes": "It must coincidir with la structure declarada.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0211",
-      "name": "RECORD NAME",
-      "shortDescription": "Nombre simbólico del registro.",
-      "longDescription": "RECORD NAME assigns un identificador simbólico a un registro, facilitating su referencia en operaciones de E/S.",
-      "examples": "RECORD NAME IS HEADER;",
-      "notes": "It must ser único within del archivo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0212",
-      "name": "RECORD TYPE",
-      "shortDescription": "Tipo de registro.",
-      "longDescription": "RECORD TYPE indica la categoría o format del record within un archivo, useful for files mixtos with multiple structures.",
-      "examples": "RECORD TYPE IS DETAIL;",
-      "notes": "It must coincidir with el format del archivo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0213",
-      "name": "RECORDS",
-      "shortDescription": "Conjunto de registros.",
-      "longDescription": "RECORDS representa una colección de records within un archivo, allowing operaciones on multiple unidades de datos.",
-      "examples": "DECLARE RECORDS ARRAY;",
-      "notes": "It can combinarse with OCCURS for structures repetitivas.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0214",
-      "name": "RECURSIVE",
-      "shortDescription": "Allows you to calls recursivas.",
-      "longDescription": "RECURSIVE habilita that un procedimiento pueda llamarse a sí mismo, useful for algoritmos such as search, ordenación o procesamiento jerárquico.",
-      "examples": "RECURSIVE PROCEDURE FACT(N);",
-      "notes": "It must declararse explícitamente to avoid errors de compilation.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0215",
-      "name": "REF",
-      "shortDescription": "Referencia a variable o structure.",
-      "longDescription": "REF allows you to declarar referencias a variables o structures, similar a punteros pero with semántica controlada por el compiler.",
-      "examples": "DECLARE R REF(A);",
-      "notes": "It must apuntar a una variable válida before de usarse.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0216",
-      "name": "REFER",
-      "shortDescription": "Referencia explícita a otro elemento.",
-      "longDescription": "REFER indica that una variable o structure depende de otra for su definición o contenido, useful for aliasing controlado.",
-      "examples": "DECLARE B REFER(A);",
-      "notes": "It should be used carefully to avoid inconsistencies.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0217",
-      "name": "RELEASE",
-      "shortDescription": "Libera resources o locks.",
-      "longDescription": "RELEASE removes locks on records o resources, allowing that otras tareas accedan a ellos.",
-      "examples": "RELEASE FILE(F);",
-      "notes": "It must usarse after de operaciones READ UPDATE o REWRITE.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0218",
-      "name": "REMAINDER",
-      "shortDescription": "Devuelve el resto de una splitting.",
-      "longDescription": "REMAINDER calcula el residuo de una splitting entera, similar a MOD pero with semántica specific del compiler PL/I.",
-      "examples": "R = REMAINDER(A, B);",
-      "notes": "It must utilizarse with types numeric compatibles.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0219",
-      "name": "REMOVE",
-      "shortDescription": "Elimina un elemento de una structure.",
-      "longDescription": "REMOVE suprime un elemento de una colección o structure, ajustando los indexes o positions according to corresponda.",
-      "examples": "CALL REMOVE(LIST, 3);",
-      "notes": "It must verificarse that el index sea válido.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0220",
-      "name": "REPEAT",
-      "shortDescription": "Repite una operación o bloque.",
-      "longDescription": "REPEAT ejecuta un block de instrucciones multiple veces hasta that se cumpla una condition de output.",
-      "examples": "REPEAT UNTIL DONE; ... END;",
-      "notes": "It must incluir una condition clear to avoid bucles infinitos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0221",
-      "name": "REPLACE",
-      "shortDescription": "Sustituye contenido.",
-      "longDescription": "REPLACE allows you to sustituir el content de una variable, field o record por un nuevo value o structure.",
-      "examples": "REPLACE FIELD WITH NEW_VALUE;",
-      "notes": "It must respetar el type del destination.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0222",
-      "name": "REPORT",
-      "shortDescription": "Genera reports structuredos.",
-      "longDescription": "REPORT allows you to crear outputs formateadas for informes, combinando data y texto en structures predefinidas.",
-      "examples": "CALL REPORT(SUMMARY);",
-      "notes": "It can combinarse with PUT LIST y FORMAT.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0223",
-      "name": "REQUEST",
-      "shortDescription": "Solicita acción o recurso.",
-      "longDescription": "REQUEST envía una petición a un module, tarea o recurso externo, allowing coordinar operaciones distribuidas.",
-      "examples": "CALL REQUEST(SERVICE);",
-      "notes": "Su comportamiento depende del system de ejecución.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0224",
-      "name": "RESIGNAL",
-      "shortDescription": "Reenvía una condition.",
-      "longDescription": "RESIGNAL allows you to reenviar una condition previously capturada, useful for manejo jerárquico de errors.",
-      "examples": "RESIGNAL ERROR;",
-      "notes": "It must usarse within manejadores de conditions.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0225",
-      "name": "RETURN",
-      "shortDescription": "Finaliza un procedimiento o función.",
-      "longDescription": "RETURN termina la execution de una rutina y devuelve el control al caller. En funciones, can devolver un valor.",
-      "examples": "RETURN;",
-      "notes": "En funciones must incluir el value de return.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0226",
-      "name": "REWRITE",
-      "shortDescription": "Reescribe un record previously leído.",
-      "longDescription": "REWRITE actualiza un record that fue leído using READ UPDATE, reemplazando su content en el archivo.",
-      "examples": "REWRITE FILE(F) FROM REC;",
-      "notes": "It must usarse after de READ UPDATE to ensure coherencia.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0227",
-      "name": "REAL",
-      "shortDescription": "Tipo de punto flotante de simple precision.",
-      "longDescription": "REAL declara values en coma flotante de precision simple, utilizados for cálculos numeric that no requiresn doble precision.",
-      "examples": "DECLARE X REAL;",
-      "notes": "Equivalente a SINGLE en algunos compilers.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0228",
-      "name": "RECEIVE",
-      "shortDescription": "Recibe mensajes o data en comunicación o colas.",
-      "longDescription": "RECEIVE obtiene data enviados a través de colas, canales o mecanismos de comunicación between tareas o procesos.",
-      "examples": "RECEIVE QUEUE INTO BUFFER;",
-      "notes": "It must existir un mensaje pendiente for completar la operación.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0229",
-      "name": "RECURSE",
-      "shortDescription": "Allows you to recursividad en calls.",
-      "longDescription": "RECURSE habilita that un procedimiento pueda llamarse a sí mismo, allowing implementar algoritmos recursivos.",
-      "examples": "RECURSE PROCEDURE FACT(N);",
-      "notes": "It must declararse explícitamente to avoid errors de compilation.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0230",
-      "name": "RELEASE",
-      "shortDescription": "Libera un lock o recurso.",
-      "longDescription": "RELEASE removes locks on resources o registros, allowing that otras tareas accedan a ellos.",
-      "examples": "RELEASE FILE(F);",
-      "notes": "It must usarse tras operaciones READ UPDATE o REWRITE.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0231",
-      "name": "REMAINDER",
-      "shortDescription": "Resultado del resto en splitting.",
-      "longDescription": "REMAINDER devuelve el residuo de una splitting entera, similar a MOD pero with semántica specific del compiler PL/I.",
-      "examples": "R = REMAINDER(A, B);",
-      "notes": "It must usarse with types numeric compatibles.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0232",
-      "name": "RENAME",
-      "shortDescription": "Cambia el nombre visible de un identificador.",
-      "longDescription": "RENAME assigns un nuevo nombre simbólico a un elemento del programa, allowing reorganizar o adaptar interfaces.",
-      "examples": "RENAME OLDNAME TO NEWNAME;",
-      "notes": "No altera el contenido, only la referencia.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0233",
-      "name": "REPEAT",
-      "shortDescription": "Bucle that se repite hasta that se cumple condition.",
-      "longDescription": "REPEAT ejecuta un block de instrucciones repetidamente hasta that la condition especificada se cumpla.",
-      "examples": "REPEAT UNTIL DONE; ... END;",
-      "notes": "It must incluir una condition clear to avoid bucles infinitos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0234",
-      "name": "REPLACE",
-      "shortDescription": "Sustituye data o definiciones existentes.",
-      "longDescription": "REPLACE allows you to reemplazar el content de una variable, field o structure por un nuevo valor.",
-      "examples": "REPLACE FIELD WITH NEW_VALUE;",
-      "notes": "It must respetar el type del destination.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0235",
-      "name": "RESERVE",
-      "shortDescription": "Reserva espacio o resources.",
-      "longDescription": "RESERVE assigns espacio o resources for use posterior, evitando conflictos with otras tareas.",
-      "examples": "RESERVE AREA(100);",
-      "notes": "It must liberarse when ya no sea necesario.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0236",
-      "name": "RESTART",
-      "shortDescription": "Reinicia un process o point of ejecución.",
-      "longDescription": "RESTART allows you to reiniciar la execution desde un punto defined, useful for recuperación tras errors.",
-      "examples": "RESTART PROCESS;",
-      "notes": "It must definirse un point of reinicio válido.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0237",
-      "name": "RETURN",
-      "shortDescription": "Devuelve control y opcionalmente un valor.",
-      "longDescription": "RETURN finaliza la execution de una rutina y devuelve el control al caller. En funciones, can devolver un valor.",
-      "examples": "RETURN;",
-      "notes": "En funciones must incluir el value de return.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0238",
-      "name": "RFUNC",
-      "shortDescription": "Función reusable o record funcional.",
-      "longDescription": "RFUNC indica una función reusable o un descriptor funcional according to el contexto del compiler.",
-      "examples": "DECLARE F RFUNC;",
-      "notes": "Su significado exacto depende de la implementación PL/I.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0239",
-      "name": "RIGHT",
-      "shortDescription": "Justificación o desplazamiento a la derecha.",
-      "longDescription": "RIGHT allows you to justificar texto o desplazar values hacia la derecha en operaciones de formato.",
-      "examples": "PUT NAME RIGHT;",
-      "notes": "Complementa LEFT for alineación.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0240",
-      "name": "LEFT",
-      "shortDescription": "Justificación o desplazamiento a la izquierda.",
-      "longDescription": "LEFT allows you to alinear texto o values hacia la izquierda en operaciones de output.",
-      "examples": "PUT NAME LEFT;",
-      "notes": "Complementa RIGHT for alineación.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0241",
-      "name": "RUNTIME",
-      "shortDescription": "Acciones specifics del time de ejecución.",
-      "longDescription": "RUNTIME se refiere a operaciones, diagnósticos o información disponible during execution del programa.",
-      "examples": "CALL RUNTIME(INFO);",
-      "notes": "Depende del environment de execution PL/I.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0242",
-      "name": "SAY",
-      "shortDescription": "Salida simple de texto.",
-      "longDescription": "SAY imprime texto de manera sencilla, useful for mensajes informales o debugging.",
-      "examples": "SAY 'Hola mundo';",
-      "notes": "No requires format complejo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0243",
-      "name": "SAVE",
-      "shortDescription": "Conserva estado o valor.",
-      "longDescription": "SAVE almacena temporalmente un value o estado for use posterior within del programa.",
-      "examples": "SAVE CURRENT_STATE;",
-      "notes": "It must restaurarse when sea necesario.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0244",
-      "name": "SCALAR",
-      "shortDescription": "Dato escalar.",
-      "longDescription": "SCALAR indica that un dato es simple y no structuredo, such as un number o character.",
-      "examples": "DECLARE X SCALAR;",
-      "notes": "Contrasta with STRUCTURE o ARRAY.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0245",
-      "name": "SCOPE",
-      "shortDescription": "Alcance de visibilidad.",
-      "longDescription": "SCOPE define el ámbito where un nombre o variable es visible, controlling su accesibilidad.",
-      "examples": "SCOPE PUBLIC;",
-      "notes": "It can ser LOCAL, PUBLIC o PROTECTED.",
-      "category": "PL/I",
-      "deleted": false
-    },
+"id": "PL/I-0181",
+"name": "PI",
+"shortDescription": "Mathematical constant pi.",
+"longDescription": "PI represents the mathematical constant pi, used in trigonometric, geometric, and scientific calculations.",
+"examples": "CIRC = 2 * PI * RADIUS;",
+"notes": "Its precision depends on the compiler implementation.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0182",
+"name": "PINNED",
+"shortDescription": "Fixed storage that must not be moved.",
+"longDescription": "PINNED indicates that a variable or structure must remain in a fixed memory location, preventing movement by the system or garbage collector.",
+"examples": "DECLARE BUF PINNED;",
+"notes": "Useful in operations with devices or shared memory.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0183",
+"name": "PLACE",
+"shortDescription": "Locates data at a given address or section.",
+"longDescription": "PLACE allows specifying the exact location where data or structures should be stored, useful for hardware integrations or strict formats.",
+"examples": "PLACE RECORD AT ADDRESS(PTR);",
+"notes": "Must be used with care to avoid invalid accesses.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0184",
+"name": "PLUS",
+"shortDescription": "Arithmetic addition operator.",
+"longDescription": "PLUS performs the addition operation between two numeric values, being one of the basic operators in arithmetic calculations.",
+"examples": "TOTAL = A PLUS B;",
+"notes": "Can be combined with other operators for complex expressions.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0185",
+"name": "MINUS",
+"shortDescription": "Arithmetic subtraction operator.",
+"longDescription": "MINUS performs the subtraction operation between two numeric values, allowing discrete calculations and basic arithmetic operations.",
+"examples": "DIFF = A MINUS B;",
+"notes": "Must be used with compatible numeric types.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0186",
+"name": "POSITION",
+"shortDescription": "Positions cursor or index.",
+"longDescription": "POSITION sets the location of the cursor within a file or structure, allowing control of read and write operations.",
+"examples": "POSITION FILE(F) AT 10;",
+"notes": "Must be consistent with the file's access mode.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0187",
+"name": "POSTPONE",
+"shortDescription": "Postpones execution or inclusion.",
+"longDescription": "POSTPONE delays the execution of an action or the inclusion of an element until a later phase of the program or compilation.",
+"examples": "POSTPONE INIT UNTIL READY;",
+"notes": "Useful in workflows requiring synchronization.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0188",
+"name": "PRECISION",
+"shortDescription": "Numeric precision.",
+"longDescription": "PRECISION specifies the number of digits or accuracy of a numeric value, fundamental in scientific and financial calculations.",
+"examples": "DECLARE X DECIMAL(10,2) PRECISION(12);",
+"notes": "Must be consistent with the declared numeric type.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0189",
+"name": "PRESENT",
+"shortDescription": "Indicates presence of a parameter or field.",
+"longDescription": "PRESENT allows checking if an optional parameter or field is available, differentiating between absence and null values.",
+"examples": "IF PRESENT(ARG(3)) THEN CALL PROCESS;",
+"notes": "Useful in routines with optional parameters.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0190",
+"name": "PRIORITY",
+"shortDescription": "Priority level for tasks or resources.",
+"longDescription": "PRIORITY sets the level of importance or precedence of a task or resource, affecting its execution order in concurrent environments.",
+"examples": "DECLARE TASK PRIORITY(5);",
+"notes": "Must be adjusted according to system needs.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0191",
+"name": "PROCEDURE",
+"shortDescription": "Declares a procedure.",
+"longDescription": "PROCEDURE defines a routine that executes a set of instructions without returning a value, allowing the program to be modularized into functional units.",
+"examples": "PROCEDURE PROCESS_DATA; ... END;",
+"notes": "Can receive parameters via LINKAGE or direct arguments.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0192",
+"name": "PROTECTED",
+"shortDescription": "Restricted visibility level.",
+"longDescription": "PROTECTED limits access to elements within structures or objects, allowing data encapsulation and control over its use.",
+"examples": "DECLARE FIELD PROTECTED;",
+"notes": "Available in PL/I environments with OO support.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0193",
+"name": "PUBLIC",
+"shortDescription": "Public visibility level.",
+"longDescription": "PUBLIC allows an element to be accessed from other modules or objects, facilitating interaction between program components.",
+"examples": "DECLARE METHOD PUBLIC;",
+"notes": "Must be used for elements that form part of the public interface.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0194",
+"name": "PUT",
+"shortDescription": "Output statements with formats.",
+"longDescription": "PUT writes data to a file, device, or standard output. It allows controlling the format, structure, and presentation of information emitted by the program.",
+"examples": "PUT DATA;",
+"notes": "Can be combined with SKIP, LIST, or FORMAT for more complex outputs.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0195",
+"name": "PUT SKIP",
+"shortDescription": "Output with a line break.",
+"longDescription": "PUT SKIP generates an output followed by a line break, allowing records to be separated or report readability to be improved.",
+"examples": "PUT SKIP DATA;",
+"notes": "The number of skipped lines can be adjusted according to the required format.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0196",
+"name": "PUT LIST",
+"shortDescription": "Output in list format.",
+"longDescription": "PUT LIST presents multiple values in a single operation, organizing them as a structured list. It is useful for reports with multiple fields.",
+"examples": "PUT LIST(A, B, C);",
+"notes": "Elements are displayed in the declared order.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0197",
+"name": "QUEUES",
+"shortDescription": "Queued structures for messages or tasks.",
+"longDescription": "QUEUES defines FIFO structures used to manage messages, tasks, or events in concurrent systems. They allow organizing sequential workflows.",
+"examples": "DECLARE MSG_QUEUE QUEUES;",
+"notes": "Its behavior depends on the execution system.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0198",
+"name": "RANGE",
+"shortDescription": "Valid value range for a variable or index.",
+"longDescription": "RANGE specifies the minimum and maximum limits allowed for a variable or index, facilitating validation and preventing out-of-range accesses.",
+"examples": "DECLARE I FIXED BIN RANGE(1:100);",
+"notes": "Must be consistent with the type and use of the variable.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0199",
+"name": "READ",
+"shortDescription": "Reads data from a file or device.",
+"longDescription": "READ retrieves information from a file or input device, positioning the cursor according to the defined access mode. It is fundamental for structured input operations.",
+"examples": "READ FILE(F) INTO RECORD;",
+"notes": "Must be combined with appropriate OPEN and ACCESS.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0200",
+"name": "READ FILE",
+"shortDescription": "Explicit read from a file.",
+"longDescription": "READ FILE specifies that the read operation is performed on a declared file, allowing precise control over the input flow.",
+"examples": "READ FILE(INPUT) INTO BUFFER;",
+"notes": "The file must be open in INPUT mode.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0201",
+"name": "READ DIRECT",
+"shortDescription": "Direct read by position.",
+"longDescription": "READ DIRECT allows reading a specific record via its physical or logical position within the file, useful for random access.",
+"examples": "READ DIRECT FILE(F) KEY(10) INTO REC;",
+"notes": "Requires files with direct access support.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0202",
+"name": "READ UPDATE",
+"shortDescription": "Read for subsequent update.",
+"longDescription": "READ UPDATE retrieves a record with the intent to modify it later, locking it if required by the system to avoid conflicts.",
+"examples": "READ UPDATE FILE(F) INTO REC;",
+"notes": "Must be combined with REWRITE to complete the operation.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0203",
+"name": "READ ONLY",
+"shortDescription": "Read without allowing modifications.",
+"longDescription": "READ ONLY guarantees that the read record will not be modified, allowing query operations without affecting file integrity.",
+"examples": "READ ONLY FILE(F) INTO REC;",
+"notes": "Ideal for auditing or analysis operations.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0204",
+"name": "READ SKIP",
+"shortDescription": "Read with record skipping.",
+"longDescription": "READ SKIP allows omitting one or several records before performing the read, useful for controlled sequential navigation.",
+"examples": "READ SKIP(2) FILE(F) INTO REC;",
+"notes": "The number of skips must be valid for the file.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0205",
+"name": "RECORD",
+"shortDescription": "Data unit in files.",
+"longDescription": "RECORD represents a data structure stored in a file, composed of fields defined by the programmer.",
+"examples": "DECLARE REC RECORD;",
+"notes": "Can include multiple fields of different types.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0206",
+"name": "RECORD INPUT",
+"shortDescription": "Structured record input.",
+"longDescription": "RECORD INPUT indicates that the input operation is performed on complete records, respecting their declared structure.",
+"examples": "RECORD INPUT FILE(F) INTO REC;",
+"notes": "Must match the file structure.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0207",
+"name": "RECORD OUTPUT",
+"shortDescription": "Structured record output.",
+"longDescription": "RECORD OUTPUT allows writing complete records to a file, respecting their structure and format.",
+"examples": "RECORD OUTPUT FILE(F) FROM REC;",
+"notes": "The file must be open in OUTPUT mode.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0208",
+"name": "RECORD KEY",
+"shortDescription": "Record key for direct access.",
+"longDescription": "RECORD KEY defines the field used as a key to locate records in indexed or direct access files.",
+"examples": "RECORD KEY IS ID;",
+"notes": "Must be unique to guarantee correct searches.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0209",
+"name": "RECORD AREA",
+"shortDescription": "Storage area for records.",
+"longDescription": "RECORD AREA defines the memory zone where read or written records are temporarily stored.",
+"examples": "DECLARE WORK RECORD AREA;",
+"notes": "Must be compatible with the file structure.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0210",
+"name": "RECORD LENGTH",
+"shortDescription": "Record length.",
+"longDescription": "RECORD LENGTH specifies the total size of a record, useful for fixed-length files or format validations.",
+"examples": "RECORD LENGTH IS 80;",
+"notes": "Must match the declared structure.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0211",
+"name": "RECORD NAME",
+"shortDescription": "Symbolic name of the record.",
+"longDescription": "RECORD NAME assigns a symbolic identifier to a record, facilitating its reference in I/O operations.",
+"examples": "RECORD NAME IS HEADER;",
+"notes": "Must be unique within the file.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0212",
+"name": "RECORD TYPE",
+"shortDescription": "Record type.",
+"longDescription": "RECORD TYPE indicates the category or format of the record within a file, useful for mixed files with multiple structures.",
+"examples": "RECORD TYPE IS DETAIL;",
+"notes": "Must match the file format.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0213",
+"name": "RECORDS",
+"shortDescription": "Set of records.",
+"longDescription": "RECORDS represents a collection of records within a file, allowing operations on multiple data units.",
+"examples": "DECLARE RECORDS ARRAY;",
+"notes": "Can be combined with OCCURS for repetitive structures.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0214",
+"name": "RECURSIVE",
+"shortDescription": "Allows recursive calls.",
+"longDescription": "RECURSIVE enables a procedure to call itself, useful for algorithms like search, sorting, or hierarchical processing.",
+"examples": "RECURSIVE PROCEDURE FACT(N);",
+"notes": "Must be explicitly declared to avoid compilation errors.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0215",
+"name": "REF",
+"shortDescription": "Reference to variable or structure.",
+"longDescription": "REF allows declaring references to variables or structures, similar to pointers but with compiler-controlled semantics.",
+"examples": "DECLARE R REF(A);",
+"notes": "Must point to a valid variable before use.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0216",
+"name": "REFER",
+"shortDescription": "Explicit reference to another element.",
+"longDescription": "REFER indicates that a variable or structure depends on another for its definition or content, useful for controlled aliasing.",
+"examples": "DECLARE B REFER(A);",
+"notes": "Must be used with care to avoid inconsistencies.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0217",
+"name": "RELEASE",
+"shortDescription": "Releases resources or locks.",
+"longDescription": "RELEASE removes locks on records or resources, allowing other tasks to access them.",
+"examples": "RELEASE FILE(F);",
+"notes": "Must be used after READ UPDATE or REWRITE operations.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0218",
+"name": "REMAINDER",
+"shortDescription": "Returns the remainder of a division.",
+"longDescription": "REMAINDER calculates the residue of an integer division, similar to MOD but with PL/I compiler-specific semantics.",
+"examples": "R = REMAINDER(A, B);",
+"notes": "Must be used with compatible numeric types.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0219",
+"name": "REMOVE",
+"shortDescription": "Removes an element from a structure.",
+"longDescription": "REMOVE suppresses an element from a collection or structure, adjusting indexes or positions accordingly.",
+"examples": "CALL REMOVE(LIST, 3);",
+"notes": "Must verify that the index is valid.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0220",
+"name": "REPEAT",
+"shortDescription": "Repeats an operation or block.",
+"longDescription": "REPEAT executes a block of instructions multiple times until an exit condition is met.",
+"examples": "REPEAT UNTIL DONE; ... END;",
+"notes": "Must include a clear condition to avoid infinite loops.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0221",
+"name": "REPLACE",
+"shortDescription": "Substitutes content.",
+"longDescription": "REPLACE allows substituting the content of a variable, field, or record with a new value or structure.",
+"examples": "REPLACE FIELD WITH NEW_VALUE;",
+"notes": "Must respect the destination type.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0222",
+"name": "REPORT",
+"shortDescription": "Generates structured reports.",
+"longDescription": "REPORT allows creating formatted outputs for reports, combining data and text in predefined structures.",
+"examples": "CALL REPORT(SUMMARY);",
+"notes": "Can be combined with PUT LIST and FORMAT.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0223",
+"name": "REQUEST",
+"shortDescription": "Requests action or resource.",
+"longDescription": "REQUEST sends a petition to an external module, task, or resource, allowing distributed operations to be coordinated.",
+"examples": "CALL REQUEST(SERVICE);",
+"notes": "Its behavior depends on the execution system.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0224",
+"name": "RESIGNAL",
+"shortDescription": "Forwards a condition.",
+"longDescription": "RESIGNAL allows forwarding a previously caught condition, useful for hierarchical error handling.",
+"examples": "RESIGNAL ERROR;",
+"notes": "Must be used within condition handlers.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0225",
+"name": "RETURN",
+"shortDescription": "Ends a procedure or function.",
+"longDescription": "RETURN terminates the execution of a routine and returns control to the caller. In functions, it can return a value.",
+"examples": "RETURN;",
+"notes": "In functions, it must include the return value.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0226",
+"name": "REWRITE",
+"shortDescription": "Rewrites a previously read record.",
+"longDescription": "REWRITE updates a record that was read via READ UPDATE, replacing its content in the file.",
+"examples": "REWRITE FILE(F) FROM REC;",
+"notes": "Must be used after READ UPDATE to ensure consistency.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0227",
+"name": "REAL",
+"shortDescription": "Single-precision floating-point type.",
+"longDescription": "REAL declares single-precision floating-point values, used for numerical calculations that do not require double precision.",
+"examples": "DECLARE X REAL;",
+"notes": "Equivalent to SINGLE in some compilers.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0228",
+"name": "RECEIVE",
+"shortDescription": "Receives messages or data in communication or queues.",
+"longDescription": "RECEIVE obtains data sent through queues, channels, or communication mechanisms between tasks or processes.",
+"examples": "RECEIVE QUEUE INTO BUFFER;",
+"notes": "A pending message must exist to complete the operation.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0229",
+"name": "RECURSE",
+"shortDescription": "Allows recursivity in calls.",
+"longDescription": "RECURSE enables a procedure to call itself, allowing recursive algorithms to be implemented.",
+"examples": "RECURSE PROCEDURE FACT(N);",
+"notes": "Must be explicitly declared to avoid compilation errors.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0230",
+"name": "RELEASE",
+"shortDescription": "Releases a lock or resource.",
+"longDescription": "RELEASE removes locks on resources or records, allowing other tasks to access them.",
+"examples": "RELEASE FILE(F);",
+"notes": "Must be used after READ UPDATE or REWRITE operations.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0231",
+"name": "REMAINDER",
+"shortDescription": "Result of the remainder in division.",
+"longDescription": "REMAINDER returns the residue of an integer division, similar to MOD but with PL/I compiler-specific semantics.",
+"examples": "R = REMAINDER(A, B);",
+"notes": "Must be used with compatible numeric types.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0232",
+"name": "RENAME",
+"shortDescription": "Changes the visible name of an identifier.",
+"longDescription": "RENAME assigns a new symbolic name to a program element, allowing interfaces to be reorganized or adapted.",
+"examples": "RENAME OLDNAME TO NEWNAME;",
+"notes": "Does not alter content, only the reference.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0233",
+"name": "REPEAT",
+"shortDescription": "Loop that repeats until a condition is met.",
+"longDescription": "REPEAT executes a block of instructions repeatedly until the specified condition is met.",
+"examples": "REPEAT UNTIL DONE; ... END;",
+"notes": "Must include a clear condition to avoid infinite loops.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0234",
+"name": "REPLACE",
+"shortDescription": "Substitutes existing data or definitions.",
+"longDescription": "REPLACE allows replacing the content of a variable, field, or structure with a new value.",
+"examples": "REPLACE FIELD WITH NEW_VALUE;",
+"notes": "Must respect the destination type.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0235",
+"name": "RESERVE",
+"shortDescription": "Reserves space or resources.",
+"longDescription": "RESERVE allocates space or resources for later use, avoiding conflicts with other tasks.",
+"examples": "RESERVE AREA(100);",
+"notes": "Must be released when no longer needed.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0236",
+"name": "RESTART",
+"shortDescription": "Restarts a process or execution point.",
+"longDescription": "RESTART allows execution to be restarted from a defined point, useful for recovery after errors.",
+"examples": "RESTART PROCESS;",
+"notes": "A valid restart point must be defined.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0237",
+"name": "RETURN",
+"shortDescription": "Returns control and optionally a value.",
+"longDescription": "RETURN terminates the execution of a routine and returns control to the caller. In functions, it can return a value.",
+"examples": "RETURN;",
+"notes": "In functions, it must include the return value.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0238",
+"name": "RFUNC",
+"shortDescription": "Reusable function or functional record.",
+"longDescription": "RFUNC indicates a reusable function or a functional descriptor depending on the compiler context.",
+"examples": "DECLARE F RFUNC;",
+"notes": "Its exact meaning depends on the PL/I implementation.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0239",
+"name": "RIGHT",
+"shortDescription": "Right justification or shift.",
+"longDescription": "RIGHT allows text justification or values shifted to the right in formatting operations.",
+"examples": "PUT NAME RIGHT;",
+"notes": "Complements LEFT for alignment.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0240",
+"name": "LEFT",
+"shortDescription": "Left justification or shift.",
+"longDescription": "LEFT allows aligning text or values to the left in output operations.",
+"examples": "PUT NAME LEFT;",
+"notes": "Complements RIGHT for alignment.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0241",
+"name": "RUNTIME",
+"shortDescription": "Actions specific to runtime.",
+"longDescription": "RUNTIME refers to operations, diagnostics, or information available during program execution.",
+"examples": "CALL RUNTIME(INFO);",
+"notes": "Depends on the PL/I execution environment.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0242",
+"name": "SAY",
+"shortDescription": "Simple text output.",
+"longDescription": "SAY prints text simply, useful for informal messages or debugging.",
+"examples": "SAY 'Hello world';",
+"notes": "Does not require complex formatting.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0243",
+"name": "SAVE",
+"shortDescription": "Preserves state or value.",
+"longDescription": "SAVE temporarily stores a value or state for later use within the program.",
+"examples": "SAVE CURRENT_STATE;",
+"notes": "Must be restored when necessary.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0244",
+"name": "SCALAR",
+"shortDescription": "Scalar data.",
+"longDescription": "SCALAR indicates that data is simple and unstructured, such as a number or character.",
+"examples": "DECLARE X SCALAR;",
+"notes": "Contrasts with STRUCTURE or ARRAY.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0245",
+"name": "SCOPE",
+"shortDescription": "Visibility scope.",
+"longDescription": "SCOPE defines the scope where a name or variable is visible, controlling its accessibility.",
+"examples": "SCOPE PUBLIC;",
+"notes": "Can be LOCAL, PUBLIC, or PROTECTED.",
+"category": "PL/I",
+"deleted": false
+}
     {
       "id": "PL/I-0246",
       "name": "SEARCH",
