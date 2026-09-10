@@ -4902,586 +4902,587 @@
 "category": "PL/I",
 "deleted": false
 }
-    {
-      "id": "PL/I-0246",
-      "name": "SEARCH",
-      "shortDescription": "Busca un value en colección o archivo.",
-      "longDescription": "SEARCH localiza un elemento within una structure o file according to un criterio.",
-      "examples": "SEARCH LIST FOR VALUE;",
-      "notes": "It must definirse un criterio válido.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0247",
-      "name": "SELECT",
-      "shortDescription": "Elige rama o registro.",
-      "longDescription": "SELECT allows you to elegir between multiple alternativas, similar a CASE o structures SQL.",
-      "examples": "SELECT (X); WHEN(1) ...;",
-      "notes": "It must incluir WHEN y OTHERWISE.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0248",
-      "name": "SEMAPHORE",
-      "shortDescription": "Objeto de sincronización.",
-      "longDescription": "SEMAPHORE controla access concurrente a resources using contadores y señales.",
-      "examples": "DECLARE S SEMAPHORE;",
-      "notes": "It must inicializarse before de usarse.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0249",
-      "name": "SEQUENCE",
-      "shortDescription": "Orden sequential.",
-      "longDescription": "SEQUENCE define un orden o numeración sequential for elementos o registros.",
-      "examples": "DECLARE ID SEQUENCE;",
-      "notes": "It can ser SERIAL according to implementación.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0250",
-      "name": "SET",
-      "shortDescription": "Asigna values o configura opciones.",
-      "longDescription": "SET allows you to assign values a variables o configurar atributos del programa.",
-      "examples": "SET FLAG = TRUE;",
-      "notes": "It must respetar el type del destination.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0251",
-      "name": "SHARED",
-      "shortDescription": "Datos compartidos between tareas.",
-      "longDescription": "SHARED indica that una variable o structure es accesible por multiple tareas o modules.",
-      "examples": "DECLARE BUFFER SHARED;",
-      "notes": "It must protegerse with mecanismos de sincronización.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0252",
-      "name": "SHORT",
-      "shortDescription": "Tipo de smaller tamaño.",
-      "longDescription": "SHORT declara un entero de tamaño reducido, useful for optimizar memory.",
-      "examples": "DECLARE N SHORT;",
-      "notes": "Su tamaño depende del compiler.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0253",
-      "name": "SIGNAL",
-      "shortDescription": "Lanza una condition.",
-      "longDescription": "SIGNAL activa una condition o error, allowing handle eventos excepcionales.",
-      "examples": "SIGNAL ERROR;",
-      "notes": "It must existir un manejador ON for capturarla.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0254",
-      "name": "SIMILAR",
-      "shortDescription": "Indica compatibility structurel.",
-      "longDescription": "SIMILAR declara that una structure es compatible with otra, allowing operaciones equivalentes.",
-      "examples": "DECLARE B SIMILAR A;",
-      "notes": "No implica identidad, only compatibility.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0255",
-      "name": "SINGLE",
-      "shortDescription": "Tipo de precision simple.",
-      "longDescription": "SINGLE declara values en coma flotante de precision simple.",
-      "examples": "DECLARE X SINGLE;",
-      "notes": "Equivalente a REAL en muchos compilers.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0256",
-      "name": "SIZE",
-      "shortDescription": "Tamaño en bytes o length.",
-      "longDescription": "SIZE devuelve o especifica el tamaño de un objeto, useful for validaciones y operaciones de memory.",
-      "examples": "N = SIZE(OBJ);",
-      "notes": "Depende del type declarado.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0257",
-      "name": "SKIP",
-      "shortDescription": "Salta records o positions en E/S.",
-      "longDescription": "SKIP allows you to omitir uno o varios records o líneas durante operaciones de input o output, useful for navegación sequential controlada.",
-      "examples": "SKIP(2);",
-      "notes": "It must usarse with files o canales that soporten salto.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0258",
-      "name": "SLIST",
-      "shortDescription": "Lista especializada according to implementación.",
-      "longDescription": "SLIST representa una structure de lista especializada cuyo comportamiento depende del compiler o environment PL/I.",
-      "examples": "DECLARE ITEMS SLIST;",
-      "notes": "Su semántica exacta varía between implementaciones.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0259",
-      "name": "SOURCE",
-      "shortDescription": "Archivo source o especificador de source.",
-      "longDescription": "SOURCE indica el file o module de source for compilation, debugging o trazabilidad.",
-      "examples": "SOURCE 'MODULEA';",
-      "notes": "Useful for diagnósticos y documentación.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0260",
-      "name": "SPACE",
-      "shortDescription": "Espacio en blanco o reserva de memory.",
-      "longDescription": "SPACE can representar un character de espacio o una reserva explícita de memory o storage.",
-      "examples": "SPACE(10);",
-      "notes": "Su significado depende del contexto de uso.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0261",
-      "name": "SPECIFIC",
-      "shortDescription": "Elemento específico within un contexto.",
-      "longDescription": "SPECIFIC indica that un elemento pertenece a un contexto particular, useful for distinguir variantes o versiones.",
-      "examples": "DECLARE FIELD SPECIFIC;",
-      "notes": "Contrasta with GENERAL o DEFAULT.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0262",
-      "name": "STATIC",
-      "shortDescription": "Vida estática for variables.",
-      "longDescription": "STATIC declara variables that persisten between calls, manteniendo su value durante toda la execution of the programa.",
-      "examples": "DECLARE COUNT STATIC;",
-      "notes": "Useful for acumuladores o estados persistentes.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0263",
-      "name": "START",
-      "shortDescription": "Inicia processes o rutinas.",
-      "longDescription": "START activa la execution de un proceso, tarea o rutina, allowing iniciar flujos de trabajo.",
-      "examples": "START TASK_A;",
-      "notes": "It must existir un contexto válido for iniciar.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0264",
-      "name": "STATUS",
-      "shortDescription": "Estado de ejecución.",
-      "longDescription": "STATUS devuelve o representa el estado actual de un proceso, file o recurso.",
-      "examples": "IF STATUS = 'READY' THEN ...;",
-      "notes": "Su value depende del recurso consultado.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0265",
-      "name": "STORE",
-      "shortDescription": "Almacena data en memory o archivo.",
-      "longDescription": "STORE guarda values o structures en memory o en archivos, allowing persistencia o transferencia de información.",
-      "examples": "STORE DATA INTO FILE(F);",
-      "notes": "It must respetar el format del destination.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0266",
-      "name": "STREAM",
-      "shortDescription": "Canal de data continuo.",
-      "longDescription": "STREAM representa un flujo continuo de data for operaciones de input o output sequential.",
-      "examples": "DECLARE S STREAM;",
-      "notes": "Useful for devices o canales without structure fija.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0267",
-      "name": "STRING",
-      "shortDescription": "Cadena de characters.",
-      "longDescription": "STRING declara una secuencia de characters, utilizada for texto y data alphanumeric.",
-      "examples": "DECLARE NAME STRING;",
-      "notes": "It can combinarse with VARYING for length variable.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0268",
-      "name": "VARYING",
-      "shortDescription": "Longitud variable for strings o arrays.",
-      "longDescription": "VARYING allows you to that una string o arreglo cambie su length dinámicamente durante la ejecución.",
-      "examples": "DECLARE TEXT VARYING;",
-      "notes": "It must especificarse length máxima.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0269",
-      "name": "STRUCTURE",
-      "shortDescription": "Define record o structure compuesta.",
-      "longDescription": "STRUCTURE declara un conjunto de fields agrupados, allowing modelar data complex.",
-      "examples": "DECLARE PERSON STRUCTURE;",
-      "notes": "It can contener fields de distintos tipos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0270",
-      "name": "SUBROUTINE",
-      "shortDescription": "Unidad de código executable without return.",
-      "longDescription": "SUBROUTINE define una rutina that ejecuta instrucciones pero no devuelve valor.",
-      "examples": "SUBROUTINE CLEANUP; ... END;",
-      "notes": "Similar a PROCEDURE pero without return de valor.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0271",
-      "name": "PROCEDURE",
-      "shortDescription": "Unidad de código executable.",
-      "longDescription": "PROCEDURE declara una rutina that ejecuta instrucciones y can receive parámetros.",
-      "examples": "PROCEDURE PROCESS; ... END;",
-      "notes": "Ya generated antes, pero aquí se includes porque aparece en tu texto.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0272",
-      "name": "SUBTYPE",
-      "shortDescription": "Tipo derivado de otro tipo.",
-      "longDescription": "SUBTYPE allows you to crear un type basado en otro, restringiendo o especializando su uso.",
-      "examples": "DECLARE SMALLINT SUBTYPE INTEGER;",
-      "notes": "Useful for alias y restricciones.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0273",
-      "name": "SYNC",
-      "shortDescription": "Sincronización de access.",
-      "longDescription": "SYNC indica that una operación must performse de manera sincronizada to avoid conflictos en environments concurrentes.",
-      "examples": "SYNC TASKS;",
-      "notes": "Complementa SEMAPHORE y MONITOR.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0274",
-      "name": "SYNCHRONIZED",
-      "shortDescription": "Acceso sincronizado a resources.",
-      "longDescription": "SYNCHRONIZED garantiza that una sección de código se ejecute de forma exclusiva, evitando conditions de carrera.",
-      "examples": "SYNCHRONIZED SECTION;",
-      "notes": "It must usarse en environments concurrentes.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0275",
-      "name": "SYSTEM",
-      "shortDescription": "Operaciones o calls al system.",
-      "longDescription": "SYSTEM allows you to perform acciones specifics del operating system o environment de ejecución.",
-      "examples": "CALL SYSTEM('DIR');",
-      "notes": "Dependiente del environment PL/I.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0276",
-      "name": "TAB",
-      "shortDescription": "Carácter de tabulación.",
-      "longDescription": "TAB representa un character de tabulación o una position de field en operaciones de output.",
-      "examples": "PUT TAB;",
-      "notes": "Useful for formateo de reports.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0277",
-      "name": "TAGGED",
-      "shortDescription": "Datos with etiqueta.",
-      "longDescription": "TAGGED indica that un dato includes una etiqueta that identifica su type o versión.",
-      "examples": "DECLARE ITEM TAGGED;",
-      "notes": "Useful for structures heterogéneas.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0278",
-      "name": "TASK",
-      "shortDescription": "Unidad de trabajo concurrente.",
-      "longDescription": "TASK representa un hilo o process ligero that ejecuta operaciones concurrentes.",
-      "examples": "DECLARE T TASK;",
-      "notes": "It must sincronizarse if accede a resources compartidos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0279",
-      "name": "TEMPORARY",
-      "shortDescription": "Datos o storage temporal.",
-      "longDescription": "TEMPORARY declara data with vida corta, utilizados for cálculos o storage intermedio.",
-      "examples": "DECLARE BUF TEMPORARY;",
-      "notes": "Se destruye al finalizar el bloque.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0280",
-      "name": "THEN",
-      "shortDescription": "Parte verdadera de una condition IF.",
-      "longDescription": "THEN indica el block that se executeá when la condition del IF sea verdadera.",
-      "examples": "IF READY THEN CALL START;",
-      "notes": "Ya generated antes, pero aparece en tu texto.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0281",
-      "name": "THREAD",
-      "shortDescription": "Hebra ligera de ejecución.",
-      "longDescription": "THREAD representa una unidad de execution concurrente, similar a TASK.",
-      "examples": "DECLARE WORKER THREAD;",
-      "notes": "Disponible only en compilers with soporte de concurrencia.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0282",
-      "name": "TIME",
-      "shortDescription": "Representación u operaciones de time.",
-      "longDescription": "TIME devuelve la hora actual o allows you to manipular values temporales.",
-      "examples": "T = TIME();",
-      "notes": "Ya generated antes, pero aparece en tu texto.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0283",
-      "name": "TRACE",
-      "shortDescription": "Depuración paso a paso.",
-      "longDescription": "TRACE allows you to registrar o seguir la execution of the program for debugging.",
-      "examples": "TRACE ON;",
-      "notes": "It can afectar performance if se usa extensivamente.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0284",
-      "name": "TRANSACTION",
-      "shortDescription": "Agrupación de operaciones atómicas.",
-      "longDescription": "TRANSACTION agrupa operaciones that deben executese de manera consistente y atómica.",
-      "examples": "BEGIN TRANSACTION; ... END;",
-      "notes": "It must finalizarse with COMMIT o ROLLBACK.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0285",
-      "name": "TRANSFER",
-      "shortDescription": "Mueve control o data between contextos.",
-      "longDescription": "TRANSFER allows you to mover control de execution o data between modules, tareas o contextos.",
-      "examples": "TRANSFER TO MODULE_B;",
-      "notes": "It must existir un destination válido.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0286",
-      "name": "TRANSIENT",
-      "shortDescription": "Almacenamiento no persistente.",
-      "longDescription": "TRANSIENT indica that los data no persisten between ejecuciones o calls, useful for buffers temporales.",
-      "examples": "DECLARE TMP TRANSIENT;",
-      "notes": "Se destruye automáticamente al finalizar el contexto.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0287",
-      "name": "TRUNCATE",
-      "shortDescription": "Recorta data a un tamaño especificado.",
-      "longDescription": "TRUNCATE reduce el tamaño de una string o dato numeric al límite especificado, removesndo content sobrante.",
-      "examples": "TRUNCATE TEXT TO 10;",
-      "notes": "It must usarse with cuidado to avoid pérdida de información.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0288",
-      "name": "TYPE",
-      "shortDescription": "Declara o referencia un type de dato.",
-      "longDescription": "TYPE allows you to definir o referenciar types de datos, facilitating la creación de structures y alias.",
-      "examples": "DECLARE T TYPE INTEGER;",
-      "notes": "It can combinarse with SUBTYPE for especialización.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0289",
-      "name": "UNION",
-      "shortDescription": "Tipo that shares storage between alternativas.",
-      "longDescription": "UNION declara un type cuyos fields sharesn la same área de memory, allowing representar variantes de datos.",
-      "examples": "DECLARE U UNION;",
-      "notes": "Solo un field es válido en each momento.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0290",
-      "name": "UNIQUE",
-      "shortDescription": "Indica unicidad en keys o valores.",
-      "longDescription": "UNIQUE garantiza that un value o key no se repita within una colección o structure.",
-      "examples": "DECLARE ID UNIQUE;",
-      "notes": "Useful for indexes y validaciones de integrity.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0291",
-      "name": "UNLOCK",
-      "shortDescription": "Libera un lock previously adquirido.",
-      "longDescription": "UNLOCK libera un recurso bloqueado, allowing that otras tareas accedan a él.",
-      "examples": "UNLOCK RESOURCE;",
-      "notes": "It must corresponder a un LOCK previo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0292",
-      "name": "UNSIGNED",
-      "shortDescription": "Tipo numeric without sign.",
-      "longDescription": "UNSIGNED declara values numeric that no pueden ser negativos, ampliando el rango positivo disponible.",
-      "examples": "DECLARE N UNSIGNED;",
-      "notes": "Useful for contadores y tamaños.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0293",
-      "name": "UPDATE",
-      "shortDescription": "Actualiza records o structures.",
-      "longDescription": "UPDATE modifica el content de un record o structure previously leído.",
-      "examples": "UPDATE FILE(F) FROM REC;",
-      "notes": "It must combinarse with READ UPDATE for coherencia.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0294",
-      "name": "USE",
-      "shortDescription": "Especifica use de nombres o modules.",
-      "longDescription": "USE allows you to importar nombres, modules o parámetros for facilitar su referencia.",
-      "examples": "USE MODULE_A;",
-      "notes": "Similar a USING pero más general.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0295",
-      "name": "USING",
-      "shortDescription": "Especifica parámetros o contexto utilizado.",
-      "longDescription": "USING declara los parámetros o contexto that una rutina utilizará, facilitating la modularidad.",
-      "examples": "PROCEDURE P USING(A, B);",
-      "notes": "It must coincidir with la definición del caller.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0296",
-      "name": "VALIDATE",
-      "shortDescription": "Comprueba validez de data o conditions.",
-      "longDescription": "VALIDATE verifica that los data cumplan reglas o conditions before de ser utilizados.",
-      "examples": "CALL VALIDATE(INPUT);",
-      "notes": "Useful to avoid errors en time de ejecución.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0297",
-      "name": "VALUE",
-      "shortDescription": "Especifica value constante.",
-      "longDescription": "VALUE assigns un value constante a una variable o parámetro en su declaración.",
-      "examples": "DECLARE PI VALUE(3.14);",
-      "notes": "No can modificarse en time de ejecución.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0298",
-      "name": "VARIABLE",
-      "shortDescription": "Identificador that contains data cambiantes.",
-      "longDescription": "VARIABLE declara un elemento cuyo value can cambiar during execution del programa.",
-      "examples": "DECLARE X VARIABLE;",
-      "notes": "Contrasta with VALUE o CONSTANT.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0299",
-      "name": "VARYING",
-      "shortDescription": "Longitud variable for strings o arrays.",
-      "longDescription": "VARYING allows you to that una string o arreglo cambie su length dinámicamente.",
-      "examples": "DECLARE TEXT VARYING;",
-      "notes": "It must especificarse length máxima.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0300",
-      "name": "WHEN",
-      "shortDescription": "Rama within CASE o conditions.",
-      "longDescription": "WHEN define una rama within SELECT o CASE, ejecutándose when la condition coincide.",
-      "examples": "WHEN(1) PUT('UNO');",
-      "notes": "It must acompañarse de OTHERWISE.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0301",
-      "name": "WHILE",
-      "shortDescription": "Bucle that se repite mientras la condition sea verdadera.",
-      "longDescription": "WHILE ejecuta un block repetidamente mientras la condition especificada sea verdadera.",
-      "examples": "WHILE X < 10 DO X = X + 1;",
-      "notes": "It must avoid conditions that nunca cambian.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0302",
-      "name": "WRITE",
-      "shortDescription": "Escribe data en file o device.",
-      "longDescription": "WRITE envía data a un archivo, device o output estándar, respetando el format declarado.",
-      "examples": "WRITE FILE(F) FROM REC;",
-      "notes": "It must abrirse el file en modo OUTPUT.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0303",
-      "name": "YEAR",
-      "shortDescription": "Componente o función that devuelve el año.",
-      "longDescription": "YEAR obtiene el año de una fecha o devuelve el componente correspondiente en operaciones de calendario.",
-      "examples": "Y = YEAR(DATE());",
-      "notes": "Ya generated antes, pero aparece en tu texto.",
-      "category": "PL/I",
-      "deleted": false
-    }
+    [
+{
+"id": "PL/I-0246",
+"name": "SEARCH",
+"shortDescription": "Searches for a value in a collection or file.",
+"longDescription": "SEARCH locates an element within a structure or file based on a criterion.",
+"examples": "SEARCH LIST FOR VALUE;",
+"notes": "A valid criterion must be defined.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0247",
+"name": "SELECT",
+"shortDescription": "Chooses a branch or record.",
+"longDescription": "SELECT allows choosing among multiple alternatives, similar to CASE or SQL structures.",
+"examples": "SELECT (X); WHEN(1) ...;",
+"notes": "Must include WHEN and OTHERWISE.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0248",
+"name": "SEMAPHORE",
+"shortDescription": "Synchronization object.",
+"longDescription": "SEMAPHORE controls concurrent access to resources using counters and signals.",
+"examples": "DECLARE S SEMAPHORE;",
+"notes": "Must be initialized before use.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0249",
+"name": "SEQUENCE",
+"shortDescription": "Sequential order.",
+"longDescription": "SEQUENCE defines an order or sequential numbering for elements or records.",
+"examples": "DECLARE ID SEQUENCE;",
+"notes": "May be SERIAL depending on implementation.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0250",
+"name": "SET",
+"shortDescription": "Assigns values or configures options.",
+"longDescription": "SET allows assigning values to variables or configuring program attributes.",
+"examples": "SET FLAG = TRUE;",
+"notes": "Must respect the target data type.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0251",
+"name": "SHARED",
+"shortDescription": "Data shared among tasks.",
+"longDescription": "SHARED indicates that a variable or structure is accessible by multiple tasks or modules.",
+"examples": "DECLARE BUFFER SHARED;",
+"notes": "Must be protected with synchronization mechanisms.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0252",
+"name": "SHORT",
+"shortDescription": "Smaller size data type.",
+"longDescription": "SHORT declares a reduced-size integer, useful for memory optimization.",
+"examples": "DECLARE N SHORT;",
+"notes": "Its size depends on the compiler.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0253",
+"name": "SIGNAL",
+"shortDescription": "Raises a condition.",
+"longDescription": "SIGNAL activates a condition or error, allowing the handling of exceptional events.",
+"examples": "SIGNAL ERROR;",
+"notes": "An ON handler must exist to catch it.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0254",
+"name": "SIMILAR",
+"shortDescription": "Indicates structural compatibility.",
+"longDescription": "SIMILAR declares that a structure is compatible with another, allowing equivalent operations.",
+"examples": "DECLARE B SIMILAR A;",
+"notes": "Does not imply identity, only compatibility.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0255",
+"name": "SINGLE",
+"shortDescription": "Single precision type.",
+"longDescription": "SINGLE declares single-precision floating-point values.",
+"examples": "DECLARE X SINGLE;",
+"notes": "Equivalent to REAL in many compilers.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0256",
+"name": "SIZE",
+"shortDescription": "Size in bytes or length.",
+"longDescription": "SIZE returns or specifies the size of an object, useful for validations and memory operations.",
+"examples": "N = SIZE(OBJ);",
+"notes": "Depends on the declared type.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0257",
+"name": "SKIP",
+"shortDescription": "Skips records or positions in I/O.",
+"longDescription": "SKIP allows omitting one or more records or lines during input or output operations, useful for controlled sequential navigation.",
+"examples": "SKIP(2);",
+"notes": "Must be used with files or channels that support skipping.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0258",
+"name": "SLIST",
+"shortDescription": "Specialized list according to implementation.",
+"longDescription": "SLIST represents a specialized list structure whose behavior depends on the compiler or PL/I environment.",
+"examples": "DECLARE ITEMS SLIST;",
+"notes": "Its exact semantics vary across implementations.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0259",
+"name": "SOURCE",
+"shortDescription": "Source file or origin specifier.",
+"longDescription": "SOURCE indicates the source file or module for compilation, debugging, or traceability.",
+"examples": "SOURCE 'MODULEA';",
+"notes": "Useful for diagnostics and documentation.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0260",
+"name": "SPACE",
+"shortDescription": "Blank space or memory reservation.",
+"longDescription": "SPACE can represent a space character or an explicit reservation of memory or storage.",
+"examples": "SPACE(10);",
+"notes": "Its meaning depends on the context of use.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0261",
+"name": "SPECIFIC",
+"shortDescription": "Specific element within a context.",
+"longDescription": "SPECIFIC indicates that an element belongs to a particular context, useful for distinguishing variants or versions.",
+"examples": "DECLARE FIELD SPECIFIC;",
+"notes": "Contrasts with GENERAL or DEFAULT.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0262",
+"name": "STATIC",
+"shortDescription": "Static storage class for variables.",
+"longDescription": "STATIC declares variables that persist between calls, maintaining their value throughout the program execution.",
+"examples": "DECLARE COUNT STATIC;",
+"notes": "Useful for accumulators or persistent states.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0263",
+"name": "START",
+"shortDescription": "Starts processes or routines.",
+"longDescription": "START activates the execution of a process, task, or routine, allowing workflows to be initiated.",
+"examples": "START TASK_A;",
+"notes": "A valid context must exist to start.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0264",
+"name": "STATUS",
+"shortDescription": "Execution status.",
+"longDescription": "STATUS returns or represents the current state of a process, file, or resource.",
+"examples": "IF STATUS = 'READY' THEN ...;",
+"notes": "Its value depends on the queried resource.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0265",
+"name": "STORE",
+"shortDescription": "Stores data in memory or file.",
+"longDescription": "STORE saves values or structures in memory or files, allowing persistence or information transfer.",
+"examples": "STORE DATA INTO FILE(F);",
+"notes": "Must respect the destination format.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0266",
+"name": "STREAM",
+"shortDescription": "Continuous data channel.",
+"longDescription": "STREAM represents a continuous flow of data for sequential input or output operations.",
+"examples": "DECLARE S STREAM;",
+"notes": "Useful for devices or channels without a fixed structure.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0267",
+"name": "STRING",
+"shortDescription": "Character string.",
+"longDescription": "STRING declares a sequence of characters, used for text and alphanumeric data.",
+"examples": "DECLARE NAME STRING;",
+"notes": "Can be combined with VARYING for variable length.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0268",
+"name": "VARYING",
+"shortDescription": "Variable length for strings or arrays.",
+"longDescription": "VARYING allows a string or array to change its length dynamically during execution.",
+"examples": "DECLARE TEXT VARYING;",
+"notes": "Maximum length must be specified.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0269",
+"name": "STRUCTURE",
+"shortDescription": "Defines a record or composite structure.",
+"longDescription": "STRUCTURE declares a set of grouped fields, allowing complex data modeling.",
+"examples": "DECLARE PERSON STRUCTURE;",
+"notes": "May contain fields of different types.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0270",
+"name": "SUBROUTINE",
+"shortDescription": "Executable code unit without a return value.",
+"longDescription": "SUBROUTINE defines a routine that executes instructions but does not return a value.",
+"examples": "SUBROUTINE CLEANUP; ... END;",
+"notes": "Similar to PROCEDURE but without returning a value.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0271",
+"name": "PROCEDURE",
+"shortDescription": "Executable code unit.",
+"longDescription": "PROCEDURE declares a routine that executes instructions and can receive parameters.",
+"examples": "PROCEDURE PROCESS; ... END;",
+"notes": "Already generated previously, but included here as it appears in your text.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0272",
+"name": "SUBTYPE",
+"shortDescription": "Type derived from another type.",
+"longDescription": "SUBTYPE allows creating a type based on another, restricting or specializing its use.",
+"examples": "DECLARE SMALLINT SUBTYPE INTEGER;",
+"notes": "Useful for aliases and restrictions.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0273",
+"name": "SYNC",
+"shortDescription": "Access synchronization.",
+"longDescription": "SYNC indicates that an operation must be performed synchronously to avoid conflicts in concurrent environments.",
+"examples": "SYNC TASKS;",
+"notes": "Complements SEMAPHORE and MONITOR.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0274",
+"name": "SYNCHRONIZED",
+"shortDescription": "Synchronized access to resources.",
+"longDescription": "SYNCHRONIZED ensures that a section of code executes exclusively, preventing race conditions.",
+"examples": "SYNCHRONIZED SECTION;",
+"notes": "Must be used in concurrent environments.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0275",
+"name": "SYSTEM",
+"shortDescription": "System operations or calls.",
+"longDescription": "SYSTEM allows performing specific actions of the operating system or execution environment.",
+"examples": "CALL SYSTEM('DIR');",
+"notes": "Dependent on the PL/I environment.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0276",
+"name": "TAB",
+"shortDescription": "Tabulation character.",
+"longDescription": "TAB represents a tabulation character or field position in output operations.",
+"examples": "PUT TAB;",
+"notes": "Useful for report formatting.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0277",
+"name": "TAGGED",
+"shortDescription": "Data with a tag.",
+"longDescription": "TAGGED indicates that data includes a tag identifying its type or version.",
+"examples": "DECLARE ITEM TAGGED;",
+"notes": "Useful for heterogeneous structures.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0278",
+"name": "TASK",
+"shortDescription": "Concurrent work unit.",
+"longDescription": "TASK represents a thread or lightweight process executing concurrent operations.",
+"examples": "DECLARE T TASK;",
+"notes": "Must be synchronized if it accesses shared resources.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0279",
+"name": "TEMPORARY",
+"shortDescription": "Temporary data or storage.",
+"longDescription": "TEMPORARY declares short-lived data used for calculations or intermediate storage.",
+"examples": "DECLARE BUF TEMPORARY;",
+"notes": "Destroyed at the end of the block.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0280",
+"name": "THEN",
+"shortDescription": "True branch of an IF condition.",
+"longDescription": "THEN indicates the block to be executed when the IF condition is true.",
+"examples": "IF READY THEN CALL START;",
+"notes": "Already generated previously, but appears in your text.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0281",
+"name": "THREAD",
+"shortDescription": "Lightweight execution thread.",
+"longDescription": "THREAD represents a concurrent execution unit, similar to TASK.",
+"examples": "DECLARE WORKER THREAD;",
+"notes": "Available only in compilers with concurrency support.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0282",
+"name": "TIME",
+"shortDescription": "Time representation or operations.",
+"longDescription": "TIME returns the current time or allows manipulating time values.",
+"examples": "T = TIME();",
+"notes": "Already generated previously, but appears in your text.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0283",
+"name": "TRACE",
+"shortDescription": "Step-by-step debugging.",
+"longDescription": "TRACE allows recording or tracking program execution for debugging purposes.",
+"examples": "TRACE ON;",
+"notes": "May affect performance if used extensively.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0284",
+"name": "TRANSACTION",
+"shortDescription": "Grouping of atomic operations.",
+"longDescription": "TRANSACTION groups operations that must be executed consistently and atomically.",
+"examples": "BEGIN TRANSACTION; ... END;",
+"notes": "Must be terminated with COMMIT or ROLLBACK.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0285",
+"name": "TRANSFER",
+"shortDescription": "Moves control or data between contexts.",
+"longDescription": "TRANSFER allows moving execution control or data between modules, tasks, or contexts.",
+"examples": "TRANSFER TO MODULE_B;",
+"notes": "A valid destination must exist.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0286",
+"name": "TRANSIENT",
+"shortDescription": "Non-persistent storage.",
+"longDescription": "TRANSIENT indicates that data does not persist between executions or calls, useful for temporary buffers.",
+"examples": "DECLARE TMP TRANSIENT;",
+"notes": "Automatically destroyed when the context ends.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0287",
+"name": "TRUNCATE",
+"shortDescription": "Trims data to a specified size.",
+"longDescription": "TRUNCATE reduces the size of a string or numeric data to the specified limit, removing excess content.",
+"examples": "TRUNCATE TEXT TO 10;",
+"notes": "Must be used carefully to avoid information loss.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0288",
+"name": "TYPE",
+"shortDescription": "Declares or references a data type.",
+"longDescription": "TYPE allows defining or referencing data types, facilitating the creation of structures and aliases.",
+"examples": "DECLARE T TYPE INTEGER;",
+"notes": "Can be combined with SUBTYPE for specialization.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0289",
+"name": "UNION",
+"shortDescription": "Type sharing storage among alternatives.",
+"longDescription": "UNION declares a type whose fields share the same memory area, allowing representation of data variants.",
+"examples": "DECLARE U UNION;",
+"notes": "Only one field is valid at any given time.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0290",
+"name": "UNIQUE",
+"shortDescription": "Indicates uniqueness in keys or values.",
+"longDescription": "UNIQUE guarantees that a value or key is not repeated within a collection or structure.",
+"examples": "DECLARE ID UNIQUE;",
+"notes": "Useful for indexes and integrity validations.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0291",
+"name": "UNLOCK",
+"shortDescription": "Releases a previously acquired lock.",
+"longDescription": "UNLOCK releases a locked resource, allowing other tasks to access it.",
+"examples": "UNLOCK RESOURCE;",
+"notes": "Must correspond to a prior LOCK.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0292",
+"name": "UNSIGNED",
+"shortDescription": "Unsigned numeric type.",
+"longDescription": "UNSIGNED declares numeric values that cannot be negative, expanding the available positive range.",
+"examples": "DECLARE N UNSIGNED;",
+"notes": "Useful for counters and sizes.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0293",
+"name": "UPDATE",
+"shortDescription": "Updates records or structures.",
+"longDescription": "UPDATE modifies the content of a previously read record or structure.",
+"examples": "UPDATE FILE(F) FROM REC;",
+"notes": "Must be combined with READ UPDATE for consistency.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0294",
+"name": "USE",
+"shortDescription": "Specifies the use of names or modules.",
+"longDescription": "USE allows importing names, modules, or parameters to facilitate referencing them.",
+"examples": "USE MODULE_A;",
+"notes": "Similar to USING but more general.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0295",
+"name": "USING",
+"shortDescription": "Specifies parameters or context used.",
+"longDescription": "USING declares the parameters or context that a routine will use, facilitating modularity.",
+"examples": "PROCEDURE P USING(A, B);",
+"notes": "Must match the caller's definition.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0296",
+"name": "VALIDATE",
+"shortDescription": "Checks the validity of data or conditions.",
+"longDescription": "VALIDATE verifies that data complies with rules or conditions before being used.",
+"examples": "CALL VALIDATE(INPUT);",
+"notes": "Useful to prevent runtime errors.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0297",
+"name": "VALUE",
+"shortDescription": "Specifies a constant value.",
+"longDescription": "VALUE assigns a constant value to a variable or parameter upon declaration.",
+"examples": "DECLARE PI VALUE(3.14);",
+"notes": "Cannot be modified at runtime.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0298",
+"name": "VARIABLE",
+"shortDescription": "Identifier containing changing data.",
+"longDescription": "VARIABLE declares an element whose value can change during program execution.",
+"examples": "DECLARE X VARIABLE;",
+"notes": "Contrasts with VALUE or CONSTANT.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0299",
+"name": "VARYING",
+"shortDescription": "Variable length for strings or arrays.",
+"longDescription": "VARYING allows a string or array to change its length dynamically.",
+"examples": "DECLARE TEXT VARYING;",
+"notes": "Maximum length must be specified.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0300",
+"name": "WHEN",
+"shortDescription": "Branch within CASE or conditions.",
+"longDescription": "WHEN defines a branch within SELECT or CASE, executing when the condition matches.",
+"examples": "WHEN(1) PUT('ONE');",
+"notes": "Must be accompanied by OTHERWISE.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0301",
+"name": "WHILE",
+"shortDescription": "Loop that repeats while the condition is true.",
+"longDescription": "WHILE executes a block repeatedly as long as the specified condition remains true.",
+"examples": "WHILE X < 10 DO X = X + 1;",
+"notes": "Must avoid conditions that never change.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0302",
+"name": "WRITE",
+"shortDescription": "Writes data to a file or device.",
+"longDescription": "WRITE sends data to a file, device, or standard output, respecting the declared format.",
+"examples": "WRITE FILE(F) FROM REC;",
+"notes": "The file must be opened in OUTPUT mode.",
+"category": "PL/I",
+"deleted": false
+},
+{
+"id": "PL/I-0303",
+"name": "YEAR",
+"shortDescription": "Component or function returning the year.",
+"longDescription": "YEAR extracts the year from a date or returns the corresponding component in calendar operations.",
+"examples": "Y = YEAR(DATE());",
+"notes": "Already generated previously, but appears in your text.",
+"category": "PL/I",
+"deleted": false
+}
   ]
 }
 
