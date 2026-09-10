@@ -42,6 +42,6 @@
 {
 "id": 9,
 "title": "What is JES2 in z/OS?",
-"text": "JES2 (Job Entry Subsystem 2) is the z/OS component responsible for managing the entry, execution, and output of batch jobs.\n\nJob output (SYSOUT, messages, listings).\nIt is literally the "orchestrator" of batch work: it controls queues, the spool, logs, priorities, and resource distribution.\n\nWithout JES2, a z/OS system could not execute JCL, manage the spool, or coordinate job execution.\n\nIt controls queues, the spool, initiators, logs, and priorities. It is the component that organizes the entire job lifecycle and allows batch to run efficiently and in a controlled manner."
+"text": "JES2 (Job Entry Subsystem 2) is the z/OS component responsible for managing the entry, execution, and output of batch jobs.\n\nJob output (SYSOUT, messages, listings).\nIt is literally the 'orchestrator' of batch work: it controls queues, the spool, logs, priorities, and resource distribution.\n\nWithout JES2, a z/OS system could not execute JCL, manage the spool, or coordinate job execution.\n\nIt controls queues, the spool, initiators, logs, and priorities. It is the component that organizes the entire job lifecycle and allows batch to run efficiently and in a controlled manner."
 }
 ]
