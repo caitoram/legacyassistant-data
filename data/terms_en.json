@@ -2332,606 +2332,606 @@
     "deleted": false
   }
 
-    {
-      "id": "DB2-0036",
-      "name": "DEADLOCK",
-      "shortDescription": "Bloqueo mutuo between transacciones",
-      "longDescription": "Un deadlock ocurre when dos o más transacciones se bloquean mutuamente esperando resources that la otra posee. DB2 detecta automáticamente la situación y cancela una de las transacciones for liberar el locking y permitir that el system continúe funcionando.",
-      "examples": "SQLCODE -911 indica deadlock detectado por DB2.",
-      "notes": "It is recomendable revisar indexes y orden de access to avoid deadlocks.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0037",
-      "name": "ISOLATION LEVEL",
-      "shortDescription": "Nivel de aislamiento de transacciones",
-      "longDescription": "Level de aislamiento determina cómo una transacción ve los cambios realizados por otras transacciones. Controla fenómenos such as reads sucias, reads no repetibles y phantom reads. DB2 soporta varios niveles that equilibran consistency y performance.",
-      "examples": "SELECT * FROM CLIENTES WITH RR;",
-      "notes": "Los niveles más estrictos reducen concurrencia pero aumentan consistency.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0038",
-      "name": "WITH UR",
-      "shortDescription": "Lectura without locking (Uncommitted Read)",
-      "longDescription": "WITH UR allows you to leer data no confirmados por otras transacciones. It is the nivel de aislamiento más bajo y ofrece máximo performance, pero can devolver data inconsistentes.",
-      "examples": "SELECT * FROM CLIENTES WITH UR;",
-      "notes": "Ideal for consultas de only read en tables muy grandes.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0039",
-      "name": "WITH CS",
-      "shortDescription": "Lectura with estabilidad de cursor",
-      "longDescription": "WITH CS garantiza that los data leídos por el cursor no cambien mientras la fila está siendo procesada. Evita reads sucias pero allows you to reads no repetibles.",
-      "examples": "SELECT * FROM CLIENTES WITH CS;",
-      "notes": "It is the nivel por defecto en muchas instalaciones.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0040",
-      "name": "WITH RS",
-      "shortDescription": "Lectura repetible",
-      "longDescription": "WITH RS garantiza that las filas leídas no cambien durante la transacción. Evita reads no repetibles, pero allows you to phantom reads.",
-      "examples": "SELECT * FROM CLIENTES WITH RS;",
-      "notes": "Adecuado for processes that requiresn estabilidad de datos.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0041",
-      "name": "WITH RR",
-      "shortDescription": "Lectura serializable",
-      "longDescription": "WITH RR es el nivel de aislamiento más estricto. Garantiza that los data no cambien durante toda la transacción y evita todos los fenómenos de concurrencia, incluyendo phantom reads.",
-      "examples": "SELECT * FROM CLIENTES WITH RR;",
-      "notes": "Reduce significativamente la concurrencia; usar only when sea necesario.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0042",
-      "name": "EXPLAIN",
-      "shortDescription": "Genera plan de execution SQL",
-      "longDescription": "EXPLAIN allows you to obtener el plan de execution that DB2 utilizará for una sentencia SQL. It is essential for optimización de consultas y análisis de performance.",
-      "examples": "EXPLAIN PLAN FOR SELECT * FROM CLIENTES;",
-      "notes": "Los results se store en tables especiales del esquema PLAN_TABLE.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0043",
-      "name": "SQLCODE",
-      "shortDescription": "Código de return de sentencia SQL",
-      "longDescription": "SQLCODE es el código numeric that indica el result de una sentencia SQL. Los values positivos indican advertencias, cero indica éxito y los negativos indican errors.",
-      "examples": "SQLCODE = -803 → Violación de clave única.",
-      "notes": "It must verificarse after de each sentencia SQL en programs COBOL.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0044",
-      "name": "SQLSTATE",
-      "shortDescription": "Código estándar de error SQL",
-      "longDescription": "SQLSTATE es un código de cinco characters that indica el estado de una operación SQL siguiendo estándares ANSI. Proporciona información más portable that SQLCODE.",
-      "examples": "SQLSTATE '23505' → Violación de clave primaria.",
-      "notes": "Useful for aplicaciones multiplataforma.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0045",
-      "name": "HOST VARIABLES",
-      "shortDescription": "Variables COBOL usadas en SQL",
-      "longDescription": "Las host variables son variables COBOL utilizadas for enviar y receive data desde sentencias SQL embebidas. Se identifican with el prefijo ':' en las sentencias.",
-      "examples": "SELECT NOMBRE INTO :WS-NOMBRE FROM CLIENTES WHERE ID = :WS-ID;",
-      "notes": "Deben declararse en WORKING-STORAGE.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0046",
-      "name": "DECLARE TABLE",
-      "shortDescription": "Define una table temporal",
-      "longDescription": "DECLARE TABLE allows you to definir tables temporales within programs for manipular data without afectar tables reales. Se usa mainly en SQL dynamic.",
-      "examples": "DECLARE GLOBAL TEMPORARY TABLE SESSION.TMP AS (SELECT * FROM CLIENTES) WITH DATA;",
-      "notes": "Las tables temporales existen only durante la sesión.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0047",
-      "name": "GLOBAL TEMPORARY TABLE",
-      "shortDescription": "Tabla temporal por sesión",
-      "longDescription": "Una GLOBAL TEMPORARY TABLE es una table temporal that existe únicamente durante la sesión del user. Allows you to store data intermedios without afectar tables permanentes.",
-      "examples": "DECLARE GLOBAL TEMPORARY TABLE SESSION.TMP_CLIENTES (ID INT, NOMBRE VARCHAR(50));",
-      "notes": "Los data se removesn automáticamente al finalizar la sesión.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0048",
-      "name": "VIEW",
-      "shortDescription": "Vista logic de datos",
-      "longDescription": "Una VIEW es una table logic basada en una consulta. Allows you to simplificar access a datos, ocultar complejidad y improve security.",
-      "examples": "CREATE VIEW V_CLIENTES_ACTIVOS AS SELECT * FROM CLIENTES WHERE ESTADO = 'A';",
-      "notes": "Las vistas no store datos; dependen de las tables base.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0049",
-      "name": "ALIAS",
-      "shortDescription": "Alias de table o vista",
-      "longDescription": "Un ALIAS es un nombre alternativo for una table o vista. It facilitates el access a objetos en otros esquemas o bases.",
-      "examples": "CREATE ALIAS A_CLIENTES FOR DB1.CLIENTES;",
-      "notes": "No afecta permisos ni structure.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0050",
-      "name": "SEQUENCE",
-      "shortDescription": "Generador de values numeric",
-      "longDescription": "Un SEQUENCE es un objeto that genera values numeric sequentiales o incrementales. Se usa for keys primarias o identificadores únicos.",
-      "examples": "CREATE SEQUENCE SEQ_CLIENTE START WITH 1 INCREMENT BY 1;",
-      "notes": "It can usarse with NEXT VALUE FOR en INSERT.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0001",
-      "name": "ABORT",
-      "shortDescription": "Termina la execution of the program inmediatamente.",
-      "longDescription": "ABORT finaliza la execution of the program without perform limpieza additional ni execute blocks de finalización. It is used for detener la execution when se detecta una condition crítica that impide continuar.",
-      "examples": "CALL ABORT;",
-      "notes": "Interrumpe el flujo normal y no garantiza la liberación de resources.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0002",
-      "name": "ABSENT",
-      "shortDescription": "Indica ausencia de un value en listas o parámetros opcionales.",
-      "longDescription": "ABSENT se emplea for señalar that un parámetro opcional o elemento de una lista no está presente. Allows you to distinguir between values nulos y ausencia explícita.",
-      "examples": "IF ARGUMENT(3) = ABSENT THEN CALL HANDLE_MISSING();",
-      "notes": "Useful en rutinas with parámetros opcionales for validar presencia.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0003",
-      "name": "ACCESS",
-      "shortDescription": "Especifica modo de access a un file o recurso.",
-      "longDescription": "ACCESS define cómo se abrirá o utilizará un archivo, indicando if el access será sequential, directo, de read o write. Controla el comportamiento de las operaciones de E/S.",
-      "examples": "DECLARE F FILE ACCESS(SEQUENTIAL);",
-      "notes": "It must ser coherente with el type de file y las operaciones previstas.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0004",
-      "name": "ACCEPT",
-      "shortDescription": "Acepta input o confirma un valor.",
-      "longDescription": "ACCEPT it is used for receive data desde un device de input o for confirmar values en ciertos contextos. Su comportamiento exacto depende del environment de ejecución.",
-      "examples": "ACCEPT INPUT_LINE;",
-      "notes": "It can variar according to la implementación del system.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0005",
-      "name": "ACOS",
-      "shortDescription": "Función trigonométrica arcocoseno.",
-      "longDescription": "ACOS devuelve el ángulo cuyo coseno es el value proporcionado. It is used en cálculos matemáticos that requiresn convertir values trigonométricos a ángulos.",
-      "examples": "ANGLE = ACOS(X);",
-      "notes": "El argumento must estar within del rango válido for el coseno.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0006",
-      "name": "ADDRESS",
-      "shortDescription": "Devuelve o declara la dirección de memory de una variable.",
-      "longDescription": "ADDRESS allows you to obtener la ubicación physical de un objeto en memory o declarar variables basadas en direcciones specifics. It is essential for manipulación de punteros.",
-      "examples": "PTR = ADDRESS(VAR);",
-      "notes": "It must usarse with cuidado to avoid accesss inválidos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0007",
-      "name": "ALIGN",
-      "shortDescription": "Alinea data en memory according to requisitos de implementación.",
-      "longDescription": "ALIGN especifica that una variable must ubicarse en memory respetando límites de alineación. Esto improves el performance y evita fallos en arquitecturas that lo requiresn.",
-      "examples": "DECLARE X FIXED BIN(31) ALIGN;",
-      "notes": "La alineación depende del hardware y del compiler.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0008",
-      "name": "ALLOCATE",
-      "shortDescription": "Reserva storage dynamic en time de ejecución.",
-      "longDescription": "ALLOCATE crea espacio dynamic for variables o structures durante la ejecución. It is esencial for gestionar memory flexible y structures de tamaño variable.",
-      "examples": "ALLOCATE BUFFER;",
-      "notes": "It must complementarse with DEALLOCATE to avoid fugas de memory.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0009",
-      "name": "AND",
-      "shortDescription": "Operador logical de conjunción.",
-      "longDescription": "AND evalúa dos conditions y devuelve verdadero only if ambas son verdaderas. It is used en expresiones logics within structures de control.",
-      "examples": "IF (A > 0) AND (B > 0) THEN CALL PROCESS();",
-      "notes": "Evalúa ambos operandos salvo optimizaciones del compiler.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0010",
-      "name": "ANY",
-      "shortDescription": "Tipo o cláusula that acepta cualquier tipo.",
-      "longDescription": "ANY allows you to declarar parámetros o elementos that pueden receive values de cualquier type compatible. It facilitates la creación de rutinas genéricas.",
-      "examples": "DECLARE P ANY;",
-      "notes": "It must usarse with validaciones to avoid errors de tipo.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0011",
-      "name": "APPEND",
-      "shortDescription": "Añade data al final de un file o lista.",
-      "longDescription": "APPEND it is used for agregar nuevos elementos al final de una structure sequential, ya sea un file o una lista. Allows you to extender el content without modificar los elementos existentes.",
-      "examples": "PUT FILE(F) APPEND;",
-      "notes": "El modo de access del file must permitir write sequential.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-00112",
-      "name": "ARGUMENT",
-      "shortDescription": "Hace referencia a un parámetro pasado a una rutina.",
-      "longDescription": "ARGUMENT allows you to acceder a los parámetros recibidos por una rutina, especially when se trabaja with listas de argumentos o parámetros opcionales. It facilitates la inspección dinámica de valores.",
-      "examples": "IF ARGUMENT(2) = ABSENT THEN CALL HANDLE();",
-      "notes": "Useful en procedimientos genéricos with number variable de parámetros.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0013",
-      "name": "ARRAY",
-      "shortDescription": "Declara una colección indexada de elementos.",
-      "longDescription": "ARRAY define un conjunto sorted de elementos accesibles using indexes. It is essential for handle data structuredos y colecciones de tamaño fijo o variable.",
-      "examples": "DECLARE A(10) FIXED BIN;",
-      "notes": "Los límites del array pueden ser estáticos o dynamics according to la declaración.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0014",
-      "name": "AS",
-      "shortDescription": "Usado en aliasing o definiciones.",
-      "longDescription": "AS se emplea for establecer equivalencias o alias between nombres, allowing that una variable o structure adopte el type o format de otra declaración.",
-      "examples": "DECLARE B AS A;",
-      "notes": "It facilitates reutilizar definiciones without duplicar structures.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0015",
-      "name": "ASSERT",
-      "shortDescription": "Comprueba una condition en time de ejecución.",
-      "longDescription": "ASSERT verifica that una condition sea verdadera durante la ejecución. Si falla, can activar mecanismos de diagnóstico o detener el program according to la configuración.",
-      "examples": "ASSERT(X > 0);",
-      "notes": "Useful for debugging y validación de invariantes.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0016",
-      "name": "ASSIGN",
-      "shortDescription": "Asigna values o reasigna nombres externos; also for archivos.",
-      "longDescription": "ASSIGN allows you to associate files externos a nombres logicals o establecer values en variables. It is key for configurar resources before de operaciones de E/S.",
-      "examples": "ASSIGN FILE(F) TO 'DATA.DAT';",
-      "notes": "It must executese before de abrir el file for that surta efecto.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0017",
-      "name": "ATAN",
-      "shortDescription": "Función trigonométrica arcotangente.",
-      "longDescription": "ATAN devuelve el ángulo cuya tangente corresponde al value proporcionado. It is used en cálculos matemáticos that requiresn convertir razones trigonométricas en ángulos.",
-      "examples": "ANGLE = ATAN(X);",
-      "notes": "El result está en radianes.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0018",
-      "name": "ATAN2",
-      "shortDescription": "Arcotangente with dos argumentos.",
-      "longDescription": "ATAN2 calcula el ángulo considerando dos valores, allowing determinar el cuadrante correcto. It is useful en operaciones vectoriales y cosorteds.",
-      "examples": "ANGLE = ATAN2(Y, X);",
-      "notes": "Evita ambigüedades de sign presentes en ATAN.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0019",
-      "name": "AUTO",
-      "shortDescription": "Almacenamiento automático.",
-      "longDescription": "AUTO indica that una variable se crea al entrar en un block y se destruye al salir. It is the modo de storage típico for variables locales.",
-      "examples": "DECLARE X AUTO;",
-      "notes": "Su vida depende estrictamente del block where se declara.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0020",
-      "name": "AUTO_DEALLOCATE",
-      "shortDescription": "Libera automáticamente storage al salir del bloque.",
-      "longDescription": "AUTO_DEALLOCATE asegura that el storage assignsdo dinámicamente se libere al finalizar el bloque. Simplifica la gestión de memory en structures temporales.",
-      "examples": "DECLARE BUF CONTROLLED AUTO_DEALLOCATE;",
-      "notes": "Evita fugas de memory en rutinas with assignsciones repetidas.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0021",
-      "name": "BASED",
-      "shortDescription": "Define data cuyo content se encuentra en una dirección.",
-      "longDescription": "BASED allows you to declarar variables that dependen de un puntero for determinar su ubicación en memory. It is esencial for manipulación de structures dinámicas.",
-      "examples": "DECLARE P POINTER, S BASED(P);",
-      "notes": "It must assignse una dirección válida before de usar la variable basada.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0022",
-      "name": "BINARY",
-      "shortDescription": "Tipo o modo that indica representación binaria.",
-      "longDescription": "BINARY especifica that un value numeric se almacena en format binario. It is common en operaciones aritméticas y cálculos de precision fija.",
-      "examples": "DECLARE N FIXED BINARY(31);",
-      "notes": "La precision depende del number of bits declarados.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0023",
-      "name": "BIT",
-      "shortDescription": "Tipo de dato de bits o manipulaciones bit a bit.",
-      "longDescription": "BIT allows you to declarar variables that representan secuencias de bits. It is useful for operaciones de máscara, flags y manipulación de fields compactos.",
-      "examples": "DECLARE FLAGS BIT(8);",
-      "notes": "Las operaciones bit a bit dependen del tamaño declarado.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0024",
-      "name": "BLOCK",
-      "shortDescription": "Agrupa instrucciones en un block structuredo.",
-      "longDescription": "BLOCK define una sección de código with alcance propio for variables y control de flujo. It facilitates la organización logic del programa.",
-      "examples": "BLOCK: DO; ... END BLOCK;",
-      "notes": "Allows you to declarar variables locales al bloque.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0025",
-      "name": "BOOLEAN",
-      "shortDescription": "Tipo logical that toma values verdadero/falso.",
-      "longDescription": "BOOLEAN representa values logicals utilizados en conditions y expresiones de control. It is essential for structures IF, WHILE y CASE.",
-      "examples": "DECLARE FLAG BOOLEAN;",
-      "notes": "Su representación internal depende del compiler.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0026",
-      "name": "BUILTIN",
-      "shortDescription": "Identifica una función o rutina incorporada por el compiler.",
-      "longDescription": "BUILTIN marca funciones proporcionadas directamente por el compiler, optimizadas for performance y disponibles without necesidad de definición explícita.",
-      "examples": "DECLARE SQRT BUILTIN;",
-      "notes": "Las funciones builtin pueden variar between implementaciones.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0027",
-      "name": "BY",
-      "shortDescription": "Indicador de paso o separación.",
-      "longDescription": "BY it is used for especificar incrementos en bucles o for definir separación en operaciones de E/S. Controla la progresión de iteraciones.",
-      "examples": "DO I = 1 TO 10 BY 2;",
-      "notes": "El value BY can ser positivo o negativo according to la dirección del bucle.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0028",
-      "name": "CALL",
-      "shortDescription": "Invoca un procedimiento o función.",
-      "longDescription": "CALL ejecuta una rutina defined previously, passing los argumentos necesarios. It is the mecanismo principal for modularizar programas.",
-      "examples": "CALL PROCESS(DATA);",
-      "notes": "Los parámetros deben coincidir with la definición del procedimiento.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0029",
-      "name": "CASE",
-      "shortDescription": "Selección múltiple por valor.",
-      "longDescription": "CASE allows you to elegir between varias ramas according to el value de una expresión. Simplifica decisiones complex with multiple alternativas.",
-      "examples": "SELECT (X); WHEN(1) CALL A; WHEN(2) CALL B; END;",
-      "notes": "It must incluir una rama for values no previstos if se requires robustez.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0030",
-      "name": "CEILING",
-      "shortDescription": "Función matemática that redondea hacia arriba.",
-      "longDescription": "CEILING devuelve el entero más pequeño greater o igual that el value proporcionado. It is used en cálculos that requiresn ajustar values hacia arriba.",
-      "examples": "N = CEILING(X);",
-      "notes": "El result siempre es un entero.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0031",
-      "name": "CHAR",
-      "shortDescription": "Tipo de dato de characters (string fija).",
-      "longDescription": "CHAR declara strings de length fija that se store exactamente with el tamaño especificado. It is used for representar texto structuredo, fields de input y data alphanumeric.",
-      "examples": "DECLARE NAME CHAR(20);",
-      "notes": "Las strings CHAR se rellenan with spaces if el content es smaller that la length declarada.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0032",
-      "name": "CHECK",
-      "shortDescription": "Realiza comprobaciones.",
-      "longDescription": "CHECK activa verificaciones de time de execution o compilation according to el contexto. Allows you to detectar conditions anómalas y validar comportamientos durante la ejecución.",
-      "examples": "CHECK DATA_VALID;",
-      "notes": "Su efecto depende de las options de compilation y del environment.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0033",
-      "name": "CLASS",
-      "shortDescription": "Identificador for agrupación tipo-objeto.",
-      "longDescription": "CLASS it is used en extensiones orientadas a objetos for definir agrupaciones de data y métodos associated. Allows you to structurer código en entidades reusables.",
-      "examples": "DECLARE OBJ CLASS;",
-      "notes": "Su disponibilidad depende de la implementación del compiler PL/I.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0034",
-      "name": "CLEAR",
-      "shortDescription": "Inicializa a cero o value neutral una variable o structure.",
-      "longDescription": "CLEAR establece todos los fields de una variable o structure a values neutros, such as zeros o spaces. It is useful for preparar áreas de trabajo before de operaciones.",
-      "examples": "CLEAR BUFFER;",
-      "notes": "Evita residuos de data en structures reutilizadas.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0035",
-      "name": "CLOSE",
-      "shortDescription": "Cierra un file o canal de E/S.",
-      "longDescription": "CLOSE finaliza el use de un archivo, liberando resources associated y asegurando that los data pendientes se escriban correctly.",
-      "examples": "CLOSE FILE(F);",
-      "notes": "It must executese after de terminar todas las operaciones de E/S.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0036",
-      "name": "COBOL",
-      "shortDescription": "Identificador/contexto de interoperabilidad with COBOL.",
-      "longDescription": "COBOL it is used for declarar compatibility o interacción with modules escritos en COBOL. It facilitates el exchange de data y calls between languages.",
-      "examples": "DECLARE FIELD CHAR(10) COBOL;",
-      "notes": "Requires respetar formats y convenciones del environment COBOL.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0037",
-      "name": "COLLECT",
-      "shortDescription": "Recolecta o acumula elementos.",
-      "longDescription": "COLLECT agrupa elementos en structures de acumulación, allowing procesar conjuntos de data de manera sequential o agregada.",
-      "examples": "COLLECT ITEM INTO LIST;",
-      "notes": "Su comportamiento depende del type de colección utilizada.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0038",
-      "name": "COMPILE",
-      "shortDescription": "Indica acciones o directivas de compilation.",
-      "longDescription": "COMPILE especifica instrucciones for el compiler, allowing ajustar opciones, generate diagnósticos o control fases del process de compilation.",
-      "examples": "COMPILE OPTIONS(DEBUG);",
-      "notes": "Las options disponibles dependen del compiler PL/I utilizado.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0039",
-      "name": "COMPUTE",
-      "shortDescription": "Ejecuta una expresión aritmética o assignment calculada.",
-      "longDescription": "COMPUTE evalúa expresiones numéricas y assigns el result a una variable. It is useful for cálculos directos within rutinas.",
-      "examples": "COMPUTE TOTAL = A + B;",
-      "notes": "It can combinar operaciones aritméticas y funciones matemáticas.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0040",
-      "name": "CONCURRENT",
-      "shortDescription": "Indica execution concurrente o paralela.",
-      "longDescription": "CONCURRENT habilita la execution simultánea de tareas o bloques, allowing aprovechar capacidades de paralelismo del environment de ejecución.",
-      "examples": "CONCURRENT TASK RUN;",
-      "notes": "Su soporte depende del operating system y del compiler.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0041",
-      "name": "CONDITION",
-      "shortDescription": "Declara o maneja conditions del programa.",
-      "longDescription": "CONDITION define estados o eventos that pueden ocurrir durante la ejecución, such as errors o situaciones excepcionales. Allows you to associate manejadores for control el flujo ante dichas conditions.",
-      "examples": "DECLARE OVERFLOW CONDITION;",
-      "notes": "Las conditions pueden activarse automáticamente o using SIGNAL.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0042",
-      "name": "CONFIRM",
-      "shortDescription": "Solicita o indica confirmación.",
-      "longDescription": "CONFIRM it is used for validar acciones that requiresn aprobación explícita. Su comportamiento depende del environment de execution y del device de input.",
-      "examples": "IF CONFIRM('¿Continuar?') THEN CALL NEXT_STEP;",
-      "notes": "It can integrarse with interfaces interactivas o diálogos de user.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0043",
-      "name": "CONFORM",
-      "shortDescription": "Asegura compatibility de types o structures.",
-      "longDescription": "CONFORM verifica that dos structures o types sean compatibles for operaciones such as assignsciones o pasaje de parámetros. Evita errors por discrepancias de formato.",
-      "examples": "DECLARE B CONFORM(A);",
-      "notes": "Useful en modules that sharesn structures complex.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0044",
-      "name": "CONSTRUCTOR",
-      "shortDescription": "Rutina that inicializa objetos o instancias.",
-      "longDescription": "CONSTRUCTOR define una rutina especial that prepara una instancia de un objeto, assignsndo values initial y configurando su estado interno.",
-      "examples": "CALL OBJ.CONSTRUCTOR();",
-      "notes": "Disponible en implementaciones PL/I with soporte orientado a objetos.",
-      "category": "PL/I",
-      "deleted": false
-    },
-    {
-      "id": "PL/I-0045",
-      "name": "CONTINUE",
-      "shortDescription": "Continúa la execution of the siguiente paso.",
-      "longDescription": "CONTINUE allows you to saltar al final de una iteración within un bucle, omitiendo el resto del block actual y avanzando a la siguiente repetición.",
-      "examples": "IF X < 0 THEN CONTINUE;",
-      "notes": "It must utilizarse within structures DO o LOOP.",
-      "category": "PL/I",
-      "deleted": false
-    },
+   {
+    "id": "DB2-0036",
+    "name": "DEADLOCK",
+    "shortDescription": "Mutual deadlock between transactions",
+    "longDescription": "A deadlock occurs when two or more transactions block each other while waiting for resources held by the other. DB2 automatically detects the situation and cancels one of the transactions to release the lock and allow the system to continue functioning.",
+    "examples": "SQLCODE -911 indicates a deadlock detected by DB2.",
+    "notes": "It is recommended to review indexes and access order to prevent deadlocks.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0037",
+    "name": "ISOLATION LEVEL",
+    "shortDescription": "Transaction isolation level",
+    "longDescription": "The isolation level determines how a transaction views changes made by other transactions. It controls phenomena such as dirty reads, non-repeatable reads, and phantom reads. DB2 supports various levels that balance consistency and performance.",
+    "examples": "SELECT * FROM CLIENTES WITH RR;",
+    "notes": "Stricter levels reduce concurrency but increase consistency.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0038",
+    "name": "WITH UR",
+    "shortDescription": "Uncommitted Read",
+    "longDescription": "WITH UR allows reading data not yet committed by other transactions. It is the lowest isolation level and offers maximum performance, but it may return inconsistent data.",
+    "examples": "SELECT * FROM CLIENTES WITH UR;",
+    "notes": "Ideal for read-only queries on very large tables.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0039",
+    "name": "WITH CS",
+    "shortDescription": "Cursor Stability read",
+    "longDescription": "WITH CS ensures that data read by the cursor does not change while the row is being processed. It prevents dirty reads but allows non-repeatable reads.",
+    "examples": "SELECT * FROM CLIENTES WITH CS;",
+    "notes": "This is the default level in many installations.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0040",
+    "name": "WITH RS",
+    "shortDescription": "Repeatable Read",
+    "longDescription": "WITH RS ensures that rows read do not change during the transaction. It prevents non-repeatable reads, but allows phantom reads.",
+    "examples": "SELECT * FROM CLIENTES WITH RS;",
+    "notes": "Suitable for processes requiring data stability.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0041",
+    "name": "WITH RR",
+    "shortDescription": "Serializable Read",
+    "longDescription": "WITH RR is the strictest isolation level. It guarantees that data does not change throughout the entire transaction and prevents all concurrency phenomena, including phantom reads.",
+    "examples": "SELECT * FROM CLIENTES WITH RR;",
+    "notes": "Significantly reduces concurrency; use only when necessary.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0042",
+    "name": "EXPLAIN",
+    "shortDescription": "Generates an SQL execution plan",
+    "longDescription": "EXPLAIN retrieves the execution plan that DB2 will use for an SQL statement. It is essential for query optimization and performance analysis.",
+    "examples": "EXPLAIN PLAN FOR SELECT * FROM CLIENTES;",
+    "notes": "Results are stored in special tables within the PLAN_TABLE schema.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0043",
+    "name": "SQLCODE",
+    "shortDescription": "SQL statement return code",
+    "longDescription": "SQLCODE is the numeric code indicating the result of an SQL statement. Positive values indicate warnings, zero indicates success, and negative values indicate errors.",
+    "examples": "SQLCODE = -803 → Unique key violation.",
+    "notes": "Must be checked after each SQL statement in COBOL programs.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0044",
+    "name": "SQLSTATE",
+    "shortDescription": "Standard SQL error code",
+    "longDescription": "SQLSTATE is a five-character code indicating the status of an SQL operation following ANSI standards. It provides more portable information than SQLCODE.",
+    "examples": "SQLSTATE '23505' → Primary key violation.",
+    "notes": "Useful for multi-platform applications.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0045",
+    "name": "HOST VARIABLES",
+    "shortDescription": "COBOL variables used in SQL",
+    "longDescription": "Host variables are COBOL variables used to send and receive data from embedded SQL statements. They are identified by the ':' prefix in statements.",
+    "examples": "SELECT NOMBRE INTO :WS-NOMBRE FROM CLIENTES WHERE ID = :WS-ID;",
+    "notes": "Must be declared in WORKING-STORAGE.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0046",
+    "name": "DECLARE TABLE",
+    "shortDescription": "Defines a temporary table",
+    "longDescription": "DECLARE TABLE allows defining temporary tables within programs to manipulate data without affecting real tables. It is mainly used in dynamic SQL.",
+    "examples": "DECLARE GLOBAL TEMPORARY TABLE SESSION.TMP AS (SELECT * FROM CLIENTES) WITH DATA;",
+    "notes": "Temporary tables exist only during the session.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0047",
+    "name": "GLOBAL TEMPORARY TABLE",
+    "shortDescription": "Session-level temporary table",
+    "longDescription": "A GLOBAL TEMPORARY TABLE is a temporary table that exists solely during the user's session. It allows storing intermediate data without affecting permanent tables.",
+    "examples": "DECLARE GLOBAL TEMPORARY TABLE SESSION.TMP_CLIENTES (ID INT, NOMBRE VARCHAR(50));",
+    "notes": "Data is automatically deleted when the session ends.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0048",
+    "name": "VIEW",
+    "shortDescription": "Logical data view",
+    "longDescription": "A VIEW is a logical table based on a query. It simplifies data access, hides complexity, and improves security.",
+    "examples": "CREATE VIEW V_CLIENTES_ACTIVOS AS SELECT * FROM CLIENTES WHERE ESTADO = 'A';",
+    "notes": "Views do not store data; they depend on the base tables.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0049",
+    "name": "ALIAS",
+    "shortDescription": "Table or view alias",
+    "longDescription": "An ALIAS is an alternative name for a table or view. It facilitates access to objects in other schemas or databases.",
+    "examples": "CREATE ALIAS A_CLIENTES FOR DB1.CLIENTES;",
+    "notes": "Does not affect permissions or structure.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0050",
+    "name": "SEQUENCE",
+    "shortDescription": "Numeric value generator",
+    "longDescription": "A SEQUENCE is an object that generates sequential or incremental numeric values. It is used for primary keys or unique identifiers.",
+    "examples": "CREATE SEQUENCE SEQ_CLIENTE START WITH 1 INCREMENT BY 1;",
+    "notes": "Can be used with NEXT VALUE FOR in INSERT statements.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0001",
+    "name": "ABORT",
+    "shortDescription": "Terminates program execution immediately.",
+    "longDescription": "ABORT ends program execution without performing additional cleanup or executing termination blocks. It is used to halt execution when a critical condition prevents continuation.",
+    "examples": "CALL ABORT;",
+    "notes": "Interrupts normal flow and does not guarantee resource release.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0002",
+    "name": "ABSENT",
+    "shortDescription": "Indicates the absence of a value in lists or optional parameters.",
+    "longDescription": "ABSENT is used to signal that an optional parameter or list element is not present. It distinguishes between null values and explicit absence.",
+    "examples": "IF ARGUMENT(3) = ABSENT THEN CALL HANDLE_MISSING();",
+    "notes": "Useful in routines with optional parameters to validate presence.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0003",
+    "name": "ACCESS",
+    "shortDescription": "Specifies access mode for a file or resource.",
+    "longDescription": "ACCESS defines how a file will be opened or used, indicating whether access will be sequential, direct, read, or write. It controls the behavior of I/O operations.",
+    "examples": "DECLARE F FILE ACCESS(SEQUENTIAL);",
+    "notes": "Must be consistent with the file type and intended operations.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0004",
+    "name": "ACCEPT",
+    "shortDescription": "Accepts input or confirms a value.",
+    "longDescription": "ACCEPT is used to receive data from an input device or to confirm values in certain contexts. Its exact behavior depends on the execution environment.",
+    "examples": "ACCEPT INPUT_LINE;",
+    "notes": "May vary depending on the system implementation.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0005",
+    "name": "ACOS",
+    "shortDescription": "Arccosine trigonometric function.",
+    "longDescription": "ACOS returns the angle whose cosine is the provided value. It is used in mathematical calculations requiring the conversion of trigonometric values to angles.",
+    "examples": "ANGLE = ACOS(X);",
+    "notes": "The argument must be within the valid range for cosine.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0006",
+    "name": "ADDRESS",
+    "shortDescription": "Returns or declares the memory address of a variable.",
+    "longDescription": "ADDRESS retrieves the physical location of an object in memory or declares variables based on specific addresses. It is fundamental for pointer manipulation.",
+    "examples": "PTR = ADDRESS(VAR);",
+    "notes": "Must be used with caution to avoid invalid memory access.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0007",
+    "name": "ALIGN",
+    "shortDescription": "Aligns data in memory according to implementation requirements.",
+    "longDescription": "ALIGN specifies that a variable must be located in memory respecting alignment boundaries. This improves performance and prevents failures on architectures that require it.",
+    "examples": "DECLARE X FIXED BIN(31) ALIGN;",
+    "notes": "Alignment depends on the hardware and the compiler.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0008",
+    "name": "ALLOCATE",
+    "shortDescription": "Reserves dynamic storage at runtime.",
+    "longDescription": "ALLOCATE creates dynamic space for variables or structures during execution. It is essential for managing flexible memory and variable-sized structures.",
+    "examples": "ALLOCATE BUFFER;",
+    "notes": "Must be complemented with DEALLOCATE to prevent memory leaks.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0009",
+    "name": "AND",
+    "shortDescription": "Logical conjunction operator.",
+    "longDescription": "AND evaluates two conditions and returns true only if both are true. It is used in logical expressions within control structures.",
+    "examples": "IF (A > 0) AND (B > 0) THEN CALL PROCESS();",
+    "notes": "Evaluates both operands barring compiler optimizations.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0010",
+    "name": "ANY",
+    "shortDescription": "Type or clause that accepts any data type.",
+    "longDescription": "ANY allows declaring parameters or elements that can receive values of any compatible type. It facilitates the creation of generic routines.",
+    "examples": "DECLARE P ANY;",
+    "notes": "Must be used with validations to avoid type errors.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0011",
+    "name": "APPEND",
+    "shortDescription": "Appends data to the end of a file or list.",
+    "longDescription": "APPEND is used to add new elements to the end of a sequential structure, whether a file or a list. It allows extending content without modifying existing elements.",
+    "examples": "PUT FILE(F) APPEND;",
+    "notes": "The file access mode must allow sequential writing.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-00112",
+    "name": "ARGUMENT",
+    "shortDescription": "References a parameter passed to a routine.",
+    "longDescription": "ARGUMENT provides access to parameters received by a routine, especially when working with argument lists or optional parameters. It facilitates dynamic inspection of values.",
+    "examples": "IF ARGUMENT(2) = ABSENT THEN CALL HANDLE();",
+    "notes": "Useful in generic procedures with a variable number of parameters.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0013",
+    "name": "ARRAY",
+    "shortDescription": "Declares an indexed collection of elements.",
+    "longDescription": "ARRAY defines an ordered set of elements accessible via indices. It is fundamental for managing structured data and collections of fixed or variable size.",
+    "examples": "DECLARE A(10) FIXED BIN;",
+    "notes": "Array bounds can be static or dynamic depending on the declaration.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0014",
+    "name": "AS",
+    "shortDescription": "Used in aliasing or definitions.",
+    "longDescription": "AS is used to establish equivalences or aliases between names, allowing a variable or structure to adopt the type or format of another declaration.",
+    "examples": "DECLARE B AS A;",
+    "notes": "Facilitates reusing definitions without duplicating structures.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0015",
+    "name": "ASSERT",
+    "shortDescription": "Checks a condition at runtime.",
+    "longDescription": "ASSERT verifies that a condition is true during execution. If it fails, it can trigger diagnostic mechanisms or stop the program depending on configuration.",
+    "examples": "ASSERT(X > 0);",
+    "notes": "Useful for debugging and invariant validation.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0016",
+    "name": "ASSIGN",
+    "shortDescription": "Assigns values or reassigns external names; also for files.",
+    "longDescription": "ASSIGN associates external files with logical names or sets values in variables. It is key for configuring resources prior to I/O operations.",
+    "examples": "ASSIGN FILE(F) TO 'DATA.DAT';",
+    "notes": "Must be executed before opening the file to take effect.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0017",
+    "name": "ATAN",
+    "shortDescription": "Arctangent trigonometric function.",
+    "longDescription": "ATAN returns the angle whose tangent corresponds to the provided value. It is used in mathematical calculations requiring the conversion of trigonometric ratios into angles.",
+    "examples": "ANGLE = ATAN(X);",
+    "notes": "The result is in radians.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0018",
+    "name": "ATAN2",
+    "shortDescription": "Two-argument arctangent.",
+    "longDescription": "ATAN2 calculates the angle considering two values, allowing determination of the correct quadrant. It is useful in vector and coordinate operations.",
+    "examples": "ANGLE = ATAN2(Y, X);",
+    "notes": "Avoids sign ambiguities present in ATAN.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0019",
+    "name": "AUTO",
+    "shortDescription": "Automatic storage.",
+    "longDescription": "AUTO indicates that a variable is created upon entering a block and destroyed upon exit. It is the typical storage class for local variables.",
+    "examples": "DECLARE X AUTO;",
+    "notes": "Its lifetime depends strictly on the block where it is declared.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0020",
+    "name": "AUTO_DEALLOCATE",
+    "shortDescription": "Automatically frees storage upon exiting the block.",
+    "longDescription": "AUTO_DEALLOCATE ensures that dynamically allocated storage is released when the block finishes. It simplifies memory management in temporary structures.",
+    "examples": "DECLARE BUF CONTROLLED AUTO_DEALLOCATE;",
+    "notes": "Prevents memory leaks in routines with repeated allocations.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0021",
+    "name": "BASED",
+    "shortDescription": "Defines data whose content is located at an address.",
+    "longDescription": "BASED allows declaring variables that rely on a pointer to determine their memory location. It is essential for manipulating dynamic structures.",
+    "examples": "DECLARE P POINTER, S BASED(P);",
+    "notes": "A valid address must be assigned before using the based variable.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0022",
+    "name": "BINARY",
+    "shortDescription": "Type or mode indicating binary representation.",
+    "longDescription": "BINARY specifies that a numeric value is stored in binary format. It is common in arithmetic operations and fixed-precision calculations.",
+    "examples": "DECLARE N FIXED BINARY(31);",
+    "notes": "Precision depends on the declared number of bits.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0023",
+    "name": "BIT",
+    "shortDescription": "Bit data type or bitwise manipulations.",
+    "longDescription": "BIT allows declaring variables that represent bit sequences. It is useful for mask operations, flags, and compact field manipulation.",
+    "examples": "DECLARE FLAGS BIT(8);",
+    "notes": "Bitwise operations depend on the declared size.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0024",
+    "name": "BLOCK",
+    "shortDescription": "Groups instructions into a structured block.",
+    "longDescription": "BLOCK defines a section of code with its own scope for variables and flow control. It facilitates the logical organization of the program.",
+    "examples": "BLOCK: DO; ... END BLOCK;",
+    "notes": "Allows declaring variables local to the block.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0025",
+    "name": "BOOLEAN",
+    "shortDescription": "Logical type taking true/false values.",
+    "longDescription": "BOOLEAN represents logical values used in conditions and control expressions. It is fundamental for IF, WHILE, and CASE structures.",
+    "examples": "DECLARE FLAG BOOLEAN;",
+    "notes": "Its internal representation depends on the compiler.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0026",
+    "name": "BUILTIN",
+    "shortDescription": "Identifies a compiler-provided function or routine.",
+    "longDescription": "BUILTIN marks functions provided directly by the compiler, optimized for performance and available without explicit definition.",
+    "examples": "DECLARE SQRT BUILTIN;",
+    "notes": "Builtin functions may vary across implementations.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0027",
+    "name": "BY",
+    "shortDescription": "Step or spacing indicator.",
+    "longDescription": "BY is used to specify increments in loops or to define separation in I/O operations. It controls the progression of iterations.",
+    "examples": "DO I = 1 TO 10 BY 2;",
+    "notes": "The BY value can be positive or negative depending on the loop direction.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0028",
+    "name": "CALL",
+    "shortDescription": "Invokes a procedure or function.",
+    "longDescription": "CALL executes a previously defined routine, passing the necessary arguments. It is the main mechanism for modularizing programs.",
+    "examples": "CALL PROCESS(DATA);",
+    "notes": "Parameters must match the procedure definition.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0029",
+    "name": "CASE",
+    "shortDescription": "Multiple selection by value.",
+    "longDescription": "CASE allows choosing between multiple branches based on the value of an expression. It simplifies complex decisions with multiple alternatives.",
+    "examples": "SELECT (X); WHEN(1) CALL A; WHEN(2) CALL B; END;",
+    "notes": "Must include a branch for unpredicted values if robustness is required.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0030",
+    "name": "CEILING",
+    "shortDescription": "Mathematical function that rounds up.",
+    "longDescription": "CEILING returns the smallest integer greater than or equal to the provided value. It is used in calculations requiring values to be adjusted upward.",
+    "examples": "N = CEILING(X);",
+    "notes": "The result is always an integer.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0031",
+    "name": "CHAR",
+    "shortDescription": "Character data type (fixed-length string).",
+    "longDescription": "CHAR declares fixed-length strings stored with the exact specified size. It is used to represent structured text, input fields, and alphanumeric data.",
+    "examples": "DECLARE NAME CHAR(20);",
+    "notes": "CHAR strings are padded with spaces if the content is shorter than the declared length.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0032",
+    "name": "CHECK",
+    "shortDescription": "Performs checks.",
+    "longDescription": "CHECK triggers runtime or compilation checks depending on the context. It allows detecting anomalous conditions and validating behaviors during execution.",
+    "examples": "CHECK DATA_VALID;",
+    "notes": "Its effect depends on compilation options and the environment.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0033",
+    "name": "CLASS",
+    "shortDescription": "Identifier for object-type grouping.",
+    "longDescription": "CLASS is used in object-oriented extensions to define groupings of data and associated methods. It allows structuring code into reusable entities.",
+    "examples": "DECLARE OBJ CLASS;",
+    "notes": "Its availability depends on the PL/I compiler implementation.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0034",
+    "name": "CLEAR",
+    "shortDescription": "Initializes a variable or structure to zero or a neutral value.",
+    "longDescription": "CLEAR sets all fields of a variable or structure to neutral values, such as zeros or spaces. It is useful for preparing workspace areas prior to operations.",
+    "examples": "CLEAR BUFFER;",
+    "notes": "Prevents data residuals in reused structures.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0035",
+    "name": "CLOSE",
+    "shortDescription": "Closes a file or I/O channel.",
+    "longDescription": "CLOSE finalizes the use of a file, releasing associated resources and ensuring pending data is written correctly.",
+    "examples": "CLOSE FILE(F);",
+    "notes": "Must be executed after finishing all I/O operations.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0036",
+    "name": "COBOL",
+    "shortDescription": "COBOL interoperability identifier/context.",
+    "longDescription": "COBOL is used to declare compatibility or interaction with modules written in COBOL. It facilitates data exchange and calls between languages.",
+    "examples": "DECLARE FIELD CHAR(10) COBOL;",
+    "notes": "Requires respecting COBOL environment formats and conventions.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0037",
+    "name": "COLLECT",
+    "shortDescription": "Collects or accumulates elements.",
+    "longDescription": "COLLECT groups elements into accumulation structures, allowing datasets to be processed sequentially or aggregated.",
+    "examples": "COLLECT ITEM INTO LIST;",
+    "notes": "Its behavior depends on the type of collection used.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0038",
+    "name": "COMPILE",
+    "shortDescription": "Indicates compilation actions or directives.",
+    "longDescription": "COMPILE specifies instructions for the compiler, allowing option adjustment, diagnostic generation, or control over compilation phases.",
+    "examples": "COMPILE OPTIONS(DEBUG);",
+    "notes": "Available options depend on the PL/I compiler used.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0039",
+    "name": "COMPUTE",
+    "shortDescription": "Executes an arithmetic expression or calculated assignment.",
+    "longDescription": "COMPUTE evaluates numerical expressions and assigns the result to a variable. It is useful for direct calculations within routines.",
+    "examples": "COMPUTE TOTAL = A + B;",
+    "notes": "Can combine arithmetic operations and mathematical functions.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0040",
+    "name": "CONCURRENT",
+    "shortDescription": "Indicates concurrent or parallel execution.",
+    "longDescription": "CONCURRENT enables simultaneous execution of tasks or blocks, allowing leverage of execution environment parallelism capabilities.",
+    "examples": "CONCURRENT TASK RUN;",
+    "notes": "Its support depends on the operating system and compiler.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0041",
+    "name": "CONDITION",
+    "shortDescription": "Declares or handles program conditions.",
+    "longDescription": "CONDITION defines states or events that can occur during execution, such as errors or exceptional situations. It allows associating handlers to control flow in the face of such conditions.",
+    "examples": "DECLARE OVERFLOW CONDITION;",
+    "notes": "Conditions can be triggered automatically or via SIGNAL.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0042",
+    "name": "CONFIRM",
+    "shortDescription": "Requests or indicates confirmation.",
+    "longDescription": "CONFIRM is used to validate actions requiring explicit approval. Its behavior depends on the execution environment and the input device.",
+    "examples": "IF CONFIRM('¿Continuar?') THEN CALL NEXT_STEP;",
+    "notes": "Can be integrated with interactive interfaces or user dialogs.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0043",
+    "name": "CONFORM",
+    "shortDescription": "Ensures type or structure compatibility.",
+    "longDescription": "CONFORM verifies that two structures or types are compatible for operations such as assignments or parameter passing. Prevents errors due to format discrepancies.",
+    "examples": "DECLARE B CONFORM(A);",
+    "notes": "Useful in modules sharing complex structures.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0044",
+    "name": "CONSTRUCTOR",
+    "shortDescription": "Routine that initializes objects or instances.",
+    "longDescription": "CONSTRUCTOR defines a special routine that prepares an object instance, assigning initial values and configuring its internal state.",
+    "examples": "CALL OBJ.CONSTRUCTOR();",
+    "notes": "Available in PL/I implementations with object-oriented support.",
+    "category": "PL/I",
+    "deleted": false
+  },
+  {
+    "id": "PL/I-0045",
+    "name": "CONTINUE",
+    "shortDescription": "Continues execution to the next step.",
+    "longDescription": "CONTINUE allows jumping to the end of an iteration within a loop, skipping the rest of the current block and advancing to the next repetition.",
+    "examples": "IF X < 0 THEN CONTINUE;",
+    "notes": "Must be used within DO or LOOP structures.",
+    "category": "PL/I",
+    "deleted": false
+  }
     {
       "id": "PL/I-0046",
       "name": "CONTROLLED",
