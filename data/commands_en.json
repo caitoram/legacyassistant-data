@@ -666,6 +666,7 @@
 "examples": "RDELETE DATASET MI.DATASET.SECURO",
 "category": "RACF",
 "deleted": false
+},
     {
     "id": "CMD-RACF-0015",
     "name": "PERMIT",
