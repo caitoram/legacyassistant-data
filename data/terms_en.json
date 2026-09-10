@@ -982,745 +982,745 @@
     "deleted": false
   }
     {
-      "id": "JCL-0001",
-      "name": "JOB",
-      "shortDescription": "Inicia un job batch en z/OS",
-      "longDescription": "La instrucción JOB marca el inicio de un trabajo batch en z/OS. Define parámetros globales such as el user, la clase de ejecución, el nivel de mensajes y el límite de time. It is the entry point for cualquier process batch y controla cómo el system JES2/JES3 gestionará el job.",
-      "examples": "//MIJOB JOB (ACCT),'PROCESO DIARIO',CLASS=A,MSGCLASS=X,NOTIFY=&SYSUID",
-      "notes": "It must ser la primera sentencia del JCL. Los parámetros dependen del environment JES.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0002",
-      "name": "EXEC",
-      "shortDescription": "Ejecuta un program o procedimiento",
-      "longDescription": "EXEC indica that un step executeá un program o un procedimiento almacenado en PROCLIB. It is the núcleo de each paso del job, ya that define qué program se ejecuta y with qué parámetros.",
-      "examples": "//STEP1 EXEC PGM=IEFBR14",
-      "notes": "Si se usa un PROC, los parámetros se pasan using PARM o variables simbólicas.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0003",
-      "name": "DD",
-      "shortDescription": "Define un dataset o recurso",
-      "longDescription": "DD (Data Definition) especifica datasets, archivos, colas o resources that un program necesita. Allows you to definir nombre logical, ubicación, espacio, format y disposition del dataset.",
-      "examples": "//SALIDA DD DSN=MI.DATASET,DISP=NEW,SPACE=(CYL,(1,1))",
-      "notes": "Cada EXEC can tener multiple DD associated.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0004",
-      "name": "STEPLIB",
-      "shortDescription": "Biblioteca de carga for un step",
-      "longDescription": "STEPLIB define una biblioteca de carga specific for un step. Allows you to that el program se ejecute usando modules de una librería distinta a la estándar.",
-      "examples": "//STEPLIB DD DSN=MI.LIB.CARGA,DISP=SHR",
-      "notes": "Solo afecta al step where se declara.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0005",
-      "name": "JOBLIB",
-      "shortDescription": "Biblioteca de carga for todo el job",
-      "longDescription": "JOBLIB define una biblioteca de carga for todos los steps del job. It is useful when multiple programs requiresn la same librería.",
-      "examples": "//JOBLIB DD DSN=MI.LIB.CARGA,DISP=SHR",
-      "notes": "It must colocarse inmediatamente after del JOB.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0006",
-      "name": "SYSOUT",
-      "shortDescription": "Salida impresa del system",
-      "longDescription": "SYSOUT define la clase de output for mensajes generateds por el system o por el programa. Se envía a colas de printing o logs according to la configuración.",
-      "examples": "//SYSOUT DD SYSOUT=A",
-      "notes": "La clase determina dónde se enviará la output.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0007",
-      "name": "SYSPRINT",
-      "shortDescription": "Salida de printing del programa",
-      "longDescription": "SYSPRINT captura la output de printing generada por el programa. It is common en utilidades such as IDCAMS, IEBGENER o SORT.",
-      "examples": "//SYSPRINT DD SYSOUT=*",
-      "notes": "Generalmente se usa junto with SYSIN.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0008",
-      "name": "SYSIN",
-      "shortDescription": "Entrada estándar for parámetros",
-      "longDescription": "SYSIN proporciona input directa al programa, normalmente parámetros o instrucciones. It is esencial en utilidades that requiresn comandos internos.",
-      "examples": "//SYSIN DD *\n  DELETE MI.DATASET\n/*",
-      "notes": "It can usar data inline o referenciar un dataset.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0009",
-      "name": "DISP",
-      "shortDescription": "Estado del dataset (NEW, OLD, SHR)",
-      "longDescription": "DISP controla el estado del dataset: creación, use exclusivo, use compartido y acción al finalizar el step. It is crítico to avoid locks y pérdidas de datos.",
-      "examples": "DISP=(NEW,CATLG,DELETE)",
-      "notes": "El primer parámetro es el estado inicial; el segundo y tercero son acciones al terminar.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0010",
-      "name": "DSN",
-      "shortDescription": "Nombre del dataset",
-      "longDescription": "DSN especifica el nombre completo del dataset. It can ser sequential, VSAM o miembro de PDS.",
-      "examples": "DSN=MI.DATASET.TEST",
-      "notes": "Los nombres deben seguir la convención HLQ.MLQ.LLQ.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0011",
-      "name": "SPACE",
-      "shortDescription": "Asignación de espacio en disco",
-      "longDescription": "SPACE define la cantidad de espacio assignsdo a un dataset. It can especificarse en cilindros, tracks o bloques.",
-      "examples": "SPACE=(CYL,(5,2))",
-      "notes": "El primer value es la assignment inicial; el segundo es la extensión.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0012",
-      "name": "UNIT",
-      "shortDescription": "Tipo de device (SYSDA, TAPE)",
-      "longDescription": "UNIT indica el type de device where se storeá el dataset. SYSDA es el más common for disco.",
-      "examples": "UNIT=SYSDA",
-      "notes": "En cintas se usa UNIT=TAPE.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0013",
-      "name": "VOL",
-      "shortDescription": "Volumen physical where reside el dataset",
-      "longDescription": "VOL especifica el volumen physical where se encuentra o se creará el dataset. It is useful for datasets en cintas o discos specific.",
-      "examples": "VOL=SER=DISK01",
-      "notes": "No siempre es necesario; el catálogo can resolverlo.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0014",
-      "name": "DCB",
-      "shortDescription": "Control de data (RECFM, LRECL)",
-      "longDescription": "DCB define atributos del dataset such as format de registro, length y tamaño de bloque. It is esencial for datasets sequentiales.",
-      "examples": "DCB=(RECFM=FB,LRECL=80,BLKSIZE=800)",
-      "notes": "It can omitirse if el dataset ya está catalogado.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0015",
-      "name": "RECFM",
-      "shortDescription": "Formato de record (FB, VB)",
-      "longDescription": "RECFM define el format de los registros: fijo (FB), variable (VB), bloqueado (FBS) o variable bloqueado (VBS).",
-      "examples": "RECFM=FB",
-      "notes": "FB es el format más common for files de texto.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0016",
-      "name": "LRECL",
-      "shortDescription": "Longitud del registro",
-      "longDescription": "LRECL indica la length de each record en bytes. It is required for files FB.",
-      "examples": "LRECL=80",
-      "notes": "It must coincidir with el format del program that lo procesa.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0017",
-      "name": "BLKSIZE",
-      "shortDescription": "Tamaño del bloque",
-      "longDescription": "BLKSIZE define el tamaño del block physical en disco. Un value adecuado improves el performance.",
-      "examples": "BLKSIZE=800",
-      "notes": "Si se omite, el system can calcularlo automáticamente.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0018",
-      "name": "MSGCLASS",
-      "shortDescription": "Clase de mensajes del job",
-      "longDescription": "MSGCLASS determina la cola where se enviarán los mensajes del job. Cada clase tiene un destination diferente according to la configuración del system.",
-      "examples": "MSGCLASS=X",
-      "notes": "Las clases dependen del environment JES.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0019",
-      "name": "CLASS",
-      "shortDescription": "Clase de execution of the job",
-      "longDescription": "CLASS define la prioridad y el type de execution of the job. Jobs with CLASS alta pueden executese antes.",
-      "examples": "CLASS=A",
-      "notes": "Las clases están defineds por el administrador del system.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0020",
-      "name": "TYPRUN",
-      "shortDescription": "Modo de execution (SCAN, HOLD)",
-      "longDescription": "TYPRUN allows you to execute el job en modo especial: SCAN valida el JCL without executelo; HOLD lo retiene en cola.",
-      "examples": "TYPRUN=SCAN",
-      "notes": "Useful for validar JCL before de production.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0021",
-      "name": "COND",
-      "shortDescription": "Condición de execution basada en RC",
-      "longDescription": "COND controla if un step must executese according to el código de return de steps anteriores. Allows you to avoid ejecuciones innecesarias.",
-      "examples": "COND=(4,LT)",
-      "notes": "La logic can ser compleja; se recomienda simplificar.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0022",
-      "name": "RC",
-      "shortDescription": "Código de return del programa",
-      "longDescription": "RC es el código de return generated por un programa. Indica éxito, advertencias o errors.",
-      "examples": "IF RC > 8 THEN ABEND",
-      "notes": "Los values comunes son 0, 4, 8, 12 y 16.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0023",
-      "name": "ABEND",
-      "shortDescription": "Terminación anormal del job",
-      "longDescription": "ABEND indica that un job o program terminó de forma anormal. It can ser causado por errors de JCL, logic o resources.",
-      "examples": "S0C7 — Error de datos numéricos",
-      "notes": "Los dumps ayudan a diagnosticar el problema.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0024",
-      "name": "PROC",
-      "shortDescription": "Procedimiento almacenado en PROCLIB",
-      "longDescription": "PROC define un procedimiento reusable almacenado en una librería PROCLIB. Allows you to estandarizar steps comunes.",
-      "examples": "//MIPROC PROC\n//STEP1 EXEC PGM=IEFBR14\n//PEND",
-      "notes": "Los parámetros se pasan using variables simbólicas.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0025",
-      "name": "PEND",
-      "shortDescription": "Fin de un procedimiento",
-      "longDescription": "PEND marca el final de un procedimiento PROC. It is required for cerrar correctly la definición.",
-      "examples": "//PEND",
-      "notes": "It must ser la última línea del PROC.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0026",
-      "name": "INCLUDE",
-      "shortDescription": "It includes un miembro externo",
-      "longDescription": "INCLUDE allows you to insertar content de otro miembro within del JCL. It facilitates la reuse de fragmentos comunes.",
-      "examples": "//INCLUDE MEMBER=MIEMBRO1",
-      "notes": "El miembro must estar en la librería defined por el system.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0027",
-      "name": "SET",
-      "shortDescription": "Define variables simbólicas",
-      "longDescription": "SET assigns values a variables simbólicas usadas en PROC o JCL. Allows you to parametrizar ejecuciones.",
-      "examples": "// SET FECHA=20240101",
-      "notes": "Las variables se referencian such as &FECHA.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0028",
-      "name": "SYMBOLIC",
-      "shortDescription": "Variable simbólica en un PROC",
-      "longDescription": "Las variables simbólicas allow parametrizar procedimientos. Se sustituyen en time de ejecución.",
-      "examples": "//STEP1 EXEC PGM=PROG,PARM=&PARM1",
-      "notes": "Se definen en PROC o using SET.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0029",
-      "name": "IEFBR14",
-      "shortDescription": "Programa nulo used for crear/borrar datasets",
-      "longDescription": "IEFBR14 es un program vacío that siempre retorna RC=0. Se usa for execute DDs that crean o removesn datasets without logic adicional.",
-      "examples": "//STEP1 EXEC PGM=IEFBR14\n//DD1 DD DSN=MI.DATASET,DISP=(NEW,CATLG)",
-      "notes": "Muy used for housekeeping.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0030",
-      "name": "IDCAMS",
-      "shortDescription": "Utilidad for VSAM y catálogos",
-      "longDescription": "IDCAMS gestiona datasets VSAM, catálogos y operaciones such as DELETE, DEFINE, REPRO y LISTCAT.",
-      "examples": "//SYSIN DD *\n  LISTCAT ENTRIES(MI.VSAM)\n/*",
-      "notes": "It is una de las utilidades más potentes del system.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0031",
-      "name": "IEBGENER",
-      "shortDescription": "Copia y transforma datasets",
-      "longDescription": "IEBGENER copia datasets, imprime content o genera reports simples. It is una utilidad versátil for manipulación básica de archivos.",
-      "examples": "//SYSIN DD DUMMY",
-      "notes": "It can copiar PDS, sequentiales y SYSOUT.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0032",
-      "name": "IEBCOPY",
-      "shortDescription": "Copia miembros de PDS",
-      "longDescription": "IEBCOPY copia, comprime y reorganiza miembros de PDS. It is esencial for maintenance de librerías.",
-      "examples": "//SYSIN DD *\n  COPY INDD=IN OUTDD=OUT\n/*",
-      "notes": "Allows you to copiar multiple miembros a la vez.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0033",
-      "name": "SORT",
-      "shortDescription": "Ordena y filtra datos",
-      "longDescription": "SORT es una de las utilidades más utilizadas en z/OS. Allows you to ordenar, filtrar, sumarizar y transformar datasets sequentiales. Su potencia radica en la capacidad de definir multiple keys, conditions y operaciones complex without necesidad de escribir programs adicionales.",
-      "examples": "//STEP1 EXEC PGM=SORT\n//SYSIN DD *\n  SORT FIELDS=(1,10,CH,A)\n/*",
-      "notes": "It can trabajar with files enormes y soporta multiple operaciones avanzadas.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0034",
-      "name": "ICETOOL",
-      "shortDescription": "Herramienta avanzada de SORT",
-      "longDescription": "ICETOOL es una interfaz de alto nivel for DFSORT that allows you to perform operaciones complex such as estadísticas, validaciones, informes, copias condicionadas y transformations avanzadas. Simplifica tareas that with SORT requerirían multiple pasos.",
-      "examples": "//TOOL EXEC PGM=ICETOOL\n//TOOLIN DD *\n  COUNT FROM(INPUT) ON(1,10,CH)\n/*",
-      "notes": "Ideal for processes batch that requiresn análisis y reports.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0035",
-      "name": "SYSUDUMP",
-      "shortDescription": "Volcado de memory en abends",
-      "longDescription": "SYSUDUMP genera un volcado de memory when ocurre un abend. It includes información del programa, records y content de memory useful for diagnóstico.",
-      "examples": "//SYSUDUMP DD SYSOUT=*",
-      "notes": "Produce un dump legible por humanos.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0036",
-      "name": "SYSABEND",
-      "shortDescription": "Volcado extendido de abends",
-      "longDescription": "SYSABEND genera un volcado más detallado that SYSUDUMP, incluyendo información additional del system y del environment de ejecución.",
-      "examples": "//SYSABEND DD SYSOUT=*",
-      "notes": "Useful for análisis profundos de fallos.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0037",
-      "name": "SYSMDUMP",
-      "shortDescription": "Volcado en format máquina",
-      "longDescription": "SYSMDUMP produce un dump en format máquina, más compacto y orientado a herramientas automáticas de análisis. It is the más detallado de los tres types de dumps.",
-      "examples": "//SYSMDUMP DD SYSOUT=*",
-      "notes": "Requires herramientas especializadas for interpretarlo.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0038",
-      "name": "TIME",
-      "shortDescription": "Límite de time de ejecución",
-      "longDescription": "TIME define el time máximo permitido for execute un job o step. Evita that processes defectuosos consuman resources indefinidamente.",
-      "examples": "TIME=1440",
-      "notes": "1440 significa time ilimitado.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0039",
-      "name": "REGION",
-      "shortDescription": "Memoria assignsda al job",
-      "longDescription": "REGION especifica la cantidad de memory disponible for el job o step. It is crucial for programs that requiresn grandes buffers o processes intensivos.",
-      "examples": "REGION=0M",
-      "notes": "0M allows you to al system assign la máxima memory disponible.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0040",
-      "name": "NOTIFY",
-      "shortDescription": "Usuario notificado al finalizar",
-      "longDescription": "NOTIFY indica qué user receiveá un mensaje when el job termine. It is useful for monitorear ejecuciones largas o críticas.",
-      "examples": "NOTIFY=&SYSUID",
-      "notes": "SYSUID refiere al user that envió el job.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0041",
-      "name": "MSGLEVEL",
-      "shortDescription": "Nivel de mensajes a mostrar",
-      "longDescription": "MSGLEVEL controla qué mensajes se mostrarán en la output del job. Allows you to reducir ruido o aumentar detalle according to necesidad.",
-      "examples": "MSGLEVEL=(1,1)",
-      "notes": "El primer value controla mensajes del system; el segundo, del job.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0042",
-      "name": "PARM",
-      "shortDescription": "Parámetros enviados al programa",
-      "longDescription": "PARM allows you to enviar parámetros directamente al program ejecutado en el step. It is useful for control comportamiento without modificar código.",
-      "examples": "//STEP1 EXEC PGM=PROG,PARM='ABC123'",
-      "notes": "El program must estar preparado for receivelos.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0043",
-      "name": "DDNAME",
-      "shortDescription": "Nombre logical del dataset",
-      "longDescription": "DDNAME es el identificador logical that un program utiliza for referirse a un dataset. Cada DD tiene un nombre único within del step.",
-      "examples": "//ENTRADA DD DSN=MI.DATASET,DISP=SHR",
-      "notes": "It must coincidir with el nombre esperado por el programa.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0044",
-      "name": "CATALOG",
-      "shortDescription": "Registra un dataset en el catálogo",
-      "longDescription": "CATALOG registra un dataset en el catálogo del system, allowing that pueda ser localizado without especificar volumen physical.",
-      "examples": "//SYSIN DD *\n  DEFINE CLUSTER(NAME(MI.VSAM))\n/*",
-      "notes": "IDCAMS gestiona la mayoría de operaciones de catálogo.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0045",
-      "name": "UNCATALOG",
-      "shortDescription": "Elimina un dataset del catálogo",
-      "longDescription": "UNCATALOG removes la input del dataset del catálogo, pero no necesariamente borra el dataset physical.",
-      "examples": "//SYSIN DD *\n  DELETE MI.DATASET UNCATALOG\n/*",
-      "notes": "It can requerir VOL=SER if el dataset sigue existiendo physicalmente.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0046",
-      "name": "DELETE",
-      "shortDescription": "Elimina un dataset",
-      "longDescription": "DELETE borra un dataset del system. It can usarse for housekeeping o limpieza de files temporales.",
-      "examples": "//SYSIN DD *\n  DELETE MI.DATASET\n/*",
-      "notes": "IDCAMS es la utilidad más common for esta operación.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0047",
-      "name": "ALLOCATE",
-      "shortDescription": "Asigna un dataset",
-      "longDescription": "ALLOCATE crea un dataset especificando espacio, format y atributos. It is useful for preparar files before de processes batch.",
-      "examples": "//SYSIN DD *\n  ALLOCATE DSN(MI.DATASET) NEW SPACE(1,1) TRACKS\n/*",
-      "notes": "It can reemplazarse por IEFBR14 with DD NEW.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0048",
-      "name": "FREE",
-      "shortDescription": "Libera un dataset",
-      "longDescription": "FREE libera un dataset previously assignsdo. Se usa to avoid locks o liberar resources.",
-      "examples": "//SYSIN DD *\n  FREE DSN(MI.DATASET)\n/*",
-      "notes": "No removes el dataset; only libera la assignment.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0049",
-      "name": "PRINT",
-      "shortDescription": "Imprime content de datasets",
-      "longDescription": "PRINT allows you to imprimir el content de un dataset, normalmente using utilidades such as IEBGENER o SORT.",
-      "examples": "//SYSIN DD *\n  PRINT INDD=INPUT\n/*",
-      "notes": "Useful for inspección rápida de archivos.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "JCL-0050",
-      "name": "COPY",
-      "shortDescription": "Copia datasets o miembros",
-      "longDescription": "COPY allows you to copiar datasets completos o miembros de PDS. It is common en tareas de maintenance de librerías.",
-      "examples": "//SYSIN DD *\n  COPY INDD=IN OUTDD=OUT\n/*",
-      "notes": "IEBCOPY es la utilidad más usada for copiar PDS.",
-      "category": "JCL",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0001",
-      "name": "TRANID",
-      "shortDescription": "Identificador de transacción CICS",
-      "longDescription": "TRANID es el identificador de cuatro characters that representa la transacción that se está ejecutando en CICS. Determina qué program se invokes y cómo se comporta la sesión del user. It is essential for el enrutamiento de solicitudes en environments interactivos.",
-      "examples": "EIBTRNID contiene el TRANID actual.",
-      "notes": "It must estar defined en el CSD y habilitado using CEDA.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0002",
-      "name": "COMMAREA",
-      "shortDescription": "Área de comunicación between programas",
-      "longDescription": "La COMMAREA es un block de memory utilizado for pass data between programs CICS using LINK, XCTL o RETURN. Allows you to maintain estado between pantallas y modules, siendo esencial en aplicaciones transaccionales.",
-      "examples": "EXEC CICS LINK PROGRAM('PROG2') COMMAREA(WS-DATOS) END-EXEC",
-      "notes": "Su length se indica en EIBCALEN.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0003",
-      "name": "MAPSET",
-      "shortDescription": "Conjunto de mapas BMS",
-      "longDescription": "Un MAPSET es un conjunto de pantallas defineds using BMS. Agrupa varios MAPs that forman parte de una same interfaz de user. It facilitates la organización y reuse de pantallas.",
-      "examples": "DFHMSD TYPE=MAPSET,MAPSET=MENUSET",
-      "notes": "It must estar loaded en la librería de mapas del system.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0004",
-      "name": "MAP",
-      "shortDescription": "Pantalla defined en BMS",
-      "longDescription": "Un MAP es una pantalla individual within un MAPSET. Define campos, positions, atributos y comportamiento visual en terminales 3270.",
-      "examples": "DFHMDI MAP=MENU",
-      "notes": "Cada MAP can contener multiple DFHMDF.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0005",
-      "name": "EXEC CICS SEND",
-      "shortDescription": "Envía una pantalla al terminal",
-      "longDescription": "SEND envía un MAP o texto al terminal 3270. It is the instrucción principal for mostrar información al user en aplicaciones CICS.",
-      "examples": "EXEC CICS SEND MAP('MENU') MAPSET('MENUSET') END-EXEC",
-      "notes": "It can incluir CURSOR, ERASE, y otras opciones.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0006",
-      "name": "EXEC CICS RECEIVE",
-      "shortDescription": "Recibe data del terminal",
-      "longDescription": "RECEIVE obtiene los data ingresados por el user en la pantalla enviada previously. It is esencial for procesar formularios y inputs.",
-      "examples": "EXEC CICS RECEIVE MAP('MENU') INTO(WS-MENU) END-EXEC",
-      "notes": "It must handle AID for identificar la tecla presionada.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0007",
-      "name": "EXEC CICS LINK",
-      "shortDescription": "Llama a otro program CICS",
-      "longDescription": "LINK invokes otro program CICS y retorna control al program caller. Allows you to modularidad y reuse de logic.",
-      "examples": "EXEC CICS LINK PROGRAM('PROG2') COMMAREA(WS-DATOS) END-EXEC",
-      "notes": "El program llamado must definir DFHCOMMAREA.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0008",
-      "name": "EXEC CICS XCTL",
-      "shortDescription": "Transfiere control without return",
-      "longDescription": "XCTL transfiere control a otro program without return. It is useful for cambiar completamente el flujo de ejecución.",
-      "examples": "EXEC CICS XCTL PROGRAM('MENU') COMMAREA(WS-DATOS) END-EXEC",
-      "notes": "El program caller no recupera control.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0009",
-      "name": "EXEC CICS RETURN",
-      "shortDescription": "Devuelve control al caller",
-      "longDescription": "RETURN finaliza la execution of the program actual y devuelve control al program caller o al terminal. It can enviar COMMAREA.",
-      "examples": "EXEC CICS RETURN COMMAREA(WS-DATOS) END-EXEC",
-      "notes": "It can incluir TRANSID for iniciar otra transacción.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0010",
-      "name": "EIBCALEN",
-      "shortDescription": "Longitud de la COMMAREA recibida",
-      "longDescription": "EIBCALEN contains la length de la COMMAREA recibida por el programa. Allows you to validar if se han pasado data correctly.",
-      "examples": "IF EIBCALEN = 0 THEN MOVE 'S' TO WS-SIN-DATOS",
-      "notes": "Si es cero, no se recibió COMMAREA.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0011",
-      "name": "EIBTRNID",
-      "shortDescription": "Transacción actual",
-      "longDescription": "EIBTRNID contains el identificador de la transacción that está ejecutando el programa. It is useful for auditoría y control de flujo.",
-      "examples": "MOVE EIBTRNID TO WS-TRAN",
-      "notes": "Siempre tiene 4 characters.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0012",
-      "name": "EIBTIME",
-      "shortDescription": "Hora de inicio de la transacción",
-      "longDescription": "EIBTIME contains la hora en la that comenzó la transacción. It is used for auditoría y medición de times.",
-      "examples": "MOVE EIBTIME TO WS-HORA-INICIO",
-      "notes": "Formato HHMMSS.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0013",
-      "name": "EIBDATE",
-      "shortDescription": "Fecha de inicio de la transacción",
-      "longDescription": "EIBDATE contains la fecha en la that comenzó la transacción. It is useful for trazabilidad.",
-      "examples": "MOVE EIBDATE TO WS-FECHA-INICIO",
-      "notes": "Formato YYDDD (día juliano).",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0014",
-      "name": "DFHCOMMAREA",
-      "shortDescription": "Área estándar de comunicación",
-      "longDescription": "DFHCOMMAREA es la structure estándar where se receivesn y envían data between programs CICS. It must declararse en WORKING-STORAGE.",
-      "examples": "01 DFHCOMMAREA.\n   05 WS-DATOS PIC X(100).",
-      "notes": "It must coincidir with la length enviada en LINK/XCTL.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0015",
-      "name": "TS QUEUE",
-      "shortDescription": "Cola temporal de storage",
-      "longDescription": "Las colas TS allow store data temporalmente during execution de una transacción. Son útiles for processes that requiresn persistencia corta.",
-      "examples": "EXEC CICS WRITEQ TS QUEUE('TEMP1') FROM(WS-DATOS) END-EXEC",
-      "notes": "Se borran automáticamente al finalizar la transacción.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0016",
-      "name": "TD QUEUE",
-      "shortDescription": "Cola temporal de destination",
-      "longDescription": "Las colas TD allow enviar data a destinations externos such as impresoras o logs. Son persistentes y se procesan fuera de la transacción.",
-      "examples": "EXEC CICS WRITEQ TD QUEUE('PRT1') FROM(WS-LINEA) END-EXEC",
-      "notes": "Las colas TD pueden ser internas o externas.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0017",
-      "name": "EXEC CICS READQ TS",
-      "shortDescription": "Lee una cola temporal TS",
-      "longDescription": "READQ TS allows you to leer data previously almacenados en una cola temporal TS. It is used for recuperar información between pasos de la transacción.",
-      "examples": "EXEC CICS READQ TS QUEUE('TEMP1') INTO(WS-DATOS) END-EXEC",
-      "notes": "It must handle ITEMERR if la cola está vacía.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0018",
-      "name": "EXEC CICS WRITEQ TS",
-      "shortDescription": "Escribe en una cola temporal TS",
-      "longDescription": "WRITEQ TS almacena data temporalmente en una cola TS. It is useful for processes that requiresn guardar información between pantallas.",
-      "examples": "EXEC CICS WRITEQ TS QUEUE('TEMP1') FROM(WS-DATOS) END-EXEC",
-      "notes": "Las colas TS son specifics de la transacción.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0019",
-      "name": "EXEC CICS READQ TD",
-      "shortDescription": "Lee una cola temporal TD",
-      "longDescription": "READQ TD allows you to leer data de una cola TD, normalmente procesada por subsistemas externos such as impresoras o logs.",
-      "examples": "EXEC CICS READQ TD QUEUE('PRT1') INTO(WS-LINEA) END-EXEC",
-      "notes": "Las colas TD pueden ser internas o externas.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0020",
-      "name": "EXEC CICS WRITEQ TD",
-      "shortDescription": "Escribe en una cola temporal TD",
-      "longDescription": "WRITEQ TD envía data a una cola TD for ser procesados fuera de la transacción. It is common for printing o auditoría.",
-      "examples": "EXEC CICS WRITEQ TD QUEUE('PRT1') FROM(WS-LINEA) END-EXEC",
-      "notes": "Las colas TD external pueden requerir configuración adicional.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0021",
-      "name": "HANDLE CONDITION",
-      "shortDescription": "Manejo de errors CICS",
-      "longDescription": "HANDLE CONDITION allows you to capturar errors specific such as NOTFND, PGMIDERR o MAPFAIL. It is esencial for control fallos without abends.",
-      "examples": "EXEC CICS HANDLE CONDITION NOTFND(PROC-NF) END-EXEC",
-      "notes": "It must declararse before de la instrucción that can fallar.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0022",
-      "name": "HANDLE AID",
-      "shortDescription": "Control de teclas de función",
-      "longDescription": "HANDLE AID allows you to capturar teclas de función such as PF1–PF24 o PA1–PA3. It is esencial for navegación en pantallas CICS.",
-      "examples": "EXEC CICS HANDLE AID PF3(PROC-SALIR) END-EXEC",
-      "notes": "It must declararse before del RECEIVE.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0023",
-      "name": "AID",
-      "shortDescription": "Código de tecla presionada",
-      "longDescription": "AID contains el código de la tecla presionada por el user, such as PF3, PF5, ENTER o CLEAR. Allows you to control la navegación.",
-      "examples": "IF EIBAID = DFHPF3 THEN PERFORM SALIR",
-      "notes": "EIBAID contains el value de la última tecla.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0024",
-      "name": "PF KEY",
-      "shortDescription": "Tecla de función del terminal",
-      "longDescription": "Las PF Keys son teclas de función del terminal 3270 that allow execute acciones rápidas such as salir, retroceder o confirmar.",
-      "examples": "PF3 = Salir\nPF5 = Siguiente pantalla",
-      "notes": "Se capturan using AID o HANDLE AID.",
-      "category": "CICS",
-      "deleted": false
-    },
+    "id": "JCL-0001",
+    "name": "JOB",
+    "shortDescription": "Starts a batch job in z/OS",
+    "longDescription": "The JOB statement marks the beginning of a batch job in z/OS. It defines global parameters such as the user, execution class, message level, and time limit. It serves as the entry point for any batch process and controls how the JES2/JES3 system manages the job.",
+    "examples": "//MYJOB JOB (ACCT),'DAILY PROCESS',CLASS=A,MSGCLASS=X,NOTIFY=&SYSUID",
+    "notes": "Must be the first statement in the JCL. Parameters depend on the JES environment.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0002",
+    "name": "EXEC",
+    "shortDescription": "Executes a program or procedure",
+    "longDescription": "EXEC indicates that a step will execute a program or a procedure stored in a PROCLIB. It is the core of each job step, defining which program runs and with what parameters.",
+    "examples": "//STEP1 EXEC PGM=IEFBR14",
+    "notes": "If a PROC is used, parameters are passed via PARM or symbolic variables.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0003",
+    "name": "DD",
+    "shortDescription": "Defines a dataset or resource",
+    "longDescription": "DD (Data Definition) specifies datasets, files, queues, or resources required by a program. It defines the logical name, location, space, format, and disposition of the dataset.",
+    "examples": "//OUTPUT DD DSN=MY.DATASET,DISP=NEW,SPACE=(CYL,(1,1))",
+    "notes": "Each EXEC can have multiple associated DD statements.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0004",
+    "name": "STEPLIB",
+    "shortDescription": "Load library for a single step",
+    "longDescription": "STEPLIB defines a specific load library for a single step. It allows the program to execute using modules from a library other than the standard system libraries.",
+    "examples": "//STEPLIB DD DSN=MY.LOAD.LIB,DISP=SHR",
+    "notes": "Only affects the step where it is declared.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0005",
+    "name": "JOBLIB",
+    "shortDescription": "Load library for the entire job",
+    "longDescription": "JOBLIB defines a load library for all steps in the job. It is useful when multiple programs require the same custom library.",
+    "examples": "//JOBLIB DD DSN=MY.LOAD.LIB,DISP=SHR",
+    "notes": "Must be placed immediately after the JOB statement.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0006",
+    "name": "SYSOUT",
+    "shortDescription": "System printed output",
+    "longDescription": "SYSOUT defines the output class for messages generated by the system or the program. It routes output to print queues or logs depending on the configuration.",
+    "examples": "//SYSOUT DD SYSOUT=A",
+    "notes": "The class determines where the output will be sent.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0007",
+    "name": "SYSPRINT",
+    "shortDescription": "Program printed output",
+    "longDescription": "SYSPRINT captures the print output generated by the program. It is commonly used with utilities such as IDCAMS, IEBGENER, or SORT.",
+    "examples": "//SYSPRINT DD SYSOUT=*",
+    "notes": "Generally used alongside SYSIN.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0008",
+    "name": "SYSIN",
+    "shortDescription": "Standard input for parameters",
+    "longDescription": "SYSIN provides direct input to the program, typically parameters or control statements. It is essential for utilities that require internal commands.",
+    "examples": "//SYSIN DD *\n  DELETE MY.DATASET\n/*",
+    "notes": "Can use inline data or reference a dataset.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0009",
+    "name": "DISP",
+    "shortDescription": "Dataset disposition (NEW, OLD, SHR)",
+    "longDescription": "DISP controls the dataset status: creation, exclusive use, shared use, and the action to take when the step ends. It is critical for avoiding locks and data loss.",
+    "examples": "DISP=(NEW,CATLG,DELETE)",
+    "notes": "The first parameter is the initial status; the second and third are post-execution actions.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0010",
+    "name": "DSN",
+    "shortDescription": "Dataset name",
+    "longDescription": "DSN specifies the fully qualified name of the dataset. It can be sequential, VSAM, or a PDS member.",
+    "examples": "DSN=MY.DATASET.TEST",
+    "notes": "Names must follow the HLQ.MLQ.LLQ convention.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0011",
+    "name": "SPACE",
+    "shortDescription": "Disk space allocation",
+    "longDescription": "SPACE defines the amount of space allocated to a dataset. It can be specified in cylinders, tracks, or blocks.",
+    "examples": "SPACE=(CYL,(5,2))",
+    "notes": "The first value is the primary allocation; the second is the secondary extent.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0012",
+    "name": "UNIT",
+    "shortDescription": "Device type (SYSDA, TAPE)",
+    "longDescription": "UNIT indicates the type of device where the dataset will be stored. SYSDA is the most common for disk storage.",
+    "examples": "UNIT=SYSDA",
+    "notes": "UNIT=TAPE is used for magnetic tapes.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0013",
+    "name": "VOL",
+    "shortDescription": "Physical volume where the dataset resides",
+    "longDescription": "VOL specifies the physical volume where the dataset is located or will be created. It is useful for datasets on specific tapes or disks.",
+    "examples": "VOL=SER=DISK01",
+    "notes": "Not always necessary; the system catalog can resolve it.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0014",
+    "name": "DCB",
+    "shortDescription": "Data Control Block (RECFM, LRECL)",
+    "longDescription": "DCB defines dataset attributes such as record format, length, and block size. It is essential for sequential datasets.",
+    "examples": "DCB=(RECFM=FB,LRECL=80,BLKSIZE=800)",
+    "notes": "Can be omitted if the dataset is already cataloged.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0015",
+    "name": "RECFM",
+    "shortDescription": "Record format (FB, VB)",
+    "longDescription": "RECFM defines the record format: fixed (FB), variable (VB), fixed blocked (FBS), or variable blocked (VBS).",
+    "examples": "RECFM=FB",
+    "notes": "FB is the most common format for text files.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0016",
+    "name": "LRECL",
+    "shortDescription": "Logical record length",
+    "longDescription": "LRECL indicates the length of each record in bytes. It is mandatory for FB files.",
+    "examples": "LRECL=80",
+    "notes": "Must match the format expected by the processing program.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0017",
+    "name": "BLKSIZE",
+    "shortDescription": "Block size",
+    "longDescription": "BLKSIZE defines the physical block size on disk. An appropriate value improves performance.",
+    "examples": "BLKSIZE=800",
+    "notes": "If omitted, the system can calculate it automatically.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0018",
+    "name": "MSGCLASS",
+    "shortDescription": "Job message class",
+    "longDescription": "MSGCLASS determines the output queue where job log messages will be sent. Each class has a different destination based on system configuration.",
+    "examples": "MSGCLASS=X",
+    "notes": "Classes depend on the JES environment.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0019",
+    "name": "CLASS",
+    "shortDescription": "Job execution class",
+    "longDescription": "CLASS defines the priority and execution type of the job. Jobs with a higher priority class may run sooner.",
+    "examples": "CLASS=A",
+    "notes": "Classes are defined by the system administrator.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0020",
+    "name": "TYPRUN",
+    "shortDescription": "Execution mode (SCAN, HOLD)",
+    "longDescription": "TYPRUN allows executing the job in a special mode: SCAN validates the JCL without executing it; HOLD retains the job in the input queue.",
+    "examples": "TYPRUN=SCAN",
+    "notes": "Useful for validating JCL before production deployment.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0021",
+    "name": "COND",
+    "shortDescription": "Execution condition based on RC",
+    "longDescription": "COND controls whether a step should execute based on the return codes of preceding steps. It helps avoid unnecessary executions.",
+    "examples": "COND=(4,LT)",
+    "notes": "Logic can become complex; simplification is recommended.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0022",
+    "name": "RC",
+    "shortDescription": "Program return code",
+    "longDescription": "RC is the return code generated by a program, indicating success, warnings, or errors.",
+    "examples": "IF RC > 8 THEN ABEND",
+    "notes": "Common standard values are 0, 4, 8, 12, and 16.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0023",
+    "name": "ABEND",
+    "shortDescription": "Abnormal job termination",
+    "longDescription": "ABEND indicates that a job or program terminated abnormally, which can be caused by JCL errors, logic bugs, or resource issues.",
+    "examples": "S0C7 — Numeric data error",
+    "notes": "Core dumps assist in diagnosing the underlying issue.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0024",
+    "name": "PROC",
+    "shortDescription": "Stored procedure in PROCLIB",
+    "longDescription": "PROC defines a reusable procedure stored in a PROCLIB library, allowing common job steps to be standardized.",
+    "examples": "//MYPROC PROC\n//STEP1 EXEC PGM=IEFBR14\n//PEND",
+    "notes": "Parameters are passed using symbolic variables.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0025",
+    "name": "PEND",
+    "shortDescription": "End of a procedure",
+    "longDescription": "PEND marks the end of a PROC definition, which is required to properly close the procedure block.",
+    "examples": "//PEND",
+    "notes": "Must be the last line of the PROC.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0026",
+    "name": "INCLUDE",
+    "shortDescription": "Includes an external member",
+    "longDescription": "INCLUDE allows inserting content from another PDS member directly into the JCL stream, facilitating the reuse of common snippets.",
+    "examples": "//INCLUDE MEMBER=MEMBER1",
+    "notes": "The member must reside in a system-defined procedure library.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0027",
+    "name": "SET",
+    "shortDescription": "Defines symbolic variables",
+    "longDescription": "SET assigns values to symbolic variables used within PROCs or JCL streams, enabling parameterized executions.",
+    "examples": "// SET DATE=20240101",
+    "notes": "Variables are referenced using &DATE syntax.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0028",
+    "name": "SYMBOLIC",
+    "shortDescription": "Symbolic variable in a PROC",
+    "longDescription": "Symbolic variables allow parameterizing procedures, with values substituted at execution time.",
+    "examples": "//STEP1 EXEC PGM=PROG,PARM=&PARM1",
+    "notes": "Defined within a PROC statement or via SET.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0029",
+    "name": "IEFBR14",
+    "shortDescription": "Null program used to create/delete datasets",
+    "longDescription": "IEFBR14 is an empty dummy program that always returns RC=0. It is used to execute DD statements that create or delete datasets without extra logic.",
+    "examples": "//STEP1 EXEC PGM=IEFBR14\n//DD1 DD DSN=MY.DATASET,DISP=(NEW,CATLG)",
+    "notes": "Widely used for housekeeping tasks.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0030",
+    "name": "IDCAMS",
+    "shortDescription": "Utility for VSAM and catalogs",
+    "longDescription": "IDCAMS manages VSAM datasets, catalogs, and operations such as DELETE, DEFINE, REPRO, and LISTCAT.",
+    "examples": "//SYSIN DD *\n  LISTCAT ENTRIES(MY.VSAM)\n/*",
+    "notes": "One of the most powerful storage management utilities in the system.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0031",
+    "name": "IEBGENER",
+    "shortDescription": "Copies and transforms datasets",
+    "longDescription": "IEBGENER copies sequential datasets, prints file contents, or generates simple reports. It is a versatile utility for basic file manipulation.",
+    "examples": "//SYSIN DD DUMMY",
+    "notes": "Can copy PDS members, sequential datasets, and SYSOUT streams.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0032",
+    "name": "IEBCOPY",
+    "shortDescription": "Copies PDS members",
+    "longDescription": "IEBCOPY copies, compresses, and reorganizes PDS members, making it essential for library maintenance.",
+    "examples": "//SYSIN DD *\n  COPY INDD=IN OUTDD=OUT\n/*",
+    "notes": "Allows copying multiple members simultaneously.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0033",
+    "name": "SORT",
+    "shortDescription": "Sorts and filters data",
+    "longDescription": "SORT is one of the most widely used utilities in z/OS. It sorts, filters, summarizes, and transforms sequential datasets. Its power lies in defining multiple keys, conditions, and complex operations without writing custom programs.",
+    "examples": "//STEP1 EXEC PGM=SORT\n//SYSIN DD *\n  SORT FIELDS=(1,10,CH,A)\n/*",
+    "notes": "Handles massive files and supports numerous advanced data manipulation operations.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0034",
+    "name": "ICETOOL",
+    "shortDescription": "Advanced DFSORT utility interface",
+    "longDescription": "ICETOOL is a high-level interface to DFSORT that performs complex operations such as statistics, validations, reporting, conditional copying, and advanced transformations. It simplifies tasks that would require multiple SORT steps.",
+    "examples": "//TOOL EXEC PGM=ICETOOL\n//TOOLIN DD *\n  COUNT FROM(INPUT) ON(1,10,CH)\n/*",
+    "notes": "Ideal for batch processes requiring deep data analysis and custom reporting.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0035",
+    "name": "SYSUDUMP",
+    "shortDescription": "Memory dump on abends",
+    "longDescription": "SYSUDUMP generates a formatted memory dump when an abend occurs. It includes program info, registers, and storage contents useful for diagnostics.",
+    "examples": "//SYSUDUMP DD SYSOUT=*",
+    "notes": "Produces a human-readable dump format.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0036",
+    "name": "SYSABEND",
+    "shortDescription": "Extended abend memory dump",
+    "longDescription": "SYSABEND generates a more detailed dump than SYSUDUMP, including additional system control blocks and execution environment data.",
+    "examples": "//SYSABEND DD SYSOUT=*",
+    "notes": "Useful for deep failure analysis.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0037",
+    "name": "SYSMDUMP",
+    "shortDescription": "Machine-format memory dump",
+    "longDescription": "SYSMDUMP produces a compact, machine-formatted dump oriented toward automated analysis tools. It is the most detailed of the three core dump types.",
+    "examples": "//SYSMDUMP DD SYSOUT=*",
+    "notes": "Requires specialized tools to interpret.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0038",
+    "name": "TIME",
+    "shortDescription": "Execution time limit",
+    "longDescription": "TIME defines the maximum execution time allowed for a job or step, preventing defective processes from consuming system resources indefinitely.",
+    "examples": "TIME=1440",
+    "notes": "1440 indicates unlimited execution time.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0039",
+    "name": "REGION",
+    "shortDescription": "Memory allocation for the job",
+    "longDescription": "REGION specifies the amount of memory available to the job or step. It is crucial for programs requiring large buffers or intensive processing.",
+    "examples": "REGION=0M",
+    "notes": "0M allows the system to assign the maximum available memory.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0040",
+    "name": "NOTIFY",
+    "shortDescription": "User to notify upon completion",
+    "longDescription": "NOTIFY indicates which user will receive a message when the job finishes, helping monitor long-running or critical executions.",
+    "examples": "NOTIFY=&SYSUID",
+    "notes": "SYSUID refers to the user who submitted the job.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0041",
+    "name": "MSGLEVEL",
+    "shortDescription": "Level of messages to display",
+    "longDescription": "MSGLEVEL controls which messages appear in the job log output, helping reduce clutter or increase diagnostic detail as needed.",
+    "examples": "MSGLEVEL=(1,1)",
+    "notes": "The first value controls system messages; the second controls job-related messages.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0042",
+    "name": "PARM",
+    "shortDescription": "Parameters passed to the program",
+    "longDescription": "PARM sends parameters directly to the program executed in the step, allowing behavior to be controlled without modifying code.",
+    "examples": "//STEP1 EXEC PGM=PROG,PARM='ABC123'",
+    "notes": "The target program must be designed to receive them.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0043",
+    "name": "DDNAME",
+    "shortDescription": "Logical name of the dataset",
+    "longDescription": "DDNAME is the logical identifier a program uses to reference a dataset. Each DD has a unique name within the step.",
+    "examples": "//INPUT DD DSN=MY.DATASET,DISP=SHR",
+    "notes": "Must match the name expected by the program.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0044",
+    "name": "CATALOG",
+    "shortDescription": "Registers a dataset in the system catalog",
+    "longDescription": "CATALOG registers a dataset in the system catalog, enabling it to be located later without specifying a physical volume serial.",
+    "examples": "//SYSIN DD *\n  DEFINE CLUSTER(NAME(MY.VSAM))\n/*",
+    "notes": "IDCAMS manages the majority of catalog operations.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0045",
+    "name": "UNCATALOG",
+    "shortDescription": "Removes a dataset from the catalog",
+    "longDescription": "UNCATALOG removes the dataset entry from the catalog without necessarily deleting the physical dataset itself.",
+    "examples": "//SYSIN DD *\n  DELETE MY.DATASET UNCATALOG\n/*",
+    "notes": "May require VOL=SER if the dataset continues to exist physically.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0046",
+    "name": "DELETE",
+    "shortDescription": "Deletes a dataset",
+    "longDescription": "DELETE erases a dataset from the system, commonly used for housekeeping or cleanup of temporary files.",
+    "examples": "//SYSIN DD *\n  DELETE MY.DATASET\n/*",
+    "notes": "IDCAMS is the most common utility for this operation.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0047",
+    "name": "ALLOCATE",
+    "shortDescription": "Allocates a dataset",
+    "longDescription": "ALLOCATE creates a dataset by specifying space, format, and attributes, which is useful for preparing files ahead of batch processing.",
+    "examples": "//SYSIN DD *\n  ALLOCATE DSN(MY.DATASET) NEW SPACE(1,1) TRACKS\n/*",
+    "notes": "Can be replaced by IEFBR14 with a NEW DD statement.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0048",
+    "name": "FREE",
+    "shortDescription": "Frees a dataset allocation",
+    "longDescription": "FREE releases a previously allocated dataset, avoiding locks or freeing up system resources.",
+    "examples": "//SYSIN DD *\n  FREE DSN(MY.DATASET)\n/*",
+    "notes": "Does not delete the dataset; only releases the allocation.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0049",
+    "name": "PRINT",
+    "shortDescription": "Prints dataset contents",
+    "longDescription": "PRINT prints the content of a dataset, typically utilizing utilities like IEBGENER or SORT.",
+    "examples": "//SYSIN DD *\n  PRINT INDD=INPUT\n/*",
+    "notes": "Useful for quick file inspection.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "JCL-0050",
+    "name": "COPY",
+    "shortDescription": "Copies datasets or members",
+    "longDescription": "COPY copies entire datasets or PDS members, a common operation in library maintenance tasks.",
+    "examples": "//SYSIN DD *\n  COPY INDD=IN OUTDD=OUT\n/*",
+    "notes": "IEBCOPY is the most widely used utility for copying PDS libraries.",
+    "category": "JCL",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0001",
+    "name": "TRANID",
+    "shortDescription": "CICS transaction identifier",
+    "longDescription": "TRANID is the four-character identifier representing the executing CICS transaction. It determines which program is invoked and how the user session behaves, playing a vital role in routing requests within interactive environments.",
+    "examples": "EIBTRNID contains the current TRANID.",
+    "notes": "Must be defined in the CSD and enabled using CEDA.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0002",
+    "name": "COMMAREA",
+    "shortDescription": "Communication area between programs",
+    "longDescription": "COMMAREA is a memory block used to pass data between CICS programs via LINK, XCTL, or RETURN. It maintains state across screens and modules, making it essential for transactional applications.",
+    "examples": "EXEC CICS LINK PROGRAM('PROG2') COMMAREA(WS-DATA) END-EXEC",
+    "notes": "Its length is indicated in EIBCALEN.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0003",
+    "name": "MAPSET",
+    "shortDescription": "BMS map set",
+    "longDescription": "A MAPSET is a collection of screens defined using BMS. It groups multiple maps that form part of a single user interface, facilitating screen organization and reuse.",
+    "examples": "DFHMSD TYPE=MAPSET,MAPSET=MENUSET",
+    "notes": "Must be loaded in the system map library.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0004",
+    "name": "MAP",
+    "shortDescription": "BMS-defined screen map",
+    "longDescription": "A MAP is an individual screen within a MAPSET. It defines fields, positions, attributes, and visual behavior on 3270 terminals.",
+    "examples": "DFHMDI MAP=MENU",
+    "notes": "Each MAP can contain multiple DFHMDF field definitions.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0005",
+    "name": "EXEC CICS SEND",
+    "shortDescription": "Sends a screen to the terminal",
+    "longDescription": "SEND transmits a map or text to a 3270 terminal. It is the primary instruction for displaying information to users in CICS applications.",
+    "examples": "EXEC CICS SEND MAP('MENU') MAPSET('MENUSET') END-EXEC",
+    "notes": "Can include CURSOR, ERASE, and other formatting options.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0006",
+    "name": "EXEC CICS RECEIVE",
+    "shortDescription": "Receives data from the terminal",
+    "longDescription": "RECEIVE retrieves data entered by the user on a previously sent screen, making it essential for processing forms and user input.",
+    "examples": "EXEC CICS RECEIVE MAP('MENU') INTO(WS-MENU) END-EXEC",
+    "notes": "Must handle AID indicators to identify the pressed key.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0007",
+    "name": "EXEC CICS LINK",
+    "shortDescription": "Calls another CICS program",
+    "longDescription": "LINK invokes another CICS program and returns control to the calling program, enabling modularity and logic reuse.",
+    "examples": "EXEC CICS LINK PROGRAM('PROG2') COMMAREA(WS-DATA) END-EXEC",
+    "notes": "The called program must define DFHCOMMAREA.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0008",
+    "name": "EXEC CICS XCTL",
+    "shortDescription": "Transfers control without return",
+    "longDescription": "XCTL transfers control to another program without returning to the caller. It is useful for completely changing the execution flow.",
+    "examples": "EXEC CICS XCTL PROGRAM('MENU') COMMAREA(WS-DATA) END-EXEC",
+    "notes": "The calling program does not regain control.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0009",
+    "name": "EXEC CICS RETURN",
+    "shortDescription": "Returns control to the caller",
+    "longDescription": "RETURN ends execution of the current program and returns control to the calling program or terminal. It can pass a COMMAREA.",
+    "examples": "EXEC CICS RETURN COMMAREA(WS-DATA) END-EXEC",
+    "notes": "Can include TRANSID to initiate another transaction.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0010",
+    "name": "EIBCALEN",
+    "shortDescription": "Length of the received COMMAREA",
+    "longDescription": "EIBCALEN contains the length of the COMMAREA received by the program, allowing validation of whether data was passed correctly.",
+    "examples": "IF EIBCALEN = 0 THEN MOVE 'S' TO WS-NO-DATA",
+    "notes": "If zero, no COMMAREA was received.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0011",
+    "name": "EIBTRNID",
+    "shortDescription": "Current transaction ID",
+    "longDescription": "EIBTRNID contains the identifier of the transaction executing the program, useful for auditing and flow control.",
+    "examples": "MOVE EIBTRNID TO WS-TRAN",
+    "notes": "Always exactly 4 characters long.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0012",
+    "name": "EIBTIME",
+    "shortDescription": "Transaction start time",
+    "longDescription": "EIBTIME contains the time the transaction started, used for auditing and performance measurement.",
+    "examples": "MOVE EIBTIME TO WS-START-TIME",
+    "notes": "Formatted as HHMMSS.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0013",
+    "name": "EIBDATE",
+    "shortDescription": "Transaction start date",
+    "longDescription": "EIBDATE contains the date the transaction started, useful for traceability.",
+    "examples": "MOVE EIBDATE TO WS-START-DATE",
+    "notes": "Formatted as YYDDD (Julian date).",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0014",
+    "name": "DFHCOMMAREA",
+    "shortDescription": "Standard communication area",
+    "longDescription": "DFHCOMMAREA is the standard structure where data is received and sent between CICS programs. It must be declared in WORKING-STORAGE.",
+    "examples": "01 DFHCOMMAREA.\n   05 WS-DATA PIC X(100).",
+    "notes": "Must match the length sent in LINK/XCTL.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0015",
+    "name": "TS QUEUE",
+    "shortDescription": "Temporary storage queue",
+    "longDescription": "TS queues allow storing data temporarily during transaction execution, useful for processes requiring short persistence.",
+    "examples": "EXEC CICS WRITEQ TS QUEUE('TEMP1') FROM(WS-DATA) END-EXEC",
+    "notes": "Automatically deleted when the task ends.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0016",
+    "name": "TD QUEUE",
+    "shortDescription": "Transient data queue",
+    "longDescription": "TD queues allow sending data to external destinations such as printers or logs. They are persistent and processed outside the transaction.",
+    "examples": "EXEC CICS WRITEQ TD QUEUE('PRT1') FROM(WS-LINE) END-EXEC",
+    "notes": "TD queues can be internal or external.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0017",
+    "name": "EXEC CICS READQ TS",
+    "shortDescription": "Reads a temporary storage queue",
+    "longDescription": "READQ TS reads data previously stored in a TS queue, used to retrieve information across transaction steps.",
+    "examples": "EXEC CICS READQ TS QUEUE('TEMP1') INTO(WS-DATA) END-EXEC",
+    "notes": "Must handle ITEMERR if the queue is empty.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0018",
+    "name": "EXEC CICS WRITEQ TS",
+    "shortDescription": "Writes to a temporary storage queue",
+    "longDescription": "WRITEQ TS stores data temporarily in a TS queue, useful for keeping information between screens.",
+    "examples": "EXEC CICS WRITEQ TS QUEUE('TEMP1') FROM(WS-DATA) END-EXEC",
+    "notes": "TS queues are task-specific.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0019",
+    "name": "EXEC CICS READQ TD",
+    "shortDescription": "Reads a transient data queue",
+    "longDescription": "READQ TD reads data from a TD queue, typically processed by external subsystems like printers or logs.",
+    "examples": "EXEC CICS READQ TD QUEUE('PRT1') INTO(WS-LINE) END-EXEC",
+    "notes": "TD queues can be internal or external.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0020",
+    "name": "EXEC CICS WRITEQ TD",
+    "shortDescription": "Writes to a transient data queue",
+    "longDescription": "WRITEQ TD sends data to a TD queue to be processed outside the transaction. Common for printing or auditing.",
+    "examples": "EXEC CICS WRITEQ TD QUEUE('PRT1') FROM(WS-LINE) END-EXEC",
+    "notes": "External TD queues may require additional setup.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0021",
+    "name": "HANDLE CONDITION",
+    "shortDescription": "CICS error handling",
+    "longDescription": "HANDLE CONDITION captures specific errors like NOTFND, PGMIDERR, or MAPFAIL, essential for controlling failures without abends.",
+    "examples": "EXEC CICS HANDLE CONDITION NOTFND(PROC-NF) END-EXEC",
+    "notes": "Must be declared before the instruction that might fail.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0022",
+    "name": "HANDLE AID",
+    "shortDescription": "Attention identifier control",
+    "longDescription": "HANDLE AID captures function keys such as PF1–PF24 or PA1–PA3, essential for navigating CICS screens.",
+    "examples": "EXEC CICS HANDLE AID PF3(PROC-EXIT) END-EXEC",
+    "notes": "Must be declared before a RECEIVE statement.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0023",
+    "name": "AID",
+    "shortDescription": "Pressed key code",
+    "longDescription": "AID contains the code of the key pressed by the user, such as PF3, PF5, ENTER, or CLEAR, enabling navigation control.",
+    "examples": "IF EIBAID = DFHPF3 THEN PERFORM EXIT",
+    "notes": "EIBAID holds the value of the last pressed attention identifier.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0024",
+    "name": "PF KEY",
+    "shortDescription": "Terminal function key",
+    "longDescription": "PF keys are 3270 terminal function keys that allow quick execution of actions such as exiting, scrolling back, or confirming.",
+    "examples": "DFHPF3 represents function key 3.",
+    "notes": "Used in combination with HANDLE AID or EIBAID checks.",
+    "category": "CICS",
+    "deleted": false
+  }
     {
       "id": "CICS-0025",
       "name": "PA KEY",
