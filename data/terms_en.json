@@ -1722,615 +1722,616 @@
     "deleted": false
   }
     {
-      "id": "CICS-0025",
-      "name": "PA KEY",
-      "shortDescription": "Tecla de atención del terminal",
-      "longDescription": "Las PA Keys son teclas especiales that envían atención inmediata al system without enviar data de pantalla.",
-      "examples": "PA1 = Interrupción",
-      "notes": "Se usan for funciones administrativas.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0026",
-      "name": "BMS",
-      "shortDescription": "Basic Mapping Support",
-      "longDescription": "BMS es el system de CICS for definir pantallas using MAPSETs y MAPs. Allows you to control campos, atributos y positions en terminales 3270.",
-      "examples": "DFHMSD TYPE=MAPSET",
-      "notes": "Genera macros ensamblador y copybooks COBOL.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0027",
-      "name": "DFHMSD",
-      "shortDescription": "Inicio de un MAPSET",
-      "longDescription": "DFHMSD define un MAPSET, agrupando uno o más MAPs. It includes atributos globales such as tipo, nombre y options de generation.",
-      "examples": "DFHMSD TYPE=MAPSET,MAPSET=MENUSET",
-      "notes": "It must contener uno o más DFHMDI.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0028",
-      "name": "DFHMDI",
-      "shortDescription": "Inicio de un MAP",
-      "longDescription": "DFHMDI define un MAP within un MAPSET. Establece el nombre del MAP y sus características generales.",
-      "examples": "DFHMDI MAP=MENU",
-      "notes": "It must contener uno o más DFHMDF.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0029",
-      "name": "DFHMDF",
-      "shortDescription": "Campo within un MAP",
-      "longDescription": "DFHMDF define un field within un MAP, especificando position, length, atributos y comportamiento.",
-      "examples": "DFHMDF POS=(5,10) LENGTH=20 ATTRB=(UNPROT)",
-      "notes": "It is the elemento básico de una pantalla BMS.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0030",
-      "name": "ATTRB",
-      "shortDescription": "Atributos de field BMS",
-      "longDescription": "ATTRB define los atributos visuales y funcionales de un campo, such as BRIGHT, DARK, PROT, UNPROT, FSET, IC, ASKIP.",
-      "examples": "ATTRB=(BRIGHT,UNPROT)",
-      "notes": "Controla cómo el user interactúa with el campo.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0031",
-      "name": "PROT",
-      "shortDescription": "Campo protegido",
-      "longDescription": "PROT indica that el field no can ser modificado por el user. It is useful for etiquetas o información fija.",
-      "examples": "DFHMDF POS=(4,5) LENGTH=10 ATTRB=(PROT)",
-      "notes": "El cursor no can ubicarse en fields PROT.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0032",
-      "name": "UNPROT",
-      "shortDescription": "Campo editable",
-      "longDescription": "UNPROT indica that el field es editable por el user. It is the atributo más common en formularios CICS.",
-      "examples": "DFHMDF POS=(6,5) LENGTH=20 ATTRB=(UNPROT)",
-      "notes": "It must combinarse with FSET if se requires enviar siempre el campo.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0033",
-      "name": "BRIGHT",
-      "shortDescription": "Campo resaltado",
-      "longDescription": "BRIGHT es un atributo BMS that muestra el field en alta intensidad, destacándolo visualmente en la pantalla del terminal. It is used for resaltar información importante o guiar al user en la interacción.",
-      "examples": "DFHMDF POS=(5,10) LENGTH=10 ATTRB=(BRIGHT,UNPROT)",
-      "notes": "El atributo depende del soporte del terminal 3270.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0034",
-      "name": "DARK",
-      "shortDescription": "Campo normal",
-      "longDescription": "DARK es el atributo BMS that muestra el field en intensidad normal. It is the value por defecto for la mayoría de los fields en pantallas CICS.",
-      "examples": "DFHMDF POS=(6,10) LENGTH=20 ATTRB=(DARK,UNPROT)",
-      "notes": "Se usa for texto estándar that no requires énfasis.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0035",
-      "name": "ASKIP",
-      "shortDescription": "Campo no seleccionable",
-      "longDescription": "ASKIP indica that el field no can ser seleccionado ni modificado por el user. It is useful for mostrar información fija o etiquetas en la pantalla.",
-      "examples": "DFHMDF POS=(7,5) LENGTH=15 ATTRB=(ASKIP,BRIGHT)",
-      "notes": "El cursor no can ubicarse en fields ASKIP.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0036",
-      "name": "FSET",
-      "shortDescription": "Marca field such as modificado",
-      "longDescription": "FSET marca el field such as modificado, incluso if el user no lo ha cambiado. Esto obliga a CICS a enviar el content of the field al program durante RECEIVE.",
-      "examples": "DFHMDF POS=(8,10) LENGTH=10 ATTRB=(UNPROT,FSET)",
-      "notes": "Muy useful for fields that deben enviarse siempre al programa.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0037",
-      "name": "IC",
-      "shortDescription": "Cursor inicial en campo",
-      "longDescription": "IC (Initial Cursor) coloca el cursor automáticamente en el field especificado when se envía la pantalla. It improves la experiencia del user al guiar la input de datos.",
-      "examples": "DFHMDF POS=(10,5) LENGTH=20 ATTRB=(UNPROT,IC)",
-      "notes": "Solo un field must tener IC por pantalla.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0038",
-      "name": "CURSOR",
-      "shortDescription": "Posición del cursor",
-      "longDescription": "CURSOR allows you to especificar la position exacta del cursor en la pantalla durante un SEND. It is useful for control la interacción del user en pantallas dinámicas.",
-      "examples": "EXEC CICS SEND MAP('MENU') CURSOR(120) END-EXEC",
-      "notes": "La position se indica en cosorteds lineales del buffer 3270.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0039",
-      "name": "SYNCPOINT",
-      "shortDescription": "Confirma transacción CICS",
-      "longDescription": "SYNCPOINT confirma todas las actualizaciones realizadas por la transacción, asegurando integrity en bases de data y colas. It is equivalente a un COMMIT in systems transaccionales.",
-      "examples": "EXEC CICS SYNCPOINT END-EXEC",
-      "notes": "Required in processes that actualizan VSAM o DB2.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0040",
-      "name": "ROLLBACK",
-      "shortDescription": "Revierte transacción CICS",
-      "longDescription": "ROLLBACK revierte todas las actualizaciones realizadas por la transacción desde el último SYNCPOINT. It is used for handle errors y maintain la integrity de datos.",
-      "examples": "EXEC CICS ROLLBACK END-EXEC",
-      "notes": "Solo revierte cambios transaccionales, no pantallas enviadas.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0041",
-      "name": "ENQ",
-      "shortDescription": "Bloqueo de recurso",
-      "longDescription": "ENQ bloquea un recurso to avoid access simultáneo por otras transacciones. It is useful for proteger records o files durante actualizaciones críticas.",
-      "examples": "EXEC CICS ENQ RESOURCE('CLIENTE123') END-EXEC",
-      "notes": "It must liberarse with DEQ to avoid locks prolongados.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0042",
-      "name": "DEQ",
-      "shortDescription": "Liberación de recurso",
-      "longDescription": "DEQ libera un recurso previously bloqueado with ENQ, allowing that otras transacciones accedan a él.",
-      "examples": "EXEC CICS DEQ RESOURCE('CLIENTE123') END-EXEC",
-      "notes": "Siempre must executese to avoid deadlocks.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0043",
-      "name": "PROGRAM",
-      "shortDescription": "Programa CICS registrado",
-      "longDescription": "PROGRAM identifica un module COBOL o ensamblador registrado en CICS for ejecución. It must estar defined en el CSD (CICS System Definition).",
-      "examples": "EXEC CICS LINK PROGRAM('PROG001') END-EXEC",
-      "notes": "It must estar habilitado using CEDA o DFHCSDUP.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0044",
-      "name": "TRANSACTION",
-      "shortDescription": "Transacción defined en CICS",
-      "longDescription": "TRANSACTION es el identificador de cuatro characters that inicia la execution de un program CICS. Se define en el CSD y se asocia a un PROGRAM.",
-      "examples": "CEDA DEFINE TRANSACTION(M001) PROGRAM(PROG001)",
-      "notes": "It must estar habilitada for ser ejecutada desde terminal.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0045",
-      "name": "FILE CONTROL",
-      "shortDescription": "Acceso a files VSAM desde CICS",
-      "longDescription": "FILE CONTROL es el conjunto de comandos CICS for acceder a files VSAM. Allows you to leer, escribir, actualizar y borrar records de forma transaccional.",
-      "examples": "EXEC CICS READ FILE('CLIENTES') INTO(WS-REG) END-EXEC",
-      "notes": "Requires definición del FILE en el CSD.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0046",
-      "name": "READ FILE",
-      "shortDescription": "Lectura de file VSAM",
-      "longDescription": "READ FILE allows you to leer un record VSAM desde CICS. It can performse por key o por position, dependiendo del type de archivo.",
-      "examples": "EXEC CICS READ FILE('CLIENTES') RIDFLD(WS-CLAVE) INTO(WS-REG) END-EXEC",
-      "notes": "It must be handled NOTFND for keys inexistentes.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0047",
-      "name": "WRITE FILE",
-      "shortDescription": "Escritura de file VSAM",
-      "longDescription": "WRITE FILE inserta un nuevo record en un file VSAM. It is transaccional y requires SYNCPOINT for confirmación.",
-      "examples": "EXEC CICS WRITE FILE('CLIENTES') FROM(WS-REG) END-EXEC",
-      "notes": "It can fallar if la key ya existe.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0048",
-      "name": "REWRITE FILE",
-      "shortDescription": "Actualización de record VSAM",
-      "longDescription": "REWRITE FILE actualiza un record previously leído with READ UPDATE. Mantiene la integrity del file y es parte del control transaccional.",
-      "examples": "EXEC CICS REWRITE FILE('CLIENTES') FROM(WS-REG) END-EXEC",
-      "notes": "Requires READ UPDATE previo.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0049",
-      "name": "DELETE FILE",
-      "shortDescription": "Elimina record VSAM",
-      "longDescription": "DELETE FILE removes un record VSAM identificado por key. It is useful for maintenance de data o processes administrativos.",
-      "examples": "EXEC CICS DELETE FILE('CLIENTES') RIDFLD(WS-CLAVE) END-EXEC",
-      "notes": "It must be handled NOTFND if la key no existe.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "CICS-0050",
-      "name": "START",
-      "shortDescription": "Inicia una transacción diferida",
-      "longDescription": "START allows you to iniciar una transacción en segundo plano o diferida, passing parámetros opcionales using COMMAREA. It is useful for processes asincrónicos.",
-      "examples": "EXEC CICS START TRANSID('B001') COMMAREA(WS-DATOS) END-EXEC",
-      "notes": "La transacción iniciada no retorna control al program actual.",
-      "category": "CICS",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0001",
-      "name": "SELECT",
-      "shortDescription": "Consulta data de una table",
-      "longDescription": "SELECT es la instrucción principal for recuperar data de una table o vista en DB2. Allows you to especificar columnas, filtros, ordenamientos y funciones agregadas. It is the base de cualquier operación de read en SQL.",
-      "examples": "SELECT * FROM CLIENTES WHERE ESTADO = 'A';",
-      "notes": "It can combinarse with JOIN, GROUP BY, HAVING y ORDER BY.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0002",
-      "name": "INSERT",
-      "shortDescription": "Inserta un record en una table",
-      "longDescription": "INSERT agrega nuevos records a una table. It can especificar todas las columnas o only algunas, siempre that las restantes tengan values por defecto o permitan NULL.",
-      "examples": "INSERT INTO CLIENTES (ID, NOMBRE) VALUES (100, 'JUAN');",
-      "notes": "Requires COMMIT for persistir los cambios.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0003",
-      "name": "UPDATE",
-      "shortDescription": "Actualiza records existentes",
-      "longDescription": "UPDATE modifica values de columnas en records existentes. It must usarse with WHERE to avoid actualizar toda la table accidentalmente.",
-      "examples": "UPDATE CLIENTES SET ESTADO = 'I' WHERE ID = 100;",
-      "notes": "Sin WHERE, actualiza todos los registros.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0004",
-      "name": "DELETE",
-      "shortDescription": "Elimina records de una table",
-      "longDescription": "DELETE removes records de una table according to una condition. It is una operación transaccional that requires COMMIT for confirmarse.",
-      "examples": "DELETE FROM CLIENTES WHERE ID = 100;",
-      "notes": "Sin WHERE, removes todos los registros.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0005",
-      "name": "COMMIT",
-      "shortDescription": "Confirma una transacción",
-      "longDescription": "COMMIT confirma todos los cambios realizados en la transacción actual, haciendo permanentes las operaciones INSERT, UPDATE y DELETE.",
-      "examples": "COMMIT;",
-      "notes": "En CICS, SYNCPOINT cumple la same función.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0006",
-      "name": "ROLLBACK",
-      "shortDescription": "Revierte una transacción",
-      "longDescription": "ROLLBACK revierte todos los cambios realizados desde el último COMMIT. It is esencial for handle errors y maintain la integrity de datos.",
-      "examples": "ROLLBACK;",
-      "notes": "En CICS, ROLLBACK cumple la same función.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0007",
-      "name": "DECLARE CURSOR",
-      "shortDescription": "Define un cursor for recorrer resultados",
-      "longDescription": "DECLARE CURSOR define un cursor that allows you to recorrer fila por fila el result de una consulta. It is essential en programs COBOL with SQL embebido.",
-      "examples": "DECLARE C1 CURSOR FOR SELECT ID, NOMBRE FROM CLIENTES;",
-      "notes": "It must abrirse with OPEN y cerrarse with CLOSE.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0008",
-      "name": "OPEN CURSOR",
-      "shortDescription": "Abre un cursor for read",
-      "longDescription": "OPEN CURSOR ejecuta la consulta associated al cursor y lo deja listo for perform FETCH.",
-      "examples": "OPEN C1;",
-      "notes": "Si la consulta falla, SQLCODE contendrá el error.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0009",
-      "name": "FETCH",
-      "shortDescription": "Obtiene filas desde un cursor",
-      "longDescription": "FETCH recupera la siguiente fila del cursor y la almacena en variables host. Allows you to recorrer results sequentiales.",
-      "examples": "FETCH C1 INTO :WS-ID, :WS-NOMBRE;",
-      "notes": "SQLCODE = +100 indica fin de datos.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0010",
-      "name": "CLOSE CURSOR",
-      "shortDescription": "Cierra un cursor abierto",
-      "longDescription": "CLOSE CURSOR libera los resources associated al cursor. It is required to avoid fugas de memory o locks.",
-      "examples": "CLOSE C1;",
-      "notes": "It must executese siempre, incluso if hubo errors.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0011",
-      "name": "WHERE",
-      "shortDescription": "Filtra records en una consulta",
-      "longDescription": "WHERE allows you to filtrar records according to conditions logics. It is esencial for consultas precisas y eficientes.",
-      "examples": "SELECT * FROM CLIENTES WHERE ESTADO = 'A';",
-      "notes": "It can combinarse with AND, OR y operadores relacionales.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0012",
-      "name": "GROUP BY",
-      "shortDescription": "Agrupa results por columnas",
-      "longDescription": "GROUP BY agrupa records according to una o más columnas, allowing aplicar funciones agregadas such as SUM, COUNT o AVG.",
-      "examples": "SELECT ESTADO, COUNT(*) FROM CLIENTES GROUP BY ESTADO;",
-      "notes": "Las columnas no agregadas deben aparecer en GROUP BY.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0013",
-      "name": "HAVING",
-      "shortDescription": "Filtra grupos agregados",
-      "longDescription": "HAVING filtra results after de aplicar GROUP BY. Allows you to conditions on agregados.",
-      "examples": "SELECT ESTADO, COUNT(*) FROM CLIENTES GROUP BY ESTADO HAVING COUNT(*) > 10;",
-      "notes": "WHERE filtra filas; HAVING filtra grupos.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0014",
-      "name": "ORDER BY",
-      "shortDescription": "Ordena resultados",
-      "longDescription": "ORDER BY ordena los results according to una o más columnas, en forma ascendente o descendente.",
-      "examples": "SELECT * FROM CLIENTES ORDER BY NOMBRE ASC;",
-      "notes": "It can ordenar por columnas no seleccionadas.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0015",
-      "name": "JOIN",
-      "shortDescription": "Une tables por columnas relacionadas",
-      "longDescription": "JOIN allows you to combinar records de dos o más tables according to una relación defined. It is esencial for consultas relacionales complex.",
-      "examples": "SELECT C.NOMBRE, P.SALDO FROM CLIENTES C JOIN CUENTAS P ON C.ID = P.ID_CLIENTE;",
-      "notes": "JOIN without type explícito es INNER JOIN.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0016",
-      "name": "INNER JOIN",
-      "shortDescription": "Devuelve coincidencias exactas",
-      "longDescription": "INNER JOIN devuelve only los records that tienen coincidencias en ambas tables. It is the type de JOIN más común.",
-      "examples": "SELECT * FROM A INNER JOIN B ON A.ID = B.ID;",
-      "notes": "Registros without coincidencia no aparecen.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0017",
-      "name": "LEFT JOIN",
-      "shortDescription": "Devuelve todos los records de la table izquierda",
-      "longDescription": "LEFT JOIN devuelve todos los records de la table izquierda, incluso if no tienen coincidencia en la derecha.",
-      "examples": "SELECT * FROM A LEFT JOIN B ON A.ID = B.ID;",
-      "notes": "Los values without coincidencia aparecen such as NULL.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0018",
-      "name": "RIGHT JOIN",
-      "shortDescription": "Devuelve todos los records de la table derecha",
-      "longDescription": "RIGHT JOIN devuelve todos los records de la table derecha, incluso if no tienen coincidencia en la izquierda.",
-      "examples": "SELECT * FROM A RIGHT JOIN B ON A.ID = B.ID;",
-      "notes": "Menos used that LEFT JOIN.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0019",
-      "name": "FULL JOIN",
-      "shortDescription": "Devuelve todos los records de ambas tables",
-      "longDescription": "FULL JOIN devuelve todos los records de ambas tables, with coincidencias y without coincidencias.",
-      "examples": "SELECT * FROM A FULL JOIN B ON A.ID = B.ID;",
-      "notes": "Registros without coincidencia muestran NULL en la table opuesta.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0020",
-      "name": "UNION",
-      "shortDescription": "Combina results without duplicados",
-      "longDescription": "UNION combina results de dos consultas y removes duplicados automáticamente.",
-      "examples": "SELECT ID FROM A UNION SELECT ID FROM B;",
-      "notes": "Las columnas deben ser compatibles en type y cantidad.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0021",
-      "name": "UNION ALL",
-      "shortDescription": "Combina results with duplicados",
-      "longDescription": "UNION ALL combina results de dos consultas without remove duplicados. It is más rápido that UNION.",
-      "examples": "SELECT ID FROM A UNION ALL SELECT ID FROM B;",
-      "notes": "Ideal for grandes volúmenes de datos.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0022",
-      "name": "PRIMARY KEY",
-      "shortDescription": "Identificador único de una table",
-      "longDescription": "PRIMARY KEY define una columna o conjunto de columnas that identifican de forma única each record de una table.",
-      "examples": "PRIMARY KEY (ID_CLIENTE)",
-      "notes": "No allows you to values NULL.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0023",
-      "name": "FOREIGN KEY",
-      "shortDescription": "Clave that referencia otra table",
-      "longDescription": "FOREIGN KEY establece una relación between tables, ensuring integrity referencial.",
-      "examples": "FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTES(ID)",
-      "notes": "It can requerir indexes for improve performance.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0024",
-      "name": "INDEX",
-      "shortDescription": "Estructura for acelerar consultas",
-      "longDescription": "Un INDEX acelera searchs y ordenamientos creando structures optimizadas basadas en columnas key.",
-      "examples": "CREATE INDEX IDX_CLIENTE_NOM ON CLIENTES(NOMBRE);",
-      "notes": "Demasiados indexes pueden afectar INSERT/UPDATE.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0025",
-      "name": "TABLESPACE",
-      "shortDescription": "Espacio physical where residen las tables",
-      "longDescription": "TABLESPACE define el espacio physical where se store tables e indexes. Allows you to gestionar storage y performance.",
-      "examples": "CREATE TABLESPACE TS1;",
-      "notes": "It can ser particionado for grandes volúmenes.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0026",
-      "name": "BUFFERPOOL",
-      "shortDescription": "Memoria usada for cachear pages",
-      "longDescription": "BUFFERPOOL es memory assignsda for store pages de data e indexes, mejorando el performance de access.",
-      "examples": "CREATE BUFFERPOOL BP1 SIZE 10000;",
-      "notes": "Un bufferpool bien dimensionado improves times de respuesta.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0027",
-      "name": "PLAN",
-      "shortDescription": "Objeto executable de DB2",
-      "longDescription": "Un PLAN es el objeto executable that contains uno o más packages. It is utilizado por programs for interactuar with DB2.",
-      "examples": "BIND PLAN(MIPLAN) PKLIST(MIPACK.*)",
-      "notes": "En environments modernos se usa más PACKAGE that PLAN.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0028",
-      "name": "PACKAGE",
-      "shortDescription": "Unidad compilada de SQL",
-      "longDescription": "Un PACKAGE contains código SQL compilado y optimizado. It is the unidad básica de execution en DB2.",
-      "examples": "BIND PACKAGE(MIPACK) MEMBER(PROG1);",
-      "notes": "Los packages se agrupan en planes.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0029",
-      "name": "BIND",
-      "shortDescription": "Proceso that genera un package",
-      "longDescription": "BIND compila y optimiza SQL embebido en programas, generando packages o planes according to configuración.",
-      "examples": "BIND PACKAGE(MIPACK) MEMBER(PROG1);",
-      "notes": "El BIND determina el plan de access.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0030",
-      "name": "REBIND",
-      "shortDescription": "Regenera un package existente",
-      "longDescription": "REBIND recompila un package existente for actualizar estadísticas o improve performance.",
-      "examples": "REBIND PACKAGE(MIPACK);",
-      "notes": "Useful tras RUNSTATS o cambios de indexes.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0031",
-      "name": "RUNSTATS",
-      "shortDescription": "Actualiza estadísticas de tables",
-      "longDescription": "RUNSTATS actualiza estadísticas de tables e indexes, allowing that el optimizador genere mejores planes de access.",
-      "examples": "RUNSTATS TABLESPACE TS1;",
-      "notes": "It must executese regularmente en production.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0032",
-      "name": "REORG",
-      "shortDescription": "Reorganiza tables for optimizar access",
-      "longDescription": "REORG reorganiza physicalmente tables e indexes for improve performance, removesndo fragmentación.",
-      "examples": "REORG TABLE CLIENTES;",
-      "notes": "Recommended tras grandes operaciones DELETE.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0033",
-      "name": "LOAD",
-      "shortDescription": "Carga masiva de datos",
-      "longDescription": "LOAD allows you to load grandes volúmenes de data en una table de forma eficiente, evitando el overhead de INSERT.",
-      "examples": "LOAD DATA INDDN(INPUT) INTO TABLE CLIENTES;",
-      "notes": "It can requerir REORG posterior.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0034",
-      "name": "UNLOAD",
-      "shortDescription": "Extracción masiva de datos",
-      "longDescription": "UNLOAD extrae grandes volúmenes de data desde una table hacia un dataset externo.",
-      "examples": "UNLOAD DATA FROM TABLE CLIENTES;",
-      "notes": "Ideal for migraciones o backups.",
-      "category": "DB2",
-      "deleted": false
-    },
-    {
-      "id": "DB2-0035",
-      "name": "LOCK",
-      "shortDescription": "Bloqueo de resources",
-      "longDescription": "LOCK controla el access concurrente a tables y filas, evitando inconsistencies durante actualizaciones.",
-      "examples": "SELECT * FROM CLIENTES FOR UPDATE;",
-      "notes": "Bloqueos excesivos pueden causar deadlocks.",
-      "category": "DB2",
-      "deleted": false
-    },
+    "id": "CICS-0025",
+    "name": "PA KEY",
+    "shortDescription": "Terminal attention key",
+    "longDescription": "PA Keys are special keys that send immediate attention to the system without transmitting screen data.",
+    "examples": "PA1 = Interrupt",
+    "notes": "Used for administrative functions.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0026",
+    "name": "BMS",
+    "shortDescription": "Basic Mapping Support",
+    "longDescription": "BMS is the CICS system for defining screens using MAPSETs and MAPs. It allows control of fields, attributes, and positions on 3270 terminals.",
+    "examples": "DFHMSD TYPE=MAPSET",
+    "notes": "Generates assembler macros and COBOL copybooks.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0027",
+    "name": "DFHMSD",
+    "shortDescription": "Start of a MAPSET",
+    "longDescription": "DFHMSD defines a MAPSET, grouping one or more MAPs. It includes global attributes such as type, name, and generation options.",
+    "examples": "DFHMSD TYPE=MAPSET,MAPSET=MENUSET",
+    "notes": "Must contain one or more DFHMDI.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0028",
+    "name": "DFHMDI",
+    "shortDescription": "Start of a MAP",
+    "longDescription": "DFHMDI defines a MAP within a MAPSET. It establishes the MAP name and its general characteristics.",
+    "examples": "DFHMDI MAP=MENU",
+    "notes": "Must contain one or more DFHMDF.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0029",
+    "name": "DFHMDF",
+    "shortDescription": "Field within a MAP",
+    "longDescription": "DFHMDF defines a field within a MAP, specifying position, length, attributes, and behavior.",
+    "examples": "DFHMDF POS=(5,10) LENGTH=20 ATTRB=(UNPROT)",
+    "notes": "It is the basic element of a BMS screen.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0030",
+    "name": "ATTRB",
+    "shortDescription": "BMS field attributes",
+    "longDescription": "ATTRB defines the visual and functional attributes of a field, such as BRIGHT, DARK, PROT, UNPROT, FSET, IC, ASKIP.",
+    "examples": "ATTRB=(BRIGHT,UNPROT)",
+    "notes": "Controls how the user interacts with the field.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0031",
+    "name": "PROT",
+    "shortDescription": "Protected field",
+    "longDescription": "PROT indicates that the field cannot be modified by the user. It is useful for labels or fixed information.",
+    "examples": "DFHMDF POS=(4,5) LENGTH=10 ATTRB=(PROT)",
+    "notes": "The cursor cannot be placed on PROT fields.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0032",
+    "name": "UNPROT",
+    "shortDescription": "Editable field",
+    "longDescription": "UNPROT indicates that the field is editable by the user. It is the most common attribute in CICS forms.",
+    "examples": "DFHMDF POS=(6,5) LENGTH=20 ATTRB=(UNPROT)",
+    "notes": "Must be combined with FSET if the field always needs to be sent.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0033",
+    "name": "BRIGHT",
+    "shortDescription": "Highlighted field",
+    "longDescription": "BRIGHT is a BMS attribute that displays the field in high intensity, visually highlighting it on the terminal screen. It is used to emphasize important information or guide the user during interaction.",
+    "examples": "DFHMDF POS=(5,10) LENGTH=10 ATTRB=(BRIGHT,UNPROT)",
+    "notes": "The attribute depends on 3270 terminal support.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0034",
+    "name": "DARK",
+    "shortDescription": "Normal field",
+    "longDescription": "DARK is the BMS attribute that displays the field in normal intensity. It is the default value for most fields on CICS screens.",
+    "examples": "DFHMDF POS=(6,10) LENGTH=20 ATTRB=(DARK,UNPROT)",
+    "notes": "Used for standard text that does not require emphasis.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0035",
+    "name": "ASKIP",
+    "shortDescription": "Non-selectable field",
+    "longDescription": "ASKIP indicates that the field cannot be selected or modified by the user. It is useful for displaying fixed information or labels on the screen.",
+    "examples": "DFHMDF POS=(7,5) LENGTH=15 ATTRB=(ASKIP,BRIGHT)",
+    "notes": "The cursor cannot be placed on ASKIP fields.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0036",
+    "name": "FSET",
+    "shortDescription": "Marks field as modified",
+    "longDescription": "FSET marks the field as modified, even if the user has not changed it. This forces CICS to send the field content to the program during a RECEIVE.",
+    "examples": "DFHMDF POS=(8,10) LENGTH=10 ATTRB=(UNPROT,FSET)",
+    "notes": "Very useful for fields that must always be sent to the program.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0037",
+    "name": "IC",
+    "shortDescription": "Initial cursor position in field",
+    "longDescription": "IC (Initial Cursor) automatically places the cursor in the specified field when the screen is sent. It improves user experience by guiding data entry.",
+    "examples": "DFHMDF POS=(10,5) LENGTH=20 ATTRB=(UNPROT,IC)",
+    "notes": "Only one field should have IC per screen.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0038",
+    "name": "CURSOR",
+    "shortDescription": "Cursor position",
+    "longDescription": "CURSOR allows specifying the exact position of the cursor on the screen during a SEND. It is useful for controlling user interaction on dynamic screens.",
+    "examples": "EXEC CICS SEND MAP('MENU') CURSOR(120) END-EXEC",
+    "notes": "The position is indicated in linear coordinates of the 3270 buffer.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0039",
+    "name": "SYNCPOINT",
+    "shortDescription": "Confirms CICS transaction",
+    "longDescription": "SYNCPOINT commits all updates made by the transaction, ensuring integrity in databases and queues. It is equivalent to a COMMIT in transactional systems.",
+    "examples": "EXEC CICS SYNCPOINT END-EXEC",
+    "notes": "Mandatory in processes that update VSAM or DB2.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0040",
+    "name": "ROLLBACK",
+    "shortDescription": "Rolls back CICS transaction",
+    "longDescription": "ROLLBACK reverses all updates made by the transaction since the last SYNCPOINT. It is used to handle errors and maintain data integrity.",
+    "examples": "EXEC CICS ROLLBACK END-EXEC",
+    "notes": "Only rolls back transactional changes, not sent screens.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0041",
+    "name": "ENQ",
+    "shortDescription": "Resource locking",
+    "longDescription": "ENQ locks a resource to prevent simultaneous access by other transactions. It is useful for protecting records or files during critical updates.",
+    "examples": "EXEC CICS ENQ RESOURCE('CLIENTE123') END-EXEC",
+    "notes": "Must be released with DEQ to avoid prolonged lockouts.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0042",
+    "name": "DEQ",
+    "shortDescription": "Resource release",
+    "longDescription": "DEQ releases a resource previously locked with ENQ, allowing other transactions to access it.",
+    "examples": "EXEC CICS DEQ RESOURCE('CLIENTE123') END-EXEC",
+    "notes": "Must always be executed to avoid deadlocks.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0043",
+    "name": "PROGRAM",
+    "shortDescription": "Registered CICS program",
+    "longDescription": "PROGRAM identifies a COBOL or assembler module registered in CICS for execution. It must be defined in the CSD (CICS System Definition).",
+    "examples": "EXEC CICS LINK PROGRAM('PROG001') END-EXEC",
+    "notes": "Must be enabled via CEDA or DFHCSDUP.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0044",
+    "name": "TRANSACTION",
+    "shortDescription": "Transaction defined in CICS",
+    "longDescription": "TRANSACTION is the four-character identifier that starts the execution of a CICS program. It is defined in the CSD and associated with a PROGRAM.",
+    "examples": "CEDA DEFINE TRANSACTION(M001) PROGRAM(PROG001)",
+    "notes": "Must be enabled to be executed from a terminal.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0045",
+    "name": "FILE CONTROL",
+    "shortDescription": "VSAM file access from CICS",
+    "longDescription": "FILE CONTROL is the set of CICS commands to access VSAM files. It allows reading, writing, updating, and deleting records transactionally.",
+    "examples": "EXEC CICS READ FILE('CLIENTES') INTO(WS-REG) END-EXEC",
+    "notes": "Requires FILE definition in the CSD.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0046",
+    "name": "READ FILE",
+    "shortDescription": "VSAM file read",
+    "longDescription": "READ FILE allows reading a VSAM record from CICS. It can be performed by key or by position, depending on the file type.",
+    "examples": "EXEC CICS READ FILE('CLIENTES') RIDFLD(WS-CLAVE) INTO(WS-REG) END-EXEC",
+    "notes": "NOTFND must be handled for non-existent keys.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0047",
+    "name": "WRITE FILE",
+    "shortDescription": "VSAM file write",
+    "longDescription": "WRITE FILE inserts a new record into a VSAM file. It is transactional and requires SYNCPOINT for confirmation.",
+    "examples": "EXEC CICS WRITE FILE('CLIENTES') FROM(WS-REG) END-EXEC",
+    "notes": "May fail if the key already exists.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0048",
+    "name": "REWRITE FILE",
+    "shortDescription": "VSAM record update",
+    "longDescription": "REWRITE FILE updates a record previously read with READ UPDATE. It maintains file integrity and is part of transactional control.",
+    "examples": "EXEC CICS REWRITE FILE('CLIENTES') FROM(WS-REG) END-EXEC",
+    "notes": "Requires a prior READ UPDATE.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0049",
+    "name": "DELETE FILE",
+    "shortDescription": "Deletes VSAM record",
+    "longDescription": "DELETE FILE deletes a VSAM record identified by key. It is useful for data maintenance or administrative processes.",
+    "examples": "EXEC CICS DELETE FILE('CLIENTES') RIDFLD(WS-CLAVE) END-EXEC",
+    "notes": "NOTFND must be handled if the key does not exist.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "CICS-0050",
+    "name": "START",
+    "shortDescription": "Starts a deferred transaction",
+    "longDescription": "START allows initiating a transaction in the background or deferred, passing optional parameters via COMMAREA. It is useful for asynchronous processes.",
+    "examples": "EXEC CICS START TRANSID('B001') COMMAREA(WS-DATOS) END-EXEC",
+    "notes": "The initiated transaction does not return control to the current program.",
+    "category": "CICS",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0001",
+    "name": "SELECT",
+    "shortDescription": "Queries data from a table",
+    "longDescription": "SELECT is the primary statement to retrieve data from a table or view in DB2. It allows specifying columns, filters, sorting, and aggregate functions. It is the basis of any read operation in SQL.",
+    "examples": "SELECT * FROM CLIENTES WHERE ESTADO = 'A';",
+    "notes": "Can be combined with JOIN, GROUP BY, HAVING, and ORDER BY.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0002",
+    "name": "INSERT",
+    "shortDescription": "Inserts a record into a table",
+    "longDescription": "INSERT adds new records to a table. It can specify all columns or only some, provided the remaining ones have default values or allow NULL.",
+    "examples": "INSERT INTO CLIENTES (ID, NOMBRE) VALUES (100, 'JUAN');",
+    "notes": "Requires COMMIT to persist changes.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0003",
+    "name": "UPDATE",
+    "shortDescription": "Updates existing records",
+    "longDescription": "UPDATE modifies column values in existing records. It must be used with WHERE to avoid accidentally updating the entire table.",
+    "examples": "UPDATE CLIENTES SET ESTADO = 'I' WHERE ID = 100;",
+    "notes": "Without WHERE, it updates all records.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0004",
+    "name": "DELETE",
+    "shortDescription": "Deletes records from a table",
+    "longDescription": "DELETE removes records from a table based on a condition. It is a transactional operation that requires COMMIT to be confirmed.",
+    "examples": "DELETE FROM CLIENTES WHERE ID = 100;",
+    "notes": "Without WHERE, it deletes all records.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0005",
+    "name": "COMMIT",
+    "shortDescription": "Confirms a transaction",
+    "longDescription": "COMMIT confirms all changes made in the current transaction, making INSERT, UPDATE, and DELETE operations permanent.",
+    "examples": "COMMIT;",
+    "notes": "In CICS, SYNCPOINT performs the same function.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0006",
+    "name": "ROLLBACK",
+    "shortDescription": "Rolls back a transaction",
+    "longDescription": "ROLLBACK reverts all changes made since the last COMMIT. It is essential for handling errors and maintaining data integrity.",
+    "examples": "ROLLBACK;",
+    "notes": "In CICS, ROLLBACK performs the same function.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0007",
+    "name": "DECLARE CURSOR",
+    "shortDescription": "Defines a cursor to traverse results",
+    "longDescription": "DECLARE CURSOR defines a cursor that allows traversing row by row the result of a query. It is fundamental in COBOL programs with embedded SQL.",
+    "examples": "DECLARE C1 CURSOR FOR SELECT ID, NOMBRE FROM CLIENTES;",
+    "notes": "Must be opened with OPEN and closed with CLOSE.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0008",
+    "name": "OPEN CURSOR",
+    "shortDescription": "Opens a cursor for reading",
+    "longDescription": "OPEN CURSOR executes the query associated with the cursor and leaves it ready to perform FETCH.",
+    "examples": "OPEN C1;",
+    "notes": "If the query fails, SQLCODE will contain the error.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0009",
+    "name": "FETCH",
+    "shortDescription": "Retrieves rows from a cursor",
+    "longDescription": "FETCH retrieves the next row from the cursor and stores it in host variables. It allows traversing sequential results.",
+    "examples": "FETCH C1 INTO :WS-ID, :WS-NOMBRE;",
+    "notes": "SQLCODE = +100 indicates end of data.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0010",
+    "name": "CLOSE CURSOR",
+    "shortDescription": "Closes an open cursor",
+    "longDescription": "CLOSE CURSOR releases the resources associated with the cursor. It is mandatory to prevent memory leaks or locks.",
+    "examples": "CLOSE C1;",
+    "notes": "Must always be executed, even if errors occurred.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0011",
+    "name": "WHERE",
+    "shortDescription": "Filters records in a query",
+    "longDescription": "WHERE allows filtering records based on logical conditions. It is essential for precise and efficient queries.",
+    "examples": "SELECT * FROM CLIENTES WHERE ESTADO = 'A';",
+    "notes": "Can be combined with AND, OR, and relational operators.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0012",
+    "name": "GROUP BY",
+    "shortDescription": "Groups results by columns",
+    "longDescription": "GROUP BY groups records according to one or more columns, allowing aggregate functions like SUM, COUNT, or AVG to be applied.",
+    "examples": "SELECT ESTADO, COUNT(*) FROM CLIENTES GROUP BY ESTADO;",
+    "notes": "Non-aggregated columns must appear in GROUP BY.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0013",
+    "name": "HAVING",
+    "shortDescription": "Filters aggregated groups",
+    "longDescription": "HAVING filters results after applying GROUP BY. It allows conditions on aggregates.",
+    "examples": "SELECT ESTADO, COUNT(*) FROM CLIENTES GROUP BY ESTADO HAVING COUNT(*) > 10;",
+    "notes": "WHERE filters rows; HAVING filters groups.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0014",
+    "name": "ORDER BY",
+    "shortDescription": "Sorts results",
+    "longDescription": "ORDER BY sorts the results based on one or more columns, in ascending or descending order.",
+    "examples": "SELECT * FROM CLIENTES ORDER BY NOMBRE ASC;",
+    "notes": "Can sort by unselected columns.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0015",
+    "name": "JOIN",
+    "shortDescription": "Joins tables by related columns",
+    "longDescription": "JOIN allows combining records from two or more tables based on a defined relationship. It is essential for complex relational queries.",
+    "examples": "SELECT C.NOMBRE, P.SALDO FROM CLIENTES C JOIN CUENTAS P ON C.ID = P.ID_CLIENTE;",
+    "notes": "JOIN without an explicit type defaults to INNER JOIN.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0016",
+    "name": "INNER JOIN",
+    "shortDescription": "Returns exact matches",
+    "longDescription": "INNER JOIN returns only records that have matches in both tables. It is the most common type of JOIN.",
+    "examples": "SELECT * FROM A INNER JOIN B ON A.ID = B.ID;",
+    "notes": "Unmatched records do not appear.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0017",
+    "name": "LEFT JOIN",
+    "shortDescription": "Returns all records from the left table",
+    "longDescription": "LEFT JOIN returns all records from the left table, even if they have no match in the right table.",
+    "examples": "SELECT * FROM A LEFT JOIN B ON A.ID = B.ID;",
+    "notes": "Unmatched values appear as NULL.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0018",
+    "name": "RIGHT JOIN",
+    "shortDescription": "Returns all records from the right table",
+    "longDescription": "RIGHT JOIN returns all records from the right table, even if they have no match in the left table.",
+    "examples": "SELECT * FROM A RIGHT JOIN B ON A.ID = B.ID;",
+    "notes": "Less used than LEFT JOIN.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0019",
+    "name": "FULL JOIN",
+    "shortDescription": "Returns all records from both tables",
+    "longDescription": "FULL JOIN returns all records from both tables, including matches and non-matches.",
+    "examples": "SELECT * FROM A FULL JOIN B ON A.ID = B.ID;",
+    "notes": "Unmatched records show NULL in the opposite table.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0020",
+    "name": "UNION",
+    "shortDescription": "Combines results without duplicates",
+    "longDescription": "UNION combines results from two queries and automatically removes duplicates.",
+    "examples": "SELECT ID FROM A UNION SELECT ID FROM B;",
+    "notes": "Columns must be compatible in type and quantity.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0021",
+    "name": "UNION ALL",
+    "shortDescription": "Combines results with duplicates",
+    "longDescription": "UNION ALL combines results from two queries without removing duplicates. It is faster than UNION.",
+    "examples": "SELECT ID FROM A UNION ALL SELECT ID FROM B;",
+    "notes": "Ideal for large volumes of data.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0022",
+    "name": "PRIMARY KEY",
+    "shortDescription": "Unique identifier of a table",
+    "longDescription": "PRIMARY KEY defines a column or set of columns that uniquely identify each record in a table.",
+    "examples": "PRIMARY KEY (ID_CLIENTE)",
+    "notes": "Does not allow NULL values.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0023",
+    "name": "FOREIGN KEY",
+    "shortDescription": "Key referencing another table",
+    "longDescription": "FOREIGN KEY establishes a relationship between tables, guaranteeing referential integrity.",
+    "examples": "FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTES(ID)",
+    "notes": "May require indexes to improve performance.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0024",
+    "name": "INDEX",
+    "shortDescription": "Structure to speed up queries",
+    "longDescription": "An INDEX speeds up searches and sorting by creating optimized structures based on key columns.",
+    "examples": "CREATE INDEX IDX_CLIENTE_NOM ON CLIENTES(NOMBRE);",
+    "notes": "Too many indexes can affect INSERT/UPDATE performance.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0025",
+    "name": "TABLESPACE",
+    "shortDescription": "Physical space where tables reside",
+    "longDescription": "TABLESPACE defines the physical space where tables and indexes are stored. It allows managing storage and performance.",
+    "examples": "CREATE TABLESPACE TS1;",
+    "notes": "Can be partitioned for large volumes.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0026",
+    "name": "BUFFERPOOL",
+    "shortDescription": "Memory used to cache pages",
+    "longDescription": "BUFFERPOOL is allocated memory used to store data and index pages, improving access performance.",
+    "examples": "CREATE BUFFERPOOL BP1 SIZE 10000;",
+    "notes": "A well-sized bufferpool improves response times.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0027",
+    "name": "PLAN",
+    "shortDescription": "Executable DB2 object",
+    "longDescription": "A PLAN is the executable object containing one or more packages. It is used by programs to interact with DB2.",
+    "examples": "BIND PLAN(MIPLAN) PKLIST(MIPACK.*)",
+    "notes": "In modern environments, PACKAGE is used more than PLAN.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0028",
+    "name": "PACKAGE",
+    "shortDescription": "Compiled unit of SQL",
+    "longDescription": "A PACKAGE contains compiled and optimized SQL code. It is the basic unit of execution in DB2.",
+    "examples": "BIND PACKAGE(MIPACK) MEMBER(PROG1);",
+    "notes": "Packages are grouped into plans.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0029",
+    "name": "BIND",
+    "shortDescription": "Process that generates a package",
+    "longDescription": "BIND compiles and optimizes embedded SQL in programs, generating packages or plans according to configuration.",
+    "examples": "BIND PACKAGE(MIPACK) MEMBER(PROG1);",
+    "notes": "The BIND determines the access path.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0030",
+    "name": "REBIND",
+    "shortDescription": "Regenerates an existing package",
+    "longDescription": "REBIND recompiles an existing package to update statistics or improve performance.",
+    "examples": "REBIND PACKAGE(MIPACK);",
+    "notes": "Useful after RUNSTATS or index changes.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0031",
+    "name": "RUNSTATS",
+    "shortDescription": "Updates table statistics",
+    "longDescription": "RUNSTATS updates statistics for tables and indexes, allowing the optimizer to generate better access paths.",
+    "examples": "RUNSTATS TABLESPACE TS1;",
+    "notes": "Must be run regularly in production.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0032",
+    "name": "REORG",
+    "shortDescription": "Reorganizes tables to optimize access",
+    "longDescription": "REORG physically reorganizes tables and indexes to improve performance by eliminating fragmentation.",
+    "examples": "REORG TABLE CLIENTES;",
+    "notes": "Recommended after large DELETE operations.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0033",
+    "name": "LOAD",
+    "shortDescription": "Mass data loading",
+    "longDescription": "LOAD allows loading large volumes of data into a table efficiently, avoiding INSERT overhead.",
+    "examples": "LOAD DATA INDDN(INPUT) INTO TABLE CLIENTES;",
+    "notes": "May require a subsequent REORG.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0034",
+    "name": "UNLOAD",
+    "shortDescription": "Mass data extraction",
+    "longDescription": "UNLOAD extracts large volumes of data from a table to an external dataset.",
+    "examples": "UNLOAD DATA FROM TABLE CLIENTES;",
+    "notes": "Ideal for migrations or backups.",
+    "category": "DB2",
+    "deleted": false
+  },
+  {
+    "id": "DB2-0035",
+    "name": "LOCK",
+    "shortDescription": "Resource locking",
+    "longDescription": "LOCK controls concurrent access to tables and rows, preventing inconsistencies during updates.",
+    "examples": "SELECT * FROM CLIENTES FOR UPDATE;",
+    "notes": "Excessive locking can cause deadlocks.",
+    "category": "DB2",
+    "deleted": false
+  }
+
     {
       "id": "DB2-0036",
       "name": "DEADLOCK",
