@@ -5,7 +5,7 @@
   {
     "id": "ERR-ABEND-0001",
     "code": "S0C7",
-    "shortDescription": "Condición S0C7",
+    "shortDescription": "Condición S0C7   EN INGLES",
     "longDescription": "Data exception: intento de convertir datos no numéricos Suele ocurrir al mover datos alfanuméricos a campos numéricos PACKED o BINARY. Revisar contenido del registro y el mapa de copia",
     "system": "ABEND",
     "severity": "HIGH",
