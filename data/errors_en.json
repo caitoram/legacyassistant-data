@@ -759,7 +759,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0047",
+    "id": "ERR-ABEND-0064",
     "code": "S047",
     "shortDescription": "Error during data sorting",
     "longDescription": "SORT error when the SIZE parameter record count does not match the number of records in the file. In IMS, this can occur when a database is shared with DBRC, when the database is accessed while in use because the PCB does not have the GO sharing option, or when an update program terminated abnormally.",
@@ -771,7 +771,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0048",
+    "id": "ERR-ABEND-0065",
     "code": "S048",
     "shortDescription": "Invalid DD definition",
     "longDescription": "//RECON1, //RECON2, or //RECON3 DD statements are missing. The specified check-point cannot be found. An incorrect PARM was specified on the EXEC statement.",
@@ -783,7 +783,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0049",
+    "id": "ERR-ABEND-0066",
     "code": "S04A",
     "shortDescription": "Control statement terminates incorrectly.",
     "longDescription": "Control statement terminates incorrectly. Error in control statement.",
@@ -795,7 +795,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0050",
+    "id": "ERR-ABEND-0067",
     "code": "S04E",
     "shortDescription": "DB2 error.",
     "longDescription": "DB2 error. Resource unavailable due to insufficient region. Resource unavailable due to insufficient region in DB2.",
@@ -807,7 +807,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0051",
+    "id": "ERR-ABEND-0078",
     "code": "S056",
     "shortDescription": "VSAM file access error",
     "longDescription": "An attempt is being made to open an already open VSAM file. Close it with VERIFY. SORTIN and SORTOUT are commonly specified in a SORT. VSAM already open; close with VERIFY; review SORTIN/SORTOUT.",
@@ -819,7 +819,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0052",
+    "id": "ERR-ABEND-0069",
     "code": "S05A",
     "shortDescription": "Error during data sorting",
     "longDescription": "Incorrect statement verb; it must be SORT, MERGE, RECORD, MODS, or END. Incorrect verb in a SORT/MERGE statement.",
@@ -831,7 +831,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0053",
+    "id": "ERR-ABEND-0070",
     "code": "S061",
     "shortDescription": "Error during data sorting",
     "longDescription": "SORTIN file may be left open or empty. Error in DCB blocking for SORT.",
@@ -843,7 +843,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0054",
+    "id": "ERR-ABEND-0071",
     "code": "S063",
     "shortDescription": "Error during data sorting",
     "longDescription": "BLKSIZE may differ among multiple SYSIN inputs. SORTIN may be misspelled. The first file must have the largest BLKSIZE. BLKSIZE is not a multiple of LRECL.",
@@ -855,7 +855,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0055",
+    "id": "ERR-ABEND-0072",
     "code": "S068",
     "shortDescription": "Error during data sorting",
     "longDescription": "Out-of-sequence data in a merge; one of the files does not have the same sort order as the other. Sort the out-of-sequence file before the merge.",
@@ -867,7 +867,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0056",
+    "id": "ERR-ABEND-0073",
     "code": "S06A",
     "shortDescription": "Error during data sorting",
     "longDescription": "The first operand of a control statement does not begin on the same statement as the operation verb. Alignment error between operand and verb.",
