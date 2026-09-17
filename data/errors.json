@@ -759,7 +759,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0047",
+    "id": "ERR-ABEND-0064",
     "code": "S047",
     "shortDescription": "Error durante la ordenación de datos",
     "longDescription": "Da en sort cuando el número de registros del parámetro size no coincide con el número de registros del fichero. Da en ims cuando una base de datos está compartida con dbrc. Se produce al intentar acceder a la base de datos mientras se está usando, al estar la pcb sin la opción de compartir go. También se produce al intentar acceder y hay un programa de actualización que terminó mal. Incluye casos en SORT (SIZE incorrecto) e IMS (DBRC, PCB sin GO, programa de actualización que terminó mal)",
@@ -771,7 +771,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0048",
+    "id": "ERR-ABEND-0065",
     "code": "S048",
     "shortDescription": "Definición DD no válida",
     "longDescription": "Faltan las dd //RECON1, //RECON2, //RECON3. No encuentra check-point especificado. En la ficha exec se ha puesto una parm incorrecta. Faltan DD RECON; check-point no encontrado; PARM incorrecta en EXEC",
@@ -783,7 +783,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0049",
+    "id": "ERR-ABEND-0066",
     "code": "S04A",
     "shortDescription": "Sentencia de control finaliza de forma incorrecta.",
     "longDescription": "Sentencia de control finaliza de forma incorrecta. Error en sentencia de control",
@@ -795,7 +795,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0050",
+    "id": "ERR-ABEND-0067",
     "code": "S04E",
     "shortDescription": "Error en db2.",
     "longDescription": "Error en db2. Recurso no available por falta de región. Recurso no disponible por falta de región en DB2",
@@ -807,7 +807,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0051",
+    "id": "ERR-ABEND-0068",
     "code": "S056",
     "shortDescription": "Error de acceso al archivo VSAM",
     "longDescription": "Se intenta abrir un vsam ya abierto. Cerrarlo con verify. Se acostumbra poner sortin y sortout en un sort. VSAM ya abierto; cerrar con VERIFY; revisar SORTIN/SORTOUT",
@@ -819,7 +819,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0052",
+    "id": "ERR-ABEND-0069",
     "code": "S05A",
     "shortDescription": "Error durante la ordenación de datos",
     "longDescription": "Definidor de sentencia erróneo; deben ser sort, merge, record, mods o end. Definidor incorrecto en sentencia SORT/MERGE",
@@ -831,7 +831,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0053",
+    "id": "ERR-ABEND-0070",
     "code": "S061",
     "shortDescription": "Error durante la ordenación de datos",
     "longDescription": "Puede ser fichero sortin sin cerrar o vacío. Error en blocaje de dcb en sort. SORTIN sin cerrar o vacío; error de DCB",
@@ -843,7 +843,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0054",
+    "id": "ERR-ABEND-0071",
     "code": "S063",
     "shortDescription": "Error durante la ordenación de datos",
     "longDescription": "Puede ser diferencia de blksize en varias sysin. SORTIN mal escrito. El primer fichero debe ser el de mayor blksize. El blksize no es múltiplo del lrecl. BLKSIZE inconsistente; SORTIN mal escrito; primer fichero debe tener mayor BLKSIZE; BLKSIZE no múltiplo de LRECL",
@@ -855,7 +855,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0055",
+    "id": "ERR-ABEND-0072",
     "code": "S068",
     "shortDescription": "Error durante la ordenación de datos",
     "longDescription": "Fuera de secuencia en un merge; uno de los ficheros no tiene la misma clasificación que el otro. Hacer sort previo al fichero fuera de secuencia. Clasificación distinta entre ficheros; requiere SORT previo",
@@ -867,7 +867,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0056",
+    "id": "ERR-ABEND-0073",
     "code": "S06A",
     "shortDescription": "Primer operando de sentencia de control no comienza en la misma sentencia que el...",
     "longDescription": "Primer operando de sentencia de control no comienza en la misma sentencia que el definidor de operación. Error de alineación entre operando y definidor",
@@ -2715,7 +2715,7 @@
     "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución."
   },
   {
-    "id": "ERR-ABEND-0299",
+    "id": "ERR-ABEND-0074",
     "code": "S458",
     "shortDescription": "Se intenta pasar un bmp con la region parada.",
     "longDescription": "Se intenta pasar un bmp con la region parada. La región IMS está detenida y no permite ejecutar el BMP",
