@@ -334,6 +334,23 @@
       "examples": "      PROGRAM HELLO\n      PRINT *, \"HELLO MAINFRAME\"\n      END",
       "image": "fortran",
       "deleted": false
-    }
+    },
+{
+"id": "VSAM",
+"name": "VSAM",
+"shortDescription": "Virtual Storage Access Method used on IBM mainframes to organize, store, and access large volumes of data efficiently.",
+"longDescription": "VSAM (Virtual Storage Access Method) is a data access method developed by IBM for mainframe operating systems. Introduced in the 1970s as part of OS/VS, it provides a more advanced and flexible way to store and retrieve data compared to traditional sequential and indexed file systems. VSAM is widely used in banking, insurance, government, and large enterprise environments where reliability, performance, and efficient data access are critical.\nVSAM datasets are organized into structures known as clusters. A cluster consists of a data component, which stores the records, and an index component, which helps locate records quickly when indexed access is required. Unlike traditional files, VSAM manages free space, indexing, and record organization automatically.\nVSAM supports several dataset types. Key Sequenced Data Set (KSDS) is the most commonly used type and allows records to be accessed either sequentially or directly through a unique key. Entry Sequenced Data Set (ESDS) stores records in the order they are added and is often used for transaction logs or historical data. Relative Record Data Set (RRDS) stores records according to a relative record number, enabling direct access by position. Linear Data Set (LDS) is used primarily by system applications such as DB2 and does not contain record-oriented structures.\nA VSAM file is typically defined using IDCAMS utility commands. Parameters such as record size, key length, key position, and space allocation are specified during dataset creation. The DEFINE CLUSTER statement is commonly used to create a VSAM dataset.\nApplications written in COBOL, PL/I, Assembler, and other mainframe languages frequently access VSAM files. In COBOL, VSAM datasets are defined through FILE-CONTROL and FD entries, allowing record operations such as READ, WRITE, REWRITE, and DELETE. Indexed access using keys is particularly common in online transaction processing systems.\nVSAM supports both sequential and direct access methods. Sequential access processes records in order, while random access retrieves specific records using a key or record number. This flexibility makes VSAM suitable for applications that require both batch processing and real-time transaction handling.\nAn important feature of VSAM is its indexing capability. In KSDS datasets, the index component enables rapid retrieval of records without scanning the entire file. VSAM also manages free space within control intervals and control areas to support efficient insertion of new records while minimizing dataset reorganization.\nVSAM datasets are frequently used in conjunction with CICS, IMS, and batch JCL jobs. Many legacy business applications rely on VSAM as their primary persistent storage mechanism because of its reliability, high performance, and tight integration with IBM mainframe environments.\nVSAM remains an essential technology in modern mainframe computing. Although many organizations have adopted relational databases, VSAM continues to be widely used for core business applications that require fast, reliable, and scalable access to large volumes of transactional data.",
+"category": "Data Storage",
+"related": [
+"COBOL",
+"JCL",
+"CICS",
+"DB2",
+"IMS"
+],
+"examples": " //DEFINE JOB\n //STEP1 EXEC PGM=IDCAMS\n //SYSPRINT DD SYSOUT=*\n //SYSIN DD *\n DEFINE CLUSTER (\n NAME(CUSTOMER.KSDS)\n INDEXED\n KEYS(10 0)\n RECORDSIZE(100 100)\n )\n /*",
+"image": "vsam",
+"deleted": false
+}    
   ]
 }
