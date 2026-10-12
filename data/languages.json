@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-12-29",
+  "versionDate": "2026-12-30",
   "languages": [
     {
       "id": "COBOL",
@@ -334,6 +334,23 @@
       "examples": "      PROGRAM HELLO\n      PRINT *, \"HELLO MAINFRAME\"\n      END",
       "image": "fortran",
       "deleted": false
-    }
+    },
+   {
+"id": "VSAM",
+"name": "VSAM",
+"shortDescription": "Método de acceso de almacenamiento utilizado en mainframes IBM para organizar, almacenar y acceder eficientemente a grandes volúmenes de datos.",
+"longDescription": "VSAM (Virtual Storage Access Method) es un método de acceso a datos desarrollado por IBM para los sistemas operativos de mainframe. Introducido en la década de 1970 como parte de OS/VS, proporciona una forma más avanzada y flexible de almacenar y recuperar información en comparación con los sistemas tradicionales de archivos secuenciales e indexados. VSAM es ampliamente utilizado en sectores como banca, seguros, administración pública y grandes empresas donde la fiabilidad, el rendimiento y el acceso eficiente a los datos son fundamentales.\nLos conjuntos de datos VSAM se organizan en estructuras denominadas clústeres (clusters). Un clúster está compuesto por un componente de datos (data component), que almacena los registros, y un componente de índice (index component), que permite localizar rápidamente los registros cuando se utiliza acceso indexado. A diferencia de los archivos tradicionales, VSAM gestiona automáticamente los índices, el espacio libre y la organización de los registros.\nVSAM soporta varios tipos de conjuntos de datos. El más utilizado es KSDS (Key Sequenced Data Set), que permite acceder a los registros tanto secuencialmente como a través de una clave única. ESDS (Entry Sequenced Data Set) almacena los registros en el orden en que se añaden y suele utilizarse para registros históricos o trazas de transacciones. RRDS (Relative Record Data Set) almacena los registros según un número relativo, permitiendo acceso directo por posición. LDS (Linear Data Set) se emplea principalmente por aplicaciones del sistema como DB2 y no utiliza una estructura orientada a registros.\nLos archivos VSAM suelen definirse mediante la utilidad IDCAMS. Durante su creación se especifican parámetros como el tamaño de los registros, la longitud de la clave, la posición de la clave y la asignación de espacio. La sentencia DEFINE CLUSTER es una de las instrucciones más utilizadas para crear conjuntos de datos VSAM.\nLas aplicaciones desarrolladas en COBOL, PL/I, Assembler y otros lenguajes de mainframe acceden frecuentemente a archivos VSAM. En COBOL, los conjuntos de datos VSAM se definen mediante las secciones FILE-CONTROL y FD, permitiendo operaciones como READ, WRITE, REWRITE y DELETE. El acceso indexado mediante claves es especialmente común en sistemas de procesamiento de transacciones en línea.\nVSAM admite métodos de acceso secuencial y directo. El acceso secuencial procesa los registros en orden, mientras que el acceso directo permite recuperar registros específicos utilizando una clave o un número de registro. Esta flexibilidad hace que VSAM sea adecuado tanto para procesos batch como para aplicaciones transaccionales en tiempo real.\nUna de las características más importantes de VSAM es su capacidad de indexación. En los conjuntos KSDS, el componente de índice permite localizar rápidamente los registros sin necesidad de recorrer todo el archivo. Además, VSAM administra espacios libres dentro de los Control Intervals (CI) y Control Areas (CA), facilitando la inserción de nuevos registros y reduciendo la necesidad de reorganizaciones frecuentes.\nLos archivos VSAM suelen utilizarse conjuntamente con tecnologías como CICS, IMS y procesos batch controlados por JCL. Numerosas aplicaciones empresariales heredadas continúan utilizándolo como mecanismo principal de almacenamiento debido a su fiabilidad, alto rendimiento e integración con el ecosistema de mainframe IBM.\nVSAM sigue siendo una tecnología fundamental en los entornos mainframe modernos. Aunque muchas organizaciones han adoptado bases de datos relacionales, VSAM continúa siendo utilizado en aplicaciones críticas de negocio que requieren acceso rápido, fiable y escalable a grandes volúmenes de información transaccional.",
+"category": "Almacenamiento de Datos",
+"related": [
+"COBOL",
+"JCL",
+"CICS",
+"DB2",
+"IMS"
+],
+"examples": " //DEFINE JOB\n //STEP1 EXEC PGM=IDCAMS\n //SYSPRINT DD SYSOUT=*\n //SYSIN DD *\n DEFINE CLUSTER (\n NAME(CLIENTES.KSDS)\n INDEXED\n KEYS(10 0)\n RECORDSIZE(100 100)\n )\n /*",
+"image": "vsam",
+"deleted": false
+}    
   ]
 }
