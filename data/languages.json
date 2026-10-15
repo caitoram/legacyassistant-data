@@ -351,6 +351,22 @@
       "examples": " //DEFINE JOB\n //STEP1 EXEC PGM=IDCAMS\n //SYSPRINT DD SYSOUT=*\n //SYSIN DD *\n DEFINE CLUSTER (\n NAME(CLIENTES.KSDS)\n INDEXED\n KEYS(10 0)\n RECORDSIZE(100 100)\n )\n /*",
       "image": "vsam",
      "deleted": false
+    },
+    {
+     "id": "ADABAS",
+     "name": "ADABAS",
+     "shortDescription": "Sistema de gestión de bases de datos (SGBD) de alto rendimiento, orientado al procesamiento transaccional y al almacenamiento de grandes volúmenes de datos empresariales.",
+     "longDescription": "El nombre ADABAS proviene de Adaptable DAta BAse System (Sistema de Base de Datos Adaptable). Es un sistema de gestión de bases de datos desarrollado originalmente por Software AG, diseñado para proporcionar acceso rápido, fiable y eficiente a grandes cantidades de información.\nADABAS es conocido por su modelo de base de datos no relacional, tradicionalmente descrito como una base de datos invertida. Organiza la información mediante archivos, registros y campos, y utiliza estructuras de índices que permiten recuperar los datos de forma eficiente, especialmente en aplicaciones empresariales con grandes volúmenes de transacciones.\nFue diseñado para entornos empresariales que requieren alta disponibilidad, rendimiento y capacidad para procesar numerosas operaciones concurrentes. Por este motivo, se ha utilizado ampliamente en sistemas de banca, seguros, administración pública, telecomunicaciones y otras organizaciones que manejan información crítica.\nADABAS dispone de mecanismos para gestionar transacciones, controlar la concurrencia y mantener la integridad de los datos. Su arquitectura permite trabajar con grandes bases de datos y atender consultas y actualizaciones de manera eficiente.\nEn entornos de IBM z/OS, ADABAS suele integrarse con aplicaciones desarrolladas en COBOL y con otros componentes de sistemas mainframe. Las aplicaciones pueden acceder a los datos mediante interfaces y llamadas específicas de ADABAS, utilizando herramientas como Natural, el lenguaje de programación de Software AG, según la configuración del entorno.\nA diferencia de una base de datos relacional tradicional, ADABAS no basa su modelo original en tablas relacionadas mediante claves externas. Su estructura de datos y sus mecanismos de acceso responden a un diseño orientado a ofrecer rendimiento y flexibilidad en aplicaciones de procesamiento de datos empresariales.\nDesarrollado por Software AG y comercializado desde la década de 1970, ADABAS se convirtió en una tecnología importante en numerosos sistemas corporativos y mainframes. Su longevidad se debe, en gran medida, a su capacidad para soportar aplicaciones críticas que necesitan procesar grandes volúmenes de información con fiabilidad y tiempos de respuesta reducidos.",
+     "category": "Base de datos",
+     "related": [
+        "COBOL",
+        "NATURAL",
+        "JCL",
+        "IBM z/OS"
+      ],
+     "examples": "ADABAS no utiliza SQL como interfaz nativa universal en todos sus entornos. El acceso a los datos depende del lenguaje, las interfaces y las herramientas instaladas. Un ejemplo conceptual de acceso desde una aplicación COBOL puede incluir llamadas específicas al entorno ADABAS:\n\nIDENTIFICATION DIVISION.\nPROGRAM-ID. ADABAS01.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 WS-EMPLOYEE-ID PIC 9(8).\n01 WS-EMPLOYEE-NAME PIC X(30).\nPROCEDURE DIVISION.\n DISPLAY 'Ejemplo conceptual de acceso a ADABAS'.\n DISPLAY 'La recuperación real requiere las interfaces'.\n DISPLAY 'y las estructuras de datos configuradas'.\n STOP RUN.",
+     "image": "ADABAS",
+     "deleted": false
     }    
   ]
 }
