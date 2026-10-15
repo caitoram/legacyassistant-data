@@ -807,7 +807,7 @@
     "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution."
   },
   {
-    "id": "ERR-ABEND-0078",
+    "id": "ERR-ABEND-0068",
     "code": "S056",
     "shortDescription": "VSAM file access error",
     "longDescription": "An attempt is being made to open an already open VSAM file. Close it with VERIFY. SORTIN and SORTOUT are commonly specified in a SORT. VSAM already open; close with VERIFY; review SORTIN/SORTOUT.",
