@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-10-01",
+  "versionDate": "2026-10-02",
   "languages": [
     {
       "id": "COBOL",
@@ -365,7 +365,7 @@
         "IBM z/OS"
       ],
      "examples": "ADABAS no utiliza SQL como interfaz nativa universal en todos sus entornos. El acceso a los datos depende del lenguaje, las interfaces y las herramientas instaladas. Un ejemplo conceptual de acceso desde una aplicación COBOL puede incluir llamadas específicas al entorno ADABAS:\n\nIDENTIFICATION DIVISION.\nPROGRAM-ID. ADABAS01.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 WS-EMPLOYEE-ID PIC 9(8).\n01 WS-EMPLOYEE-NAME PIC X(30).\nPROCEDURE DIVISION.\n DISPLAY 'Ejemplo conceptual de acceso a ADABAS'.\n DISPLAY 'La recuperación real requiere las interfaces'.\n DISPLAY 'y las estructuras de datos configuradas'.\n STOP RUN.",
-     "image": "ADABAS",
+     "image": "adabas",
      "deleted": false
     }    
   ]
