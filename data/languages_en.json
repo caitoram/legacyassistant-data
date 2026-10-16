@@ -9,7 +9,7 @@
       "category": "Language",
       "related": [
         "DB2",
-        "SORT",
+        "DFSORT",
         "IDCAMS"
       ],
       "examples": "IDENTIFICATION DIVISION. \nPROGRAM-ID. PRG01.\nENVIRONMENT DIVISION.\nCONFIGURATION SECTION.\nSOURCE-COMPUTER. IBM-370.\nOBJECT-COMPUTER. IBM-370.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL. \n  SELECT ENTRADA\n  ASSIGN TO ENTRADA\nDATA DIVISION.\nFILE SECTION.\nFD ENTRADA\n   LABEL RECORDS ARE OMITTED.\n01 INFILE-REC PIC X (80).\nWORKING-STORAGE SECTION.\n 01 VARIABLE PIC X (100).\nPROCEDURE DIVISION.\n  DISPLAY 'HELLO WORLD'.",
@@ -24,7 +24,7 @@
       "category": "Language",
       "related": [
         "COBOL",
-        "SORT",
+        "DFSORT",
         "IDCAMS"
       ],
       "examples": "//MYJOB JOB (ACCT),'EXAMPLE',CLASS=A,MSGCLASS=X\n//STEP1 EXEC PGM=IEFBR14\n//DD1   DD  DSN=TEST.DATASET,DISP=(NEW,CATLG),SPACE=(CYL,(1,1))",
@@ -98,7 +98,7 @@
       "category": "Language",
       "related": [
         "COBOL",
-        "Assembler"
+        "ASSEMBLER"
       ],
       "examples": "DCL NOMBRE CHAR(20);\nNOMBRE = 'CARLOS';\nPUT SKIP LIST('Hello ', NOMBRE);",
       "image": "pl1",
@@ -365,7 +365,7 @@
         "IBM z/OS"
        ],
      "examples": "ADABAS does not use SQL as a universal native interface in every environment. Data access depends on the programming language, interfaces, and tools installed. A conceptual example of accessing ADABAS from a COBOL application may include calls specific to the ADABAS environment:\n\nIDENTIFICATION DIVISION.\nPROGRAM-ID. ADABAS01.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 WS-EMPLOYEE-ID PIC 9(8).\n01 WS-EMPLOYEE-NAME PIC X(30).\nPROCEDURE DIVISION.\n DISPLAY 'Conceptual example of ADABAS access'.\n DISPLAY 'Actual data retrieval requires the appropriate interfaces'.\n DISPLAY 'and configured data structures'.\n STOP RUN.",
-     "image": "ADABAS",
+     "image": "adabas",
      "deleted": false
    }    
   ]
