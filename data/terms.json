@@ -6008,6 +6008,758 @@
     "notes": "Cierra el bloque IF y sus ramas.",
     "category": "NATURAL",
     "deleted": false
-  }    
+  },
+
+{
+"id": "FORTRAN-0001",
+"name": "PROGRAM",
+"shortDescription": "Define el inicio de un programa principal",
+"longDescription": "La sentencia PROGRAM especifica el nombre del programa principal en Fortran. Marca el punto de entrada para la ejecución del código. Aunque en versiones antiguas era opcional, en Fortran moderno es una buena práctica imprescindible para mantener el código estructurado y claro.",
+"examples": "PROGRAM MAIN_CALC\n  IMPLICIT NONE\n  PRINT , 'INICIO'\nEND PROGRAM MAIN_CALC",
+"notes": "El nombre del programa debe coincidir en la sentencia de cierre END PROGRAM.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0002",
+"name": "IMPLICIT NONE",
+"shortDescription": "Desactiva el tipado implícito de variables",
+"longDescription": "Fuerza la declaración explícita de todas las variables antes de su uso. Por defecto, Fortran asigna tipo REAL a variables que empiezan con A-H u O-Z, e INTEGER a las que empiezan con I-N. IMPLICIT NONE elimina este comportamiento para prevenir errores graves por tipografía.",
+"examples": "PROGRAM TEST\n  IMPLICIT NONE\n  INTEGER :: TOTAL\nEND PROGRAM TEST",
+"notes": "Es una regla fundamental y obligatoria en el desarrollo de Fortran moderno.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0003",
+"name": "INTEGER",
+"shortDescription": "Declara variables de tipo entero",
+"longDescription": "Especifica que una variable o arreglo almacenará valores numéricos enteros sin parte decimal. Se puede ajustar la precisión o número de bytes mediante el parámetro KIND.",
+"examples": "INTEGER :: CONTADOR\nINTEGER(KIND=8) :: CONTADOR_GRANDE",
+"notes": "Por defecto suele ocupar 4 bytes (32 bits) en la mayoría de compiladores modernos.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0004",
+"name": "REAL",
+"shortDescription": "Declara variables de coma flotante",
+"longDescription": "Declara variables numéricas con parte fraccionaria o en notación científica. Al igual que con INTEGER, el parámetro KIND permite definir precisión simple, doble o cuádruple.",
+"examples": "REAL :: PI = 3.14159\nREAL(KIND=8) :: PRECISION_DOBLE",
+"notes": "KIND=8 equivale habitualmente a la antigua declaración DOUBLE PRECISION.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0005",
+"name": "CHARACTER",
+"shortDescription": "Declara cadenas de caracteres o texto",
+"longDescription": "Define campos de texto de longitud fija o asignable. El parámetro LEN determina el número máximo de caracteres que puede contener la variable.",
+"examples": "CHARACTER(LEN=30) :: NOMBRE\nCHARACTER(LEN=) :: TEXTO_GENERICO",
+"notes": "Si no se especifica LEN, la longitud por defecto es de 1 carácter.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0006",
+"name": "LOGICAL",
+"shortDescription": "Declara variables booleanas",
+"longDescription": "Define variables que solo pueden tomar los valores lógicos .TRUE. o .FALSE. Se utilizan principalmente para evaluar condiciones y controlar el flujo del programa.",
+"examples": "LOGICAL :: ES_VALIDO\nES_VALIDO = .TRUE.",
+"notes": "Los literales booleanos en Fortran siempre llevan puntos al inicio y al final.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0007",
+"name": "DIMENSION",
+"shortDescription": "Especifica el tamaño y forma de arreglos",
+"longDescription": "Permite definir las dimensiones de un arreglo (vector, matriz o multidimensional). Puede usarse como atributo dentro de la declaración de variables o como sentencia independiente.",
+"examples": "REAL, DIMENSION(10, 10) :: MATRIZ\nINTEGER :: VECTOR(100)",
+"notes": "En Fortran, los índices de arreglos comienzan por defecto en 1, a menos que se indique lo contrario.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0008",
+"name": "ALLOCATABLE",
+"shortDescription": "Declara arreglos dinámicos en memoria",
+"longDescription": "Especifica que la memoria para un arreglo no se asigna en tiempo de compilación, sino dinámicamente durante la ejecución mediante la sentencia ALLOCATE.",
+"examples": "REAL, ALLOCATABLE :: DATOS(:)\nALLOCATE(DATOS(100))",
+"notes": "Ayuda a gestionar eficientemente la memoria RAM cuando el tamaño de los datos es variable.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0009",
+"name": "IF",
+"shortDescription": "Evalúa condiciones lógicas",
+"longDescription": "Ejecuta bloques de código basándose en el resultado de una expresión booleana. Puede estructurarse en una sola línea o en bloques complejos con ELSEIF y ELSE.",
+"examples": "IF (VALOR > 100) THEN\n  PRINT *, 'ALTO'\nELSE\n  PRINT *, 'NORMAL'\nEND IF",
+"notes": "Requiere la cláusula THEN cuando se utiliza la estructura en bloque.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0010",
+"name": "DO",
+"shortDescription": "Estructura de bucle iterativo",
+"longDescription": "Permite repetir un bloque de instrucciones un número determinado de veces utilizando una variable contador, o de forma indefinida utilizando la variante DO WHILE.",
+"examples": "DO I = 1, 10\n  PRINT *, 'ITERACION:', I\nEND DO",
+"notes": "Se puede interrumpir la ejecución del bucle usando la sentencia EXIT.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0011",
+"name": "SELECT CASE",
+"shortDescription": "Selección múltiple según el valor de un escalar",
+"longDescription": "Estructura condicional que evalúa una expresión y ejecuta el bloque de código correspondiente al caso coincidente. Equivale al switch/case de otros lenguajes.",
+"examples": "SELECT CASE (OPCION)\n  CASE (1)\n    PRINT *, 'OPCION 1'\n  CASE DEFAULT\n    PRINT *, 'OTRA OPCION'\nEND SELECT",
+"notes": "Permite evaluar rangos de valores usando la sintaxis CASE (1:5).",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0012",
+"name": "SUBROUTINE",
+"shortDescription": "Define un procedimiento o subrutina",
+"longDescription": "Unidad de programa modular que realiza tareas específicas. A diferencia de FUNCTION, no devuelve un valor directo en su nombre; las entradas y salidas se gestionan mediante argumentos.",
+"examples": "SUBROUTINE CALCULAR(A, B, RES)\n  REAL, INTENT(IN) :: A, B\n  REAL, INTENT(OUT) :: RES\n  RES = A + B\nEND SUBROUTINE CALCULAR",
+"notes": "Se invoca obligatoriamente utilizando la sentencia CALL.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0013",
+"name": "FUNCTION",
+"shortDescription": "Define un bloque ejecutable que retorna un valor",
+"longDescription": "Bloque modular diseñado para realizar cálculos y devolver un valor único asignado a su propio nombre. Se evalúa dentro de expresiones numéricas o lógicas.",
+"examples": "FUNCTION CUADRADO(X) RESULT(RES)\n  REAL, INTENT(IN) :: X\n  REAL :: RES\n  RES = X * X\nEND FUNCTION CUADRADO",
+"notes": "Se recomienda usar la cláusula RESULT para especificar explícitamente el nombre del valor devuelto.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0014",
+"name": "MODULE",
+"shortDescription": "Encapsula variables, tipos y procedimientos",
+"longDescription": "Unidad estructural de Fortran moderno que agrupa definiciones de datos, estructuras TYPE y subprogramas. Es la base del diseño modular y la orientación a objetos en el lenguaje.",
+"examples": "MODULE MI_MODULO\n  IMPLICIT NONE\n  REAL, PARAMETER :: PI = 3.14159\nEND MODULE MI_MODULO",
+"notes": "Los módulos deben compilarse antes que los programas o archivos que los utilicen.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0015",
+"name": "USE",
+"shortDescription": "Importa un módulo en el ámbito actual",
+"longDescription": "Permite acceder a las variables, tipos de datos, interfaces y procedimientos públicos declarados dentro de un MODULE específico.",
+"examples": "PROGRAM TEST\n  USE MI_MODULO\n  IMPLICIT NONE\n  PRINT , PI\nEND PROGRAM TEST",
+"notes": "La sentencia USE debe colocarse inmediatamente al inicio, antes de IMPLICIT NONE.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0016",
+"name": "OPEN",
+"shortDescription": "Abre o conecta un archivo externo",
+"longDescription": "Asocia un archivo físico en disco con un número de unidad lógica (UNIT) para realizar operaciones de lectura o escritura.",
+"examples": "OPEN(UNIT=10, FILE='datos.txt', STATUS='OLD', ACTION='READ')",
+"notes": "Es conveniente verificar el estado de la apertura utilizando el parámetro IOSTAT.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0017",
+"name": "READ",
+"shortDescription": "Lee datos de un archivo o entrada estándar",
+"longDescription": "Transfiere información desde una unidad de entrada (teclado o archivo) hacia las variables especificadas en la instrucción.",
+"examples": "READ(, ) VARIABLE\nREAD(UNIT=10, FMT=100) VALOR1, VALOR2",
+"notes": "El uso de asteriscos READ(, ) indica lectura desde la entrada estándar con formato libre.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0018",
+"name": "WRITE",
+"shortDescription": "Escribe datos en un archivo o pantalla",
+"longDescription": "Envía valores de variables o literales a una unidad de salida lógica (pantalla o archivo en disco).",
+"examples": "WRITE(, ) 'MENSAJE'\nWRITE(UNIT=10, FMT='(F8.2)') IMPORTE",
+"notes": "A diferencia de PRINT, WRITE permite especificar la unidad de destino de forma flexible.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0019",
+"name": "CLOSE",
+"shortDescription": "Cierra la conexión con un archivo",
+"longDescription": "Libera el número de unidad lógica (UNIT) y asegura que todos los datos en búfer se hayan escrito correctamente en el disco.",
+"examples": "CLOSE(UNIT=10)\nCLOSE(UNIT=10, STATUS='DELETE')",
+"notes": "El parámetro STATUS='DELETE' permite borrar el archivo físico tras cerrarlo.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0020",
+"name": "COMMON",
+"shortDescription": "Define bloques de memoria compartida",
+"longDescription": "Instrucción heredada (legacy) utilizada para compartir variables globalmente entre diferentes unidades de programa sin pasarlas como parámetros. Obsoleta en Fortran moderno.",
+"examples": "COMMON /BLOQUE_DATOS/ X, Y, Z",
+"notes": "Su uso no es recomendable en código moderno; debe sustituirse por variables dentro de un MODULE.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0021",
+"name": "EQUIVALENCE",
+"shortDescription": "Comparte la misma ubicación de memoria entre variables",
+"longDescription": "Especifica que dos o más variables dentro de la misma unidad de programa comparten la misma dirección física de memoria RAM.",
+"examples": "REAL :: A\nREAL :: B\nEQUIVALENCE (A, B)",
+"notes": "Característica tradicional/legacy; desaconsejada en favor del uso de punteros o construcciones modernas.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0022",
+"name": "FORMAT",
+"shortDescription": "Especifica el formato explícito de entrada/salida",
+"longDescription": "Define las reglas exactas de alineación, ancho de campo, posiciones decimales y tipografía para la lectura y escritura de texto o números.",
+"examples": "100 FORMAT(I5, 2X, F10.4)\nWRITE(, 100) CONTADOR, TOTAL",
+"notes": "Los editores de formato incluyen I (entero), F (real), A (texto) y X (espacio en blanco).",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0023",
+"name": "CONTAINS",
+"shortDescription": "Separa el cuerpo principal de los subprogramas internos",
+"longDescription": "Delimita las definiciones de subrutinas o funciones internas que pertenecen exclusivamente a un PROGRAM, MODULE o SUBROUTINE antecedente.",
+"examples": "MODULE CALCULADORA\n  IMPLICIT NONE\nCONTAINS\n  SUBROUTINE SUMA(A, B)\n    ...\n  END SUBROUTINE SUMA\nEND MODULE CALCULADORA",
+"notes": "Garantiza que el compilador genere interfaces explícitas automáticamente para las rutinas containment.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0024",
+"name": "INTERFACE",
+"shortDescription": "Define bloque de interfaz explícita o sobrecarga",
+"longDescription": "Especifica la firma formal de subprogramas externos o permite definir procedimientos genéricos (sobrecarga de funciones y operadores).",
+"examples": "INTERFACE OPERAR\n  MODULE PROCEDURE SUMA_INT, SUMA_REAL\nEND INTERFACE OPERAR",
+"notes": "Esencial al interconectar Fortran con código C o librerías externas compiladas independientemente.",
+"category": "FORTRAN",
+"deleted": false
+},
+{
+"id": "FORTRAN-0025",
+"name": "TYPE",
+"shortDescription": "Define tipos de datos derivados/estructurados",
+"longDescription": "Permite al programador crear estructuras de datos personalizadas agrupando múltiples variables de diferentes tipos bajo un único nombre. Equivale a struct en C.",
+"examples": "TYPE :: EMPLEADO\n  CHARACTER(LEN=50) :: NOMBRE\n  INTEGER :: ID\n  REAL :: SALARIO\nEND TYPE EMPLEADO",
+"notes": "Los componentes de una variable estructurada se acceden mediante el operador % (ej. MI_EMP%NOMBRE).",
+"category": "FORTRAN",
+"deleted": false
+},
+  {
+    "id": "FORTRAN-0026",
+    "name": "TYPE",
+    "shortDescription": "Define un tipo de dato derivado",
+    "longDescription": "La sentencia TYPE permite definir tipos de datos personalizados estructurados (equivalentes a estructuras o clases simples en otros lenguajes), agrupando diferentes variables bajo un mismo nombre.",
+    "examples": "TYPE :: Empleado\n  CHARACTER(LEN=30) :: nombre\n  INTEGER :: id\n  REAL :: salario\nEND TYPE Empleado",
+    "notes": "Se instancian variables del tipo usando la sintaxis TYPE(NombreTipo).",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0027",
+    "name": "INTERFACE",
+    "shortDescription": "Define la interfaz de un procedimiento",
+    "longDescription": "Especifica el bloque de interfaz explícito para funciones o subrutinas, permitiendo sobrecarga de procedimientos, paso de procedimientos como argumentos o interoperabilidad con C.",
+    "examples": "INTERFACE\n  SUBROUTINE Procesar(x)\n    REAL, INTENT(INOUT) :: x\n  END SUBROUTINE Procesar\nEND INTERFACE",
+    "notes": "Es obligatorio para procedimientos con argumentos opcionales o arrays de forma asumida.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0028",
+    "name": "ALLOCATE",
+    "shortDescription": "Asigna memoria dinámica",
+    "longDescription": "Reserva espacio en memoria en tiempo de ejecución para arrays o punteros declarados con el atributo ALLOCATABLE o POINTER.",
+    "examples": "REAL, ALLOCATABLE :: matriz(:,:)\nALLOCATE(matriz(100, 100), STAT=st)",
+    "notes": "Es recomendable usar el parámetro STAT para capturar posibles errores de asignación.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0029",
+    "name": "DEALLOCATE",
+    "shortDescription": "Libera memoria dinámica",
+    "longDescription": "Libera la memoria previamente asignada a un array dinámico o puntero mediante ALLOCATE.",
+    "examples": "IF (ALLOCATED(matriz)) THEN\n  DEALLOCATE(matriz)\nEND IF",
+    "notes": "Evita fugas de memoria liberando los recursos que ya no se utilicen.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0030",
+    "name": "POINTER",
+    "shortDescription": "Declara una variable como puntero",
+    "longDescription": "Especifica que una variable o array actuará como un puntero capaz de apuntar a un objetivo (TARGET) o a memoria dinámica.",
+    "examples": "REAL, POINTER :: ptr(:)\nREAL, TARGET :: datos(10)\nptr => datos",
+    "notes": "Se asignan punteros utilizando el operador de puntero =>.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0031",
+    "name": "TARGET",
+    "shortDescription": "Especifica un objetivo para un puntero",
+    "longDescription": "Atributo necesario para que una variable o array pueda ser apuntada por un puntero declarado con POINTER.",
+    "examples": "INTEGER, TARGET :: valor\nINTEGER, POINTER :: p\np => valor",
+    "notes": "Las variables sin el atributo TARGET no pueden asignarse a punteros.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0032",
+    "name": "INQUIRE",
+    "shortDescription": "Consulta propiedades de archivos o unidades",
+    "longDescription": "Obtiene información en tiempo de ejecución sobre el estado de una unidad de entrada/salida o las propiedades de un archivo físico.",
+    "examples": "LOGICAL :: existe\nINQUIRE(FILE='datos.txt', EXIST=existe)",
+    "notes": "Permite verificar si un archivo existe antes de intentar abrirlo con OPEN.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0033",
+    "name": "BACKSPACE",
+    "shortDescription": "Retrocede un registro en un archivo",
+    "longDescription": "Mueve la posición actual del archivo abierto en la unidad indicada hacia atrás, colocándose justo antes del registro anterior.",
+    "examples": "BACKSPACE(UNIT=10)",
+    "notes": "Solo es aplicable en archivos de acceso secuencial.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0034",
+    "name": "REWIND",
+    "shortDescription": "Reposiciona el archivo al inicio",
+    "longDescription": "Mueve el puntero de lectura/escritura de la unidad especificada al comienzo del archivo.",
+    "examples": "REWIND(10)",
+    "notes": "Útil para rebalancear o volver a leer un archivo secuencial desde el principio.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0035",
+    "name": "FLUSH",
+    "shortDescription": "Vacía los búferes de E/S",
+    "longDescription": "Fuerza la escritura en disco de todos los datos pendientes en el búfer de entrada/salida para una unidad específica.",
+    "examples": "FLUSH(UNIT=10)",
+    "notes": "Garantiza que la información se guarde físicamente de inmediato.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0036",
+    "name": "NAMELIST",
+    "shortDescription": "Groupa variables para operaciones de E/S",
+    "longDescription": "Define un grupo de variables asociadas a un nombre que pueden ser leídas o escritas juntas en formato de lista nombrada.",
+    "examples": "NAMELIST /CONFIG/ op1, op2, limite\nREAD(UNIT=5, NML=CONFIG)",
+    "notes": "Muy utilizado para archivos de configuración e inicialización de parámetros.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0037",
+    "name": "RESHAPE",
+    "shortDescription": "Redimensiona un array",
+    "longDescription": "Función intrínseca que reconstruye un array cambiando la forma o dimensiones de sus elementos.",
+    "examples": "INTEGER :: v(6) = [1, 2, 3, 4, 5, 6]\nINTEGER :: m(2,3)\nm = RESHAPE(v, [2, 3])",
+    "notes": "Permite transformar vectores en matrices de múltiples dimensiones.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0038",
+    "name": "SIZE",
+    "shortDescription": "Obtiene el tamaño de un array",
+    "longDescription": "Función intrínseca que devuelve el número total de elementos de un array o el tamaño a lo largo de una dimensión específica.",
+    "examples": "INTEGER :: total\ntotal = SIZE(matriz, DIM=1)",
+    "notes": "Si no se indica DIM, devuelve el número total de elementos.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0039",
+    "name": "SHAPE",
+    "shortDescription": "Devuelve la forma de un array",
+    "longDescription": "Devuelve un vector de un solo rango que contiene la extensión o dimensión de cada eje del array pasado como argumento.",
+    "examples": "INTEGER :: dims(2)\ndims = SHAPE(matriz)",
+    "notes": "El tamaño del vector devuelto equivale al rango del array.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0040",
+    "name": "TRANSPOSE",
+    "shortDescription": "Transpone una matriz bidimensional",
+    "longDescription": "Función intrínseca que permuta las filas y columnas de una matriz de dimensión 2.",
+    "examples": "REAL :: A(2,3), B(3,2)\nB = TRANSPOSE(A)",
+    "notes": "Solo se aplica a matrices bidimensionales.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0041",
+    "name": "DOT_PRODUCT",
+    "shortDescription": "Calcula el producto escalar",
+    "longDescription": "Devuelve el producto escalar de dos vectores numéricos o lógicos de la misma longitud.",
+    "examples": "REAL :: res\nres = DOT_PRODUCT(vec1, vec2)",
+    "notes": "Ambos vectores deben ser unidimensionales y de igual tamaño.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0042",
+    "name": "MATMUL",
+    "shortDescription": "Multiplicación de matrices",
+    "longDescription": "Realiza la multiplicación matricial entre dos matrices o entre una matriz y un vector.",
+    "examples": "REAL :: C(2,2)\nC = MATMUL(A, B)",
+    "notes": "Las dimensiones internas de los operandos deben coincidir.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0043",
+    "name": "WHERE",
+    "shortDescription": "Operación condicional sobre arrays",
+    "longDescription": "Aplica operaciones de asignación únicamente en aquellos elementos de un array que cumplen una condición lógica dada.",
+    "examples": "WHERE (matriz < 0.0)\n  matriz = 0.0\nELSEWHERE\n  matriz = matriz * 2.0\nEND WHERE",
+    "notes": "Permite enmascarar arrays sin necesidad de bucles DO.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0044",
+    "name": "FORALL",
+    "shortDescription": "Asignación paralela/array elemental",
+    "longDescription": "Construcción que permite especificar asignaciones generalizadas en elementos de arrays según índices.",
+    "examples": "FORALL (i = 1:n, j = 1:m, i /= j)\n  A(i,j) = 1.0 / REAL(i - j)\nEND FORALL",
+    "notes": "Utilizado para optimización y ejecución paralela vectorial.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0045",
+    "name": "CONTAINS",
+    "shortDescription": "Separa procedimientos internos o de módulo",
+    "longDescription": "Delimita la sección del programa principal, módulo o subrutina donde se definen procedimientos o funciones internas.",
+    "examples": "MODULE MiModulo\n  IMPLICIT NONE\nCONTAINS\n  SUBROUTINE SubInterna()\n  END SUBROUTINE SubInterna\nEND MODULE MiModulo",
+    "notes": "Todo lo que está después de CONTAINS tiene acceso a los datos de la unidad contenedora.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0046",
+    "name": "OPTIONAL",
+    "shortDescription": "Declara un argumento como opcional",
+    "longDescription": "Atributo aplicado a un argumento Dummy que indica que no es obligatorio pasarlo al llamar al procedimiento.",
+    "examples": "SUBROUTINE Saludar(msg)\n  CHARACTER(LEN=*), OPTIONAL, INTENT(IN) :: msg\n  IF (PRESENT(msg)) PRINT *, msg\nEND SUBROUTINE Saludar",
+    "notes": "Se comprueba su presencia mediante la función intrínseca PRESENT().",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0047",
+    "name": "PRESENT",
+    "shortDescription": "Verifica presencia de argumento opcional",
+    "longDescription": "Función intrínseca que devuelve un valor lógico TRUE si un argumento declarado con OPTIONAL fue suministrado en la llamada.",
+    "examples": "IF (PRESENT(param)) THEN\n  ! Procesar param\nEND IF",
+    "notes": "Evita errores de acceso a argumentos no pasados.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0048",
+    "name": "PURE",
+    "shortDescription": "Declara un procedimiento sin efectos secundarios",
+    "longDescription": "Indica que una función o subrutina no modifica variables globales ni realiza operaciones de entrada/salida, garantizando la ausencia de efectos secundarios.",
+    "examples": "PURE REAL FUNCTION Sumar(a, b)\n  REAL, INTENT(IN) :: a, b\n  Sumar = a + b\nEND FUNCTION Sumar",
+    "notes": "Requisito clave para procedimientos usados dentro de construcciones FORALL o DO CONCURRENT.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0049",
+    "name": "ELEMENTAL",
+    "shortDescription": "Procedimiento aplicable escalarmente o a arrays",
+    "longDescription": "Define un procedimiento escalar PURE que puede ser invocado automáticamente sobre arrays elemento a elemento.",
+    "examples": "ELEMENTAL REAL FUNCTION Duplicar(x)\n  REAL, INTENT(IN) :: x\n  Duplicar = x * 2.0\nEND FUNCTION Duplicar",
+    "notes": "Si se le pasa un array, devuelve un array de la misma forma con el resultado aplicado a cada elemento.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0050",
+    "name": "ASSOCIATE",
+    "shortDescription": "Crea alias temporales para expresiones o variables",
+    "longDescription": "Construcción que asocia un nombre temporal a una variable compleja, expresión o sección de array dentro de un bloque de código.",
+    "examples": "ASSOCIATE (z => datos(i)%valores(j)%x)\n  z = z + 1.0\nEND ASSOCIATE",
+    "notes": "Simplifica la sintaxis de código cuando se accede repetidamente a estructuras anidadas.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+{
+    "id": "FORTRAN-0051",
+    "name": "DO CONCURRENT",
+    "shortDescription": "Bucle para ejecución paralela/concurrente",
+    "longDescription": "Especifica que las iteraciones de un bucle no tienen dependencias entre sí y pueden ser ejecutadas en cualquier orden o en paralelo por el compilador.",
+    "examples": "DO CONCURRENT (i = 1:n)\n  a(i) = b(i) + c(i)\nEND DO",
+    "notes": "Es la forma moderna preferida frente a FORALL para optimización en procesadores multinúcleo.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0052",
+    "name": "BLOCK",
+    "shortDescription": "Define un bloque de ámbito local",
+    "longDescription": "Permite crear una sección de código delimitada dentro de un procedimiento donde se pueden declarar variables locales temporales que solo existen durante la ejecución de dicho bloque.",
+    "examples": "BLOCK\n  INTEGER :: temp\n  temp = x\n  x = y\n  y = temp\nEND BLOCK",
+    "notes": "Introducido en Fortran 2008 para mejorar la encapsulación y gestión de variables locales.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0053",
+    "name": "IMPORT",
+    "shortDescription": "Importa símbolos en un bloque INTERFACE",
+    "longDescription": "Hace visibles las entidades declaradas en el ámbito del procedimiento contenedor dentro de un bloque de interfaz explícito.",
+    "examples": "INTERFACE\n  SUBROUTINE Sub(x)\n    IMPORT :: TipoDatos\n    TYPE(TipoDatos) :: x\n  END SUBROUTINE Sub\nEND INTERFACE",
+    "notes": "Evita tener que redefinir tipos o constantes dentro del bloque de interfaz.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0054",
+    "name": "VOLATILE",
+    "shortDescription": "Evita optimizaciones de almacenamiento en memoria",
+    "longDescription": "Atributo que indica que el valor de una variable puede ser modificado por medios externos al programa (como interrupciones de hardware u otros hilos de ejecución).",
+    "examples": "INTEGER, VOLATILE :: estado_hardware",
+    "notes": "Fuerza al compilador a leer/escribir siempre en la posición de memoria física real.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0055",
+    "name": "VALUE",
+    "shortDescription": "Paso de argumentos por valor",
+    "longDescription": "Especifica que un argumento Dummy se pasa por valor en lugar de la transmisión por referencia habitual de Fortran, recibiendo una copia local.",
+    "examples": "SUBROUTINE Procesar(n)\n  INTEGER, VALUE :: n\n  ! Modificar n no afecta a la variable original\nEND SUBROUTINE Procesar",
+    "notes": "Muy útil al interoperar con funciones en lenguaje C (ISO_C_BINDING).",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0056",
+    "name": "ISO_C_BINDING",
+    "shortDescription": "Módulo intrínseco para interoperabilidad con C",
+    "longDescription": "Módulo estandarizado que proporciona tipos de datos, constantes y atributos (BIND(C)) necesarios para llamar a bibliotecas de C desde Fortran y viceversa.",
+    "examples": "USE, INTRINSIC :: ISO_C_BINDING\nINTEGER(C_INT) :: status\nTYPE(C_PTR) :: ptr",
+    "notes": "Garantiza la correspondencia exacta de tipos entre compiladores de Fortran y C.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0057",
+    "name": "BIND",
+    "shortDescription": "Enlaza un procedimiento o tipo con C",
+    "longDescription": "Atributo que especifica que una entidad, variable o procedimiento es interoperable con el lenguaje C usando las convenciones de enlace estándar de C.",
+    "examples": "SUBROUTINE C_Func(a) BIND(C, NAME='c_func')\n  REAL(C_FLOAT), VALUE :: a\nEND SUBROUTINE C_Func",
+    "notes": "Permite definir explícitamente el nombre del símbolo exportado/importado.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0058",
+    "name": "CLASS",
+    "shortDescription": "Declara una variable polimórfica",
+    "longDescription": "Permite declarar objetos polimórficos capaces de contener valores del tipo especificado o de cualquiera de sus tipos derivados extendidos (POO).",
+    "examples": "CLASS(Figura), ALLOCATABLE :: mi_figura",
+    "notes": "Es la base de la programación orientada a objetos en Fortran moderno.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0059",
+    "name": "EXTENDS",
+    "shortDescription": "Herencia entre tipos derivados",
+    "longDescription": "Cláusula empleada en la definición de un tipo derivado para heredar los componentes y métodos de un tipo base.",
+    "examples": "TYPE, EXTENDS(Figura) :: Circulo\n  REAL :: radio\nEND TYPE Circulo",
+    "notes": "Permite construir jerarquías de tipos polimórficos.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0060",
+    "name": "SELECT TYPE",
+    "shortDescription": "Estructura de selección polimórfica",
+    "longDescription": "Permite seleccionar bloques de ejecución según el tipo dinámico real de un objeto polimórfico declarado con CLASS.",
+    "examples": "SELECT TYPE (f => mi_figura)\nTYPE IS (Circulo)\n  PRINT *, f%radio\nCLASS DEFAULT\n  PRINT *, 'Figura genérica'\nEND SELECT",
+    "notes": "Equivalente al casting seguro o inspección de tipo dinámico.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0061",
+    "name": "GENERIC",
+    "shortDescription": "Define procedimientos genéricos o sobrecargados",
+    "longDescription": "Especifica una interfaz genérica que agrupa diferentes funciones o subrutinas bajo un mismo nombre invocable.",
+    "examples": "INTERFACE Limpiar\n  MODULE PROCEDURE LimpiarInt, LimpiarReal\nEND INTERFACE Limpiar",
+    "notes": "El compilador selecciona el procedimiento adecuado según los tipos de los argumentos.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0062",
+    "name": "MOVE_ALLOC",
+    "shortDescription": "Mueve una asignación dinámica de memoria",
+    "longDescription": "Subrutina intrínseca que transfiere la asignación de memoria y datos de un objeto allocatable a otro de forma eficiente sin realizar copias.",
+    "examples": "CALL MOVE_ALLOC(FROM=temp, TO=array)",
+    "notes": "Muy útil para redimensionar arrays dinámicos sin penalización de rendimiento.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0063",
+    "name": "SUM",
+    "shortDescription": "Suma los elementos de un array",
+    "longDescription": "Función intrínseca que calcula la suma total de los elementos de un array o a lo largo de una dimensión específica, opcionalmente bajo una máscara.",
+    "examples": "REAL :: total\ntotal = SUM(valores, MASK=valores > 0.0)",
+    "notes": "El parámetro opcional DIM permite sumar por filas o columnas.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0064",
+    "name": "PRODUCT",
+    "shortDescription": "Multiplica los elementos de un array",
+    "longDescription": "Función intrínseca que calcula el producto total de los elementos de un array numérico.",
+    "examples": "REAL :: resultado\nresultado = PRODUCT(factores)",
+    "notes": "Admite también los parámetros opcionales DIM y MASK.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0065",
+    "name": "MAXVAL",
+    "shortDescription": "Obtiene el valor máximo de un array",
+    "longDescription": "Devuelve el elemento con el valor máximo dentro de un array numérico.",
+    "examples": "REAL :: maximo\nmaximo = MAXVAL(temperaturas)",
+    "notes": "Puede combinarse con MASK para evaluar solo un subconjunto de elementos.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0066",
+    "name": "MINVAL",
+    "shortDescription": "Obtiene el valor mínimo de un array",
+    "longDescription": "Devuelve el elemento con el valor mínimo contenido en un array numérico.",
+    "examples": "REAL :: minimo\nminimo = MINVAL(datos)",
+    "notes": "Al igual que MAXVAL, admite el uso de MASK y DIM.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0067",
+    "name": "MAXLOC",
+    "shortDescription": "Devuelve la ubicación del valor máximo",
+    "longDescription": "Función intrínseca que busca el valor máximo en un array y devuelve sus índices de posición.",
+    "examples": "INTEGER :: pos(1)\npos = MAXLOC(lista)",
+    "notes": "Devuelve un array unidimensional con las coordenadas del elemento máximo.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0068",
+    "name": "MINLOC",
+    "shortDescription": "Devuelve la ubicación del valor mínimo",
+    "longDescription": "Función intrínseca que busca el valor mínimo en un array y devuelve las coordenadas de su posición.",
+    "examples": "INTEGER :: pos(2)\npos = MINLOC(matriz)",
+    "notes": "Útil para encontrar pivotes o extremos en algoritmos numéricos.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0069",
+    "name": "COUNT",
+    "shortDescription": "Cuenta elementos verdaderos en un array lógico",
+    "longDescription": "Devuelve el número de elementos que evalúan como TRUE dentro de un array de tipo LOGICAL o condición de máscara.",
+    "examples": "INTEGER :: aprobados\naprobados = COUNT(notas >= 5.0)",
+    "notes": "Muy rápido para obtener estadísticas sobre un conjunto de datos.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0070",
+    "name": "ANY",
+    "shortDescription": "Verifica si algún elemento es verdadero",
+    "longDescription": "Determina si al menos un valor de un array lógico es TRUE.",
+    "examples": "IF (ANY(errores)) THEN\n  PRINT *, 'Se detectaron errores'\nEND IF",
+    "notes": "Evita tener que recorrer un array manualmente para comprobar una condición.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0071",
+    "name": "ALL",
+    "shortDescription": "Verifica si todos los elementos son verdaderos",
+    "longDescription": "Determina si todos los valores de un array de tipo LOGICAL o máscara evalúan como TRUE.",
+    "examples": "IF (ALL(validados)) THEN\n  PRINT *, 'Proceso correcto'\nEND IF",
+    "notes": "Devuelve TRUE solo si la condición se cumple en la totalidad de los elementos.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0072",
+    "name": "PACK",
+    "shortDescription": "Empaqueta un array en un vector según máscara",
+    "longDescription": "Selecciona los elementos de un array de cualquier dimensión que cumplen con una máscara lógica y los empaqueta en un vector de rango 1.",
+    "examples": "REAL :: v(10)\nv = PACK(matriz, MASK=matriz /= 0.0)",
+    "notes": "Ideal para filtrar datos y eliminar ceros o valores nulos.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0073",
+    "name": "UNPACK",
+    "shortDescription": "Desempaqueta un vector en un array según máscara",
+    "longDescription": "Toma los elementos de un vector de rango 1 y los distribuye en las posiciones de un array donde la máscara sea TRUE.",
+    "examples": "matriz = UNPACK(vector, MASK=mascara, FIELD=matriz_base)",
+    "notes": "Operación inversa a PACK.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0074",
+    "name": "MERGE",
+    "shortDescription": "Selección elemental entre dos arrays/escalares",
+    "longDescription": "Devuelve valores de un origen T_SOURCE o F_SOURCE según el resultado de cada elemento en una máscara lógica MASK.",
+    "examples": "res = MERGE(a, b, MASK=a > b)",
+    "notes": "Equivalente al operador ternario o condicional aplicado de forma elemental.",
+    "category": "FORTRAN",
+    "deleted": false
+  },
+  {
+    "id": "FORTRAN-0075",
+    "name": "ERROR STOP",
+    "shortDescription": "Detiene la ejecución notificando un error",
+    "longDescription": "Finaliza inmediatamente la ejecución del programa indicando al sistema operativo un estado de terminación anómala o código de error.",
+    "examples": "IF (val < 0) ERROR STOP 'Error: valor negativo no permitido'",
+    "notes": "A diferencia de STOP, comunica un código de salida distinto de cero a los scripts del sistema o JCL.",
+    "category": "FORTRAN",
+    "deleted": false
+  }
+    
 ]
 }
