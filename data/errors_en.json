@@ -7000,7 +7000,7 @@
       "code": "9202",
       "shortDescription": "RECORD TYPE missing in PLISRTx call.",
       "longDescription": "RECORD TYPE missing in PLISRTx call. The PLISRTx call requires RECORD TYPE to be specified",
-      "system": "PLI",
+      "system": "PL/I",
       "severity": "LOW",
       "reason": "The PLISRTx call requires RECORD TYPE to be specified",
       "examples": "PL/I condition 9202",
