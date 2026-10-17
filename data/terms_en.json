@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-10-01",
+  "versionDate": "2026-10-02",
   "terms": [
     {
     "id": "COBOL-0001",
@@ -5482,7 +5482,478 @@
 "notes": "Already generated previously, but appears in your text.",
 "category": "PL/I",
 "deleted": false
-}
+},
+
+{
+    "id": "NATURAL-0001",
+    "name": "DEFINE DATA",
+    "shortDescription": "Starts the data definition",
+    "longDescription": "Opens the section where variables, parameters, and structures used by the Natural object are declared.",
+    "examples": "DEFINE DATA LOCAL\n1 #NOMBRE (A20)\n1 #IMPORTE (P9.2)\nEND-DEFINE",
+    "notes": "The data section must be closed with END-DEFINE.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0002",
+    "name": "LOCAL",
+    "shortDescription": "Declares local data",
+    "longDescription": "Declares variables local to the current Natural object.",
+    "examples": "DEFINE DATA LOCAL\n1 #CONTADOR (I4)\nEND-DEFINE",
+    "notes": "Typically used for work variables.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0003",
+    "name": "GLOBAL",
+    "shortDescription": "Declares global data",
+    "longDescription": "Declares global data shared across Natural contexts that use the corresponding global area.",
+    "examples": "DEFINE DATA GLOBAL\n1 #USUARIO (A20)\nEND-DEFINE",
+    "notes": "Scope depends on the execution context.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0004",
+    "name": "PARAMETER",
+    "shortDescription": "Defines parameters",
+    "longDescription": "Declares the interface parameters of a Natural object, such as a subprogram called with CALLNAT.",
+    "examples": "DEFINE DATA PARAMETER\n1 #CLIENTE (A10)\nEND-DEFINE",
+    "notes": "Order and formats must match between caller and called object.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0005",
+    "name": "END-DEFINE",
+    "shortDescription": "Ends the data definition",
+    "longDescription": "Closes the DEFINE DATA section and leads to executable statements.",
+    "examples": "DEFINE DATA LOCAL\n1 #OK (L)\nEND-DEFINE\n#OK := TRUE",
+    "notes": "Must close the corresponding data section.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0006",
+    "name": "A",
+    "shortDescription": "Alphanumeric format",
+    "longDescription": "Represents alphanumeric data, such as names, codes, and texts.",
+    "examples": "1 #NOMBRE (A30)",
+    "notes": "The length is specified in parentheses.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0007",
+    "name": "N",
+    "shortDescription": "Numeric format",
+    "longDescription": "Represents unsigned numeric values according to the Natural format definition.",
+    "examples": "1 #CANTIDAD (N5)",
+    "notes": "Select length and format according to the required range.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0008",
+    "name": "P",
+    "shortDescription": "Packed numeric format",
+    "longDescription": "Represents packed numeric values and can specify decimal positions.",
+    "examples": "1 #PRECIO (P7.2)",
+    "notes": "Typically used in business calculations.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0009",
+    "name": "I",
+    "shortDescription": "Integer format",
+    "longDescription": "Represents binary integer values.",
+    "examples": "1 #CONTADOR (I4)",
+    "notes": "Consider the range supported by the length.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0010",
+    "name": "L",
+    "shortDescription": "Logical format",
+    "longDescription": "Represents logical values, true or false.",
+    "examples": "1 #ENCONTRADO (L)\n#ENCONTRADO := TRUE",
+    "notes": "Can be used directly in conditions.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0011",
+    "name": "DEFINE WORK FILE",
+    "shortDescription": "Defines a work file",
+    "longDescription": "Configures a work file for input or output operations.",
+    "examples": "DEFINE WORK FILE 1 'salida.txt'",
+    "notes": "Path and configuration depend on the environment.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0012",
+    "name": "READ",
+    "shortDescription": "Reads records",
+    "longDescription": "Iterates through records of a data view applying reading, selection, or sorting criteria.",
+    "examples": "READ EMPLOYEES BY NAME\n  DISPLAY NAME\nEND-READ",
+    "notes": "Syntax depends on the view and database.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0013",
+    "name": "FIND",
+    "shortDescription": "Finds records",
+    "longDescription": "Selects records that meet specified criteria.",
+    "examples": "FIND EMPLOYEES WITH DEPARTMENT = 'DEV'\n  DISPLAY NAME\nEND-FIND",
+    "notes": "Results depend on the search condition.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0014",
+    "name": "GET",
+    "shortDescription": "Retrieves a record by ISN",
+    "longDescription": "Retrieves a record identified by its internal sequence number in supported environments.",
+    "examples": "GET EMPLOYEES 123\nDISPLAY NAME",
+    "notes": "ISN usage depends on the database and view.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0015",
+    "name": "HISTOGRAM",
+    "shortDescription": "Obtains descriptor values",
+    "longDescription": "Iterates through values of a descriptor or field, typically to get distinct values and their frequencies.",
+    "examples": "HISTOGRAM EMPLOYEES DEPARTMENT\n  DISPLAY DEPARTMENT\nEND-HISTOGRAM",
+    "notes": "Useful for analysis grouped by values.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0016",
+    "name": "STORE",
+    "shortDescription": "Inserts a record",
+    "longDescription": "Creates a new record in the specified data view.",
+    "examples": "STORE EMPLOYEES\n  NAME := 'ANA'\n  DEPARTMENT := 'DEV'\nEND-STORE",
+    "notes": "Respects mandatory fields and integrity rules.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0017",
+    "name": "UPDATE",
+    "shortDescription": "Updates a record",
+    "longDescription": "Modifies the current record within the corresponding data access context.",
+    "examples": "UPDATE\n  DEPARTMENT := 'OPS'",
+    "notes": "Must be used within the appropriate record context.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0018",
+    "name": "DELETE",
+    "shortDescription": "Deletes a record",
+    "longDescription": "Deletes a record within the supported data access context.",
+    "examples": "DELETE",
+    "notes": "Validate selection before performing mass deletions.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0019",
+    "name": "END TRANSACTION",
+    "shortDescription": "Commits a transaction",
+    "longDescription": "Commits logical unit of work changes in supported transactional environments.",
+    "examples": "END TRANSACTION",
+    "notes": "Behavior depends on the database and configuration.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0020",
+    "name": "BACKOUT TRANSACTION",
+    "shortDescription": "Rolls back a transaction",
+    "longDescription": "Requests to roll back current logical unit of work changes when supported by the environment.",
+    "examples": "BACKOUT TRANSACTION",
+    "notes": "Coordinate with error handling.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0021",
+    "name": "CALLNAT",
+    "shortDescription": "Calls a subprogram",
+    "longDescription": "Invokes a Natural subprogram and allows parameter exchange.",
+    "examples": "CALLNAT 'SUBPROG' #CLIENTE #TOTAL",
+    "notes": "Name and parameter interface must match.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0022",
+    "name": "PERFORM",
+    "shortDescription": "Executes a subroutine",
+    "longDescription": "Transfers control to a subroutine defined within the same Natural object.",
+    "examples": "PERFORM MOSTRAR-MENSAJE",
+    "notes": "The subroutine is declared with DEFINE SUBROUTINE.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0023",
+    "name": "DEFINE SUBROUTINE",
+    "shortDescription": "Defines a subroutine",
+    "longDescription": "Starts the definition of a local routine callable via PERFORM.",
+    "examples": "DEFINE SUBROUTINE MOSTRAR-MENSAJE\n  DISPLAY 'HOLA'\nEND-SUBROUTINE",
+    "notes": "The name must match the call.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0024",
+    "name": "ESCAPE BOTTOM",
+    "shortDescription": "Exits the current loop",
+    "longDescription": "Terminates the innermost loop and continues immediately after it.",
+    "examples": "FOR #I = 1 TO 10\n  IF #I = 5\n    ESCAPE BOTTOM\n  END-IF\nEND-FOR",
+    "notes": "Do not confuse with ESCAPE TOP.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0025",
+    "name": "ESCAPE TOP",
+    "shortDescription": "Skips to the next cycle",
+    "longDescription": "Interrupts the remainder of the current iteration and passes to the next one.",
+    "examples": "FOR #I = 1 TO 10\n  IF #I = 5\n    ESCAPE TOP\n  END-IF\n  DISPLAY #I\nEND-FOR",
+    "notes": "Useful for skipping part of an iteration's processing.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0026",
+    "name": "IF",
+    "shortDescription": "Evaluates a condition",
+    "longDescription": "Executes statements based on the result of a logical condition.",
+    "examples": "IF #IMPORTE > 100\n  DISPLAY 'ALTO'\nELSE\n  DISPLAY 'NORMAL'\nEND-IF",
+    "notes": "END-IF delimits the conditional block.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0027",
+    "name": "DECIDE ON FIRST VALUE OF",
+    "shortDescription": "Selects an alternative",
+    "longDescription": "Compares an expression against alternative values and executes the corresponding branch.",
+    "examples": "DECIDE ON FIRST VALUE OF #OPCION\n  VALUE 'A' DISPLAY 'ALTA'\n  VALUE 'B' DISPLAY 'BAJA'\nEND-DECIDE",
+    "notes": "Verify syntax supported by the Natural version.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0028",
+    "name": "FOR",
+    "shortDescription": "Repeats with a counter",
+    "longDescription": "Executes a block for a range of control values.",
+    "examples": "FOR #I = 1 TO 5\n  DISPLAY #I\nEND-FOR",
+    "notes": "Suitable when iterations depend on a counter.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0029",
+    "name": "REPEAT",
+    "shortDescription": "Repeats a block",
+    "longDescription": "Repeatedly executes statements until the exit condition is met.",
+    "examples": "REPEAT\n  ADD 1 TO #CONTADOR\nUNTIL #CONTADOR = 5",
+    "notes": "Ensure that the exit condition can be reached.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0030",
+    "name": "INPUT",
+    "shortDescription": "Requests data",
+    "longDescription": "Defines an interactive screen for the user to enter values.",
+    "examples": "INPUT 'Código:' #CODIGO",
+    "notes": "Display options depend on syntax and environment.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0031",
+    "name": "DISPLAY",
+    "shortDescription": "Displays data",
+    "longDescription": "Presents values on screen, often in list or tabular format.",
+    "examples": "DISPLAY 'CLIENTE' #CLIENTE 'TOTAL' #TOTAL",
+    "notes": "Display depends on output attributes.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0032",
+    "name": "WRITE",
+    "shortDescription": "Writes an output line",
+    "longDescription": "Generates text output, for example for reports and listings.",
+    "examples": "WRITE 'TOTAL:' #TOTAL",
+    "notes": "Not equivalent to updating a database record.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0033",
+    "name": "FETCH",
+    "shortDescription": "Transfers execution",
+    "longDescription": "Starts another Natural object and transfers control to the specified object.",
+    "examples": "FETCH 'MENU'",
+    "notes": "Return depends on the FETCH variant used.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0034",
+    "name": "FETCH RETURN",
+    "shortDescription": "Executes another object with return",
+    "longDescription": "Transfers control to another Natural object while preserving the corresponding return flow.",
+    "examples": "FETCH RETURN 'CONSULTA'",
+    "notes": "Useful in navigation between interactive programs.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0035",
+    "name": "RESET",
+    "shortDescription": "Initializes variables",
+    "longDescription": "Assigns initial values to the specified variables.",
+    "examples": "RESET #CONTADOR #NOMBRE",
+    "notes": "Check initial values for the formats used.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0036",
+    "name": "MOVE",
+    "shortDescription": "Transfers a value",
+    "longDescription": "Assigns a value to a target variable applying Natural conversion rules.",
+    "examples": "MOVE 'ABC' TO #TEXTO",
+    "notes": "Target format affects padding or conversion.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0037",
+    "name": "COMPUTE",
+    "shortDescription": "Calculates an expression",
+    "longDescription": "Evaluates an arithmetic expression and assigns the result to a variable.",
+    "examples": "COMPUTE #TOTAL = #PRECIO * #CANTIDAD",
+    "notes": "Check precision and target capacity.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0038",
+    "name": "ADD",
+    "shortDescription": "Adds a value",
+    "longDescription": "Increments a numeric variable by the specified amount.",
+    "examples": "ADD 1 TO #CONTADOR",
+    "notes": "Consider field range.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0039",
+    "name": "SUBTRACT",
+    "shortDescription": "Subtracts a value",
+    "longDescription": "Subtracts an amount from another according to specified operands.",
+    "examples": "SUBTRACT #DESCUENTO FROM #TOTAL",
+    "notes": "Check operand order.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0040",
+    "name": "EXAMINE",
+    "shortDescription": "Examines a string",
+    "longDescription": "Searches, counts, or replaces occurrences of characters or strings based on specified options.",
+    "examples": "EXAMINE #TEXTO FOR 'A' GIVING NUMBER #CUENTA",
+    "notes": "Syntax depends on the required operation.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0041",
+    "name": "SEPARATE",
+    "shortDescription": "Splits a string",
+    "longDescription": "Splits an input string into target fields.",
+    "examples": "SEPARATE #LINEA INTO #CAMPO1 #CAMPO2",
+    "notes": "Ensure target fields have sufficient length.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0042",
+    "name": "COMPRESS",
+    "shortDescription": "Combines values into a string",
+    "longDescription": "Concatenates values and literals into an output string.",
+    "examples": "COMPRESS #NOMBRE #APELLIDO INTO #NOMBRE-COMPLETO",
+    "notes": "Control target length and separation options.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0043",
+    "name": "REDEFINE",
+    "shortDescription": "Defines an alternative data view",
+    "longDescription": "Allows interpreting an already declared storage area through another structure.",
+    "examples": "1 #FECHA-RAW (A8)\n1 REDEFINE #FECHA-RAW\n  2 #ANIO (A4)\n  2 #MES (A2)\n  2 #DIA (A2)",
+    "notes": "Redefined fields share storage.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0044",
+    "name": "VIEW",
+    "shortDescription": "Declares a data view",
+    "longDescription": "Declares in DEFINE DATA the logical structure through which the program accesses data from a compatible database or dictionary.",
+    "examples": "DEFINE DATA LOCAL\n1 EMPLOYEES VIEW OF EMPLOYEES\n  2 NAME\nEND-DEFINE",
+    "notes": "Available fields depend on the view definition.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0045",
+    "name": "END-READ",
+    "shortDescription": "Closes a READ statement",
+    "longDescription": "Marks the end of the READ processing block.",
+    "examples": "READ EMPLOYEES BY NAME\n  DISPLAY NAME\nEND-READ",
+    "notes": "Must close the corresponding READ.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0046",
+    "name": "END-FIND",
+    "shortDescription": "Closes a FIND statement",
+    "longDescription": "Marks the end of the FIND processing block.",
+    "examples": "FIND EMPLOYEES WITH DEPARTMENT = 'DEV'\n  DISPLAY NAME\nEND-FIND",
+    "notes": "Must close the corresponding FIND.",
+    "category": "NATURAL",
+    "deleted": false
+  },
+  {
+    "id": "NATURAL-0047",
+    "name": "END-IF",
+    "shortDescription": "Closes an IF condition",
+    "longDescription": "Marks the end of the IF conditional structure.",
+    "examples": "IF #OK\n  DISPLAY 'OK'\nEND-IF",
+    "notes": "Closes the IF block and its branches.",
+    "category": "NATURAL",
+    "deleted": false
+  }    
   ]
 }
 
