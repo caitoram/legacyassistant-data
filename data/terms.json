@@ -1,5 +1,5 @@
 {
-  "versionDate": "2026-10-02",
+  "versionDate": "2026-10-01",
   "terms": [
    {
     "id": "COBOL-0001",
@@ -8,7 +8,7 @@
     "longDescription": "La cláusula PIC especifica la estructura, tipo y formato de un campo dentro de la Data Division. Permite definir si un dato es numérico, alfanumérico, decimal, con signo, con relleno o con longitud fija. Es fundamental para garantizar la correcta interpretación de datos provenientes de archivos, pantallas o procesos batch.",
     "examples": "01 CAMPO-NUM PIC 9(5).\n01 CAMPO-ALFA PIC X(10).",
     "notes": "El formato del destino controla cómo se ajusta o convierte el valor durante un MOVE.",
-    "category": "PRUEBA",
+    "category": "COBOL",
     "deleted": false
   },
   {
