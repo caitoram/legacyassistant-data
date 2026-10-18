@@ -209,7 +209,6 @@
       "code": "S80A",
       "shortDescription": "Insufficient virtual storage. Error during execution of a GETMAIN macro.",
       "longDescription": "Insufficient storage (REGION too small). Increase REGION or optimize memory usage. Common in programs with large tables.\n Error during execution of a GETMAIN macro. More storage was required than was available; ONCODE 9050; increase REGION",
-",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "Increase REGION or optimize memory usage. Common in programs with large tables.\n More storage was required than was available; ONCODE 9050",
