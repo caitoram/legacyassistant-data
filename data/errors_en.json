@@ -1,50 +1,53 @@
 {
-  "versionDate": "2026-10-01",
+  "versionDate": "2026-10-02",
   "errors": [
     {
       "id": "ERR-ABEND-0001",
       "code": "S0C7",
       "shortDescription": "Data exception caused by a non-numeric value",
-      "longDescription": "Data exception: attempt to convert non-numeric data. It usually occurs when moving alphanumeric data to numeric PACKED or BINARY fields. Review the record contents and the copybook map.",
+      "longDescription": "Data exception: attempt to convert non-numeric data. It usually occurs when moving alphanumeric data to numeric PACKED or BINARY fields. Review the record contents and the copybook map.\n A decimal operation is attempted in which one of the operands is non-numeric. A field defined as numeric is compared even though it contains no digits. A numeric value is moved to an edited field when the source does not contain digits. Decimal operation with a non-numeric operand; comparison of a numeric field containing no digits; MOVE to an edited field with a non-numeric value.",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "It usually occurs when moving alphanumeric data to numeric PACKED or BINARY fields. Review the record contents and the copybook map.",
+      "reason": "It usually occurs when moving alphanumeric data to numeric PACKED or BINARY fields. Review the record contents and the copybook map.\n Decimal operation with a non-numeric operand; comparison of a numeric field containing no digits; MOVE to an edited field with a non-numeric value..",
       "examples": "ABEND S0C7",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0002",
       "code": "S0C4",
       "shortDescription": "Access to an invalid memory address",
-      "longDescription": "Memory violation: invalid address. Generally caused by uninitialized pointers, incorrect offsets, or out-of-bounds access to tables.",
+      "longDescription": "Memory violation: invalid address. Generally caused by uninitialized pointers, incorrect offsets, or out-of-bounds access to tables.\n Protection error. READ of a file that has not been opened. DD is missing. Procedure area overwritten. Fields from a file that was not opened are being processed. Table index exceeds its range. READ without OPEN; missing DD; procedure area overwritten; index out of range.",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "Generally caused by uninitialized pointers, incorrect offsets, or out-of-bounds access to tables.",
+      "reason": "Generally caused by uninitialized pointers, incorrect offsets, or out-of-bounds access to tables.\n READ without OPEN; missing DD; procedure area overwritten; index out of range.",
       "examples": "ABEND S0C4",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0003",
       "code": "S0C1",
       "shortDescription": "Execution of an invalid instruction",
-      "longDescription": "Invalid or unauthorized instruction. It may be caused by code corruption, a memory overlay, or execution of data as instructions.",
+      "longDescription": "Invalid or unauthorized instruction. It may be caused by code corruption, a memory overlay, or execution of data as instructions.\n Missing DD or closed file that the program attempts to read. The program was not compiled with the correct option. One or more modules were not compiled with the correct option. A cataloged file requires UNIT. An overflowing table overwrites part of the procedure. When real MANTIS is enabled, the UNLOCK utility must not be passed. Missing DD; file closed; incorrect compilation; table overflow; do not use UNLOCK with real MANTIS.",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "It may be caused by code corruption, a memory overlay, or execution of data as instructions.",
+      "reason": "It may be caused by code corruption, a memory overlay, or execution of data as instructions.\n Missing DD; file closed; incorrect compilation; table overflow; do not use UNLOCK with real MANTIS.",
       "examples": "ABEND S0C1",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0004",
       "code": "S0CB",
       "shortDescription": "Attempt to divide by zero",
-      "longDescription": "Division by zero. Verify the divisor before the operation. This is common when numeric fields are empty or contain zeros.",
+      "longDescription": "Division by zero. Verify the divisor before the operation. This is common when numeric fields are empty or contain zeros. Division with a divisor equal to zero.",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "Verify the divisor before the operation. This is common when numeric fields are empty or contain zeros.",
@@ -53,19 +56,21 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0005",
       "code": "S0C5",
-      "shortDescription": "Insufficient authorization for the DB2 resource",
-      "longDescription": "Storage protection error. Access to protected memory or memory outside the permitted range. Review addresses and storage permissions.",
+      "shortDescription": "Insufficient authorization for the DB2 resource. Addressing error.",
+      "longDescription": "Storage protection error. Access to protected memory or memory outside the permitted range. Review addresses and storage permissions.\n Addressing error. Table overflow. Procedure Division addresses are overwritten. Table overflow; address corruption.",
       "system": "ABEND",
-      "severity": "LOW",
-      "reason": "Access to protected memory or memory outside the permitted range. Review addresses and storage permissions.",
+      "severity": "HIGH",
+      "reason": "Access to protected memory or memory outside the permitted range. Review addresses and storage permissions.\n Table overflow; address corruption.",
       "examples": "ABEND S0C5",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0006",
       "code": "S0E0",
@@ -161,7 +166,7 @@
       "id": "ERR-ABEND-0013",
       "code": "S322",
       "shortDescription": "Execution time limit exceeded",
-      "longDescription": "CPU time exceeded. The job exceeded the time limit. Check for infinite loops or increase TIME in the JCL.",
+      "longDescription": "CPU time exceeded. The job exceeded the time limit. Check for infinite loops or increase TIME in the JCL.\n Insufficient time. Execution requires more time than specified by the TIME parameter in the JOB statement.",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "The job exceeded the time limit. Check for infinite loops or increase TIME in the JCL.",
@@ -170,24 +175,26 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0014",
       "code": "S522",
-      "shortDescription": "Mutual resource deadlock",
-      "longDescription": "Job stopped due to lack of activity. The job produced no output for an extended period. Check for waits, deadlocks, or locks.",
+      "shortDescription": " A response to a message has been pending longer than permitted.\nMutual resource deadlock",
+      "longDescription": "Job stopped due to lack of activity. The job produced no output for an extended period. Check for waits, deadlocks, or locks.\n A response to a message has been pending longer than permitted. The job is waiting for a response or resource allocation for too long.",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "The job produced no output for an extended period. Check for waits, deadlocks, or locks.",
+      "reason": "The job produced no output for an extended period. Check for waits, deadlocks, or locks.\nThe job is waiting for a response or resource allocation for too long.",
       "examples": "ABEND S522",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0015",
       "code": "S806",
       "shortDescription": "Load module not found",
-      "longDescription": "Program not found in STEPLIB/JOBLIB. Verify load libraries, concatenations, and the module name. Common when a load module is missing.",
+      "longDescription": "Program not found in STEPLIB/JOBLIB. Verify load libraries, concatenations, and the module name. Common when a load module is missing\n A module may not be found. File read completed; DD missing; program does not exist as a load module; codes 04 and 08 according to IEC152I.",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "Verify load libraries, concatenations, and the module name. Common when a load module is missing.",
@@ -196,63 +203,68 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0016",
       "code": "S80A",
-      "shortDescription": "Insufficient virtual storage",
-      "longDescription": "Insufficient storage (REGION too small). Increase REGION or optimize memory usage. Common in programs with large tables.",
+      "shortDescription": "Insufficient virtual storage. Error during execution of a GETMAIN macro.",
+      "longDescription": "Insufficient storage (REGION too small). Increase REGION or optimize memory usage. Common in programs with large tables.\n Error during execution of a GETMAIN macro. More storage was required than was available; ONCODE 9050; increase REGION",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "Increase REGION or optimize memory usage. Common in programs with large tables.",
+      "reason": "Increase REGION or optimize memory usage. Common in programs with large tables.\n More storage was required than was available; ONCODE 9050",
       "examples": "ABEND S80A",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
+
+        {
       "id": "ERR-ABEND-0017",
       "code": "S878",
       "shortDescription": "Insufficient virtual storage",
-      "longDescription": "Insufficient storage for allocation. The program attempted to allocate more storage than was available. Review buffers and dynamic structures.",
+      "longDescription": "Insufficient storage for allocation. The program attempted to allocate more storage than was available. Review buffers and dynamic structures.\n Insufficient region. The assigned region does not allow execution to continue ",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "The program attempted to allocate more storage than was available. Review buffers and dynamic structures.",
+      "reason": "The program attempted to allocate more storage than was available. Review buffers and dynamic structures.\n The assigned region does not allow execution to continue.",
       "examples": "ABEND S878",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
+
+        {
       "id": "ERR-ABEND-0018",
       "code": "S913",
       "shortDescription": "Security authorization failure",
-      "longDescription": "RACF security violation. The user does not have permission to access the resource. Review RACF rules and dataset permissions.",
+      "longDescription": "RACF security violation. The user does not have permission to access the resource. Review RACF rules and dataset permissions.\nIncorrect password. RACF indicates insufficient authority; may also occur when concatenating two ISAM files; see IEC150I in OPEN.",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "The user does not have permission to access the resource. Review RACF rules and dataset permissions.",
+      "reason": "The user does not have permission to access the resource. Review RACF rules and dataset permissions.\nRACF indicates insufficient authority; may also occur when concatenating two ISAM files; see IEC150I in OPEN.",
       "examples": "ABEND S913",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0019",
       "code": "S106",
-      "shortDescription": "Invalid DD definition",
-      "longDescription": "Error allocating dataset. May be caused by incorrect parameters in the DD statement, a missing volume, or catalog problems.",
+      "shortDescription": "Invalid DD definition. Program not found in the catalog.",
+      "longDescription": "Error allocating dataset. May be caused by incorrect parameters in the DD statement, a missing volume, or catalog problems.\n Program not found in the catalog. Program not located in the catalog.",
       "system": "ABEND",
       "severity": "MEDIUM",
-      "reason": "May be caused by incorrect parameters in the DD statement, a missing volume, or catalog problems.",
+      "reason": "May be caused by incorrect parameters in the DD statement, a missing volume, or catalog problems.\n Program not located in the catalog.",
       "examples": "ABEND S106",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0020",
       "code": "S237",
-      "shortDescription": "Disk space error. The dataset could not be extended because there was insufficient space.",
-      "longDescription": "Disk space error. The dataset could not be extended because there was insufficient space. Review volumes, extents, and secondary allocation.",
+      "shortDescription": "Disk space error. The dataset could not be extended because there was insufficient space.\n The error occurs at end of volume.",
+      "longDescription": "Disk space error. The dataset could not be extended because there was insufficient space. Review volumes, extents, and secondary allocation. \ncode 04: error in end-label block counter. A data block may have been lost due to a hardware error. \ncode 08: in a concatenated-file operation, the label of any file except the first does not match the DSN specified in the DD. \nEnd of volume; possible damaged tape",
       "system": "ABEND",
       "severity": "MEDIUM",
       "reason": "The dataset could not be extended because there was insufficient space. Review volumes, extents, and secondary allocation.",
@@ -261,19 +273,21 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0021",
       "code": "SA13",
-      "shortDescription": "Dataset not found",
-      "longDescription": "File not found on tape. The referenced dataset does not exist on the specified tape volume or the label does not match. Review DD UNIT/VOL and the physical availability of the tape.",
+      "shortDescription": "Dataset not found. Mispositioned tape or incorrectly recorded labels.",
+      "longDescription": "File not found on tape. The referenced dataset does not exist on the specified tape volume or the label does not match. Review DD UNIT/VOL and the physical availability of the tape.\n Mispositioned tape or incorrectly recorded labels. See IEC151I; check UCS image in SYS1.IMAGELIB; code 04 file number is not on the tape.",
       "system": "ABEND",
       "severity": "MEDIUM",
-      "reason": "The referenced resource is not available on the specified tape volume or the label does not match. Review DD UNIT/VOL and the physical availability of the tape.",
+      "reason": "The referenced resource is not available on the specified tape volume or the label does not match. Review DD UNIT/VOL and the physical availability of the tape.\n See IEC151I; check UCS image in SYS1.IMAGELIB.",
       "examples": "ABEND SA13",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0022",
       "code": "SB00",
@@ -287,19 +301,20 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
+        {
       "id": "ERR-ABEND-0023",
       "code": "SB37",
-      "shortDescription": "Insufficient space in output file",
-      "longDescription": "Insufficient space in output file. The dataset reached the extents limit. Review SPACE=(primary,secondary) and alternate volumes.",
+      "shortDescription": "Insufficient space in output file.  Possible program loop.",
+      "longDescription": "Insufficient space in output file. The dataset reached the extents limit. Review SPACE=(primary,secondary) and alternate volumes.\nPossible program loop. Printed output requires more space; end-of-volume errors; insufficient disk space (code 04)",
       "system": "ABEND",
       "severity": "MEDIUM",
-      "reason": "The dataset reached the extents limit. Review SPACE=(primary,secondary) and alternate volumes.",
+      "reason": "The dataset reached the extents limit. Review SPACE=(primary,secondary) and alternate volumes.\nPrinted output requires more space; end-of-volume errors; insufficient disk space (code 04)",
       "examples": "ABEND SB37",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
+      "operation": "Analyze the ABEND, identify the step, Printed output requires more space; end-of-volume errors; insufficient disk space (code 04) and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0024",
       "code": "SC16",
@@ -313,19 +328,20 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
+        {
       "id": "ERR-ABEND-0025",
       "code": "SD37",
-      "shortDescription": "Insufficient space for the operation",
-      "longDescription": "Insufficient space for the operation. The operation requires more space than is available. Restructure the process or increase SPACE.",
+      "shortDescription": "Insufficient space for the operation. Error during data sorting.",
+      "longDescription": "Insufficient space for the operation. The operation requires more space than is available. Restructure the process or increase SPACE.\n Primary space of the file is exhausted. No increments were specified or none can be obtained; occurs in SORT due to SORTWORK size.",
       "system": "ABEND",
-      "severity": "LOW",
-      "reason": "The operation requires more space than is available. Restructure the process or increase SPACE.",
+      "severity": "MEDIUM",
+      "reason": "The operation requires more space than is available. Restructure the process or increase SPACE.\nNo increments were specified or none can be obtained; occurs in SORT due to SORTWORK size.",
       "examples": "ABEND SD37",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0026",
       "code": "SE00",
@@ -342,16 +358,17 @@
     {
       "id": "ERR-ABEND-0027",
       "code": "SE37",
-      "shortDescription": "Insufficient directory space",
-      "longDescription": "Insufficient directory space. The PDS has no space for new members. Run IEBCOPY/REORG or increase the directory size.",
+      "shortDescription": "Insufficient directory space. Partitioned data set directory blocks exhausted.",
+      "longDescription": "Insufficient directory space. The PDS has no space for new members. Run IEBCOPY/REORG or increase the directory size.\n Partitioned data set directory blocks exhausted. Code 04: volume space exhausted; code 08: exceeds disk capacity; name conflict when extending to another volume.",
       "system": "ABEND",
-      "severity": "LOW",
-      "reason": "The PDS has no space for new members. Run IEBCOPY/REORG or increase the directory size.",
+      "severity": "MEDIUM",
+      "reason": "The PDS has no space for new members. Run IEBCOPY/REORG or increase the directory size.\ncode 04: volume space exhausted; code 08: exceeds disk capacity; name conflict when extending to another volume ",
       "examples": "ABEND SE37",
       "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0028",
       "code": "S000",
@@ -1106,19 +1123,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0089",
-      "code": "S0C1",
-      "shortDescription": "Execution of an invalid instruction",
-      "longDescription": "Missing DD or closed file that the program attempts to read. The program was not compiled with the correct option. One or more modules were not compiled with the correct option. A cataloged file requires UNIT. An overflowing table overwrites part of the procedure. When real MANTIS is enabled, the UNLOCK utility must not be passed. Missing DD; file closed; incorrect compilation; table overflow; do not use UNLOCK with real MANTIS.",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Missing DD; file closed; incorrect compilation; table overflow; do not use UNLOCK with real MANTIS.",
-      "examples": "ABEND S0C1",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0090",
       "code": "S0C2",
@@ -1145,32 +1150,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0092",
-      "code": "S0C4",
-      "shortDescription": "Access to an invalid memory address.",
-      "longDescription": "Protection error. READ of a file that has not been opened. DD is missing. Procedure area overwritten. Fields from a file that was not opened are being processed. Table index exceeds its range. READ without OPEN; missing DD; procedure area overwritten; index out of range.",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "READ without OPEN; missing DD; procedure area overwritten; index out of range.",
-      "examples": "ABEND S0C4",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-ABEND-0093",
-      "code": "S0C5",
-      "shortDescription": "Addressing error.",
-      "longDescription": "Addressing error. Table overflow. Procedure Division addresses are overwritten. Table overflow; address corruption.",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Table overflow; address corruption.",
-      "examples": "ABEND S0C5",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0094",
       "code": "S0C6",
@@ -1184,19 +1164,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0107",
-      "code": "S0C7",
-      "shortDescription": "Data exception caused by a non-numeric value",
-      "longDescription": "Data exception. A decimal operation is attempted in which one of the operands is non-numeric. A field defined as numeric is compared even though it contains no digits. A numeric value is moved to an edited field when the source does not contain digits. Decimal operation with a non-numeric operand; comparison of a numeric field containing no digits; MOVE to an edited field with a non-numeric value.",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Decimal operation with a non-numeric operand; comparison of a numeric field containing no digits; MOVE to an edited field with a non-numeric value.",
-      "examples": "ABEND S0C7",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0108",
       "code": "S0C8",
@@ -1236,19 +1204,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0111",
-      "code": "S0CB",
-      "shortDescription": "Attempt to divide by zero",
-      "longDescription": "Divisor is zero. Division with a divisor equal to zero.",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Division with a divisor equal to zero.",
-      "examples": "ABEND S0CB",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0112",
       "code": "S0CC",
@@ -1431,19 +1387,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0147",
-      "code": "S106",
-      "shortDescription": "Program not found in the catalog.",
-      "longDescription": "Program not found in the catalog. Program not located in the catalog.",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "Program not located in the catalog.",
-      "examples": "ABEND S106",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0148",
       "code": "S10A",
@@ -2068,19 +2012,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0233",
-      "code": "S237",
-      "shortDescription": "The error occurs at end of volume.",
-      "longDescription": "The error occurs at end of volume. Tape may be damaged. 04: error in end-label block counter. A data block may have been lost due to a hardware error. 08: in a concatenated-file operation, the label of any file except the first does not match the DSN specified in the DD. End of volume; possible damaged tape; code 04: error in end-label block counter; possible data loss due to hardware; code 08: concatenated-file label does not match DD DSN",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "End of volume; possible damaged tape; code 04: error in end-label block counter; possible data loss due to hardware; code 08: concatenated-file label does not match DD DSN",
-      "examples": "ABEND S237",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0234",
       "code": "S238",
@@ -2458,19 +2390,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0263",
-      "code": "S322",
-      "shortDescription": "Execution time limit exceeded",
-      "longDescription": "Insufficient time. Execution requires more time than specified by the TIME parameter in the JOB statement. Time exceeded; insufficient TIME parameter in JOB",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Time exceeded; insufficient TIME parameter in JOB",
-      "examples": "ABEND S322",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0264",
       "code": "S328",
@@ -3212,19 +3132,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0320",
-      "code": "S522",
-      "shortDescription": "A response to a message has been pending longer than permitted.",
-      "longDescription": "A response to a message has been pending longer than permitted. The job is waiting for a response or resource allocation for too long",
-      "system": "ABEND",
-      "severity": "LOW",
-      "reason": "The job is waiting for a response or resource allocation for too long",
-      "examples": "ABEND S522",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0321",
       "code": "S52A",
@@ -3888,19 +3796,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0372",
-      "code": "S806",
-      "shortDescription": "Load module not found",
-      "longDescription": "A module may not be found. File read completed; DD missing; program does not exist as a load module; codes 04 and 08 according to IEC152I",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "File read completed; DD missing; program does not exist as a load module; codes 04 and 08 according to IEC152I",
-      "examples": "ABEND S806",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0373",
       "code": "S807",
@@ -3927,19 +3823,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0375",
-      "code": "S80A",
-      "shortDescription": "Error during execution of a GETMAIN macro.",
-      "longDescription": "Error during execution of a GETMAIN macro. More storage was required than was available; ONCODE 9050; increase REGION",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "More storage was required than was available; ONCODE 9050; increase REGION",
-      "examples": "ABEND S80A",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0376",
       "code": "S813",
@@ -4070,19 +3954,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0386",
-      "code": "S878",
-      "shortDescription": "Insufficient virtual storage",
-      "longDescription": "Insufficient region. The assigned region does not allow execution to continue",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "The assigned region does not allow execution to continue",
-      "examples": "ABEND S878",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0387",
       "code": "S87A",
@@ -4187,19 +4059,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0395",
-      "code": "S913",
-      "shortDescription": "Security authorization failure",
-      "longDescription": "Incorrect password. RACF indicates insufficient authority; may also occur when concatenating two ISAM files; see IEC150I in OPEN",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "RACF indicates insufficient authority; may also occur when concatenating two ISAM files; see IEC150I in OPEN",
-      "examples": "ABEND S913",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0396",
       "code": "S914",
@@ -4304,19 +4164,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0404",
-      "code": "SA13",
-      "shortDescription": "Mispositioned tape or incorrectly recorded labels.",
-      "longDescription": "Mispositioned tape or incorrectly recorded labels. See IEC151I; check UCS image in SYS1.IMAGELIB; 04 file number is not on the tape",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "See IEC151I; check UCS image in SYS1.IMAGELIB; 04 file number is not on the tape",
-      "examples": "ABEND SA13",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0405",
       "code": "SA14",
@@ -4408,19 +4256,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0412",
-      "code": "SB37",
-      "shortDescription": "Possible program loop.",
-      "longDescription": "Possible program loop. Printed output requires more space; end-of-volume errors; insufficient disk space (code 04)",
-      "system": "ABEND",
-      "severity": "LOW",
-      "reason": "Printed output requires more space; end-of-volume errors; insufficient disk space (code 04)",
-      "examples": "ABEND SB37",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0413",
       "code": "SC03",
@@ -4460,19 +4296,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0416",
-      "code": "SD37",
-      "shortDescription": "Error during data sorting",
-      "longDescription": "Primary space of the file is exhausted. No increments were specified or none can be obtained; occurs in SORT due to SORTWORK size",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "No increments were specified or none can be obtained; occurs in SORT due to SORTWORK size",
-      "examples": "ABEND SD37",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0417",
       "code": "SE0D",
@@ -4512,19 +4336,7 @@
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0420",
-      "code": "SE37",
-      "shortDescription": "Partitioned data set directory blocks exhausted.",
-      "longDescription": "Partitioned data set directory blocks exhausted. 04: volume space exhausted; 08: exceeds disk capacity; name conflict when extending to another volume",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "04: volume space exhausted; 08: exceeds disk capacity; name conflict when extending to another volume",
-      "examples": "ABEND SE37",
-      "operation": "Analyze the ABEND, identify the step, and review the associated record and return code.",
-      "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
-      "deleted": false
-    },
+   
     {
       "id": "ERR-ABEND-0421",
       "code": "SFXX",
@@ -7726,21 +7538,23 @@
     {
       "id": "ERR-DB2-0001",
       "code": "-911",
-      "shortDescription": "Deadlock between resources.",
-      "longDescription": "Deadlock or timeout. Transaction rolled back. This occurs when two transactions compete for the same resources. Review the order of table access and lock durations.",
+      "shortDescription": "Deadlock between resources.\n Resource blocked during execution. Timeout.",
+      "longDescription": "Deadlock or timeout. Transaction rolled back. This occurs when two transactions compete for the same resources. Review the order of table access and lock durations.\nLock timeout. The transaction waited too long for a lock. Review concurrency and timeout settings.\n The operation could not obtain the required lock.",
       "system": "DB2",
       "severity": "HIGH",
-      "reason": "This occurs when two transactions compete for the same resources. Review the order of table access and lock durations.",
+      "reason": "This occurs when two transactions compete for the same resources. Review the order of table access and lock durations.\nThe transaction waited too long for a lock. Review concurrency and timeout settings.",
       "examples": "DB2 SQLCODE -911",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-DB2-0002",
       "code": "-913",
       "shortDescription": "Deadlock between resources.",
-      "longDescription": "Deadlock detected. Transaction failed. Similar to -911 but without automatic rollback. Requires reviewing locking and operation sequencing.",
+      "longDescription": "Deadlock detected. Transaction failed. Similar to -911 but without automatic rollback. Requires reviewing locking and operation sequencing.\nThe transaction must be retried.",
       "system": "DB2",
       "severity": "HIGH",
       "reason": "Similar to -911 but without automatic rollback. Requires reviewing locking and operation sequencing.",
@@ -7749,6 +7563,7 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
     {
       "id": "ERR-DB2-0003",
       "code": "-805",
@@ -7762,6 +7577,7 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
     {
       "id": "ERR-DB2-0004",
       "code": "-818",
@@ -7775,76 +7591,87 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-DB2-0005",
       "code": "-204",
-      "shortDescription": "Required table not available.",
-      "longDescription": "Table or view does not exist. This may be due to an incorrect schema, missing permissions, or a typo in the name.",
+      "shortDescription": "Required table not available, or table unavailable.",
+      "longDescription": "Table or view does not exist. This may be due to an incorrect schema, missing permissions, or a typo in the name.\nName not defined in DB2, or table not created or incorrectly created, or ':' is missing in WORKING fields in the WHERE, or COPY does not match CREATE. The referenced object does not exist or is incorrectly defined.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "This may be due to an incorrect schema, missing permissions, or a typo in the name.",
+      "reason": "This may be due to an incorrect schema, missing permissions, or a typo in the name.\nThe referenced object does not exist or is incorrectly defined ",
       "examples": "DB2 SQLCODE -204",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
     {
       "id": "ERR-DB2-0006",
       "code": "-206",
-      "shortDescription": "Column does not exist in the table. Common after changes to the data model.",
-      "longDescription": "Column does not exist in the table. Common after changes to the data model. Review names, aliases, and SELECT.",
+      "shortDescription": "Column does not exist in the table, or the table was created with old indexes, or check the DECLARE when opening. Common after changes to the data model.",
+      "longDescription": "Column does not exist in the table. Common after changes to the data model. Review names, aliases, and SELECT.\nThe column does not match the current table definition.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "Common after changes to the data model. Review names, aliases, and SELECT.",
+      "reason": "Common after changes to the data model. Review names, aliases, and SELECT.\n The column does not match the current table definition.",
       "examples": "DB2 SQLCODE -206",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-DB2-0007",
       "code": "-551",
-      "shortDescription": "Insufficient authorization for the DB2 resource.",
-      "longDescription": "User lacks permission for the operation. The user does not have privileges for SELECT, INSERT, UPDATE, or DELETE. Review GRANT.",
+      "shortDescription": "Insufficient authorization for the DB2 resource.\nSecurity authorization failure ",
+      "longDescription": "User lacks permission for the operation. The user does not have privileges for SELECT, INSERT, UPDATE, or DELETE. Review GRANT.\nThe user does not have privileges for the operation, or the object does not exist or is in READ ONLY status, or the authorization-id lacks permissions, or authorization is missing for referential integrity. The user lacks sufficient privileges.",
       "system": "DB2",
       "severity": "HIGH",
-      "reason": "The user does not have privileges for SELECT, INSERT, UPDATE, or DELETE. Review GRANT.",
+      "reason": "The user does not have privileges for SELECT, INSERT, UPDATE, or DELETE. Review GRANT.\nThe user lacks sufficient privileges.",
       "examples": "DB2 SQLCODE -551",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-DB2-0008",
       "code": "-530",
       "shortDescription": "Required table not available.",
-      "longDescription": "Foreign key violation. An attempt is made to insert or update a value that does not exist in the parent table. Review referential integrity.",
+      "longDescription": "Foreign key violation. An attempt is made to insert or update a value that does not exist in the parent table. Review referential integrity.\n FOR UPDATE clause cannot be specified because there is an inconsistency with a preceding table, or an attempt is made to insert into or modify a table with referential integrity and the parent does not exist. Referential integrity violation or incorrect use of FOR UPDATE.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "An attempt is made to insert or update a value that does not exist in the parent table. Review referential integrity.",
+      "reason": "An attempt is made to insert or update a value that does not exist in the parent table. Review referential integrity.\nReferential integrity violation or incorrect use of FOR UPDATE.",
       "examples": "DB2 SQLCODE -530",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+   
+
     {
       "id": "ERR-DB2-0009",
       "code": "-803",
-      "shortDescription": "Primary key violation (duplicate). The value already exists.",
-      "longDescription": "Primary key violation (duplicate). The value already exists. Review unique indexes and key-generation logic.",
+      "shortDescription": "Primary key violation (duplicate). The value already exists.\nInsert with duplicate keys or modification of a unique index entry.",
+      "longDescription": "Primary key violation (duplicate). The value already exists. Review unique indexes and key-generation logic.\nThe key already exists in the table, or the unique index does not allow the modification.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "The value already exists. Review unique indexes and key-generation logic.",
+      "reason": "The value already exists. Review unique indexes and key-generation logic.\nThe key already exists in the table, or the unique index does not allow the modification ",
       "examples": "DB2 SQLCODE -803",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+    
+
     {
       "id": "ERR-DB2-0010",
       "code": "-904",
-      "shortDescription": "Resource blocked during execution.",
-      "longDescription": "Resource unavailable. This may be caused by locked tables, insufficient space, or buffer pool problems.",
+      "shortDescription": "Resource blocked during execution.\n Resource temporarily unavailable. It may be a prolonged lock, insufficient buffer pool, or I/O problems. Timeout ",
+      "longDescription": "Resource unavailable. This may be caused by locked tables, insufficient space, or buffer pool problems, or I/O problems with the table..",
       "system": "DB2",
       "severity": "MEDIUM",
       "reason": "This may be caused by locked tables, insufficient space, or buffer pool problems.",
@@ -7853,6 +7680,8 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-DB2-0011",
       "code": "-922",
@@ -7870,15 +7699,16 @@
       "id": "ERR-DB2-0012",
       "code": "-501",
       "shortDescription": "Invalid DB2 cursor state.",
-      "longDescription": "Cursor not open. FETCH was executed without a preceding OPEN. Review program flow.",
+      "longDescription": "Cursor not open. FETCH was executed without a preceding OPEN. Review program flow.\nCursor not specified in FETCH or CLOSE is not open. The cursor must be opened before it is used.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "FETCH was executed without a preceding OPEN. Review program flow.",
+      "reason": "FETCH was executed without a preceding OPEN. Review program flow.\nThe cursor must be opened before it is used.",
       "examples": "DB2 SQLCODE -501",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
     {
       "id": "ERR-DB2-0013",
       "code": "-502",
@@ -7932,70 +7762,19 @@
       "deleted": false
     },
     {
-      "id": "ERR-DB2-0017",
-      "code": "-805",
-      "shortDescription": "Package not found in plan. The plan does not include the required package.",
-      "longDescription": "Package not found in plan. The plan does not include the required package. Requires BIND with the correct collection.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The plan does not include the required package. Requires BIND with the correct collection.",
-      "examples": "DB2 SQLCODE -805",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0018",
-      "code": "-904",
-      "shortDescription": "Resource temporarily unavailable. It may be a prolonged lock, insufficient buffer pool, or I/O problems.",
-      "longDescription": "Resource temporarily unavailable. It may be a prolonged lock, insufficient buffer pool, or I/O problems with the table.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "It may be a prolonged lock, insufficient buffer pool, or I/O problems with the table.",
-      "examples": "DB2 SQLCODE -904",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0019",
-      "code": "-911",
-      "shortDescription": "Timeout.",
-      "longDescription": "Lock timeout. The transaction waited too long for a lock. Review concurrency and timeout settings.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The transaction waited too long for a lock. Review concurrency and timeout settings.",
-      "examples": "DB2 SQLCODE -911",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
       "id": "ERR-DB2-0020",
       "code": "+100",
-      "shortDescription": "Invalid DB2 cursor state.",
-      "longDescription": "End of data (no more rows). Indicates that the cursor found no more records. This is not an error; it is a normal condition.",
+      "shortDescription": "Invalid DB2 cursor state.\nRow not found during SELECT, FETCH, or UPDATE. Indicates absence of matching records.",
+      "longDescription": "End of data (no more rows). Indicates that the cursor found no more records. This is not an error; it is a normal condition.\nRow not found during SELECT, FETCH, or UPDATE. Indicates that no matching records were found.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "Indicates that the cursor found no more records. This is not an error; it is a normal condition.",
+      "reason": "Indicates that the cursor found no more records. This is not an error; it is a normal condition.\nIndicates that no matching records were found.",
       "examples": "DB2 SQLCODE +100",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0021",
-      "code": "100",
-      "shortDescription": "Row not found during SELECT, FETCH, or UPDATE. Indicates absence of matching records.",
-      "longDescription": "Row not found during SELECT, FETCH, or UPDATE. Indicates that no matching records were found.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "Indicates that no matching records were found.",
-      "examples": "DB2 SQLCODE 100",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
     {
       "id": "ERR-DB2-0022",
       "code": "000",
@@ -8025,50 +7804,11 @@
     {
       "id": "ERR-DB2-0024",
       "code": "-004",
-      "shortDescription": "Field too long in a CURSOR.",
-      "longDescription": "Field too long in a CURSOR. The field length exceeds the permitted length.",
+      "shortDescription": "Field too long in a CURSOR. Move an alphanumeric value to a COMP in the WHERE clause. Invalid DB2 cursor state. COPY does not correspond to CREATE.",
+      "longDescription": "Field too long in a CURSOR. The field length exceeds the permitted length.\n Move an alphanumeric value to a COMP in the WHERE clause. Invalid conversion between alphanumeric and COMP data types.\n When opening a CURSOR, alphanumeric values are supplied for numeric values. The value does not match the expected numeric type.\nCOPY does not correspond to CREATE. The COPY definition does not match the actual table structure.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "The field length exceeds the permitted length.",
-      "examples": "DB2 SQLCODE -004",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0025",
-      "code": "-004",
-      "shortDescription": "Move an alphanumeric value to a COMP in the WHERE clause.",
-      "longDescription": "Move an alphanumeric value to a COMP in the WHERE clause. Invalid conversion between alphanumeric and COMP data types.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Invalid conversion between alphanumeric and COMP data types.",
-      "examples": "DB2 SQLCODE -004",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0026",
-      "code": "-004",
-      "shortDescription": "Invalid DB2 cursor state.",
-      "longDescription": "When opening a CURSOR, alphanumeric values are supplied for numeric values. The value does not match the expected numeric type.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The value does not match the expected numeric type.",
-      "examples": "DB2 SQLCODE -004",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0027",
-      "code": "-004",
-      "shortDescription": "COPY does not correspond to CREATE.",
-      "longDescription": "COPY does not correspond to CREATE. The COPY definition does not match the actual table structure.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The COPY definition does not match the actual table structure.",
+      "reason": "The field length exceeds the permitted length.\nInvalid conversion between alphanumeric and COMP data types.\nThe value does not match the expected numeric type.\n The COPY definition does not match the actual table structure.",
       "examples": "DB2 SQLCODE -004",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
@@ -8090,37 +7830,11 @@
     {
       "id": "ERR-DB2-0029",
       "code": "-009",
-      "shortDescription": "Required table not available.",
-      "longDescription": "Incorrect field name in the SET clause of an UPDATE. The specified field does not exist in the table.",
+      "shortDescription": "Required table not available. Invalid DB2 cursor state.",
+      "longDescription": "Incorrect field name in the SET clause of an UPDATE. The specified field does not exist in the table.\n Incorrect field name in the SELECT of a CURSOR. The referenced field does not exist in the table.\n Incorrect table name in the FROM clause of the DECLARE of a CURSOR. The specified table does not exist or is misspelled.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "The specified field does not exist in the table.",
-      "examples": "DB2 SQLCODE -009",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0030",
-      "code": "-009",
-      "shortDescription": "Invalid DB2 cursor state.",
-      "longDescription": "Incorrect field name in the SELECT of a CURSOR. The referenced field does not exist in the table.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The referenced field does not exist in the table.",
-      "examples": "DB2 SQLCODE -009",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0031",
-      "code": "-009",
-      "shortDescription": "Invalid DB2 cursor state.",
-      "longDescription": "Incorrect table name in the FROM clause of the DECLARE of a CURSOR. The specified table does not exist or is misspelled.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The specified table does not exist or is misspelled.",
+      "reason": "The specified field does not exist in the table.\n The referenced field does not exist in the table.\n The specified table does not exist or is misspelled.",
       "examples": "DB2 SQLCODE -009",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
@@ -8169,41 +7883,16 @@
       "id": "ERR-DB2-0035",
       "code": "-016",
       "shortDescription": "Invalid DB2 cursor state.",
-      "longDescription": "A CURSOR that was already open is opened again. The cursor was already active.",
+      "longDescription": "A CURSOR that was already open is opened again. The cursor was already active.\n An UPDATE is attempted with the CURSOR closed. The cursor is not available for update.\nCURSOR not specified in FETCH, or CLOSE when the cursor is not open. The cursor was not opened before the operation.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "The cursor was already active.",
+      "reason": "The cursor was already active.\nThe cursor is not available for update.\nThe cursor was not opened before the operation.",
       "examples": "DB2 SQLCODE -016",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0036",
-      "code": "-016",
-      "shortDescription": "Invalid DB2 cursor state.",
-      "longDescription": "An UPDATE is attempted with the CURSOR closed. The cursor is not available for update.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The cursor is not available for update.",
-      "examples": "DB2 SQLCODE -016",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0037",
-      "code": "-016",
-      "shortDescription": "Invalid DB2 cursor state.",
-      "longDescription": "CURSOR not specified in FETCH, or CLOSE when the cursor is not open. The cursor was not opened before the operation.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The cursor was not opened before the operation.",
-      "examples": "DB2 SQLCODE -016",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+ 
     {
       "id": "ERR-DB2-0038",
       "code": "-018",
@@ -8220,115 +7909,25 @@
     {
       "id": "ERR-DB2-0039",
       "code": "-019",
-      "shortDescription": "SQL statement too long or complex.",
-      "longDescription": "SQL statement too long or complex. The statement exceeds the complexity allowed by DB2.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The statement exceeds the complexity allowed by DB2.",
-      "examples": "DB2 SQLCODE -019",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0040",
-      "code": "-019",
-      "shortDescription": "Incorrect DB2 statement.",
-      "longDescription": "Incorrect DB2 statement. The SQL statement contains syntax errors.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The SQL statement contains syntax errors.",
-      "examples": "DB2 SQLCODE -019",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0041",
-      "code": "-019",
-      "shortDescription": "Incorrect syntax in the DECLARE of the CURSOR.",
-      "longDescription": "Incorrect syntax in the DECLARE of the CURSOR. The cursor declaration contains syntax errors.",
+      "shortDescription": "SQL statement too long or complex.\n Incorrect DB2 statement.\n Incorrect syntax in the DECLARE of the CURSOR.",
+      "longDescription": "SQL statement too long or complex. The statement exceeds the complexity allowed by DB2.\nIncorrect DB2 statement. The SQL statement contains syntax errors.\nIncorrect syntax in the DECLARE of the CURSOR. The cursor declaration contains syntax errors.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "The cursor declaration contains syntax errors.",
+      "reason": "The statement exceeds the complexity allowed by DB2.\nThe SQL statement contains syntax errors.\nThe cursor declaration contains syntax errors.",
       "examples": "DB2 SQLCODE -019",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
     {
       "id": "ERR-DB2-0042",
       "code": "-020",
-      "shortDescription": "Change the parameter in COBOL DIR located in the COBOLMF directory.",
-      "longDescription": "Change the parameter in COBOL DIR located in the COBOLMF directory. Adjustment of COBOL parameters for PC/HOST compatibility",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Adjustment of COBOL parameters for PC/HOST compatibility",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0043",
-      "code": "-020",
-      "shortDescription": "Incorrectly compiled program.",
-      "longDescription": "Incorrectly compiled program. Instrucción SQL incorrecta. La compilación generó SQL inválido",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The compilation generated invalid SQL",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0044",
-      "code": "-020",
-      "shortDescription": "On an OPEN, review the DECLARE for the CURSOR.",
-      "longDescription": "On an OPEN, review the DECLARE for the CURSOR. The cursor DECLARE contains errors",
+      "shortDescription": "Change the parameter in COBOL DIR located in the COBOLMF directory.\n Incorrectly compiled program.\nOn an OPEN, review the DECLARE for the CURSOR.\n Commas are missing in the SET of an UPDATE or in the last field of the DECLARE.\nInvalid DB2 cursor state.\nThere are partitioned fields in WORKING.",
+      "longDescription": "Change the parameter in COBOL DIR located in the COBOLMF directory. Adjustment of COBOL parameters for PC/HOST compatibility.\n Incorrectly compiled program. Instrucción SQL incorrecta. La compilación generó SQL inválido.\n On an OPEN, review the DECLARE for the CURSOR. The cursor DECLARE contains errors.\n Commas are missing in the SET of an UPDATE or in the last field of the DECLARE. Syntax error due to missing separators.\nFields are incorrectly placed in the CURSOR's SELECT statement. The OF clause is missing from the CURSOR's UPDATE statement. The SQL statement does not follow the required structure.\nThere are partitioned fields in WORKING. The WORKING structure contains partitions incompatible with SQL.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "The cursor DECLARE contains errors",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0045",
-      "code": "-020",
-      "shortDescription": "Commas are missing in the SET of an UPDATE or in the last field of the DECLARE.",
-      "longDescription": "Commas are missing in the SET of an UPDATE or in the last field of the DECLARE. Syntax error due to missing separators",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Syntax error due to missing separators",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0046",
-      "code": "-020",
-      "shortDescription": "Invalid DB2 cursor state",
-      "longDescription": "Campos mal puestos en la SELECT del CURSOR. Falta el OF en el UPDATE del CURSOR. La sentencia SQL no respeta la estructura requerida",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The SQL statement does not comply with the required structure",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0047",
-      "code": "-020",
-      "shortDescription": "There are partitioned fields in WORKING.",
-      "longDescription": "There are partitioned fields in WORKING. The WORKING structure contains partitions incompatible with SQL",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The WORKING structure contains partitions incompatible with SQL",
+      "reason": "Adjustment of COBOL parameters for PC/HOST compatibility.\nThe compilation generated invalid SQL.\nThe cursor DECLARE contains errors.\n Syntax error due to missing separators.\nThe SQL statement does not comply with the required structure.\nThe WORKING structure contains partitions incompatible with SQL.",
       "examples": "DB2 SQLCODE -020",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
@@ -8373,32 +7972,21 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
+        {
       "id": "ERR-DB2-0051",
       "code": "-034",
-      "shortDescription": "The variable used to accumulate SELECT.COUNT must be PIC S9(15) COMP-3.",
-      "longDescription": "The variable used to accumulate SELECT.COUNT must be PIC S9(15) COMP-3. The variable type does not match the type required for COUNT",
+      "shortDescription": "The variable used to accumulate SELECT.COUNT must be PIC S9(15) COMP-3.\nMissing : in the COMPO of WHERE.",
+      "longDescription": "The variable used to accumulate SELECT.COUNT must be PIC S9(15) COMP-3. The variable type does not match the type required for COUNT.\nMissing : in the COMPO of WHERE. The WHERE clause is incomplete ",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "The variable type does not match the type required for COUNT",
+      "reason": "The variable type does not match the type required for COUNT.\n The WHERE clause is incomplete ",
       "examples": "DB2 SQLCODE -034",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0052",
-      "code": "-034",
-      "shortDescription": "Missing : in the COMPO of WHERE.",
-      "longDescription": "Missing : in the COMPO of WHERE. The WHERE clause is incomplete",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The WHERE clause is incomplete",
-      "examples": "DB2 SQLCODE -034",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
+    
     {
       "id": "ERR-DB2-0053",
       "code": "-040",
@@ -8532,29 +8120,18 @@
     {
       "id": "ERR-DB2-0063",
       "code": "-072",
-      "shortDescription": "The operand of an SQL function is another SQL function or qualifiers followed by an expression.",
-      "longDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión. Use of nested functions is not permitted",
+      "shortDescription": "The operand of an SQL function is another SQL function or qualifiers followed by an expression.\nTable, view, index, or synonym name exceeds the permitted length...",
+      "longDescription": "The operand of an SQL function is another SQL function or specifiers followed by an expression. Use of nested functions is not permitted.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "Use of nested functions is not permitted",
+      "reason": "Use of nested functions is not permitted.\n The name exceeds the permitted length.",
       "examples": "DB2 SQLCODE -072",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0064",
-      "code": "-072",
-      "shortDescription": "Table, view, index, or synonym name exceeds the permitted length...",
-      "longDescription": "Nombre de las tablas vistas índices o sinónimos más largo del tamaño permitido máximo 18 caracteres. El nombre excede la longitud permitida",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El nombre excede la longitud permitida",
-      "examples": "DB2 SQLCODE -072",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
+    
     {
       "id": "ERR-DB2-0065",
       "code": "-073",
@@ -8584,29 +8161,18 @@
     {
       "id": "ERR-DB2-0067",
       "code": "-079",
-      "shortDescription": "The object of the INSERT, DELETE, or UPDATE is a view for which the requested operation is not permitted.",
-      "longDescription": "El objeto del INSERT, DELETE o UPDATE es una vista para lo cual la operación requerida no está permitida. The view does not support the requested operation",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The view does not support the requested operation",
-      "examples": "DB2 SQLCODE -079",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0068",
-      "code": "-079",
-      "shortDescription": "Invalid DB2 cursor state",
-      "longDescription": "Hacer un DELETE sin 'FOR UPDATE' en el CURSOR. The cursor is not prepared for deletion",
+      "shortDescription": "The object of the INSERT, DELETE, or UPDATE is a view for which the requested operation is not permitted.\nInvalid DB2 cursor state.",
+      "longDescription": "The target of the INSERT, DELETE, or UPDATE is a view for which the requested operation is not permitted. The view does not support the requested operation.\nPerform a DELETE without 'FOR UPDATE' in the CURSOR. The cursor is not prepared for deletion.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "The cursor is not prepared for deletion",
+      "reason": "The view does not support the requested operation.\n The cursor is not prepared for deletion.",
       "examples": "DB2 SQLCODE -079",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
+    
     {
       "id": "ERR-DB2-0069",
       "code": "-080",
@@ -8636,107 +8202,32 @@
     {
       "id": "ERR-DB2-0071",
       "code": "-084",
-      "shortDescription": "Incorrect SQL statement.",
-      "longDescription": "Incorrect SQL statement. The statement contains syntax errors",
+      "shortDescription": "Incorrect SQL statement.\n Incorrectly compiled program.\nPlace a comma in the last field of the DECLARE.\nInvalid DB2 cursor state.",
+      "longDescription": "Incorrect SQL statement. The statement contains syntax errors.\n Incorrectly compiled program. The compilation generated invalid SQL.\n Add a comma in the last field of the DECLARE statement. Syntax error due to a missing separator.\nIncorrectly specified fields in the CURSOR's SELECT statement. The SELECT statement does not match the cursor's structure.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "The statement contains syntax errors",
+      "reason": "The statement contains syntax errors.\nThe compilation generated invalid SQL.\n Syntax error due to missing separator.\nThe SELECT statement does not match the cursor structure.",
       "examples": "DB2 SQLCODE -084",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0072",
-      "code": "-084",
-      "shortDescription": "Incorrectly compiled program.",
-      "longDescription": "Incorrectly compiled program. The compilation generated invalid SQL",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The compilation generated invalid SQL",
-      "examples": "DB2 SQLCODE -084",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0073",
-      "code": "-084",
-      "shortDescription": "Poner una coma en el último campo del DECLARE.",
-      "longDescription": "Poner una coma en el último campo del DECLARE. Error de sintaxis por separador faltante",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Error de sintaxis por separador faltante",
-      "examples": "DB2 SQLCODE -084",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0074",
-      "code": "-084",
-      "shortDescription": "Invalid DB2 cursor state",
-      "longDescription": "Campos mal puestos en la SELECT del CURSOR. La SELECT no coincide con la estructura del cursor",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "La SELECT no coincide con la estructura del cursor",
-      "examples": "DB2 SQLCODE -084",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
+
+    
+        {
       "id": "ERR-DB2-0075",
       "code": "-086",
-      "shortDescription": "Actualizar una tabla sin haber leído previamente del CURSOR.",
-      "longDescription": "Actualizar una tabla sin haber leído previamente del CURSOR. El cursor debe estar posicionado antes del UPDATE",
+      "shortDescription": " Updating a table without having previously read from the CURSOR.\n Update a field with the value LOW-VALUES.\nInsert a row with a key of LOW-VALUES.\nField in the WHERE clause with a value of LOW-VALUES.",
+      "longDescription": " Updating a table without having first read from the CURSOR. The cursor must be positioned before the UPDATE.\n Update a field with the value LOW-VALUES. LOW-VALUES is not valid for an update.\nInsert a row with key LOW-VALUES. LOW-VALUES is not valid as a key.\n Field in the WHERE clause with a value of LOW-VALUES. LOW-VALUES is not valid for comparison.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "El cursor debe estar posicionado antes del UPDATE",
+      "reason": " The cursor must be positioned before the UPDATE.\n LOW-VALUES is not valid for update.\n LOW-VALUES is not valid as a key.\n LOW-VALUES is not valid for comparison.",
       "examples": "DB2 SQLCODE -086",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0076",
-      "code": "-086",
-      "shortDescription": "Actualizar un campo con el valor de LOW-VALUES.",
-      "longDescription": "Actualizar un campo con el valor de LOW-VALUES. LOW-VALUES no es válido para actualización",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "LOW-VALUES no es válido para actualización",
-      "examples": "DB2 SQLCODE -086",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0077",
-      "code": "-086",
-      "shortDescription": "Insertar una fila con clave LOW-VALUES.",
-      "longDescription": "Insertar una fila con clave LOW-VALUES. LOW-VALUES no es válido como clave",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "LOW-VALUES no es válido como clave",
-      "examples": "DB2 SQLCODE -086",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0078",
-      "code": "-086",
-      "shortDescription": "Campo en la WHERE con valor LOW-VALUES.",
-      "longDescription": "Campo en la WHERE con valor LOW-VALUES. LOW-VALUES no es válido para comparación",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "LOW-VALUES no es válido para comparación",
-      "examples": "DB2 SQLCODE -086",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
     {
       "id": "ERR-DB2-0079",
       "code": "-087",
@@ -8766,29 +8257,18 @@
     {
       "id": "ERR-DB2-0081",
       "code": "-101",
-      "shortDescription": "Instrucción SQL demasiado larga o compleja.",
-      "longDescription": "Instrucción SQL demasiado larga o compleja. La sentencia excede la complejidad permitida por DB2",
+      "shortDescription": "SQL statement too long or complex.\nFaulty DB2 installation.",
+      "longDescription": "SQL statement too long or complex. The statement exceeds the complexity permitted by DB2.\nFaulty DB2 installation. The DB2 subsystem installation contains inconsistencies.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "La sentencia excede la complejidad permitida por DB2",
+      "reason": "The statement exceeds the complexity permitted by DB2.\nThe DB2 subsystem installation exhibits inconsistencies.",
       "examples": "DB2 SQLCODE -101",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0082",
-      "code": "-101",
-      "shortDescription": "Mala instalación del DB2.",
-      "longDescription": "Mala instalación del DB2. La instalación del subsistema DB2 presenta inconsistencias",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La instalación del subsistema DB2 presenta inconsistencias",
-      "examples": "DB2 SQLCODE -101",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
+    
     {
       "id": "ERR-DB2-0083",
       "code": "-102",
@@ -8805,68 +8285,32 @@
     {
       "id": "ERR-DB2-0084",
       "code": "-103",
-      "shortDescription": "Una columna identificada en una cláusula HAVING no está incluida en la cláusula...",
-      "longDescription": "Una columna identificada en una cláusula HAVING no está incluida en la cláusula GROUP BY. The column must also appear in GROUP BY",
+      "shortDescription": " A column identified in a HAVING clause is not included in the clause...\n Literal XXX is an invalid numeric literal.",
+      "longDescription": " A column identified in a HAVING clause is not included in the GROUP BY clause.. The column must also appear in GROUP BY.\n Literal XXX is an invalid numeric literal. The literal does not meet the required numeric format. ",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "The column must also appear in GROUP BY",
+      "reason": "The column must also appear in GROUP BY.\n The literal does not meet the required numeric format.",
       "examples": "DB2 SQLCODE -103",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0085",
-      "code": "-103",
-      "shortDescription": "Literal XXX is an invalid numeric literal.",
-      "longDescription": "Literal XXX is an invalid numeric literal. El literal no cumple el formato numérico requerido",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "El literal no cumple el formato numérico requerido",
-      "examples": "DB2 SQLCODE -103",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
     {
       "id": "ERR-DB2-0086",
       "code": "-104",
-      "shortDescription": "A comma is missing between two selected fields.",
-      "longDescription": "A comma is missing between two selected fields. Error de sintaxis por separador faltante",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Error de sintaxis por separador faltante",
-      "examples": "DB2 SQLCODE -104",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0087",
-      "code": "-104",
-      "shortDescription": "The statement contains the invalid character or token token_1.",
-      "longDescription": "The statement contains the invalid character or token token_1. El testigo token_2 está en espera. La sentencia contiene un token inesperado",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The statement contains an unexpected token",
-      "examples": "DB2 SQLCODE -104",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0088",
-      "code": "-104",
-      "shortDescription": "If a file is used to execute the DB2 statement, it may contain invalid characters.",
-      "longDescription": "Si se utiliza un fichero para ejecutar la sentencia DB2 puede tener caracteres erróneos. The input file contains invalid characters",
+      "shortDescription": "A comma is missing between two selected fields.\nThe statement contains the invalid character or token token_1.\nIf a file is used to execute the DB2 statement, it may contain invalid characters.",
+      "longDescription": "A comma is missing between two selected fields. Syntax error due to missing separator.\nThe statement contains the invalid character or token token_1. The token_2 token is pending. The statement contains an unexpected token.\nIf a file is used to execute the DB2 statement, it may contain erroneous characters.. The input file contains invalid characters.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "The input file contains invalid characters",
+      "reason": "Syntax error due to missing separator.\nThe statement contains an unexpected token.\n The input file contains invalid characters.",
       "examples": "DB2 SQLCODE -104",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+
+    
     {
       "id": "ERR-DB2-0089",
       "code": "-105",
@@ -8880,32 +8324,21 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
+        {
       "id": "ERR-DB2-0090",
       "code": "-106",
-      "shortDescription": "Invalid FROM clause because one of the tables is a view that includes a GROUP BY clause.",
-      "longDescription": "Cláusula FROM inválida porque una de las tablas es una vista que incluye una cláusula GROUP BY. The view used does not permit the operation",
+      "shortDescription": "Invalid FROM clause because one of the tables is a view that includes a GROUP BY clause.\nA column name is identified more than once in the statement...",
+      "longDescription": "Invalid FROM clause because one of the tables is a view that includes a GROUP BY clause. The view used does not permit the operation.\nA column name is identified more than once in the INSERT or UPDATE statement.. The column appears more than once in the statement.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "The view used does not permit the operation",
+      "reason": "The view used does not permit the operation.\nThe column appears more than once in the statement.",
       "examples": "DB2 SQLCODE -106",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0091",
-      "code": "-106",
-      "shortDescription": "A column name is identified more than once in the statement...",
-      "longDescription": "El nombre de una columna está identificado más de una vez en la instrucción INSERT o UPDATE. The column appears more than once in the statement",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The column appears more than once in the statement",
-      "examples": "DB2 SQLCODE -106",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
+    
     {
       "id": "ERR-DB2-0092",
       "code": "-107",
@@ -8958,58 +8391,36 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
+        {
       "id": "ERR-DB2-0096",
       "code": "-112",
-      "shortDescription": "The operand of an SQL function is another SQL function or DISTINCT followed by an...",
-      "longDescription": "The operand of an SQL function is another SQL function or DISTINCT followed by an expression. Nested function use is not allowed.",
+      "shortDescription": "The operand of an SQL function is another SQL function or DISTINCT followed by an...\nDrop the table and recreate it.",
+      "longDescription": "The operand of an SQL function is another SQL function or DISTINCT followed by an expression. Nested function use is not allowed.\nDrop the table and recreate it. The table is inconsistent and must be recreated.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "Nested function use is not allowed.",
+      "reason": "Nested function use is not allowed.\nThe table is inconsistent and must be recreated.",
       "examples": "DB2 SQLCODE -112",
       "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0097",
-      "code": "-112",
-      "shortDescription": "Drop the table and recreate it.",
-      "longDescription": "Drop the table and recreate it. The table is inconsistent and must be recreated.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The table is inconsistent and must be recreated.",
-      "examples": "DB2 SQLCODE -112",
-      "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
+
+   
+       {
       "id": "ERR-DB2-0098",
       "code": "-113",
-      "shortDescription": "Invalid character in name.",
-      "longDescription": "Invalid character in name. The identifier contains characters that are not allowed.",
+      "shortDescription": "Invalid character in name.\nOperation not allowed in a database System.",
+      "longDescription": "Invalid character in name. The identifier contains characters that are not allowed.\nOperation not allowed in a database system. The operation is not supported by DB2.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "The identifier contains characters that are not allowed.",
+      "reason": "The identifier contains characters that are not allowed.\nThe operation is not supported by DB2.",
       "examples": "DB2 SQLCODE -113",
       "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0099",
-      "code": "-113",
-      "shortDescription": "Operation not allowed in a database system.",
-      "longDescription": "Operation not allowed in a database system. The operation is not supported by DB2.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The operation is not supported by DB2.",
-      "examples": "DB2 SQLCODE -113",
-      "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
+    
     {
       "id": "ERR-DB2-0100",
       "code": "-115",
@@ -9023,32 +8434,21 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
+        {
       "id": "ERR-DB2-0101",
       "code": "-117",
-      "shortDescription": "The table DCL is longer than the COPY DCL.",
-      "longDescription": "The table DCL is longer than the COPY DCL. The definitions do not match in size.",
+      "shortDescription": "The table DCL is longer than the COPY DCL.\nThe number of inserted values does not match the number of target columns.",
+      "longDescription": "The table DCL is longer than the COPY DCL. The definitions do not match in size. The number of inserted values does not match the number of target columns. Mismatch between columns and values.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "The definitions do not match in size.",
+      "reason": "The definitions do not match in size.\n Mismatch between columns and values.",
       "examples": "DB2 SQLCODE -117",
       "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0102",
-      "code": "-117",
-      "shortDescription": "The number of inserted values does not match the number of target columns.",
-      "longDescription": "The number of inserted values does not match the number of target columns. Mismatch between columns and values.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Mismatch between columns and values.",
-      "examples": "DB2 SQLCODE -117",
-      "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
+   
     {
       "id": "ERR-DB2-0103",
       "code": "-118",
@@ -9065,29 +8465,18 @@
     {
       "id": "ERR-DB2-0104",
       "code": "-119",
-      "shortDescription": "A column identified in a HAVING clause is not included in the GROUP BY clause.",
-      "longDescription": "A column identified in a HAVING clause is not included in the GROUP BY clause. The column must also appear in GROUP BY.",
+      "shortDescription": "A column identified in a HAVING clause is not included in the GROUP BY clause.\nTable, view, index, or synonym name exceeds the maximum allowed length...",
+      "longDescription": "A column identified in a HAVING clause is not included in the GROUP BY clause. The column must also appear in GROUP BY.\nTable, view, index, or synonym name exceeds the maximum allowed length of 18 characters. The name exceeds the permitted length.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "The column must also appear in GROUP BY.",
+      "reason": "The column must also appear in GROUP BY.\n The name exceeds the permitted length.",
       "examples": "DB2 SQLCODE -119",
       "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0105",
-      "code": "-119",
-      "shortDescription": "Table, view, index, or synonym name exceeds the maximum allowed length...",
-      "longDescription": "Table, view, index, or synonym name exceeds the maximum allowed length of 18 characters. The name exceeds the permitted length.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The name exceeds the permitted length.",
-      "examples": "DB2 SQLCODE -119",
-      "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+
+    
     {
       "id": "ERR-DB2-0106",
       "code": "-120",
@@ -9104,55 +8493,31 @@
     {
       "id": "ERR-DB2-0107",
       "code": "-121",
-      "shortDescription": "The operand of an SQL function is another SQL function or DISTINCT followed by an...",
-      "longDescription": "The operand of an SQL function is another SQL function or DISTINCT followed by an expression. Nested function use is not allowed.",
+      "shortDescription": "The operand of an SQL function is another SQL function or DISTINCT followed by an...\nThe column is identified more than once in the INSERT or UPDATE statement, or...",
+      "longDescription": "The operand of an SQL function is another SQL function or DISTINCT followed by an expression. Nested function use is not allowed.\nThe column is identified more than once in the INSERT or UPDATE statement, or drop the table and recreate it. The column appears more than once in the statement, or the table is inconsistent and must be recreated.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "Nested function use is not allowed.",
+      "reason": "Nested function use is not allowed.\nThe column appears more than once in the statement, or the table is inconsistent and must be recreated.",
       "examples": "DB2 SQLCODE -121",
       "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0108",
-      "code": "-121",
-      "shortDescription": "The column is identified more than once in the INSERT or UPDATE statement, or...",
-      "longDescription": "The column is identified more than once in the INSERT or UPDATE statement, or drop the table and recreate it. The column appears more than once in the statement, or the table is inconsistent and must be recreated.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The column appears more than once in the statement, or the table is inconsistent and must be recreated.",
-      "examples": "DB2 SQLCODE -121",
-      "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0110",
-      "code": "-122",
-      "shortDescription": "Column specified in SELECT but not in GROUP BY.",
-      "longDescription": "Column specified in SELECT but not in GROUP BY. The column must be included in GROUP BY.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The column must be included in GROUP BY.",
-      "examples": "DB2 SQLCODE -122",
-      "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0111",
       "code": "-122",
       "shortDescription": "Column specified in SELECT but not in GROUP BY, or a SELECT statement without GROUP...",
       "longDescription": "Column specified in SELECT but not in GROUP BY, or a SELECT statement without GROUP BY contains a column name and an SQL function in the SELECT clause. The statement requires consistency between SELECT and GROUP BY.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "The statement requires consistency between SELECT and GROUP BY.",
+      "reason": "The column must be included in GROUP BY.\nThe statement requires consistency between SELECT and GROUP BY.",
       "examples": "DB2 SQLCODE -122",
       "operation": "Review the SQLCODE, SQL statement, and DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
+   
     {
       "id": "ERR-DB2-0112",
       "code": "-125",
@@ -9660,19 +9025,7 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0151",
-      "code": "-204",
-      "shortDescription": "Required table unavailable",
-      "longDescription": "Name not defined in DB2, or table not created or incorrectly created, or ':' is missing in WORKING fields in the WHERE, or COPY does not match CREATE. The referenced object does not exist or is incorrectly defined.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The referenced object does not exist or is incorrectly defined",
-      "examples": "DB2 SQLCODE -204",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0152",
       "code": "-205",
@@ -9682,19 +9035,6 @@
       "severity": "MEDIUM",
       "reason": "The referenced column is not defined",
       "examples": "DB2 SQLCODE -205",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0153",
-      "code": "-206",
-      "shortDescription": "Column name does not exist in the table, or the table was created with old indexes, or check the DECLARE when opening.",
-      "longDescription": "Column name does not exist in the table, or the table was created with old indexes, or check the DECLARE when opening. The column does not match the current table definition.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The column does not match the current table definition",
-      "examples": "DB2 SQLCODE -206",
       "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
@@ -10246,19 +9586,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-DB2-0196",
-      "code": "-501",
-      "shortDescription": "Invalid DB2 cursor state",
-      "longDescription": "Cursor not specified in FETCH or CLOSE is not open. The cursor must be opened before it is used.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The cursor must be opened before it is used.",
-      "examples": "DB2 SQLCODE -501",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
       "id": "ERR-DB2-0197",
       "code": "-502",
       "shortDescription": "Invalid DB2 cursor state",
@@ -10454,19 +9781,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-DB2-0212",
-      "code": "-530",
-      "shortDescription": "Required table not available",
-      "longDescription": "FOR UPDATE clause cannot be specified because there is an inconsistency with a preceding table, or an attempt is made to insert into or modify a table with referential integrity and the parent does not exist. Referential integrity violation or incorrect use of FOR UPDATE.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "Referential integrity violation or incorrect use of FOR UPDATE.",
-      "examples": "DB2 SQLCODE -530",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
       "id": "ERR-DB2-0213",
       "code": "-531",
       "shortDescription": "The primary key cannot be updated because it has dependent rows.",
@@ -10618,19 +9932,6 @@
       "severity": "LOW",
       "reason": "The primary key must be NOT NULL.",
       "examples": "DB2 SQLCODE -542",
-      "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0225",
-      "code": "-551",
-      "shortDescription": "Security authorization failure",
-      "longDescription": "The user does not have privileges for the operation, or the object does not exist or is in READ ONLY status, or the authorization-id lacks permissions, or authorization is missing for referential integrity. The user lacks sufficient privileges.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The user lacks sufficient privileges.",
-      "examples": "DB2 SQLCODE -551",
       "operation": "Review the SQLCODE, the SQL statement, and the transaction context in DB2.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
@@ -11559,19 +10860,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-DB2-0297",
-      "code": "-803",
-      "shortDescription": "Insert with duplicate keys or modification of a unique index entry.",
-      "longDescription": "The key already exists in the table, or the unique index does not allow the modification.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The key already exists in the table, or the unique index does not allow the modification.",
-      "examples": "DB2 SQLCODE -803",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
       "id": "ERR-DB2-0298",
       "code": "-804",
       "shortDescription": "Error in the application program input parameters for the SQL statement.",
@@ -11580,19 +10868,6 @@
       "severity": "MEDIUM",
       "reason": "The parameters or the execution environment are invalid.",
       "examples": "DB2 SQLCODE -804",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0299",
-      "code": "-805",
-      "shortDescription": "Load module not found",
-      "longDescription": "The plan does not contain the required package.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The plan does not contain the required package.",
-      "examples": "DB2 SQLCODE -805",
       "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
@@ -11632,19 +10907,6 @@
       "severity": "LOW",
       "reason": "The transaction must be an update transaction.",
       "examples": "DB2 SQLCODE -817",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0303",
-      "code": "-818",
-      "shortDescription": "Inconsistency between the DB2 plan and the program",
-      "longDescription": "The module must be recompiled and relinked.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The module must be recompiled and relinked.",
-      "examples": "DB2 SQLCODE -818",
       "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
@@ -11740,19 +11002,7 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0311",
-      "code": "-904",
-      "shortDescription": "Timeout",
-      "longDescription": "The required resource is not available.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The required resource is not available.",
-      "examples": "DB2 SQLCODE -904",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0312",
       "code": "-905",
@@ -11818,45 +11068,7 @@
       "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0317",
-      "code": "-911",
-      "shortDescription": "Resource blocked during execution",
-      "longDescription": "The operation could not obtain the required lock.",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "The operation could not obtain the required lock.",
-      "examples": "DB2 SQLCODE -911",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0318",
-      "code": "-913",
-      "shortDescription": "Deadlock between resources",
-      "longDescription": "The transaction must be retried.",
-      "system": "DB2",
-      "severity": "HIGH",
-      "reason": "The transaction must be retried.",
-      "examples": "DB2 SQLCODE -913",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0319",
-      "code": "-922",
-      "shortDescription": "Security authorization failure",
-      "longDescription": "The user does not have permission to execute the plan.",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "The user does not have permission to execute the plan.",
-      "examples": "DB2 SQLCODE -922",
-      "operation": "Review the SQLCODE, the SQL statement, and the DB2 transaction context.",
-      "recomendation": "Review the SQLCODE together with the SQL statement, permissions, and resource status; apply the appropriate correction and repeat the operation in a controlled manner.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0320",
       "code": "-923",
@@ -16760,3 +15972,4 @@
     }
   ]
 }
+
