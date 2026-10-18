@@ -308,7 +308,7 @@
       "longDescription": "Insufficient space in output file. The dataset reached the extents limit. Review SPACE=(primary,secondary) and alternate volumes.\nPossible program loop. Printed output requires more space; end-of-volume errors; insufficient disk space (code 04",
       "system": "ABEND",
       "severity": "MEDIUM",
-      "reason": "The dataset reached the extents limit. Review SPACE=(primary,secondary) and alternate volumes.\nPrinted output requires more space; end-of-volume errors; insufficient disk space (code 04),
+      "reason": "The dataset reached the extents limit. Review SPACE=(primary,secondary) and alternate volumes.\nPrinted output requires more space; end-of-volume errors; insufficient disk space (code 04)",
       "examples": "ABEND SB37",
       "operation": "Analyze the ABEND, identify the step, Printed output requires more space; end-of-volume errors; insufficient disk space (code 04) and review the associated record and return code.",
       "recomendation": "Analyze the dump and job messages, identify the affected step and instruction, and correct the cause before retrying the execution.",
