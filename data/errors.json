@@ -5,46 +5,50 @@
       "id": "ERR-ABEND-0001",
       "code": "S0C7",
       "shortDescription": "Excepción de datos por valor no numérico",
-      "longDescription": "Data exception: intento de convertir datos no numéricos Suele ocurrir al mover datos alfanuméricos a campos numéricos PACKED o BINARY. Revisar contenido del registro y el mapa de copia",
+      "longDescription": "Data exception: intento de convertir datos no numéricos. Revisar contenido del registro y el mapa de copia.\nSe intenta hacer una operación decimal en la que uno de los operandos no es numérico. Hacer una comparación de un campo definido como numérico y que no contiene dígitos. Move de un numérico a campo de edición si el primero no contiene dígitos. Operación decimal con operando no numérico; comparación de campo numérico sin dígitos; MOVE a campo de edición con valor no numérico",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "Suele ocurrir al mover datos alfanuméricos a campos numéricos PACKED o BINARY. Revisar contenido del registro y el mapa de copia",
+      "reason": "Suele ocurrir al mover datos alfanuméricos a campos numéricos PACKED o BINARY. Revisar contenido del registro y el mapa de copia. \nOperación decimal con operando no numérico; comparación de campo numérico sin dígitos; MOVE a campo de edición con valor no numérico ",
       "examples": "ABEND S0C7",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0002",
       "code": "S0C4",
       "shortDescription": "Acceso a una dirección de memoria no válida",
-      "longDescription": "Violación de memoria: dirección inválida Generalmente causado por punteros no inicializados, offsets incorrectos o acceso fuera de límites en tablas",
+      "longDescription": "Violación de memoria: dirección inválida Generalmente causado por punteros no inicializados, offsets incorrectos o acceso fuera de límites en tablas.\nError de protección. Read de un archivo que no ha sido abierto. Falta dd. Invasión de la procedure. Se tratan campos de fichero no abierto. Índice de tabla se dispara. READ sin OPEN; falta DD; invasión de procedure; índice fuera de rango",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "Generalmente causado por punteros no inicializados, offsets incorrectos o acceso fuera de límites en tablas",
+      "reason": "Generalmente causado por punteros no inicializados, offsets incorrectos o acceso fuera de límites en tablas.\nREAD sin OPEN; falta DD; invasión de procedure; índice fuera de rango ",
       "examples": "ABEND S0C4",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0003",
       "code": "S0C1",
       "shortDescription": "Ejecución de una instrucción inválida",
-      "longDescription": "Instrucción inválida o no permitida Puede deberse a corrupción de código, overlay de memoria o ejecución de datos como instrucciones",
+      "longDescription": "Instrucción inválida o no permitida Puede deberse a corrupción de código, overlay de memoria o ejecución de datos como instrucciones.\nFalta dd o fichero cerrado que se quiere leer. El programa no se ha compilado con la opción correcta. Alguno de los módulos no se ha compilado con la opción correcta. Fichero catalogado necesita unit. Tabla desbordada que machaca parte de la procedure. Estando activado el mantis real no debe pasarse la utilidad unlock. Falta DD; fichero cerrado; compilación incorrecta; tabla desbordada; no usar UNLOCK con MANTIS real.",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "Puede deberse a corrupción de código, overlay de memoria o ejecución de datos como instrucciones",
+      "reason": "Puede deberse a corrupción de código, overlay de memoria o ejecución de datos como instrucciones.\n Falta DD; fichero cerrado; compilación incorrecta; tabla desbordada; no usar UNLOCK con MANTIS real.",
       "examples": "ABEND S0C1",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
+    
     {
       "id": "ERR-ABEND-0004",
       "code": "S0CB",
       "shortDescription": "Intento de división por cero",
-      "longDescription": "División por cero Verificar divisor antes de la operación. Frecuente cuando campos numéricos vienen vacíos o con ceros",
+      "longDescription": "División por cero Verificar divisor antes de la operación. Frecuente cuando campos numéricos vienen vacíos o con ceros.\nDivisor es cero. División con divisor igual a cero ",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "Verificar divisor antes de la operación. Frecuente cuando campos numéricos vienen vacíos o con ceros",
@@ -53,14 +57,15 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0005",
       "code": "S0C5",
-      "shortDescription": "Autorización insuficiente para el recurso DB2",
-      "longDescription": "Error de protección de almacenamiento Acceso a memoria protegida o fuera del rango permitido. Revisar direcciones y permisos de almacenamiento",
+      "shortDescription": "Autorización insuficiente para el recurso DB2.\nError de direccionamiento.",
+      "longDescription": "Error de protección de almacenamiento Acceso a memoria protegida o fuera del rango permitido. Revisar direcciones y permisos de almacenamiento.\nError de direccionamiento. Tabla desbordada. Machaca direcciones de la procedure division. Tabla desbordada; corrupción de direcciones ",
       "system": "ABEND",
       "severity": "LOW",
-      "reason": "Acceso a memoria protegida o fuera del rango permitido. Revisar direcciones y permisos de almacenamiento",
+      "reason": "Acceso a memoria protegida o fuera del rango permitido. Revisar direcciones y permisos de almacenamiento.\n Tabla desbordada; corrupción de direcciones ",
       "examples": "ABEND S0C5",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
@@ -161,7 +166,7 @@
       "id": "ERR-ABEND-0013",
       "code": "S322",
       "shortDescription": "Límite de tiempo de ejecución excedido",
-      "longDescription": "Tiempo de CPU excedido El job excedió el límite de tiempo. Revisar loops infinitos o aumentar TIME en el JCL",
+      "longDescription": "Tiempo de CPU excedido El job excedió el límite de tiempo. Revisar loops infinitos o aumentar TIME en el JCL.\nTiempo insuficiente. La ejecución requiere más tiempo que el especificado con parámetro time en ficha JOB. Tiempo excedido; parámetro TIME insuficiente en JOB ",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "El job excedió el límite de tiempo. Revisar loops infinitos o aumentar TIME en el JCL",
@@ -170,27 +175,29 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0014",
       "code": "S522",
-      "shortDescription": "Bloqueo mutuo entre recursos",
-      "longDescription": "Job detenido por falta de actividad El job no produjo salida durante un periodo prolongado. Revisar esperas, deadlocks o bloqueos",
+      "shortDescription": "Bloqueo mutuo entre recursos.\nSe tiene pendiente mas tiempo del permitido la contestacion de algun mensaje.",
+      "longDescription": "Job detenido por falta de actividad El job no produjo salida durante un periodo prolongado. Revisar esperas, deadlocks o bloqueos.\nSe tiene pendiente mas tiempo del permitido la contestacion de algun mensaje. El trabajo espera respuesta o asignación de recurso por demasiado tiempo ",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "El job no produjo salida durante un periodo prolongado. Revisar esperas, deadlocks o bloqueos",
+      "reason": "El job no produjo salida durante un periodo prolongado. Revisar esperas, deadlocks o bloqueos.\nEl trabajo espera respuesta o asignación de recurso por demasiado tiempo ",
       "examples": "ABEND S522",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0015",
       "code": "S806",
       "shortDescription": "Módulo de carga no localizado",
-      "longDescription": "Programa no encontrado en STEPLIB/JOBLIB Verificar librerías de carga, concatenaciones y nombre del módulo. Frecuente cuando falta un load",
+      "longDescription": "Programa no encontrado en STEPLIB/JOBLIB Verificar librerías de carga, concatenaciones y nombre del módulo. Frecuente cuando falta un load.\n Puede que no encuentre un modulo. Lectura de fichero finalizado; falta DD; programa no existe en cargable; códigos 04 y 08 según IEC152I ",
       "system": "ABEND",
       "severity": "HIGH",
-      "reason": "Verificar librerías de carga, concatenaciones y nombre del módulo. Frecuente cuando falta un load",
+      "reason": "Verificar librerías de carga, concatenaciones y nombre del módulo. Frecuente cuando falta un load.",
       "examples": "ABEND S806",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
@@ -199,8 +206,8 @@
     {
       "id": "ERR-ABEND-0016",
       "code": "S80A",
-      "shortDescription": "Almacenamiento virtual insuficiente",
-      "longDescription": "Falta de almacenamiento (REGION insuficiente) Incrementar REGION o optimizar uso de memoria. Frecuente en programas con grandes tablas",
+      "shortDescription": "Almacenamiento virtual insuficiente.\nError en la ejecucion de una macro GETMAIN.",
+      "longDescription": "Falta de almacenamiento (REGION insuficiente) Incrementar REGION o optimizar uso de memoria. Frecuente en programas con grandes tablas.\nError en la ejecucion de una macro GETMAIN. Se requirió más almacenamiento del disponible; ONCODE 9050.",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "Incrementar REGION o optimizar uso de memoria. Frecuente en programas con grandes tablas",
@@ -209,11 +216,12 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0017",
       "code": "S878",
       "shortDescription": "Almacenamiento virtual insuficiente",
-      "longDescription": "No hay suficiente memoria para asignación El programa intentó reservar más memoria de la disponible. Revisar buffers y estructuras dinámicas",
+      "longDescription": "No hay suficiente memoria para asignación El programa intentó reservar más memoria de la disponible. Revisar buffers y estructuras dinámicas.\n Region insuficiente. La región asignada no permite continuar la ejecución.",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "El programa intentó reservar más memoria de la disponible. Revisar buffers y estructuras dinámicas",
@@ -226,7 +234,7 @@
       "id": "ERR-ABEND-0018",
       "code": "S913",
       "shortDescription": "Fallo de autorización de seguridad",
-      "longDescription": "Violación de seguridad RACF El usuario no tiene permisos para acceder al recurso. Revisar reglas RACF y permisos de dataset",
+      "longDescription": "Violación de seguridad RACF El usuario no tiene permisos para acceder al recurso. Revisar reglas RACF y permisos de dataset.\n Password incorrecta. RACF indica autoridad insuficiente; también puede ocurrir al concatenar dos ficheros ISAM; ver IEC150I en OPEN.",
       "system": "ABEND",
       "severity": "HIGH",
       "reason": "El usuario no tiene permisos para acceder al recurso. Revisar reglas RACF y permisos de dataset",
@@ -235,11 +243,12 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0019",
       "code": "S106",
-      "shortDescription": "Definición DD no válida",
-      "longDescription": "Error al asignar dataset Puede deberse a parámetros incorrectos en DD, falta de volumen o problemas de catálogo",
+      "shortDescription": "Definición DD no válida.\nNo encuentra el programa en catalogación.",
+      "longDescription": "Error al asignar dataset Puede deberse a parámetros incorrectos en DD, falta de volumen o problemas de catálogo.\nNo encuentra el programa en catalogación. Programa no localizado en catálogo.",
       "system": "ABEND",
       "severity": "MEDIUM",
       "reason": "Puede deberse a parámetros incorrectos en DD, falta de volumen o problemas de catálogo",
@@ -248,24 +257,26 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0020",
       "code": "S237",
-      "shortDescription": "Error de espacio en disco El dataset no pudo extenderse por falta de espacio.",
-      "longDescription": "Error de espacio en disco El dataset no pudo extenderse por falta de espacio. Revisar volúmenes, extents y asignación secundaria",
+      "shortDescription": "Error de espacio en disco El dataset no pudo extenderse por falta de espacio.\n El error se produce al finalizar el volumen.",
+      "longDescription": "Error de espacio en disco El dataset no pudo extenderse por falta de espacio. Revisar volúmenes, extents y asignación secundaria.\nEl error se produce al finalizar el volumen. Puede ser cinta deteriorada. 04 error en contador de bloques de etiqueta de cola. Puede haberse perdido un bloque de datos debido a un error de hardware. Código 08: en una operación de ficheros concatenados la etiqueta de uno cualquiera de ellos (salvo el primero) no coincide con el dsn reflejado en la DD. Fin de volumen; posible cinta deteriorada; código 04: error en contador de bloques de etiqueta de cola; posible pérdida de datos por hardware.",
       "system": "ABEND",
       "severity": "MEDIUM",
-      "reason": "El dataset no pudo extenderse por falta de espacio. Revisar volúmenes, extents y asignación secundaria",
+      "reason": "El dataset no pudo extenderse por falta de espacio. Revisar volúmenes, extents y asignación secundaria.\nFin de volumen; posible cinta deteriorada; código 04: error en contador de bloques de etiqueta de cola; posible pérdida de datos por hardware; código 08: etiqueta de fichero concatenado no coincide con DSN de DD",
       "examples": "ABEND S237",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0021",
       "code": "SA13",
-      "shortDescription": "Dataset no localizado",
-      "longDescription": "No se encuentra el fichero en cinta. El dataset referenciado no existe en el volumen de cinta especificado o la etiqueta no coincide. Revisar DD UNIT/VOL y la disponibilidad física de la cinta",
+      "shortDescription": "Dataset no localizado.\nCinta mal posicionada o etiquetas mal grabadas.",
+      "longDescription": "No se encuentra el fichero en cinta. El dataset referenciado no existe en el volumen de cinta especificado o la etiqueta no coincide. Revisar DD UNIT/VOL y la disponibilidad física de la cinta.\nCinta mal posicionada o etiquetas mal grabadas. Ver IEC151I; comprobar imagen UCS en SYS1.IMAGELIB; cod:04 número de fichero no está en la cinta ",
       "system": "ABEND",
       "severity": "MEDIUM",
       "reason": "el recurso referenciado no está disponible en el volumen de cinta especificado o la etiqueta no coincide. Revisar DD UNIT/VOL y la disponibilidad física de la cinta",
@@ -274,6 +285,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0022",
       "code": "SB00",
@@ -290,8 +302,8 @@
     {
       "id": "ERR-ABEND-0023",
       "code": "SB37",
-      "shortDescription": "Falta de espacio en fichero de salida.",
-      "longDescription": "Falta de espacio en fichero de salida. El dataset alcanzó el límite de extents. Revisar SPACE=(primario,secundario) y volúmenes alternativos",
+      "shortDescription": "Falta de espacio en fichero de salida.\n Posible bucle de programa.",
+      "longDescription": "Falta de espacio en fichero de salida. El dataset alcanzó el límite de extents. Revisar SPACE=(primario,secundario) y volúmenes alternativos.\n Posible bucle de programa. Salida impresa requiere más espacio; errores de fin de volumen; falta de espacio en disco (código 04).",
       "system": "ABEND",
       "severity": "MEDIUM",
       "reason": "El dataset alcanzó el límite de extents. Revisar SPACE=(primario,secundario) y volúmenes alternativos",
@@ -300,6 +312,8 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-ABEND-0024",
       "code": "SC16",
@@ -316,8 +330,8 @@
     {
       "id": "ERR-ABEND-0025",
       "code": "SD37",
-      "shortDescription": "Falta de espacio en la operación.",
-      "longDescription": "Falta de espacio en la operación. La operación requiere más espacio del disponible. Reorganizar el proceso o aumentar SPACE",
+      "shortDescription": "Falta de espacio en la operación.\nError durante la ordenación de datos ",
+      "longDescription": "Falta de espacio en la operación. La operación requiere más espacio del disponible. Reorganizar el proceso o aumentar SPACE.\nSe llena espacio primario del fichero. No se indicaron incrementos o no pueden tomarse; ocurre en SORT por tamaño de SORTWORK ",
       "system": "ABEND",
       "severity": "LOW",
       "reason": "La operación requiere más espacio del disponible. Reorganizar el proceso o aumentar SPACE",
@@ -326,6 +340,8 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-ABEND-0026",
       "code": "SE00",
@@ -342,8 +358,8 @@
     {
       "id": "ERR-ABEND-0027",
       "code": "SE37",
-      "shortDescription": "Falta de espacio en el directorio.",
-      "longDescription": "Falta de espacio en el directorio. El PDS no tiene espacio para nuevos miembros. Ejecutar IEBCOPY/REORG o aumentar el tamaño del directorio",
+      "shortDescription": "Falta de espacio en el directorio.\nAgotados los bloques de directorio de un fichero particionado.",
+      "longDescription": "Falta de espacio en el directorio. El PDS no tiene espacio para nuevos miembros. Ejecutar IEBCOPY/REORG o aumentar el tamaño del directorio.\nAgotados los bloques de directorio de un fichero particionado. Cod:04: espacio agotado en el volumen; Cod:08: sobrepasa capacidad del disco; conflicto de nombre al extender a otro volumen ",
       "system": "ABEND",
       "severity": "LOW",
       "reason": "El PDS no tiene espacio para nuevos miembros. Ejecutar IEBCOPY/REORG o aumentar el tamaño del directorio",
@@ -352,6 +368,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
+
     {
       "id": "ERR-ABEND-0028",
       "code": "S000",
@@ -1107,19 +1124,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-ABEND-0089",
-      "code": "S0C1",
-      "shortDescription": "Ejecución de una instrucción inválida",
-      "longDescription": "Falta dd o fichero cerrado que se quiere leer. El programa no se ha compilado con la opción correcta. Alguno de los módulos no se ha compilado con la opción correcta. Fichero catalogado necesita unit. Tabla desbordada que machaca parte de la procedure. Estando activado el mantis real no debe pasarse la utilidad unlock. Falta DD; fichero cerrado; compilación incorrecta; tabla desbordada; no usar UNLOCK con MANTIS real",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Falta DD; fichero cerrado; compilación incorrecta; tabla desbordada; no usar UNLOCK con MANTIS real",
-      "examples": "ABEND S0C1",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
       "id": "ERR-ABEND-0090",
       "code": "S0C2",
       "shortDescription": "Se cierra fichero sin haberlo abierto previamente.",
@@ -1145,32 +1149,8 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0092",
-      "code": "S0C4",
-      "shortDescription": "Acceso a una dirección de memoria no válida",
-      "longDescription": "Error de protección. Read de un archivo que no ha sido abierto. Falta dd. Invasión de la procedure. Se tratan campos de fichero no abierto. Índice de tabla se dispara. READ sin OPEN; falta DD; invasión de procedure; índice fuera de rango",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "READ sin OPEN; falta DD; invasión de procedure; índice fuera de rango",
-      "examples": "ABEND S0C4",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-ABEND-0093",
-      "code": "S0C5",
-      "shortDescription": "Error de direccionamiento.",
-      "longDescription": "Error de direccionamiento. Tabla desbordada. Machaca direcciones de la procedure division. Tabla desbordada; corrupción de direcciones",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Tabla desbordada; corrupción de direcciones",
-      "examples": "ABEND S0C5",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
+    
+    
     {
       "id": "ERR-ABEND-0094",
       "code": "S0C6",
@@ -1180,19 +1160,6 @@
       "severity": "LOW",
       "reason": "Excepción por OPEN fallido o lectura sin OPEN",
       "examples": "ABEND S0C6",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-ABEND-0107",
-      "code": "S0C7",
-      "shortDescription": "Excepción de datos por valor no numérico",
-      "longDescription": "Excepción de datos. Se intenta hacer una operación decimal en la que uno de los operandos no es numérico. Hacer una comparación de un campo definido como numérico y que no contiene dígitos. Move de un numérico a campo de edición si el primero no contiene dígitos. Operación decimal con operando no numérico; comparación de campo numérico sin dígitos; MOVE a campo de edición con valor no numérico",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Operación decimal con operando no numérico; comparación de campo numérico sin dígitos; MOVE a campo de edición con valor no numérico",
-      "examples": "ABEND S0C7",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
@@ -1232,19 +1199,6 @@
       "severity": "LOW",
       "reason": "Desbordamiento en operación decimal",
       "examples": "ABEND S0CA",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-ABEND-0111",
-      "code": "S0CB",
-      "shortDescription": "Intento de división por cero",
-      "longDescription": "Divisor es cero. División con divisor igual a cero",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "División con divisor igual a cero",
-      "examples": "ABEND S0CB",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
@@ -1431,19 +1385,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0147",
-      "code": "S106",
-      "shortDescription": "No encuentra el programa en catalogación.",
-      "longDescription": "No encuentra el programa en catalogación. Programa no localizado en catálogo",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "Programa no localizado en catálogo",
-      "examples": "ABEND S106",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0148",
       "code": "S10A",
@@ -2068,19 +2010,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0233",
-      "code": "S237",
-      "shortDescription": "El error se produce al finalizar el volumen.",
-      "longDescription": "El error se produce al finalizar el volumen. Puede ser cinta deteriorada. 04 error en contador de bloques de etiqueta de cola. Puede haberse perdido un bloque de datos debido a un error de hardware. 08 en una operación de ficheros concatenados la etiqueta de uno cualquiera de ellos (salvo el primero) no coincide con el dsn reflejado en la DD. Fin de volumen; posible cinta deteriorada; código 04: error en contador de bloques de etiqueta de cola; posible pérdida de datos por hardware; código 08: etiqueta de fichero concatenado no coincide con DSN de DD",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "Fin de volumen; posible cinta deteriorada; código 04: error en contador de bloques de etiqueta de cola; posible pérdida de datos por hardware; código 08: etiqueta de fichero concatenado no coincide con DSN de DD",
-      "examples": "ABEND S237",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0234",
       "code": "S238",
@@ -2454,19 +2384,6 @@
       "severity": "LOW",
       "reason": "Carácter inválido en MODS",
       "examples": "ABEND S31A",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-ABEND-0263",
-      "code": "S322",
-      "shortDescription": "Límite de tiempo de ejecución excedido",
-      "longDescription": "Tiempo insuficiente. La ejecución requiere más tiempo que el especificado con parámetro time en ficha JOB. Tiempo excedido; parámetro TIME insuficiente en JOB",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Tiempo excedido; parámetro TIME insuficiente en JOB",
-      "examples": "ABEND S322",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
@@ -3213,19 +3130,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-ABEND-0320",
-      "code": "S522",
-      "shortDescription": "Se tiene pendiente mas tiempo del permitido la contestacion de algun mensaje.",
-      "longDescription": "Se tiene pendiente mas tiempo del permitido la contestacion de algun mensaje. El trabajo espera respuesta o asignación de recurso por demasiado tiempo",
-      "system": "ABEND",
-      "severity": "LOW",
-      "reason": "El trabajo espera respuesta o asignación de recurso por demasiado tiempo",
-      "examples": "ABEND S522",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
       "id": "ERR-ABEND-0321",
       "code": "S52A",
       "shortDescription": "Error en macro ATTACH.",
@@ -3863,19 +3767,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-ABEND-0370",
-      "code": "S803",
-      "shortDescription": "El contador de numero de hijos logicos quedo en negativo.",
-      "longDescription": "El contador de numero de hijos logicos quedo en negativo. Puede no existir el padre lógico; error al borrar un hijo lógico",
-      "system": "ABEND",
-      "severity": "LOW",
-      "reason": "Puede no existir el padre lógico; error al borrar un hijo lógico",
-      "examples": "ABEND S803",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
       "id": "ERR-ABEND-0371",
       "code": "S804",
       "shortDescription": "Error en macro GETMAIN.",
@@ -3884,19 +3775,6 @@
       "severity": "LOW",
       "reason": "Región insuficiente para completar GETMAIN",
       "examples": "ABEND S804",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-ABEND-0372",
-      "code": "S806",
-      "shortDescription": "Módulo de carga no localizado",
-      "longDescription": "Puede que no encuentre un modulo. Lectura de fichero finalizado; falta DD; programa no existe en cargable; códigos 04 y 08 según IEC152I",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Lectura de fichero finalizado; falta DD; programa no existe en cargable; códigos 04 y 08 según IEC152I",
-      "examples": "ABEND S806",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
@@ -3927,19 +3805,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0375",
-      "code": "S80A",
-      "shortDescription": "Error en la ejecucion de una macro GETMAIN.",
-      "longDescription": "Error en la ejecucion de una macro GETMAIN. Se requirió más almacenamiento del disponible; ONCODE 9050; aumentar REGION",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "Se requirió más almacenamiento del disponible; ONCODE 9050; aumentar REGION",
-      "examples": "ABEND S80A",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0376",
       "code": "S813",
@@ -4071,19 +3937,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-ABEND-0386",
-      "code": "S878",
-      "shortDescription": "Almacenamiento virtual insuficiente",
-      "longDescription": "Region insuficiente. La región asignada no permite continuar la ejecución",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "La región asignada no permite continuar la ejecución",
-      "examples": "ABEND S878",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
       "id": "ERR-ABEND-0387",
       "code": "S87A",
       "shortDescription": "Falta de memoria para realizar el trabajo.",
@@ -4183,19 +4036,6 @@
       "severity": "LOW",
       "reason": "Segmento inexistente o mal definido en la DBD",
       "examples": "ABEND S912",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-ABEND-0395",
-      "code": "S913",
-      "shortDescription": "Fallo de autorización de seguridad",
-      "longDescription": "Password incorrecta. RACF indica autoridad insuficiente; también puede ocurrir al concatenar dos ficheros ISAM; ver IEC150I en OPEN",
-      "system": "ABEND",
-      "severity": "HIGH",
-      "reason": "RACF indica autoridad insuficiente; también puede ocurrir al concatenar dos ficheros ISAM; ver IEC150I en OPEN",
-      "examples": "ABEND S913",
       "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
@@ -4304,19 +4144,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0404",
-      "code": "SA13",
-      "shortDescription": "Cinta mal posicionada o etiquetas mal grabadas.",
-      "longDescription": "Cinta mal posicionada o etiquetas mal grabadas. Ver IEC151I; comprobar imagen UCS en SYS1.IMAGELIB; 04 número de fichero no está en la cinta",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "Ver IEC151I; comprobar imagen UCS en SYS1.IMAGELIB; 04 número de fichero no está en la cinta",
-      "examples": "ABEND SA13",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0405",
       "code": "SA14",
@@ -4408,19 +4236,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0412",
-      "code": "SB37",
-      "shortDescription": "Posible bucle de programa.",
-      "longDescription": "Posible bucle de programa. Salida impresa requiere más espacio; errores de fin de volumen; falta de espacio en disco (código 04)",
-      "system": "ABEND",
-      "severity": "LOW",
-      "reason": "Salida impresa requiere más espacio; errores de fin de volumen; falta de espacio en disco (código 04)",
-      "examples": "ABEND SB37",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0413",
       "code": "SC03",
@@ -4460,19 +4276,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0416",
-      "code": "SD37",
-      "shortDescription": "Error durante la ordenación de datos",
-      "longDescription": "Se llena espacio primario del fichero. No se indicaron incrementos o no pueden tomarse; ocurre en SORT por tamaño de SORTWORK",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "No se indicaron incrementos o no pueden tomarse; ocurre en SORT por tamaño de SORTWORK",
-      "examples": "ABEND SD37",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0417",
       "code": "SE0D",
@@ -4512,19 +4316,7 @@
       "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
       "deleted": false
     },
-    {
-      "id": "ERR-ABEND-0420",
-      "code": "SE37",
-      "shortDescription": "Agotados los bloques de directorio de un fichero particionado.",
-      "longDescription": "Agotados los bloques de directorio de un fichero particionado. 04: espacio agotado en el volumen; 08: sobrepasa capacidad del disco; conflicto de nombre al extender a otro volumen",
-      "system": "ABEND",
-      "severity": "MEDIUM",
-      "reason": "04: espacio agotado en el volumen; 08: sobrepasa capacidad del disco; conflicto de nombre al extender a otro volumen",
-      "examples": "ABEND SE37",
-      "operation": "Analizar el ABEND, identificar el paso y revisar el registro y el código de retorno asociado.",
-      "recomendation": "Analizar el dump y los mensajes del job, identificar el paso y la instrucción afectados y corregir la causa antes de reintentar la ejecución.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-ABEND-0421",
       "code": "SFXX",
@@ -7740,10 +7532,10 @@
       "id": "ERR-DB2-0002",
       "code": "-913",
       "shortDescription": "Bloqueo mutuo entre recursos",
-      "longDescription": "Deadlock detectado. Transacción fallida Similar al -911 pero sin rollback automático. Requiere revisar locking y secuencia de operaciones",
+      "longDescription": "Deadlock detectado. Transacción fallida Similar al -911 pero sin rollback automático. Requiere revisar locking y secuencia de operaciones.\nEjecución cancelada debido a un deadlock o a un timeout. La transacción debe reintentarse.",
       "system": "DB2",
       "severity": "HIGH",
-      "reason": "Similar al -911 pero sin rollback automático. Requiere revisar locking y secuencia de operaciones",
+      "reason": "Similar al -911 pero sin rollback automático. Requiere revisar locking y secuencia de operaciones.\nLa transacción debe reintentarse.",
       "examples": "DB2 SQLCODE -913",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
@@ -7752,8 +7544,8 @@
     {
       "id": "ERR-DB2-0003",
       "code": "-805",
-      "shortDescription": "Package no encontrado (DBRM no enlazado) El plan no contiene el package requerido.",
-      "longDescription": "Package no encontrado (DBRM no enlazado) El plan no contiene el package requerido. Revisar BIND, colección y versión del módulo",
+      "shortDescription": "Package no encontrado en plan (DBRM no enlazado). El plan no incluye el package requerido.\nMódulo de carga no localizado.",
+      "longDescription": "Package no encontrado (DBRM no enlazado) El plan no contiene el package requerido. Revisar BIND, colección y versión del módulo.\nPackage no encontrado en plan El plan no incluye el package requerido. Requiere BIND con la colección correcta.\nNombre de programa o módulo no encontrado en el plan o el módulo no está en el paso BIND o ausencia del módulo en DBRM. El plan no contiene el package requerido.",
       "system": "DB2",
       "severity": "MEDIUM",
       "reason": "El plan no contiene el package requerido. Revisar BIND, colección y versión del módulo",
@@ -7762,6 +7554,10 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+    
+
+
+
     {
       "id": "ERR-DB2-0004",
       "code": "-818",
@@ -7775,92 +7571,103 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-DB2-0005",
       "code": "-204",
       "shortDescription": "Tabla requerida no disponible",
-      "longDescription": "Tabla o vista no existe Puede deberse a esquema incorrecto, falta de permisos o error tipográfico en el nombre",
+      "longDescription": "Tabla o vista no existe Puede deberse a esquema incorrecto, falta de permisos o error tipográfico en el nombre.\nNombre no definido en DB2 o tabla no creada o mal creada o faltan ':' en campos de WORKING en la WHERE o no coincide COPY con CREATE. El objeto referenciado no existe o está mal definido.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "Puede deberse a esquema incorrecto, falta de permisos o error tipográfico en el nombre",
+      "reason": "Puede deberse a esquema incorrecto, falta de permisos o error tipográfico en el nombre.\nEl objeto referenciado no existe o está mal definido ",
       "examples": "DB2 SQLCODE -204",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+
     {
       "id": "ERR-DB2-0006",
       "code": "-206",
-      "shortDescription": "Columna no existe en la tabla Frecuente tras cambios en el modelo de datos.",
-      "longDescription": "Columna no existe en la tabla Frecuente tras cambios en el modelo de datos. Revisar nombres, alias y SELECT",
+      "shortDescription": "Columna no existe en la tabla Frecuente tras cambios en el modelo de datos.\nNombre de columna no existente en la tabla o tabla creada con índices antiguos o...",
+      "longDescription": "Columna no existe en la tabla Frecuente tras cambios en el modelo de datos. Revisar nombres, alias y SELECT.\nNombre de columna no existente en la tabla o tabla creada con índices antiguos o si es al abrir mirar el DECLARE. La columna no coincide con la definición actual de la tabla.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "Frecuente tras cambios en el modelo de datos. Revisar nombres, alias y SELECT",
+      "reason": "Frecuente tras cambios en el modelo de datos. Revisar nombres, alias y SELECT.\nLa columna no coincide con la definición actual de la tabla.",
       "examples": "DB2 SQLCODE -206",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+    
+
     {
       "id": "ERR-DB2-0007",
       "code": "-551",
-      "shortDescription": "Autorización insuficiente para el recurso DB2",
-      "longDescription": "Usuario sin permisos para la operación El usuario no tiene privilegios para SELECT, INSERT, UPDATE o DELETE. Revisar GRANT",
+      "shortDescription": "Autorización insuficiente para el recurso DB2.\nFallo de autorización de seguridad.",
+      "longDescription": "Usuario sin permisos para la operación El usuario no tiene privilegios para SELECT, INSERT, UPDATE o DELETE. Revisar GRANT.\nEl usuario no tiene privilegios para la operación o el objeto no existe o está en estado READ ONLY o el authorization-id no tiene permisos o falta autorización para integridad referencial. El usuario carece de permisos suficientes.",
       "system": "DB2",
       "severity": "HIGH",
-      "reason": "El usuario no tiene privilegios para SELECT, INSERT, UPDATE o DELETE. Revisar GRANT",
+      "reason": "El usuario no tiene privilegios para SELECT, INSERT, UPDATE o DELETE. Revisar GRANT.\nEl usuario carece de permisos suficientes.",
       "examples": "DB2 SQLCODE -551",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-DB2-0008",
       "code": "-530",
       "shortDescription": "Tabla requerida no disponible",
-      "longDescription": "Violación de clave foránea Se intenta insertar o actualizar un valor que no existe en la tabla padre. Revisar integridad referencial",
+      "longDescription": "Violación de clave foránea Se intenta insertar o actualizar un valor que no existe en la tabla padre. Revisar integridad referencial.\nCláusula FOR UPDATE no puede ser especificada porque existe inconsistencia con tabla precedente o se intenta dar de alta o modificar en una tabla con integridad referencial y no existe el padre. Violación de integridad referencial o uso incorrecto de FOR UPDATE.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "Se intenta insertar o actualizar un valor que no existe en la tabla padre. Revisar integridad referencial",
+      "reason": "Se intenta insertar o actualizar un valor que no existe en la tabla padre. Revisar integridad referencial.\nViolación de integridad referencial o uso incorrecto de FOR UPDATE.",
       "examples": "DB2 SQLCODE -530",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+
     {
       "id": "ERR-DB2-0009",
       "code": "-803",
-      "shortDescription": "Violación de clave primaria (duplicado) El valor ya existe.",
-      "longDescription": "Violación de clave primaria (duplicado) El valor ya existe. Revisar índices únicos y lógica de generación de claves",
+      "shortDescription": "Violación de clave primaria (duplicado) El valor ya existe.\nInsertar con claves duplicadas siempre y cuando se hayan creado índices o...",
+      "longDescription": "Violación de clave primaria (duplicado) El valor ya existe. Revisar índices únicos y lógica de generación de claves.\nInsertar con claves duplicadas siempre y cuando se hayan creado índices o modificar el índice único de una fila. La clave ya existe en la tabla o el índice único no admite la modificación.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "El valor ya existe. Revisar índices únicos y lógica de generación de claves",
+      "reason": "El valor ya existe. Revisar índices únicos y lógica de generación de claves.\nLa clave ya existe en la tabla o el índice único no admite la modificación.",
       "examples": "DB2 SQLCODE -803",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+
+
     {
       "id": "ERR-DB2-0010",
       "code": "-904",
-      "shortDescription": "Recurso bloqueado durante la ejecución",
-      "longDescription": "Recurso no disponible Puede deberse a tablas bloqueadas, falta de espacio o problemas en el buffer pool",
+      "shortDescription": "Recurso bloqueado durante la ejecución.\nRecurso temporalmente no disponible Puede ser un lock prolongado, falta de buffer...\nTiempo de espera agotado. ",
+      "longDescription": "Recurso no disponible Puede deberse a tablas bloqueadas, falta de espacio o problemas en el buffer pool.\nRecurso temporalmente no disponible Puede ser un lock prolongado, falta de buffer pool o problemas de I/O en la tabla.\nRecurso no disponible o error I/O o contención o tabla en estado COPY o falta espacio o disco dañado o timeout de contención. El recurso requerido no está disponible.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "Puede deberse a tablas bloqueadas, falta de espacio o problemas en el buffer pool",
+      "reason": "Puede deberse a tablas bloqueadas, falta de espacio o problemas en el buffer pool.\nPuede ser un lock prolongado, falta de buffer pool o problemas de I/O en la tabla.\n El recurso requerido no está disponible.",
       "examples": "DB2 SQLCODE -904",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+    
     {
       "id": "ERR-DB2-0011",
       "code": "-922",
       "shortDescription": "Fallo de autorización de seguridad",
-      "longDescription": "Autorización fallida El usuario no está conectado o no tiene permisos para acceder a DB2. Revisar RACF/ACF2",
+      "longDescription": "Autorización fallida El usuario no está conectado o no tiene permisos para acceder a DB2. Revisar RACF/ACF2.\nFalta de autorización. Hacer público el plan. El usuario no tiene permisos para ejecutar el plan.",
       "system": "DB2",
       "severity": "HIGH",
-      "reason": "El usuario no está conectado o no tiene permisos para acceder a DB2. Revisar RACF/ACF2",
+      "reason": "El usuario no está conectado o no tiene permisos para acceder a DB2. Revisar RACF/ACF2.\nEl usuario no tiene permisos para ejecutar el plan.",
       "examples": "DB2 SQLCODE -922",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
@@ -7870,10 +7677,10 @@
       "id": "ERR-DB2-0012",
       "code": "-501",
       "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Cursor no abierto Se ejecutó FETCH sin OPEN previo. Revisar flujo del programa",
+      "longDescription": "Cursor no abierto Se ejecutó FETCH sin OPEN previo. Revisar flujo del programa.\nCursor no especificado en FETCH o CLOSE no está abierto. El cursor debe abrirse antes de usarlo.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "Se ejecutó FETCH sin OPEN previo. Revisar flujo del programa",
+      "reason": "Se ejecutó FETCH sin OPEN previo. Revisar flujo del programa.\nEl cursor debe abrirse antes de usarlo.",
       "examples": "DB2 SQLCODE -501",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
@@ -7931,40 +7738,16 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0017",
-      "code": "-805",
-      "shortDescription": "Package no encontrado en plan El plan no incluye el package requerido.",
-      "longDescription": "Package no encontrado en plan El plan no incluye el package requerido. Requiere BIND con la colección correcta",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El plan no incluye el package requerido. Requiere BIND con la colección correcta",
-      "examples": "DB2 SQLCODE -805",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0018",
-      "code": "-904",
-      "shortDescription": "Recurso temporalmente no disponible Puede ser un lock prolongado, falta de buffer...",
-      "longDescription": "Recurso temporalmente no disponible Puede ser un lock prolongado, falta de buffer pool o problemas de I/O en la tabla",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Puede ser un lock prolongado, falta de buffer pool o problemas de I/O en la tabla",
-      "examples": "DB2 SQLCODE -904",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+
+
     {
       "id": "ERR-DB2-0019",
       "code": "-911",
-      "shortDescription": "Tiempo de espera agotado",
-      "longDescription": "Timeout de bloqueo La transacción esperó demasiado por un lock. Revisar concurrencia y tiempos de espera",
+      "shortDescription": "Tiempo de espera agotado.\n Recurso bloqueado durante la ejecución.",
+      "longDescription": "Timeout de bloqueo La transacción esperó demasiado por un lock. Revisar concurrencia y tiempos de espera.\nRecurso disponible. La tabla está bloqueada por otro usuario o realizar un ROLLBACK y volver a ejecutar. La operación no pudo obtener el lock requerido.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "La transacción esperó demasiado por un lock. Revisar concurrencia y tiempos de espera",
+      "reason": "La transacción esperó demasiado por un lock. Revisar concurrencia y tiempos de espera.\nLa operación no pudo obtener el lock requerido.",
       "examples": "DB2 SQLCODE -911",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
@@ -8025,55 +7808,17 @@
     {
       "id": "ERR-DB2-0024",
       "code": "-004",
-      "shortDescription": "Campo demasiado largo en un CURSOR.",
-      "longDescription": "Campo demasiado largo en un CURSOR. La longitud del campo excede la permitida",
+      "shortDescription": "Campo demasiado largo en un CURSOR.\nMover un alfanumérico a un COMP en la WHERE.\nEstado no válido del cursor DB2.",
+      "longDescription": "Campo demasiado largo en un CURSOR. La longitud del campo excede la permitida.\nMover un alfanumérico a un COMP en la WHERE. Conversión inválida entre tipos alfanumérico y COMP.\nAl abrir un CURSOR, metiendo valores alfanuméricos en numéricos. El valor no coincide con el tipo numérico esperado.\nNo se corresponde COPY con CREATE. La definición COPY no coincide con la estructura real de la tabla.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "La longitud del campo excede la permitida",
+      "reason": "La longitud del campo excede la permitida.\n Conversión inválida entre tipos alfanumérico y COMP.\nEl valor no coincide con el tipo numérico esperado.",
       "examples": "DB2 SQLCODE -004",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0025",
-      "code": "-004",
-      "shortDescription": "Mover un alfanumérico a un COMP en la WHERE.",
-      "longDescription": "Mover un alfanumérico a un COMP en la WHERE. Conversión inválida entre tipos alfanumérico y COMP",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Conversión inválida entre tipos alfanumérico y COMP",
-      "examples": "DB2 SQLCODE -004",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0026",
-      "code": "-004",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Al abrir un CURSOR, metiendo valores alfanuméricos en numéricos. El valor no coincide con el tipo numérico esperado",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El valor no coincide con el tipo numérico esperado",
-      "examples": "DB2 SQLCODE -004",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0027",
-      "code": "-004",
-      "shortDescription": "No se corresponde COPY con CREATE.",
-      "longDescription": "No se corresponde COPY con CREATE. La definición COPY no coincide con la estructura real de la tabla",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La definición COPY no coincide con la estructura real de la tabla",
-      "examples": "DB2 SQLCODE -004",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0028",
       "code": "-007",
@@ -8090,42 +7835,17 @@
     {
       "id": "ERR-DB2-0029",
       "code": "-009",
-      "shortDescription": "Tabla requerida no disponible",
-      "longDescription": "Nombre de campo erróneo en el SET de un UPDATE. El campo especificado no existe en la tabla",
+      "shortDescription": "Tabla requerida no disponible.\nEstado no válido del cursor DB2.",
+      "longDescription": "Nombre de campo erróneo en el SET de un UPDATE. El campo especificado no existe en la tabla.\nNombre de campo erróneo en la SELECT de un CURSOR. El campo referenciado no existe en la tabla.\nNombre de tabla errónea en el FROM del DECLARE de un CURSOR. La tabla indicada no existe o está mal escrita.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "El campo especificado no existe en la tabla",
+      "reason": "El campo especificado no existe en la tabla.\nEl campo referenciado no existe en la tabla.\nLa tabla indicada no existe o está mal escrita ",
       "examples": "DB2 SQLCODE -009",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0030",
-      "code": "-009",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Nombre de campo erróneo en la SELECT de un CURSOR. El campo referenciado no existe en la tabla",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El campo referenciado no existe en la tabla",
-      "examples": "DB2 SQLCODE -009",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0031",
-      "code": "-009",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Nombre de tabla errónea en el FROM del DECLARE de un CURSOR. La tabla indicada no existe o está mal escrita",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "La tabla indicada no existe o está mal escrita",
-      "examples": "DB2 SQLCODE -009",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0032",
       "code": "-010",
@@ -8169,41 +7889,16 @@
       "id": "ERR-DB2-0035",
       "code": "-016",
       "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Se abre un CURSOR que ya estaba abierto. El cursor ya se encontraba activo",
+      "longDescription": "Se abre un CURSOR que ya estaba abierto. El cursor ya se encontraba activo.\nSe intenta hacer un UPDATE con el CURSOR cerrado. El cursor no está disponible para actualización.\nCURSOR no especificado en FETCH o CLOSE no está abierto. El cursor no fue abierto antes de la operación.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "El cursor ya se encontraba activo",
+      "reason": "El cursor ya se encontraba activo.\nEl cursor no está disponible para actualización.\nEl cursor no fue abierto antes de la operación.",
       "examples": "DB2 SQLCODE -016",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0036",
-      "code": "-016",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Se intenta hacer un UPDATE con el CURSOR cerrado. El cursor no está disponible para actualización",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El cursor no está disponible para actualización",
-      "examples": "DB2 SQLCODE -016",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0037",
-      "code": "-016",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "CURSOR no especificado en FETCH o CLOSE no está abierto. El cursor no fue abierto antes de la operación",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El cursor no fue abierto antes de la operación",
-      "examples": "DB2 SQLCODE -016",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0038",
       "code": "-018",
@@ -8220,120 +7915,31 @@
     {
       "id": "ERR-DB2-0039",
       "code": "-019",
-      "shortDescription": "Instrucción SQL demasiado larga o compleja.",
-      "longDescription": "Instrucción SQL demasiado larga o compleja. La sentencia excede la complejidad permitida por DB2",
+      "shortDescription": "Instrucción SQL demasiado larga o compleja.\nMala instrucción del DB2.\nSintaxis en el DECLARE del CURSOR mala.",
+      "longDescription": "Instrucción SQL demasiado larga o compleja. La sentencia excede la complejidad permitida por DB2.\nMala instrucción del DB2. La sentencia SQL contiene errores de sintaxis.\nSintaxis en el DECLARE del CURSOR mala. La declaración del cursor contiene errores sintácticos.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "La sentencia excede la complejidad permitida por DB2",
+      "reason": "La sentencia excede la complejidad permitida por DB2.\nLa sentencia SQL contiene errores de sintaxis.\nLa declaración del cursor contiene errores sintácticos ",
       "examples": "DB2 SQLCODE -019",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0040",
-      "code": "-019",
-      "shortDescription": "Mala instrucción del DB2.",
-      "longDescription": "Mala instrucción del DB2. La sentencia SQL contiene errores de sintaxis",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La sentencia SQL contiene errores de sintaxis",
-      "examples": "DB2 SQLCODE -019",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0041",
-      "code": "-019",
-      "shortDescription": "Sintaxis en el DECLARE del CURSOR mala.",
-      "longDescription": "Sintaxis en el DECLARE del CURSOR mala. La declaración del cursor contiene errores sintácticos",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "La declaración del cursor contiene errores sintácticos",
-      "examples": "DB2 SQLCODE -019",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0042",
       "code": "-020",
-      "shortDescription": "Cambiar parámetro en COBOL DIR que se encuentra en el directorio COBOLMF.",
-      "longDescription": "Cambiar parámetro en COBOL DIR que se encuentra en el directorio COBOLMF. Reajuste de parámetros COBOL para compatibilidad PC/HOST",
+      "shortDescription": "Cambiar parámetro en COBOL DIR que se encuentra en el directorio COBOLMF.\nPrograma mal compilado.\n En una OPEN revisar la DECLARE del CURSOR.\nFaltan las comas en el SET de un UPDATE o en el último campo del DECLARE.\nEstado no válido del cursor DB2.\n Hay campos particionados en la WORKING.",
+      "longDescription": "Cambiar parámetro en COBOL DIR que se encuentra en el directorio COBOLMF. Reajuste de parámetros COBOL para compatibilidad PC/HOST.\nPrograma mal compilado. Instrucción SQL incorrecta. La compilación generó SQL inválido.\n En una OPEN revisar la DECLARE del CURSOR. La DECLARE del cursor contiene errores.\nFaltan las comas en el SET de un UPDATE o en el último campo del DECLARE. Error de sintaxis por separadores faltantes.\nCampos mal puestos en la SELECT del CURSOR. Falta el OF en el UPDATE del CURSOR. La sentencia SQL no respeta la estructura requerida.\nHay campos particionados en la WORKING. La estructura WORKING contiene particiones incompatibles con SQL.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "Reajuste de parámetros COBOL para compatibilidad PC/HOST",
+      "reason": "Reajuste de parámetros COBOL para compatibilidad PC/HOST.\nLa compilación generó SQL inválido.\nLa DECLARE del cursor contiene errores.\nError de sintaxis por separadores faltantes.\nLa sentencia SQL no respeta la estructura requerida.\nLa estructura WORKING contiene particiones incompatibles con SQL.",
       "examples": "DB2 SQLCODE -020",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0043",
-      "code": "-020",
-      "shortDescription": "Programa mal compilado.",
-      "longDescription": "Programa mal compilado. Instrucción SQL incorrecta. La compilación generó SQL inválido",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La compilación generó SQL inválido",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0044",
-      "code": "-020",
-      "shortDescription": "En una OPEN revisar la DECLARE del CURSOR.",
-      "longDescription": "En una OPEN revisar la DECLARE del CURSOR. La DECLARE del cursor contiene errores",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "La DECLARE del cursor contiene errores",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0045",
-      "code": "-020",
-      "shortDescription": "Faltan las comas en el SET de un UPDATE o en el último campo del DECLARE.",
-      "longDescription": "Faltan las comas en el SET de un UPDATE o en el último campo del DECLARE. Error de sintaxis por separadores faltantes",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Error de sintaxis por separadores faltantes",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0046",
-      "code": "-020",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Campos mal puestos en la SELECT del CURSOR. Falta el OF en el UPDATE del CURSOR. La sentencia SQL no respeta la estructura requerida",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "La sentencia SQL no respeta la estructura requerida",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0047",
-      "code": "-020",
-      "shortDescription": "Hay campos particionados en la WORKING.",
-      "longDescription": "Hay campos particionados en la WORKING. La estructura WORKING contiene particiones incompatibles con SQL",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La estructura WORKING contiene particiones incompatibles con SQL",
-      "examples": "DB2 SQLCODE -020",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0048",
       "code": "-024",
@@ -8376,29 +7982,17 @@
     {
       "id": "ERR-DB2-0051",
       "code": "-034",
-      "shortDescription": "Variable para acumular en la SELECT.COUNT debe ser PIC S9(15) COMP-3.",
-      "longDescription": "Variable para acumular en la SELECT.COUNT debe ser PIC S9(15) COMP-3. El tipo de variable no coincide con el requerido para COUNT",
+      "shortDescription": "Variable para acumular en la SELECT.COUNT debe ser PIC S9(15) COMP-3.\nFaltan: en COMPO de WHERE.",
+      "longDescription": "Variable para acumular en la SELECT.COUNT debe ser PIC S9(15) COMP-3. El tipo de variable no coincide con el requerido para COUNT.\nFaltan: en COMPO de WHERE. La cláusula WHERE está incompleta ",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "El tipo de variable no coincide con el requerido para COUNT",
+      "reason": "El tipo de variable no coincide con el requerido para COUNT.\nLa cláusula WHERE está incompleta.",
       "examples": "DB2 SQLCODE -034",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0052",
-      "code": "-034",
-      "shortDescription": "Faltan: en COMPO de WHERE.",
-      "longDescription": "Faltan: en COMPO de WHERE. La cláusula WHERE está incompleta",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La cláusula WHERE está incompleta",
-      "examples": "DB2 SQLCODE -034",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0053",
       "code": "-040",
@@ -8532,29 +8126,17 @@
     {
       "id": "ERR-DB2-0063",
       "code": "-072",
-      "shortDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una...",
-      "longDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión. Uso no permitido de funciones anidadas",
+      "shortDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una...\nNombre de las tablas vistas índices o sinónimos más largo del tamaño permitido...",
+      "longDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión. Uso no permitido de funciones anidadas.\nNombre de las tablas vistas índices o sinónimos más largo del tamaño permitido máximo 18 caracteres. El nombre excede la longitud permitida ",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "Uso no permitido de funciones anidadas",
+      "reason": "Uso no permitido de funciones anidadas.\nEl nombre excede la longitud permitida.",
       "examples": "DB2 SQLCODE -072",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0064",
-      "code": "-072",
-      "shortDescription": "Nombre de las tablas vistas índices o sinónimos más largo del tamaño permitido...",
-      "longDescription": "Nombre de las tablas vistas índices o sinónimos más largo del tamaño permitido máximo 18 caracteres. El nombre excede la longitud permitida",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El nombre excede la longitud permitida",
-      "examples": "DB2 SQLCODE -072",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0065",
       "code": "-073",
@@ -8584,29 +8166,17 @@
     {
       "id": "ERR-DB2-0067",
       "code": "-079",
-      "shortDescription": "El objeto del INSERT, DELETE o UPDATE es una vista para lo cual la operación...",
-      "longDescription": "El objeto del INSERT, DELETE o UPDATE es una vista para lo cual la operación requerida no está permitida. La vista no admite la operación solicitada",
+      "shortDescription": "El objeto del INSERT, DELETE o UPDATE es una vista para lo cual la operación...\nEstado no válido del cursor DB2",
+      "longDescription": "El objeto del INSERT, DELETE o UPDATE es una vista para lo cual la operación requerida no está permitida. La vista no admite la operación solicitada.\nHacer un DELETE sin 'FOR UPDATE' en el CURSOR. El cursor no está preparado para borrado.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "La vista no admite la operación solicitada",
+      "reason": "La vista no admite la operación solicitada.\nEl cursor no está preparado para borrado.",
       "examples": "DB2 SQLCODE -079",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0068",
-      "code": "-079",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Hacer un DELETE sin 'FOR UPDATE' en el CURSOR. El cursor no está preparado para borrado",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El cursor no está preparado para borrado",
-      "examples": "DB2 SQLCODE -079",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0069",
       "code": "-080",
@@ -8636,55 +8206,17 @@
     {
       "id": "ERR-DB2-0071",
       "code": "-084",
-      "shortDescription": "Instrucción SQL incorrecta.",
-      "longDescription": "Instrucción SQL incorrecta. La sentencia contiene errores de sintaxis",
+      "shortDescription": "Instrucción SQL incorrecta.\nPrograma mal compilado.\nPoner una coma en el último campo del DECLARE.\nEstado no válido del cursor DB2.",
+      "longDescription": "Instrucción SQL incorrecta. La sentencia contiene errores de sintaxis.\nPrograma mal compilado. La compilación generó SQL inválido.\nPoner una coma en el último campo del DECLARE. Error de sintaxis por separador faltante.\nCampos mal puestos en la SELECT del CURSOR. La SELECT no coincide con la estructura del cursor.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "La sentencia contiene errores de sintaxis",
+      "reason": "La sentencia contiene errores de sintaxis.\n La compilación generó SQL inválido.\nError de sintaxis por separador faltante.\nLa SELECT no coincide con la estructura del cursor.",
       "examples": "DB2 SQLCODE -084",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0072",
-      "code": "-084",
-      "shortDescription": "Programa mal compilado.",
-      "longDescription": "Programa mal compilado. La compilación generó SQL inválido",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La compilación generó SQL inválido",
-      "examples": "DB2 SQLCODE -084",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0073",
-      "code": "-084",
-      "shortDescription": "Poner una coma en el último campo del DECLARE.",
-      "longDescription": "Poner una coma en el último campo del DECLARE. Error de sintaxis por separador faltante",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Error de sintaxis por separador faltante",
-      "examples": "DB2 SQLCODE -084",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0074",
-      "code": "-084",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Campos mal puestos en la SELECT del CURSOR. La SELECT no coincide con la estructura del cursor",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "La SELECT no coincide con la estructura del cursor",
-      "examples": "DB2 SQLCODE -084",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0075",
       "code": "-086",
@@ -8766,29 +8298,17 @@
     {
       "id": "ERR-DB2-0081",
       "code": "-101",
-      "shortDescription": "Instrucción SQL demasiado larga o compleja.",
-      "longDescription": "Instrucción SQL demasiado larga o compleja. La sentencia excede la complejidad permitida por DB2",
+      "shortDescription": "Instrucción SQL demasiado larga o compleja.\nMala instalación del DB2.",
+      "longDescription": "Instrucción SQL demasiado larga o compleja. La sentencia excede la complejidad permitida por DB2.\n Mala instalación del DB2. La instalación del subsistema DB2 presenta inconsistencias.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "La sentencia excede la complejidad permitida por DB2",
+      "reason": "La sentencia excede la complejidad permitida por DB2.\nLa instalación del subsistema DB2 presenta inconsistencias.",
       "examples": "DB2 SQLCODE -101",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0082",
-      "code": "-101",
-      "shortDescription": "Mala instalación del DB2.",
-      "longDescription": "Mala instalación del DB2. La instalación del subsistema DB2 presenta inconsistencias",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La instalación del subsistema DB2 presenta inconsistencias",
-      "examples": "DB2 SQLCODE -101",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0083",
       "code": "-102",
@@ -8831,37 +8351,11 @@
     {
       "id": "ERR-DB2-0086",
       "code": "-104",
-      "shortDescription": "Falta una coma entre dos campos seleccionados.",
-      "longDescription": "Falta una coma entre dos campos seleccionados. Error de sintaxis por separador faltante",
+      "shortDescription": "Falta una coma entre dos campos seleccionados.\n La sentencia contiene el carácter o testigo inválido token_1.\nSi se utiliza un fichero para ejecutar la sentencia DB2 puede tener caracteres...",
+      "longDescription": "Falta una coma entre dos campos seleccionados. Error de sintaxis por separador faltante.\nLa sentencia contiene el carácter o testigo inválido token_1. El testigo token_2 está en espera. La sentencia contiene un token inesperado.\nSi se utiliza un fichero para ejecutar la sentencia DB2 puede tener caracteres erróneos. El fichero de entrada contiene caracteres inválidos.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "Error de sintaxis por separador faltante",
-      "examples": "DB2 SQLCODE -104",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0087",
-      "code": "-104",
-      "shortDescription": "La sentencia contiene el carácter o testigo inválido token_1.",
-      "longDescription": "La sentencia contiene el carácter o testigo inválido token_1. El testigo token_2 está en espera. La sentencia contiene un token inesperado",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La sentencia contiene un token inesperado",
-      "examples": "DB2 SQLCODE -104",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0088",
-      "code": "-104",
-      "shortDescription": "Si se utiliza un fichero para ejecutar la sentencia DB2 puede tener caracteres...",
-      "longDescription": "Si se utiliza un fichero para ejecutar la sentencia DB2 puede tener caracteres erróneos. El fichero de entrada contiene caracteres inválidos",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El fichero de entrada contiene caracteres inválidos",
+      "reason": "Error de sintaxis por separador faltante.\nLa sentencia contiene un token inesperado.\nEl fichero de entrada contiene caracteres inválidos.",
       "examples": "DB2 SQLCODE -104",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
@@ -8883,24 +8377,11 @@
     {
       "id": "ERR-DB2-0090",
       "code": "-106",
-      "shortDescription": "Cláusula FROM inválida porque una de las tablas es una vista que incluye una...",
-      "longDescription": "Cláusula FROM inválida porque una de las tablas es una vista que incluye una cláusula GROUP BY. La vista utilizada no permite la operación",
+      "shortDescription": "Cláusula FROM inválida porque una de las tablas es una vista que incluye una...\nEl nombre de una columna está identificado más de una vez en la instrucción...",
+      "longDescription": "Cláusula FROM inválida porque una de las tablas es una vista que incluye una cláusula GROUP BY. La vista utilizada no permite la operación.\nEl nombre de una columna está identificado más de una vez en la instrucción INSERT o UPDATE. La columna aparece duplicada en la sentencia ",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "La vista utilizada no permite la operación",
-      "examples": "DB2 SQLCODE -106",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0091",
-      "code": "-106",
-      "shortDescription": "El nombre de una columna está identificado más de una vez en la instrucción...",
-      "longDescription": "El nombre de una columna está identificado más de una vez en la instrucción INSERT o UPDATE. La columna aparece duplicada en la sentencia",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La columna aparece duplicada en la sentencia",
+      "reason": "La vista utilizada no permite la operación.\nLa columna aparece duplicada en la sentencia ",
       "examples": "DB2 SQLCODE -106",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
@@ -8961,8 +8442,8 @@
     {
       "id": "ERR-DB2-0096",
       "code": "-112",
-      "shortDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una...",
-      "longDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión. Uso no permitido de funciones anidadas",
+      "shortDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una...\nLa tabla presenta inconsistencias.",
+      "longDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión. \nBorrar tabla y volverla a crear. La tabla presenta inconsistencias y debe recrearse ",
       "system": "DB2",
       "severity": "LOW",
       "reason": "Uso no permitido de funciones anidadas",
@@ -8972,44 +8453,19 @@
       "deleted": false
     },
     {
-      "id": "ERR-DB2-0097",
-      "code": "-112",
-      "shortDescription": "Borrar tabla y volverla a crear.",
-      "longDescription": "Borrar tabla y volverla a crear. La tabla presenta inconsistencias y debe recrearse",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La tabla presenta inconsistencias y debe recrearse",
-      "examples": "DB2 SQLCODE -112",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
       "id": "ERR-DB2-0098",
       "code": "-113",
-      "shortDescription": "Carácter inválido en nombre.",
-      "longDescription": "Carácter inválido en nombre. El identificador contiene caracteres no permitidos",
+      "shortDescription": "Carácter inválido en nombre.\nOperación no permitida en un sistema de bases de datos.",
+      "longDescription": "Carácter inválido en nombre. El identificador contiene caracteres no permitidos.\n Operación no permitida en un sistema de bases de datos. La operación no está soportada por DB2.",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "El identificador contiene caracteres no permitidos",
+      "reason": "El identificador contiene caracteres no permitidos.\n La operación no está soportada por DB2.",
       "examples": "DB2 SQLCODE -113",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0099",
-      "code": "-113",
-      "shortDescription": "Operación no permitida en un sistema de bases de datos.",
-      "longDescription": "Operación no permitida en un sistema de bases de datos. La operación no está soportada por DB2",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La operación no está soportada por DB2",
-      "examples": "DB2 SQLCODE -113",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0100",
       "code": "-115",
@@ -9026,29 +8482,17 @@
     {
       "id": "ERR-DB2-0101",
       "code": "-117",
-      "shortDescription": "Cuando la DCL de la tabla es superior en longitud a la DCL de la COPY.",
-      "longDescription": "Cuando la DCL de la tabla es superior en longitud a la DCL de la COPY. Las definiciones no coinciden en tamaño",
+      "shortDescription": "Cuando la DCL de la tabla es superior en longitud a la DCL de la COPY.\nEl nombre de valores insertados no es el mismo que el número de columnas objeto.",
+      "longDescription": "Cuando la DCL de la tabla es superior en longitud a la DCL de la COPY. Las definiciones no coinciden en tamaño.\nEl nombre de valores insertados no es el mismo que el número de columnas objeto. Desajuste entre columnas y valores.",
       "system": "DB2",
       "severity": "MEDIUM",
-      "reason": "Las definiciones no coinciden en tamaño",
+      "reason": "Las definiciones no coinciden en tamaño.\n Desajuste entre columnas y valores.",
       "examples": "DB2 SQLCODE -117",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0102",
-      "code": "-117",
-      "shortDescription": "El nombre de valores insertados no es el mismo que el número de columnas objeto.",
-      "longDescription": "El nombre de valores insertados no es el mismo que el número de columnas objeto. Desajuste entre columnas y valores",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "Desajuste entre columnas y valores",
-      "examples": "DB2 SQLCODE -117",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0103",
       "code": "-118",
@@ -9065,24 +8509,11 @@
     {
       "id": "ERR-DB2-0104",
       "code": "-119",
-      "shortDescription": "Una columna identificada en una cláusula HAVING no está incluida en la cláusula...",
-      "longDescription": "Una columna identificada en una cláusula HAVING no está incluida en la cláusula GROUP BY. La columna debe aparecer también en GROUP BY",
+      "shortDescription": "Una columna identificada en una cláusula HAVING no está incluida en la cláusula...\nNombre de tablas vistas índices o sinónimos más largo del tamaño permitido máximo...",
+      "longDescription": "Una columna identificada en una cláusula HAVING no está incluida en la cláusula GROUP BY. La columna debe aparecer también en GROUP BY.\nNombre de tablas vistas índices o sinónimos más largo del tamaño permitido máximo 18 caracteres. El nombre excede la longitud permitida ",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "La columna debe aparecer también en GROUP BY",
-      "examples": "DB2 SQLCODE -119",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0105",
-      "code": "-119",
-      "shortDescription": "Nombre de tablas vistas índices o sinónimos más largo del tamaño permitido máximo...",
-      "longDescription": "Nombre de tablas vistas índices o sinónimos más largo del tamaño permitido máximo 18 caracteres. El nombre excede la longitud permitida",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El nombre excede la longitud permitida",
+      "reason": "La columna debe aparecer también en GROUP BY.\nEl nombre excede la longitud permitida ",
       "examples": "DB2 SQLCODE -119",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
@@ -9104,55 +8535,31 @@
     {
       "id": "ERR-DB2-0107",
       "code": "-121",
-      "shortDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una...",
-      "longDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión. Uso no permitido de funciones anidadas",
+      "shortDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una...\nLa columna está identificada más de una vez en la sentencia INSERT o UPDATE, o...",
+      "longDescription": "El operando de una función SQL es otra función SQL o distintivos seguidos de una expresión. Uso no permitido de funciones anidadas.\nLa columna está identificada más de una vez en la sentencia INSERT o UPDATE, o Borrar tabla y volverla a crear. La columna aparece duplicada en la sentencia, o La tabla presenta inconsistencias y debe recrearse",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "Uso no permitido de funciones anidadas",
+      "reason": "Uso no permitido de funciones anidadas.\nLa columna aparece duplicada en la sentencia, o La tabla presenta inconsistencias y debe recrearse ",
       "examples": "DB2 SQLCODE -121",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0108",
-      "code": "-121",
-      "shortDescription": "La columna está identificada más de una vez en la sentencia INSERT o UPDATE, o...",
-      "longDescription": "La columna está identificada más de una vez en la sentencia INSERT o UPDATE, o Borrar tabla y volverla a crear. La columna aparece duplicada en la sentencia, o La tabla presenta inconsistencias y debe recrearse",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La columna aparece duplicada en la sentencia, o La tabla presenta inconsistencias y debe recrearse",
-      "examples": "DB2 SQLCODE -121",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0110",
-      "code": "-122",
-      "shortDescription": "Campo definido en la SELECT y no en la GROUP BY.",
-      "longDescription": "Campo definido en la SELECT y no en la GROUP BY. La columna debe incluirse en GROUP BY",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La columna debe incluirse en GROUP BY",
-      "examples": "DB2 SQLCODE -122",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0111",
       "code": "-122",
       "shortDescription": "Campo definido en la SELECT y no en la GROUP BY o una sentencia SELECT sin GROUP...",
       "longDescription": "Campo definido en la SELECT y no en la GROUP BY o una sentencia SELECT sin GROUP BY contiene un nombre de columna y una función SQL en la cláusula SELECT. La sentencia requiere coherencia entre SELECT y GROUP BY",
       "system": "DB2",
       "severity": "LOW",
-      "reason": "La sentencia requiere coherencia entre SELECT y GROUP BY",
+      "reason": "La columna debe incluirse en GROUP BY.\nLa sentencia requiere coherencia entre SELECT y GROUP BY ",
       "examples": "DB2 SQLCODE -122",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
+    
     {
       "id": "ERR-DB2-0112",
       "code": "-125",
@@ -9660,19 +9067,7 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0151",
-      "code": "-204",
-      "shortDescription": "Tabla requerida no disponible",
-      "longDescription": "Nombre no definido en DB2 o tabla no creada o mal creada o faltan ':' en campos de WORKING en la WHERE o no coincide COPY con CREATE. El objeto referenciado no existe o está mal definido",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El objeto referenciado no existe o está mal definido",
-      "examples": "DB2 SQLCODE -204",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0152",
       "code": "-205",
@@ -9682,19 +9077,6 @@
       "severity": "MEDIUM",
       "reason": "La columna referenciada no está definida",
       "examples": "DB2 SQLCODE -205",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0153",
-      "code": "-206",
-      "shortDescription": "Nombre de columna no existente en la tabla o tabla creada con índices antiguos o...",
-      "longDescription": "Nombre de columna no existente en la tabla o tabla creada con índices antiguos o si es al abrir mirar el DECLARE. La columna no coincide con la definición actual de la tabla",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "La columna no coincide con la definición actual de la tabla",
-      "examples": "DB2 SQLCODE -206",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
@@ -10245,19 +9627,7 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0196",
-      "code": "-501",
-      "shortDescription": "Estado no válido del cursor DB2",
-      "longDescription": "Cursor no especificado en FETCH o CLOSE no está abierto. El cursor debe abrirse antes de usarlo",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El cursor debe abrirse antes de usarlo",
-      "examples": "DB2 SQLCODE -501",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0197",
       "code": "-502",
@@ -10454,19 +9824,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-DB2-0212",
-      "code": "-530",
-      "shortDescription": "Tabla requerida no disponible",
-      "longDescription": "Cláusula FOR UPDATE no puede ser especificada porque existe inconsistencia con tabla precedente o se intenta dar de alta o modificar en una tabla con integridad referencial y no existe el padre. Violación de integridad referencial o uso incorrecto de FOR UPDATE",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "Violación de integridad referencial o uso incorrecto de FOR UPDATE",
-      "examples": "DB2 SQLCODE -530",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
       "id": "ERR-DB2-0213",
       "code": "-531",
       "shortDescription": "La clave primaria no puede ser actualizada porque tiene filas dependientes.",
@@ -10618,19 +9975,6 @@
       "severity": "LOW",
       "reason": "La clave primaria debe ser NOT NULL",
       "examples": "DB2 SQLCODE -542",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0225",
-      "code": "-551",
-      "shortDescription": "Fallo de autorización de seguridad",
-      "longDescription": "El usuario no tiene privilegios para la operación o el objeto no existe o está en estado READ ONLY o el authorization-id no tiene permisos o falta autorización para integridad referencial. El usuario carece de permisos suficientes",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El usuario carece de permisos suficientes",
-      "examples": "DB2 SQLCODE -551",
       "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
@@ -11558,19 +10902,7 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0297",
-      "code": "-803",
-      "shortDescription": "Insertar con claves duplicadas siempre y cuando se hayan creado índices o...",
-      "longDescription": "Insertar con claves duplicadas siempre y cuando se hayan creado índices o modificar el índice único de una fila. La clave ya existe en la tabla o el índice único no admite la modificación",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "La clave ya existe en la tabla o el índice único no admite la modificación",
-      "examples": "DB2 SQLCODE -803",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0298",
       "code": "-804",
@@ -11584,19 +10916,7 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0299",
-      "code": "-805",
-      "shortDescription": "Módulo de carga no localizado",
-      "longDescription": "Nombre de programa o módulo no encontrado en el plan o el módulo no está en el paso BIND o ausencia del módulo en DBRM. El plan no contiene el package requerido",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El plan no contiene el package requerido",
-      "examples": "DB2 SQLCODE -805",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0300",
       "code": "-811",
@@ -11636,19 +10956,7 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0303",
-      "code": "-818",
-      "shortDescription": "Inconsistencia entre plan DB2 y programa",
-      "longDescription": "No coinciden los TIMESTAMP o el nombre del plan está mal en compilación. El módulo debe recompilarse y enlazarse nuevamente",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "El módulo debe recompilarse y enlazarse nuevamente",
-      "examples": "DB2 SQLCODE -818",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0304",
       "code": "-819",
@@ -11741,19 +11049,6 @@
       "deleted": false
     },
     {
-      "id": "ERR-DB2-0311",
-      "code": "-904",
-      "shortDescription": "Tiempo de espera agotado",
-      "longDescription": "Recurso no disponible o error I/O o contención o tabla en estado COPY o falta espacio o disco dañado o timeout de contención. El recurso requerido no está disponible",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "El recurso requerido no está disponible",
-      "examples": "DB2 SQLCODE -904",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
       "id": "ERR-DB2-0312",
       "code": "-905",
       "shortDescription": "La sentencia SQL ha excedido el tiempo límite de CPU y ha sido cancelada.",
@@ -11818,45 +11113,7 @@
       "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
       "deleted": false
     },
-    {
-      "id": "ERR-DB2-0317",
-      "code": "-911",
-      "shortDescription": "Recurso bloqueado durante la ejecución",
-      "longDescription": "Recurso disponible. La tabla está bloqueada por otro usuario o realizar un ROLLBACK y volver a ejecutar. La operación no pudo obtener el lock requerido",
-      "system": "DB2",
-      "severity": "MEDIUM",
-      "reason": "La operación no pudo obtener el lock requerido",
-      "examples": "DB2 SQLCODE -911",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0318",
-      "code": "-913",
-      "shortDescription": "Bloqueo mutuo entre recursos",
-      "longDescription": "Ejecución cancelada debido a un deadlock o a un timeout. La transacción debe reintentarse",
-      "system": "DB2",
-      "severity": "HIGH",
-      "reason": "La transacción debe reintentarse",
-      "examples": "DB2 SQLCODE -913",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
-    {
-      "id": "ERR-DB2-0319",
-      "code": "-922",
-      "shortDescription": "Fallo de autorización de seguridad",
-      "longDescription": "Falta de autorización. Hacer público el plan. El usuario no tiene permisos para ejecutar el plan",
-      "system": "DB2",
-      "severity": "LOW",
-      "reason": "El usuario no tiene permisos para ejecutar el plan",
-      "examples": "DB2 SQLCODE -922",
-      "operation": "Revisar el SQLCODE, la sentencia SQL y el contexto de la transacción en DB2.",
-      "recomendation": "Revisar el SQLCODE junto con la sentencia SQL, permisos y estado del recurso; aplicar la corrección correspondiente y repetir la operación controladamente.",
-      "deleted": false
-    },
+    
     {
       "id": "ERR-DB2-0320",
       "code": "-923",
@@ -16760,3 +16017,4 @@
     }
   ]
 }
+
